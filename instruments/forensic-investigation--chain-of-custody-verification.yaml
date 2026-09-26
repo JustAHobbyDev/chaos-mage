@@ -1,0 +1,50 @@
+extraction:
+  id: FORENSICS-CHAIN-OF-CUSTODY-001
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+  source: >
+    NIST Computer Security Resource Center, "chain of custody" glossary;
+    https://csrc.nist.gov/glossary/term/chain_of_custody
+  status: accepted
+  ambiguities:
+    - field: signal
+      issue: >
+        The observable signal is documentary continuity rather than a
+        physical response. This tests whether the frozen schema accommodates
+        procedural instruments whose evidence is a record produced alongside
+        the object being tracked.
+      alternatives:
+        - "Continuous transfer and handling record"
+        - "Absence of unexplained custody gaps"
+  extraction_failures: []
+  notes: >
+    This is intentionally admitted as an instrument even though it does not
+    reveal a hidden physical property. It tests integrity of provenance by
+    constructing and auditing a trace of handling events.
+
+instrument:
+  state: >
+    An item or record passes through multiple handlers or locations, creating
+    opportunities for substitution, alteration, contamination, or uncertainty
+    about identity.
+
+  operation: >
+    Record each transfer and handling event with the responsible party, time,
+    and purpose, then inspect that history for continuity and unexplained
+    transitions.
+
+  signal: >
+    A continuous, internally consistent handling record links the examined
+    item through its lifecycle, while gaps or contradictions identify breaks
+    in documented custody.
+
+  inference: >
+    Documentary continuity supports the claim that the item examined is the
+    item collected and that its handling history is accounted for; gaps weaken
+    that provenance claim.
+
+  limit: >
+    Complete documentation does not itself prove that handlers recorded events
+    truthfully or that no unrecorded alteration occurred, and missing records
+    do not prove that alteration occurred. The strength of the inference
+    depends on the reliability of the recording and safeguarding process.

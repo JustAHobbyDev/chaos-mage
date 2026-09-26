@@ -1,0 +1,63 @@
+extraction:
+  id: FORENSICS-BPA-001
+  name: Bloodstain-pattern reconstruction
+  practice: Forensic investigation
+  source: >
+    National Institute of Justice, "Study Assesses the Accuracy and
+    Reproducibility of Bloodstain Pattern Analysis" (2022);
+    https://nij.ojp.gov/topics/articles/study-assesses-accuracy-and-reproducibility-bloodstain-pattern-analysis
+  status: provisional
+  ambiguities:
+    - field: operation
+      issue: >
+        Bloodstain pattern analysis combines several operations, including
+        feature description, classification, geometric reasoning, and event
+        reconstruction. The current extraction treats them as one
+        pattern-to-mechanism comparison instrument.
+      alternatives:
+        - "Keep a single pattern-reconstruction instrument"
+        - "Split classification, directional analysis, and sequence reconstruction"
+    - field: inference
+      issue: >
+        The practice ranges from narrow pattern classification to stronger
+        claims about manner and sequence of events. The abstraction therefore
+        deliberately states only that candidate event mechanisms are
+        constrained rather than uniquely reconstructed.
+      alternatives:
+        - "Constrain compatible event mechanisms"
+        - "Infer aspects of manner and sequence"
+  extraction_failures:
+    - type: composite
+      description: >
+        The practice likely contains multiple separable instruments. Preserve
+        this provisional extraction so later corpus work can show whether
+        decomposition improves comparison and retrieval.
+  notes: >
+    NIJ reports substantial analyst disagreement and error in black-box
+    studies, supporting a conservative inference and a strong limit field.
+
+instrument:
+  state: >
+    A past dynamic event is no longer directly observable, but it produced a
+    spatial pattern whose features depend in part on how the event occurred.
+
+  operation: >
+    Characterize the surviving pattern and compare its spatial, geometric,
+    and morphological features with patterns expected from candidate event
+    mechanisms.
+
+  signal: >
+    Particular configurations of features are more or less consistent with
+    particular classes of generating mechanisms.
+
+  inference: >
+    The observed pattern can constrain the set of plausible mechanisms and,
+    where the evidence supports it, aspects of the manner or sequence by
+    which the pattern was produced.
+
+  limit: >
+    Different mechanisms can yield overlapping patterns, incomplete or
+    altered scenes can remove discriminating features, terminology and
+    classification may be inconsistently applied, contextual information can
+    bias interpretation, and analyst conclusions can be erroneous or
+    contradictory.

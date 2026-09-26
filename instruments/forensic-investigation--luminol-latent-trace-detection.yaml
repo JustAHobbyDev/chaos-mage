@@ -1,0 +1,46 @@
+extraction:
+  id: FORENSICS-LUMINOL-001
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+  source: >
+    FBI Laboratory, "Processing Evidence Using Luminol" (IMPRS-306-02,
+    issue date 2025-01-15);
+    https://fbilabqsd.fbi.gov/file-repository/questioned-documents/imprs-306-03-processing-evidence-using-luminol.pdf
+  status: accepted
+  ambiguities:
+    - field: signal
+      issue: >
+        A single chemiluminescent response is the primitive signal, while the
+        spatial distribution of many responses can itself become evidence for
+        a separate reconstruction instrument.
+      alternatives:
+        - "Localized chemiluminescent response"
+        - "Spatial pattern of chemiluminescent responses"
+  extraction_failures: []
+  notes: >
+    Keep latent-trace detection separate from bloodstain-pattern
+    reconstruction. Luminol is presumptive rather than confirmatory.
+
+instrument:
+  state: >
+    Material associated with a past event may persist as a latent residue
+    that ordinary visual inspection does not reveal.
+
+  operation: >
+    Apply a probe whose reaction is promoted by material associated with the
+    suspected residue.
+
+  signal: >
+    Responsive material produces an otherwise absent, localized observable
+    reaction.
+
+  inference: >
+    The reaction supports the presence and location of material capable of
+    producing that response.
+
+  limit: >
+    Unrelated substances may produce the same response, relevant residue may
+    fail to respond because it was removed, degraded, or is below detection,
+    and detecting responsive material does not by itself establish the event
+    that produced it. The probe may also alter material needed for later
+    analysis.

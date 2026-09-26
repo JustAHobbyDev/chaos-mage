@@ -1,0 +1,63 @@
+extraction:
+  id: FORENSICS-ALS-001
+  name: Alternate-light-source search
+  practice: Forensic investigation
+  source: >
+    National Institute of Justice, "Body Fluid Identification" (2017);
+    https://nij.ojp.gov/topics/articles/body-fluid-identification
+  status: provisional
+  ambiguities:
+    - field: operation
+      issue: >
+        "Alternate light source" names a platform that can be used at
+        different wavelengths and with different filters against different
+        targets. The transferable mechanism may therefore be a family of
+        optical contrast instruments rather than one instrument.
+      alternatives:
+        - "Illuminate with selected non-white wavelengths to enhance contrast"
+        - "Split into fluorescence, absorption, and reflectance instruments"
+    - field: signal
+      issue: >
+        Depending on material and wavelength, the useful observation may be
+        fluorescence, absorption, or increased contrast rather than one
+        uniform physical response.
+      alternatives:
+        - "Changed optical contrast relative to surroundings"
+        - "Separate signal definitions for each optical mode"
+  extraction_failures:
+    - type: composite
+      description: >
+        The named technique may combine multiple optical mechanisms with
+        distinct signal-generation processes. Keep provisional until a later
+        batch shows whether a single contrast-level abstraction is useful or
+        overabstracted.
+  notes: >
+    NIJ describes alternate light as a way to visually detect otherwise
+    difficult-to-see biological evidence. This extraction intentionally does
+    not treat a highlighted region as identification of a particular
+    substance.
+
+instrument:
+  state: >
+    Relevant material may be present but visually indistinguishable from its
+    surroundings under ordinary observation.
+
+  operation: >
+    Observe the target under a selected illumination condition designed to
+    change the optical contrast between responsive material and its
+    surroundings.
+
+  signal: >
+    A region changes in visibility or contrast relative to nearby material
+    under the selected observation condition.
+
+  inference: >
+    The changed region identifies a location that may contain material with
+    optical properties different from its surroundings and warrants targeted
+    follow-up examination.
+
+  limit: >
+    Many unrelated materials can share similar optical responses, target
+    material may not respond at the selected wavelength or may be obscured,
+    and enhanced visibility alone does not identify the material or establish
+    how it came to be present.
