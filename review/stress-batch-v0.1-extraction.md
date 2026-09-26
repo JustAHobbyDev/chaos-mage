@@ -1,6 +1,6 @@
 # Stress Batch v0.1 — Extraction Pass
 
-Status: extraction complete; adjudication not yet performed.
+Status: extraction complete; required adjudication completed. See [stress-batch-v0.1-classification.md](stress-batch-v0.1-classification.md).
 
 The ten preregistered candidates were extracted under the frozen five-field schema and extraction decision rule. This document records only the extractor's proposed classifications and observed pressure points. It does not calculate calibration thresholds or adjudicate borderline cases.
 
@@ -55,8 +55,6 @@ Each could express the observable distinction under `signal` and the resulting n
 
 Crossdating and step-response probing both extracted without requiring a separate temporal field. Time is part of the structure of the signal rather than separate metadata.
 
-## Next procedural step
+## Completion
 
-Do not compute the batch outcome from these proposed classifications.
-
-Under the preregistered protocol, mandatory borderline-case adjudications must be run in fresh context with batch-outcome information withheld before schema-relevant counts or final classifications are calculated.
+The mandatory system-identification adjudication is recorded under `review/adjudications/`. The final preregistered batch calculation is recorded in [stress-batch-v0.1-classification.md](stress-batch-v0.1-classification.md).

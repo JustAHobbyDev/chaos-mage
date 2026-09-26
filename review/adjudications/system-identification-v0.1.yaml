@@ -1,0 +1,49 @@
+adjudication:
+  candidate: system-identification
+  trigger:
+    - extractor_status_provisional
+    - composite_failure
+  extractor_status: provisional
+  adjudicator_status: rejected
+  final_status: provisional
+
+  granularity:
+    decision: split-required
+    rationale: >
+      The named practice combines at least three independently transferable
+      subprocedures: excitation/measurement of input-output behavior,
+      model estimation or fitting, and model validation through residual or
+      predictive comparison. These subprocedures can be applied or retrieved
+      independently, produce materially different signals and inferential
+      warrants, and could plausibly map to different target-domain problems.
+      Under the preregistered split test, the candidate boundary is therefore
+      too broad.
+
+  abstraction:
+    decision: adequate
+    rationale: >
+      The extraction already removes unnecessary control-engineering detail
+      while preserving the broad model-from-input-output mechanism. The
+      difficulty is not that the wording is too concrete or too generic.
+      Greater specificity exposes the separable subprocedures rather than a
+      missing representational relation.
+
+  schema_relevant:
+    decision: false
+    rationale: >
+      After choosing a defensible instrument boundary, no essential
+      operational relationship has been identified that lacks an adequate
+      place in state, operation, signal, inference, or limit. The observed
+      difficulty is resolved by splitting the candidate rather than revising
+      the schema.
+
+  gap_signature: null
+  threshold_trigger_review: not-required
+
+  rationale: >
+    The extractor proposed provisional and the adjudicator found the broad
+    candidate split-required. Under the preregistered provisional-versus-
+    rejected disagreement rule, final status remains provisional unless the
+    rejection cannot be remedied without changing the schema. Here the defect
+    is candidate granularity and is remediable by splitting the candidate, so
+    the final status is provisional and contributes no schema-gap evidence.
