@@ -1,0 +1,64 @@
+extraction:
+  id: CONTROL-SYSTEMS-SYSTEM-IDENTIFICATION-001
+  name: System identification
+  practice: Control and systems engineering
+  source: >
+    MathWorks, "System Identification Overview";
+    https://www.mathworks.com/help/ident/gs/about-system-identification.html
+    MathWorks, "System Identification Workflow";
+    https://www.mathworks.com/help/ident/gs/system-identification-workflow.html
+  status: provisional
+  ambiguities:
+    - field: operation
+      issue: >
+        The named practice includes experimental excitation and measurement,
+        model-structure selection, parameter estimation, comparison among
+        models, and validation. It may therefore be a workflow containing
+        several instruments rather than one instrument.
+      alternatives:
+        - "Treat model-from-input-output-data as one identification instrument"
+        - "Split excitation/measurement, parameter estimation, and model validation"
+    - field: signal
+      issue: >
+        The immediate observation is an input-output trajectory, while model
+        residuals and validation performance become higher-order signals after
+        a candidate model has already been introduced.
+      alternatives:
+        - "Observed input-output relationship"
+        - "Residual pattern between predicted and observed outputs"
+  extraction_failures:
+    - type: composite
+      description: >
+        System identification may bundle independently useful stages with
+        different operations and inferential warrants. Preserve the candidate
+        as provisional rather than splitting it during the preregistered batch.
+  notes: >
+    Proposed schema relevance: no. The current issue is candidate granularity.
+    No missing schema relation is proposed.
+
+instrument:
+  state: >
+    A dynamic system's internal behavior is not adequately known, but its
+    inputs and outputs can be measured over time under sufficiently informative
+    operating conditions.
+
+  operation: >
+    Observe the system's response to measured or deliberately varied inputs,
+    fit candidate dynamic models to the resulting input-output data, and test
+    how well those models reproduce or predict held-out behavior.
+
+  signal: >
+    Candidate models differ in the residual patterns and predictive agreement
+    between their outputs and the system's measured outputs.
+
+  inference: >
+    Models whose predicted behavior consistently matches measured responses
+    constrain the system's dynamic input-output relationships and provide an
+    empirical representation of those dynamics.
+
+  limit: >
+    Poor excitation, measurement noise, feedback, changing system behavior,
+    confounded inputs, non-identifiability, and restrictive model structures
+    can make different models observationally indistinguishable or produce a
+    model that fits observed data without representing the underlying dynamics
+    well.

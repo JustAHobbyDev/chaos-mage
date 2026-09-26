@@ -1,0 +1,50 @@
+extraction:
+  id: ARCHIVAL-PROVENANCE-RECONSTRUCTION-001
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+  source: >
+    National Gallery of Art, "Provenance at the National Gallery of Art";
+    https://www.nga.gov/artworks/provenance-national-gallery-art
+    Getty Museum, "Research on Museum Collection Provenance";
+    https://www.getty.edu/museum/provenance/
+  status: accepted
+  ambiguities:
+    - field: signal
+      issue: >
+        The relevant signal is not merely the existence of documents, but the
+        compatibility of dated ownership, transfer, location, and transaction
+        records when assembled into a chronology.
+      alternatives:
+        - "Documented links between successive custodians"
+        - "Chronological coherence plus explicitly located gaps"
+  extraction_failures: []
+  notes: >
+    Proposed schema relevance: none. This tests a documentary and temporal
+    signal against the already extracted chain-of-custody instrument.
+
+instrument:
+  state: >
+    An object's history is only partially known, but dispersed records may
+    preserve dated traces of ownership, custody, transfer, location, or
+    transaction.
+
+  operation: >
+    Gather and cross-check records that can link the object to successive
+    people, places, and transactions, arranging supported links into a
+    chronology and marking unsupported intervals as gaps.
+
+  signal: >
+    Independent records form compatible chronological links between successive
+    states of ownership or custody, while contradictions and missing intervals
+    expose uncertainty in the reconstructed sequence.
+
+  inference: >
+    The compatible links support a bounded reconstruction of the object's
+    documented history, including which transitions are established and where
+    provenance remains unresolved.
+
+  limit: >
+    Records may be lost, inaccessible, anonymous, forged, mistaken, or copied
+    from one another; names and descriptions may be ambiguous; absence of a
+    record does not establish absence of a transfer; and a continuous-looking
+    chronology can still contain undocumented or misidentified transitions.

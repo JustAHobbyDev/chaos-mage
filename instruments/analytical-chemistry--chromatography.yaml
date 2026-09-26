@@ -1,0 +1,49 @@
+extraction:
+  id: ANALYTICAL-CHEMISTRY-CHROMATOGRAPHY-001
+  name: Chromatography
+  practice: Analytical chemistry
+  source: >
+    NIST OSAC Lexicon, "chromatography";
+    https://www.nist.gov/glossary-term/46091
+    U.S. EPA, Method 8000D, Determinative Chromatographic Separations;
+    https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1016J8Z.txt
+  status: accepted
+  ambiguities:
+    - field: inference
+      issue: >
+        Separation and detection are distinct from definitive chemical
+        identification. The extraction therefore stops at differential
+        component behavior and does not treat a retention position alone as
+        proof of identity.
+      alternatives:
+        - "Infer separable components and comparative retention behavior"
+        - "Include identification only when an independent detector or standard is used"
+  extraction_failures: []
+  notes: >
+    Proposed schema relevance: none. The candidate cleanly tests whether the
+    schema can separate an operation that transforms a mixture from a later
+    identification procedure.
+
+instrument:
+  state: >
+    A sample contains multiple components whose interactions with two phases
+    differ enough that those components need not move together.
+
+  operation: >
+    Carry the sample through a system containing a moving phase and a
+    stationary phase so that components repeatedly partition between them.
+
+  signal: >
+    Components migrate at different rates and emerge at different positions or
+    times, producing separated bands or detector peaks.
+
+  inference: >
+    The separation pattern supports the presence of distinguishable components
+    with different partition behavior and permits their relative retention to
+    be characterized.
+
+  limit: >
+    Components with similar partition behavior may co-elute, operating
+    conditions can shift retention, detector response may be nonspecific, and
+    retention behavior alone generally does not establish chemical identity
+    without appropriate standards or orthogonal evidence.

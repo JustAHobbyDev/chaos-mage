@@ -1,0 +1,48 @@
+extraction:
+  id: CONTROL-SYSTEMS-STEP-RESPONSE-001
+  name: Step-response probing
+  practice: Control and systems engineering
+  source: >
+    MathWorks, "step - Step response of dynamic system";
+    https://www.mathworks.com/help/ident/ref/dynamicsystem.step.html
+    MathWorks, "stepinfo - Rise time, settling time, and other step-response
+    characteristics";
+    https://www.mathworks.com/help/control/ref/dynamicsystem.stepinfo.html
+  status: accepted
+  ambiguities:
+    - field: inference
+      issue: >
+        A step response can characterize observable dynamics without uniquely
+        identifying the internal mechanism that generates them.
+      alternatives:
+        - "Infer empirical dynamic characteristics"
+        - "Constrain candidate dynamic models"
+  extraction_failures: []
+  notes: >
+    Proposed schema relevance: none. This tests a temporal signal deliberately
+    produced by a known perturbation.
+
+instrument:
+  state: >
+    A dynamic system accepts a controlled change in an input and exposes an
+    output whose evolution through time can be observed.
+
+  operation: >
+    Apply a known step change to the input and record the output trajectory
+    from its initial state through the transient response toward its later
+    behavior.
+
+  signal: >
+    The output trajectory exhibits measurable temporal features such as delay,
+    rise, overshoot, oscillation, peak, settling, and steady-state change.
+
+  inference: >
+    Those response features constrain empirical properties of the system's
+    dynamics and can distinguish candidate models or characterize how the
+    system reacts to perturbation.
+
+  limit: >
+    Noise, unknown initial state, saturation, nonlinear behavior, disturbances,
+    interacting inputs, insufficient observation time, and dependence on the
+    chosen operating point can distort the response or make conclusions fail
+    to generalize beyond the tested perturbation.

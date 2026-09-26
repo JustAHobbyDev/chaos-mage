@@ -1,0 +1,50 @@
+extraction:
+  id: SOFTWARE-DELTA-DEBUGGING-001
+  name: Delta debugging
+  practice: Software debugging and testing
+  source: >
+    Andreas Zeller and Ralf Hildebrandt, "Simplifying and Isolating
+    Failure-Inducing Input," IEEE Transactions on Software Engineering 28(2),
+    2002;
+    https://www.st.cs.uni-saarland.de/publications/details/zeller-tse-2002/
+  status: accepted
+  ambiguities:
+    - field: inference
+      issue: >
+        A minimized failure-inducing input is minimal with respect to the test
+        and reduction criterion; it need not identify a unique root cause or a
+        globally minimum explanation.
+      alternatives:
+        - "The retained subset is sufficient under the test"
+        - "The retained difference is a minimal failure-inducing configuration"
+  extraction_failures: []
+  notes: >
+    Proposed schema relevance: none. This tests eliminative inference over
+    components rather than over named hypotheses or time intervals.
+
+instrument:
+  state: >
+    A reproducible failure occurs for a configuration or input composed of
+    multiple removable parts, and candidate reductions can be repeatedly
+    tested.
+
+  operation: >
+    Partition the failure-inducing configuration, remove subsets or test their
+    complements, and iteratively retain reductions that continue to reproduce
+    the defined failure.
+
+  signal: >
+    Some reduced configurations preserve the failure while others do not,
+    revealing which removals are compatible with continued reproduction.
+
+  inference: >
+    The procedure narrows the configuration to a test-relative minimal or
+    near-minimal failure-inducing subset or difference whose retained parts are
+    sufficient to reproduce the observed failure under the test.
+
+  limit: >
+    Interactions among parts, nondeterministic failures, unresolved test
+    outcomes, environmental dependence, and the reduction strategy can prevent
+    strong minimization. A retained minimal configuration demonstrates
+    reproducibility under the test, not necessarily the unique underlying
+    causal mechanism.
