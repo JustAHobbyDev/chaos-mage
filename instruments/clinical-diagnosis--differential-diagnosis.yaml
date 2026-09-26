@@ -1,0 +1,47 @@
+extraction:
+  id: CLINICAL-DIAGNOSIS-DIFFERENTIAL-001
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+  source: >
+    National Academies / NCBI Bookshelf, "The Diagnostic Process" in
+    Improving Diagnosis in Health Care;
+    https://www.ncbi.nlm.nih.gov/books/NBK338593/
+  status: accepted
+  ambiguities:
+    - field: signal
+      issue: >
+        The instrument does not usually produce one physical signal. Its signal
+        is the changing pattern of compatibility and incompatibility between
+        observations and competing hypotheses as new evidence is gathered.
+      alternatives:
+        - "Relative support across candidate explanations"
+        - "Observed findings that differentially fit candidate explanations"
+  extraction_failures: []
+  notes: >
+    Treat the maintained set of competing explanations as part of the
+    operation, not as the state. The instrument is useful specifically because
+    uncertainty is represented explicitly rather than collapsed prematurely.
+
+instrument:
+  state: >
+    A set of observations can plausibly be explained by more than one
+    underlying mechanism or condition.
+
+  operation: >
+    Generate multiple candidate explanations, gather or inspect evidence that
+    bears differently on them, and repeatedly revise their relative
+    plausibility as evidence accumulates.
+
+  signal: >
+    New observations create a pattern of support, contradiction, or
+    non-discrimination across the competing explanations.
+
+  inference: >
+    Explanations can be reprioritized, eliminated, or retained, narrowing the
+    plausible set without requiring an early commitment to a single cause.
+
+  limit: >
+    The result is constrained by which hypotheses were generated, the quality
+    and independence of the evidence, test sensitivity and specificity, and
+    susceptibility to anchoring, premature closure, base-rate neglect, or
+    confirmation bias.

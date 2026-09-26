@@ -1,0 +1,49 @@
+extraction:
+  id: CLINICAL-DIAGNOSIS-SERIAL-MONITORING-001
+  name: Serial monitoring
+  practice: Clinical diagnosis
+  source: >
+    NCBI Bookshelf, "Simulating monitoring data and evaluating monitoring
+    strategies" in Methods for the evaluation of biomarkers in patients with
+    kidney and liver diseases;
+    https://www.ncbi.nlm.nih.gov/books/NBK513097/
+  status: accepted
+  ambiguities:
+    - field: inference
+      issue: >
+        Serial monitoring can serve diagnosis, prognosis, treatment response,
+        or threshold-triggered management. The extraction keeps only the
+        common epistemic mechanism: trajectory reveals information unavailable
+        from a single observation.
+      alternatives:
+        - "Infer change in underlying state"
+        - "Trigger action when a trajectory crosses a decision rule"
+  extraction_failures: []
+  notes: >
+    This extraction deliberately separates repeated observation as an
+    instrument from any particular clinical threshold or treatment rule.
+
+instrument:
+  state: >
+    The underlying process may change over time, and a single observation
+    cannot adequately distinguish stable state, transient fluctuation, or
+    directional change.
+
+  operation: >
+    Repeat a comparable measurement or observation at multiple time points and
+    evaluate the resulting sequence against expected variation or a defined
+    change rule.
+
+  signal: >
+    The sequence exhibits persistence, trend, reversal, threshold crossing, or
+    another temporal pattern not available from an isolated measurement.
+
+  inference: >
+    The temporal pattern constrains hypotheses about whether and how the
+    underlying state is changing and can distinguish sustained change from
+    some forms of transient variation.
+
+  limit: >
+    Measurement error, regression to the mean, irregular sampling, changing
+    measurement conditions, interventions between observations, and poorly
+    chosen intervals or thresholds can create or conceal apparent trends.

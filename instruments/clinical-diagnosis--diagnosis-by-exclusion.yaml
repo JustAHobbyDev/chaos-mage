@@ -1,0 +1,60 @@
+extraction:
+  id: CLINICAL-DIAGNOSIS-EXCLUSION-001
+  name: Diagnosis by exclusion
+  practice: Clinical diagnosis
+  source: >
+    Papandreas, Carrasco-Labra, and Glick, "When did 'I don't know' become a
+    diagnosis? A conceptual review on diagnoses of exclusion" (2026), PubMed;
+    https://pubmed.ncbi.nlm.nih.gov/41046184/
+  status: provisional
+  ambiguities:
+    - field: operation
+      issue: >
+        "Diagnosis by exclusion" is widely used but does not have a single
+        standardized procedure or stopping rule. Different practices may
+        exclude alternatives with different evidentiary thresholds.
+      alternatives:
+        - "Sequentially test and eliminate plausible alternatives"
+        - "Reduce alternatives below decision thresholds until a residual diagnosis remains"
+    - field: inference
+      issue: >
+        Failure to establish alternatives can raise the relative plausibility
+        of a residual explanation without supplying positive evidence for it.
+      alternatives:
+        - "Residual explanation becomes comparatively more plausible"
+        - "Only the tested alternatives are weakened; no positive residual inference"
+  extraction_failures:
+    - type: source_unclear
+      description: >
+        A recent conceptual review found no published standardized criteria or
+        framework for reaching a diagnosis of exclusion. The operational
+        pattern is recognizable, but its stopping condition is not stable
+        enough for an accepted extraction yet.
+  notes: >
+    Preserve as provisional because it tests whether the schema can represent
+    an eliminative instrument whose signal is largely absence of support for
+    competitors rather than positive evidence for the residual hypothesis.
+
+instrument:
+  state: >
+    Several plausible explanations exist, no decisive positive indicator
+    uniquely identifies the target explanation, and alternatives can be
+    investigated individually.
+
+  operation: >
+    Evaluate plausible competing explanations and eliminate those that are
+    sufficiently inconsistent with the accumulated evidence.
+
+  signal: >
+    Previously plausible alternatives fail specified tests or fall below an
+    evidentiary threshold, leaving a smaller residual set.
+
+  inference: >
+    The remaining explanation becomes relatively more plausible because
+    examined alternatives have been weakened or excluded.
+
+  limit: >
+    An incomplete candidate set, insensitive or inappropriate tests, weak
+    exclusion thresholds, or premature stopping can leave a false residual
+    explanation. Eliminating known alternatives does not itself provide
+    positive evidence that the remaining explanation is correct.

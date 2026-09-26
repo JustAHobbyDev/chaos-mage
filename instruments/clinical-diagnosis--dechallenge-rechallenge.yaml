@@ -1,0 +1,49 @@
+extraction:
+  id: CLINICAL-DIAGNOSIS-DECHALLENGE-RECHALLENGE-001
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+  source: >
+    U.S. Food and Drug Administration, Postmarketing Safety Reporting
+    guidance definitions for challenge, dechallenge, rechallenge, and
+    causality assessment;
+    https://www.fda.gov/media/73593/download
+  status: accepted
+  ambiguities:
+    - field: operation
+      issue: >
+        Rechallenge is not always ethical or feasible. The core mechanism is
+        therefore a reversible perturbation with observation after removal,
+        optionally strengthened by reintroduction.
+      alternatives:
+        - "Removal followed by observation"
+        - "Removal and, where justified, reintroduction"
+  extraction_failures: []
+  notes: >
+    This is a perturb-and-reobserve instrument. A positive dechallenge alone
+    changes causal confidence; recurrence on rechallenge can strengthen it,
+    but neither should be abstracted as automatic proof.
+
+instrument:
+  state: >
+    A suspected factor is present while an effect is occurring, and the factor
+    can potentially be removed and, in some circumstances, reintroduced.
+
+  operation: >
+    Remove the suspected factor and observe whether the effect changes; where
+    justified and safe, reintroduce the factor and observe whether the effect
+    returns.
+
+  signal: >
+    The effect diminishes after removal and may recur after reintroduction in
+    temporal association with the perturbation.
+
+  inference: >
+    A reproducible relationship between removing or restoring the factor and
+    disappearance or recurrence of the effect increases support for a causal
+    contribution by that factor.
+
+  limit: >
+    Effects may resolve or recur spontaneously, concurrent changes may be
+    responsible, delayed or persistent effects can obscure the response, and
+    reintroduction may be unsafe or impossible. Temporal response alone does
+    not exclude alternative causes.
