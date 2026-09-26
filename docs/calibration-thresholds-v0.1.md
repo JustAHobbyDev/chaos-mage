@@ -157,23 +157,79 @@ Schema v0.1 **survives the stress batch** when all of the following are true:
 
 It does not establish that the schema is optimal or sufficient for later cross-domain mapping.
 
-## 10. Possible batch outcomes
+## 10. Preregistered full-batch classification rule
 
-After all 10 extractions are complete, report exactly one overall outcome:
+After all 10 planned extractions have been attempted, classify the batch into exactly one of three outcomes:
 
-### Survives
-The survival rule is met.
+- **schema survives**
+- **schema needs revision**
+- **batch inconclusive**
 
-### Targeted schema gap
-At least one gap signature meets A, B, or C, but broad-insufficiency conditions D and E are not met.
+Apply the following decision rule in order. Stop at the first matching rule.
 
-### Broad schema insufficiency
-Condition D or E is met.
+### Rule 1 — Specific demonstrated gap overrides batch incompleteness
 
-### Inconclusive
-The batch fails the testability threshold and no already-observed specific gap independently meets a strong-evidence threshold.
+Classify **schema needs revision** if any single gap signature meets strong-evidence condition A, B, or C.
 
-## 11. Freeze discipline
+This rule applies even if fewer than 7 instruments are otherwise evaluable. A repeated cross-practice failure of the same operational relationship is sufficient evidence for a revision proposal even when the remainder of the batch is poorly testable.
+
+The result must identify each qualifying gap signature and which condition it met.
+
+### Rule 2 — Insufficient testability
+
+If Rule 1 does not apply and fewer than **7 of the 10** planned instruments provide valid schema tests, classify **batch inconclusive**.
+
+Candidate-selection, source-quality, or granularity failures that prevent a valid schema test do not count against the schema.
+
+An inconclusive batch must replace enough unusable candidates to restore at least 7 evaluable cases while retaining the same schema, decision rule, and calibration thresholds.
+
+### Rule 3 — Broad insufficiency
+
+If the batch has at least 7 evaluable cases, classify **schema needs revision** if either broad-insufficiency condition D or E is met:
+
+- **D:** at least 3 of the 10 planned instruments are schema-relevant rejections; or
+- **E:** at least 5 of the 10 planned instruments are schema-relevant provisional or rejected cases.
+
+This outcome means the representation is under enough pressure to justify a general revision review even if no single missing relationship recurs often enough to meet A, B, or C.
+
+### Rule 4 — Survival
+
+If none of Rules 1–3 applies, classify **schema survives**.
+
+A survival result may still contain isolated or suggestive difficulties. Those are recorded for targeted follow-up under section 5 but do not change the full-batch classification.
+
+"Schema survives" means only:
+
+> Under this preregistered 10-instrument stress test, schema v0.1 did not show a repeated or broad representational failure at the thresholds defined here.
+
+It does not mean the schema is optimal, complete, or proven sufficient for cross-domain retrieval and mapping.
+
+## 11. Decision table
+
+| Specific A/B/C gap? | Evaluable instruments | D or E met? | Outcome |
+| --- | ---: | --- | --- |
+| Yes | Any number | Either | **schema needs revision** |
+| No | 0–6 | Either | **batch inconclusive** |
+| No | 7–10 | Yes | **schema needs revision** |
+| No | 7–10 | No | **schema survives** |
+
+This table is authoritative if prose elsewhere appears ambiguous.
+
+## 12. Reporting requirement
+
+The final batch report must include:
+
+1. number of evaluable instruments;
+2. accepted / provisional / rejected counts;
+3. which provisional or rejected cases are schema-relevant;
+4. every gap signature and its cross-practice recurrence count;
+5. whether A, B, C, D, or E fired;
+6. the first decision rule above that matched;
+7. exactly one final classification.
+
+Do not substitute an informal overall judgment for this calculation.
+
+## 13. Freeze discipline
 
 Do not change:
 
