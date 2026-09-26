@@ -28,7 +28,7 @@ instrument:
   limit:
 ```
 
-Definitions, admission checks, ambiguity handling, and extraction-failure recording are in [docs/instrument-extraction-v0.1.md](docs/instrument-extraction-v0.1.md). The frozen acceptance decision is in [docs/extraction-decision-rule-v0.1.md](docs/extraction-decision-rule-v0.1.md).
+Definitions, admission checks, ambiguity handling, and extraction-failure recording are in [docs/instrument-extraction-v0.1.md](docs/instrument-extraction-v0.1.md). The frozen acceptance decision is in [docs/extraction-decision-rule-v0.1.md](docs/extraction-decision-rule-v0.1.md). The preregistered stress-batch thresholds are in [docs/calibration-thresholds-v0.1.md](docs/calibration-thresholds-v0.1.md).
 
 ## Repository layout
 
