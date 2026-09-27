@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-003",
+    "target_native_profile": {
+      "entities": "Commits, executable service revisions, test inputs, expected and actual outputs, logs, traces, and candidate explanations.",
+      "relations": "Commits precede or descend from other commits; revisions produce outputs on inputs; code changes and runtime evidence support or contradict explanations.",
+      "processes": "Code evolves across revisions, incorrect behavior appears or recurs, and testing progressively narrows the suspected change and plausible explanations.",
+      "operations": "Reproduce the failure, test historical revisions, narrow the good-to-bad interval, inspect relevant diffs and logs, and test competing explanations.",
+      "observables": "Correct or incorrect outputs at particular revisions, reproducibility, changed code, log events, trace differences, and gaps in execution evidence.",
+      "inferences": "Locate the revision boundary associated with the regression and retain or reject explanations according to their consistency with tests and execution evidence.",
+      "failure_modes": "Flaky reproduction, environment differences, untestable revisions, interacting changes, incomplete traces, and confusing temporal association with causation."
+    },
+    "source_transfer_profile": {
+      "entities": "An ordered sequence of service revisions, a reproducible incorrect-result test, known good and bad endpoint revisions, intermediate revisions, and a remaining candidate interval.",
+      "relations": "Revisions are ordered along the selected history; each test places a revision on the good or bad side; endpoint classifications bracket a candidate transition.",
+      "processes": "A testable property changes across revision history, while repeated partitioning and elimination shrink the interval containing its onset.",
+      "operations": "Test an intermediate revision, discard the portion incompatible with its classification under the transition assumption, and repeat until adjacent revisions or an unresolved boundary remain.",
+      "observables": "Good or bad classifications for tested revisions and the progressively shrinking interval; unstable or unavailable classifications expose limits to elimination.",
+      "inferences": "Identify the first revision associated with the incorrect result within the selected interval, conditional on reliable tests and suitable transition behavior; explanations inconsistent with that boundary lose support without establishing a sole cause.",
+      "failure_modes": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple changes, revision interactions, or incorrect endpoints can obstruct localization or yield an associated boundary without uniquely identifying a cause."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Revisions, regression tests, good and bad endpoints, and suspect intervals are ordinary debugging objects; no counterpart needs construction."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Revision ordering and tests bracketing a behavioral change are conventional relations in regression debugging."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Regression onset and progressive narrowing of its location directly describe familiar target processes."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Repeated intermediate-revision testing and elimination are standard regression bisection, directly applicable to the supplied history and reproducible inputs."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Revision-specific pass/fail outcomes and a narrowing suspect interval already count as ordinary debugging evidence."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Inferring a first bad revision while separating localization from causal proof preserves ordinary debugging inference rules."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Unreliable tests, unsuitable history, interactions, and association-versus-causation errors are familiar limitations of historical regression testing."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary-practice example is using git bisect with a reproducing test and known good and bad commits to locate a regression.",
+      "rationale": "A competent regression debugger could reach for this exact partition-and-test mechanism without a source-domain prompt. Its present conventional use supports Native rather than treating the specialized operation as an unfamiliar extension."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism is conventional within the specified target problem and preserves its objects, evidence, and inference rules. The closest boundary is Adjacent, but selecting bisection from the target's existing repertoire introduces no unfamiliar representational structure. This case cautions that a method can change the sequence of tests and focus attention on a boundary without creating Adjacent-to-Remote displacement; it supplies no positive evidence for that boundary hypothesis.",
+    "uncertainty": [
+      "The packet does not establish a verified good endpoint, testability of every revision, or monotonic behavior; these affect successful localization rather than ontological distance.",
+      "Bisection localizes an associated change but does not alone settle all causal explanations; logs, traces, and further experiments may still be needed.",
+      "Individual teams may differ in familiarity with bisection, although it is conventional in the specified target practice."
+    ]
+  }
+}

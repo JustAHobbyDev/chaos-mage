@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-019",
+    "target_native_profile": {
+      "entities": "Revisions, commits, service code and state, test inputs, expected results, logs, traces, and candidate explanations.",
+      "relations": "Commits precede revisions; execution follows code paths; inputs and state influence results; observations support or contradict explanations.",
+      "processes": "Changes introduce regressions, execution propagates incorrect state, and logging or tracing records selected behavior.",
+      "operations": "Reproduce failures, compare revisions, bisect history, inspect changes, and add targeted assertions, logging, or breakpoints.",
+      "observables": "Incorrect outputs, passing and failing revisions, exception sites, state values, log events, and trace gaps.",
+      "inferences": "Locate the behavioral transition, narrow the responsible execution paths, and retain or reject explanations against observations.",
+      "failure_modes": "Flaky tests, environment differences, interacting commits, misleading correlations, incomplete traces, and instrumentation that changes behavior."
+    },
+    "source_transfer_profile": {
+      "entities": "Persistent code or runtime state associated with the regression, targeted executable probes, and locations producing diagnostic responses.",
+      "relations": "A past change may leave a latent implementation or state signature; that signature enables a probe response without uniquely identifying its origin.",
+      "processes": "Regression-relevant conditions persist unnoticed until a targeted execution and diagnostic condition expose them; later changes or state resets may erase them.",
+      "operations": "Apply a reproducible input with a conditional assertion, logpoint, or breakpoint that produces a response when a suspected regression-associated condition is encountered.",
+      "observables": "An otherwise absent diagnostic event localized to an execution site or state, including its presence or absence in a tested revision.",
+      "inferences": "A response supports the presence and location of a responsive condition; it does not alone establish which commit produced it or whether it caused the incorrect result.",
+      "failure_modes": "Benign conditions can trigger the same diagnostic; unexercised paths, overwritten state, or inadequate sensitivity can conceal relevant conditions; probing can alter timing or state needed for later investigation."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Persistent defects, hidden runtime states, diagnostic probes, and execution sites are ordinary debugging objects."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Distinguishing a condition that triggers a diagnostic from the historical change responsible for it is conventional debugging reasoning."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Dormant faults becoming visible under particular inputs, and relevant state disappearing after subsequent execution, are familiar processes."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Conditional instrumentation preserves the source's active, condition-dependent production of a signal and is already an ordinary debugging operation."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "A newly triggered assertion, log event, or breakpoint at a particular location is conventional evidence."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Inferring that a condition occurred while withholding attribution to a particular commit follows ordinary diagnostic standards."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "False alarms, missed execution paths, lost state, and probe-induced behavior changes have direct debugging counterparts."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "Ordinary debugging examples include conditional breakpoints and temporary assertions that emit a localized signal only when a suspected state is reached.",
+      "rationale": "A competent debugger could plausibly use these operations without a forensic prompt. Their present conventionality supports Native despite the different source materials."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism transfers directly to targeted execution with conditional diagnostics: latent conditions enable localized responses whose historical meaning remains uncertain. The closest boundary is Adjacent if constructing a selective historical signature requires unfamiliar machinery, but the packet does not require that. The operation changes what becomes visible during an investigation, yet does not change the target's ordinary representational or inferential repertoire; this cautions against using changed observations alone as evidence for Remote.",
+    "uncertainty": [
+      "No particular regression-associated signature is supplied; its selectivity and ability to distinguish competing explanations remain unknown.",
+      "Executable conditions provide the strongest counterpart. Incomplete stored traces may contain no surviving evidence that an active probe can expose.",
+      "A localized response may identify an execution condition without locating the first bad commit; revision comparison and causal checks remain necessary.",
+      "Instrumentation practices and their availability vary across services and debugging specialties."
+    ]
+  }
+}

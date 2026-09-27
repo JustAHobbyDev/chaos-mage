@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-008",
+    "target_native_profile": {
+      "entities": "Users, exposure groups, rollout dates, adoption events, errors, retention cohorts, and market conditions.",
+      "relations": "Users receive feature exposure; adoption and errors are associated with exposure; retention depends on cohort and elapsed time; market changes can affect all groups.",
+      "processes": "Adoption grows or plateaus, errors emerge or subside, and retention develops as cohorts age after the rollout.",
+      "operations": "Expand exposure, monitor weekly metrics, compare with pre-rollout behavior and available comparison groups, and examine cohort differences and concurrent changes.",
+      "observables": "Adoption curves, error rates, cohort retention, departures from baseline, and differences between exposure groups.",
+      "inferences": "Assess whether uptake persists, reliability deteriorates, or retention changes, while separating descriptive trends from claims about feature effects.",
+      "failure_modes": "Changing user composition, cohort aging, seasonality, concurrent releases, market shifts, measurement changes, and inadequate follow-up can mislead."
+    },
+    "source_transfer_profile": {
+      "entities": "The exposed user population and product form a dynamic system; exposure share is its input, and adoption, errors, and retention are measured outputs.",
+      "relations": "A known sustained increase in exposure is linked to subsequent output trajectories, with delays and operating conditions shaping the response.",
+      "processes": "Outputs move from their initial state through a transient toward later behavior, potentially showing rise, overshoot, oscillation, settling, or a persistent level change.",
+      "operations": "Apply the known step from pilot exposure to a fixed larger share, record initial output levels, and follow each output through the transient and later weeks.",
+      "observables": "Estimate response delay, rise, peaks, overshoot, oscillation, settling, and later level changes where the data support them; stable endpoints may remain unobserved.",
+      "inferences": "Use temporal response features to characterize reaction to increased exposure and constrain candidate dynamic models, conditional on competing market influences.",
+      "failure_modes": "Market disturbances, interacting releases, uncertain initial conditions, noisy metrics, adoption ceilings, nonlinear exposure effects, and short observation windows can distort inferred dynamics; retention cohorts may not supply a consistent output series."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Users and metrics remain recognizable, but treating the product and population together as one input-output system adds an aggregate analytical object."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Exposure-to-metric relationships are ordinary; organizing them as a dynamic input-output response adds structure without replacing them."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Delayed uptake, temporary error spikes, and stabilization are recognizable rollout processes."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "The specified rollout already performs the distinctive operation: a known increase to fixed exposure followed by longitudinal output recording."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The underlying metrics and curves stay intact; explicitly extracting overshoot, settling, and response delay extends their usual summaries."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Characterizing persistence and delay is familiar, while using response features to constrain candidate dynamic models extends ordinary rollout assessment."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Confounding changes, noisy metrics, saturation, cohort differences, and inadequate follow-up already matter in competent rollout monitoring."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary rollout monitoring tracks adoption after exposure increases, watches for error spikes, and checks whether metrics stabilize. Explicit step-response model characterization is less clearly conventional across product teams.",
+      "rationale": "A practitioner could plausibly perform the core operation without control-engineering prompting. This substantial overlap lowers the classification to Adjacent, while the full dynamic-system interpretation remains an extension."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer preserves users, exposure, metrics, and the rollout's actual intervention while adding systematic response-feature interpretation. Native is the closest boundary because the defining operation is already present; explicit dynamic-system characterization keeps the full transfer provisionally Adjacent. This also qualifies the proposed Adjacent-to-Remote boundary: modest changes in what practitioners notice or infer can occur within Adjacent without meaningful ontological reinterpretation across several dimensions.",
+    "uncertainty": [
+      "Product teams vary in their use of dynamic models; teams routinely estimating response delays and settling could warrant Native.",
+      "The packet does not establish randomization, comparison groups, or stable cohort composition, so response timing alone cannot identify the rollout's causal effect.",
+      "Retention requires a consistent cohort and observation-age definition to function as a comparable output trajectory; subsequent weeks may not reveal settling or steady state."
+    ]
+  }
+}

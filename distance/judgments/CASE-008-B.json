@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-008",
+    "target_native_profile": {
+      "entities": "Feature exposure levels, exposed user cohorts, rollout dates, and time series of adoption, errors, and retention.",
+      "relations": "Exposure changes precede metric changes; outcomes vary with cohort composition, elapsed time, and concurrent market conditions.",
+      "processes": "Users discover and adopt the feature, errors emerge or subside, and retention outcomes mature over subsequent weeks.",
+      "operations": "Increase exposure to a fixed larger share, record baseline and subsequent metrics, compare cohorts and periods, and annotate concurrent changes.",
+      "observables": "Metric shifts, delayed adoption, error spikes, persistent trends, plateaus, and retention differences at comparable cohort ages.",
+      "inferences": "Describe the timing, magnitude, and persistence of rollout-associated changes, with causal attribution limited by concurrent changes.",
+      "failure_modes": "Changing cohort composition, immature retention measurements, seasonality, market shocks, instrumentation changes, and unrelated product changes can mislead."
+    },
+    "source_transfer_profile": {
+      "entities": "The product and user population form a dynamic system; exposure share is its input, and adoption, errors, and retention are measured outputs.",
+      "relations": "A known exposure step perturbs the system from an initial operating condition; output trajectories depend on elapsed time, initial state, and external disturbances.",
+      "processes": "The exposure increase initiates transient responses that may exhibit delay, rise, overshoot, oscillation, and eventual settling or persistent change.",
+      "operations": "Apply the known step from pilot exposure to a fixed larger share and record each output trajectory from baseline through its transient and later behavior.",
+      "observables": "Measure delay, rise, peak, overshoot, oscillation, settling, and later level changes where present; cohort-based retention requires an explicit time and aggregation convention.",
+      "inferences": "Use trajectory features to characterize response dynamics and constrain candidate temporal models, while recognizing that market changes can produce competing explanations.",
+      "failure_modes": "Noise, uncertain baseline state, adoption saturation, nonlinear exposure effects, interacting changes, short follow-up, and operating-point dependence limit interpretation and generalization."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Exposure shares, user populations, and metric time series already constitute the ordinary objects of rollout monitoring; treating them as inputs and outputs requires no new counterparts."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Relating a rollout change to subsequent metrics while accounting for other influences is ordinary target reasoning."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Adoption lags, temporary error spikes, and later stabilization are familiar product rollout processes."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "The target explicitly performs the source's distinctive operation: a known step to a fixed exposure level followed by observation over time."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Delays, peaks, fluctuations, and persistent versus temporary metric shifts are recognizable dashboard evidence; engineering terminology does not substantially change what is observed."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Explicitly using response features to discriminate candidate dynamic models extends routine rollout description, but retains the same metrics and temporal evidence."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Concurrent market changes, noisy metrics, baseline differences, saturation, and insufficient follow-up are familiar limitations of rollout interpretation."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary rollout review plots adoption and error rates around an exposure increase, checks for delayed effects and temporary spikes, and follows retention as cohorts mature. The supplied target already specifies the step-and-observe procedure.",
+      "rationale": "A competent product practitioner could independently reach for this representation. Formal dynamic-model discrimination is less universally routine, but the operational mechanism is naturalized, supporting Native despite its control-engineering formulation."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source preserves the target's existing entities, temporal evidence, and concrete step-and-observe operation. The closest boundary is Adjacent: explicit discrimination among dynamic models adds a modest inferential extension. This case cautions against treating any change in inference as sufficient for Remote; that extension does not require meaningful reinterpretation across several dimensions.",
+    "uncertainty": [
+      "Product teams vary in their use of formal temporal models and quantitative settling or oscillation measures.",
+      "The packet does not specify cohort selection, retention aggregation, comparison groups, or baseline duration.",
+      "A stable later response may not emerge amid market changes; failure to settle limits inference without increasing ontological distance."
+    ]
+  }
+}

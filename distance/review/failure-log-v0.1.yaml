@@ -1,0 +1,356 @@
+reviewer: Implementation agent; unblinded qualitative review after automated freeze
+disagreement_case_count: 8
+category_vocabulary:
+- target-native-profile-unclear
+- source-profile-unclear
+- naturalization-uncertain
+- disciplinary-distance-substitution
+- semantic-distance-substitution
+- operation-distance-overweighted
+- entity-vocabulary-overweighted
+- mapping-difficulty-confused-with-distance
+- usefulness-confused-with-distance
+- class-boundary-unclear
+- other
+coverage: All cases with any class, dimension-level, or naturalization-status disagreement are included.
+  Categories describe review questions, not verified error counts.
+disagreements:
+- case_id: CASE-006
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - naturalization-uncertain
+  - target-native-profile-unclear
+  final_classes:
+    A: Native
+    B: Native
+  dimension_differences: {}
+  naturalization_difference:
+    A:
+      status: native
+      evidence: An ordinary troubleshooting example is temporarily removing an approval gate, tracking
+        turnaround time, and comparing performance when the gate is reinstated. The packet explicitly
+        supplies the ability to suspend and restore the meeting.
+      rationale: A competent practitioner could plausibly reach for reversible process trials without
+        clinical prompting. Deliberate restoration solely to test recurrence may be less routine, but
+        the representation and causal reasoning are conventional; this supports Native despite the clinical
+        source.
+    B:
+      status: partially-naturalized
+      evidence: An ordinary process-improvement example is trialing removal of an approval step and comparing
+        delivery times while checking staffing and demand. Deliberate reinstatement solely to test recurrence
+        is less clearly routine; the packet supplies no evidence about its prevalence.
+      rationale: A competent practitioner could plausibly reach for reversible process experiments without
+        clinical prompting. This supports Native overall, while the complete withdrawal-and-restoration
+        sequence warrants a small operational extension.
+  review: Both assign Native and the same vector. A calls the full operation native; B distinguishes ordinary
+    withdrawal trials from less clearly routine deliberate restoration. Packet feasibility does not establish
+    practice prevalence.
+  evidence:
+  - ../judgments/CASE-006-A.json
+  - ../judgments/CASE-006-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-008
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - naturalization-uncertain
+  - target-native-profile-unclear
+  - class-boundary-unclear
+  final_classes:
+    A: Adjacent
+    B: Native
+  dimension_differences:
+    entities:
+      A:
+        level: 1
+        rationale: Users and metrics remain recognizable, but treating the product and population together
+          as one input-output system adds an aggregate analytical object.
+      B:
+        level: 0
+        rationale: Exposure shares, user populations, and metric time series already constitute the ordinary
+          objects of rollout monitoring; treating them as inputs and outputs requires no new counterparts.
+    relations:
+      A:
+        level: 1
+        rationale: Exposure-to-metric relationships are ordinary; organizing them as a dynamic input-output
+          response adds structure without replacing them.
+      B:
+        level: 0
+        rationale: Relating a rollout change to subsequent metrics while accounting for other influences
+          is ordinary target reasoning.
+    observables:
+      A:
+        level: 1
+        rationale: The underlying metrics and curves stay intact; explicitly extracting overshoot, settling,
+          and response delay extends their usual summaries.
+      B:
+        level: 0
+        rationale: Delays, peaks, fluctuations, and persistent versus temporary metric shifts are recognizable
+          dashboard evidence; engineering terminology does not substantially change what is observed.
+  naturalization_difference:
+    A:
+      status: partially-naturalized
+      evidence: Ordinary rollout monitoring tracks adoption after exposure increases, watches for error
+        spikes, and checks whether metrics stabilize. Explicit step-response model characterization is
+        less clearly conventional across product teams.
+      rationale: A practitioner could plausibly perform the core operation without control-engineering
+        prompting. This substantial overlap lowers the classification to Adjacent, while the full dynamic-system
+        interpretation remains an extension.
+    B:
+      status: native
+      evidence: An ordinary rollout review plots adoption and error rates around an exposure increase,
+        checks for delayed effects and temporary spikes, and follows retention as cohorts mature. The
+        supplied target already specifies the step-and-observe procedure.
+      rationale: A competent product practitioner could independently reach for this representation. Formal
+        dynamic-model discrimination is less universally routine, but the operational mechanism is naturalized,
+        supporting Native despite its control-engineering formulation.
+  review: A adds an aggregate dynamic-system object and response features; B treats those as ordinary
+    rollout monitoring. Naturalization and entities/relations/observables move together. Supplied step-and-observe
+    capability may prime a Native baseline.
+  evidence:
+  - ../judgments/CASE-008-A.json
+  - ../judgments/CASE-008-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-009
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - target-native-profile-unclear
+  - source-profile-unclear
+  - class-boundary-unclear
+  final_classes:
+    A: Remote
+    B: Adjacent
+  dimension_differences:
+    entities:
+      A:
+        level: 2
+        rationale: Passages and stylistic features remain recognizable, but organizing them as carriers
+          of latent event residue changes their primary evidential role and introduces a constructed probe.
+      B:
+        level: 1
+        rationale: Passages and stylistic features remain the objects of analysis. Treating some as possible
+          compositional traces is recognizable in textual criticism; a specified assay adds an analytical
+          instrument.
+    relations:
+      A:
+        level: 2
+        rationale: Formal recurrence and contrast are reorganized around an event–residue–response relationship.
+          Neither causal persistence nor diagnostic responsiveness follows directly from a textual discontinuity.
+      B:
+        level: 1
+        rationale: Feature-to-formation hypotheses already occur in textual analysis. Adding an explicit
+          feature-to-probe-response relation extends that practice without establishing a reliable causal
+          link to revision.
+    processes:
+      A:
+        level: 2
+        rationale: Revision is familiar, but representing its effects as preservation, removal, or degradation
+          of detectable residue requires a specific account of what survives and how it remains responsive.
+      B:
+        level: 1
+        rationale: Preservation and overwriting fit ordinary accounts of revision. Diagnostic activation
+          adds a constructed analytical process rather than replacing the novel's textual or historical
+          processes.
+    inferences:
+      A:
+        level: 2
+        rationale: The immediate conclusion becomes detection of responsive features, with a separate
+          inferential step to historical residue and another to its producing event. This reorganizes
+          how diagnostic output bears on formation claims.
+      B:
+        level: 0
+        rationale: Separating detection of a textual feature from proof of its historical cause is already
+          ordinary competent reasoning when only a final text survives.
+  naturalization_difference: null
+  review: A organizes passages as event residues and separates detection from historical attribution;
+    B treats feature detection versus causal attribution as already ordinary. Operations and observables
+    agree. The target spans literary interpretation and textual formation, leaving the ordinary practitioner
+    reference class broad.
+  evidence:
+  - ../judgments/CASE-009-A.json
+  - ../judgments/CASE-009-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-010
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - target-native-profile-unclear
+  - class-boundary-unclear
+  final_classes:
+    A: Adjacent
+    B: Adjacent
+  dimension_differences:
+    processes:
+      A:
+        level: 0
+        rationale: Shared disruptions, selective reporting, omissions, and local variation are already
+          recognizable processes in this target problem.
+      B:
+        level: 1
+        rationale: Shared disruptions are treated as producing comparable temporal signatures across departments,
+          extending ordinary attention to how organizational events affect reporting.
+    inferences:
+      A:
+        level: 0
+        rationale: Dating uncertain events, identifying omissions, and checking or extending chronologies
+          are ordinary archival conclusions; the transfer supplies a particular route to them.
+      B:
+        level: 1
+        rationale: Dates are supported by consistent sequence alignment, extending ordinary corroborative
+          dating without changing the kind of chronological conclusion sought.
+  naturalization_difference: null
+  review: Both call the transfer Adjacent. A treats shared disturbances and chronology conclusions as
+    native; B counts shared temporal signatures and alignment-based dating as extensions. Reference expectation
+    Remote warrants inspection, not relabeling.
+  evidence:
+  - ../judgments/CASE-010-A.json
+  - ../judgments/CASE-010-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-013
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - source-profile-unclear
+  - class-boundary-unclear
+  final_classes:
+    A: Remote
+    B: Alien
+  dimension_differences:
+    relations:
+      A:
+        level: 2
+        rationale: Recurrence and textual sequence become transmission along paths through intervening
+          regions. A relationship between two passages does not ordinarily imply that intervening passages
+          causally transform a signal.
+      B:
+        level: 3
+        rationale: Echo, recurrence, and contrast must be reorganized into crossing paths whose intervening
+          regions jointly affect endpoint measurements. Ordinary textual relationships do not establish
+          that traversal relation.
+    processes:
+      A:
+        level: 2
+        rationale: Motif development is reinterpreted as propagation through a heterogeneous medium. This
+          changes the explanatory process, especially because reading order need not represent the chronology
+          of formation.
+      B:
+        level: 3
+        rationale: Interpretive development and possible revision are replaced by signal propagation through
+          a latent medium. The final text supplies no independently established process of this kind.
+    operations:
+      A:
+        level: 2
+        rationale: Comparison and hypothesis revision are ordinary, but the transfer requires explicit
+          forward predictions across many paths and iterative inversion for shared internal properties.
+          That is a substantive change from comparing passages and evaluating historical explanations.
+      B:
+        level: 3
+        rationale: The critic must construct paths and a forward propagation model, then invert many path
+          measurements through iterative residual reduction. This substantially reorganizes comparison
+          and historical interpretation.
+  naturalization_difference: null
+  review: A accepts grounded recurrence chains as provisional propagation paths; B requires a law making
+    intervening regions affect endpoint observations. The disagreement is about what qualifies as a non-arbitrary
+    counterpart, not just vocabulary.
+  evidence:
+  - ../judgments/CASE-013-A.json
+  - ../judgments/CASE-013-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-015
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - class-boundary-unclear
+  - other
+  final_classes:
+    A: Alien
+    B: Alien
+  dimension_differences:
+    processes:
+      A:
+        level: 2
+        rationale: Brand interpretation and expression are familiar processes, but treating their outputs
+          as comparable successive increments with omissions requires substantive reinterpretation.
+      B:
+        level: 3
+        rationale: Meaning formation and expression must be represented as sequential record formation
+          with missing or anomalous increments, a process the packet does not establish.
+  naturalization_difference: null
+  review: 'Both call Alien; only processes differ (reinterpretation versus replacement). Shared concern:
+    both reconstruct chronology even though the target explicitly asks about present meaning. Task substitution
+    may be entangled with displacement; this is a concern, not a proven classification error.'
+  evidence:
+  - ../judgments/CASE-015-A.json
+  - ../judgments/CASE-015-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-016
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - source-profile-unclear
+  - class-boundary-unclear
+  final_classes:
+    A: Remote
+    B: Remote
+  dimension_differences:
+    operations:
+      A:
+        level: 1
+        rationale: Targeted counterfactuals and questions can extend ordinary scenario discussion into
+          selective elicitation without replacing the planning workflow. Their intended diagnostic selectivity
+          remains unestablished.
+      B:
+        level: 2
+        rationale: Scenario questioning is familiar, but using a deliberately assumption-sensitive probe
+          as a diagnostic reaction requires more than asking leaders to explain their choices.
+  naturalization_difference: null
+  review: 'Both call Remote with partially-naturalized practice. A treats probing as an extension; B calls
+    it reinterpretation. Shared concern: both hypothesize prior belief-formation residues not supplied
+    by the target. Source-state relaxation and target invention need separate audit.'
+  evidence:
+  - ../judgments/CASE-016-A.json
+  - ../judgments/CASE-016-B.json
+  resolution: Preserved; no adjudication or class change
+- case_id: CASE-020
+  finding_status: Observed disagreement; reviewer interpretations remain provisional
+  categories:
+  - target-native-profile-unclear
+  - source-profile-unclear
+  final_classes:
+    A: Adjacent
+    B: Adjacent
+  dimension_differences:
+    failure_modes:
+      A:
+        level: 0
+        rationale: Missing instrumentation, repetitive events, local execution differences, unreliable
+          timing anchors, and mistaking correlation for causation are already recognizable debugging hazards.
+      B:
+        level: 1
+        rationale: Incomplete records, misleading correlations, and environmental variation are familiar.
+          Repetitive-pattern ambiguity, insufficient overlap, and incorrect alignment introduce more specialized
+          versions of those concerns.
+  naturalization_difference: null
+  review: 'Both call Adjacent; failure modes differ. Their transfers also differ: A aligns overlapping
+    incident logs, B aligns uncertain records to revision-indexed test bundles. Neither uncertain timing
+    nor revision provenance is explicit in the target; same-class agreement conceals transfer-construction
+    variation.'
+  evidence:
+  - ../judgments/CASE-020-A.json
+  - ../judgments/CASE-020-B.json
+  resolution: Preserved; no adjudication or class change
+shared_concerns:
+- case_ids:
+  - CASE-011
+  - CASE-014
+  categories:
+  - source-profile-unclear
+  - mapping-difficulty-confused-with-distance
+  finding_status: Possible shared confound; not an established error
+  review: Both runs explicitly construct retention/release protocols and admit they might create rather
+    than reveal component patterns. Their Remote labels depend on accepting these constructions as coherent.
+    Distinguish counterpart grounding from inventiveness or practical difficulty; do not automatically
+    upgrade to Alien.
+  evidence:
+  - ../judgments/CASE-011-A.json
+  - ../judgments/CASE-011-B.json
+  - ../judgments/CASE-014-A.json
+  - ../judgments/CASE-014-B.json
+not_observed: No explicit different-disciplines-therefore-high shortcut, semantic-distance score, vocabulary-only
+  high classification, usefulness criterion, or numerical class threshold was found. This is not proof
+  that shared model priors or visible source names had no influence.

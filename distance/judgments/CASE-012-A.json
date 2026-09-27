@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-012",
+    "target_native_profile": {
+      "entities": "Teams, requests, replies, handoffs, queues, workflow stages, and formal versus actual dependencies.",
+      "relations": "Teams request work from other teams; tasks wait on prerequisites; handoffs connect stages; reporting relationships may differ from operational dependencies.",
+      "processes": "Requests are routed, queued, processed, escalated, and answered; coordination delays vary with workload, priorities, and task complexity.",
+      "operations": "Reconstruct partial workflows, compare response and handoff times, identify recurring waits, and contrast observed exchanges with the organization chart.",
+      "observables": "Request and reply timestamps, recorded route segments, repeated delays, exchange patterns, and discrepancies between formal and observed coordination.",
+      "inferences": "Identify likely bottlenecks and dependencies, distinguishing observed waiting patterns from uncertain explanations of their causes.",
+      "failure_modes": "Missing interactions, ambiguous timestamp meanings, task complexity, workload variation, and selection bias can make a team appear responsible for delays originating elsewhere."
+    },
+    "source_transfer_profile": {
+      "entities": "Requests and replies become probes traversing an organizational network; latent node or link delay properties form the hidden internal model. Stable delay properties and unrecorded routes must be constructed.",
+      "relations": "Each observed journey constrains the internal properties along its route; overlapping journeys jointly constrain shared segments. Organizational network position supplies the counterpart to spatial location.",
+      "processes": "Signals propagate through paths whose internal properties systematically alter travel behavior; coordination is represented through a forward model relating routes and latent properties to elapsed times.",
+      "operations": "Measure elapsed times across many request-to-reply paths, predict them from a candidate internal network model, and iteratively adjust latent delay properties and, where justified, candidate dependencies to reduce discrepancies.",
+      "observables": "Structured differences between observed and predicted journey times across overlapping paths, together with the distribution and uncertainty of path coverage.",
+      "inferences": "Use the joint residual pattern to constrain where hidden delay properties lie and which candidate dependencies could explain the observations; inferred topology remains especially uncertain.",
+      "failure_modes": "Sparse routes, uncertain origins and endpoints, timestamp error, regularization, and non-unique network models can create apparent bottlenecks. Adaptive routing, parallel work, and changing priorities can invalidate the propagation model."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Teams, journeys, and network segments remain recognizable target objects; latent delay parameters extend familiar notions of service and waiting time."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "Operational dependencies become path-incidence constraints through which shared internal parameters jointly explain multiple journeys, requiring more than an ordinary handoff map."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "Contingent coordination and intentional decisions must be represented as sufficiently systematic effects on signal propagation for a forward model to work."
+      },
+      "operations": {
+        "level": 2,
+        "rationale": "The central operation becomes iterative inversion of many path measurements against a candidate internal model, beyond comparing delays or reconstructing recorded workflows."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The underlying timestamps and routes stay intact; jointly structured prediction residuals and coverage become additional evidence derived from them."
+      },
+      "inferences": {
+        "level": 2,
+        "rationale": "Attribution shifts toward reconstructing latent internal properties from overlapping path constraints. Inferring previously unknown dependencies additionally requires uncertain topology estimation."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Missing data and confounding are familiar; coverage artifacts, regularization dependence, and multiple internal models fitting the same journeys extend those concerns."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Workflow analysis and process mining ordinarily use event timestamps, handoff networks, and elapsed-time patterns to locate bottlenecks. These examples do not establish that iterative multipath inversion is conventional in organizational analysis.",
+      "rationale": "A practitioner could plausibly reach for network and delay models without seismology prompting them. The full reconstruction procedure has less established ordinary use, keeping the judgment near Adjacent while reducing the displacement implied by a wholly foreign representation."
+    },
+    "final_class": "Remote",
+    "class_rationale": "The transfer coherently connects journeys, shared route segments, elapsed times, and hidden coordination delays, but reinterprets coordination as propagation through an estimable internal structure. Relations, processes, operations, and inferences change meaningfully. The closest boundary is Adjacent: timestamps, network objects, and bottleneck questions remain familiar, and quantitative workflow specialists may already use comparable inverse models. This supports the proposed boundary through iterative reconstruction, while familiar residual analysis and indirect attribution provide counterevidence to treating changed operations alone as sufficient.",
+    "uncertainty": [
+      "The packet does not establish the analyst's specialty or whether comparable inverse network models are ordinary in that setting.",
+      "Request-to-reply elapsed time may combine forward routing, processing, parallel work, and return routing rather than represent one identifiable path.",
+      "Partial routes may insufficiently constrain hidden topology; tomography more directly supports estimating properties on a specified network than discovering arbitrary dependencies.",
+      "Whether organizational delays remain stable enough across journeys for shared internal parameters is unknown."
+    ]
+  }
+}

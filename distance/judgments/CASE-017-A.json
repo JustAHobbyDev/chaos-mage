@@ -1,0 +1,63 @@
+{
+  "classification": {
+    "case_id": "CASE-017",
+    "target_native_profile": {
+      "entities": "Patient presentation, candidate diagnoses, history, examination findings, and test results.",
+      "relations": "Findings support, contradict, or fail to distinguish candidate diagnoses; diagnoses can explain overlapping findings.",
+      "processes": "Evidence accumulates and changes the relative plausibility of competing diagnoses.",
+      "operations": "Generate a differential, compare findings against candidates, seek discriminating evidence, and revise priorities without premature commitment.",
+      "observables": "Patterns of symptoms, signs, and test results, including pertinent absences and findings shared by several diagnoses.",
+      "inferences": "Prioritize, retain, or provisionally exclude diagnoses according to explanatory adequacy, prior plausibility, and evidence strength.",
+      "failure_modes": "Omitted diagnoses, anchoring, premature closure, confirmation bias, base-rate neglect, unreliable tests, and double-counting dependent evidence."
+    },
+    "source_transfer_profile": {
+      "entities": "The patient's observations and multiple candidate conditions or mechanisms explaining them.",
+      "relations": "Each observation bears differently on competing explanations through support, contradiction, or non-discrimination.",
+      "processes": "Accumulating evidence repeatedly revises the relative plausibility of candidates and narrows the plausible set.",
+      "operations": "Generate multiple explanations, gather or inspect evidence that discriminates among them, and repeatedly reprioritize, eliminate, or retain candidates.",
+      "observables": "The pattern of support, contradiction, and non-discrimination produced by history, examination findings, and test results across candidates.",
+      "inferences": "Narrow the plausible explanations while retaining unresolved alternatives and avoiding an early single-cause commitment.",
+      "failure_modes": "An incomplete candidate set, poor or dependent evidence, limited test sensitivity or specificity, anchoring, premature closure, base-rate neglect, and confirmation bias."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Observations and competing diagnoses are already the ordinary objects of the stated target problem."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Support, contradiction, and failure to discriminate are ordinary relationships between clinical findings and candidate diagnoses."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Updating a differential as evidence accumulates is native clinical diagnostic reasoning."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Generating alternatives, seeking discriminating evidence, and repeatedly revising their plausibility directly match ordinary differential diagnosis."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "The transfer uses the same history, examination, and test findings and their diagnostic significance."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Prioritizing, retaining, and excluding candidate diagnoses requires no change to the target's inference rules."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Candidate omission, evidence dependence, test limitations, and cognitive biases are familiar limitations of clinical diagnosis."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "Ordinary practice includes constructing a differential diagnosis and using pertinent positive and negative findings to revise it; the target problem explicitly describes that situation.",
+      "rationale": "A competent clinician would plausibly use this representation without any source-domain prompt. Its present conventionality supports Native, independently of the matching domain labels."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism directly instantiates the target's ordinary reasoning: competing diagnoses are compared and repeatedly revised using discriminating evidence. No counterparts require construction. The closest boundary is Adjacent, but the packet introduces no unfamiliar structure or operation warranting even that extension. This case does not test the Adjacent–Remote boundary; it shows no change in what the reasoner does, notices, or infers and provides no counterexample to the proposed boundary hypothesis.",
+    "uncertainty": [
+      "Specialties and individual clinicians vary in how explicitly they track hypotheses and evidence dependence; that variation does not establish displacement for this broadly stated target."
+    ]
+  }
+}

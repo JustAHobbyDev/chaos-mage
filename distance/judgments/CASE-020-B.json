@@ -1,0 +1,67 @@
+{
+  "classification": {
+    "case_id": "CASE-020",
+    "target_native_profile": {
+      "entities": "Commits, builds, test inputs and outputs, execution events, logs, incomplete traces, and candidate explanations.",
+      "relations": "Commits precede or modify other revisions; builds execute particular code; inputs produce outputs; logs and traces record execution; observations support or contradict explanations.",
+      "processes": "Code changes alter behavior, errors propagate through execution, and instrumentation records only part of what occurred.",
+      "operations": "Reproduce the error, compare passing and failing revisions, bisect history where appropriate, inspect diffs and traces, and test explanations through controlled changes.",
+      "observables": "The first reproducibly failing revision, output differences, changed execution paths, logged errors, trace gaps, and responses to reverting or modifying code.",
+      "inferences": "Bound where behavior changed, identify changes that contribute to the failure, and retain or reject explanations according to reproducible evidence.",
+      "failure_modes": "Flaky tests, environmental differences, interacting commits, nonmonotonic failures, misleading timestamps, incomplete instrumentation, and confusing temporal association with causation."
+    },
+    "source_transfer_profile": {
+      "entities": "Overlapping ordered records of behavior signatures, with known-revision test runs serving as reference records and uncertain-provenance logs or traces serving as records to place. A counterpart to a growth increment must be constructed, such as a revision-indexed test-result bundle; the packet does not establish that such records already exist.",
+      "relations": "Records overlap along a revision chronology and partly share the effects of code changes or execution conditions; distinctive sequences of behavior signatures establish correspondence between uncertain and anchored positions.",
+      "processes": "Successive revisions or repeated executions produce ordered behavioral records; collection gaps, duplicate entries, or incorrect grouping omit, add, or misassign apparent increments.",
+      "operations": "Compare ordered sequences of behavior signatures across reference and uncertain records, shift their relative alignment, and seek consistent matches of distinctive multi-position patterns across multiple records.",
+      "observables": "Repeated pattern matches at one alignment, agreement across independent records, and residual inconsistencies indicating missing, extra, or misassigned increments.",
+      "inferences": "Assign uncertain observations to revision positions, check or extend the reconstructed behavior chronology, and narrow explanations by whether they are temporally compatible with that chronology; matching alone does not establish causation.",
+      "failure_modes": "Run-specific disturbances, weak shared behavior signals, repetitive outputs, short overlap, measurement or grouping errors, incorrect reference labels, and variable event counts can support ambiguous or false alignments."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Commits, executions, and recorded observations remain the objects of interest. Grouping observations into comparable ordered increments adds a representation whose availability is uncertain."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Temporal order, record correspondence, and revision provenance are familiar debugging relationships. Inferring provenance from overlapping signature patterns extends those relationships."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Behavior changing across revisions and records becoming incomplete are ordinary debugging processes. Treating multiple records as parallel responses to shared influences adds an assumption about their comparability."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Sequence comparison and trace alignment fit existing debugging practice. Systematically shifting uncertain records against references and demanding repeated multi-position agreement adds a specialized alignment procedure without reorganizing the debugging problem."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Outputs, event patterns, and gaps remain evidence. Cross-record agreement at a candidate offset becomes an additional diagnostic signal."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Reconstructing chronology and locating behavioral transitions are already target goals. Pattern agreement adds a defeasible route to revision attribution, while causal explanations still require ordinary debugging tests."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Incomplete records, misleading correlations, and environmental variation are familiar. Repetitive-pattern ambiguity, insufficient overlap, and incorrect alignment introduce more specialized versions of those concerns."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary debugging includes comparing execution traces, correlating logs through shared events, and reconstructing event order. General knowledge supports these examples, but the packet supplies no evidence that engineers routinely crossdate uncertain revision sequences through repeated pattern matching.",
+      "rationale": "A practitioner could plausibly reach for record alignment without a dendrochronological prompt. The complete procedure of shifting overlapping behavioral chronologies is less clearly conventional. This partial naturalization favors Adjacent over Remote."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer introduces a specific pattern-alignment method while retaining software revisions, behavioral observations, chronology, and evidential testing as the main representation. The closest boundary is Remote: importing uncertain temporal attribution changes which pattern agreements engineers inspect and what provenance they infer, but these changes remain extensions of familiar trace correlation and history reconstruction. This is evidence against treating any change in what a reasoner does, notices, or infers as sufficient for Remote; the change here does not require meaningful reinterpretation across several dimensions.",
+    "uncertainty": [
+      "The packet does not say whether logs or traces have uncertain revision provenance, rather than merely missing events; crossdating may address a secondary problem.",
+      "It is unclear whether enough overlapping records and distinctive shared patterns exist to construct reliable increments.",
+      "Execution-event counts need not correspond consistently to commits or elapsed time; a defensible common ordering must be specified.",
+      "Specialists in distributed tracing may regard more of the alignment procedure as native than practitioners focused on revision bisection.",
+      "Chronological alignment can restrict plausible explanations but cannot independently identify the causal code change."
+    ]
+  }
+}

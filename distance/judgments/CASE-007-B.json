@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-007",
+    "target_native_profile": {
+      "entities": "Report versions, source datasets, intermediate outputs, editors, transformation jobs, and audit records.",
+      "relations": "Versions derive from inputs, edits are attributed to actors, transformations connect outputs to sources, and workflow events precede one another.",
+      "processes": "Editing, transformation, merging, approval, and transfer produce successive report versions and associated provenance records.",
+      "operations": "Trace the final report back through version histories, transformation metadata, and workflow logs; check attribution, timestamps, and missing or inconsistent events.",
+      "observables": "Recorded dependencies, version differences, actor and time metadata, unexplained changes, and gaps in the audit trail.",
+      "inferences": "Recorded lineage supports traceability to original inputs and attribution of changes; gaps leave parts of the report's history unaccounted for.",
+      "failure_modes": "Incomplete or unreliable logs, ambiguous version identity, missing external edits, and mistaking traceability for data accuracy or proof that no undocumented changes occurred."
+    },
+    "source_transfer_profile": {
+      "entities": "Report versions and inputs serve as tracked items; editors and automated jobs serve as handlers; event records document their custody and handling.",
+      "relations": "Each handling or transfer event links an identified version to a responsible party, time, purpose, and predecessor or successor in its documented history.",
+      "processes": "The report passes through handlers and transformations that can introduce documented changes, substitutions, or unrecorded alterations.",
+      "operations": "Record each transfer and handling event with responsible party, time, and purpose, then inspect the linked history for continuity and unexplained transitions.",
+      "observables": "A continuous, internally consistent handling history connects the final report to its inputs; missing events, conflicting metadata, or unexplained version transitions signal documentation breaks.",
+      "inferences": "Continuity supports the final report's documented provenance through accounted-for transformations; gaps weaken that claim without proving alteration.",
+      "failure_modes": "False or incomplete event records can conceal changes despite apparent continuity; missing records can suggest a break without any actual alteration. Reliability depends on recording and safeguarding controls."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Artifacts, versions, actors, automated jobs, and audit events are ordinary objects in data lineage and document workflow."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Attribution, succession, transfer, and derivation already connect report versions and their inputs; custody continuity uses these existing relationships."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Handling, editing, transformation, and possible undocumented modification are already the processes this audit examines."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Recording event metadata and inspecting the resulting history for continuity are conventional audit-trail operations. Requiring purpose for every event adds recording detail without changing the operation."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Missing events, contradictory metadata, and unexplained version changes already count as evidence of incomplete lineage."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Documented continuity already supports provenance rather than guaranteeing substantive correctness or the absence of hidden changes."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Unreliable logs, undocumented edits, and overinterpreting missing or complete records are familiar limitations of workflow and lineage audits."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "Ordinary examples include document version histories with editor attribution, workflow audit logs with timestamps, and transformation lineage linking outputs to inputs. These are general-practice examples, not evidence about this particular implementation.",
+      "rationale": "A competent practitioner auditing this problem would plausibly inspect recorded handling and transformation history without a forensic prompt. Present naturalization makes the relationship Native despite the source's forensic identity."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source's distinctive operation—recording handling events and checking documentary continuity—preserves ordinary target entities, evidence, and provenance reasoning. The closest boundary is Adjacent if exhaustive handoff and purpose recording extends a particular team's procedures, but the packet does not establish an unfamiliar representation. This case provides no direct test of the Adjacent–Remote boundary: additional recording requirements could change practical activity without requiring ontological reinterpretation.",
+    "uncertainty": [
+      "The packet does not specify existing logging coverage, safeguards, or whether every transfer includes a recorded purpose.",
+      "A transformed report is a documented derivative of its inputs, rather than an unchanged item. Applying continuity across explicit version and transformation links is conventional here, but literal unchanged-item identity would be inappropriate.",
+      "Practices vary across informal editing workflows and formally audited data systems; the judgment concerns ordinary competent practice for the stated audit problem."
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-003",
+    "target_native_profile": {
+      "entities": "Commits, service versions, test inputs, expected and actual results, logs, traces, and competing explanations.",
+      "relations": "Commits precede and modify versions; versions produce results; logs and traces record execution; evidence supports or weakens explanations.",
+      "processes": "Code changes alter execution and can introduce, remove, or mask incorrect behavior.",
+      "operations": "Reproduce the error, compare versions, inspect changes and execution evidence, narrow the regression interval, and test candidate explanations.",
+      "observables": "Correct or incorrect test results, output differences, log events, trace differences, and version boundaries where behavior changes.",
+      "inferences": "Identify the earliest failing version within the investigated history, implicate changes, and retain or reject explanations according to reproduction and execution evidence.",
+      "failure_modes": "Flaky reproduction, environment differences, missing traces, interacting changes, and confusing the first observed failure with a uniquely established cause."
+    },
+    "source_transfer_profile": {
+      "entities": "An ordered sequence of service revisions, known passing and failing endpoints, intermediate revisions, and a reproducible correctness test.",
+      "relations": "Revisions are ordered; each tested revision falls on the passing or failing side; endpoint classifications bound the remaining candidate transition interval.",
+      "processes": "A correctness transition occurs along revision history, while repeated tests progressively shrink the interval containing it.",
+      "operations": "Test an intermediate revision, discard the portion incompatible with its classification under the single-transition assumption, and repeat until the boundary is localized.",
+      "observables": "A passing or failing result for each tested revision and the progressively narrowing interval between classified endpoints.",
+      "inferences": "Repeated elimination identifies the first failing revision relative to the selected history and endpoints; explanations inconsistent with that boundary weaken, but causal attribution requires further evidence.",
+      "failure_modes": "Flaky tests, unbuildable revisions, incorrect endpoints, nonmonotonic failures, independent changes, or revision interactions can defeat localization or yield a boundary that is only correlated with the cause."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Revisions, tests, and passing or failing versions are ordinary objects in software regression debugging."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Revision ordering and bounding a regression between passing and failing versions are conventional target relationships."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Behavior changing across commits and progressively narrowing its introduction interval require no reinterpretation."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Repeated intermediate-revision testing and elimination is regression bisection, a standard operation for this target problem."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Reproducible pass/fail outcomes and the resulting revision boundary are ordinary debugging evidence."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Localizing the first failing revision while distinguishing association from sufficient causal explanation uses familiar debugging inference rules."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Flakiness, unsuitable endpoints, nonmonotonic regressions, and interacting commits are recognized limitations of version-based diagnosis."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "Ordinary software regression practice includes tools such as git bisect, which repeatedly test intermediate commits between known passing and failing revisions.",
+      "rationale": "A competent engineer could plausibly choose this exact operation for the supplied problem without an external analogy. Its present conventional use supports Native."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism is already conventional within the target practice, including its partition-and-test operation and boundary-localization inference. The closest boundary is Adjacent, but selecting a specialized standard debugging procedure does not introduce an unfamiliar ontology. This case limits any reading of the Adjacent–Remote hypothesis that treats a change in immediate workflow or attention as sufficient: bisection focuses attention on binary outcomes and revision boundaries while remaining native.",
+    "uncertainty": [
+      "The packet does not establish a verified passing endpoint, buildability of intermediate revisions, or monotonic behavior; these affect whether bisection succeeds, not its ontological status.",
+      "A usable revision ordering must be selected if the history branches or contains merges.",
+      "Bisection alone cannot resolve all plausible explanations; incomplete traces and interactions may leave causal ambiguity after the transition is localized."
+    ]
+  }
+}

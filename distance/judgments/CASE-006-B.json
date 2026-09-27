@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-006",
+    "target_native_profile": {
+      "entities": "Work items, approval meetings, approval decisions, delivery stages, team members, workload, staffing, and cycle times.",
+      "relations": "Work items wait for approvals; meeting schedules constrain approval timing; workload and staffing affect queues and delivery speed.",
+      "processes": "Items move through delivery stages, accumulate in queues, receive approval, and finish; process changes can alter waiting time and throughput.",
+      "operations": "Inspect workflow and timestamps, locate waiting stages, compare periods, trial changes to approval arrangements, and check workload and staffing explanations.",
+      "observables": "Cycle-time distributions, time waiting for approval, queue sizes, meeting dates, workload, and staffing changes.",
+      "inferences": "Evidence can identify approval bottlenecks and support a meeting's contribution to delays, subject to competing explanations.",
+      "failure_modes": "Changing work mix, staffing, concurrent interventions, ordinary variation, and lingering backlogs can mislead comparisons."
+    },
+    "source_transfer_profile": {
+      "entities": "The approval meeting is the suspected causal factor; delivery delay is the effect; work items and observation periods carry measurements.",
+      "relations": "Meeting presence or absence is temporally linked to cycle time, while workload and staffing provide alternative causal influences.",
+      "processes": "Suspension removes the suspected contribution; restoration may renew it; existing queues can delay either response.",
+      "operations": "Suspend the meeting and observe cycle time; where justified and feasible, restore it and observe whether delays return, checking concurrent workload and staffing changes.",
+      "observables": "Cycle time decreases after suspension and increases again after restoration, with attention to response timing and reproducibility.",
+      "inferences": "A reproducible removal-and-restoration response strengthens support for the meeting's causal contribution without establishing it as the sole cause.",
+      "failure_modes": "Spontaneous variation, concurrent changes, delayed queue clearance, persistent effects, and impractical or disruptive restoration can obscure or mimic the response."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Meetings, work items, delays, and alternative contributing factors already belong to ordinary process troubleshooting."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Temporal and causal links between approval arrangements and delivery time are native relationships."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Removing a process constraint, reinstating it, and allowing queues to respond require no new account of organizational change."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Reversible process trials are familiar; deliberately restoring a suspected source of delay to test recurrence adds a more specific diagnostic sequence."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Cycle time and its changes across process conditions remain ordinary evidence; no constructed measurement counterpart is needed."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Using intervention responses to support a causal contribution while checking confounding is familiar troubleshooting reasoning."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Workload, staffing, ordinary variation, and delayed backlog effects are recognizable limitations of organizational process comparisons."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "An ordinary process-improvement example is trialing removal of an approval step and comparing delivery times while checking staffing and demand. Deliberate reinstatement solely to test recurrence is less clearly routine; the packet supplies no evidence about its prevalence.",
+      "rationale": "A competent practitioner could plausibly reach for reversible process experiments without clinical prompting. This supports Native overall, while the complete withdrawal-and-restoration sequence warrants a small operational extension."
+    },
+    "final_class": "Native",
+    "class_rationale": "The mechanism uses existing organizational objects, measurements, causal reasoning, and confounding concerns. The closest boundary is Adjacent because intentional restoration adds a diagnostic step, but it does not reorganize the problem. Naturalization of reversible process trials favors Native. This case also limits the proposed Adjacent–Remote distinction: changing what a practitioner does by adding restoration need not produce Remote displacement when what is measured and inferred remains native.",
+    "uncertainty": [
+      "The prevalence of deliberate restoration varies across process-improvement specialties and is not established by the packet.",
+      "Suspending the meeting may also change approval responsibilities or communication practices; attribution to the meeting itself depends on how the intervention is implemented.",
+      "Appropriate observation periods depend on delivery duration and backlog persistence, which are unspecified."
+    ]
+  }
+}

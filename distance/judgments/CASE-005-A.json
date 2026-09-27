@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-005",
+    "target_native_profile": {
+      "entities": "Commitments, delivery outcomes, dated plans, staffing changes, reporting periods, and retrospective accounts.",
+      "relations": "Outcomes meet or miss commitments; records describe overlapping periods; staffing and planning changes precede or coincide with changes in delivery.",
+      "processes": "Delivery performance deteriorates or fluctuates as workload, staffing, planning, and execution change; accounts of those changes accumulate.",
+      "operations": "Reconstruct a chronology, compare commitments with outcomes across periods, triangulate conflicting records, and identify when sustained misses became evident.",
+      "observables": "Dated missed commitments, delivery trends, changes in plans or staffing, corroborating accounts, and gaps or contradictions in the record.",
+      "inferences": "Locate a plausible onset interval for sustained delivery failure, distinguishing temporal association from evidence of a particular cause.",
+      "failure_modes": "Hindsight bias, incomplete records, changing commitment definitions, reporting delays, confounding changes, and intermittent recovery can obscure the onset."
+    },
+    "source_transfer_profile": {
+      "entities": "An ordered sequence of reconstructed project states or reporting periods, with an earlier acceptable endpoint and a later failing endpoint; their granularity and evidential completeness must be established.",
+      "relations": "States precede one another and fall on either side of an operationally defined failure property; a candidate interval brackets the transition, assuming a sufficiently stable division.",
+      "processes": "Project performance crosses a proposed acceptable-to-failing boundary, while successive classifications shrink the unresolved historical interval.",
+      "operations": "Select an intermediate dated state, classify it using a consistent archival assessment, discard the incompatible portion of the interval, and repeat until the transition is bounded. This assessment substitutes for replay and may remain indeterminate.",
+      "observables": "An acceptable or failing classification for each inspected intermediate state, supported by dated records, and the progressively narrowed interval; missing evidence can prevent a usable classification.",
+      "inferences": "Conditional on reliable endpoint classifications and a sufficiently monotonic property, elimination localizes the earliest failing state to the remaining boundary at the chosen temporal resolution, without establishing a unique cause.",
+      "failure_modes": "Ambiguous archival classifications substitute for flaky tests; missing records prevent assessment; temporary recoveries violate monotonicity; shifting definitions, interacting changes, and mistaken endpoints can produce a misleading or merely correlated boundary."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Constructing comparable dated states adds organization to familiar project records; the states remain recognizable historical project periods rather than a foreign kind of object."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Temporal ordering and before/after comparison are ordinary. Requiring classifications that support exclusion of an entire historical segment adds a stronger, uncertain constraint."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Deterioration remains the target process, but bisection represents it through a sufficiently stable threshold crossing, simplifying potentially fluctuating performance."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Repeated intermediate selection, classification, and interval elimination introduces a specific search procedure. Its individual judgments remain archival comparisons already available to project-history analysis."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The same delivery records become evidence for a binary property at selected dates. Establishing a consistent classification rule extends ordinary performance assessment without requiring a new evidential substrate."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Locating an onset interval is already the objective. Bisection adds conditional elimination of candidate periods, with stronger assumptions about classification reliability and persistence."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Incomplete evidence, inconsistent definitions, temporary recovery, concurrent changes, and confusing association with causation are recognizable failures of ordinary historical project diagnosis."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary project reviews compare dated commitments and outcomes to determine when performance deteriorated. The packet does not establish that recursive midpoint selection and interval elimination are conventional in this practice.",
+      "rationale": "Chronological comparison, performance classification, and onset localization are familiar; the complete bisection procedure is less clearly naturalized. This overlap favors Adjacent over Remote, while uncertainty about routine use prevents a Native judgment."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer preserves project periods, documentary evidence, and the goal of bounding an onset, while adding recursive partition-and-test search. Its archival test counterpart is coherent but conditional: repeated misses need a stable definition, and recovery or missing records can invalidate elimination. The closest boundary is Remote, because binary state construction and monotonicity assumptions could substantially reinterpret an irregular history. Here they remain explicit methodological extensions. The case is evidence against treating any change in what a reasoner does as sufficient for Remote: bisection changes inspection order and exclusion decisions without broadly replacing the target ontology.",
+    "uncertainty": [
+      "The packet does not establish whether recursive bisection is already routine in a relevant project-analysis specialty.",
+      "Records may not support comparable intermediate states or reproducible acceptable/failing classifications.",
+      "Defining repeated misses requires a time window; different defensible windows can move the inferred transition.",
+      "Temporary recoveries or several deterioration episodes would undermine the single-transition assumption and prevent reliable segment elimination."
+    ]
+  }
+}

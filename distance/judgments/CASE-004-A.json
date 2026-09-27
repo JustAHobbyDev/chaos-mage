@@ -1,0 +1,64 @@
+{
+  "classification": {
+    "case_id": "CASE-004",
+    "target_native_profile": {
+      "entities": "Service instances, latency and error measurements, workload conditions, time windows, and service performance baselines.",
+      "relations": "Measurements belong to services and time windows; performance varies with workload and is compared with historical or workload-conditioned baselines.",
+      "processes": "Service performance fluctuates, degrades persistently, or recovers as workload and operating conditions change.",
+      "operations": "Collect comparable latency and error measurements over successive windows; compare their sequence with expected variation and persistence or alert rules while checking workload changes.",
+      "observables": "Sustained latency increases, elevated error rates, threshold crossings, recovery, and deviations from expected workload-related variation.",
+      "inferences": "Temporal patterns support distinguishing sustained degradation from brief fluctuation, without necessarily identifying its cause.",
+      "failure_modes": "Noisy measurements, shifting workload mix, aggregation artifacts, irregular sampling, deployment effects, and unsuitable windows or thresholds can create or conceal degradation."
+    },
+    "source_transfer_profile": {
+      "entities": "The service's underlying performance state, repeated latency and error observations, observation times, and expected variation.",
+      "relations": "Comparable observations are ordered in time and indicate an underlying state; their sequence is evaluated against expected variation or a defined change rule.",
+      "processes": "An underlying performance state remains stable, fluctuates transiently, degrades directionally, or reverses toward recovery.",
+      "operations": "Repeat comparable latency and error measurements at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.",
+      "observables": "Persistence, trends, reversals, threshold crossings, and other temporal patterns unavailable from an isolated measurement.",
+      "inferences": "The sequence constrains whether and how service performance is changing and distinguishes sustained degradation from some transient variation.",
+      "failure_modes": "Measurement error, regression to the mean, irregular sampling, changing workloads or measurement conditions, intervening operational changes, and unsuitable intervals or thresholds can mislead."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Service performance states and repeated telemetry measurements are ordinary monitoring entities; no foreign counterpart needs constructing."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Temporal ordering, observations indicating service condition, and comparisons with expected variation are conventional monitoring relationships."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Stable behavior, transient fluctuation, sustained degradation, and recovery already define the target problem."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Repeated comparable measurement followed by sequence evaluation against variation or change rules is standard operations monitoring."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Persistence, trends, reversals, and threshold crossings are familiar evidence in latency and error time series."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Using temporal patterns to distinguish sustained degradation from noise directly matches ordinary target reasoning."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Sampling problems, noisy telemetry, changing conditions, intervening changes, and misleading thresholds are recognized monitoring limitations; regression toward baseline after an extreme reading requires no new representation."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "Ordinary-practice examples include latency and error dashboards showing successive time windows and alerts requiring a threshold violation to persist before firing.",
+      "rationale": "An operations practitioner would plausibly use repeated measurements and temporal change rules without clinical prompting. Present practice supports Native despite the source's clinical identity."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism is already conventional in the target: comparable repeated observations reveal temporal patterns that distinguish persistence from fluctuation. The closest boundary is Adjacent, but the packet introduces no unfamiliar structure or operation requiring even an extension. Native naturalization reinforces this judgment. The case does not directly test the Adjacent–Remote boundary; it shows that a cross-domain source need not change what practitioners do, notice, or infer.",
+    "uncertainty": [
+      "The packet does not specify sampling cadence, aggregation, baseline construction, or change rules; their adequacy cannot be assessed.",
+      "Monitoring sophistication varies across teams, but serial measurement and persistence assessment are ordinary within the stated target problem."
+    ]
+  }
+}

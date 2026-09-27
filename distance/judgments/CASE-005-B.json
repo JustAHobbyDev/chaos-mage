@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-005",
+    "target_native_profile": {
+      "entities": "Commitments, delivery outcomes, dated plans, staffing arrangements, reporting periods, and retrospective accounts.",
+      "relations": "Commitments have deadlines and outcomes; staffing and planning changes precede or overlap delivery problems; accounts corroborate or contradict one another.",
+      "processes": "Delivery performance deteriorates, misses recur, and project conditions change over time, potentially with temporary recoveries.",
+      "operations": "Build a timeline, compare commitments with outcomes, triangulate records, and narrow the period when recurring misses emerged.",
+      "observables": "Dated missed commitments, patterns across reporting periods, staffing changes, and agreement or gaps among contemporary and retrospective records.",
+      "inferences": "Identify a supported transition period and distinguish its timing from claims about contributing or unique causes.",
+      "failure_modes": "Incomplete records, hindsight bias, shifting commitments, ambiguous onset of recurrence, temporary recoveries, and confounding between simultaneous changes."
+    },
+    "source_transfer_profile": {
+      "entities": "An ordered sequence of dated project snapshots or assessment windows, with an earlier acceptable endpoint and a later repeatedly-missing endpoint; consistent windows must be constructed from records.",
+      "relations": "Snapshots are temporally ordered and bracket a candidate transition; classifying an intermediate snapshot excludes one side only if the property has a sufficiently stable, single-transition structure.",
+      "processes": "The project crosses from acceptable delivery into recurring misses, while successive classifications shrink the unresolved historical interval.",
+      "operations": "Choose an intermediate date, classify its project window using a fixed documentary criterion, discard the incompatible half of the interval, and repeat. This requires repeatable assessment of records rather than replay of project activity.",
+      "observables": "An acceptable-versus-recurring-misses classification at each tested date, supported by delivery records; missing evidence or conflicting accounts can leave a test indeterminate.",
+      "inferences": "Repeated elimination localizes the first boundary associated with the defined delivery property, conditional on endpoint validity, consistent classification, and absence of intervening reversals; it does not establish a unique cause.",
+      "failure_modes": "Unstable classifications resemble flaky tests; undocumented periods prevent assessment; recoveries violate monotonicity; multiple changes and interactions defeat unique attribution; mistaken endpoints or retrospective assessment windows can mislocate the boundary."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Comparable snapshots or windows require construction, but dated project periods, commitments, and outcomes already belong to ordinary historical analysis."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Temporal ordering is native; treating classifications as grounds for excluding whole portions of history adds a restrictive single-transition assumption."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Deterioration is native, but representing it as a stable binary crossing simplifies a potentially gradual or reversible trajectory."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Recursive intermediate-date testing and interval elimination extend documentary comparison with a specific search procedure, without requiring project states to become executable revisions."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Binary classifications standardize existing delivery evidence. Their criteria and temporal windows need explicit construction, but the underlying evidence remains commitments and outcomes."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Boundary localization is already the target objective; bisection adds conditional exclusion of unexamined periods rather than a different kind of historical conclusion."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Missing evidence, inconsistent judgments, recoveries, mistaken baselines, and causal confounding are recognizable problems in ordinary project-history reconstruction."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary project reviews compare dated commitments and outcomes and seek when performance changed. The packet provides no evidence that recursive midpoint testing and interval elimination are conventional in this practice.",
+      "rationale": "Chronological comparison and transition localization are already familiar, lowering displacement. The distinctive bisection procedure remains an extension, particularly because documentary classifications must substitute for reproducible tests of historical states."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "Bisection changes the order of investigation and adds conditional interval elimination, while retaining project periods, delivery evidence, and historical boundary inference. The closest boundary is Native: much of the reasoning is ordinary, but the specific recursive search and its classification assumptions are not established as conventional here. Remote would require more substantial reinterpretation than constructing comparable documentary windows. This case provides evidence against treating a change in what a reasoner does as sufficient for Adjacent-to-Remote displacement: the search operation changes distinctly while the target representation remains largely intact.",
+    "uncertainty": [
+      "The packet does not establish how often project-history practitioners already use bisection or related change-point methods.",
+      "The criterion and assessment window for repeatedly missing commitments are unspecified; different defensible definitions could yield different boundaries.",
+      "The records may not support stable intermediate classifications or a single transition. That would limit elimination without itself increasing ontological distance.",
+      "This judgment assumes classification from historical evidence, not construction of a simulator capable of replaying prior project states."
+    ]
+  }
+}

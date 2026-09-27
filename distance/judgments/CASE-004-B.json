@@ -1,0 +1,64 @@
+{
+  "classification": {
+    "case_id": "CASE-004",
+    "target_native_profile": {
+      "entities": "Services, latency and error measurements, workload conditions, and time windows.",
+      "relations": "Measurements belong to services and time windows; service performance varies with workload and is compared with historical baselines.",
+      "processes": "Service behavior fluctuates, degrades, recovers, or remains persistently impaired as workloads and operating conditions change.",
+      "operations": "Repeat comparable latency and error measurements over time; evaluate persistence, trends, and threshold crossings against expected workload variation.",
+      "observables": "Time series showing sustained elevation, spikes, recovery, reversals, or repeated threshold crossings.",
+      "inferences": "Temporal patterns support distinguishing persistent degradation from brief fluctuations, conditional on workload and measurement comparability.",
+      "failure_modes": "Sampling noise, changing traffic mix, aggregation artifacts, irregular sampling, deployments, and unsuitable alert windows can create or hide apparent degradation."
+    },
+    "source_transfer_profile": {
+      "entities": "The service's underlying performance state, repeated latency and error observations, and observation intervals.",
+      "relations": "Observations at successive times provide imperfect evidence of an underlying service state and are judged against expected variation or a defined change rule.",
+      "processes": "The underlying service state persists, fluctuates transiently, deteriorates directionally, or reverses toward recovery.",
+      "operations": "Repeat comparable latency and error measurements at multiple time points and evaluate the sequence against expected variation or a defined change rule.",
+      "observables": "Persistence, trend, reversal, threshold crossing, or another temporal pattern unavailable from an isolated measurement.",
+      "inferences": "The sequence constrains hypotheses about whether and how service behavior is changing and distinguishes sustained degradation from some transient variation.",
+      "failure_modes": "Measurement error, regression to the mean, irregular sampling, changing workload or measurement conditions, intervening operational changes, and poorly chosen intervals or thresholds can distort trends."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Services, performance states, repeated measurements, and time intervals are ordinary monitoring objects; no clinical counterpart needs constructing."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Relating successive measurements to service behavior and expected workload variation is conventional monitoring reasoning."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Persistence, transient fluctuation, deterioration, and recovery already describe service behavior."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Comparable repeated measurements assessed against baselines or temporal alert rules directly match ordinary operations monitoring."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Trends, spikes, sustained elevations, reversals, and threshold crossings are standard evidence in service time series."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Using temporal patterns to distinguish sustained degradation from transient variation is precisely the target problem's ordinary inference."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Noise, sampling choices, workload changes, intervening deployments, and apparent recovery after an extreme reading are recognizable monitoring confounds."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary-practice example is a latency or error-rate dashboard paired with an alert that requires a threshold breach to persist across successive observation windows.",
+      "rationale": "A competent operations practitioner would plausibly use repeated observations and temporal decision rules without clinical prompting. Present practice therefore supports Native despite the source's clinical identity."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source mechanism is already conventional for this target: repeat comparable measurements, evaluate their temporal pattern, and infer persistence or fluctuation subject to confounds. The closest boundary is Adjacent, but the packet introduces no unfamiliar structure or operation requiring an extension. What practitioners do, notice, and infer remains intact. This is consistent with the proposed behavioral distinction but does not independently test the Adjacent–Remote boundary.",
+    "uncertainty": [
+      "The packet does not specify the team's actual baselines, sampling intervals, or change rules; the judgment concerns ordinary competent operations monitoring.",
+      "Monitoring sophistication varies across teams. Particular statistical methods may be unfamiliar, but none is required by the supplied source mechanism."
+    ]
+  }
+}

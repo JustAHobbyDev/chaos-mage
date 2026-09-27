@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-012",
+    "target_native_profile": {
+      "entities": "Teams, requests, replies, recorded handoffs, formal reporting units, and suspected coordination dependencies.",
+      "relations": "Teams exchange requests, wait for replies, hand work onward, and follow or bypass formal reporting relationships.",
+      "processes": "Requests undergo processing, waiting, routing, escalation, and rework; these activities produce delays.",
+      "operations": "Reconstruct partial request histories, compare response times and handoff patterns, and contrast observed coordination with the organization chart.",
+      "observables": "Request and reply timestamps, elapsed times, recorded routes, repeated handoffs, and discrepancies between actual exchanges and formal relationships.",
+      "inferences": "Identify likely bottleneck teams or handoffs and dependencies suggested by recurring exchanges and waiting patterns, while distinguishing association from causation.",
+      "failure_modes": "Missing interactions, workload differences, request complexity, timestamp errors, and selection bias can misattribute delays or conceal dependencies."
+    },
+    "source_transfer_profile": {
+      "entities": "Requests become probing signals; teams and handoffs form a constructed organizational space containing latent local delay properties. Its topology and property stability are uncertain.",
+      "relations": "Each source-to-receiver request path samples several hidden coordination components whose properties jointly determine predicted travel behavior.",
+      "processes": "Requests propagate through a heterogeneous coordination network, accumulating modeled delays as they cross internal components; adaptive routing and team behavior complicate this counterpart.",
+      "operations": "Measure elapsed travel behavior across many request paths, predict it from a candidate internal network model, and iteratively adjust localized properties or candidate dependencies to reduce discrepancies.",
+      "observables": "Structured residuals between observed and predicted travel times across overlapping paths, interpreted relative to which internal components those paths sample.",
+      "inferences": "Use the pattern of residuals to constrain a network-localized model of hidden bottlenecks and dependencies capable of generating the observations.",
+      "failure_modes": "Uneven path coverage, uncertain routes and endpoints, timing errors, regularization, and non-unique models can create artificial bottlenecks; processing, workload, and routing changes can violate the propagation model."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Teams, requests, and handoffs remain recognizable; treating requests as probes and adding latent component parameters extends familiar organizational network concepts."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "An exchange or handoff becomes part of a path that jointly measures hidden properties, requiring a forward relationship between internal components and endpoint timing."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "Situated processing, negotiation, and waiting must be represented as repeatable propagation effects through a heterogeneous network."
+      },
+      "operations": {
+        "level": 2,
+        "rationale": "The analyst moves from comparing histories and delays to iterative inversion: predict many path measurements, inspect residuals, and update an internal model."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The timestamps and routes remain the evidence, but cross-path residual structure becomes a more specialized derived observable."
+      },
+      "inferences": {
+        "level": 2,
+        "rationale": "Hidden components are inferred through their joint ability to explain overlapping path measurements, rather than principally through delays directly associated with observed teams or handoffs."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Missingness and confounding are familiar; path identifiability, regularization artifacts, and competing internal models extend those concerns."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Organizational network analysis and process mining ordinarily examine interaction graphs, event timestamps, and bottlenecks. Queueing models also connect internal service behavior to observed delays. The packet provides no evidence that tomography-style path inversion is conventional for this target.",
+      "rationale": "A practitioner could plausibly reach for network and delay models independently. This reduces displacement in entities and observables, but does not establish ordinary use of iterative reconstruction from overlapping path residuals."
+    },
+    "final_class": "Remote",
+    "class_rationale": "The transfer coherently reorganizes coordination evidence around a forward propagation model and inverse reconstruction of hidden internal properties. Reinterpretation affects relations, processes, operations, and inferences. Adjacent is the closest boundary: familiar graphs, timing evidence, and queueing concepts reduce the distance, especially in quantitative specialties. Supporting the proposed boundary, the analyst now fits and diagnoses cross-path predictions to localize hidden structure. Counterevidence is that model fitting and residual analysis can already be ordinary analytical operations, so their presence alone would not establish Remote; the decisive change is their use as an indirect internal reconstruction mechanism.",
+    "uncertainty": [
+      "The breadth of ordinary practice in organizational hidden-structure inference is unspecified; specialists in network inference may experience this transfer as Adjacent.",
+      "The organizational counterpart to spatial structure is a network of teams and handoffs, not an established physical geometry.",
+      "Partial routes may not supply enough overlapping path constraints to distinguish component delays or recover hidden dependencies.",
+      "Observed elapsed times may combine processing, waiting, batching, and changing workload, limiting the assumption of stable internal propagation properties."
+    ]
+  }
+}

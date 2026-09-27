@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-020",
+    "target_native_profile": {
+      "entities": "Commits, deployed revisions, test inputs, expected and actual outputs, log events, trace spans, and candidate explanations.",
+      "relations": "Commits precede or modify one another; executions run particular revisions; inputs produce outputs; log events and spans belong to executions; observations support or contradict explanations.",
+      "processes": "Code changes alter execution paths or state, introducing incorrect results that appear under particular inputs and runtime conditions.",
+      "operations": "Reproduce the failure, compare passing and failing revisions, bisect revision history, inspect diffs and execution evidence, and test competing explanations.",
+      "observables": "Output mismatches, the first failing tested revision, changed execution paths, exceptions, state differences, and gaps in logs or traces.",
+      "inferences": "Bound the regression to a revision interval, identify candidate changes and mechanisms, and eliminate explanations inconsistent with controlled tests.",
+      "failure_modes": "Flaky tests, changing environments, hidden state, interacting commits, incomplete instrumentation, and confusing temporal association with causation."
+    },
+    "source_transfer_profile": {
+      "entities": "Multiple overlapping log or trace sequences, independently anchored reference segments, uncertain event positions, and candidate missing or extra observations. Comparable ordered observation windows must be constructed as counterparts to increments; their consistency is uncertain.",
+      "relations": "Records overlap in time and respond partly to shared requests, deployment changes, or runtime conditions; distinctive ordered patterns correspond across records, while reference anchors connect positions to times and revisions.",
+      "processes": "Shared service activity produces recurring sequences of observations across records, while local behavior and recording omissions distort individual sequences.",
+      "operations": "Compare distinctive patterns spanning several consecutive observation windows across independently anchored or overlapping records; shift their relative alignment until matches recur consistently across records, then inspect mismatches for missing, extra, or misassigned observations.",
+      "observables": "Repeated agreement of ordered patterns at a particular relative alignment, supported by independent records, together with discrepancies exposing possible recording gaps or misplaced observations.",
+      "inferences": "Assign uncertain observations to supported temporal positions, extend or check the incident chronology through overlapping records, and bound the behavior change against deployment anchors. Chronological agreement constrains explanations but does not establish which commit caused the regression.",
+      "failure_modes": "Component-specific activity, weak shared inputs, repetitive request patterns, short overlaps, measurement errors, faulty reference anchors, and genuinely different execution paths can create false or ambiguous alignments."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Logs, traces, revisions, and events remain ordinary debugging objects; grouping observations into comparable sequential windows adds a constructed unit without replacing those objects."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Temporal overlap and event correspondence are familiar. Using repeated pattern agreement across several records to establish uncertain positions extends ordinary timestamp and request-identity correlation."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Shared workload effects and incomplete recording are familiar processes, but the transfer foregrounds their ability to produce a common chronological pattern across records."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Repeatedly shifting ordered patterns across overlapping records is more specialized than ordinary log inspection or revision bisection, but fits existing trace-comparison and timeline-reconstruction work."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Evidence remains execution events and gaps. Consistent multi-window matches across independent records become an additional evidential pattern rather than a different kind of observation."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Reconstructing uncertain chronology is a familiar debugging inference. Pattern agreement supplies another basis for temporal placement, with revision attribution still requiring deployment anchors."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Missing instrumentation, repetitive events, local execution differences, unreliable timing anchors, and mistaking correlation for causation are already recognizable debugging hazards."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary distributed-service debugging correlates logs and spans across components and reconstructs timelines despite missing events or clock discrepancies. There is less basis for treating systematic shifted-pattern matching across several overlapping records as routine regression-debugging practice.",
+      "rationale": "A practitioner could plausibly reach for event-sequence alignment without dendrochronology prompting it. The full crossdating procedure is a specialized extension of that practice, which lowers the classification toward Adjacent."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer preserves debugging entities, execution evidence, and chronology-based constraints while adding a distinctive alignment procedure. The closest boundary is Remote: treating event sequences as a shared incremental chronology could require reinterpretation if comparable windows or anchors were absent. Here, overlapping service records provide a coherent mapping without that replacement. This case offers evidence against a simple behavioral Adjacent–Remote boundary: the method changes what engineers do and which matching patterns they notice, yet those changes remain extensions within familiar timeline reconstruction.",
+    "uncertainty": [
+      "The packet does not establish that the available records overlap sufficiently, contain independent anchors, or exhibit a strong shared pattern.",
+      "Software events are not necessarily regular increments; constructing comparable observation windows may be straightforward or may impose unsupported structure.",
+      "Pattern-based alignment is more familiar in some distributed-systems and trace-analysis specialties than in software regression debugging generally.",
+      "An aligned incident chronology cannot identify a causal commit without revision anchors and additional controlled evidence."
+    ]
+  }
+}

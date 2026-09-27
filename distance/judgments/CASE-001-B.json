@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-001",
+    "target_native_profile": {
+      "entities": "Commits, code paths, service configurations, test inputs, expected and actual outputs, logs, traces, and candidate explanations for the regression.",
+      "relations": "Commits precede or modify other revisions; executions traverse code paths; outputs differ from expectations; evidence supports or contradicts candidate causes.",
+      "processes": "Behavior changes across revisions, faults manifest under particular inputs or configurations, and explanations are revised as debugging evidence accumulates.",
+      "operations": "Reproduce the failure, compare passing and failing revisions, bisect history when appropriate, inspect changes and execution evidence, and test competing explanations through targeted instrumentation or controlled changes.",
+      "observables": "Output mismatches, passing and failing tests, the earliest observed failing revision, log events, trace differences, and changes in behavior after controlled interventions.",
+      "inferences": "Localize the change in behavior, distinguish candidate causes, and retain uncertainty when identifying a revision does not establish the mechanism responsible.",
+      "failure_modes": "Flaky reproduction, environmental confounding, interacting commits, incomplete traces, inadequate tests, correlated evidence, anchoring on a suspicious change, and premature commitment to a cause."
+    },
+    "source_transfer_profile": {
+      "entities": "The observed regression and a maintained set of competing explanations, such as a changed computation, stale cache behavior, configuration mismatch, or interaction between commits.",
+      "relations": "Each explanation predicts some observations and conflicts with others; tests and execution records discriminate between explanations to different degrees.",
+      "processes": "Evidence accumulates and repeatedly changes the relative plausibility of competing explanations while several may remain viable.",
+      "operations": "Generate multiple explanations, gather or inspect tests, revision comparisons, logs, and traces that bear differently on them, and repeatedly revise their relative plausibility.",
+      "observables": "Patterns of support, contradiction, or non-discrimination across explanations, including reproductions and revision comparisons that fail to distinguish competing mechanisms.",
+      "inferences": "Reprioritize, eliminate, or retain explanations and narrow the plausible set without committing early; use revision evidence to constrain where the behavior changed.",
+      "failure_modes": "Missing candidate explanations, unreliable or dependent evidence, tests that miss a relevant mechanism or fail for unrelated reasons, anchoring, premature closure, base-rate neglect, and confirmation bias."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Candidate causes and execution evidence are ordinary debugging objects; clinical conditions need no separately constructed counterpart."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Relating predicted behavior to supporting or contradicting test and trace evidence is conventional causal debugging."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Revising competing explanations as reproduction and revision evidence arrives is an ordinary debugging process."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Generating alternatives and choosing checks that distinguish them preserves the source's iterative mechanism and is already recognizable competent debugging practice."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "A test result that supports one cause, contradicts another, or leaves both possible uses familiar debugging evidence and distinctions."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Narrowing candidate causes while withholding commitment is conventional; the transfer adds no foreign rule for interpreting revision or execution evidence."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Incomplete hypotheses, misleading tests, duplicated evidence, and fixation on a suspected commit are familiar debugging hazards. Test sensitivity and specificity have qualitative counterparts in whether a check detects or uniquely implicates the proposed fault."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary debugging example is to consider both a computation change and stale cached data, rerun the same input with the cache bypassed, compare revisions, and update both explanations according to the results. This is a general-practice example, not a claim about the engineers in the packet.",
+      "rationale": "A competent debugger could plausibly reach for competing hypotheses and discriminating checks without a clinical prompt. Present practice therefore supports Native despite the source's clinical identity; explicit numerical likelihoods or diagnostic accuracy estimates are not required by the instrument."
+    },
+    "final_class": "Native",
+    "class_rationale": "The source's full mechanism—multiple explanations, discriminating evidence, repeated plausibility revision, and delayed commitment—is conventional in software regression debugging. The closest boundary is Adjacent if the transfer required an unfamiliar formal diagnostic apparatus, but the packet requires none. Naturalization supports Native. The case cautions against using a change in procedural emphasis alone as evidence for Remote: explicitly maintaining alternatives may alter a particular engineer's workflow while leaving the target's ontology and inference rules intact.",
+    "uncertainty": [
+      "The packet does not establish how systematically these engineers already maintain competing explanations; native practice need not be universally followed.",
+      "Formal estimates of test sensitivity, specificity, or prior fault frequencies vary across debugging specialties. The classification concerns their qualitative operational counterparts.",
+      "Incomplete traces and interacting commits may prevent decisive localization or elimination of explanations, but those evidential limits do not themselves increase ontological distance."
+    ]
+  }
+}

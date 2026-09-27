@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-019",
+    "target_native_profile": {
+      "entities": "Revisions, code paths, test inputs, expected and actual results, runtime state, logs, traces, and candidate explanations.",
+      "relations": "Commits precede or modify other revisions; inputs exercise code paths; executions produce results and records; evidence supports or contradicts explanations.",
+      "processes": "Changes introduce incorrect behavior; execution propagates faulty values; logging captures some events while other evidence is lost or overwritten.",
+      "operations": "Reproduce failures, compare revisions, bisect history, inspect logs and traces, and add targeted assertions or instrumentation to distinguish hypotheses.",
+      "observables": "Output mismatches, the first failing revision, intermediate values, diagnostic messages, trace locations, and missing records.",
+      "inferences": "Identify the interval or revision where behavior changed, localize implicated execution paths, and retain or reject explanations according to their predicted evidence.",
+      "failure_modes": "Nondeterminism, interacting commits, incomplete instrumentation, misleading correlations, unrepresentative tests, and diagnostic changes that perturb execution."
+    },
+    "source_transfer_profile": {
+      "entities": "Retained runtime values, stored results, and execution records serve as possible residues of faulty execution; targeted diagnostic checks serve as probes.",
+      "relations": "A past execution may leave retained evidence; a selected property of that evidence activates a probe; the emitted response identifies the responsive artifact or location.",
+      "processes": "Execution leaves evidence that can persist, be overwritten, or become inaccessible; probing converts a previously unreported property into an explicit diagnostic response.",
+      "operations": "Apply a conditional diagnostic check to retained state or execution records so that a suspected signature activates a new, localized marker, assertion report, or diagnostic output.",
+      "observables": "An otherwise absent diagnostic response at a particular record, state object, or execution location, together with cases where the probe remains silent.",
+      "inferences": "A response supports the presence and location of the checked property. It does not alone establish which commit or execution event produced it; revision comparison and reproduction remain necessary.",
+      "failure_modes": "Unrelated behavior can leave the same signature; relevant evidence can be missing, overwritten, or outside probe coverage; probing can mutate state or perturb execution. The specificity of any chosen signature must be established."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Runtime state and execution records are ordinary debugging evidence; calling them residues does not require new kinds of target objects."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Execution producing retained evidence, and evidence satisfying diagnostic conditions, are familiar debugging relationships."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Evidence persistence, overwriting, incomplete capture, and subsequent diagnostic exposure already occur in routine debugging."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Conditional assertions and diagnostic checks already generate a response when selected state or recorded evidence satisfies a suspected signature."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "New diagnostic messages or assertion reports localized to an object or execution point are conventional evidence."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Separating detection of a suspicious condition from proof of its cause is ordinary hypothesis-based debugging."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Ambiguous signatures, absent records, limited coverage, and instrumentation effects have direct, familiar target counterparts."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary debugging example is adding a conditional check that reports the object or code location containing an unexpected retained value, then comparing revisions to determine its origin.",
+      "rationale": "A competent debugger can independently reach for selective probes that expose otherwise unreported evidence. This present-day practice supports Native despite the forensic source. Particular probe signatures remain case-specific."
+    },
+    "final_class": "Native",
+    "class_rationale": "The latent-evidence mechanism maps directly onto retained execution evidence and conditional diagnostic probes without reorganizing target reasoning. The closest boundary is Adjacent: designing a new signature can extend a particular investigation, but that alone does not make its representation unfamiliar. This case cautions against treating a change in what engineers notice as sufficient for Remote; producing new localized observations is already a native operation. The probe contributes localization and hypothesis testing, while locating the behavioral transition still requires revision evidence.",
+    "uncertainty": [
+      "The packet does not specify whether retained state or available records contain a discriminating signature of the regression.",
+      "An incomplete trace may offer no usable probe target; a silent probe would not establish absence of faulty execution.",
+      "Specific diagnostic techniques vary across services and engineering specialties; the judgment concerns the general mechanism rather than a particular probe implementation."
+    ]
+  }
+}

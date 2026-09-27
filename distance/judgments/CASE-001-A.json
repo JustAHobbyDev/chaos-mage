@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-001",
+    "target_native_profile": {
+      "entities": "Commits, service versions, code paths, test inputs, incorrect outputs, logs, traces, and candidate causes.",
+      "relations": "Commits precede or depend on other commits; executions traverse code paths; observed behavior supports or contradicts candidate causes.",
+      "processes": "Behavior changes across revisions, faults manifest under particular inputs, and investigation narrows possible change points and causal explanations.",
+      "operations": "Reproduce the failure, compare revisions, bisect history where appropriate, inspect logs and traces, and test competing explanations through targeted tests or controlled changes.",
+      "observables": "Passing and failing outputs, the revision boundary where behavior changes, execution differences, log events, and evidence supporting or contradicting proposed causes.",
+      "inferences": "Localize the behavioral change, distinguish a triggering commit from its underlying mechanism, and retain or reject explanations according to evidence.",
+      "failure_modes": "Flaky tests, interacting commits, environmental confounding, incomplete traces, misleading correlations, omitted hypotheses, and premature commitment to a suspected cause."
+    },
+    "source_transfer_profile": {
+      "entities": "Observed regression symptoms and multiple candidate explanations, such as a changed algorithm, altered configuration, or dependency interaction.",
+      "relations": "Each explanation predicts some observations; tests and execution evidence support, contradict, or fail to distinguish competing explanations.",
+      "processes": "The plausible explanation set and its relative ordering change repeatedly as evidence accumulates.",
+      "operations": "Generate multiple explanations, choose or inspect evidence that discriminates among them, and repeatedly revise their relative plausibility without committing early.",
+      "observables": "Patterns of support, contradiction, and non-discrimination across explanations, derived from revision comparisons, reproducible tests, logs, and incomplete traces.",
+      "inferences": "Reprioritize, eliminate, or retain candidate explanations and candidate change points; narrow the plausible set without claiming that localization alone establishes the causal mechanism.",
+      "failure_modes": "Missing candidates, unreliable or correlated evidence, tests that miss relevant faults or flag unrelated behavior, anchoring, premature closure, base-rate neglect, and confirmation bias."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Candidate causes and observed symptoms are ordinary debugging objects; no clinical conditions or substitute entities need to be constructed."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Relating candidate causes to predicted and observed behavior is conventional debugging reasoning."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Updating and narrowing explanations as tests reveal more information is already part of competent regression investigation."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "Generating alternatives, running discriminating tests, and revising their plausibility directly match hypothesis-driven debugging."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Test outcomes and execution evidence already count as support, contradiction, or inconclusive evidence for proposed causes."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Debuggers ordinarily retain uncertainty while ranking or excluding explanations and localizing a behavioral change."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Incomplete hypotheses, weak tests, correlated evidence, and fixation on an early suspect are recognizable debugging limitations. Test sensitivity and specificity translate directly into missed faults and misleading positive results without requiring clinical statistics."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary debugging example is considering both a code change and a configuration change, replaying the same failing input under controlled variants, and updating the suspects according to the results. This is a general-practice example, not evidence about this particular team.",
+      "rationale": "A competent debugger could reach for the complete competing-hypotheses operation without a clinical prompt. Its present familiarity supports Native despite its clinical source identity."
+    },
+    "final_class": "Native",
+    "class_rationale": "The transfer preserves software entities, evidence, and inference rules, including the distinctive cycle of generating alternatives, seeking discriminating evidence, and revising plausibility. The closest boundary is Adjacent: explicit comparative bookkeeping might extend some teams' routines, but the packet requires no unfamiliar representation or operation. This case does not directly test the Adjacent–Remote boundary. It illustrates a limit on that hypothesis: making hypothesis comparison more explicit can change investigative behavior without ontological reinterpretation.",
+    "uncertainty": [
+      "Debugging practices vary; some practitioners primarily bisect revisions and inspect the resulting diff rather than explicitly maintain several explanations.",
+      "The packet does not establish this team's routines or whether its tests reliably distinguish the candidate mechanisms.",
+      "Formal numerical likelihoods or calibrated diagnostic sensitivity and specificity would require additional work, but the source instrument does not require them."
+    ]
+  }
+}
