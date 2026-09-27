@@ -1,0 +1,160 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/004.yaml",
+      "sha256": "20054862c71cadbe44115a480b12858d451e384cbff9b89309b21ec5c6af9278"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-004-B.json",
+      "sha256": "9b477784c132d4532731f7e9af3cc9db18d5019eb1e42d2d0352dd49eb00c51e"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-004-B",
+    "source": {
+      "name": "Luminol latent-trace detection",
+      "practice": "Forensic investigation",
+      "instrument": {
+        "state": "Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.\n",
+        "operation": "Apply a probe whose reaction is promoted by material associated with the suspected residue.\n",
+        "signal": "Responsive material produces an otherwise absent, localized observable reaction.\n",
+        "inference": "The reaction supports the presence and location of material capable of producing that response.\n",
+        "limit": "Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.\n"
+      }
+    },
+    "target": {
+      "domain": "Literary and textual analysis",
+      "question": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "evidence": [
+        "A critic studies an anonymous novel with repeated images, stylistic discontinuities, and possible revisions. The final text, limited publication context, dated draft fragments, and publication correspondence survive."
+      ]
+    },
+    "mapping": {
+      "state": "Latent residue = vestigial features of an earlier compositional layer or different hand persisting unnoticed in the final text; probe = a fixed diagnostic applied uniformly across the text (function-word or rolling stylometric profile, concordance search for the repeated images, systematic collation against dated fragments); responsive material = passages that produce an anomalous or matching response; unrelated substances = passages that respond for other reasons (genre convention, pastiche, quotation, editorial house style). Residue is associated with a past compositional event; probe response is promoted by (caused by) the residue's features; response is co-located with the residue in the text; response is otherwise absent across unresponsive stretches. Persistence of layer-features through later revision; degradation of trace by smoothing rewrites; removal by excision; reaction of the diagnostic when it meets responsive passages, producing a localized signal.",
+      "operation": "Screen the whole text surface with the diagnostic rather than reading only suspected seams; record where it 'lights up'; treat the screen as presumptive and confirm hits against dated fragments and correspondence as a separate confirmatory stage.",
+      "signal": "A localized, otherwise absent differential response: clusters of stylometric anomaly, concentrations of the repeated images, or stretches matching draft fragments, mapped against a baseline where the diagnostic stays quiet.",
+      "inference": "The response supports the presence and location of features capable of producing it (features consistent with an earlier layer or different hand); it does not by itself establish the formation event (revision, second author, editorial cut), which requires independent corroboration.",
+      "limit": "False positives from unrelated causes (genre, parody, quotation, editor's style); false negatives where thorough revision erased the trace or the passage is too short for the diagnostic; detecting layer-consistent features does not establish how they got there; applying the probe may alter what is later analyzed (constructed counterpart: a primed reading contaminating subsequent close reading; a grounded but narrow counterpart: destructive physical testing of the fragments)."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "preserved",
+        "rationale": "Systematic collation is one of the explicitly offered diagnostics; selective matches and localized response preserve the bounded latent-feature chain."
+      },
+      "target_fidelity": {
+        "status": "addressed",
+        "rationale": "Matching features contribute to organization and possible formation, with documentary corroboration expressly separated from the detection result."
+      },
+      "operational_coherence": {
+        "status": "coherent",
+        "rationale": "For the supplied collation option, a matching response warrants responsive features, not an inferred revision or author."
+      },
+      "target_reframe": {
+        "occurred": false,
+        "original_question": null,
+        "reframed_question": null,
+        "relationship": null
+      },
+      "unresolved_conditions": [],
+      "final_status": "Valid",
+      "rationale": "The collation branch of this historical mapping is valid with a bounded detection inference. Alternative stylometric branches may need additional validation."
+    },
+    "native_baseline": {
+      "target_domain": "Literary and textual analysis",
+      "target_task": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "reference_practitioner": "Professional literary scholar interpreting textual organization and formation, without a computational-stylometry specialty",
+      "ordinary_methods": [
+        "Close reading and comparison of recurrent features",
+        "Collation and source criticism when drafts or documentary sources can be obtained"
+      ],
+      "ordinary_evidence": [
+        "Wording, stylistic patterns and textual discontinuities",
+        "Drafts, variants, publication records and contextual evidence sought for formation claims"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": {
+      "provisional": false,
+      "class": "Adjacent",
+      "dimensions": {
+        "entities": {
+          "level": 1,
+          "rationale": "Passages remain textual objects, now described as responsive configurations."
+        },
+        "relations": {
+          "level": 1,
+          "rationale": "Feature-response relations formalize familiar comparison."
+        },
+        "processes": {
+          "level": 1,
+          "rationale": "Persistence and revision remain familiar possibilities, not proven events."
+        },
+        "operations": {
+          "level": 1,
+          "rationale": "Systematic probing or collation adds a specified screening procedure."
+        },
+        "observables": {
+          "level": 1,
+          "rationale": "Localized test responses organize existing textual evidence."
+        },
+        "inferences": {
+          "level": 0,
+          "rationale": "The bounded inference remains detection; historical attribution requires more evidence."
+        },
+        "failure_modes": {
+          "level": 1,
+          "rationale": "False positives and non-detection retain ordinary evidentiary cautions."
+        }
+      },
+      "rationale": "Feature-sensitive screening extends ordinary interpretation while retaining its evidentiary limits."
+    },
+    "grounding": {
+      "provisional": false,
+      "status": "Grounded",
+      "essential_counterparts": [
+        {
+          "source_role": "Potential persistent residue",
+          "target_counterpart": "Responsive textual configurations",
+          "essential_reason": "The probe needs something that can respond.",
+          "independent_target_basis": "Features of final-text passages are independently describable without luminol.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Selective probe",
+          "target_counterpart": "Specified feature diagnostic or collation rule",
+          "essential_reason": "The operation must selectively elicit the signal.",
+          "independent_target_basis": "Rule-based detection and comparison can be defined in textual terms.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Localized reaction",
+          "target_counterpart": "Flags or matches located in passages",
+          "essential_reason": "Localization links the response to responsive material.",
+          "independent_target_basis": "Passage locations and rule outputs exist independently of the analogy.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Bounded detection warrant",
+          "target_counterpart": "Response indicates matching features, not a proven event",
+          "essential_reason": "Without this restriction the source inference changes.",
+          "independent_target_basis": "The rule identifies its triggering configurations; formation needs separate evidence.",
+          "grounding_status": "Grounded"
+        }
+      ],
+      "rationale": "Surviving drafts, text, collation and localized matches are independently meaningful textual-scholarship counterparts."
+    },
+    "uncertainty": [
+      "Breadth of target: for computational stylometry practitioners this is close to Native; for close-reading critics observables might be judged level 2.",
+      "Semantic tension: the luminol frame presupposes residue of a past event, which may bias explanation of repeated images toward accidental formation and away from deliberate design, although the target problem asks to explain organization either way.",
+      "The 'probe alters material' limit has only a constructed counterpart for interpretive probes (priming) and a narrow grounded one (destructive physical testing of fragments); it is a limit, not an essential chain step, so it did not affect grounding status.",
+      "Whether the presumptive/confirmatory two-stage structure is standard practice or merely good practice in textual attribution is not verifiable here.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

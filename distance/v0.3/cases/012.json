@@ -1,0 +1,28 @@
+{
+  "case_id": "012",
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "target": {
+    "domain": "Software regression debugging",
+    "question": "Where in the ordered revision history did the reproducible regression first appear?",
+    "evidence": [
+      "The oldest endpoint passes and the newest fails. Repeated tests are stable and the property has one transition on the tested linear history."
+    ]
+  },
+  "mapping": {
+    "state": "Ordered revisions bracket a reproducible transition from pass to fail.",
+    "operation": "Test a midpoint; keep the half compatible with that result and the bracketing endpoints; repeat until adjacent revisions bracket the change.",
+    "signal": "Pass/fail observations shrink the possible transition interval.",
+    "inference": "The final boundary localizes the first revision associated with the regression.",
+    "limit": "The boundary need not be the sole cause; flaky tests, unbuildable revisions and multiple transitions invalidate particular eliminations."
+  }
+}

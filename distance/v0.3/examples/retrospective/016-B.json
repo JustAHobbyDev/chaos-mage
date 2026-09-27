@@ -1,0 +1,92 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/016.yaml",
+      "sha256": "1e72e9f5ad4d114ea9f1ceac94f842897f56d08cfbd7f6e79f7c99dc581f0b17"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-016-B.json",
+      "sha256": "c5b63d414f0c095709ceadda7d7d4dd01a90584a82b669544f380c6925a1bd70"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-016-B",
+    "source": {
+      "name": "Dendrochronological crossdating",
+      "practice": "Dendrochronology and paleoclimate",
+      "instrument": {
+        "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+        "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+        "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+        "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+        "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+      }
+    },
+    "target": {
+      "domain": "Present brand identity",
+      "question": "Explain the brand identity expressed by these current materials.",
+      "evidence": [
+        "An analyst investigates the present meaning of a brand using its current website, packaging, advertisements, and audience descriptions.",
+        "This question concerns present meaning, not historical dating; the evidence supplies no dated historical sequence to align."
+      ]
+    },
+    "mapping": {
+      "state": "Each touchpoint (website, packaging, ads, audience descriptions) treated as a sequential record composed of ordered increments; a reference chronology would have to be some master ordered brand-signal sequence; increments would have to be discrete ordered units of brand expression. Records overlap along a shared ordering axis; increments precede and follow one another; records share a partly common external driver that leaves matching wide-narrow patterns. In the target no ordering axis is supplied, so 'overlap' and 'precede' must be constructed, e.g. as position along a journey, a page scroll, or a message hierarchy. Incremental accumulation under shared external forcing, plus occasional missing or false increments. In the target this would be rendered as brand messages laid down in sequence under shared strategic direction, with omitted or extraneous messages in particular touchpoints.",
+      "operation": "Shift the relative alignment of the ordered brand-signal sequences across touchpoints until distinctive multi-unit patterns coincide; flag units that only fit if an increment is inserted or removed. This requires first imposing an order on each touchpoint's content.",
+      "signal": "A specific offset at which patterns repeat consistently across touchpoints, and the exposure of units that are missing, extra, or misplaced relative to that alignment. Target analogue: a mapping under which motif sequences line up across touchpoints and residual mismatches stand out.",
+      "inference": "Assign each ambiguous unit a definite position in the shared sequence; extend or check a master brand-signal chronology. Target analogue: assign each touchpoint's messages a place in a unified identity structure and locate touchpoints that are off-pattern.",
+      "limit": "Weak shared signal (incoherent brand strategy), short or repetitive patterns (generic category tropes), local disturbances (channel-specific constraints), wrong reference (a mistaken assumed core identity), insufficient overlap (touchpoints addressing disjoint themes) producing false alignments."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "not-preserved",
+        "rationale": "Assigning identity-component membership substitutes for the source inference of temporal placement; imposed page or journey order is not calendar chronology."
+      },
+      "target_fidelity": {
+        "status": "not-addressed",
+        "rationale": "A unified positional structure is not by itself an explanation of present meanings."
+      },
+      "operational_coherence": {
+        "status": "incoherent",
+        "rationale": "Offset agreement on imposed sequences does not warrant either historical dates or semantic membership as claimed."
+      },
+      "target_reframe": {
+        "occurred": true,
+        "original_question": "Explain the brand identity expressed by these current materials.",
+        "reframed_question": "Where do messages fit in an imposed shared identity sequence?",
+        "relationship": "Explicit analytical description of the historical mapping’s substituted question. No supported bridge makes this an answer to the original present-meaning question."
+      },
+      "unresolved_conditions": [],
+      "final_status": "Invalid",
+      "rationale": "Invalid through mechanism substitution and an unsupported inferential bridge. Familiar motif comparison cannot rescue the discarded crossdating chain."
+    },
+    "native_baseline": {
+      "target_domain": "Present brand identity",
+      "target_task": "Explain the brand identity expressed by these current materials.",
+      "reference_practitioner": "Brand strategist analyzing present positioning and audience interpretations",
+      "ordinary_methods": [
+        "Compare current touchpoint meanings",
+        "Analyze audience descriptions and brand associations"
+      ],
+      "ordinary_evidence": [
+        "Current website, packaging, advertisements and audience descriptions"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": null,
+    "grounding": null,
+    "uncertainty": [
+      "Some brand practitioners may analyze sequenced material such as customer-journey stages, page scroll order, or campaign narrative arcs; if an analyst treated those as the ordering axis, the relations and operations displacement would drop toward 2 and grounding toward partially-grounded, making Remote more defensible.",
+      "The target statement is explicit that no dated sequence exists, but the breadth of brand-identity practice (semiotics, marketing research, design strategy) is large and I lack evidence about niche methods.",
+      "Tension: failure modes transfer at level 1 while operations and relations sit at level 3; the class follows the essential operational chain rather than the easily transferred cautions.",
+      "The signal residue (consistent patterns and exposed inconsistencies across touchpoints) is grounded in target practice; the classification treats it as insufficient because it is reachable without the alignment mechanism.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

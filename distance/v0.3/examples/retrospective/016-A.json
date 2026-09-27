@@ -1,0 +1,94 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/016.yaml",
+      "sha256": "1e72e9f5ad4d114ea9f1ceac94f842897f56d08cfbd7f6e79f7c99dc581f0b17"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-016-A.json",
+      "sha256": "2fb1b5f11c1c348a85ef3eb07bb17f5fdad2d581a233ed51542496c779c204ef"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-016-A",
+    "source": {
+      "name": "Dendrochronological crossdating",
+      "practice": "Dendrochronology and paleoclimate",
+      "instrument": {
+        "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+        "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+        "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+        "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+        "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+      }
+    },
+    "target": {
+      "domain": "Present brand identity",
+      "question": "Explain the brand identity expressed by these current materials.",
+      "evidence": [
+        "An analyst investigates the present meaning of a brand using its current website, packaging, advertisements, and audience descriptions.",
+        "This question concerns present meaning, not historical dating; the evidence supplies no dated historical sequence to align."
+      ]
+    },
+    "mapping": {
+      "state": "Materials would have to supply overlapping sequential records composed of increments, with uncertain temporal positions and an independently dated reference or overlapping chronology; these roles are not established by the packet. Increments would occupy successive temporal positions, records would overlap, and corresponding patterns would reflect partly shared external influences; present thematic similarity does not establish these relations. The transfer requires successive formation of records under shared influences, potentially with missing or anomalous increments; this historical formation structure would have to be constructed for the current evidence.",
+      "operation": "Compare ordered increment patterns across records and shift their relative alignment until distinctive multi-period patterns correspond consistently, checking for missing, extra, or misassigned increments.",
+      "signal": "Repeated temporal pattern matches at a particular alignment, together with inconsistencies revealing missing or misplaced increments; the supplied current materials do not establish these observables.",
+      "inference": "A matching alignment would support temporal placement and chronology checking. Using that result to explain present brand meaning would require an additional, unsupported interpretive bridge.",
+      "limit": "Channel-specific variation could be mistaken for temporal disturbance, recurring motifs could produce false alignments, and invented order, references, or overlap could generate a spurious chronology that does not explain present meaning."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "conditionally-preserved",
+        "rationale": "The proposal retains temporal alignment, conditional on temporal records that the packet does not supply."
+      },
+      "target_fidelity": {
+        "status": "not-addressed",
+        "rationale": "It explicitly states that chronology needs an unsupported bridge to present meaning; this does not answer the retained question."
+      },
+      "operational_coherence": {
+        "status": "conditional",
+        "rationale": "Alignment could warrant dates if suitable records existed, but those premises are not established here."
+      },
+      "target_reframe": {
+        "occurred": true,
+        "original_question": "Explain the brand identity expressed by these current materials.",
+        "reframed_question": "When did the brand motifs enter overlapping historical records?",
+        "relationship": "Explicit analytical description of the historical mapping’s substituted question. No supported bridge makes this an answer to the original present-meaning question."
+      },
+      "unresolved_conditions": [
+        "Chronological records and overlap would be needed for a different chronology candidate, not sufficient to answer present meaning."
+      ],
+      "final_status": "Invalid",
+      "rationale": "Invalid because the retained present-meaning question is lost. Chronology is recorded as a creative reframe, not substituted for the question."
+    },
+    "native_baseline": {
+      "target_domain": "Present brand identity",
+      "target_task": "Explain the brand identity expressed by these current materials.",
+      "reference_practitioner": "Brand strategist analyzing present positioning and audience interpretations",
+      "ordinary_methods": [
+        "Compare current touchpoint meanings",
+        "Analyze audience descriptions and brand associations"
+      ],
+      "ordinary_evidence": [
+        "Current website, packaging, advertisements and audience descriptions"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": null,
+    "grounding": null,
+    "uncertainty": [
+      "Brand-history specialties may use temporal alignment, but that does not establish its grounding or naturalization for the supplied present-meaning task.",
+      "The packet does not demonstrate that current materials encode recoverable historical increments; their absence is not merely an unavailable measurement, because treating them as temporal records itself lacks justification.",
+      "This judgment concerns what a mechanism-preserving transfer would require, not a demonstrated workable implementation.",
+      "The chronology-to-meaning inference remains unsupported. Alien describes the proposed representational reorganization; it does not make chronology an answer to the target question.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

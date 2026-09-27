@@ -1,0 +1,163 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/004.yaml",
+      "sha256": "20054862c71cadbe44115a480b12858d451e384cbff9b89309b21ec5c6af9278"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-004-A.json",
+      "sha256": "38914aa528e954518c8d532a5ebe1183d727d251d285defbc7a6b6c161620328"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-004-A",
+    "source": {
+      "name": "Luminol latent-trace detection",
+      "practice": "Forensic investigation",
+      "instrument": {
+        "state": "Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.\n",
+        "operation": "Apply a probe whose reaction is promoted by material associated with the suspected residue.\n",
+        "signal": "Responsive material produces an otherwise absent, localized observable reaction.\n",
+        "inference": "The reaction supports the presence and location of material capable of producing that response.\n",
+        "limit": "Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.\n"
+      }
+    },
+    "target": {
+      "domain": "Literary and textual analysis",
+      "question": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "evidence": [
+        "A critic studies an anonymous novel with repeated images, stylistic discontinuities, and possible revisions. The final text, limited publication context, dated draft fragments, and publication correspondence survive."
+      ]
+    },
+    "mapping": {
+      "state": "Surviving textual configurations become candidate residues of earlier textual states; final-text passages are tested locations; a feature-sensitive diagnostic serves as the probe. A retained combination of wording and stylistic features activates the diagnostic, producing a response at particular passages; resemblance to dated drafts provides an independent basis for investigating that response. Revision may preserve, transform, or erase configurations associated with earlier drafts. Applying the diagnostic makes previously unmarked configurations register as localized outputs.",
+      "operation": "Construct a diagnostic from distinctive feature combinations in surviving draft fragments, then apply it to final-text passages so matching configurations trigger a response. Check its specificity against other passages and its sensitivity against known draft material.",
+      "signal": "An otherwise absent localized flag or elevated diagnostic response, generated when a passage contains the configurations to which the probe responds.",
+      "inference": "A response supports the presence and location of responsive textual features. It does not by itself establish an earlier compositional layer, a revision event, or the cause of a stylistic discontinuity.",
+      "limit": "Shared idiom, deliberate repetition, or genre conventions can trigger the same response; revision or short samples can suppress it. Normalization or overwriting a working transcription can obscure evidence needed later, although preserved originals allow non-destructive probing."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "conditionally-preserved",
+        "rationale": "Dated drafts give a basis for retained configurations, but the mapping specifically depends on constructing a discriminating diagnostic from them."
+      },
+      "target_fidelity": {
+        "status": "addressed",
+        "rationale": "Detection of retained configurations bears on the stated organization and formation question, while leaving causal attribution open."
+      },
+      "operational_coherence": {
+        "status": "conditional",
+        "rationale": "If the draft-derived diagnostic distinguishes its intended configurations, localized responses warrant those features; the packet does not establish that discrimination."
+      },
+      "target_reframe": {
+        "occurred": false,
+        "original_question": null,
+        "reframed_question": null,
+        "relationship": null
+      },
+      "unresolved_conditions": [
+        "Establish that the surviving draft fragments contain distinctive feature combinations that permit the proposed sensitive and specific diagnostic; test known fragments and alternative passages."
+      ],
+      "final_status": "Conditional",
+      "rationale": "Archival counterparts improve grounding, but evidence-rich does not mean every proposed measurement is established."
+    },
+    "native_baseline": {
+      "target_domain": "Literary and textual analysis",
+      "target_task": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "reference_practitioner": "Professional literary scholar interpreting textual organization and formation, without a computational-stylometry specialty",
+      "ordinary_methods": [
+        "Close reading and comparison of recurrent features",
+        "Collation and source criticism when drafts or documentary sources can be obtained"
+      ],
+      "ordinary_evidence": [
+        "Wording, stylistic patterns and textual discontinuities",
+        "Drafts, variants, publication records and contextual evidence sought for formation claims"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": {
+      "provisional": true,
+      "class": "Adjacent",
+      "dimensions": {
+        "entities": {
+          "level": 1,
+          "rationale": "Passages remain textual objects, now described as responsive configurations."
+        },
+        "relations": {
+          "level": 1,
+          "rationale": "Feature-response relations formalize familiar comparison."
+        },
+        "processes": {
+          "level": 1,
+          "rationale": "Persistence and revision remain familiar possibilities, not proven events."
+        },
+        "operations": {
+          "level": 1,
+          "rationale": "Systematic probing or collation adds a specified screening procedure."
+        },
+        "observables": {
+          "level": 1,
+          "rationale": "Localized test responses organize existing textual evidence."
+        },
+        "inferences": {
+          "level": 0,
+          "rationale": "The bounded inference remains detection; historical attribution requires more evidence."
+        },
+        "failure_modes": {
+          "level": 1,
+          "rationale": "False positives and non-detection retain ordinary evidentiary cautions."
+        }
+      },
+      "rationale": "Feature-sensitive screening extends ordinary interpretation while retaining its evidentiary limits."
+    },
+    "grounding": {
+      "provisional": true,
+      "status": "Partially-grounded",
+      "essential_counterparts": [
+        {
+          "source_role": "Potential persistent residue",
+          "target_counterpart": "Responsive textual configurations",
+          "essential_reason": "The probe needs something that can respond.",
+          "independent_target_basis": "Features of final-text passages are independently describable without luminol.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Selective probe",
+          "target_counterpart": "Specified feature diagnostic or collation rule",
+          "essential_reason": "The operation must selectively elicit the signal.",
+          "independent_target_basis": "Some textual evidence is available, but distinctiveness and diagnostic sensitivity/specificity are not established by the archive description.",
+          "grounding_status": "Partially-grounded"
+        },
+        {
+          "source_role": "Localized reaction",
+          "target_counterpart": "Flags or matches located in passages",
+          "essential_reason": "Localization links the response to responsive material.",
+          "independent_target_basis": "Passage locations and rule outputs exist independently of the analogy.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Bounded detection warrant",
+          "target_counterpart": "Response indicates matching features, not a proven event",
+          "essential_reason": "Without this restriction the source inference changes.",
+          "independent_target_basis": "The rule identifies its triggering configurations; formation needs separate evidence.",
+          "grounding_status": "Grounded"
+        }
+      ],
+      "rationale": "Drafts and final text establish material for comparison; the discriminating probe is an explicit, testable unresolved measurement."
+    },
+    "uncertainty": [
+      "The packet does not specify whether the draft fragments contain sufficiently distinctive configurations to calibrate a discriminating probe.",
+      "Naturalization varies by specialty: computational stylistics may make this procedure more ordinary than it is in predominantly interpretive criticism.",
+      "A generated textual diagnostic response is a functional counterpart to the source reaction, not a physical chemical reaction; the correspondence depends on preserving feature-dependent activation and localized output.",
+      "Detectability and historical specificity remain unverified. This limits conclusions about formation without making the diagnostic roles themselves analogy-dependent.",
+      "The probe addresses selected patterns and possible textual survivals; explaining the novel's overall organization still requires contextual interpretation.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

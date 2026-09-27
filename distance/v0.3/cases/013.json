@@ -1,0 +1,28 @@
+{
+  "case_id": "013",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "Software debugging",
+    "question": "Which explanations of the intermittent request failures remain plausible after the available evidence?",
+    "evidence": [
+      "Logs are available, but cache and network errors may share a message code. Proposed fault-injection tests have not yet established the specificity of each diagnostic signature."
+    ]
+  },
+  "mapping": {
+    "state": "The same request failure can arise from cache, network or configuration mechanisms.",
+    "operation": "Maintain those competing explanations; inspect discriminating logs and controlled probes; repeatedly revise their relative support.",
+    "signal": "Observations support, contradict or fail to discriminate between candidate software mechanisms.",
+    "inference": "Revise relative support only after the proposed fault-injection checks establish which observations discriminate the candidate mechanisms; nondiscriminating logs retain multiple explanations.",
+    "limit": "Missing hypotheses, dependent logs, weak probes and anchoring can mislead; the absence of clinical material does not change the evidence-discrimination operation."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/009.yaml",
+      "sha256": "016231a3fc6a2c6237fd2bc49d35a5213e22ab6e1c62ff68ad45071fbcbb93cc"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-009-B.json",
+      "sha256": "b2fe08f377fce5894946cabe0ce5b0f80432c105534af82383af34736116e9e9"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-009-B",
+    "source": {
+      "name": "Seismic tomography",
+      "practice": "Seismology and geophysics",
+      "instrument": {
+        "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+        "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+        "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+        "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+        "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+      }
+    },
+    "target": {
+      "domain": "Literary and textual analysis",
+      "question": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "evidence": [
+        "A critic studies an anonymous novel with repeated images, stylistic discontinuities, and possible revisions. Only the final text and limited publication context survive."
+      ]
+    },
+    "mapping": {
+      "state": "The text as an internal medium with a property field over textual positions (layer, hand, register, or date per segment); 'paths' as features that span or connect distant positions (motif recurrences, cross-references, stylometric spans); source and receiver positions; a candidate stratification model; residuals. A path crosses intervening regions whose properties alter its measured 'travel behavior'; a candidate model predicts a value for each path; observation minus prediction gives a residual assigned back to the regions the path crosses. Forward modeling: given a candidate stratification, predict the measured value on every path; iterative inversion adjusting the stratification to reduce residuals; regularization toward smooth or parsimonious layer boundaries.",
+      "operation": "Define many spanning features and code a measured quantity for each (e.g., transformation of a motif between occurrences, stylometric distance between two positions); compute model predictions; compute residuals; update the model; run resolution tests to see which regions are constrained by path coverage.",
+      "signal": "Spatially structured misfit: residuals that cluster in particular textual regions, indicating the candidate model's properties there are wrong.",
+      "inference": "The residual pattern constrains a positional map of compositional properties (strata, hands, revision zones) that could have produced the observed variation; resolution analysis states which regions are actually constrained.",
+      "limit": "Sparse coverage where few spanning features cross a section; coding error in subjective feature measurement; uncertain 'source' positions (which occurrence of a motif is primary); regularization imposing artificial layer smoothness; the assumption that discontinuities reflect formation rather than design; non-uniqueness of stratifications fitting the residuals."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "not-preserved",
+        "rationale": "Coding motif transformation or stylometric distance between positions does not establish travel behavior across intersecting paths through a medium."
+      },
+      "target_fidelity": {
+        "status": "conditional",
+        "rationale": "A compositional map concerns the question, but coding alone supplies no warranted bridge to formation strata."
+      },
+      "operational_coherence": {
+        "status": "incoherent",
+        "rationale": "Clustering misfit between coded distances and a chosen model does not, as mapped, warrant that the intervening regions caused those observations."
+      },
+      "target_reframe": {
+        "occurred": false,
+        "original_question": null,
+        "reframed_question": null,
+        "relationship": null
+      },
+      "unresolved_conditions": [
+        "A materially different candidate with an independently defined propagation mechanism could be assessed separately."
+      ],
+      "final_status": "Invalid",
+      "rationale": "This fixed mapping substitutes spanning feature distances for propagated measurements. Required future replacement is not a condition that repairs the present candidate."
+    },
+    "native_baseline": {
+      "target_domain": "Literary and textual analysis",
+      "target_task": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "reference_practitioner": "Professional literary scholar interpreting textual organization and formation, without a computational-stylometry specialty",
+      "ordinary_methods": [
+        "Close reading and comparison of recurrent features",
+        "Collation and source criticism when drafts or documentary sources can be obtained"
+      ],
+      "ordinary_evidence": [
+        "Wording, stylistic patterns and textual discontinuities",
+        "Drafts, variants, publication records and contextual evidence sought for formation claims"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": null,
+    "grounding": null,
+    "uncertainty": [
+      "Taxonomy tension: moderate displacement with weak grounding matches neither Remote (needs grounded counterparts) nor Alien (needs high displacement). Adjacent is provisional; a stricter reading that counts residual-based evidence as epistemic reorganization would raise displacement to high and, with the weak path counterpart, yield Alien.",
+      "The essential 'path' counterpart is uncertain: the text is fully observable at every position, so the hidden quantity is historical (formation) rather than a spatial interior crossed by signals. A defensible target-side account of why intervening text alters a spanning feature's measured value is not established here and may not exist.",
+      "Target breadth: close-reading critics and computational philologists would displace differently; the packet does not specify which specialty is practicing.",
+      "Whether a workable forward model (predicting motif transformation or stylometric distance from a stratification) exists is unknown; this is unavailable evidence, not a grounding judgment.",
+      "Whether the novel's discontinuities reflect formation at all versus design is an unresolved target question the transfer assumes rather than tests.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

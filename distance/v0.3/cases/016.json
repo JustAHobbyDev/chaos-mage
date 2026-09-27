@@ -1,0 +1,28 @@
+{
+  "case_id": "016",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "Organizational coordination",
+    "question": "Which internal handoffs account for end-to-end delay in the request network?",
+    "evidence": [
+      "Identifiers and overlapping routes exist. Synchronized timestamps are not yet installed. A documented logging interface can record entry and exit events; clock accuracy and comparability under load must be checked before fitting."
+    ]
+  },
+  "mapping": {
+    "state": "Routes are known; the relation between handoff processing and measured travel time can be tested after logging and clock checks.",
+    "operation": "Measure end-to-end time for each route, compare with a handoff-delay model, and iteratively update the model against residuals.",
+    "signal": "Structured differences between measured route times and predicted times.",
+    "inference": "Joint path residuals constrain possible handoff-delay fields, without proving a unique causal explanation.",
+    "limit": "Coverage, non-uniqueness, clock error and varying workload constrain the fit."
+  }
+}

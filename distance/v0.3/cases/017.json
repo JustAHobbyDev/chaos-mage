@@ -1,0 +1,28 @@
+{
+  "case_id": "017",
+  "source": {
+    "name": "Chromatography",
+    "practice": "Analytical chemistry",
+    "instrument": {
+      "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+      "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+      "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+      "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+      "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+    }
+  },
+  "target": {
+    "domain": "Idea decomposition",
+    "question": "Which components of the proposal are distinguishable by retention behavior, and what supports that decomposition?",
+    "evidence": [
+      "Proposal texts and free-form discussion exist. No circulation/holding workflow or stable fragment affinity has been independently established."
+    ]
+  },
+  "mapping": {
+    "state": "A proposed ontology treats fragments as persistent units with stable affinity for fixed review criteria; that role is introduced to instantiate partition and needs investigation.",
+    "operation": "Design a repeated circulation, retention and release workflow; track whether identifiable fragments persist and whether criteria produce repeatable partition before using emergence as evidence.",
+    "signal": "Different release cycles and co-emergence patterns.",
+    "inference": "If persistent fragments and repeatable partition can be established, emergence distinguishes their behavior under the criteria; it does not establish conceptual essence.",
+    "limit": "Coupling, changed criteria, detector conflation and co-emergence limit separation; the workflow can alter a fragment’s meaning."
+  }
+}

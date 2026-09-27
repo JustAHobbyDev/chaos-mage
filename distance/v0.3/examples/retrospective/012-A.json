@@ -1,0 +1,161 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/012.yaml",
+      "sha256": "296c77379de3f9650b9d08cc0e2eb3b55f804413a944dc375cfe6d3f1e3f2f83"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-012-A.json",
+      "sha256": "9ce4fff850ea9a6bc622531869a2be5e075decd149a3c2da33e1dba4e1443554"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-012-A",
+    "source": {
+      "name": "Chromatography",
+      "practice": "Analytical chemistry",
+      "instrument": {
+        "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+        "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+        "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+        "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+        "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+      }
+    },
+    "target": {
+      "domain": "Idea decomposition",
+      "question": "Determine which components can be distinguished and what evidence supports that decomposition.",
+      "evidence": [
+        "A team studies a proposal composed of interwoven idea fragments. An independently established workflow repeatedly circulates, retains, and releases proposal fragments against fixed review criteria; records preserve the fragments and their behavior in that workflow."
+      ]
+    },
+    "mapping": {
+      "state": "The proposal acts as a sample, preserved fragments as candidate components, circulation as the moving phase, and the fixed criterion-governed holding stage as the stationary phase. Fragments repeatedly partition between circulation and criterion-governed retention; their differing interactions with the holding stage determine relative migration. Repeated retention and release accumulate differences in passage through the workflow, potentially separating fragments into distinct release cohorts.",
+      "operation": "Carry fragments through the established circulation-and-holding workflow, preserving repeated partition between its two states, and reconstruct their migration and emergence from the records.",
+      "signal": "Relative retention, release order or cycle count, and separated release cohorts or peaks in fragment emergence, where record resolution permits.",
+      "inference": "Separated emergence supports components distinguishable by their retention behavior; relative retention characterizes those differences without independently establishing conceptual identity.",
+      "limit": "Different fragments may emerge together, workflow conditions may shift retention, aggregate release peaks may be nonspecific, and retention alone may misidentify conceptual components."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "preserved",
+        "rationale": "The independently established workflow retains repeated circulation, retention and release of preserved fragments."
+      },
+      "target_fidelity": {
+        "status": "addressed",
+        "rationale": "Behavioral distinguishability is a bounded contribution to the decomposition question; conceptual identity is expressly not established by retention alone."
+      },
+      "operational_coherence": {
+        "status": "coherent",
+        "rationale": "Recorded emergence patterns can distinguish fragments by retention behavior, within record resolution, without asserting an unobserved conceptual essence."
+      },
+      "target_reframe": {
+        "occurred": false,
+        "original_question": null,
+        "reframed_question": null,
+        "relationship": null
+      },
+      "unresolved_conditions": [],
+      "final_status": "Valid",
+      "rationale": "A fixed editorial-review baseline makes retention-based evidential decomposition Remote even with an established workflow. Evidence availability is not the baseline."
+    },
+    "native_baseline": {
+      "target_domain": "Idea decomposition",
+      "target_task": "Determine which components can be distinguished and what evidence supports that decomposition.",
+      "reference_practitioner": "Product proposal reviewer responsible for identifying conceptual components, without a process-mining specialty",
+      "ordinary_methods": [
+        "Read and compare proposal passages",
+        "Identify claims, dependencies and thematic distinctions",
+        "Discuss interpretations with the proposal authors"
+      ],
+      "ordinary_evidence": [
+        "Proposal wording and argument structure",
+        "Explanations from authors and records of proposal revisions"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": {
+      "provisional": false,
+      "class": "Remote",
+      "dimensions": {
+        "entities": {
+          "level": 1,
+          "rationale": "Fragments acquire roles as persistent migrating components."
+        },
+        "relations": {
+          "level": 2,
+          "rationale": "Phase affinity or holding criteria organize relations between fragments and a medium."
+        },
+        "processes": {
+          "level": 2,
+          "rationale": "Repeated partition and release organize the proposed process."
+        },
+        "operations": {
+          "level": 2,
+          "rationale": "Circulation/retention measurement changes how decomposition is investigated."
+        },
+        "observables": {
+          "level": 2,
+          "rationale": "Emergence profiles become evidence beyond wording and argument structure."
+        },
+        "inferences": {
+          "level": 2,
+          "rationale": "Behavioral separation licenses a bounded component distinction."
+        },
+        "failure_modes": {
+          "level": 1,
+          "rationale": "Co-emergence and condition-sensitive retention add cautions to ordinary interpretive ambiguity."
+        }
+      },
+      "rationale": "Retention-based decomposition changes the evidence and inferential warrant beyond the fixed proposal-review baseline, regardless of whether workflow records are supplied."
+    },
+    "grounding": {
+      "provisional": false,
+      "status": "Grounded",
+      "essential_counterparts": [
+        {
+          "source_role": "Persistent separable components",
+          "target_counterpart": "Identifiable proposal fragments",
+          "essential_reason": "Migration must concern components rather than artifacts created by sorting.",
+          "independent_target_basis": "The packet states records preserve fragments and their workflow behavior.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Moving and stationary phases",
+          "target_counterpart": "Circulation and holding against fixed criteria",
+          "essential_reason": "Repeated partition requires both mobile and retained states.",
+          "independent_target_basis": "The established workflow independently circulates, retains and releases fragments.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Differential partition and release",
+          "target_counterpart": "Fragment-specific retention and emergence",
+          "essential_reason": "Different migration behavior generates the separation signal.",
+          "independent_target_basis": "Workflow behavior provides a target basis for relative retention.",
+          "grounding_status": "Grounded"
+        },
+        {
+          "source_role": "Separation warrant",
+          "target_counterpart": "Behaviorally distinguishable fragment profiles",
+          "essential_reason": "Separation supports distinguishability, not conceptual identity.",
+          "independent_target_basis": "Distinct recorded behavior warrants only differences under the workflow conditions.",
+          "grounding_status": "Grounded"
+        }
+      ],
+      "rationale": "The packet independently establishes the workflow and preserved fragment behavior. The inference is restricted to behavior distinguishable in those records."
+    },
+    "uncertainty": [
+      "The packet establishes local workflow practice, not the prevalence of this representation across idea decomposition specialties.",
+      "The records' temporal resolution and the workflow's actual differential retention are unspecified; observable separation is an empirical possibility, not an established result.",
+      "Treating behavioral separation as proof of independent conceptual identity would exceed the source inference and require additional target justification.",
+      "If this team already routinely uses relative retention and release cohorts to support decomposition, Native would become more plausible.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "case_id": "006",
+  "source": {
+    "name": "Chromatography",
+    "practice": "Analytical chemistry",
+    "instrument": {
+      "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+      "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+      "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+      "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+      "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+    }
+  },
+  "target": {
+    "domain": "Idea decomposition",
+    "question": "Which components of the proposal are distinguishable by retention behavior, and what supports that decomposition?",
+    "evidence": [
+      "Only proposal text exists; an analyst defines red ideas as those assigned release cycle one and blue ideas as those assigned release cycle two."
+    ]
+  },
+  "mapping": {
+    "state": "The analyst defines component identities solely by assigned release cycles.",
+    "operation": "Assign fragments to red or blue at will and release each color at its definitionally assigned cycle.",
+    "signal": "Red and blue emerge at different cycles by construction.",
+    "inference": "The emergence pattern independently proves that the proposal originally contained two distinct kinds of idea.",
+    "limit": "Coupling, changed criteria, detector conflation and co-emergence limit separation; the workflow can alter a fragment’s meaning."
+  }
+}

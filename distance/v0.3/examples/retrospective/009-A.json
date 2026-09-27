@@ -1,0 +1,163 @@
+{
+  "status": "RETROSPECTIVE / NON-EXPERIMENTAL",
+  "provenance": {
+    "case": {
+      "path": "distance/boundary-v0.2/cases/009.yaml",
+      "sha256": "016231a3fc6a2c6237fd2bc49d35a5213e22ab6e1c62ff68ad45071fbcbb93cc"
+    },
+    "judgment": {
+      "path": "distance/boundary-v0.2/judgments/primary-009-A.json",
+      "sha256": "28f33c0450a2610f04be692f1d2368ad5b016e5f2d431fbd428a55fe96d01761"
+    },
+    "model_commit": "89b572873bae72c493964c8e38009f079b09a264",
+    "model_freeze_sha256": "8b0ae17a324d1de578ca1cfa14ddf38c5ad9cbd616b73774f6ff289f8adc5799",
+    "reconstruction": "State concatenates the historical entities, relations and processes verbatim; operation, signal, inference and limit copy operations, observables, inferences and failure_modes verbatim. The historical task sentence is copied verbatim into question; the surrounding historical context and evidence sentences are copied into evidence, preserving their order. No new target facts are asserted. For 004-B the assessment explicitly selects the supplied systematic-collation branch, retaining other options as uncertainty."
+  },
+  "transfer": {
+    "case_id": "RETRO-009-A",
+    "source": {
+      "name": "Seismic tomography",
+      "practice": "Seismology and geophysics",
+      "instrument": {
+        "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+        "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+        "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+        "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+        "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+      }
+    },
+    "target": {
+      "domain": "Literary and textual analysis",
+      "question": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "evidence": [
+        "A critic studies an anonymous novel with repeated images, stylistic discontinuities, and possible revisions. Only the final text and limited publication context survive."
+      ]
+    },
+    "mapping": {
+      "state": "A latent field of compositional properties indexed to textual regions, signal sources and receivers, and multiple paths crossing those regions. The signal and path roles require construction. Internal compositional properties systematically alter signals traversing intersecting textual paths, linking observations at receivers to the regions crossed. This causal relation is not established by recurrence alone. Signals propagate through a hidden compositional structure and acquire path-dependent changes; an iterative inversion updates that structure. What actually propagates through the surviving text is uncertain.",
+      "operation": "Define sources, receivers, and crossing paths; measure signal travel behavior; predict that behavior from a candidate internal model; and iteratively adjust the model to reduce discrepancies. Merely clustering similar passages would not preserve this operation.",
+      "signal": "Structured residuals between measured and predicted travel behavior across paths. Recurrence positions or stylistic sequences could supply recorded features, but their status as propagation observations needs independent justification.",
+      "inference": "Use the joint residual pattern to constrain a spatially indexed model of latent compositional properties, then assess what that model supports about organization or formation.",
+      "limit": "Uneven path coverage, uncertain source assignments, measurement error, regularization artifacts, model dependence, and non-unique reconstructions; additionally, an invented propagation law could produce apparent structure without evidential contact with composition."
+    },
+    "validity": {
+      "mechanism_fidelity": {
+        "status": "conditionally-preserved",
+        "rationale": "Travel measurement, predicted behavior and iterative residual reduction are retained as proposed roles, conditional on a target propagation mechanism."
+      },
+      "target_fidelity": {
+        "status": "conditional",
+        "rationale": "The inferred field could explain organization, but its relationship to textual composition must be established rather than assumed from imagery."
+      },
+      "operational_coherence": {
+        "status": "conditional",
+        "rationale": "An inverse problem is coherent if independently measurable paths constrain the field; the frozen mapping states required roles rather than a demonstrated literary implementation."
+      },
+      "target_reframe": {
+        "occurred": false,
+        "original_question": null,
+        "reframed_question": null,
+        "relationship": null
+      },
+      "unresolved_conditions": [
+        "Define target signals, crossing paths and a propagation relation that can be measured independently of the fitted field; demonstrate that path observations constrain the modeled regions.",
+        "Establish how those constrained compositional properties bear on textual organization, without claiming that residuals alone prove formation history."
+      ],
+      "final_status": "Conditional",
+      "rationale": "Conditional + Remote + Weakly-grounded records a proposed coherent chain with speculative essential ontology; it does not endorse the existence of literary propagation."
+    },
+    "native_baseline": {
+      "target_domain": "Literary and textual analysis",
+      "target_task": "Explain the textual organization and what, if anything, supports claims about its formation.",
+      "reference_practitioner": "Professional literary scholar interpreting textual organization and formation, without a computational-stylometry specialty",
+      "ordinary_methods": [
+        "Close reading and comparison of recurrent features",
+        "Collation and source criticism when drafts or documentary sources can be obtained"
+      ],
+      "ordinary_evidence": [
+        "Wording, stylistic patterns and textual discontinuities",
+        "Drafts, variants, publication records and contextual evidence sought for formation claims"
+      ],
+      "uncertainty": [
+        "Analytically scoped baseline, not independently collected practitioner evidence. Evidence ordinarily sought is not limited to what this packet supplies."
+      ]
+    },
+    "displacement": {
+      "provisional": true,
+      "class": "Remote",
+      "dimensions": {
+        "entities": {
+          "level": 2,
+          "rationale": "A regional latent-property field replaces purely interpretive objects."
+        },
+        "relations": {
+          "level": 3,
+          "rationale": "Crossing propagation paths reorganize relations between textual regions."
+        },
+        "processes": {
+          "level": 3,
+          "rationale": "Signal propagation becomes an essential explanatory process."
+        },
+        "operations": {
+          "level": 3,
+          "rationale": "Iterative inverse-model fitting replaces ordinary close-reading operations."
+        },
+        "observables": {
+          "level": 3,
+          "rationale": "Structured travel residuals become evidence about the hidden field."
+        },
+        "inferences": {
+          "level": 3,
+          "rationale": "Joint path constraints provide a non-native inference about compositional structure."
+        },
+        "failure_modes": {
+          "level": 1,
+          "rationale": "Coverage, non-uniqueness and model artifacts add explicit inverse-problem cautions."
+        }
+      },
+      "rationale": "Inverse path-residual reasoning changes evidence and next investigations beyond the fixed literary baseline."
+    },
+    "grounding": {
+      "provisional": true,
+      "status": "Weakly-grounded",
+      "essential_counterparts": [
+        {
+          "source_role": "Internal property field",
+          "target_counterpart": "Compositional properties indexed by textual region",
+          "essential_reason": "An inverse model needs properties to constrain.",
+          "independent_target_basis": "Textual regions are available; their role as a propagation-altering field is speculative.",
+          "grounding_status": "Partially-grounded"
+        },
+        {
+          "source_role": "Crossing paths through a medium",
+          "target_counterpart": "Literary signals propagating through overlapping regions",
+          "essential_reason": "Without path sensitivity, observations cannot constrain the intervening field.",
+          "independent_target_basis": "No independent target propagation relation is supplied; these roles are introduced to instantiate tomography.",
+          "grounding_status": "Weakly-grounded"
+        },
+        {
+          "source_role": "Travel observations and residuals",
+          "target_counterpart": "Measured path behavior minus predictions",
+          "essential_reason": "The inverse update needs measurements independent of its fit.",
+          "independent_target_basis": "The record offers required roles, not independently established literary travel measurements.",
+          "grounding_status": "Weakly-grounded"
+        },
+        {
+          "source_role": "Inverse update",
+          "target_counterpart": "Fit a regional model to joint path residuals",
+          "essential_reason": "This is the source inferential operation.",
+          "independent_target_basis": "Model fitting is definable, but the target warrant depends on the speculative path relation.",
+          "grounding_status": "Partially-grounded"
+        }
+      ],
+      "rationale": "Textual regions exist independently. The path-through-medium relation is constructed to instantiate tomography and lacks an independent basis in the supplied record."
+    },
+    "uncertainty": [
+      "Literary and textual analysis includes specialized computational practices; this judgment does not establish that no specialty uses an independently justified propagation model.",
+      "The packet supplies neither an explicit textual signal nor a forward propagation law. The weak-grounding judgment concerns the essential causal role, not simply unavailable measurements or implementation difficulty.",
+      "A reconstructed field of stylistic organization would not automatically identify revision history; multiple formation processes could produce the same final organization.",
+      "The classification is conditional on preserving the full instrument. A looser tomography metaphor could have much lower displacement, but would not carry the supplied operational chain.",
+      "This is an implementation-agent analytical interpretation of a frozen authored mapping; it is not an independent judge observation."
+    ]
+  }
+}
