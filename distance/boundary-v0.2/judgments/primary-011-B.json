@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "011",
+    "target_native_profile": {
+      "entities": "Teams, requests, handoffs between teams, queues/backlogs, process stages, and people's accounts of what happened; coordination structures such as approval chains, ownership boundaries, and escalation rules.",
+      "relations": "Team A hands off to team B; a request waits in a queue owned by a team; a stage depends on a prior stage; a role approves or blocks; accounts corroborate or contradict one another.",
+      "processes": "Requests accumulate in queues, wait for handoffs, get reworked or bounced back, and are escalated; workload varies over time; delays compound across sequential stages.",
+      "operations": "Interview staff and reconcile accounts, sketch a process or value-stream map, identify handoff points and owners, compare aggregate outcomes (throughput, cycle time, backlog) against the mapped structure, look for the constraint stage, propose and pilot structural changes.",
+      "observables": "Reported waiting and rework in accounts, agreement or contradiction between accounts, aggregate cycle times, throughput, backlog sizes, counts of escalations, and where accounts converge on a stage as slow.",
+      "inferences": "A particular handoff, approval step, or ownership gap is the bottleneck; a structural feature (e.g., serial approvals, unclear ownership) accounts for the aggregate delay; a change to that structure should reduce delay.",
+      "failure_modes": "Recall and blame bias in accounts, confounding of structure with temporary workload or staffing, unobserved informal channels, aggregate outcomes consistent with several different structural stories, and reconciling unsequenced accounts into a false single narrative."
+    },
+    "source_transfer_profile": {
+      "entities": "The organization as an internal medium whose regions (teams or handoff interfaces) carry a delay property; requests as probing signals; origin and destination points as sources and receivers; a candidate coordination model that predicts delay along any route.",
+      "relations": "A request route traverses a set of teams; the route's total delay is the sum of per-team delay contributions along it; many routes overlap so that a team's contribution is shared across several route observations; the model predicts each route's delay.",
+      "processes": "Requests propagate through teams accruing delay from each region crossed; discrepancies between predicted and observed route delays are iteratively reduced by adjusting the team-level delay map; coverage of routes determines which regions are resolvable.",
+      "operations": "Define request routes (origin team, teams crossed, destination), measure per-route delay, build a forward model that predicts route delays from a candidate team-delay structure, compute residuals, iteratively update the team-delay map to reduce residuals, and assess route coverage/resolution for each team. Constructing routes and per-route delays from unsequenced accounts and aggregate outcomes is required and uncertain.",
+      "observables": "Per-route residuals between predicted and observed delay, patterned across routes such that routes sharing a team show correlated residuals; resolution of each team given route coverage.",
+      "inferences": "The residual pattern constrains a map of which teams or interfaces carry excess delay; interfaces crossed only by poorly covered routes are unresolved; multiple team-delay maps may fit the observed route delays equally well.",
+      "failure_modes": "Sparse or uneven route coverage smearing delay onto the wrong team, non-uniqueness of the delay map, unknown or misassigned request origins, regularization choices imposing spurious structure, delay that is load- or content-dependent rather than a stable team property, and rework loops that make routes non-straight and path-dependent."
+    },
+    "displacement": {
+      "entities": {
+        "level": 2,
+        "rationale": "Requests as routed items and teams as stages are ordinary, but treating the organization as a medium with a per-region delay field that requests passively probe, and treating the coordination structure as that field, reinterprets teams and structures as different kinds of things."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Additive delay along a route through stages is already ordinary (cycle time as the sum of stage times); the tomographic requirement that many overlapping routes share teams is an extension of the process-map view rather than a reorganization."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Requests accruing delay as they move through teams is native; the iterative residual-reduction process on a model is new but is a procedural addition on top of familiar propagation."
+      },
+      "operations": {
+        "level": 3,
+        "rationale": "Ordinary practice reconstructs the workflow from accounts and locates the constraint; the transfer replaces this with defining routes, measuring per-route delay, running a forward model, and inverting residuals across many routes. Given evidence with no identified paths, inquiry must be reorganized around constructing path-resolved data."
+      },
+      "observables": {
+        "level": 3,
+        "rationale": "Native evidence is accounts and aggregate outcomes; the transfer makes per-route residuals against model predictions the evidence. The packet explicitly says no transmission units or paths are identified, so this observable does not exist in the supplied evidence and must be constructed."
+      },
+      "inferences": {
+        "level": 2,
+        "rationale": "Both approaches conclude that some team or interface is the bottleneck, but the licensing rule changes: localization comes from spatially patterned residuals under a forward model with explicit resolution and non-uniqueness, rather than from convergent accounts and stage metrics."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Non-uniqueness of structural explanations and incomplete sampling are already recognizable in organizational analysis; coverage artifacts, regularization bias, and smearing of delay across adjacent teams extend these into a more formal vocabulary without reorganizing them."
+      }
+    },
+    "naturalization": {
+      "status": "non-native",
+      "evidence": "No ordinary organizational-coordination practice I can identify performs model-based inversion of route-level delays into a team-level delay map; standard practice is process/value-stream mapping, interviews, and constraint identification. Related inversion methods exist in other domains (network tomography in computer networking, queueing-network estimation in operations research) but require path-resolved or event-log data, and I have no evidence they are used unprompted for coordination investigations built on unsequenced accounts.",
+      "rationale": "A competent organizational practitioner would not reach for iterative residual inversion across route coverage without prompting from the source. This rules out Native and Adjacent but does not decide between Remote and Alien; specialist operations-research groups might partially naturalize it, which is recorded as uncertainty."
+    },
+    "final_class": "Remote",
+    "class_rationale": "The transfer reorganizes inquiry: evidence shifts from accounts and aggregates to per-route residuals against a forward model, and the operation becomes iterative inversion with coverage assessment, which is a substantively non-native operation and observable (displacement high). The essential source roles nevertheless have independently defensible target counterparts: request routes through teams, per-route cycle time, and a queueing/process forward model are all ordinary organizational concepts, so the transfer is not held together mainly by analogy. The packet's evidence lacks the path-resolved data, but per the rubric a missing measurement is not weak grounding; the counterparts could be measured with ordinary request tracking. The closest boundary is Remote/Alien: against Remote, the supplied evidence (unsequenced accounts, no paths) forces route assignment to be constructed rather than observed, and the stable per-team delay property is a source-driven assumption. For Remote, those constructions are of things the target already recognizes and could measure, not entities invented to save the source structure.",
+    "uncertainty": [
+      "Whether 'aggregate outcomes' in the packet are broken down by origin-destination pair or request type; if so, per-route delay is partly available and grounding strengthens toward grounded; if purely global, the residual observable is almost entirely constructed and the case moves toward Alien.",
+      "Whether sequencing unsequenced accounts into routes is a legitimate target operation (process reconstruction is ordinary) or an analogy-driven fabrication when done to feed an inversion; I treated it as the former, but this is the main tension for the Remote/Alien boundary.",
+      "The tomographic assumption of a stable, load- and content-independent per-team delay property is not clearly justified in organizations where delay depends on queue state and request type; if this assumption is essential to the inversion, grounding is weaker than recorded.",
+      "Naturalization in operations-research or process-mining specialties is unknown; those subfields may partially naturalize model-based delay attribution, which would not change the class but would soften the non-native status.",
+      "Rework loops and parallel handoffs make routes non-straight and possibly model-dependent; whether this breaks the operational chain or is handled by a richer forward model is unresolved."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "high",
+        "rationale": "The transfer changes what counts as evidence (per-route residuals rather than accounts and aggregates), what is done (forward modeling and iterative inversion with coverage analysis rather than process mapping and constraint identification), and how bottleneck localization is licensed (residual pattern under non-uniqueness). This is epistemic reorganization, not surface extension."
+      },
+      "grounding": {
+        "status": "partially-grounded",
+        "rationale": "Essential roles (routes through teams, per-route delay, a forward model of stage delays, residuals) map to ordinary organizational concepts: request routing, cycle time, queueing/process models. Support is conditional because the supplied evidence contains no identified paths or units, so route-level observations must be constructed from unsequenced accounts or obtained by new measurement, and the assumption of a stable per-team delay property independent of load and content is source-driven and not independently established."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Yes: instead of reconciling accounts into a process map and locating the constraint, the practitioner defines routes, obtains per-route delays, builds a forward model, computes residuals, iteratively adjusts a team-delay map, and assesses route coverage and resolution.",
+      "changes_what_is_observed": "Yes: evidence becomes patterned residuals between predicted and observed route delays, and coverage of each team by routes; the packet's native evidence (unsequenced accounts, aggregate outcomes) contains no such per-path observations.",
+      "changes_what_is_inferred": "Partly: the conclusion type (a team or interface accounts for delay) is shared, but the inference is now licensed by residual patterns under an explicit model, carries resolution limits per team, and admits multiple fitting delay maps as a formal possibility.",
+      "invented_counterparts": "Constructed but target-grounded: request routes and per-route delays (ordinary concepts, absent from the supplied evidence and requiring reconstruction or new measurement). Conditional/source-driven: a stable per-team delay property independent of load and request content, needed for the inversion to be well-posed. No counterpart is wholly without target justification, which is why the case is Remote rather than Alien; uncertain if aggregate outcomes are purely global."
+    }
+  }
+}

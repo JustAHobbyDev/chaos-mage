@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "009",
+    "target_native_profile": {
+      "entities": "The surviving text; segments (chapters, episodes, passages); recurring images/motifs; stylistic registers and diction sets; hypothesized compositional strata or hands; narrative inconsistencies; publication paratext and context.",
+      "relations": "Echo or recurrence between passages; contrast or seam between adjacent sections; stylometric similarity among passages; textual sequence; hypothesized precedence of one stratum over another; dependence on sources or intertexts.",
+      "processes": "Composition, revision, interpolation, compilation, and editorial or typesetting intervention over time; accumulation of motif meaning across the reading sequence.",
+      "operations": "Close reading; charting image patterns; identifying seams and inconsistencies; stylometric comparison of passages (function-word profiles, rolling windows); comparison with contemporaneous texts; consulting publication records; formulating and testing a stratification hypothesis against the text.",
+      "observables": "Repeated images and their variants; shifts in register, syntax, or diction; plot and naming contradictions; abrupt transitions; stylometric profiles per passage; paratextual clues.",
+      "inferences": "An interpretive account of thematic architecture; whether variation is designed or accidental; single versus multiple hands; a provisional compositional history (which parts were revised or added), hedged by the absence of manuscripts.",
+      "failure_modes": "Over-reading pattern into noise; circularity (defining strata by the features used to detect them); mistaking deliberate stylistic variation for revision seams; unfalsifiable genetic hypotheses; multiple stratifications fitting the same evidence; corpus too small for reliable stylometry."
+    },
+    "source_transfer_profile": {
+      "entities": "The text as an internal medium with a property field over textual positions (layer, hand, register, or date per segment); 'paths' as features that span or connect distant positions (motif recurrences, cross-references, stylometric spans); source and receiver positions; a candidate stratification model; residuals.",
+      "relations": "A path crosses intervening regions whose properties alter its measured 'travel behavior'; a candidate model predicts a value for each path; observation minus prediction gives a residual assigned back to the regions the path crosses.",
+      "processes": "Forward modeling: given a candidate stratification, predict the measured value on every path; iterative inversion adjusting the stratification to reduce residuals; regularization toward smooth or parsimonious layer boundaries.",
+      "operations": "Define many spanning features and code a measured quantity for each (e.g., transformation of a motif between occurrences, stylometric distance between two positions); compute model predictions; compute residuals; update the model; run resolution tests to see which regions are constrained by path coverage.",
+      "observables": "Spatially structured misfit: residuals that cluster in particular textual regions, indicating the candidate model's properties there are wrong.",
+      "inferences": "The residual pattern constrains a positional map of compositional properties (strata, hands, revision zones) that could have produced the observed variation; resolution analysis states which regions are actually constrained.",
+      "failure_modes": "Sparse coverage where few spanning features cross a section; coding error in subjective feature measurement; uncertain 'source' positions (which occurrence of a motif is primary); regularization imposing artificial layer smoothness; the assumption that discontinuities reflect formation rather than design; non-uniqueness of stratifications fitting the residuals."
+    },
+    "displacement": {
+      "entities": {
+        "level": 2,
+        "rationale": "Textual positions and segments are native, but treating the text as a medium whose per-position property field is inferred from measurements on spanning 'paths' makes passages and motifs into meaningfully different kinds of things (sources, receivers, traversed regions) rather than units read directly."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "Critics relate two passages by echo or contrast, but the tomographic relation is that intervening material systematically alters what is measured between them. That path-through-medium relation has no ordinary counterpart in reading practice and requires reinterpreting motif recurrence as a traversal."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "Hypothesis refinement against the text is ordinary, but formal forward prediction of feature measurements from a candidate stratification, followed by iterative residual reduction with regularization, treats interpretation as a model-inversion process rather than reading."
+      },
+      "operations": {
+        "level": 2,
+        "rationale": "Rolling stylometry and seam identification exist, but they sample positions directly. Coding many spanning features as path measurements, computing residuals against a model, and running resolution tests is a substantively different workflow, though the raw features coded are the same ones critics already attend to."
+      },
+      "observables": {
+        "level": 2,
+        "rationale": "Native evidence is the features themselves (repetitions, shifts, contradictions). The transfer makes the evidence a residual between predicted and observed values, spatially clustered. A critic informally notices that a passage 'does not fit' a reading, but residual maps as the primary observable are a reinterpretation."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "The conclusion type, a map of compositional strata or hands, is already native to source and genetic criticism. What changes is the licensing route (constraint by misfit reduction and resolution limits), which existing concepts of hypothesis testing accommodate without reorganizing what is concluded."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Non-uniqueness, over-reading, and circularity are already recognized. Sparse path coverage maps naturally onto sections lacking diagnostic features, and regularization onto parsimony assumptions. Uncertain source locations (which motif occurrence is primary) is a modest extension."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Inferring compositional layers from distributed stylistic and thematic features is ordinary in source criticism, genetic criticism, and computational stylometry (rolling-window authorship analysis, change-point detection for style). No ordinary literary practice I can identify uses forward-modeled path measurements with residual inversion; that formalism is not documented as standard in either traditional or computational criticism.",
+      "rationale": "The goal and much of the evidence base would be reached for without prompting; the inversion-over-paths formalism would not. This split keeps the case away from Native (the operational structure is not ordinary) but supports Adjacent over Remote because ordinary inquiry into stratification continues largely unchanged beneath the added formalism. Naturalization varies by specialty: computational philologists are closer to model-fitting than close-reading critics, and the breadth of the target domain is not established by the packet."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer reinterprets text as a medium with an inferable property field and recasts spanning features as measured paths, but the inquiry it serves (detect and map compositional strata from the distribution of stylistic and imagistic features) is what the critic already does. Remote is the closest boundary: the residual-inversion operation is genuinely non-native, but Remote requires independently defensible counterparts for essential source roles, and the path-whose-propagation-is-altered-by-intervening-structure role lacks one. Alien is not met because displacement is moderate rather than an epistemic reorganization: the conclusion type, the features examined, and the known failure modes remain native. Evidence for Adjacent: inferences and failure modes displace only as extensions; naturalization is partial. Evidence against: five dimensions sit at reinterpretation and the core operation is unfamiliar, which is why the class is provisional and the tension is recorded.",
+    "uncertainty": [
+      "Taxonomy tension: moderate displacement with weak grounding matches neither Remote (needs grounded counterparts) nor Alien (needs high displacement). Adjacent is provisional; a stricter reading that counts residual-based evidence as epistemic reorganization would raise displacement to high and, with the weak path counterpart, yield Alien.",
+      "The essential 'path' counterpart is uncertain: the text is fully observable at every position, so the hidden quantity is historical (formation) rather than a spatial interior crossed by signals. A defensible target-side account of why intervening text alters a spanning feature's measured value is not established here and may not exist.",
+      "Target breadth: close-reading critics and computational philologists would displace differently; the packet does not specify which specialty is practicing.",
+      "Whether a workable forward model (predicting motif transformation or stylometric distance from a stratification) exists is unknown; this is unavailable evidence, not a grounding judgment.",
+      "Whether the novel's discontinuities reflect formation at all versus design is an unresolved target question the transfer assumes rather than tests."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "moderate",
+        "rationale": "The transfer reinterprets text as a medium with a per-position property field and treats spanning features as path measurements evaluated through model residuals, but the aim (map compositional strata), the features attended to, and the conclusion type remain ordinary. Representation changes; inquiry is not reorganized."
+      },
+      "grounding": {
+        "status": "weakly-grounded",
+        "rationale": "Essential roles: unsampleable interior (grounded: no manuscripts, formation hidden); candidate model with forward prediction (conditionally grounded via a generative model of features given strata, as in computational stylometry); iterative adjustment (grounded as hypothesis refinement). The essential path role, a signal whose travel behavior is altered by intervening structure, is constructed mainly to preserve tomographic form: motif recurrence relates two points and depends on their layer membership, not on the material between them, and stylometric windows are direct samples, not traversals. Removing this role collapses the instrument into ordinary segmentation."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Instead of reading features directly and proposing strata, the critic codes many spanning features as measured paths, builds a candidate stratification, predicts each measurement, computes residuals, and iterates with regularization and resolution tests.",
+      "changes_what_is_observed": "Primary evidence shifts from repetitions, shifts, and contradictions themselves to spatially clustered residuals between model predictions and coded measurements.",
+      "changes_what_is_inferred": "Little change in kind: a positional map of strata or hands is already the native conclusion. The change is in licensing (misfit reduction with stated resolution) and in explicit statements about which regions are unconstrained.",
+      "invented_counterparts": "The path-through-medium role is analogy-dependent: a spanning feature whose measured value is systematically altered by the intervening text's compositional properties has no independent target justification. Source and receiver positions for a motif are also constructed. Other counterparts (hidden interior, candidate model, iterative refinement) are grounded or conditionally grounded."
+    }
+  }
+}

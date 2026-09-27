@@ -1,0 +1,82 @@
+{
+  "classification": {
+    "case_id": "010",
+    "target_native_profile": {
+      "entities": "Request units (tickets, work items), teams and roles, handoff points and queues, process stages, approval gates, shared resources such as reviewers or environments.",
+      "relations": "Request is routed through / handed off between teams; stage precedes stage; request waits in a queue owned by a team; teams depend on each other for inputs; rework loops send a request back.",
+      "processes": "Queue accumulation under load, handoff latency, rework and escalation loops, load-dependent service times, batching, priority preemption, drift in staffing and demand over time.",
+      "operations": "Trace individual requests through event logs or ticket systems; compute dwell and wait time per stage and per handoff; build value stream maps or process-mining models; segment by request type; interview teams; sometimes calibrate a queueing or discrete-event simulation model.",
+      "observables": "Per-stage cycle time, wait time versus touch time, queue lengths, handoff counts, rework frequency, variance across request types, utilization, discovered process graph from logs.",
+      "inferences": "Localize bottlenecks to a stage, team, gate, or handoff; attribute delay share to waiting versus working; identify structural causes such as approval gates, shared-resource contention, or unclear ownership; propose changes.",
+      "failure_modes": "Incomplete or inconsistent timestamps; confounding by request complexity or priority; attributing structural problems to individual teams; sample bias toward completed or escalated requests; Goodhart effects once metrics are watched; non-stationarity as staffing and demand change."
+    },
+    "source_transfer_profile": {
+      "entities": "The coordination structure becomes a latent medium: a set of interface and team properties (delay or friction parameters) not read directly. Request units become probes whose routes are ray paths from origin to completion. A candidate structural model plays the role of the velocity model.",
+      "relations": "Each route integrates the latent properties of the interfaces it crosses; observed timing along a route is a path-integral of those properties plus noise; routes that share segments jointly constrain them, and rarely traversed interfaces are poorly constrained.",
+      "processes": "Request flow is treated as signal propagation through a quasi-stationary medium whose properties are estimated as fixed parameters. Load-dependent queueing and time-varying capacity must be either frozen into a stationary property or added to the forward model, which tomography does not natively do.",
+      "operations": "Assemble the ensemble of routes and timings; specify a forward model that predicts timings from a candidate structure (e.g., interface delay parameters or a queueing-network model); compute residuals; iteratively update the structure to reduce misfit under regularization; run resolution or checkerboard-style tests to see which interfaces are actually constrained by the route coverage.",
+      "observables": "Route-wise residuals between predicted and observed timings, especially residuals that cluster by shared interface, team pair, or request type rather than scattering randomly; coverage density of routes across interfaces.",
+      "inferences": "A structural model of interface and team delay properties, including hidden couplings (shared reviewers, informal consultations, unlogged dependencies) that explain systematic residuals; explicit statement of which parts of the structure are resolved by the data and which are underdetermined.",
+      "failure_modes": "Sparse or uneven route coverage leaves some interfaces unconstrained; uncertain request origins or timestamps smear the solution; regularization smooths real bottlenecks; several allocations of delay across shared segments fit equally well (non-uniqueness); a stationary-medium assumption misrepresents congestion that depends on load."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Requests, teams, and handoffs are ordinary target entities. Casting the coordination structure as a latent parameter field and requests as probes is an extension, but organizational analysts already treat stage delay parameters as estimable quantities."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Route-traverses-interface and stage-precedes-stage are native. The path-integral relation (end-to-end time as a sum of segment properties) is close to ordinary value-stream decomposition; the joint-constraint idea across routes sharing segments is a mild extension."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "Tomography assumes a medium whose properties are independent of the signals crossing it. Organizational delay is load-dependent and time-varying: requests congest the queues they traverse. Representing coordination as a quasi-stationary medium requires treating queueing dynamics as a fixed property, a meaningful reinterpretation of what a delay is."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Fitting a forward model to observed timings and iterating exists in the target as simulation calibration and process-mining conformance checking, though it is less common than direct measurement. Explicit resolution testing of coverage is unfamiliar but procedurally accommodated."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The target ordinarily reads dwell times directly at successive points. Shifting the primary evidence to structured residuals against a candidate model is a procedural variation; conformance checking already uses deviations between model and log."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Bottleneck localization and delay attribution are native conclusions. The tomographic framing adds the conclusion type 'this structure is constrained by the data, that one is not,' and the possibility of inferring unlogged couplings from residual patterns. This extends rather than replaces the target's inferential aims."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Sparse data on rare routes and confounding are recognized in the target. Regularization artifacts and formal non-uniqueness of delay allocation across shared segments are named less explicitly, but a practitioner would accept them as versions of known limits."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Process mining performance analysis on timestamped event logs, queueing-network parameter estimation, and discrete-event simulation calibration against observed cycle times are established practices in operations research and operational excellence work. Explicit inversion over an ensemble of routes with resolution testing and residual-pattern interpretation is not a standard organizational method; many organizations rely on direct stage metrics and retrospectives.",
+      "rationale": "A quantitatively inclined practitioner would plausibly build and calibrate a flow model without any prompting from seismology, so the core operation is not foreign. The specific tomographic habits (treating coverage as a resolution problem, reading structured residuals as evidence of hidden structure) would generally need prompting. This partial naturalization places the case at Adjacent rather than Native and does not bear on the Remote/Alien distinction."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer keeps the target question (which coordination structures produce delays) and the target evidence (request routes and timings) intact, and its main operation, model fitting against observed timings, has recognizable target counterparts. It reinterprets delay as a property of a quasi-stationary medium and shifts emphasis from direct stage readings to structured residuals and coverage-limited resolution, which is a representational reinterpretation without reorganizing inquiry. Essential roles (latent structure, paths, timings, forward model, residuals) have target counterparts, though the medium assumption is conditional. Closest boundary is Adjacent/Remote: for Remote, the ensemble inversion with non-uniqueness analysis is a substantively non-native operation in most organizations; against Remote, the target already measures intermediate points directly, so the inversion changes how evidence is processed rather than what inquiry is.",
+    "uncertainty": [
+      "The packet says timing is measured at successive points, which partially removes tomography's premise that the interior cannot be sampled directly. The transfer is most valuable only for the residual latent structure (unlogged couplings, shared-resource contention), and the packet does not say how much of the delay is unexplained by directly measured stage times.",
+      "The stationary-medium assumption is the main semantic tension: if congestion is strongly load-dependent, a tomographic forward model will misattribute dynamic effects to fixed interface properties. Whether this is manageable depends on the forward model chosen, which the packet leaves open.",
+      "Breadth of target practice is uncertain: operations-research-heavy organizations would find model calibration ordinary, while most management contexts would not, so naturalization status varies across the target domain.",
+      "Displacement axis could reasonably be judged low rather than moderate, since only the processes dimension reaches reinterpretation; the class would remain Adjacent either way."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "moderate",
+        "rationale": "Most dimensions are extensions of existing target practice, but representing load-dependent coordination delay as a stationary medium property, and reading structured residuals rather than direct stage times as primary evidence, constitute representational reinterpretation. The aim of inquiry, localizing and explaining bottlenecks from request traces, is unchanged."
+      },
+      "grounding": {
+        "status": "partially-grounded",
+        "rationale": "Routes, timings, per-interface delay parameters, forward models, and residuals all have independently defensible counterparts in organizational flow analysis. The 'unobservable medium' role is only conditionally grounded: intermediate timings are directly observed, so the latent object must be narrowed to hidden couplings and structural properties beyond logged stages, and the stationarity assumption holds only under stable load. No counterpart appears to be constructed solely to preserve the source structure, but support is conditional."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Instead of reading per-stage dwell times and ranking them, the practitioner specifies a candidate structural model, predicts route timings from it, and iteratively adjusts the model to reduce misfit, adding coverage or resolution checks on which interfaces the route ensemble actually constrains.",
+      "changes_what_is_observed": "Primary evidence shifts from raw dwell times to residuals between predicted and observed timings, with attention to residuals that cluster by shared interface or team pair, and to the density of route coverage across interfaces.",
+      "changes_what_is_inferred": "Conclusions become a constrained structural model rather than a ranked list of slow stages, including inferred hidden couplings and an explicit statement of which parts of the structure are underdetermined or admit multiple equally fitting allocations of delay.",
+      "invented_counterparts": "None appear constructed purely to preserve source structure. The nearest candidates are the stationary latent medium (a fixed delay property per interface) and the notion of unobservable internal structure; both are defensible only conditionally, since target delays are load-dependent and intermediate points are directly timed."
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "classification": {
+    "case_id": "CASE-013",
+    "target_native_profile": {
+      "entities": "The surviving final text; its divisions (chapters, episodes, passages); recurring images and motifs; stylistic features (register, syntax, lexis, narratorial voice); hypothesized compositional strata or revision layers; one or more authorial or editorial hands; the sparse publication context.",
+      "relations": "Motif recurs across passages; passage echoes or contradicts another (plot inconsistency, name change, tonal break); a passage belongs to a hypothesized stratum; one stratum precedes another in composition; a stylistic feature marks a section; publication context corroborates or fails to corroborate an internal claim.",
+      "processes": "Composition, revision, insertion and excision, accretion of layers, editorial normalization, and transmission corruption; also intended thematic development of an image across the work, which is the rival explanation to formation-history accounts.",
+      "operations": "Close reading; segmenting the text into units; comparing sections for register, vocabulary, and narrative technique; tracing motif recurrence; identifying seams and inconsistencies; where computational tools are used, stylometric measurement (e.g., rolling authorship signals along the text) and change-point detection; weighing internal evidence against the limited external context; testing whether a unity reading explains the same features as a stratification reading.",
+      "observables": "Stylistic discontinuities, internal contradictions, shifts in narratorial stance, uneven handling of repeated images, anachronisms, quantitative stylometric signatures per section, and whatever the publication record shows.",
+      "inferences": "That the text is stratified into earlier and later material; that particular passages are insertions or revisions; that more than one hand is present; or, conversely, that the discontinuities are deliberate design and the text should be read as a unity. Formation claims are typically advanced as a single best reconstruction supported by convergent internal evidence, with explicit acknowledgment that no drafts survive.",
+      "failure_modes": "Reading intended heterogeneity as accidental (and vice versa); circularity when the stratum hypothesis defines which features count as seams; multiple stratification stories fitting the same discontinuities; stylometric unreliability on short sections; genre or period conventions confounding authorial signal; over-reliance on an intentional or biographical narrative that the surviving evidence cannot support."
+    },
+    "source_transfer_profile": {
+      "entities": "The text becomes a medium whose hidden internal property field is its compositional state (stratum, hand, revision intensity) varying by position. Probes must be constructed: each recurring image, stylistic feature series, or narrative thread is treated as a signal that traverses the text along a path of its occurrences. Observations are the recorded behavior of each probe at each point it passes; the candidate model is an explicit map of compositional state over textual position.",
+      "relations": "A probe path crosses a textual region and its behavior is modulated by that region's compositional state; a candidate formation model predicts probe behavior along every path; discrepancy between prediction and observation is attached to the regions the path crosses; regions crossed by many probes are well constrained, regions crossed by few are poorly resolved.",
+      "processes": "Propagation must be constructed: a motif or feature is treated as carrying a baseline character that is altered as it passes through regions of different compositional state, rather than as developing by authorial design. Model refinement is an iterative process of reducing structured misfit. Composition and revision remain the processes being reconstructed, but they are represented as the static field rather than as a narrative.",
+      "operations": "Choose a set of probes with overlapping coverage across the text; specify a candidate formation model; predict how each probe should behave along its path under that model; compare with observed behavior; locate where misfit is spatially structured; adjust the model, with an explicit parsimony or smoothness preference, and repeat until residuals lack structure; assess which regions the probe coverage can actually resolve.",
+      "observables": "Not the raw discontinuity but the residual: the difference between what the current formation model predicts a probe should do in a region and what it does, considered jointly across many probes crossing that region. A discontinuity already predicted by the model is not evidence; a coincident unexplained residual across several independent probes is.",
+      "inferences": "A positional model of compositional state that could have produced the observed pattern of probe behavior, together with a statement of resolution: which boundaries are constrained by multiple crossing probes and which are underdetermined. The licensed conclusion is a family of admissible formation models rather than one reconstruction, and the confidence in any boundary depends on coverage.",
+      "failure_modes": "Sparse or clustered probes create false boundaries or smear real ones; the parsimony preference can suppress real fine-grained revision; uncertain baseline character of a probe (the analogue of uncertain source location) corrupts every residual on its path; several compositional maps fit the same residuals; and, with no source analogue, the medium may be intentionally heterogeneous, so passive-modulation assumptions misread designed variation as formation history."
+    },
+    "displacement": {
+      "entities": {
+        "level": 2,
+        "rationale": "Strata, hands, motifs, and sections are native, but the source requires treating motifs and feature series as probes with paths and the text as a positional property field. Probes and coverage are constructed kinds the target does not ordinarily recognize; strata survive but as field values rather than narrative episodes."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "Motif recurrence must be reinterpreted as a path that crosses regions and picks up their properties, and the key relation becomes model-predicts-observation-along-path. The target's native relations (echo, contradiction, belongs-to-stratum) remain but are subordinated to a crossing-and-modulation relation the critic does not use."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "The target has no propagation; a motif's change across the text is ordinarily read as authorial development. The source requires recasting it as passive alteration by hidden compositional state, which is a different kind of process and directly contests the target's rival unity explanation."
+      },
+      "operations": {
+        "level": 2,
+        "rationale": "Redaction-style layer hypotheses are refined iteratively in ordinary practice, and computational stylists fit models, so hypothesis refinement is not foreign. But the distinctive operation, forward prediction from an explicit formation model across many overlapping probes, residual localization by intersection, and regularized inversion with a resolution assessment, is not what a critic does when reading seams directly."
+      },
+      "observables": {
+        "level": 2,
+        "rationale": "The objects of evidence (discontinuities, repeated images, stylometric signals) are native, and treating a seam as an anomaly relative to expected continuity is ordinary. What changes is that evidence becomes the unexplained residual against a current model, jointly across probes, so a discontinuity the model already predicts stops counting. That reclassifies which features are evidentiary."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Inferring strata and hands from internal evidence is native. The source extends this by licensing a family of admissible formation models with explicit resolution limits by region, rather than a single reconstruction; existing target concepts of underdetermination accommodate this without reorganizing the problem."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Non-uniqueness, circularity, and small-sample unreliability are already recognized. Coverage artifacts and regularization bias are new names for related worries and extend the target's list. The target's distinctive failure mode, designed heterogeneity, has no source counterpart, which is a gap in the source rather than a displacement of the target."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Computational stylistics uses rolling authorship measures along a text and change-point methods to locate collaborative or revised sections, and redaction and source criticism routinely propose layer hypotheses and refine them against internal inconsistencies. There is no evidence that ordinary literary critics use explicit forward-model, residual, and inversion loops with coverage or resolution assessment, and the path-crossing construct has no identified counterpart in practice.",
+      "rationale": "A stylometrically inclined textual scholar would reach for model fitting and positional signal tracking unprompted, which pulls the case away from Alien and toward the Adjacent boundary. A general literary critic would not, and the multi-probe intersection and residual-as-evidence framing are not established anywhere in the target. The partial naturalization keeps the class at Remote rather than higher, and explains why the boundary of concern is Adjacent."
+    },
+    "final_class": "Remote",
+    "class_rationale": "Entities, relations, processes, operations, and observables each require reinterpretation: motifs become probes with paths, motif change becomes passive modulation rather than authorial development, and evidence becomes structured residual against a formation model rather than the discontinuity itself. Operations and observables change, satisfying the Remote condition, and the mapping is coherent once probes are constructed, without arbitrary correspondences. Inferences and failure modes remain largely intact, so the case does not reach Alien. The closest boundary is Adjacent. Evidence for the boundary mattering: the tomographic framing changes what the critic notices (coincident unexplained residuals at probe intersections rather than any visible seam), what they do (predict, compare, refine, assess resolution), and what they infer (a family of admissible formation maps with region-specific confidence). Evidence against: if the path construct is dropped, the work collapses to positional change-point detection along a single axis, which a stylometrist already does, and the conclusions may be indistinguishable in practice, which would make the case Adjacent.",
+    "uncertainty": [
+      "The target domain is broad: a computational stylist, a textual scholar, and a literary critic would see very different displacement in operations and observables; the packet says only 'a critic'.",
+      "The probe-and-path counterpart is constructed here; it is unclear whether motif recurrences genuinely behave like path-integrated measurements or whether each occurrence is a direct local sample, in which case the source's distinctive cross-path localization has no real target analogue.",
+      "Without the path construct the transfer reduces to one-dimensional profile fitting, which is partially naturalized and would lower the class to Adjacent.",
+      "Whether the resolution and coverage vocabulary changes actual critical conclusions, rather than only their stated confidence, is not established.",
+      "The absence of drafts for this novel limits what target practice can be described as ordinary for formation claims; no verified consensus on how critics handle this specific evidentiary situation is asserted."
+    ]
+  }
+}

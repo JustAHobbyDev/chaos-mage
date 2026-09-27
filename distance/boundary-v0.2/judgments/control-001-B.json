@@ -1,0 +1,66 @@
+{
+  "classification": {
+    "case_id": "CASE-008",
+    "target_native_profile": {
+      "entities": "Feature flag / rollout stage (pilot share, expanded share), exposed and unexposed user cohorts, product metrics (adoption rate, error rate, retention curves), time buckets (days/weeks), concurrent launches and external market events, guardrail metrics.",
+      "relations": "Exposure share causes metric change; exposed vs holdout/control comparison; before vs after the rollout date; cohort membership by first-exposure week; concurrent events coincide with or confound the rollout window; leading metrics (adoption) precede lagging metrics (retention).",
+      "processes": "Ramp-up of adoption as users discover the feature, novelty effect that fades, error rates rising with load then dropping as bugs are fixed, retention cohorts maturing over weeks, seasonality and market shifts moving baselines, learning/habituation.",
+      "operations": "Stage the rollout, watch dashboards and alerts, compare treated vs control or pre vs post (including diff-in-diff or interrupted time series where analysts are available), segment by cohort/platform, annotate the timeline with known external events, decide to hold, roll forward, or roll back.",
+      "observables": "Metric levels and deltas with confidence intervals, daily/weekly time series, retention curves by cohort, error counts and rates, funnel conversion, anomalies relative to forecast baseline, timing of metric shifts relative to the rollout date.",
+      "inferences": "The feature caused (or did not cause) a change of estimated size; the change is durable vs a novelty effect; errors are attributable to the feature vs infrastructure; the metric has stabilized enough to judge; the rollout is safe to expand.",
+      "failure_modes": "Confounding by market changes, seasonality, or simultaneous launches; pilot users unrepresentative of the broader population; insufficient time for retention to mature; underpowered comparisons; metric definition drift; novelty mistaken for durable lift; regression to the mean."
+    },
+    "source_transfer_profile": {
+      "entities": "The product-plus-user-population is the dynamic system; rollout share is the controlled input; adoption, error, and retention series are output channels; the pilot period is the initial state; the expanded-share period is the transient and later steady state; market changes are exogenous disturbance inputs.",
+      "relations": "Output evolution is a function of the system's intrinsic dynamics driven by the input step plus disturbances; features of the output are related to the input magnitude (gain) and to time since the step (delay, rise, settling); disturbances superimpose on the step response rather than being separate comparisons.",
+      "processes": "Transient response following the step: delay before metrics move, rise toward a new level, possible overshoot (novelty spike, error burst) and oscillation (weekly rebound, fix-and-break cycles), decay toward settling, steady-state offset; disturbance responses layered on top.",
+      "operations": "Treat the pilot-to-larger-share change as the applied step; record each metric from the pre-step baseline through the transient; extract temporal features (delay, rise time, peak/overshoot, settling time, steady-state change) per metric; compare feature timing against the timing of known market disturbances; optionally fit simple candidate dynamic models (first-order vs. oscillatory) to the trajectories.",
+      "observables": "Delay, rise time, peak and overshoot magnitude, oscillation period and decay, settling time, steady-state change per metric, and whether these features are consistent across metrics; residual deviations from the fitted response attributable to disturbances.",
+      "inferences": "How quickly and how strongly the user population reacts to exposure changes; whether a spike is a transient (overshoot) or the new level; whether metrics have settled enough to read; which candidate response shape best fits; expectations for how future exposure steps of similar size will play out.",
+      "failure_modes": "Non-flat or unknown pre-step trend (unknown initial state); adoption ceiling (saturation) and nonlinear response so pilot-derived gain does not scale; concurrent launches as interacting inputs; market events as disturbances indistinguishable from response features; too few weeks to observe settling (retention immature); response depends on the operating point (which users were in the pilot vs. the expanded share); noisy weekly data hiding overshoot or oscillation."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Rollout share, cohorts, and metrics are native; treating the population-plus-product as one dynamic system with an initial state and disturbance inputs is a mild abstraction that existing rollout concepts accommodate without reorganization."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Exposure-causes-metric-change and before/after are native; the shift is from treatment-vs-control comparison to input-drives-output-through-intrinsic-dynamics, with market changes recast as superimposed disturbances rather than separate confounders to difference out."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Ramp-up, novelty spike, stabilization, and maturing retention are already recognized; naming them delay, rise, overshoot, and settling adds structure (e.g., oscillation as a possible process) but does not require new kinds of change."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "The step itself is exactly what the team already did; the added operation is explicit extraction of trajectory-shape features and possibly fitting response models instead of comparing levels, which extends rather than replaces dashboard and pre/post practice."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Time series and retention curves are native evidence; overshoot magnitude, settling time, and oscillation period as first-class quantities are somewhat unfamiliar but are directly readable from data the team already collects."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Judging durable vs novelty effect and whether metrics have stabilized is native; the extension is inferring reaction speed/strength as properties of the population that predict responses to future exposure steps, and choosing between response shapes, which most teams do only informally."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Confounding by market events, unrepresentative pilot users, and immature retention map closely to disturbances, operating-point dependence, and insufficient observation time; saturation and nonlinearity need translation to adoption ceilings and non-scaling pilot gains but are easily recognized."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary rollout and experimentation practice uses terms like ramp, novelty effect, stabilization, and steady state, and analysts sometimes apply interrupted time series to a launch date; explicit control-engineering features (overshoot, settling time, damping, oscillation period) and response-model fitting are not standard on product dashboards. No verified consensus survey is available; this is based on general knowledge of product analytics practice.",
+      "rationale": "Because the step change and trajectory observation are already what the team does, and several transient concepts exist under other names, the transfer mainly supplies a more explicit feature vocabulary and a disturbance framing. This partial naturalization pulls the class toward Native and away from Remote; it stays Adjacent because feature extraction and dynamic-property inference are not routine."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "Every dimension is an extension: the target's entities (users, metrics, rollout stages), observables (metric time series), and inference rules (effect, durability, safety to expand) remain intact, while the source adds explicit transient-feature extraction, a disturbance framing for market changes, and inference about reaction dynamics. The closest boundary is Native: if the team already reads 'spike then settle' from dashboards, relabeling it overshoot and settling changes little. Support for the Adjacent→Remote hypothesis is limited here: what plausibly changes is that a reasoner measures settling time before judging, checks the pre-step trend as an initial-state problem, and aligns disturbance timing against response features rather than only estimating a lift. Evidence against: none of these require treating metrics as different kinds of things, and most are reachable from interrupted-time-series or novelty-effect reasoning already in the target, so the practical difference may be mostly vocabulary. It is not Remote because no dimension requires reinterpreting target objects as different kinds of things, and no counterpart had to be constructed arbitrarily.",
+    "uncertainty": [
+      "Target practice varies widely: SRE/canary-analysis teams already use trajectory-shape and control-style reasoning, while growth/product teams may rely on lift comparisons only; the per-dimension levels assume a typical product analytics team.",
+      "The packet does not specify whether a holdout/control group exists; without one, the disturbance-superposition framing becomes more central and inference displacement might be judged slightly higher.",
+      "Whether the source's 'distinguish candidate models' inference is meaningfully used in the target (fitting first-order vs oscillatory responses) is unclear; if it were central, inferences could be a 2 and the class would sit nearer the Remote boundary.",
+      "Naturalization evidence is from general knowledge of product analytics vocabulary, not a verified survey of practice."
+    ]
+  }
+}

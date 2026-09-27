@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "010",
+    "target_native_profile": {
+      "entities": "Requests, teams, handoffs, queues, dependencies, and coordination rules.",
+      "relations": "Requests follow routes through teams; handoffs and dependencies connect work; requests compete for team capacity.",
+      "processes": "Requests wait, receive service, undergo handoffs, and sometimes repeat steps; congestion and coordination dependencies produce delays.",
+      "operations": "Reconstruct request timelines, compare routes and stage durations, locate recurring delays, and assess explanations involving capacity, dependencies, and handoff practices.",
+      "observables": "Recorded routes, successive timestamps, stage durations, end-to-end delays, and recurring timing patterns across requests.",
+      "inferences": "Identify where delays accumulate and which coordination arrangements plausibly explain them, distinguishing observed delay locations from established causes.",
+      "failure_modes": "Incomplete timestamps, differing request complexity, changing workload, unobserved dependencies, selection effects, and confusing delay location with its cause."
+    },
+    "source_transfer_profile": {
+      "entities": "Requests as traversing signals, observed routes as sampled paths, timed checkpoints as observation sites, and latent team or handoff properties as the internal model.",
+      "relations": "Each route crosses particular coordination components whose properties affect request travel time; overlapping routes jointly constrain shared model properties.",
+      "processes": "Requests acquire delays while traversing teams and handoffs, with effects potentially depending on workload, request characteristics, and interactions.",
+      "operations": "Predict travel times along observed routes from a candidate internal coordination model, compare predictions with measured timings, and iteratively adjust its properties to reduce discrepancies across many paths.",
+      "observables": "Residuals between observed and predicted segment or route times, especially patterns associated with shared teams, handoffs, and insufficiently sampled network regions.",
+      "inferences": "Use the pattern of path discrepancies to constrain a network-located model of coordination properties that could generate the observed delays, without claiming a unique causal reconstruction.",
+      "failure_modes": "Uneven route coverage, timing error, uncertain request entry conditions, regularization, misspecified delay dynamics, and non-unique allocations of delay can produce misleading internal models."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Requests, routes, checkpoints, and teams already exist in the target evidence. Assigning them signal, path, observation-site, and latent-component roles extends their use without replacing them."
+      },
+      "relations": {
+        "level": 1,
+        "rationale": "Shared teams and handoffs already connect routes; treating route overlap as a system of constraints on shared internal properties adds an inverse-modeling relationship."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Accumulation of waiting and handoff delays is ordinary. Representing those effects through a forward travel-time model extends that account, provided the model accommodates organizational interactions."
+      },
+      "operations": {
+        "level": 1,
+        "rationale": "Jointly predicting timings and iteratively reducing residuals across many paths is a specific model-fitting procedure compatible with ordinary process and performance analysis."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "The measurements remain request timings, but the procedure emphasizes model-relative residual patterns across overlapping routes rather than only directly observed stage delays."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Reconstructing latent team or handoff properties extends familiar bottleneck attribution. It retains the target's explanatory objects and requires ordinary qualifications about identification and causality."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Measurement error and confounding are familiar; route-coverage artifacts, regularization sensitivity, and equivalent internal models add inverse-problem-specific qualifications."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Process mining and queueing or performance analysis ordinarily use request traces, stage timings, route comparisons, and fitted models. The packet does not establish that joint reconstruction from route residuals is routine in this organization's practice.",
+      "rationale": "A competent specialist could plausibly reach for this procedure without a seismology prompt, but its full operational chain is more specialized than basic coordination diagnosis. This supports Adjacent over an unqualified Native judgment."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer preserves the distinctive chain of many-path measurement, forward prediction, iterative residual reduction, and constrained internal reconstruction. Its target counterparts are independently defensible, while its procedures extend familiar request-flow investigation without reorganizing what coordination structures are or how explanations are assessed. The closest boundary is Native: trace analysis and model fitting support naturalization, but routine use of the complete reconstruction procedure is not established. Emphasizing latent properties and cross-path residuals points toward Remote, yet those changes remain compatible with ordinary performance modeling and do not establish epistemic reorganization.",
+    "uncertainty": [
+      "The breadth of organizational coordination includes practitioners with very different familiarity with inverse modeling; a narrower performance-modeling specialty could support Native.",
+      "The packet does not specify a forward model, workload measurements, request heterogeneity, or evidence validating particular latent coordination parameters.",
+      "Successive timing measurements may directly locate much of the delay. What remains hidden is the generating coordination mechanism, not necessarily the route or delay location.",
+      "A fixed additive delay field is not established. Congestion, priorities, branching, and feedback may require a richer forward model while preserving the supplied operational chain.",
+      "Matching observed travel times supports compatibility with coordination explanations; it does not alone distinguish causal structures that make the same predictions."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "low",
+        "rationale": "The transfer introduces a specialized inverse-fitting procedure and residual-based evidence while retaining requests, routes, timings, and coordination mechanisms as ordinary investigative objects."
+      },
+      "grounding": {
+        "status": "grounded",
+        "rationale": "Requests actually traverse recorded routes, checkpoints supply timings, and teams and handoffs can independently affect delay. These support the essential signal, path, measurement, and internal-property roles. Particular parameterizations still require validation; their unspecified implementation does not make the roles analogy-dependent."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Investigators jointly fit a candidate coordination model across many observed routes, repeatedly predicting timings and adjusting internal properties to reduce discrepancies.",
+      "changes_what_is_observed": "Existing timestamps become model-relative timing residuals whose patterns across shared route components constrain the reconstruction.",
+      "changes_what_is_inferred": "The procedure infers internally located coordination properties compatible with many route timings, supplementing direct localization of where requests wait.",
+      "invented_counterparts": "A latent network model of team and handoff delay properties must be constructed, but its roles have independent target grounding. No essential counterpart must be invented solely to preserve the analogy; a literal geographic medium or fixed seismic-style velocity field would be unsupported and is not required."
+    }
+  }
+}

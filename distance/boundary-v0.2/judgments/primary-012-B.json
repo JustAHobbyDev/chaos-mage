@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "012",
+    "target_native_profile": {
+      "entities": "Proposal, idea fragments (claims, assumptions, sub-proposals), themes or components, review criteria, reviewers, annotated drafts.",
+      "relations": "Fragment supports, depends on, contradicts, or duplicates another fragment; fragment belongs to a theme; fragment satisfies or fails a criterion.",
+      "processes": "Iterative drafting and review, refinement of fragments, convergence or fragmentation of themes across rounds, accumulation of reviewer comments.",
+      "operations": "Close reading, annotation, thematic coding, clustering, argument or dependency mapping, cross-reviewer comparison, querying authors, scoring against criteria.",
+      "observables": "Textual content and wording, semantic overlap or redundancy, logical dependency, reviewer notes and disagreement, criterion scores per fragment.",
+      "inferences": "The proposal comprises N distinguishable components; some are coupled or redundant; a decomposition is supported when independent coders or dependency maps agree.",
+      "failure_modes": "Coder bias, over-splitting or lumping, ambiguity of fragment boundaries, conflating rhetorical and substantive units, criterion drift between rounds."
+    },
+    "source_transfer_profile": {
+      "entities": "Fragments as analytes; the circulating workflow as mobile phase; fixed review criteria as stationary phase; the record of fragment passage as detector output; a retention profile per fragment.",
+      "relations": "Fragment is retained by or released past a criterion; fragments migrate together (co-elute) or separate; a fragment's retention is ordered relative to others.",
+      "processes": "Repeated partitioning of each fragment between held and released states across circulation cycles, producing differential migration and progressive separation.",
+      "operations": "Run fragments through the fixed workflow, then read the records as a chromatogram: register when and where each fragment emerges, measure relative retention, compare profiles to reference fragments with known character.",
+      "observables": "Emergence time or cycle position of each fragment, band separation or overlap between fragments, retention ratios, peak-like clustering in the record.",
+      "inferences": "Fragments with resolved retention profiles are distinguishable components; overlapping profiles indicate unresolved or coupled fragments; relative retention characterizes how strongly a fragment binds to given criteria.",
+      "failure_modes": "Co-elution of fragments with similar criterion interactions; retention shifts if reviewers or criteria change between cycles; the record registers passage but not content (nonspecific detection); retention alone does not identify what a fragment is without reference fragments or content reading."
+    },
+    "displacement": {
+      "entities": {
+        "level": 2,
+        "rationale": "Fragments, criteria, workflow and records already exist in the target, but the transfer recasts fragments as analytes defined by retention behavior rather than by semantic content, and recasts criteria as a stationary phase. That is a change in what kind of thing a fragment is."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "The governing relation becomes 'moves together versus separates under the workflow' rather than 'supports, depends on, contradicts'. Ordinary relations are not discarded but are demoted to orthogonal evidence."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "The circulating, retaining, releasing workflow is stated to exist independently in the target, so repeated partitioning is already present. Reading it as differential migration that produces separation is an added interpretation, not a new process."
+      },
+      "operations": {
+        "level": 2,
+        "rationale": "The practitioner stops decomposing by reading and coding and instead measures retention timing from records and compares profiles against reference fragments. Existing records are used, but their use as a separation instrument is a genuine reinterpretation of the review activity."
+      },
+      "observables": {
+        "level": 3,
+        "rationale": "Evidence shifts from textual content, coherence and coder agreement to emergence order and band overlap in the workflow record. Ordinary target practice does not treat when a fragment is released as evidence of what components exist; this replaces the evidentiary basis."
+      },
+      "inferences": {
+        "level": 2,
+        "rationale": "Distinguishability is concluded from resolved retention profiles rather than from semantic analysis, and overlap is read as coupling or unresolved separation. The inference rule changes, though the conclusion type (a supported decomposition) remains the target question."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Co-elution maps to lumping, retention shift to criterion or reviewer drift, and nonspecific detection to records that log passage without content. These are recognizable to target practitioners once named, requiring extension rather than reinterpretation."
+      }
+    },
+    "naturalization": {
+      "status": "non-native",
+      "evidence": "No ordinary example is known of proposal or idea decomposition performed by tracking retention and release timing across review cycles. Partial analogs exist in iterative review formats such as Delphi rounds or backlog triage, where items that persist across rounds are treated as robust, but those are used to judge quality or consensus, not to define component boundaries.",
+      "rationale": "A competent reviewer would decompose by reading, coding and dependency mapping, not by reading a retention timeline. Non-native status rules out Native and weakens Adjacent; it does not on its own decide between Remote and Alien, which turns on grounding."
+    },
+    "final_class": "Remote",
+    "class_rationale": "The transfer reorganizes inquiry: the primary evidence becomes emergence order and band overlap in workflow records instead of fragment content, and distinguishability is inferred from separation behavior. That is more than extension. But the essential source roles have counterparts the packet states exist independently: a circulating workflow (mobile phase), fixed criteria that retain and release fragments (stationary phase), repeated cycles (partitioning), and records of fragment behavior (detector). No essential role is constructed mainly to preserve the chromatographic structure, so Alien is not met. The closest boundary is Remote versus Adjacent; the decisive factor is that observables and the inference rule are substituted rather than extended.",
+    "uncertainty": [
+      "The breadth of 'idea decomposition' is unknown; specialties such as requirements engineering or structured backlog grooming may already use survival-across-rounds as a decomposition cue, which would pull the case toward Adjacent.",
+      "The packet says records preserve fragment behavior but does not confirm they carry an ordering axis (cycle number or release time) fine enough to resolve bands; if not, the observable is unavailable rather than ungrounded.",
+      "Whether retention is a stable property of the fragment, rather than of the reviewer, the ordering of review, or fragment interdependence, is not established; this conditions the inference 'resolved profile implies distinct component'.",
+      "Tension: failure modes and processes displace little (level 1) while observables displace fully (level 3); the class follows the reorganized evidentiary basis rather than an average.",
+      "Interwoven fragments may be retained together because of coupling, so co-elution could be informative about structure rather than a mere resolution failure; the source limit treats it only as a failure."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "high",
+        "rationale": "What counts as evidence for a decomposition changes from content and coder agreement to retention timing and band separation, and the licensing inference changes accordingly. This is epistemic reorganization of the decomposition task, even though the workflow itself already exists in the target."
+      },
+      "grounding": {
+        "status": "partially-grounded",
+        "rationale": "Mobile phase, stationary phase, repeated partitioning and detector all have counterparts the packet states are independently established, which supports grounding. The role of 'partition behavior as an intrinsic, repeatable property of a component' is conditional: it depends on the workflow being stable across cycles and on retention reflecting the fragment rather than reviewer or ordering effects, which the packet does not establish."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Instead of reading, coding and mapping fragments, the team treats the existing review workflow as a separation column, extracts each fragment's retention profile from the records, and compares profiles to reference fragments.",
+      "changes_what_is_observed": "Evidence becomes when and where each fragment emerges from the workflow and whether its band overlaps others, rather than textual content, redundancy or reviewer agreement.",
+      "changes_what_is_inferred": "Distinguishability is concluded from resolved retention profiles, and overlap is read as coupling or unresolved separation; content analysis becomes orthogonal confirmation rather than the primary basis, in line with the source limit that retention alone does not establish identity.",
+      "invented_counterparts": "None strictly invented: workflow, criteria, cycles and records are all stated as independently existing. Two counterparts are constructed on top of them and are uncertain: a retention axis (cycle or time ordering) derived from the records, and 'reference fragments' with known character serving as standards."
+    }
+  }
+}

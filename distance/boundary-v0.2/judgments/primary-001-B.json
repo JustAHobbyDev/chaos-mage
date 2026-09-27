@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "001",
+    "target_native_profile": {
+      "entities": "Feature flag / rollout percentage, exposed and unexposed user cohorts (pilot cohort vs. newly exposed users), weekly metric series (adoption, error rate, retention), holdout or control group, concurrent releases and market events, baseline period.",
+      "relations": "Exposure share causes metric movement with lag; cohorts are nested in weekly time buckets; retention is conditional on adoption; market events and other launches co-occur with and confound the rollout; the pilot cohort differs in composition from the broader population.",
+      "processes": "Ramp-up of adoption as users discover the feature, novelty spike followed by decay, learning-curve improvement, error rates rising with load then being fixed, retention cohorts maturing over weeks, seasonal and market drift.",
+      "operations": "Change the flag percentage, watch dashboards and guardrail metrics, compare pre/post and exposed-vs-holdout, segment by cohort, run interrupted-time-series or event-study analysis, annotate the timeline with known external events, decide whether to proceed, pause, or roll back.",
+      "observables": "Metric level and week-over-week deltas, spikes and dips, time to plateau, cohort retention curves, confidence intervals, anomaly alerts, differences between exposed and holdout groups, alignment of movements with annotated external events.",
+      "inferences": "Estimated treatment effect on each metric, whether an early spike is a novelty effect, whether a regression is attributable to the feature or to a concurrent event, whether the effect seen in the pilot generalizes to the larger share, go/no-go on further ramp.",
+      "failure_modes": "Seasonality and market shifts confounding the change, concurrent launches, novelty effects mistaken for durable gains, pilot-cohort selection bias, insufficient sample or observation window for retention, metric definition drift, network or capacity effects that appear only at higher exposure."
+    },
+    "source_transfer_profile": {
+      "entities": "The product-plus-user-population as a dynamic system with internal state; rollout share as the manipulated input; adoption, error, and retention series as outputs; baseline pilot period as initial state; market changes as exogenous disturbances; the pilot-to-larger-share change as a step of known magnitude and time.",
+      "relations": "Input drives outputs through system dynamics with delay; outputs are coupled (retention depends on adoption); disturbances enter additively or interact with the input; response depends on the operating point (which exposure level the step was applied from).",
+      "processes": "Transient response following the step, decaying toward a later steady-state level; possible overshoot (novelty peak), oscillation (repeated spike-and-fix cycles in errors), saturation (adoption ceiling); slow drift from disturbances superimposed on the response.",
+      "operations": "Treat the exposure change as a deliberate step of known size at a known time; record each output trajectory from the pre-step baseline through the transient toward its later level; align trajectories to the step time; attempt to separate the step response from disturbance-driven movement, using the holdout as the disturbance-only reference.",
+      "observables": "Per-metric response features: delay before movement, rise time, peak/overshoot magnitude and timing, oscillation, settling time to a band, steady-state change relative to baseline; residual after subtracting holdout or pre-trend.",
+      "inferences": "Characterize the rollout's dynamic signature (how fast, how much overshoot, where it settles); discriminate candidate adoption dynamics (e.g., first-order approach vs. peak-and-decay novelty response vs. slow diffusion); predict how a further step to full exposure would behave, conditional on operating-point dependence.",
+      "failure_modes": "Noise and low sample in weekly series; unknown or unstable initial state (pilot cohort unrepresentative); saturation and nonlinearity (network effects at higher share); disturbances (market changes) indistinguishable from response; interacting inputs (other launches); observation window too short for settling; no true steady state in a nonstationary market; the step also changes system composition, not just input."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Rollout percentage as a controlled input and metric series as outputs are already how teams think; treating the user population as a stateful dynamic system with an initial state and operating point is a mild extension, since cohort analysis already carries state."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Exposure causing lagged metric movement, with confounders acting alongside, is the ordinary causal picture in launch monitoring; operating-point dependence maps onto the familiar concern that pilot effects may not generalize."
+      },
+      "processes": {
+        "level": 1,
+        "rationale": "Transient-then-settle is close to native notions of ramp-up, novelty spike, and stabilization, but framing them as one response process (overshoot, oscillation, settling) unifies things teams usually describe piecemeal."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "The team already applied a discrete exposure change and recorded trajectories afterward; the source operation is what was done, with the only addition being aligning series to the step time and using the holdout as a disturbance reference, both routine."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Teams read spikes, time-to-plateau, and post-period deltas, but formal extraction of delay, rise time, overshoot, settling time, and steady-state gain as named per-metric features is an added descriptive layer rather than standard dashboard practice."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Estimating an effect and judging novelty vs. durable change is native; inferring a dynamic signature and discriminating candidate response models (first-order vs. peak-and-decay vs. diffusion) extends this toward characterizing dynamics, but it fits within existing effect-estimation goals without reorganizing them."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Noise, confounding market events, concurrent launches, unrepresentative pilot, saturation at scale, and short windows are the standard rollout caveats; the source list is essentially a renaming."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Ordinary rollout practice includes staged ramps with post-change monitoring, novelty-effect recognition, waiting for metrics to 'stabilize', and interrupted-time-series or event-study analysis, all of which embody step-and-observe logic. Explicit control-theory descriptors such as rise time, overshoot, and settling time are not, to my knowledge, standard vocabulary in product analytics; I have no survey evidence on how widely they are used.",
+      "rationale": "A competent practitioner would reach for the operation (change exposure, watch trajectories, compare to holdout) unprompted, but would less likely decompose the trajectory into formal step-response features or fit dynamic models. This partial naturalization places the case on the Native/Adjacent boundary and tips it to Adjacent because the observable and inference layer adds representation beyond ordinary practice."
+    },
+    "final_class": "Adjacent",
+    "class_rationale": "The transfer leaves ordinary inquiry intact: the same change is made, the same series are recorded, and the same confounders are worried about. What it adds is a unifying descriptive frame (transient response with named features and a steady-state gain) and a mild shift toward characterizing dynamics rather than only estimating effects. That is extension, not reinterpretation of what the objects are, and nothing about how evidence is gathered or what counts as evidence is reorganized, so Remote is not reached. It is not Native because formal response-feature extraction and dynamic-model discrimination are not what most teams do by default. Closest boundary is Native; evidence for Native is that operations and failure modes are level 0 and the step is literally the rollout; evidence against is the non-native observable vocabulary and the dynamics-characterization goal.",
+    "uncertainty": [
+      "Breadth of the target domain: mature growth/data-science teams may already use event-study decompositions that make this effectively Native, while small product teams may only eyeball dashboards; the class could shift toward Native for the former.",
+      "Steady state may not exist under nonstationary market conditions; the counterpart 'post-launch plateau' is defensible but conditional on the market being quiet enough over the observation window.",
+      "The step changes the composition of the treated population, not just an input magnitude, so 'same system before and after' is only approximately true; this is a mapping caveat, not an invented counterpart.",
+      "A single step with no repetition limits model discrimination; the source inference about distinguishing candidate models is weaker here than in a controllable bench system.",
+      "I have no citation-grade evidence on how common control-theory vocabulary is in product analytics; the naturalization status rests on general knowledge of practice."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "low",
+        "rationale": "Surface extension and familiar procedural variation: the operation and failure modes are already native, and the new response-feature descriptors and dynamics framing sit on top of ordinary monitoring without changing how the investigation is run or what counts as evidence."
+      },
+      "grounding": {
+        "status": "grounded",
+        "rationale": "Every essential role has an independent target counterpart: the step is the actual exposure change, outputs are the recorded metrics, the initial state is the pilot baseline, disturbances are the market changes the packet names, and the holdout is a standard tool for isolating them. The steady-state role is the weakest link but corresponds to the ordinary practice of waiting for metrics to stabilize, so it is conditional rather than analogy-dependent."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Little. The team already applied a discrete exposure change and recorded weekly series. The transfer adds aligning every series to the step time, treating the pre-step pilot period explicitly as the baseline, and using the holdout as the disturbance-only reference trajectory.",
+      "changes_what_is_observed": "Moderately at the descriptive layer. Instead of level changes and ad hoc spike notes, each metric is read for delay, rise, peak/overshoot, oscillation, settling time, and steady-state change relative to baseline, plus a residual after removing the holdout or pre-trend.",
+      "changes_what_is_inferred": "Mildly. Beyond the native effect estimate and novelty judgment, the frame licenses a dynamic signature per metric and a comparison among candidate response shapes, and it frames prediction of the next ramp as operating-point-dependent. Confounding conclusions are unchanged.",
+      "invented_counterparts": "None constructed purely to preserve source structure. The steady-state level is the only role whose counterpart is conditional, since a nonstationary market may never settle; it is grounded in the ordinary 'wait for stabilization' practice but may be empirically absent in a given rollout."
+    }
+  }
+}

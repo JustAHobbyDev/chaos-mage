@@ -1,0 +1,32 @@
+{
+  "calibration_runs": 38,
+  "harness_retries": 0,
+  "failures": 0,
+  "timeouts": 0,
+  "protocol_amendments": 0,
+  "visible_transport_retries": 0,
+  "visible_formatting_retries": [
+    {
+      "run_id": "primary-006-B",
+      "structured_output_calls": 2,
+      "tool_error_count": 1,
+      "runner_turn_count": 3,
+      "error": "First StructuredOutput input was not parseable JSON (reported 9968 bytes); runner returned InputValidationError and requested valid JSON. Second call succeeded.",
+      "handling": "Accepted final schema-valid payload; preserved original event stream, error and internal repair. No harness-authored repair prompt.",
+      "provenance": "results-freeze.json run audit and private events.jsonl"
+    }
+  ],
+  "other_claude_runs": {
+    "count": 18,
+    "structured_output_calls_each": 1,
+    "runner_turn_count_each": 2
+  },
+  "codex_retry_observability": "No formatting retry event exposed; zero observed cannot establish absence of hidden retries.",
+  "runner_differences": "Codex constrained final output and host system instructions differ from Claude safe-mode host instructions plus StructuredOutput tool machinery. Both received equivalent classifier/packet/schema content.",
+  "harness_runtime": {
+    "python": "3.14.7",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.23.0",
+    "dependency_pins": "distance/requirements.txt (unchanged v0.1 file)"
+  }
+}

@@ -1,0 +1,1826 @@
+{
+  "results_freeze_sha256": "a7411e81c422510bb062dad27bf86ddddf69798e35260e2405cbd67ef2aca3ec",
+  "pair_count": 19,
+  "pairs": [
+    {
+      "condition": "primary",
+      "case_id": "001",
+      "run_ids": [
+        "primary-001-A",
+        "primary-001-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Native",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Native",
+            "rationale": "Removing engineering labels leaves the rollout operation and longitudinal monitoring already specified by the target. Exposure provides a defensible step input and product metrics provide observed responses. The closest boundary is Adjacent: systematic overshoot or settling measurements and candidate dynamical models could extend routine practice. Against that classification, the supplied mechanism also licenses ordinary empirical response characterization, and neither formal modeling nor a new evidential regime is required."
+          },
+          "B": {
+            "value": "Adjacent",
+            "rationale": "The transfer leaves ordinary inquiry intact: the same change is made, the same series are recorded, and the same confounders are worried about. What it adds is a unifying descriptive frame (transient response with named features and a steady-state gain) and a mild shift toward characterizing dynamics rather than only estimating effects. That is extension, not reinterpretation of what the objects are, and nothing about how evidence is gathered or what counts as evidence is reorganized, so Remote is not reached. It is not Native because formal response-feature extraction and dynamic-model discrimination are not what most teams do by default. Closest boundary is Native; evidence for Native is that operations and failure modes are level 0 and the step is literally the rollout; evidence against is the non-native observable vocabulary and the dynamics-characterization goal."
+          }
+        },
+        "dimension.entities": {
+          "A": {
+            "level": 0,
+            "rationale": "Exposure settings, users, and outcome metrics already supply the input, system, and output roles without introducing new kinds of objects."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Rollout percentage as a controlled input and metric series as outputs are already how teams think; treating the user population as a stateful dynamic system with an initial state and operating point is a mild extension, since cohort analysis already carries state."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Delayed adoption, temporary error spikes, and persistent outcome changes are familiar rollout processes."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Transient-then-settle is close to native notions of ramp-up, novelty spike, and stabilization, but framing them as one response process (overshoot, oscillation, settling) unifies things teams usually describe piecemeal."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Characterizing the timing and persistence of a response directly serves the target question. The instrument permits this without requiring formal system identification."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Estimating an effect and judging novelty vs. durable change is native; inferring a dynamic signature and discriminating candidate response models (first-order vs. peak-and-decay vs. diffusion) extends this toward characterizing dynamics, but it fits within existing effect-estimation goals without reorganizing them."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "native",
+            "evidence": "An ordinary-practice example is monitoring adoption curves, error spikes, and cohort retention after increasing feature availability, noting delayed effects and whether metrics stabilize.",
+            "rationale": "A competent product practitioner could reach for the core operation and trajectory-based interpretation without engineering prompts. This supports Native despite some extension in formal response-feature terminology; explicit dynamical modeling is less broadly established."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Ordinary rollout practice includes staged ramps with post-change monitoring, novelty-effect recognition, waiting for metrics to 'stabilize', and interrupted-time-series or event-study analysis, all of which embody step-and-observe logic. Explicit control-theory descriptors such as rise time, overshoot, and settling time are not, to my knowledge, standard vocabulary in product analytics; I have no survey evidence on how widely they are used.",
+            "rationale": "A competent practitioner would reach for the operation (change exposure, watch trajectories, compare to holdout) unprompted, but would less likely decompose the trajectory into formal step-response features or fit dynamic models. This partial naturalization places the case on the Native/Adjacent boundary and tips it to Adjacent because the observable and inference layer adds representation beyond ordinary practice."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "Product monitoring practices vary; formal response-feature estimation may be familiar to quantitative teams and unfamiliar elsewhere.",
+          "A fixed configured exposure share does not guarantee fixed realized usage or stable cohort composition.",
+          "Several weeks may not reveal settling or mature retention, and some metrics may have no steady state.",
+          "The packet provides no controls for market changes, so causal attribution and discrimination among causal models remain limited."
+        ],
+        "B": [
+          "Breadth of the target domain: mature growth/data-science teams may already use event-study decompositions that make this effectively Native, while small product teams may only eyeball dashboards; the class could shift toward Native for the former.",
+          "Steady state may not exist under nonstationary market conditions; the counterpart 'post-launch plateau' is defensible but conditional on the market being quiet enough over the observation window.",
+          "The step changes the composition of the treated population, not just an input magnitude, so 'same system before and after' is only approximately true; this is a mapping caveat, not an invented counterpart.",
+          "A single step with no repetition limits model discrimination; the source inference about distinguishing candidate models is weaker here than in a controllable bench system.",
+          "I have no citation-grade evidence on how common control-theory vocabulary is in product analytics; the naturalization status rests on general knowledge of practice."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "002",
+      "run_ids": [
+        "primary-002-A",
+        "primary-002-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {},
+      "uncertainty": {
+        "A": [
+          "The panel changes between observation periods, so the packet does not establish a within-visitor step transition. Comparing cohorts is not automatically equivalent to observing one system through a step response.",
+          "Treating entry exposure as the start of each response requires an explicit input definition and comparable initial conditions; it must not silently substitute for the actual panel replacement.",
+          "The packet does not specify how interview evidence is timed or converted into an interpretation trajectory. This is unavailable measurement detail, not proof that such a measurement lacks grounding.",
+          "Interpretation may be multidimensional and may never settle during a visit. Overshoot or steady-state language would be unjustified without suitable reference levels and observation duration.",
+          "The extent to which museum research specialties already use dynamic response models is uncertain. The classification concerns the supplied investigation rather than all museum practice."
+        ],
+        "B": [
+          "The step is applied across different visitor cohorts, not to the same system over time; whether treating each visit as a response from time-zero at entry is a legitimate counterpart to a step depends on cohort comparability, which the packet does not establish.",
+          "Interview evidence may be too sparse within a visit to support trajectory features finer than early/middle/exit; if only exit interviews exist for interpretation, the trajectory reduces to routes and pauses and the interpretation signal is unavailable rather than ungrounded.",
+          "Whether interpretation can be coded as a scalar or low-dimensional index over time is a methodological assumption; museum interpretation research often treats meaning as qualitative and plural.",
+          "The target domain 'museum interpretation' spans quantitative visitor studies and curatorial or hermeneutic practice; naturalization is judged mainly against visitor-studies practice and may be weaker for interpretive-planning specialists.",
+          "Overshoot and oscillation have weak target counterparts; they are not essential to the instrument's chain, so they do not push the class toward Alien, but their inclusion is a tension recorded here.",
+          "Grounding is partial rather than full because the interpretation-signal counterpart is constructed; if a reviewer treats it as analogy-dependent rather than a designable measurement, the case sits at a low/moderate displacement with weaker grounding, a taxonomy tension rather than grounds for Alien."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "003",
+      "run_ids": [
+        "primary-003-A",
+        "primary-003-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Distinguishing detection of a feature from proof of its historical cause is already ordinary competent reasoning about textual formation."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Restricting the conclusion to presence and location of responsive features, and withholding claims about the formation event, tightens rather than replaces ordinary inference. Careful textual critics already distinguish internal evidence from genetic narrative, though the discipline is often blurred in practice."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet specifies no actual probe, response criterion, or validation evidence; the proposed assay is a concrete operational counterpart, not a demonstrated finding about this novel.",
+          "Naturalization varies across close reading, computational literary studies, and textual scholarship; a narrower specialist target might justify Native.",
+          "Textual configurations are defensible detection targets, but their status as remnants of particular formation events remains uncertain. Treating every positive response as proof of revision would exceed both the source inference and available target evidence.",
+          "Textual preprocessing and interpretive priming are imperfect counterparts to chemical alteration of forensic material; they do not establish that applying a diagnostic necessarily damages the surviving text."
+        ],
+        "B": [
+          "The packet's target is a generic 'critic'; if the practitioner is a computational stylistician or textual scholar, the transfer is close to Native, while for an interpretive critic it is a clearer Adjacent extension. The class is a judgment across that breadth.",
+          "The 'otherwise absent' reaction is an approximate counterpart: luminol creates a new observable, whereas a stylometric test reveals a pattern already latent in the text. This slightly weakens the fidelity of the observables mapping but does not affect grounding of the essential chain.",
+          "The 'probe alters material' limit has only a constructed counterpart (interpretive priming after a test, or loss of features through normalization). It is non-essential to the operational chain, so it does not create an Alien condition, but it is the least grounded element.",
+          "Whether a single anonymous novel provides an adequate internal baseline for any marker test is a practical concern for the target; it affects usefulness, not ontological distance, and was not used to set the class."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "004",
+      "run_ids": [
+        "primary-004-A",
+        "primary-004-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Separating detection of a textual feature from claims about its historical origin is already ordinary critical source evaluation."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "The two-stage discipline (presence and location of layer-consistent features first; formation event only with corroboration) is a familiar caution in attribution studies, where a stylistic signal is not treated as proof of authorship. It sharpens rather than replaces native inference."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not specify whether the draft fragments contain sufficiently distinctive configurations to calibrate a discriminating probe.",
+          "Naturalization varies by specialty: computational stylistics may make this procedure more ordinary than it is in predominantly interpretive criticism.",
+          "A generated textual diagnostic response is a functional counterpart to the source reaction, not a physical chemical reaction; the correspondence depends on preserving feature-dependent activation and localized output.",
+          "Detectability and historical specificity remain unverified. This limits conclusions about formation without making the diagnostic roles themselves analogy-dependent.",
+          "The probe addresses selected patterns and possible textual survivals; explaining the novel's overall organization still requires contextual interpretation."
+        ],
+        "B": [
+          "Breadth of target: for computational stylometry practitioners this is close to Native; for close-reading critics observables might be judged level 2.",
+          "Semantic tension: the luminol frame presupposes residue of a past event, which may bias explanation of repeated images toward accidental formation and away from deliberate design, although the target problem asks to explain organization either way.",
+          "The 'probe alters material' limit has only a constructed counterpart for interpretive probes (priming) and a narrow grounded one (destructive physical testing of fragments); it is a limit, not an essential chain step, so it did not affect grounding status.",
+          "Whether the presumptive/confirmatory two-stage structure is standard practice or merely good practice in textual attribution is not verifiable here."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "005",
+      "run_ids": [
+        "primary-005-A",
+        "primary-005-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Native",
+        "Native"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.entities": {
+          "A": {
+            "level": 0,
+            "rationale": "Works, textual witnesses, drafts, correspondents, and publication participants are ordinary objects of textual scholarship; their identities still require evidence."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Textual scholarship already distinguishes the work from its documentary witnesses and treats drafts and letters as dated documents. Recasting compositional states and handlers (author, editor, publisher) as 'states of ownership or custody' is a relabeling with one real shift: provenance tracks an invariant object through changing contexts, whereas here the object itself changes between states. Existing concepts (version, witness, stage) absorb this without reorganizing the problem."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Transmission, editorial handling, and revision already belong to ordinary accounts of textual formation."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Transmission, revision, and loss of intermediate states are native. Treating revision and submission to a publisher as 'transfers of custody' is a mild reframing; publication correspondence does document literal custody of the manuscript, so the reframing is partly literal."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 0,
+            "rationale": "Agreement among independently assessed documents, contradictory dates or identifications, and archival gaps already count as evidence concerning textual history."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Compatible dated links, contradictions between documents, and gaps are already the evidence textual scholars use. The one change is that the source ontology demotes internal evidence (repeated images, stylistic discontinuities) from evidence of formation to hypothesis prompts requiring documentary support, a discipline that textual scholars recognize but interpretive critics do not always apply."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "A bounded reconstruction separating documented events from conjectural formation is an ordinary textual-historical conclusion."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "A bounded reconstruction with established and unresolved transitions is the ordinary output of genetic criticism. The extension is the explicit rule that formation claims are licensed only where independent records form compatible links, which narrows but does not reorganize what may be inferred about textual organization."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not establish whether the surviving records actually identify successive custodians, transactions, or textual states; the reconstruction may remain sparse.",
+          "Different branches of literary analysis vary in their use of documentary reconstruction; the naturalization judgment is strongest for textual scholarship and genetic criticism.",
+          "Dated fragments need not form a direct ancestor–descendant sequence, and anonymity may prevent linking participants to creative responsibility.",
+          "The instrument directly addresses documented formation and transmission. Claims explaining the final text's imagery or stylistic organization require additional textual analysis and cannot be licensed by provenance alone."
+        ],
+        "B": [
+          "The target domain is broad: for scholarly editors and genetic critics the representation is native, while for interpretive critics it may be only partially naturalized; the packet's 'a critic' does not settle which sub-practice is meant, and this is the main driver toward Adjacent.",
+          "The provenance ontology addresses 'what supports claims about formation' directly but addresses 'explain the textual organization' only by constraint; I have kept the target question intact and treated this as a scope limitation of the transfer, not as displacement.",
+          "Anonymity: the source links records to named people, whereas here the author is unknown; the counterpart (linking records to unnamed but distinguishable agents such as author versus editor) is defensible but its strength depends on how much the correspondence identifies handlers, which the packet does not say.",
+          "Whether the packet's dated fragments are dated externally (postmarks, letters) or only by inference from content affects how much of the chronology is 'independent records' in the source sense; if dating is itself inferential, the observables dimension might be judged closer to level 2."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "006",
+      "run_ids": [
+        "primary-006-A",
+        "primary-006-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Native",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Native",
+            "rationale": "Removing the clinical labels leaves a familiar experiment on how textual manipulations affect reader interpretations. The complete removal-and-restoration mechanism retains ordinary target entities, evidence, and causal reasoning. Adjacent is the closest boundary: a deliberate withdrawal-and-return sequence may be less routine than a simple comparison of textual variants, especially outside experimental reader studies. However, the supplied target already includes restoration responses, and using them to check recovery introduces little representational change. Present naturalization in reader studies therefore favors Native."
+          },
+          "B": {
+            "value": "Adjacent",
+            "rationale": "The transfer extends target practice: version comparison, manipulated texts, and blinded reader responses are already used in empirical literary studies, and critics already attribute interpretive effects to features. The main reinterpretation is treating the interpretation as a reversible, reproducible effect across readers so that restoration can count as recurrence. All essential source roles (factor, effect, removal, reintroduction, temporal association) have defensible target counterparts supplied by the packet or by ordinary reader-study measurement, so inquiry is extended, not reorganized around a foreign representation."
+          }
+        },
+        "dimension.entities": {
+          "A": {
+            "level": 0,
+            "rationale": "Textual features, passage versions, and reader interpretations already constitute ordinary objects of experimental reader studies."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Features, passages, and readers are ordinary target kinds. Treating the specified interpretation as a measurable effect held by a population of readers, rather than an argued reading, is an extension already accommodated by reader studies."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 0,
+            "rationale": "Relating manipulated textual cues to reader judgments is an ordinary target relationship; no clinical entity relationship must be invented."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Critics already say a device produces a sense of withholding. Framing this as a causal contribution tested by contrast across versions sharpens but does not reorganize the relation."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Interpretations changing with available textual evidence are familiar target processes, including recovery when evidence is restored."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The source process is a reversible effect waxing and waning in one persisting subject. Readers cannot un-read, so recurrence must be reinterpreted as a repeatable state across separate readers or as re-reading with carryover. The reader's interpretation is treated as a different kind of thing: a reproducible population-level state rather than a single unfolding reading."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 0,
+            "rationale": "Omitting and restoring material while comparing blinded responses implements ordinary stimulus manipulation and control comparisons using the versions explicitly available."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Comparing versions is native to textual criticism, and manipulated-text experiments with reader responses exist in empirical literary studies. The ordered remove-then-restore sequence is a procedural variation, not a new kind of operation."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 0,
+            "rationale": "Changes in the frequency or strength of a reader interpretation remain ordinary reader-study evidence throughout removal and restoration."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Blinded reader response distributions are ordinary evidence in reader studies, though not in mainstream close reading. Using the shift and return of an attribution as the evidentiary signal is a modest extension."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Inferring a qualified causal contribution from controlled, reproducible response differences is native to experimental reader studies."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Inferring contribution from between-condition differences is familiar in empirical literary studies. The added rule that reproducibility under restoration strengthens the causal claim extends rather than replaces existing inferential habits; for hermeneutic critics the shift from argued warrant to experimental warrant is larger, but still recognizable."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 0,
+            "rationale": "Confounding, response variability, carryover, and imperfect manipulation are familiar experimental concerns with direct target counterparts."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Spontaneous effects map to reader priors, concurrent change maps to omission side effects on coherence, and persistent effects map to carryover from prior exposure. Redundant cueing (masking) is a target-native concern the source frame must add. All are accommodated without reorganizing the problem."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "native",
+            "evidence": "An ordinary experimental reader-study design compares judgments across systematically edited versions of a text. The packet specifically supplies omission versions, blinded responses, and restoration responses.",
+            "rationale": "A practitioner investigating textual contributors could plausibly compare omission and restoration conditions without clinical prompting. This supports Native for the specified problem, although such experiments are less characteristic of literary criticism conducted solely through close reading."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Empirical literary studies and psychonarratology (for example, textual manipulation experiments by Bortolussi and Dixon, and foregrounding studies by Miall and Kuiken) routinely alter text features and compare reader responses between versions. Mainstream literary criticism instead warrants feature-to-interpretation claims by close reading, and I have no evidence that the explicit remove-then-restore sequence is a standard design in reader studies.",
+            "rationale": "Practitioners in the reader-studies wing of the target would plausibly reach for version manipulation with blinded readers unprompted; hermeneutic critics would not. The specific rechallenge step is less established. This split kept the class above Native but supported Adjacent rather than Remote, since the core operation and observable already exist in part of the target."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not specify whether the same readers encounter multiple versions or separate reader groups encounter each version; carryover and group comparability require different controls.",
+          "Blinding alone does not establish random assignment, equivalent groups, or control of presentation order.",
+          "Restoring material restores multiple textual properties together, so a response reversal may identify contributing material without isolating the precise linguistic or narrative mechanism.",
+          "The judgment applies to the supplied experimental reader-study problem; the prevalence of this exact sequence across literary interpretation more broadly is uncertain."
+        ],
+        "B": [
+          "The target domain spans hermeneutic criticism and empirical reader studies; for a close-reading critic the displacement of observables and inferences would be closer to 2, and the class would sit nearer the Adjacent/Remote boundary.",
+          "Whether restoration responses come from the same readers or a fresh group is unspecified; the within-subject version imports carryover problems that weaken the rechallenge analogy, the between-subject version is a between-conditions experiment rather than a true rechallenge.",
+          "I lack evidence on how standard blinded coding of a specific interpretation such as narratorial withholding is in reader studies; the measurement is plausible but its reliability is unverified.",
+          "Redundant cueing may mean omission of a single feature produces no change even when it contributes, so null dechallenge results are less diagnostic in texts than the source frame suggests."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "007",
+      "run_ids": [
+        "primary-007-A",
+        "primary-007-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.relations": {
+          "A": {
+            "level": 1,
+            "rationale": "Support and interaction among cues are familiar; explicit subset, complement, and test-preservation relations extend comparisons already available in the packet."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The source needs parts to relate to the whole by set inclusion, with sufficiency of a subset as the key relation. Target practice treats meaning as context-conditioned (parts change sense when neighbors are removed), so holistic cueing relations must be reinterpreted as decomposable membership relations for the procedure to work."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 1,
+            "rationale": "Adaptive partitioning, complement testing, and retention of successful reductions are distinctive additions, but they use ordinary textual interventions and reader-response comparisons without changing the basic form of inquiry."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Omitting material and comparing reader responses is recognizable in reader studies and variant comparison in textual criticism. But an oracle-driven search that recursively minimizes the passage replaces the critic's central act of interpreting with running a reduction algorithm; the practitioner's activity is meaningfully redefined."
+          }
+        },
+        "axis.grounding": {
+          "A": {
+            "status": "grounded",
+            "rationale": "Removable material, reduced configurations, repeated tests, and outcome persistence have defensible counterparts in textual omissions, passage versions, blinded reader studies, and the specified interpretation. Reproducibility remains to be established, but no essential role depends solely on preserving the software analogy."
+          },
+          "B": {
+            "status": "partially-grounded",
+            "rationale": "Removable parts (passage segments) and the test harness (blinded, coded reader responses) have independent target justification, and restoration responses give a native reversal check. Support is conditional in two places: the assumption that omitting material leaves the meaning of retained material unchanged is carried over from software configurations and is contested by target holism; and the pass/fail oracle requires a decision criterion whose stability across readers is unestablished. Neither is an invented counterpart, but both make the sufficiency inference defensible only under stated conditions."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not specify textual units, the reader-response criterion, or whether the interpretation is sufficiently reproducible across tests. These require operational choices and validation.",
+          "Ordinary practice varies between literary criticism and empirical reader studies; the supplied interventions make this transfer more familiar than it might be in a purely interpretive setting.",
+          "A reduced passage can induce withholding through omission artifacts. Persistence of the same interpretive label does not establish persistence of the same textual basis.",
+          "Minimal sufficiency does not rank contributors, establish necessity in the original passage, or identify all alternative sufficient combinations. Treating it as a complete answer to the contribution question would exceed the instrument's inference."
+        ],
+        "B": [
+          "The target domain spans traditional literary criticism and empirical reader studies; naturalization and displacement judgments differ sharply between them. For criticism alone, operations and inferences could be argued to level 3 and the class to Remote.",
+          "Whether 'the narrator is withholding knowledge' can be operationalized as a stable pass/fail criterion across readers is unknown; if attribution rates are graded and noisy, most tests may be unresolved and the minimization may not converge.",
+          "The omission-artifact confound (removing text creates gaps that themselves cue withholding) may be severe for this specific interpretation; restoration responses partly control for it, but the packet does not say whether omissions were masked or marked.",
+          "Strong interaction among features could make any 'minimal subset' unstable or non-unique, weakening the interpretive value of the inference without making the counterpart ungrounded.",
+          "Two dimensions at level 2 plus a non-native inferential rule create a tension with the Adjacent class; the provisional Adjacent rests on the judgment that inquiry is reinterpreted rather than reorganized. Remote is the live alternative.",
+          "No verified evidence about how commonly reader studies use iterative reduction designs; the naturalization judgment relies on general knowledge of text-manipulation experiments, not documented consensus."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "008",
+      "run_ids": [
+        "primary-008-A",
+        "primary-008-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Native",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Native",
+            "rationale": "Removing the source labels leaves ordinary reconstruction of a chronology through overlapping documentary sequences. The distinctive mechanism remains intact: shift uncertain sequences, seek repeated ordered correspondence, and use residual inconsistencies to investigate missing or misassigned increments. The closest boundary is Adjacent: explicitly organizing reports into increment series could make the procedure more systematic, but the packet requires no additional representation or evidentiary rule beyond competent historical synchronization."
+          },
+          "B": {
+            "value": "Adjacent",
+            "rationale": "The transfer extends ordinary chronological and archival practice rather than reorganizing it. Every dimension sits at extension level: the historian still asks which month each report belongs to and which intervals remain uncertain, still relies on shared events and dated anchors, and still draws relative and bounded placements. What changes is the procedure (systematic offset sliding and multi-month pattern comparison) and the emphasis on residual misfit as evidence of missing or duplicated months. All essential roles have defensible target counterparts, so neither Remote nor Alien is indicated. The closest boundary is Native: if one regards synchronism as already encompassing formal pattern alignment, the case would be Native; the partially-naturalized status and the constructed per-period feature keep it at Adjacent."
+          }
+        },
+        "dimension.entities": {
+          "A": {
+            "level": 0,
+            "rationale": "Monthly reports, report sequences, reference documents, and gaps are ordinary objects of historical chronology; treating reports as monthly increments preserves those roles."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Reports as members of a serial record and units as parallel record-keepers are ordinary archival concepts. Treating each report as an increment carrying a comparable per-period feature is a modest extension, not a change of kind."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 0,
+            "rationale": "Temporal overlap, correspondence through shared events, and agreement or conflict with dated references are standard historical relationships."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Overlap between series and linkage via shared events (synchronism) is standard historical chronology. Making the numeric relative offset between two series the primary relation is slightly more formal than usual but fits existing concepts."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Shared disruptions affecting multiple accounts and documentary omissions interrupting a sequence require no new account of how organizational records arise."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Historians already expect lost, duplicated, and misdated documents and expect organization-wide disruptions to appear in several units' records. Framing these as common-signal plus local noise over ordered increments is an extension of familiar ideas."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 0,
+            "rationale": "Testing alternative placements of undated sequences against repeated correspondences in dated accounts is ordinary chronological reconstruction. The packet does not require a foreign statistical procedure."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Cross-referencing shared events across units is ordinary practice. The distinctive source step, systematically sliding offsets and matching a windowed multi-month pattern rather than dating each document by its content, is a procedural variation historians would recognize but rarely formalize."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 0,
+            "rationale": "Agreement across ordered event patterns and inconsistencies revealing gaps or erroneous dates already count as historical evidence."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Dating evidence normally comes from explicit dates and content references. Consistency of a pattern of disruptions across many months at one offset is a familiar kind of corroboration, extended into a more systematic, comparative form."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Assigning supported dates, extending an anchored sequence, and preserving ambiguous intervals are the historian's existing inferential goals."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Relative ordering and bounded placement of undated items are native. Assigning specific months from alignment and bridging chronologies through chained overlaps is an extension of terminus reasoning that does not reorganize the historian's conclusions."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 0,
+            "rationale": "False synchronization through repetitive events, weak corroboration, short overlap, or faulty reference dates fits ordinary historical source criticism."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Local events mistaken for shared ones, faulty reference dates, and circularity are already recognized. Multiple plausible offsets from short or repetitive patterns is a newly emphasized but readily understood risk."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "native",
+            "evidence": "An ordinary historical chronology task compares an undated run of reports with dated accounts, tests where a sequence of shared disruptions fits, and checks that placement against further overlapping evidence. This is a general-practice example, not a claim of a verified disciplinary protocol.",
+            "rationale": "A competent historian could plausibly perform the supplied pattern comparison and relative shifting without dendrochronological prompting. This supports Native over Adjacent, although specialized formal implementations could introduce additional procedural extensions."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Synchronism (aligning independent chronicles or record series by shared events) is a longstanding method in historical chronology, and archivists routinely reorder undated serial records by internal cross-references and known events. I have no evidence that organizational historians ordinarily perform systematic multi-offset pattern matching with an explicit per-period feature, and I cannot verify practice across the breadth of the field.",
+            "rationale": "The core move, aligning overlapping records by shared disruptions, is something a competent historian would reach for unprompted. The formalized slide-and-match over windowed patterns and explicit detection of missing or extra months from residual misfit is less ordinary. This mixed status pushes the class away from Native toward Adjacent rather than affecting the Remote/Alien boundary."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet provides no direct evidence about the historian's particular specialty or customary degree of formal sequence alignment.",
+          "Reports may be copied or centrally coordinated, so apparent cross-record agreement may not supply independent corroboration.",
+          "Actual overlap, pattern distinctiveness, and reference-date reliability are unspecified; these limit the resulting chronology without establishing ontological displacement.",
+          "A missing report does not itself establish a missing month of organizational activity; duplication, reporting irregularity, and document loss must remain competing explanations."
+        ],
+        "B": [
+          "I cannot verify how widely organizational historians use formal or quantitative alignment methods; some archival or economic-history specialties may already treat this as routine (which would favor Native).",
+          "The per-report comparable feature (what plays the role of ring width) is not specified in the packet and must be designed; if it required something not actually recorded in the reports, grounding would weaken.",
+          "Monthly report series may be short relative to the pattern length needed for unambiguous alignment, which affects usefulness but not classification.",
+          "Whether shared disruptions register in the same month across units (rather than with unit-specific lags) is an empirical assumption that affects the reliability of the alignment signal."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "009",
+      "run_ids": [
+        "primary-009-A",
+        "primary-009-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Alien",
+        "Adjacent"
+      ],
+      "side_disagreement": true,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Alien",
+            "rationale": "Preserving the supplied mechanism reorganizes investigation around path-dependent transmission, residuals, and inverse reconstruction. Its essential transmission counterpart is currently sustained mainly by analogy: recurring images and stylistic discontinuities do not independently establish signals crossing an internal compositional field. The closest boundary is Remote. Textual positions, measurable feature distributions, and plausible latent compositional differences provide some support for a grounded inverse model, but they do not establish the causal propagation relation that this instrument requires. An independently justified transmission model could move the judgment toward Remote. Reducing the transfer to passage comparison or segmentation would approach Adjacent, but would omit the distinctive operation."
+          },
+          "B": {
+            "value": "Adjacent",
+            "rationale": "The transfer reinterprets text as a medium with an inferable property field and recasts spanning features as measured paths, but the inquiry it serves (detect and map compositional strata from the distribution of stylistic and imagistic features) is what the critic already does. Remote is the closest boundary: the residual-inversion operation is genuinely non-native, but Remote requires independently defensible counterparts for essential source roles, and the path-whose-propagation-is-altered-by-intervening-structure role lacks one. Alien is not met because displacement is moderate rather than an epistemic reorganization: the conclusion type, the features examined, and the known failure modes remain native. Evidence for Adjacent: inferences and failure modes displace only as extensions; naturalization is partial. Evidence against: five dimensions sit at reinterpretation and the core operation is unfamiliar, which is why the class is provisional and the tension is recorded."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 3,
+            "rationale": "Relations of echo, contrast, and sequence become causal transmission relations along crossing paths, substantially changing how textual features constrain one another."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Critics relate two passages by echo or contrast, but the tomographic relation is that intervening material systematically alters what is measured between them. That path-through-medium relation has no ordinary counterpart in reading practice and requires reinterpreting motif recurrence as a traversal."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 3,
+            "rationale": "The analysis requires a propagation process through latent structure, which neither narrative progression nor historical revision independently supplies."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Hypothesis refinement against the text is ordinary, but formal forward prediction of feature measurements from a candidate stratification, followed by iterative residual reduction with regularization, treats interpretation as a model-inversion process rather than reading."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 3,
+            "rationale": "Inquiry is organized around forward prediction and iterative inversion of path-dependent signal behavior, rather than comparison and contextual interpretation of surviving textual features."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Rolling stylometry and seam identification exist, but they sample positions directly. Coding many spanning features as path measurements, computing residuals against a model, and running resolution tests is a substantively different workflow, though the raw features coded are the same ones critics already attend to."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 3,
+            "rationale": "Textual patterns become measurements of transmitted signals, and evidence centers on their residuals against a propagation model. This changes their evidential role substantially."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Native evidence is the features themselves (repetitions, shifts, contradictions). The transfer makes the evidence a residual between predicted and observed values, spatially clustered. A critic informally notices that a passage 'does not fit' a reading, but residual maps as the primary observable are a reinterpretation."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 3,
+            "rationale": "An inferred internal field is licensed by a model of how structure alters traversing signals. That inferential bridge differs substantially from ordinary arguments about textual organization or revision."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "The conclusion type, a map of compositional strata or hands, is already native to source and genetic criticism. What changes is the licensing route (constraint by misfit reduction and resolution limits), which existing concepts of hypothesis testing accommodate without reorganizing what is concluded."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 2,
+            "rationale": "Ambiguity and confounding are familiar, but path coverage and inversion artifacts introduce a different account of why a reconstruction might mislead."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Non-uniqueness, over-reading, and circularity are already recognized. Sparse path coverage maps naturally onto sections lacking diagnostic features, and regularization onto parsimony assumptions. Uncertain source locations (which motif occurrence is primary) is a modest extension."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "non-native",
+            "evidence": "Ordinary-practice examples include tracing motifs, comparing stylistic distributions, and qualifying revision claims when drafts are unavailable. The packet provides no example of measuring propagation across textual paths and inverting those measurements.",
+            "rationale": "Quantitative comparison and model fitting can be familiar in textual analysis, but the complete propagation-and-inversion mechanism is not established as ordinary practice here. This weighs against Native; it does not by itself establish Alien."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Inferring compositional layers from distributed stylistic and thematic features is ordinary in source criticism, genetic criticism, and computational stylometry (rolling-window authorship analysis, change-point detection for style). No ordinary literary practice I can identify uses forward-modeled path measurements with residual inversion; that formalism is not documented as standard in either traditional or computational criticism.",
+            "rationale": "The goal and much of the evidence base would be reached for without prompting; the inversion-over-paths formalism would not. This split keeps the case away from Native (the operational structure is not ordinary) but supports Adjacent over Remote because ordinary inquiry into stratification continues largely unchanged beneath the added formalism. Naturalization varies by specialty: computational philologists are closer to model-fitting than close-reading critics, and the breadth of the target domain is not established by the packet."
+          }
+        },
+        "axis.displacement": {
+          "A": {
+            "level": "high",
+            "rationale": "The transfer changes what investigators measure, how evidence is generated, and what licenses reconstruction by making propagation-model inversion central to the inquiry."
+          },
+          "B": {
+            "level": "moderate",
+            "rationale": "The transfer reinterprets text as a medium with a per-position property field and treats spanning features as path measurements evaluated through model residuals, but the aim (map compositional strata), the features attended to, and the conclusion type remain ordinary. Representation changes; inquiry is not reorganized."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "Literary and textual analysis includes specialized computational practices; this judgment does not establish that no specialty uses an independently justified propagation model.",
+          "The packet supplies neither an explicit textual signal nor a forward propagation law. The weak-grounding judgment concerns the essential causal role, not simply unavailable measurements or implementation difficulty.",
+          "A reconstructed field of stylistic organization would not automatically identify revision history; multiple formation processes could produce the same final organization.",
+          "The classification is conditional on preserving the full instrument. A looser tomography metaphor could have much lower displacement, but would not carry the supplied operational chain."
+        ],
+        "B": [
+          "Taxonomy tension: moderate displacement with weak grounding matches neither Remote (needs grounded counterparts) nor Alien (needs high displacement). Adjacent is provisional; a stricter reading that counts residual-based evidence as epistemic reorganization would raise displacement to high and, with the weak path counterpart, yield Alien.",
+          "The essential 'path' counterpart is uncertain: the text is fully observable at every position, so the hidden quantity is historical (formation) rather than a spatial interior crossed by signals. A defensible target-side account of why intervening text alters a spanning feature's measured value is not established here and may not exist.",
+          "Target breadth: close-reading critics and computational philologists would displace differently; the packet does not specify which specialty is practicing.",
+          "Whether a workable forward model (predicting motif transformation or stylometric distance from a stratification) exists is unknown; this is unavailable evidence, not a grounding judgment.",
+          "Whether the novel's discontinuities reflect formation at all versus design is an unresolved target question the transfer assumes rather than tests."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "010",
+      "run_ids": [
+        "primary-010-A",
+        "primary-010-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.processes": {
+          "A": {
+            "level": 1,
+            "rationale": "Accumulation of waiting and handoff delays is ordinary. Representing those effects through a forward travel-time model extends that account, provided the model accommodates organizational interactions."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Tomography assumes a medium whose properties are independent of the signals crossing it. Organizational delay is load-dependent and time-varying: requests congest the queues they traverse. Representing coordination as a quasi-stationary medium requires treating queueing dynamics as a fixed property, a meaningful reinterpretation of what a delay is."
+          }
+        },
+        "axis.displacement": {
+          "A": {
+            "level": "low",
+            "rationale": "The transfer introduces a specialized inverse-fitting procedure and residual-based evidence while retaining requests, routes, timings, and coordination mechanisms as ordinary investigative objects."
+          },
+          "B": {
+            "level": "moderate",
+            "rationale": "Most dimensions are extensions of existing target practice, but representing load-dependent coordination delay as a stationary medium property, and reading structured residuals rather than direct stage times as primary evidence, constitute representational reinterpretation. The aim of inquiry, localizing and explaining bottlenecks from request traces, is unchanged."
+          }
+        },
+        "axis.grounding": {
+          "A": {
+            "status": "grounded",
+            "rationale": "Requests actually traverse recorded routes, checkpoints supply timings, and teams and handoffs can independently affect delay. These support the essential signal, path, measurement, and internal-property roles. Particular parameterizations still require validation; their unspecified implementation does not make the roles analogy-dependent."
+          },
+          "B": {
+            "status": "partially-grounded",
+            "rationale": "Routes, timings, per-interface delay parameters, forward models, and residuals all have independently defensible counterparts in organizational flow analysis. The 'unobservable medium' role is only conditionally grounded: intermediate timings are directly observed, so the latent object must be narrowed to hidden couplings and structural properties beyond logged stages, and the stationarity assumption holds only under stable load. No counterpart appears to be constructed solely to preserve the source structure, but support is conditional."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The breadth of organizational coordination includes practitioners with very different familiarity with inverse modeling; a narrower performance-modeling specialty could support Native.",
+          "The packet does not specify a forward model, workload measurements, request heterogeneity, or evidence validating particular latent coordination parameters.",
+          "Successive timing measurements may directly locate much of the delay. What remains hidden is the generating coordination mechanism, not necessarily the route or delay location.",
+          "A fixed additive delay field is not established. Congestion, priorities, branching, and feedback may require a richer forward model while preserving the supplied operational chain.",
+          "Matching observed travel times supports compatibility with coordination explanations; it does not alone distinguish causal structures that make the same predictions."
+        ],
+        "B": [
+          "The packet says timing is measured at successive points, which partially removes tomography's premise that the interior cannot be sampled directly. The transfer is most valuable only for the residual latent structure (unlogged couplings, shared-resource contention), and the packet does not say how much of the delay is unexplained by directly measured stage times.",
+          "The stationary-medium assumption is the main semantic tension: if congestion is strongly load-dependent, a tomographic forward model will misattribute dynamic effects to fixed interface properties. Whether this is manageable depends on the forward model chosen, which the packet leaves open.",
+          "Breadth of target practice is uncertain: operations-research-heavy organizations would find model calibration ordinary, while most management contexts would not, so naturalization status varies across the target domain.",
+          "Displacement axis could reasonably be judged low rather than moderate, since only the processes dimension reaches reinterpretation; the class would remain Adjacent either way."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "011",
+      "run_ids": [
+        "primary-011-A",
+        "primary-011-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Remote",
+        "Remote"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.entities": {
+          "A": {
+            "level": 1,
+            "rationale": "Teams and requests already belong to the target. Treating request episodes as probes adds a role without requiring a new kind of organizational object."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Requests as routed items and teams as stages are ordinary, but treating the organization as a medium with a per-region delay field that requests passively probe, and treating the coordination structure as that field, reinterprets teams and structures as different kinds of things."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 2,
+            "rationale": "Dependencies and handoffs become ordered crossing paths whose shared components support joint constraints. The unsequenced accounts do not establish that path structure."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Additive delay along a route through stages is already ordinary (cycle time as the sum of stage times); the tomographic requirement that many overlapping routes share teams is an extension of the process-map view rather than a reorganization."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 2,
+            "rationale": "Coordination is represented through its systematic effects on transit behavior, requiring explicit treatment of how contingent waiting, negotiation, and rework affect propagation."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Requests accruing delay as they move through teams is native; the iterative residual-reduction process on a model is new but is a procedural addition on top of familiar propagation."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 2,
+            "rationale": "Delay remains relevant, but evidence becomes indexed by routes and expressed as structured model residuals. Aggregate outcomes and unsequenced accounts are not automatically such observations."
+          },
+          "B": {
+            "level": 3,
+            "rationale": "Native evidence is accounts and aggregate outcomes; the transfer makes per-route residuals against model predictions the evidence. The packet explicitly says no transmission units or paths are identified, so this observable does not exist in the supplied evidence and must be constructed."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 3,
+            "rationale": "Explanatory warrant shifts to whether an internal parameter configuration jointly reproduces transit behavior across paths, rather than primarily to corroborated accounts and aggregate consistency."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Both approaches conclude that some team or interface is the bottleneck, but the licensing rule changes: localization comes from spatially patterned residuals under a forward model with explicit resolution and non-uniqueness, rather than from convergent accounts and stage metrics."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "partially-naturalized",
+            "evidence": "Workflow mapping, queue analysis, and handoff-delay analysis are recognizable organizational practices. The packet supplies no evidence that multi-path inverse reconstruction is ordinary practice for this investigation.",
+            "rationale": "Familiar network and delay concepts prevent treating the entire representation as foreign. However, they do not establish that the distinctive measurement-and-inversion chain is naturalized, so they support an Adjacent boundary without making the transfer Native."
+          },
+          "B": {
+            "status": "non-native",
+            "evidence": "No ordinary organizational-coordination practice I can identify performs model-based inversion of route-level delays into a team-level delay map; standard practice is process/value-stream mapping, interviews, and constraint identification. Related inversion methods exist in other domains (network tomography in computer networking, queueing-network estimation in operations research) but require path-resolved or event-log data, and I have no evidence they are used unprompted for coordination investigations built on unsequenced accounts.",
+            "rationale": "A competent organizational practitioner would not reach for iterative residual inversion across route coverage without prompting from the source. This rules out Native and Adjacent but does not decide between Remote and Alien; specialist operations-research groups might partially naturalize it, which is recorded as uncertainty."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The supplied accounts and aggregate outcomes cannot establish the required route-specific observations or identify an internal coordination model by this mechanism.",
+          "A defensible forward model must address workload, priorities, rework, and changing routes; the packet does not establish whether their effects can be separated.",
+          "Specialists in operations research or process analysis may regard more of the procedure as ordinary, which could move the judgment toward Adjacent.",
+          "Remote with partially-grounded status is conditional: essential object roles have independent counterparts, but the particular propagation model remains unvalidated.",
+          "Inventing pseudo-paths or treating aggregates as measured route transit times merely to complete the source structure would create a different, more weakly grounded transfer; that construction is not assumed here."
+        ],
+        "B": [
+          "Whether 'aggregate outcomes' in the packet are broken down by origin-destination pair or request type; if so, per-route delay is partly available and grounding strengthens toward grounded; if purely global, the residual observable is almost entirely constructed and the case moves toward Alien.",
+          "Whether sequencing unsequenced accounts into routes is a legitimate target operation (process reconstruction is ordinary) or an analogy-driven fabrication when done to feed an inversion; I treated it as the former, but this is the main tension for the Remote/Alien boundary.",
+          "The tomographic assumption of a stable, load- and content-independent per-team delay property is not clearly justified in organizations where delay depends on queue state and request type; if this assumption is essential to the inversion, grounding is weaker than recorded.",
+          "Naturalization in operations-research or process-mining specialties is unknown; those subfields may partially naturalize model-based delay attribution, which would not change the class but would soften the non-native status.",
+          "Rework loops and parallel handoffs make routes non-straight and possibly model-dependent; whether this breaks the operational chain or is handled by a richer forward model is unresolved."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "012",
+      "run_ids": [
+        "primary-012-A",
+        "primary-012-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Adjacent",
+        "Remote"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Adjacent",
+            "rationale": "The transfer gives an established target workflow a separation-based interpretation while preserving its objects, investigation, and available evidence. Essential phase and component roles have independently supplied counterparts. The closest boundary is Native: the operational chain already exists locally, but systematic retention characterization and release-cohort evidence are not shown to be ordinary decomposition practice. Remote is less supported because the supplied mechanism requires no substantial reorganization of inquiry or inference of conceptual identity from retention alone."
+          },
+          "B": {
+            "value": "Remote",
+            "rationale": "The transfer reorganizes inquiry: the primary evidence becomes emergence order and band overlap in workflow records instead of fragment content, and distinguishability is inferred from separation behavior. That is more than extension. But the essential source roles have counterparts the packet states exist independently: a circulating workflow (mobile phase), fixed criteria that retain and release fragments (stationary phase), repeated cycles (partitioning), and records of fragment behavior (detector). No essential role is constructed mainly to preserve the chromatographic structure, so Alien is not met. The closest boundary is Remote versus Adjacent; the decisive factor is that observables and the inference rule are substituted rather than extended."
+          }
+        },
+        "dimension.entities": {
+          "A": {
+            "level": 1,
+            "rationale": "Sample, component, and phase roles extend objects and workflow stages already supplied by the target; no new underlying objects are required."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Fragments, criteria, workflow and records already exist in the target, but the transfer recasts fragments as analytes defined by retention behavior rather than by semantic content, and recasts criteria as a stationary phase. That is a change in what kind of thing a fragment is."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 1,
+            "rationale": "Repeated allocation between circulation and holding becomes partition behavior, a formal interpretation of established workflow relationships."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The governing relation becomes 'moves together versus separates under the workflow' rather than 'supports, depends on, contradicts'. Ordinary relations are not discarded but are demoted to orthogonal evidence."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Repeated circulation, retention, and release are explicitly established target processes."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "The circulating, retaining, releasing workflow is stated to exist independently in the target, so repeated partitioning is already present. Reading it as differential migration that produces separation is an added interpretation, not a new process."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 1,
+            "rationale": "The source operation uses the existing repeated circulation-and-retention mechanism; organizing its records as a separation experiment adds a procedural extension."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The practitioner stops decomposing by reading and coding and instead measures retention timing from records and compares profiles against reference fragments. Existing records are used, but their use as a separation instrument is a genuine reinterpretation of the review activity."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 1,
+            "rationale": "Release cohorts and relative retention summarize recorded fragment behavior without requiring a foreign kind of evidence."
+          },
+          "B": {
+            "level": 3,
+            "rationale": "Evidence shifts from textual content, coherence and coder agreement to emergence order and band overlap in the workflow record. Ordinary target practice does not treat when a fragment is released as evidence of what components exist; this replaces the evidentiary basis."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 1,
+            "rationale": "Inferring distinguishability by retention extends comparison of workflow histories. The supplied source inference does not require replacing conceptual interpretation with retention-based identity."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Distinguishability is concluded from resolved retention profiles rather than from semantic analysis, and overlap is read as coupling or unresolved separation. The inference rule changes, though the conclusion type (a supported decomposition) remains the target question."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "partially-naturalized",
+            "evidence": "The packet explicitly establishes an independent workflow with repeated circulation, retention, release, and preserved fragment records. Comparing content and review histories is an ordinary way to investigate proposal fragments; routine use of chromatographic release patterns in idea decomposition is not established.",
+            "rationale": "The core operation already belongs to this local target practice, while its explicit organization into partition behavior and separation signals remains an extension. This supports Adjacent over Native without treating source terminology as evidence of remoteness."
+          },
+          "B": {
+            "status": "non-native",
+            "evidence": "No ordinary example is known of proposal or idea decomposition performed by tracking retention and release timing across review cycles. Partial analogs exist in iterative review formats such as Delphi rounds or backlog triage, where items that persist across rounds are treated as robust, but those are used to judge quality or consensus, not to define component boundaries.",
+            "rationale": "A competent reviewer would decompose by reading, coding and dependency mapping, not by reading a retention timeline. Non-native status rules out Native and weakens Adjacent; it does not on its own decide between Remote and Alien, which turns on grounding."
+          }
+        },
+        "axis.displacement": {
+          "A": {
+            "level": "low",
+            "rationale": "The source supplies a familiar form of behavioral comparison and a more specific separation readout for an independently established operational chain."
+          },
+          "B": {
+            "level": "high",
+            "rationale": "What counts as evidence for a decomposition changes from content and coder agreement to retention timing and band separation, and the licensing inference changes accordingly. This is epistemic reorganization of the decomposition task, even though the workflow itself already exists in the target."
+          }
+        },
+        "axis.grounding": {
+          "A": {
+            "status": "grounded",
+            "rationale": "Preserved fragments ground the component role, circulation grounds movement, and the fixed criterion-governed holding and release workflow grounds repeated partition. Release cohorts can be derived from recorded behavior; their absence or poor resolution would limit detection rather than invalidate these counterparts."
+          },
+          "B": {
+            "status": "partially-grounded",
+            "rationale": "Mobile phase, stationary phase, repeated partitioning and detector all have counterparts the packet states are independently established, which supports grounding. The role of 'partition behavior as an intrinsic, repeatable property of a component' is conditional: it depends on the workflow being stable across cycles and on retention reflecting the fragment rather than reviewer or ordering effects, which the packet does not establish."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet establishes local workflow practice, not the prevalence of this representation across idea decomposition specialties.",
+          "The records' temporal resolution and the workflow's actual differential retention are unspecified; observable separation is an empirical possibility, not an established result.",
+          "Treating behavioral separation as proof of independent conceptual identity would exceed the source inference and require additional target justification.",
+          "If this team already routinely uses relative retention and release cohorts to support decomposition, Native would become more plausible."
+        ],
+        "B": [
+          "The breadth of 'idea decomposition' is unknown; specialties such as requirements engineering or structured backlog grooming may already use survival-across-rounds as a decomposition cue, which would pull the case toward Adjacent.",
+          "The packet says records preserve fragment behavior but does not confirm they carry an ordering axis (cycle number or release time) fine enough to resolve bands; if not, the observable is unavailable rather than ungrounded.",
+          "Whether retention is a stable property of the fragment, rather than of the reviewer, the ordering of review, or fragment interdependence, is not established; this conditions the inference 'resolved profile implies distinct component'.",
+          "Tension: failure modes and processes displace little (level 1) while observables displace fully (level 3); the class follows the reorganized evidentiary basis rather than an average.",
+          "Interwoven fragments may be retained together because of coupling, so co-elution could be informative about structure rather than a mere resolution failure; the source limit treats it only as a failure."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "013",
+      "run_ids": [
+        "primary-013-A",
+        "primary-013-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Alien",
+        "Alien"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.relations": {
+          "A": {
+            "level": 3,
+            "rationale": "Semantic and argumentative relationships are reorganized around affinities to two phases and transitions between carried and retained states."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Native relations are semantic (depends on, conflicts with). The transfer replaces them with a fragment-to-phase affinity and an ordering by relative retention, which treats fragments as things with migration properties rather than logical roles."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 3,
+            "rationale": "Distinguishability is inferred through differential partition and retention behavior. This introduces a new evidential bridge from procedural separation to conceptual decomposition."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Distinctness is licensed by differential migration rather than by semantic independence; the conclusion type (these are separate components) is native, but the warrant is reinterpreted."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 2,
+            "rationale": "Ordinary ambiguity and category imposition acquire additional interpretations as co-elution, condition-dependent retention, and nonspecific detection, requiring the constructed process to be assessed."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Co-elution maps to inseparable or coupled fragments, condition sensitivity maps to framing dependence, and retention-is-not-identity maps to the native caution that separating fragments does not establish what they mean. These extend existing target cautions."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not specify a candidate carrier, stationary medium, partition rule, or detector; the transfer profile states the roles required by the instrument rather than a verified implementation.",
+          "The lack of an existing workflow alone would not establish weak grounding. The concern is the unsupported relation between phase affinity, persistent idea components, and evidentially meaningful separation.",
+          "A justified target mechanism showing stable conceptual components repeatedly entering and leaving a selective retained state could support Remote instead.",
+          "Specialized idea-analysis practices may use structured circulation or filtering, but no evidence establishes that they implement this full mechanism in the supplied setting.",
+          "Simple thematic sorting would likely require less displacement, but treating it as the transfer would discard repeated two-phase partition and differential migration."
+        ],
+        "B": [
+          "Whether a designed workflow (successive reviewer panels or contexts with recorded retention of fragments) would count as an independently grounded new measurement rather than an analogy-driven construction; if so, the class would be Remote.",
+          "Target practice breadth: specialties such as argumentation theory or design-thinking facilitation may have staged filtering exercises I am not aware of, which would raise naturalization and grounding.",
+          "Fragment retention in discussion likely depends on order, framing, and co-presence of other fragments, so the independence of partition behavior assumed by the source may not hold; this is a semantic tension between the source mechanism and the target evidence.",
+          "Failure-mode displacement is low while operations and observables are high, so the class rests on the operational chain, not on the whole profile."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "014",
+      "run_ids": [
+        "primary-014-A",
+        "primary-014-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Inferring a possible commitment from discriminating behavioral evidence, checking recurrence, and withholding claims about origin are recognizable target reasoning."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Inferring that an assumption is operative is native; the source narrows the licensed conclusion to presence and location and withholds causal attribution to past events, a restriction practitioners can accommodate without reorganizing inquiry."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 0,
+            "rationale": "Alternative explanations, failure to elicit an existing belief, and changes induced by questioning are familiar problems in investigating strategic assumptions."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "False positives from other drivers, reactivity, and unmeasured assumptions are known concerns; the explicit 'probe alters material for later analysis' contamination framing is a modest extension of reactivity worries."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "Some strategic planning specialties may already use this exact diagnostic structure, which would support Native.",
+          "No particular assumption, scenario, or response signature is supplied, so the discriminating power of an actual probe remains unestablished.",
+          "Repeated responses alone demonstrate repeatability over the observed interval; stronger persistence claims require temporally relevant records and attention to changing circumstances.",
+          "A team-level pattern may reflect bargaining or conformity rather than a commitment shared by individual leaders; localization must follow the available evidence."
+        ],
+        "B": [
+          "Breadth of target: some leadership teams do formal decision audits and structured scenario testing while others rely on informal discussion; for the latter the transfer would feel less native.",
+          "The 'otherwise absent' baseline requires contrast scenarios or comparable decisions; whether such controls are realistically available is unknown from the packet, though the requirement is a designed measurement rather than an invented counterpart.",
+          "Whether 'localization' (which decision domains the assumption governs) is a meaningful target notion or an artifact of the spatial source metaphor; it seems defensible but is weakly exercised in ordinary practice.",
+          "Closest boundary is Native/Adjacent; an assessor who treats specificity-designed scenario probes as already standard practice could reasonably call this Native."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "015",
+      "run_ids": [
+        "primary-015-A",
+        "primary-015-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.processes": {
+          "A": {
+            "level": 1,
+            "rationale": "Belief retention, elicitation, and revision are recognizable target processes. Their organization as latent retention followed by a triggered response adds structure."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The source presumes temporal persistence of residue from a past event; the target has no historical materials, so persistence must be reinterpreted as invariance across prospective probes, a different kind of process than the target's usual notion of assumptions hardening over time."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 1,
+            "rationale": "Inferring an operative premise from an elicited response is familiar. The transferred detection rule emphasizes response-producing capacity and cannot establish persistence from a single present response."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Inferring presence and location of an assumption is native, but the target question about persistence must be answered through a substituted rule (cross-probe consistency stands in for persistence over time), and the source explicitly refuses to license the event-origin inference the team may want."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 0,
+            "rationale": "Ambiguous responses, failures to elicit tacit beliefs, priming, and changes caused by discussion are ordinary limitations of assumption elicitation."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Groupthink and framing effects are native; the source adds probe contamination (the exercise alters the beliefs it detects) and explicit false-positive and below-threshold cases, which practitioners can accommodate as workshop reactivity and coverage gaps."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The breadth of strategic practice matters: specialists using structured diagnostic elicitation may regard more of this procedure as Native.",
+          "No specific probe or response criterion is supplied, so its selectivity and ability to localize an assumption remain unverified.",
+          "Repeated responses across prospective scenarios could support contextual consistency while leaving temporal persistence unresolved.",
+          "A retained implicit premise is a defensible candidate counterpart, but its historical continuity is unestablished. Treating aspirations themselves as surviving traces of prior commitments would require an additional, unsupported construction.",
+          "The transfer supports identifying currently responsive candidate assumptions more directly than answering the target's persistence question; that evidential shortfall remains unresolved."
+        ],
+        "B": [
+          "The target packet supplies no historical residues, so the source's 'residue of a past event' premise has no direct counterpart; persistence can only be approximated by consistency across prospective probes, which is a different sense of 'persist' than the target question likely intends. This is recorded as a semantic tension, not resolved by changing the question.",
+          "Whether the persistence role is essential to the source's operational chain is debatable: detection works on present latent material regardless of its age, so the chain survives, but the target's stated question depends on the role the source cannot ground.",
+          "Target practice breadth is uncertain: some leadership teams use formal assumption-testing methods and others rely on informal discussion, which affects the Native/Adjacent judgment.",
+          "The probe-alteration failure mode (scenario exercises changing beliefs) is recognized in facilitation practice but its prominence as an evidential concern in strategy work is not established here.",
+          "Low displacement paired with partially-grounded support is a mild taxonomy tension; the provisional class follows the displacement and intact-inquiry criteria."
+        ]
+      }
+    },
+    {
+      "condition": "primary",
+      "case_id": "016",
+      "run_ids": [
+        "primary-016-A",
+        "primary-016-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Alien",
+        "Alien"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.processes": {
+          "A": {
+            "level": 3,
+            "rationale": "Inquiry would be organized around successive record formation and missing increments, neither of which is supplied by the present-focused evidence."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Brand meaning is not deposited as periodic increments under external forcing. Reinforcement across touchpoints can be reread as accumulation, but the periodic shared-driver process has no ordinary counterpart in present-meaning analysis."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 3,
+            "rationale": "Evidence becomes alignment-dependent temporal matches and increment anomalies rather than directly interpretable themes and associations."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Cross-touchpoint pattern consistency and exposed inconsistencies are native observables, but the specific evidence, a unique offset at which multi-unit patterns lock, presupposes the constructed ordering and is not something analysts ordinarily look for."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 3,
+            "rationale": "The source licenses chronology reconstruction, which substantially changes the inferential task and cannot by itself answer what the brand currently means."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The conclusion 'this unit belongs at this position in the master sequence' must be reinterpreted as 'this message belongs to this component of the identity and that touchpoint is off-pattern.' The residual inference is familiar, but the positional assignment it derives from is not."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 2,
+            "rationale": "Ordinary concerns about selective or ambiguous interpretation acquire distinct problems of false alignment, inadequate overlap, and erroneous temporal references."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Weak shared signal, repetitive generic patterns, channel-specific disturbances, and wrong reference identity all translate readily into existing brand-analysis cautions about incoherent strategy, category cliché, medium constraints, and analyst projection."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "Brand-history specialties may use temporal alignment, but that does not establish its grounding or naturalization for the supplied present-meaning task.",
+          "The packet does not demonstrate that current materials encode recoverable historical increments; their absence is not merely an unavailable measurement, because treating them as temporal records itself lacks justification.",
+          "This judgment concerns what a mechanism-preserving transfer would require, not a demonstrated workable implementation.",
+          "The chronology-to-meaning inference remains unsupported. Alien describes the proposed representational reorganization; it does not make chronology an answer to the target question."
+        ],
+        "B": [
+          "Some brand practitioners may analyze sequenced material such as customer-journey stages, page scroll order, or campaign narrative arcs; if an analyst treated those as the ordering axis, the relations and operations displacement would drop toward 2 and grounding toward partially-grounded, making Remote more defensible.",
+          "The target statement is explicit that no dated sequence exists, but the breadth of brand-identity practice (semiotics, marketing research, design strategy) is large and I lack evidence about niche methods.",
+          "Tension: failure modes transfer at level 1 while operations and relations sit at level 3; the class follows the essential operational chain rather than the easily transferred cautions.",
+          "The signal residue (consistent patterns and exposed inconsistencies across touchpoints) is grounded in target practice; the classification treats it as insufficient because it is reachable without the alignment mechanism."
+        ]
+      }
+    },
+    {
+      "condition": "control",
+      "case_id": "001",
+      "run_ids": [
+        "control-001-A",
+        "control-001-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Native",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Native",
+            "rationale": "The target already instantiates step-response probing, preserving the intervention, temporal evidence, and basic response characterization. Adjacent is the closest boundary because explicit discrimination among dynamic models adds an inferential extension, but it does not reorganize the problem. The case is consistent with low distance when actions and evidence remain ordinary. It also cautions that some inferential extension can occur below Remote; it does not directly test the Adjacent–Remote boundary."
+          },
+          "B": {
+            "value": "Adjacent",
+            "rationale": "Every dimension is an extension: the target's entities (users, metrics, rollout stages), observables (metric time series), and inference rules (effect, durability, safety to expand) remain intact, while the source adds explicit transient-feature extraction, a disturbance framing for market changes, and inference about reaction dynamics. The closest boundary is Native: if the team already reads 'spike then settle' from dashboards, relabeling it overshoot and settling changes little. Support for the Adjacent→Remote hypothesis is limited here: what plausibly changes is that a reasoner measures settling time before judging, checks the pre-step trend as an initial-state problem, and aligns disturbance timing against response features rather than only estimating a lift. Evidence against: none of these require treating metrics as different kinds of things, and most are reachable from interrupted-time-series or novelty-effect reasoning already in the target, so the practical difference may be mostly vocabulary. It is not Remote because no dimension requires reinterpreting target objects as different kinds of things, and no counterpart had to be constructed arbitrarily."
+          }
+        },
+        "dimension.entities": {
+          "A": {
+            "level": 0,
+            "rationale": "Exposure, user populations, and outcome metrics already provide the input, system, and outputs without constructing unfamiliar counterparts."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Rollout share, cohorts, and metrics are native; treating the population-plus-product as one dynamic system with an initial state and disturbance inputs is a mild abstraction that existing rollout concepts accommodate without reorganization."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 0,
+            "rationale": "Time-dependent relationships between rollout exposure and outcomes, alongside concurrent influences, are ordinary monitoring concerns."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Exposure-causes-metric-change and before/after are native; the shift is from treatment-vs-control comparison to input-drives-output-through-intrinsic-dynamics, with market changes recast as superimposed disturbances rather than separate confounders to difference out."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 0,
+            "rationale": "Delayed uptake, temporary error spikes, and eventual stabilization are recognizable rollout behavior."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Ramp-up, novelty spike, stabilization, and maturing retention are already recognized; naming them delay, rise, overshoot, and settling adds structure (e.g., oscillation as a possible process) but does not require new kinds of change."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 0,
+            "rationale": "The target already specifies the distinctive operation: a known exposure increase held at a larger share, followed by repeated observations over time."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "The step itself is exactly what the team already did; the added operation is explicit extraction of trajectory-shape features and possibly fitting response models instead of comparing levels, which extends rather than replaces dashboard and pre/post practice."
+          }
+        },
+        "dimension.observables": {
+          "A": {
+            "level": 0,
+            "rationale": "Lags, peaks, trends, and stabilization are ordinary features of rollout metric trajectories; control terminology does not create new evidence types."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Time series and retention curves are native evidence; overshoot magnitude, settling time, and oscillation period as first-class quantities are somewhat unfamiliar but are directly readable from data the team already collects."
+          }
+        },
+        "dimension.failure_modes": {
+          "A": {
+            "level": 0,
+            "rationale": "Confounding changes, saturation, noisy measurements, short follow-up, and limited generalization across exposure levels already threaten rollout conclusions."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Confounding by market events, unrepresentative pilot users, and immature retention map closely to disturbances, operating-point dependence, and insufficient observation time; saturation and nonlinearity need translation to adoption ceilings and non-scaling pilot gains but are easily recognized."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "native",
+            "evidence": "An ordinary rollout-monitoring example is increasing exposure, holding it fixed, and watching whether adoption rises gradually, errors spike temporarily, and retention changes persist. The packet directly describes this practice.",
+            "rationale": "A competent product practitioner could reach for this intervention-and-trajectory representation without control-engineering prompting. This supports Native despite the source identity; formal dynamic-model discrimination is less clearly conventional across product teams."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Ordinary rollout and experimentation practice uses terms like ramp, novelty effect, stabilization, and steady state, and analysts sometimes apply interrupted time series to a launch date; explicit control-engineering features (overshoot, settling time, damping, oscillation period) and response-model fitting are not standard on product dashboards. No verified consensus survey is available; this is based on general knowledge of product analytics practice.",
+            "rationale": "Because the step change and trajectory observation are already what the team does, and several transient concepts exist under other names, the transfer mainly supplies a more explicit feature vocabulary and a disturbance framing. This partial naturalization pulls the class toward Native and away from Remote; it stays Adjacent because feature extraction and dynamic-property inference are not routine."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not establish how commonly this team or product specialty uses explicit dynamic models.",
+          "A fixed exposure share need not imply fixed cohort composition or constant actual feature use.",
+          "Several weeks may not reveal settling or a reliable later retention level, especially amid market changes."
+        ],
+        "B": [
+          "Target practice varies widely: SRE/canary-analysis teams already use trajectory-shape and control-style reasoning, while growth/product teams may rely on lift comparisons only; the per-dimension levels assume a typical product analytics team.",
+          "The packet does not specify whether a holdout/control group exists; without one, the disturbance-superposition framing becomes more central and inference displacement might be judged slightly higher.",
+          "Whether the source's 'distinguish candidate models' inference is meaningfully used in the target (fitting first-order vs oscillatory responses) is unclear; if it were central, inferences could be a 2 and the class would sit nearer the Remote boundary.",
+          "Naturalization evidence is from general knowledge of product analytics vocabulary, not a verified survey of practice."
+        ]
+      }
+    },
+    {
+      "condition": "control",
+      "case_id": "003",
+      "run_ids": [
+        "control-003-A",
+        "control-003-B"
+      ],
+      "boundary_group": "Adjacent/Remote",
+      "classes": [
+        "Adjacent",
+        "Adjacent"
+      ],
+      "side_disagreement": false,
+      "differences": {
+        "dimension.inferences": {
+          "A": {
+            "level": 0,
+            "rationale": "Distinguishing detection of a pattern from proof of its historical cause is ordinary competent reasoning about an anonymous final text."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "The source narrows the licensed conclusion to presence and location of responsive material, withholding the formation claim. Careful critics already distinguish stylistic difference from a second hand, so this tightens rather than reinterprets the inference rule."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet specifies no actual probe or validated relation between a detectable feature and a compositional event.",
+          "Diagnostic computational methods are more familiar in some textual scholarship specialties than in literary criticism generally.",
+          "The final text may support descriptions of organization much more strongly than claims about formation.",
+          "Probe-induced alteration has only a contingent analogue in textual preprocessing; equating it with ordinary interpretive reading would overstate the mapping."
+        ],
+        "B": [
+          "The target domain is broad; a computational stylistician would find this Native, while a purely hermeneutic critic might experience the operations and observables as level 2.",
+          "The probe-alters-material limit has no clean counterpart in textual analysis; the contamination-of-later-reading mapping is constructed and could be judged arbitrary.",
+          "It is unclear whether a final printed text carries latent traces beyond the discontinuities already visible; if it does not, the probe operation has little to detect and the transfer collapses toward Native.",
+          "No information is given about the specific critic's methods or whether stylometry is part of their ordinary practice."
+        ]
+      }
+    },
+    {
+      "condition": "control",
+      "case_id": "009",
+      "run_ids": [
+        "control-009-A",
+        "control-009-B"
+      ],
+      "boundary_group": "Remote/Alien",
+      "classes": [
+        "Alien",
+        "Remote"
+      ],
+      "side_disagreement": true,
+      "differences": {
+        "final_class": {
+          "A": {
+            "value": "Alien",
+            "rationale": "The transfer requires substantial reorganization around constructed transmission paths, propagation processes, and an invertible internal field. This judgment rests on those representational commitments, not disciplinary difference or difficulty. Remote is the closest boundary: motifs, passages, latent formation hypotheses, and underdetermination provide meaningful anchors. However, preserving tomography's multi-path propagation mechanism requires counterparts that ordinary practice does not supply. The case supports the proposed importance of changes in operations and evidence, while showing that those changes alone cannot distinguish Remote from Alien; the extent of counterpart construction also matters."
+          },
+          "B": {
+            "value": "Remote",
+            "rationale": "Entities, relations, processes, operations, and observables each require reinterpretation: motifs become probes with paths, motif change becomes passive modulation rather than authorial development, and evidence becomes structured residual against a formation model rather than the discontinuity itself. Operations and observables change, satisfying the Remote condition, and the mapping is coherent once probes are constructed, without arbitrary correspondences. Inferences and failure modes remain largely intact, so the case does not reach Alien. The closest boundary is Adjacent. Evidence for the boundary mattering: the tomographic framing changes what the critic notices (coincident unexplained residuals at probe intersections rather than any visible seam), what they do (predict, compare, refine, assess resolution), and what they infer (a family of admissible formation maps with region-specific confidence). Evidence against: if the path construct is dropped, the work collapses to positional change-point detection along a single axis, which a stylometrist already does, and the conclusions may be indistinguishable in practice, which would make the case Adjacent."
+          }
+        },
+        "dimension.relations": {
+          "A": {
+            "level": 3,
+            "rationale": "Recurrence, contrast, and textual sequence must be reorganized into a network of crossing transmission paths with shared internal segments. Ordinary textual relationships do not establish this network."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Motif recurrence must be reinterpreted as a path that crosses regions and picks up their properties, and the key relation becomes model-predicts-observation-along-path. The target's native relations (echo, contradiction, belongs-to-stratum) remain but are subordinated to a crossing-and-modulation relation the critic does not use."
+          }
+        },
+        "dimension.processes": {
+          "A": {
+            "level": 3,
+            "rationale": "Narrative development and historical revision must be represented through signal propagation and accumulated path effects. Neither reading order nor composition history by itself supplies that process."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "The target has no propagation; a motif's change across the text is ordinarily read as authorial development. The source requires recasting it as passive alteration by hidden compositional state, which is a different kind of process and directly contests the target's rival unity explanation."
+          }
+        },
+        "dimension.operations": {
+          "A": {
+            "level": 3,
+            "rationale": "The critic would need to construct a forward propagation model and invert measurements from multiple paths. Comparing interpretations with evidence is familiar, but does not supply this distinctive operation."
+          },
+          "B": {
+            "level": 2,
+            "rationale": "Redaction-style layer hypotheses are refined iteratively in ordinary practice, and computational stylists fit models, so hypothesis refinement is not foreign. But the distinctive operation, forward prediction from an explicit formation model across many overlapping probes, residual localization by intersection, and regularized inversion with a resolution assessment, is not what a critic does when reading seams directly."
+          }
+        },
+        "dimension.inferences": {
+          "A": {
+            "level": 2,
+            "rationale": "Evidence would constrain an internal field through shared path effects rather than support formation claims through textual and contextual argument. Connecting the reconstructed field to actual revisions remains a separate inference."
+          },
+          "B": {
+            "level": 1,
+            "rationale": "Inferring strata and hands from internal evidence is native. The source extends this by licensing a family of admissible formation models with explicit resolution limits by region, rather than a single reconstruction; existing target concepts of underdetermination accommodate this without reorganizing the problem."
+          }
+        },
+        "naturalization": {
+          "A": {
+            "status": "non-native",
+            "evidence": "Ordinary practice includes tracing motifs, comparing style, and cautiously inferring revisions from textual seams. Quantitative textual analysis also uses feature distributions and statistical models. Neither example establishes ordinary use of crossing-path propagation inversion for this problem.",
+            "rationale": "A critic could plausibly reach for recurrence maps or stylistic models without seismology, but the packet provides no basis for treating the complete tomographic representation as naturalized. Familiar component operations temper some displacement judgments without lowering the overall class."
+          },
+          "B": {
+            "status": "partially-naturalized",
+            "evidence": "Computational stylistics uses rolling authorship measures along a text and change-point methods to locate collaborative or revised sections, and redaction and source criticism routinely propose layer hypotheses and refine them against internal inconsistencies. There is no evidence that ordinary literary critics use explicit forward-model, residual, and inversion loops with coverage or resolution assessment, and the path-crossing construct has no identified counterpart in practice.",
+            "rationale": "A stylometrically inclined textual scholar would reach for model fitting and positional signal tracking unprompted, which pulls the case away from Alien and toward the Adjacent boundary. A general literary critic would not, and the multi-probe intersection and residual-as-evidence framing are not established anywhere in the target. The partial naturalization keeps the class at Remote rather than higher, and explains why the boundary of concern is Adjacent."
+          }
+        }
+      },
+      "uncertainty": {
+        "A": [
+          "The packet does not specify a textual propagation law, path geometry, or measurable analogue of travel behavior. The transfer profile identifies required constructions rather than an established implementation.",
+          "Specialized computational literary methods may use related inverse models; no evidence here establishes naturalization of the complete mechanism.",
+          "A justified transmission mechanism with independently identifiable paths could move the judgment toward Remote.",
+          "Even a well-fitting internal model would not by itself establish the historical sequence of revisions in this anonymous novel."
+        ],
+        "B": [
+          "The target domain is broad: a computational stylist, a textual scholar, and a literary critic would see very different displacement in operations and observables; the packet says only 'a critic'.",
+          "The probe-and-path counterpart is constructed here; it is unclear whether motif recurrences genuinely behave like path-integrated measurements or whether each occurrence is a direct local sample, in which case the source's distinctive cross-path localization has no real target analogue.",
+          "Without the path construct the transfer reduces to one-dimensional profile fitting, which is partially naturalized and would lower the class to Adjacent.",
+          "Whether the resolution and coverage vocabulary changes actual critical conclusions, rather than only their stated confidence, is not established.",
+          "The absence of drafts for this novel limits what target practice can be described as ordinary for formation claims; no verified consensus on how critics handle this specific evidentiary situation is asserted."
+        ]
+      }
+    }
+  ],
+  "all_new_remote_and_alien_judgments": [
+    {
+      "run_id": "primary-009-A",
+      "class": "Alien",
+      "class_rationale": "Preserving the supplied mechanism reorganizes investigation around path-dependent transmission, residuals, and inverse reconstruction. Its essential transmission counterpart is currently sustained mainly by analogy: recurring images and stylistic discontinuities do not independently establish signals crossing an internal compositional field. The closest boundary is Remote. Textual positions, measurable feature distributions, and plausible latent compositional differences provide some support for a grounded inverse model, but they do not establish the causal propagation relation that this instrument requires. An independently justified transmission model could move the judgment toward Remote. Reducing the transfer to passage comparison or segmentation would approach Adjacent, but would omit the distinctive operation.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "The transfer changes what investigators measure, how evidence is generated, and what licenses reconstruction by making propagation-model inversion central to the inquiry."
+        },
+        "grounding": {
+          "status": "weakly-grounded",
+          "rationale": "The essential analogy-dependent construction is a signal whose measured behavior across multiple textual paths is causally altered by intervening compositional properties. Removing that role breaks tomography's forward-and-inverse chain. Textual recurrence and position alone do not justify it."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "The critic must construct and test a forward model of signal transmission, then repeatedly update latent internal properties to reduce discrepancies across multiple paths.",
+        "changes_what_is_observed": "Evidence becomes path-indexed propagation behavior and structured prediction residuals; ordinary repetitions and discontinuities need an additional justification to serve as those measurements.",
+        "changes_what_is_inferred": "Residual patterns are used to constrain an internal property map. Connecting that map to formation requires further evidence distinguishing revision from alternative causes of textual variation.",
+        "invented_counterparts": "Sources, receivers, crossing transmission paths, and a law linking intervening compositional properties to signal changes must be constructed. Textual regions and stylistic measurements have defensible counterparts; the essential transmission relation remains unsupported by the packet."
+      },
+      "source_transfer_profile": {
+        "entities": "A latent field of compositional properties indexed to textual regions, signal sources and receivers, and multiple paths crossing those regions. The signal and path roles require construction.",
+        "relations": "Internal compositional properties systematically alter signals traversing intersecting textual paths, linking observations at receivers to the regions crossed. This causal relation is not established by recurrence alone.",
+        "processes": "Signals propagate through a hidden compositional structure and acquire path-dependent changes; an iterative inversion updates that structure. What actually propagates through the surviving text is uncertain.",
+        "operations": "Define sources, receivers, and crossing paths; measure signal travel behavior; predict that behavior from a candidate internal model; and iteratively adjust the model to reduce discrepancies. Merely clustering similar passages would not preserve this operation.",
+        "observables": "Structured residuals between measured and predicted travel behavior across paths. Recurrence positions or stylistic sequences could supply recorded features, but their status as propagation observations needs independent justification.",
+        "inferences": "Use the joint residual pattern to constrain a spatially indexed model of latent compositional properties, then assess what that model supports about organization or formation.",
+        "failure_modes": "Uneven path coverage, uncertain source assignments, measurement error, regularization artifacts, model dependence, and non-unique reconstructions; additionally, an invented propagation law could produce apparent structure without evidential contact with composition."
+      },
+      "uncertainty": [
+        "Literary and textual analysis includes specialized computational practices; this judgment does not establish that no specialty uses an independently justified propagation model.",
+        "The packet supplies neither an explicit textual signal nor a forward propagation law. The weak-grounding judgment concerns the essential causal role, not simply unavailable measurements or implementation difficulty.",
+        "A reconstructed field of stylistic organization would not automatically identify revision history; multiple formation processes could produce the same final organization.",
+        "The classification is conditional on preserving the full instrument. A looser tomography metaphor could have much lower displacement, but would not carry the supplied operational chain."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    },
+    {
+      "run_id": "primary-011-A",
+      "class": "Remote",
+      "class_rationale": "The transfer reorganizes investigation around path-conditioned propagation residuals and inverse reconstruction. Its essential roles nevertheless have independently defensible organizational counterparts: actual requests originate, pass among teams, and experience processing and handoff delays. The closest boundary is Adjacent because workflow and queue models are familiar; Remote is favored because the full supplied mechanism changes the evidence and inferential warrant substantially in this account-based investigation. Alien is not established: absent path measurements do not themselves make request paths analogy-dependent inventions. This classification concerns the required representation, not a claim that the available evidence can support its execution.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "The full mechanism changes how inquiry proceeds, what evidence must be collected, and how internal explanations are warranted, despite retaining familiar teams and requests."
+        },
+        "grounding": {
+          "status": "partially-grounded",
+          "rationale": "Requests, team-to-team movement, endpoints, and delay-producing coordination processes have independent target meaning. Their operational identification and the model linking internal properties to transit behavior are unestablished. This is conditional support and missing evidence, rather than proof of an essential counterpart invented solely for the analogy."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "Requires identifying request episodes and multiple routes, measuring transit behavior, predicting that behavior, and iteratively fitting an internal model; the existing evidence does not permit this complete chain.",
+        "changes_what_is_observed": "Makes shared-route patterns in prediction residuals central evidence, whereas the packet provides unsequenced reports and aggregate outcomes.",
+        "changes_what_is_inferred": "Seeks internal coordination parameters jointly constrained by propagation behavior, with coverage and non-uniqueness limiting localization and attribution.",
+        "invented_counterparts": "None necessarily. Actual request routes and delay-producing handoffs have independent organizational meaning, although their identities are unknown here. Specific routes, pseudo-transit measurements, or spatial properties fabricated from the accounts would be unsupported constructions."
+      },
+      "source_transfer_profile": {
+        "entities": "Request episodes as propagating signals, originating and receiving teams as endpoints, and a coordination network with latent delay-producing properties; individual episodes and routes are not identified in the supplied evidence.",
+        "relations": "Requests traverse ordered team-to-team paths that share internal coordination components, allowing different routes to constrain the same latent properties.",
+        "processes": "Processing, waiting, and handoffs alter request transit behavior as requests cross the network; a response model must account for workload and other conditions.",
+        "operations": "Measure transit behavior across many identified origin-to-receiver paths, predict it from a candidate coordination model, and iteratively adjust internal parameters to reduce discrepancies. The supplied evidence does not provide these path observations.",
+        "observables": "Route-indexed differences between measured and predicted request transit behavior, including patterns associated with shared teams or handoffs; these residuals cannot presently be calculated from the packet.",
+        "inferences": "Use the joint residual pattern to constrain a network-positioned model of coordination delays and bottlenecks, conditional on a defensible propagation model and adequate path coverage.",
+        "failure_modes": "Uneven route coverage, uncertain endpoints or routing, timing error, workload-dependent delays, regularization artifacts, model misspecification, and non-unique internal explanations."
+      },
+      "uncertainty": [
+        "The supplied accounts and aggregate outcomes cannot establish the required route-specific observations or identify an internal coordination model by this mechanism.",
+        "A defensible forward model must address workload, priorities, rework, and changing routes; the packet does not establish whether their effects can be separated.",
+        "Specialists in operations research or process analysis may regard more of the procedure as ordinary, which could move the judgment toward Adjacent.",
+        "Remote with partially-grounded status is conditional: essential object roles have independent counterparts, but the particular propagation model remains unvalidated.",
+        "Inventing pseudo-paths or treating aggregates as measured route transit times merely to complete the source structure would create a different, more weakly grounded transfer; that construction is not assumed here."
+      ],
+      "required_review": "Identify a substantive non-native change"
+    },
+    {
+      "run_id": "primary-011-B",
+      "class": "Remote",
+      "class_rationale": "The transfer reorganizes inquiry: evidence shifts from accounts and aggregates to per-route residuals against a forward model, and the operation becomes iterative inversion with coverage assessment, which is a substantively non-native operation and observable (displacement high). The essential source roles nevertheless have independently defensible target counterparts: request routes through teams, per-route cycle time, and a queueing/process forward model are all ordinary organizational concepts, so the transfer is not held together mainly by analogy. The packet's evidence lacks the path-resolved data, but per the rubric a missing measurement is not weak grounding; the counterparts could be measured with ordinary request tracking. The closest boundary is Remote/Alien: against Remote, the supplied evidence (unsequenced accounts, no paths) forces route assignment to be constructed rather than observed, and the stable per-team delay property is a source-driven assumption. For Remote, those constructions are of things the target already recognizes and could measure, not entities invented to save the source structure.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "The transfer changes what counts as evidence (per-route residuals rather than accounts and aggregates), what is done (forward modeling and iterative inversion with coverage analysis rather than process mapping and constraint identification), and how bottleneck localization is licensed (residual pattern under non-uniqueness). This is epistemic reorganization, not surface extension."
+        },
+        "grounding": {
+          "status": "partially-grounded",
+          "rationale": "Essential roles (routes through teams, per-route delay, a forward model of stage delays, residuals) map to ordinary organizational concepts: request routing, cycle time, queueing/process models. Support is conditional because the supplied evidence contains no identified paths or units, so route-level observations must be constructed from unsequenced accounts or obtained by new measurement, and the assumption of a stable per-team delay property independent of load and content is source-driven and not independently established."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "Yes: instead of reconciling accounts into a process map and locating the constraint, the practitioner defines routes, obtains per-route delays, builds a forward model, computes residuals, iteratively adjusts a team-delay map, and assesses route coverage and resolution.",
+        "changes_what_is_observed": "Yes: evidence becomes patterned residuals between predicted and observed route delays, and coverage of each team by routes; the packet's native evidence (unsequenced accounts, aggregate outcomes) contains no such per-path observations.",
+        "changes_what_is_inferred": "Partly: the conclusion type (a team or interface accounts for delay) is shared, but the inference is now licensed by residual patterns under an explicit model, carries resolution limits per team, and admits multiple fitting delay maps as a formal possibility.",
+        "invented_counterparts": "Constructed but target-grounded: request routes and per-route delays (ordinary concepts, absent from the supplied evidence and requiring reconstruction or new measurement). Conditional/source-driven: a stable per-team delay property independent of load and request content, needed for the inversion to be well-posed. No counterpart is wholly without target justification, which is why the case is Remote rather than Alien; uncertain if aggregate outcomes are purely global."
+      },
+      "source_transfer_profile": {
+        "entities": "The organization as an internal medium whose regions (teams or handoff interfaces) carry a delay property; requests as probing signals; origin and destination points as sources and receivers; a candidate coordination model that predicts delay along any route.",
+        "relations": "A request route traverses a set of teams; the route's total delay is the sum of per-team delay contributions along it; many routes overlap so that a team's contribution is shared across several route observations; the model predicts each route's delay.",
+        "processes": "Requests propagate through teams accruing delay from each region crossed; discrepancies between predicted and observed route delays are iteratively reduced by adjusting the team-level delay map; coverage of routes determines which regions are resolvable.",
+        "operations": "Define request routes (origin team, teams crossed, destination), measure per-route delay, build a forward model that predicts route delays from a candidate team-delay structure, compute residuals, iteratively update the team-delay map to reduce residuals, and assess route coverage/resolution for each team. Constructing routes and per-route delays from unsequenced accounts and aggregate outcomes is required and uncertain.",
+        "observables": "Per-route residuals between predicted and observed delay, patterned across routes such that routes sharing a team show correlated residuals; resolution of each team given route coverage.",
+        "inferences": "The residual pattern constrains a map of which teams or interfaces carry excess delay; interfaces crossed only by poorly covered routes are unresolved; multiple team-delay maps may fit the observed route delays equally well.",
+        "failure_modes": "Sparse or uneven route coverage smearing delay onto the wrong team, non-uniqueness of the delay map, unknown or misassigned request origins, regularization choices imposing spurious structure, delay that is load- or content-dependent rather than a stable team property, and rework loops that make routes non-straight and path-dependent."
+      },
+      "uncertainty": [
+        "Whether 'aggregate outcomes' in the packet are broken down by origin-destination pair or request type; if so, per-route delay is partly available and grounding strengthens toward grounded; if purely global, the residual observable is almost entirely constructed and the case moves toward Alien.",
+        "Whether sequencing unsequenced accounts into routes is a legitimate target operation (process reconstruction is ordinary) or an analogy-driven fabrication when done to feed an inversion; I treated it as the former, but this is the main tension for the Remote/Alien boundary.",
+        "The tomographic assumption of a stable, load- and content-independent per-team delay property is not clearly justified in organizations where delay depends on queue state and request type; if this assumption is essential to the inversion, grounding is weaker than recorded.",
+        "Naturalization in operations-research or process-mining specialties is unknown; those subfields may partially naturalize model-based delay attribution, which would not change the class but would soften the non-native status.",
+        "Rework loops and parallel handoffs make routes non-straight and possibly model-dependent; whether this breaks the operational chain or is handled by a richer forward model is unresolved."
+      ],
+      "required_review": "Identify a substantive non-native change"
+    },
+    {
+      "run_id": "primary-012-B",
+      "class": "Remote",
+      "class_rationale": "The transfer reorganizes inquiry: the primary evidence becomes emergence order and band overlap in workflow records instead of fragment content, and distinguishability is inferred from separation behavior. That is more than extension. But the essential source roles have counterparts the packet states exist independently: a circulating workflow (mobile phase), fixed criteria that retain and release fragments (stationary phase), repeated cycles (partitioning), and records of fragment behavior (detector). No essential role is constructed mainly to preserve the chromatographic structure, so Alien is not met. The closest boundary is Remote versus Adjacent; the decisive factor is that observables and the inference rule are substituted rather than extended.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "What counts as evidence for a decomposition changes from content and coder agreement to retention timing and band separation, and the licensing inference changes accordingly. This is epistemic reorganization of the decomposition task, even though the workflow itself already exists in the target."
+        },
+        "grounding": {
+          "status": "partially-grounded",
+          "rationale": "Mobile phase, stationary phase, repeated partitioning and detector all have counterparts the packet states are independently established, which supports grounding. The role of 'partition behavior as an intrinsic, repeatable property of a component' is conditional: it depends on the workflow being stable across cycles and on retention reflecting the fragment rather than reviewer or ordering effects, which the packet does not establish."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "Instead of reading, coding and mapping fragments, the team treats the existing review workflow as a separation column, extracts each fragment's retention profile from the records, and compares profiles to reference fragments.",
+        "changes_what_is_observed": "Evidence becomes when and where each fragment emerges from the workflow and whether its band overlaps others, rather than textual content, redundancy or reviewer agreement.",
+        "changes_what_is_inferred": "Distinguishability is concluded from resolved retention profiles, and overlap is read as coupling or unresolved separation; content analysis becomes orthogonal confirmation rather than the primary basis, in line with the source limit that retention alone does not establish identity.",
+        "invented_counterparts": "None strictly invented: workflow, criteria, cycles and records are all stated as independently existing. Two counterparts are constructed on top of them and are uncertain: a retention axis (cycle or time ordering) derived from the records, and 'reference fragments' with known character serving as standards."
+      },
+      "source_transfer_profile": {
+        "entities": "Fragments as analytes; the circulating workflow as mobile phase; fixed review criteria as stationary phase; the record of fragment passage as detector output; a retention profile per fragment.",
+        "relations": "Fragment is retained by or released past a criterion; fragments migrate together (co-elute) or separate; a fragment's retention is ordered relative to others.",
+        "processes": "Repeated partitioning of each fragment between held and released states across circulation cycles, producing differential migration and progressive separation.",
+        "operations": "Run fragments through the fixed workflow, then read the records as a chromatogram: register when and where each fragment emerges, measure relative retention, compare profiles to reference fragments with known character.",
+        "observables": "Emergence time or cycle position of each fragment, band separation or overlap between fragments, retention ratios, peak-like clustering in the record.",
+        "inferences": "Fragments with resolved retention profiles are distinguishable components; overlapping profiles indicate unresolved or coupled fragments; relative retention characterizes how strongly a fragment binds to given criteria.",
+        "failure_modes": "Co-elution of fragments with similar criterion interactions; retention shifts if reviewers or criteria change between cycles; the record registers passage but not content (nonspecific detection); retention alone does not identify what a fragment is without reference fragments or content reading."
+      },
+      "uncertainty": [
+        "The breadth of 'idea decomposition' is unknown; specialties such as requirements engineering or structured backlog grooming may already use survival-across-rounds as a decomposition cue, which would pull the case toward Adjacent.",
+        "The packet says records preserve fragment behavior but does not confirm they carry an ordering axis (cycle number or release time) fine enough to resolve bands; if not, the observable is unavailable rather than ungrounded.",
+        "Whether retention is a stable property of the fragment, rather than of the reviewer, the ordering of review, or fragment interdependence, is not established; this conditions the inference 'resolved profile implies distinct component'.",
+        "Tension: failure modes and processes displace little (level 1) while observables displace fully (level 3); the class follows the reorganized evidentiary basis rather than an average.",
+        "Interwoven fragments may be retained together because of coupling, so co-elution could be informative about structure rather than a mere resolution failure; the source limit treats it only as a failure."
+      ],
+      "required_review": "Identify a substantive non-native change"
+    },
+    {
+      "run_id": "primary-013-A",
+      "class": "Alien",
+      "class_rationale": "The preserved mechanism reorganizes investigation around repeated partition and treats emergence patterns as evidence of conceptual components. Its essential two-phase affinity relation lacks independent grounding in the supplied target: a selective medium and a rule connecting retention behavior to pre-existing idea distinctions must be constructed principally to instantiate chromatography. The closest boundary is Remote. In favor of Remote, controlled workflows can generate legitimate new measurements, and ideas can respond differently to fixed prompts or constraints. Against it, the packet supplies no reason to treat those responses as repeated partition of persistent components or their separation as evidence for the requested decomposition. Alien is therefore provisional on this essential grounding gap, rather than on disciplinary distance or the absence of an existing apparatus.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "The transfer changes investigation, primary evidence, and inference together: the team would infer decomposition from experimentally produced migration and retention patterns."
+        },
+        "grounding": {
+          "status": "weakly-grounded",
+          "rationale": "The essential analogy-dependent construction is a two-phase partition relation for persistent idea components whose differential retention supports conceptual distinguishability. Text and discussion ground candidate meanings, but do not independently establish that relation. Merely inventing measurable holding and release rules would not establish it."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "The team must repeatedly circulate proposal material through a fixed selective medium, retain and release components, and track emergence under controlled conditions.",
+        "changes_what_is_observed": "Evidence expands to separation bands or peaks defined by output position or release stage, with relative retention becoming the instrument's central signal.",
+        "changes_what_is_inferred": "Different emergence patterns would license distinctions between components through partition behavior, subject to independent conceptual identification and the possibility of co-emergence.",
+        "invented_counterparts": "A moving carrier, stationary selective medium, and repeatable idea-partition relation must be constructed. Their implementation is unspecified; the essential unsupported counterpart is the affinity relation that would make retention evidence of conceptual components rather than an artifact of the imposed workflow."
+      },
+      "source_transfer_profile": {
+        "entities": "A proposal treated as a mixture of mobile idea components, a moving carrier for proposal material, a stationary selective medium, and an output detector; the carrier and medium require construction.",
+        "relations": "Idea components must exhibit differential affinity for the moving carrier and stationary medium, repeatedly entering and leaving the retained state.",
+        "processes": "Repeated partition between circulation and retention produces different migration rates and eventual release of components at different stages.",
+        "operations": "Construct a circulation workflow and fixed selective medium, pass proposal material through them, repeatedly retain and release portions, and record their emergence under controlled conditions.",
+        "observables": "Separated output groups or peaks in emergence time, position, or workflow stage, interpreted as differing retention behavior.",
+        "inferences": "Separation supports distinguishable components with different partition behavior and characterizes relative retention; identifying those components conceptually still requires textual or other independent evidence.",
+        "failure_modes": "Different ideas may co-emerge, workflow conditions may shift retention, output detection may conflate ideas, and retention signatures alone may not identify conceptual components. The workflow may also create distinctions or alter meanings during circulation."
+      },
+      "uncertainty": [
+        "The packet does not specify a candidate carrier, stationary medium, partition rule, or detector; the transfer profile states the roles required by the instrument rather than a verified implementation.",
+        "The lack of an existing workflow alone would not establish weak grounding. The concern is the unsupported relation between phase affinity, persistent idea components, and evidentially meaningful separation.",
+        "A justified target mechanism showing stable conceptual components repeatedly entering and leaving a selective retained state could support Remote instead.",
+        "Specialized idea-analysis practices may use structured circulation or filtering, but no evidence establishes that they implement this full mechanism in the supplied setting.",
+        "Simple thematic sorting would likely require less displacement, but treating it as the transfer would discard repeated two-phase partition and differential migration."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    },
+    {
+      "run_id": "primary-013-B",
+      "class": "Alien",
+      "class_rationale": "The transfer reorganizes inquiry: decomposition would be done by running a staged pass-through workflow, observed as a retention profile, and inferred from differential migration rather than from reading and dependency analysis. That is strong epistemic reorganization. The essential stationary phase, a medium whose differential affinity for fragments is a stable property that produces separation, has no independent target counterpart and is constructed to preserve the source's partition structure; the packet says the workflow does not exist. Both Alien conditions hold. The closest boundary is Remote: for it, one could argue that circulating a proposal through different audiences and noting which parts persist is a designable and interpretable measurement; against it, the interpretation of persistence differences as partition behavior of independent fragments, and of relative retention as a characterizing property, rests on the analogy rather than on target justification.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "What is done (staged pass-through instead of reading and mapping), what is observed (retention profile instead of text and dependencies), and what warrants the inference (differential migration instead of semantic independence) all change; this is epistemic reorganization, not procedural variation."
+        },
+        "grounding": {
+          "status": "weakly-grounded",
+          "rationale": "The essential stationary phase with stable differential affinity, and relative retention as a characterizing quantity, are constructed to preserve the source structure; the packet states no such retention mechanism exists, and idea persistence across contexts is not known to behave as an independent per-fragment property. Missing workflow alone does not establish this; the unjustified step is treating persistence differences as partition behavior."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "Instead of reading, mapping dependencies, and testing fragments for independence in argument, the team would build and run a circulation-retention-release workflow that carries the proposal through a medium with differential affinity for fragments.",
+        "changes_what_is_observed": "Evidence shifts from textual statements, explicit dependencies, contradictions, and participant endorsements to emergence order, retention profile, and co-emergence of fragments under varied conditions.",
+        "changes_what_is_inferred": "Distinctness would be warranted by differential migration and relative retention rather than by semantic independence; co-emergence would be read as unresolved separability rather than as logical coupling.",
+        "invented_counterparts": "The stationary phase (a medium that retains fragments by a stable affinity), the moving phase (a vehicle carrying the whole proposal uniformly), and relative retention as a property of a fragment are constructed for the transfer; the packet says no such workflow exists in the target. The detector role is uncertain but could be a recorder of which fragments are present at each stage."
+      },
+      "source_transfer_profile": {
+        "entities": "Proposal as a mixture; fragments as components; a moving phase (some vehicle that carries the whole proposal forward, e.g., successive rounds or audiences) and a stationary phase (some medium that differentially retains fragments); a detector that registers which fragments have emerged.",
+        "relations": "Each fragment has a partition affinity toward the stationary versus moving phase; fragments with different affinity separate, those with similar affinity co-elute; relative retention orders fragments.",
+        "processes": "Repeated partitioning as the proposal is carried through the medium; fragments migrate at different rates; separation accumulates with passes.",
+        "operations": "Design and run a circulation-retention-release workflow: pass the proposal through a sequence of contexts or holders, record which fragments are retained and which move on at each stage, adjust conditions and repeat.",
+        "observables": "Emergence order or position of fragments (retention profile), band width or sharpness, co-emergence of fragments, shifts in profile under changed conditions.",
+        "inferences": "Fragments that emerge separately are distinguishable components; their relative retention characterizes them; co-emerging fragments are not shown to be distinct by this run.",
+        "failure_modes": "Co-elution of genuinely distinct fragments; retention shifts with framing, order, or audience; the detector registers presence without meaning; retention pattern alone does not say what a fragment is or whether it is one idea or several."
+      },
+      "uncertainty": [
+        "Whether a designed workflow (successive reviewer panels or contexts with recorded retention of fragments) would count as an independently grounded new measurement rather than an analogy-driven construction; if so, the class would be Remote.",
+        "Target practice breadth: specialties such as argumentation theory or design-thinking facilitation may have staged filtering exercises I am not aware of, which would raise naturalization and grounding.",
+        "Fragment retention in discussion likely depends on order, framing, and co-presence of other fragments, so the independence of partition behavior assumed by the source may not hold; this is a semantic tension between the source mechanism and the target evidence.",
+        "Failure-mode displacement is low while operations and observables are high, so the class rests on the operational chain, not on the whole profile."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    },
+    {
+      "run_id": "primary-016-B",
+      "class": "Alien",
+      "class_rationale": "Both Alien conditions appear met. Inquiry is reorganized: instead of interpreting parallel materials for meaning, the analyst must impose an ordering on each touchpoint, treat them as overlapping sequential records, and search for an offset at which patterns lock. The essential counterparts for the ordering axis, the shift operation, and the positional assignment inference are constructed solely to preserve the crossdating structure; the packet explicitly says the evidence supplies no dated sequence, so these roles lack independent target grounding. The closest boundary is Remote, reachable only if one reads the instrument as generic cross-record consistency matching, whose target counterpart (touchpoint consistency audit) is grounded. That reading, however, drops the distinctive alignment-shift operation and substitutes a generic one, which the rubric forbids. Evidence for Alien: no ordering axis, no calendar-like positions to assign, operation and relations at level 3. Evidence against: failure modes and the consistency-signal residue transfer easily, and the target question could be partially answered by the naturalized residue alone.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "Applying the instrument as supplied requires imposing an ordering on unordered present materials, redefining touchpoints as sequential records, and replacing interpretive synthesis with an offset search. That is a change in what is investigated and what counts as evidence, not a procedural variation."
+        },
+        "grounding": {
+          "status": "weakly-grounded",
+          "rationale": "The essential roles of shared ordering axis, relative shift, and positional assignment have no independent target justification; the packet states the evidence supplies no dated sequence. Only the peripheral roles (cross-record consistency, exposure of inconsistent units, failure cautions) have defensible counterparts. The core chain breaks if the constructed ordering is removed."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "The analyst would segment each touchpoint into ordered units, define a reference sequence, and slide touchpoint sequences against it to find a locking offset, rather than coding and synthesizing meaning across parallel materials.",
+        "changes_what_is_observed": "Evidence becomes the existence of an offset at which multi-unit patterns coincide, and units that fit only if inserted or removed, instead of recurring motifs, tone, value claims, and audience associations.",
+        "changes_what_is_inferred": "Conclusions become positional assignments of units within a master brand sequence and extension of that sequence, reinterpreted as membership of messages in identity components; ordinary practice infers a synthesized identity statement and coherence assessment directly.",
+        "invented_counterparts": "The shared ordering axis (calendar time), the notion of an increment, the reference chronology, and the shift-to-lock operation are all constructed mainly to preserve the source structure. Grounded counterparts exist only for cross-record consistency, exposure of inconsistent units, and the failure cautions."
+      },
+      "source_transfer_profile": {
+        "entities": "Each touchpoint (website, packaging, ads, audience descriptions) treated as a sequential record composed of ordered increments; a reference chronology would have to be some master ordered brand-signal sequence; increments would have to be discrete ordered units of brand expression.",
+        "relations": "Records overlap along a shared ordering axis; increments precede and follow one another; records share a partly common external driver that leaves matching wide-narrow patterns. In the target no ordering axis is supplied, so 'overlap' and 'precede' must be constructed, e.g. as position along a journey, a page scroll, or a message hierarchy.",
+        "processes": "Incremental accumulation under shared external forcing, plus occasional missing or false increments. In the target this would be rendered as brand messages laid down in sequence under shared strategic direction, with omitted or extraneous messages in particular touchpoints.",
+        "operations": "Shift the relative alignment of the ordered brand-signal sequences across touchpoints until distinctive multi-unit patterns coincide; flag units that only fit if an increment is inserted or removed. This requires first imposing an order on each touchpoint's content.",
+        "observables": "A specific offset at which patterns repeat consistently across touchpoints, and the exposure of units that are missing, extra, or misplaced relative to that alignment. Target analogue: a mapping under which motif sequences line up across touchpoints and residual mismatches stand out.",
+        "inferences": "Assign each ambiguous unit a definite position in the shared sequence; extend or check a master brand-signal chronology. Target analogue: assign each touchpoint's messages a place in a unified identity structure and locate touchpoints that are off-pattern.",
+        "failure_modes": "Weak shared signal (incoherent brand strategy), short or repetitive patterns (generic category tropes), local disturbances (channel-specific constraints), wrong reference (a mistaken assumed core identity), insufficient overlap (touchpoints addressing disjoint themes) producing false alignments."
+      },
+      "uncertainty": [
+        "Some brand practitioners may analyze sequenced material such as customer-journey stages, page scroll order, or campaign narrative arcs; if an analyst treated those as the ordering axis, the relations and operations displacement would drop toward 2 and grounding toward partially-grounded, making Remote more defensible.",
+        "The target statement is explicit that no dated sequence exists, but the breadth of brand-identity practice (semiotics, marketing research, design strategy) is large and I lack evidence about niche methods.",
+        "Tension: failure modes transfer at level 1 while operations and relations sit at level 3; the class follows the essential operational chain rather than the easily transferred cautions.",
+        "The signal residue (consistent patterns and exposed inconsistencies across touchpoints) is grounded in target practice; the classification treats it as insufficient because it is reachable without the alignment mechanism."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    },
+    {
+      "run_id": "primary-016-A",
+      "class": "Alien",
+      "class_rationale": "Preserving crossdating reorganizes investigation around temporal records, shifted alignments, and chronological inference. Essential temporal succession and overlap would have to be constructed mainly to retain the source mechanism, without independent support in the current materials. The closest boundary is Remote: genuinely overlapping brand histories could ground crossdating roles, but this packet explicitly provides no dated historical sequence and asks about present meaning. Familiar comparison of recurring motifs is evidence for a less distant reading only if the distinctive crossdating operation is removed.",
+      "axes": {
+        "displacement": {
+          "level": "high",
+          "rationale": "The transfer changes investigation, evidence, and inference from interpretation of current communications to reconstruction of temporal positions through sequence alignment."
+        },
+        "grounding": {
+          "status": "weakly-grounded",
+          "rationale": "Essential increment-bearing temporal records and their overlap lack independent target justification. Constructing an order from current themes or channels solely to permit shifting and matching would preserve the analogy without establishing actual temporal succession."
+        }
+      },
+      "boundary_evidence": {
+        "changes_what_is_done": "The analyst must construct or identify ordered records and shift their relative positions to seek repeated temporal matches.",
+        "changes_what_is_observed": "The decisive signal becomes alignment-specific pattern agreement and missing-increment anomalies, rather than recurring meanings across current materials.",
+        "changes_what_is_inferred": "The instrument infers temporal placement and chronological consistency; explaining present identity would require a further evidential connection absent from the packet.",
+        "invented_counterparts": "Unsupported counterparts include temporal increments within current artifacts, overlapping periods of record formation, and a chronology linking aligned increments. Shared brand themes alone do not justify these temporal roles."
+      },
+      "source_transfer_profile": {
+        "entities": "Materials would have to supply overlapping sequential records composed of increments, with uncertain temporal positions and an independently dated reference or overlapping chronology; these roles are not established by the packet.",
+        "relations": "Increments would occupy successive temporal positions, records would overlap, and corresponding patterns would reflect partly shared external influences; present thematic similarity does not establish these relations.",
+        "processes": "The transfer requires successive formation of records under shared influences, potentially with missing or anomalous increments; this historical formation structure would have to be constructed for the current evidence.",
+        "operations": "Compare ordered increment patterns across records and shift their relative alignment until distinctive multi-period patterns correspond consistently, checking for missing, extra, or misassigned increments.",
+        "observables": "Repeated temporal pattern matches at a particular alignment, together with inconsistencies revealing missing or misplaced increments; the supplied current materials do not establish these observables.",
+        "inferences": "A matching alignment would support temporal placement and chronology checking. Using that result to explain present brand meaning would require an additional, unsupported interpretive bridge.",
+        "failure_modes": "Channel-specific variation could be mistaken for temporal disturbance, recurring motifs could produce false alignments, and invented order, references, or overlap could generate a spurious chronology that does not explain present meaning."
+      },
+      "uncertainty": [
+        "Brand-history specialties may use temporal alignment, but that does not establish its grounding or naturalization for the supplied present-meaning task.",
+        "The packet does not demonstrate that current materials encode recoverable historical increments; their absence is not merely an unavailable measurement, because treating them as temporal records itself lacks justification.",
+        "This judgment concerns what a mechanism-preserving transfer would require, not a demonstrated workable implementation.",
+        "The chronology-to-meaning inference remains unsupported. Alien describes the proposed representational reorganization; it does not make chronology an answer to the target question."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    },
+    {
+      "run_id": "control-009-B",
+      "class": "Remote",
+      "class_rationale": "Entities, relations, processes, operations, and observables each require reinterpretation: motifs become probes with paths, motif change becomes passive modulation rather than authorial development, and evidence becomes structured residual against a formation model rather than the discontinuity itself. Operations and observables change, satisfying the Remote condition, and the mapping is coherent once probes are constructed, without arbitrary correspondences. Inferences and failure modes remain largely intact, so the case does not reach Alien. The closest boundary is Adjacent. Evidence for the boundary mattering: the tomographic framing changes what the critic notices (coincident unexplained residuals at probe intersections rather than any visible seam), what they do (predict, compare, refine, assess resolution), and what they infer (a family of admissible formation maps with region-specific confidence). Evidence against: if the path construct is dropped, the work collapses to positional change-point detection along a single axis, which a stylometrist already does, and the conclusions may be indistinguishable in practice, which would make the case Adjacent.",
+      "axes": null,
+      "boundary_evidence": null,
+      "source_transfer_profile": {
+        "entities": "The text becomes a medium whose hidden internal property field is its compositional state (stratum, hand, revision intensity) varying by position. Probes must be constructed: each recurring image, stylistic feature series, or narrative thread is treated as a signal that traverses the text along a path of its occurrences. Observations are the recorded behavior of each probe at each point it passes; the candidate model is an explicit map of compositional state over textual position.",
+        "relations": "A probe path crosses a textual region and its behavior is modulated by that region's compositional state; a candidate formation model predicts probe behavior along every path; discrepancy between prediction and observation is attached to the regions the path crosses; regions crossed by many probes are well constrained, regions crossed by few are poorly resolved.",
+        "processes": "Propagation must be constructed: a motif or feature is treated as carrying a baseline character that is altered as it passes through regions of different compositional state, rather than as developing by authorial design. Model refinement is an iterative process of reducing structured misfit. Composition and revision remain the processes being reconstructed, but they are represented as the static field rather than as a narrative.",
+        "operations": "Choose a set of probes with overlapping coverage across the text; specify a candidate formation model; predict how each probe should behave along its path under that model; compare with observed behavior; locate where misfit is spatially structured; adjust the model, with an explicit parsimony or smoothness preference, and repeat until residuals lack structure; assess which regions the probe coverage can actually resolve.",
+        "observables": "Not the raw discontinuity but the residual: the difference between what the current formation model predicts a probe should do in a region and what it does, considered jointly across many probes crossing that region. A discontinuity already predicted by the model is not evidence; a coincident unexplained residual across several independent probes is.",
+        "inferences": "A positional model of compositional state that could have produced the observed pattern of probe behavior, together with a statement of resolution: which boundaries are constrained by multiple crossing probes and which are underdetermined. The licensed conclusion is a family of admissible formation models rather than one reconstruction, and the confidence in any boundary depends on coverage.",
+        "failure_modes": "Sparse or clustered probes create false boundaries or smear real ones; the parsimony preference can suppress real fine-grained revision; uncertain baseline character of a probe (the analogue of uncertain source location) corrupts every residual on its path; several compositional maps fit the same residuals; and, with no source analogue, the medium may be intentionally heterogeneous, so passive-modulation assumptions misread designed variation as formation history."
+      },
+      "uncertainty": [
+        "The target domain is broad: a computational stylist, a textual scholar, and a literary critic would see very different displacement in operations and observables; the packet says only 'a critic'.",
+        "The probe-and-path counterpart is constructed here; it is unclear whether motif recurrences genuinely behave like path-integrated measurements or whether each occurrence is a direct local sample, in which case the source's distinctive cross-path localization has no real target analogue.",
+        "Without the path construct the transfer reduces to one-dimensional profile fitting, which is partially naturalized and would lower the class to Adjacent.",
+        "Whether the resolution and coverage vocabulary changes actual critical conclusions, rather than only their stated confidence, is not established.",
+        "The absence of drafts for this novel limits what target practice can be described as ordinary for formation claims; no verified consensus on how critics handle this specific evidentiary situation is asserted."
+      ],
+      "required_review": "Identify a substantive non-native change"
+    },
+    {
+      "run_id": "control-009-A",
+      "class": "Alien",
+      "class_rationale": "The transfer requires substantial reorganization around constructed transmission paths, propagation processes, and an invertible internal field. This judgment rests on those representational commitments, not disciplinary difference or difficulty. Remote is the closest boundary: motifs, passages, latent formation hypotheses, and underdetermination provide meaningful anchors. However, preserving tomography's multi-path propagation mechanism requires counterparts that ordinary practice does not supply. The case supports the proposed importance of changes in operations and evidence, while showing that those changes alone cannot distinguish Remote from Alien; the extent of counterpart construction also matters.",
+      "axes": null,
+      "boundary_evidence": null,
+      "source_transfer_profile": {
+        "entities": "A constructed internal field of textual or revision properties; motif and stylistic sequences treated as signals; designated source and receiver passages; and multiple proposed routes through the field. These propagation counterparts are not supplied by the surviving evidence.",
+        "relations": "Signals cross routes through hidden textual regions, whose properties alter their propagation. Shared route segments must produce related effects across observations; textual recurrence alone does not establish these crossing relationships.",
+        "processes": "Signals accumulate delays or transformations while traversing the proposed internal structure. Textual spacing or changes in motif expression would need to stand for propagation behavior, with an uncertain connection to actual formation.",
+        "operations": "Define source-to-receiver paths and measurable propagation behavior, predict that behavior from a candidate internal field, compare predictions with observations across many paths, and iteratively adjust the field to reduce discrepancies.",
+        "observables": "Path-indexed discrepancies between predicted and observed textual lags or feature sequences, with residual patterns localized across the constructed field. These quantities require a justified textual analogue of travel behavior or waveform.",
+        "inferences": "Use the joint residual pattern to constrain internal properties shared by intersecting paths; any further claim that those properties represent revision history requires independent justification.",
+        "failure_modes": "Uneven route coverage, uncertain signal origins, arbitrary propagation metrics, feature-extraction error, regularization artifacts, and multiple internal fields fitting the same observations; an unsupported propagation mechanism could invalidate the reconstruction."
+      },
+      "uncertainty": [
+        "The packet does not specify a textual propagation law, path geometry, or measurable analogue of travel behavior. The transfer profile identifies required constructions rather than an established implementation.",
+        "Specialized computational literary methods may use related inverse models; no evidence here establishes naturalization of the complete mechanism.",
+        "A justified transmission mechanism with independently identifiable paths could move the judgment toward Remote.",
+        "Even a well-fitting internal model would not by itself establish the historical sequence of revisions in this anonymous novel."
+      ],
+      "required_review": "Identify an essential independently unjustified counterpart and high reorganization"
+    }
+  ],
+  "note": "Mechanical inventory only. No automatic adjudication; human/agent research interpretations are separate."
+}

@@ -1,0 +1,82 @@
+{
+  "classification": {
+    "case_id": "001",
+    "target_native_profile": {
+      "entities": "Feature exposure settings, eligible users, rollout cohorts, adoption events, errors, retention cohorts, and concurrent market conditions.",
+      "relations": "Exposure determines feature availability; metrics are indexed by rollout time and cohort; market conditions can affect the same outcomes.",
+      "processes": "Users discover and adopt the feature, errors emerge or subside, and retention develops over successive weeks.",
+      "operations": "Increase exposure to a fixed larger share, record pre-change baselines and subsequent metric trajectories, and examine changes alongside concurrent events.",
+      "observables": "Adoption curves, error spikes, cohort retention, delayed changes, persistent shifts, and variability over time.",
+      "inferences": "Describe the timing, magnitude, persistence, and stability of changes following rollout, while qualifying attribution amid other changes.",
+      "failure_modes": "Changing cohort composition, immature retention measurements, instrumentation changes, seasonality, concurrent releases, and market events can mislead comparisons."
+    },
+    "source_transfer_profile": {
+      "entities": "The product and user population form the observed dynamic system; configured exposure share is the input; adoption, errors, and retention are outputs.",
+      "relations": "A known exposure step precedes time-indexed output responses; initial conditions and other inputs influence those responses.",
+      "processes": "The exposure increase initiates transient changes that may be delayed, peak, fluctuate, or approach a later level.",
+      "operations": "Apply the pilot-to-larger-share exposure step, hold the configured share fixed, and record each output from its initial state through subsequent weeks toward later behavior.",
+      "observables": "Measure response delay, rise, peaks or overshoot, oscillation, settling where present, and later-level changes using consistent metric and cohort definitions.",
+      "inferences": "Use temporal response features to characterize empirical rollout dynamics and constrain plausible response models, without treating temporal succession alone as causal identification.",
+      "failure_modes": "Noise, uncertain baselines, adoption saturation, nonlinear user responses, market disturbances, concurrent inputs, short follow-up, and dependence on the selected exposure level limit conclusions."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Exposure settings, users, and outcome metrics already supply the input, system, and output roles without introducing new kinds of objects."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Relating rollout timing and exposure to subsequent outcomes, while accounting for other influences, is ordinary monitoring."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Delayed adoption, temporary error spikes, and persistent outcome changes are familiar rollout processes."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "The target already specifies the distinctive operation: a known increase to a fixed exposure share followed by longitudinal observation."
+      },
+      "observables": {
+        "level": 1,
+        "rationale": "Explicitly measuring overshoot, oscillation, or settling extends familiar trajectory inspection; these features require operational definitions and need not occur."
+      },
+      "inferences": {
+        "level": 0,
+        "rationale": "Characterizing the timing and persistence of a response directly serves the target question. The instrument permits this without requiring formal system identification."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Disturbances, interacting changes, saturation, uncertain baselines, and inadequate follow-up have recognizable counterparts in rollout analysis."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary-practice example is monitoring adoption curves, error spikes, and cohort retention after increasing feature availability, noting delayed effects and whether metrics stabilize.",
+      "rationale": "A competent product practitioner could reach for the core operation and trajectory-based interpretation without engineering prompts. This supports Native despite some extension in formal response-feature terminology; explicit dynamical modeling is less broadly established."
+    },
+    "final_class": "Native",
+    "class_rationale": "Removing engineering labels leaves the rollout operation and longitudinal monitoring already specified by the target. Exposure provides a defensible step input and product metrics provide observed responses. The closest boundary is Adjacent: systematic overshoot or settling measurements and candidate dynamical models could extend routine practice. Against that classification, the supplied mechanism also licenses ordinary empirical response characterization, and neither formal modeling nor a new evidential regime is required.",
+    "uncertainty": [
+      "Product monitoring practices vary; formal response-feature estimation may be familiar to quantitative teams and unfamiliar elsewhere.",
+      "A fixed configured exposure share does not guarantee fixed realized usage or stable cohort composition.",
+      "Several weeks may not reveal settling or mature retention, and some metrics may have no steady state.",
+      "The packet provides no controls for market changes, so causal attribution and discrimination among causal models remain limited."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "low",
+        "rationale": "The transfer largely restates the target's existing intervention and observation procedure, with a modest extension in how temporal features are named and measured."
+      },
+      "grounding": {
+        "status": "grounded",
+        "rationale": "The essential roles have independent counterparts: the team controls configured exposure, records dated outcomes, and observes their evolution. Stable response features and causal attribution require evidence, but their uncertainty does not make these counterparts analogy-dependent."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Little changes: the specified exposure increase and subsequent monitoring already implement the step-and-record operation; explicit baseline and observation-window definitions sharpen it.",
+      "changes_what_is_observed": "Existing metric trajectories are additionally inspected for delay, rise, peaks, oscillation, and possible settling.",
+      "changes_what_is_inferred": "Observed trends become explicit characterizations of the response to the rollout step, conditional on concurrent influences and the tested exposure level.",
+      "invented_counterparts": "None essential. Input, outputs, timing, and disturbances have direct target counterparts. A steady state must be demonstrated rather than invented to complete the engineering description."
+    }
+  }
+}

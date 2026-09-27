@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "case_id": "011",
+    "target_native_profile": {
+      "entities": "Teams, requests, responsibilities, handoffs, approval requirements, reported coordination episodes, and aggregate outcomes.",
+      "relations": "Teams depend on one another, share responsibilities, transfer work, and impose approval or resource constraints; accounts may corroborate or conflict.",
+      "processes": "Requests wait, undergo rework, encounter competing priorities, and accumulate at constrained teams or decision points.",
+      "operations": "Compare accounts, examine aggregate outcomes, reconstruct plausible coordination arrangements, and assess competing explanations while marking missing sequences.",
+      "observables": "Reported waiting, unclear ownership, repeated escalation, inconsistent accounts, and aggregate delay or completion patterns.",
+      "inferences": "Identify coordination structures consistent with the evidence and distinguish plausible explanations from established causal attribution.",
+      "failure_modes": "Selective reporting, retrospective attribution, aggregation bias, missing chronology, workload confounding, and multiple structures explaining the same outcomes."
+    },
+    "source_transfer_profile": {
+      "entities": "Request episodes as propagating signals, originating and receiving teams as endpoints, and a coordination network with latent delay-producing properties; individual episodes and routes are not identified in the supplied evidence.",
+      "relations": "Requests traverse ordered team-to-team paths that share internal coordination components, allowing different routes to constrain the same latent properties.",
+      "processes": "Processing, waiting, and handoffs alter request transit behavior as requests cross the network; a response model must account for workload and other conditions.",
+      "operations": "Measure transit behavior across many identified origin-to-receiver paths, predict it from a candidate coordination model, and iteratively adjust internal parameters to reduce discrepancies. The supplied evidence does not provide these path observations.",
+      "observables": "Route-indexed differences between measured and predicted request transit behavior, including patterns associated with shared teams or handoffs; these residuals cannot presently be calculated from the packet.",
+      "inferences": "Use the joint residual pattern to constrain a network-positioned model of coordination delays and bottlenecks, conditional on a defensible propagation model and adequate path coverage.",
+      "failure_modes": "Uneven route coverage, uncertain endpoints or routing, timing error, workload-dependent delays, regularization artifacts, model misspecification, and non-unique internal explanations."
+    },
+    "displacement": {
+      "entities": {
+        "level": 1,
+        "rationale": "Teams and requests already belong to the target. Treating request episodes as probes adds a role without requiring a new kind of organizational object."
+      },
+      "relations": {
+        "level": 2,
+        "rationale": "Dependencies and handoffs become ordered crossing paths whose shared components support joint constraints. The unsequenced accounts do not establish that path structure."
+      },
+      "processes": {
+        "level": 2,
+        "rationale": "Coordination is represented through its systematic effects on transit behavior, requiring explicit treatment of how contingent waiting, negotiation, and rework affect propagation."
+      },
+      "operations": {
+        "level": 3,
+        "rationale": "The investigation is reorganized around repeated multi-path measurement and iterative inverse fitting, replacing the supplied investigation's comparison of accounts and aggregate outcomes as its central procedure."
+      },
+      "observables": {
+        "level": 2,
+        "rationale": "Delay remains relevant, but evidence becomes indexed by routes and expressed as structured model residuals. Aggregate outcomes and unsequenced accounts are not automatically such observations."
+      },
+      "inferences": {
+        "level": 3,
+        "rationale": "Explanatory warrant shifts to whether an internal parameter configuration jointly reproduces transit behavior across paths, rather than primarily to corroborated accounts and aggregate consistency."
+      },
+      "failure_modes": {
+        "level": 1,
+        "rationale": "Confounding and underdetermination are familiar; path coverage, regularization, and inversion artifacts extend those concerns through a more specific modeling framework."
+      }
+    },
+    "naturalization": {
+      "status": "partially-naturalized",
+      "evidence": "Workflow mapping, queue analysis, and handoff-delay analysis are recognizable organizational practices. The packet supplies no evidence that multi-path inverse reconstruction is ordinary practice for this investigation.",
+      "rationale": "Familiar network and delay concepts prevent treating the entire representation as foreign. However, they do not establish that the distinctive measurement-and-inversion chain is naturalized, so they support an Adjacent boundary without making the transfer Native."
+    },
+    "final_class": "Remote",
+    "class_rationale": "The transfer reorganizes investigation around path-conditioned propagation residuals and inverse reconstruction. Its essential roles nevertheless have independently defensible organizational counterparts: actual requests originate, pass among teams, and experience processing and handoff delays. The closest boundary is Adjacent because workflow and queue models are familiar; Remote is favored because the full supplied mechanism changes the evidence and inferential warrant substantially in this account-based investigation. Alien is not established: absent path measurements do not themselves make request paths analogy-dependent inventions. This classification concerns the required representation, not a claim that the available evidence can support its execution.",
+    "uncertainty": [
+      "The supplied accounts and aggregate outcomes cannot establish the required route-specific observations or identify an internal coordination model by this mechanism.",
+      "A defensible forward model must address workload, priorities, rework, and changing routes; the packet does not establish whether their effects can be separated.",
+      "Specialists in operations research or process analysis may regard more of the procedure as ordinary, which could move the judgment toward Adjacent.",
+      "Remote with partially-grounded status is conditional: essential object roles have independent counterparts, but the particular propagation model remains unvalidated.",
+      "Inventing pseudo-paths or treating aggregates as measured route transit times merely to complete the source structure would create a different, more weakly grounded transfer; that construction is not assumed here."
+    ],
+    "axes": {
+      "displacement": {
+        "level": "high",
+        "rationale": "The full mechanism changes how inquiry proceeds, what evidence must be collected, and how internal explanations are warranted, despite retaining familiar teams and requests."
+      },
+      "grounding": {
+        "status": "partially-grounded",
+        "rationale": "Requests, team-to-team movement, endpoints, and delay-producing coordination processes have independent target meaning. Their operational identification and the model linking internal properties to transit behavior are unestablished. This is conditional support and missing evidence, rather than proof of an essential counterpart invented solely for the analogy."
+      }
+    },
+    "boundary_evidence": {
+      "changes_what_is_done": "Requires identifying request episodes and multiple routes, measuring transit behavior, predicting that behavior, and iteratively fitting an internal model; the existing evidence does not permit this complete chain.",
+      "changes_what_is_observed": "Makes shared-route patterns in prediction residuals central evidence, whereas the packet provides unsequenced reports and aggregate outcomes.",
+      "changes_what_is_inferred": "Seeks internal coordination parameters jointly constrained by propagation behavior, with coverage and non-uniqueness limiting localization and attribution.",
+      "invented_counterparts": "None necessarily. Actual request routes and delay-producing handoffs have independent organizational meaning, although their identities are unknown here. Specific routes, pseudo-transit measurements, or spatial properties fabricated from the accounts would be unsupported constructions."
+    }
+  }
+}

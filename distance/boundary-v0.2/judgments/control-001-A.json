@@ -1,0 +1,65 @@
+{
+  "classification": {
+    "case_id": "CASE-008",
+    "target_native_profile": {
+      "entities": "Feature exposure levels, eligible users and cohorts, adoption, errors, retention, and concurrent product or market events.",
+      "relations": "Exposure affects user experience; outcomes vary by cohort and time since rollout and may also respond to market changes.",
+      "processes": "Users discover and adopt the feature, errors emerge, and retention develops over subsequent weeks.",
+      "operations": "Increase exposure to a fixed larger share, establish a baseline, and track outcome trajectories while checking cohort differences and concurrent changes.",
+      "observables": "Metric changes, delayed adoption, error spikes, retention trends, stabilization, and differences between exposed and comparison cohorts.",
+      "inferences": "Whether outcomes improve, deteriorate, or stabilize after rollout; how quickly effects emerge; and how confidently changes can be attributed to exposure.",
+      "failure_modes": "Market confounding, cohort selection, changing user composition, measurement noise, concurrent releases, and immature retention observations."
+    },
+    "source_transfer_profile": {
+      "entities": "The product and its user population form a dynamic system; exposure share is the input, and adoption, errors, and retention are measured outputs.",
+      "relations": "A known exposure increase precedes time-dependent output responses, with market events and other product changes acting as additional inputs or disturbances.",
+      "processes": "Outputs evolve from their initial conditions through transient responses toward later behavior, potentially including delay, peaks, oscillation, and stabilization.",
+      "operations": "Apply the known step from pilot exposure to the fixed larger share and record each output trajectory from baseline through the following weeks.",
+      "observables": "Response delay, rise, peaks, overshoot relative to a later level, oscillation, settling, and sustained changes; later levels may remain uncertain within the observation window.",
+      "inferences": "Characterize response speed, persistence, and stability, and use trajectory shapes to constrain candidate accounts of the product population's dynamics.",
+      "failure_modes": "Noise, uncertain initial conditions, adoption saturation, nonlinear exposure effects, market disturbances, interacting changes, insufficient follow-up, and dependence on the tested exposure level."
+    },
+    "displacement": {
+      "entities": {
+        "level": 0,
+        "rationale": "Exposure, user populations, and outcome metrics already provide the input, system, and outputs without constructing unfamiliar counterparts."
+      },
+      "relations": {
+        "level": 0,
+        "rationale": "Time-dependent relationships between rollout exposure and outcomes, alongside concurrent influences, are ordinary monitoring concerns."
+      },
+      "processes": {
+        "level": 0,
+        "rationale": "Delayed uptake, temporary error spikes, and eventual stabilization are recognizable rollout behavior."
+      },
+      "operations": {
+        "level": 0,
+        "rationale": "The target already specifies the distinctive operation: a known exposure increase held at a larger share, followed by repeated observations over time."
+      },
+      "observables": {
+        "level": 0,
+        "rationale": "Lags, peaks, trends, and stabilization are ordinary features of rollout metric trajectories; control terminology does not create new evidence types."
+      },
+      "inferences": {
+        "level": 1,
+        "rationale": "Explicitly using response shapes to discriminate candidate dynamic models extends ordinary rollout interpretation, while preserving its metrics and empirical reasoning."
+      },
+      "failure_modes": {
+        "level": 0,
+        "rationale": "Confounding changes, saturation, noisy measurements, short follow-up, and limited generalization across exposure levels already threaten rollout conclusions."
+      }
+    },
+    "naturalization": {
+      "status": "native",
+      "evidence": "An ordinary rollout-monitoring example is increasing exposure, holding it fixed, and watching whether adoption rises gradually, errors spike temporarily, and retention changes persist. The packet directly describes this practice.",
+      "rationale": "A competent product practitioner could reach for this intervention-and-trajectory representation without control-engineering prompting. This supports Native despite the source identity; formal dynamic-model discrimination is less clearly conventional across product teams."
+    },
+    "final_class": "Native",
+    "class_rationale": "The target already instantiates step-response probing, preserving the intervention, temporal evidence, and basic response characterization. Adjacent is the closest boundary because explicit discrimination among dynamic models adds an inferential extension, but it does not reorganize the problem. The case is consistent with low distance when actions and evidence remain ordinary. It also cautions that some inferential extension can occur below Remote; it does not directly test the Adjacent–Remote boundary.",
+    "uncertainty": [
+      "The packet does not establish how commonly this team or product specialty uses explicit dynamic models.",
+      "A fixed exposure share need not imply fixed cohort composition or constant actual feature use.",
+      "Several weeks may not reveal settling or a reliable later retention level, especially amid market changes."
+    ]
+  }
+}
