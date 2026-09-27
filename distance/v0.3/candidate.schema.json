@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chaos-mage:v0.3:candidate",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "mapping": {
+      "$ref": "#/$defs/instrument"
+    }
+  },
+  "required": [
+    "case_id",
+    "source",
+    "target",
+    "mapping"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "instrument": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "signal": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limit": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "state",
+        "operation",
+        "signal",
+        "inference",
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "practice": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "instrument": {
+          "$ref": "#/$defs/instrument"
+        }
+      },
+      "required": [
+        "name",
+        "practice",
+        "instrument"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "domain",
+        "question",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

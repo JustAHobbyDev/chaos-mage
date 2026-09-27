@@ -1,0 +1,1089 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chaos-mage:v0.3:transfer",
+  "type": "object",
+  "properties": {
+    "transfer": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "target": {
+          "$ref": "#/$defs/target"
+        },
+        "mapping": {
+          "$ref": "#/$defs/instrument"
+        },
+        "validity": {
+          "$ref": "#/$defs/validity"
+        },
+        "native_baseline": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/baseline"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "displacement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/displacement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "grounding": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/grounding"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "case_id",
+        "source",
+        "target",
+        "mapping",
+        "validity",
+        "native_baseline",
+        "displacement",
+        "grounding",
+        "uncertainty"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "validity": {
+                "properties": {
+                  "final_status": {
+                    "const": "Invalid"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "displacement": {
+                "type": "null"
+              },
+              "grounding": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "validity": {
+                "properties": {
+                  "final_status": {
+                    "const": "Valid"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "native_baseline": {
+                "$ref": "#/$defs/baseline"
+              },
+              "displacement": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/displacement"
+                  },
+                  {
+                    "properties": {
+                      "provisional": {
+                        "const": false
+                      }
+                    }
+                  }
+                ]
+              },
+              "grounding": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/grounding"
+                  },
+                  {
+                    "properties": {
+                      "provisional": {
+                        "const": false
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "validity": {
+                "properties": {
+                  "final_status": {
+                    "const": "Conditional"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "displacement": {
+                "anyOf": [
+                  {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/displacement"
+                      },
+                      {
+                        "properties": {
+                          "provisional": {
+                            "const": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "grounding": {
+                "anyOf": [
+                  {
+                    "allOf": [
+                      {
+                        "$ref": "#/$defs/grounding"
+                      },
+                      {
+                        "properties": {
+                          "provisional": {
+                            "const": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "displacement": {
+                "type": "object"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "native_baseline": {
+                "$ref": "#/$defs/baseline"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "transfer"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "instrument": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "signal": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limit": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "state",
+        "operation",
+        "signal",
+        "inference",
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "practice": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "instrument": {
+          "$ref": "#/$defs/instrument"
+        }
+      },
+      "required": [
+        "name",
+        "practice",
+        "instrument"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "domain",
+        "question",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "validity": {
+      "type": "object",
+      "properties": {
+        "mechanism_fidelity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "preserved",
+                "conditionally-preserved",
+                "not-preserved"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "target_fidelity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "addressed",
+                "conditional",
+                "not-addressed"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "operational_coherence": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "coherent",
+                "conditional",
+                "incoherent"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "target_reframe": {
+          "type": "object",
+          "properties": {
+            "occurred": {
+              "type": "boolean"
+            },
+            "original_question": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reframed_question": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "relationship": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "occurred",
+            "original_question",
+            "reframed_question",
+            "relationship"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "occurred": {
+                    "const": true
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "original_question": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "reframed_question": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "occurred": {
+                    "const": false
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "original_question": {
+                    "type": "null"
+                  },
+                  "reframed_question": {
+                    "type": "null"
+                  },
+                  "relationship": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "unresolved_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        },
+        "final_status": {
+          "type": "string",
+          "enum": [
+            "Valid",
+            "Conditional",
+            "Invalid"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "mechanism_fidelity",
+        "target_fidelity",
+        "operational_coherence",
+        "target_reframe",
+        "unresolved_conditions",
+        "final_status",
+        "rationale"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Valid"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "addressed"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "coherent"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "unresolved_conditions": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Conditional"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "properties": {
+                    "mechanism_fidelity": {
+                      "properties": {
+                        "status": {
+                          "const": "not-preserved"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "not": {
+                  "properties": {
+                    "target_fidelity": {
+                      "properties": {
+                        "status": {
+                          "const": "not-addressed"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "not": {
+                  "properties": {
+                    "operational_coherence": {
+                      "properties": {
+                        "status": {
+                          "const": "incoherent"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "conditionally-preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "conditional"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "conditional"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "unresolved_conditions": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Invalid"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "not-preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "not-addressed"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "incoherent"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "target_domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "target_task": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reference_practitioner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "ordinary_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "ordinary_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "target_domain",
+        "target_task",
+        "reference_practitioner",
+        "ordinary_methods",
+        "ordinary_evidence",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    },
+    "displacement": {
+      "type": "object",
+      "properties": {
+        "provisional": {
+          "type": "boolean"
+        },
+        "class": {
+          "type": "string",
+          "enum": [
+            "Native",
+            "Adjacent",
+            "Remote"
+          ]
+        },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "entities": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "relations": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "processes": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "operations": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "observables": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "inferences": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "failure_modes": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "entities",
+            "relations",
+            "processes",
+            "operations",
+            "observables",
+            "inferences",
+            "failure_modes"
+          ],
+          "additionalProperties": false
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "provisional",
+        "class",
+        "dimensions",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "counterpart": {
+      "type": "object",
+      "properties": {
+        "source_role": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "target_counterpart": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "essential_reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "independent_target_basis": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "grounding_status": {
+          "type": "string",
+          "enum": [
+            "Grounded",
+            "Partially-grounded",
+            "Weakly-grounded",
+            "Unknown"
+          ]
+        }
+      },
+      "required": [
+        "source_role",
+        "target_counterpart",
+        "essential_reason",
+        "independent_target_basis",
+        "grounding_status"
+      ],
+      "additionalProperties": false
+    },
+    "grounding": {
+      "type": "object",
+      "properties": {
+        "provisional": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Grounded",
+            "Partially-grounded",
+            "Weakly-grounded",
+            "Unknown"
+          ]
+        },
+        "essential_counterparts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/counterpart"
+          },
+          "minItems": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "provisional",
+        "status",
+        "essential_counterparts",
+        "rationale"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "Grounded"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "essential_counterparts": {
+                "items": {
+                  "properties": {
+                    "grounding_status": {
+                      "const": "Grounded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "Weakly-grounded"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "essential_counterparts": {
+                "contains": {
+                  "properties": {
+                    "grounding_status": {
+                      "const": "Weakly-grounded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

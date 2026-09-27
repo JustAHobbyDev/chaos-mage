@@ -70,3 +70,8 @@ The next preregistered phase is [docs/retrieval-mapping-test-v0.1.md](docs/retri
 The separate [ontological-distance prototype](distance/README.md) measures
 representational displacement and independent classifier agreement. It does not
 filter or modify the retrieval catalogue.
+
+The active research model is now [ontological transfer v0.3](distance/MODEL-v0.3.md):
+transfer validity → ontological displacement → grounding. It is a conceptual
+refactor with retrospective examples and a prepared, unexecuted validity protocol;
+all v0.1/v0.2 experiment records remain historical and unchanged.
