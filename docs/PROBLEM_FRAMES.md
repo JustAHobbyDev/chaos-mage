@@ -113,3 +113,71 @@ No borrowed product or stakeholder analogy drives this design.
 
 Practitioner evidence, independent human ratings, and model-family replication are
 future research questions. Stop after the report; add no numeric decision thresholds.
+
+## Entry #3 — 2026-09-27 — Boundary experiment with a second provider and matched controls
+
+### Domains
+
+Existing lexical inputs are the immutable v0.1 artifacts and accepted instrument
+corpus. Experiment-owned lexical inputs are sixteen synthetic/control fixtures,
+a tested draft, schemas, fixed order and preservation/preparation manifests.
+External model services now comprise OpenAI through Codex and Anthropic through
+Claude Code, with independently changing serving behavior and distinct runner
+instructions. Each receives one isolated packet and schema; neither receives
+operator labels, contrasts, other judgments or review. Existing subscription auth
+is consumed by the CLIs; the machine never republishes credentials. Owned outputs
+are private raw events, frozen judgments, metadata, metrics and research review.
+The biddable researcher interprets evidence and explicitly retains uncertainty.
+
+### Frame split
+
+Preparation transforms accepted sources and authored targets into frozen packets.
+Independent commanded measurement collects judgments through two isolated runners.
+Research review transforms fixed evidence into agreement statistics and an argued
+boundary recommendation. These remain the three frames of Entry #2.
+
+### Requirements (per frame, with explicit out-of-scope)
+
+Preparation preserves every v0.1 byte and source field, isolates changed evidence
+in matched targets and freezes tested text before execution. Measurement must
+collect 32 primary plus six original-prompt control judgments, with traceable
+configuration, session and retry metadata. All prepared inputs must be committed
+successfully before any calibration call. Review must distinguish exact class
+resolution from side agreement, and reproducibility from scientific validity.
+Production classification, distance scores and retrieval integration are excluded.
+
+### Invariance test
+
+Content hashes and Git objects stabilize local inputs. Neither provider's serving
+snapshot, compute allocation nor practitioner consensus can be fixed by this
+machine. Return unavailable served IDs as unavailable and preserve exposed model
+fields with provenance. Equal high labels do not imply equal compute. Matched
+controls reduce one ambiguity but a single observation per family/condition cannot
+identify a causal prompt effect. The experiment is bounded evidence, not validation
+of a universal taxonomy. Freeze all results before review.
+
+### Stakeholder test
+
+The stakeholder remains a researcher needing independent disagreements, not a
+coding agent needing a repaired answer. Fresh processes and strict shape validation
+serve that need; internal formatting retries are separately reported because they
+can alter the measurement path. Existing stateful assistant sessions would violate
+the boundary. No product analogy supplies a hidden stakeholder assumption.
+
+### Open questions — decided here, with reasoning
+
+- Alien requires both high reorganization and essential weak grounding; preserve
+  low/moderate weak-grounding tensions for review instead of forcing labels.
+- Preflight both adapters on non-calibration structured probes; safe mode preserves
+  Claude subscription auth while disabling external context.
+- One process at a time in frozen order, at most two permitted; 900-second timeout.
+- Failures are preserved, scheduling stops, and amendments must precede any further
+  scheduling. Missing results block completion rather than shrink denominators.
+- Commit gate, unique sessions, exclusive reservations and no overwrites are enforced.
+- Experimental snapshotting asserts what was tested, not scientific validity.
+
+### Carried forward
+
+Independent practitioner evidence and repeated observations remain limitations.
+The user authorizes the specified live measurements and focused commits. No new
+permission gate is needed. End with a recommendation in the completed report.
