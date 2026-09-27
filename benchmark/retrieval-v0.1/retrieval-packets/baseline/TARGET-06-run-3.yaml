@@ -1,0 +1,57 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-06
+run: 3
+target_domain: financial/accounting process
+target: |-
+  An accounting team is reconstructing annual employer pension contributions for six subsidiaries before signing off on an acquisition’s historical liabilities. Each subsidiary retained an ordered ledger of additions to its cumulative contributions, but a software migration stripped calendar labels from several exports. Some exports may also omit an annual entry, repeat an entry, or assign a late adjustment to the wrong year.
+
+  The available evidence includes contribution amounts in their original order, opening and closing cumulative totals, and independently dated bank confirmations for two subsidiaries. The records cover different, partly overlapping stretches of roughly fifteen years. All six employers operated under the same national wage agreements and statutory contribution-rate changes, so their annual contributions were subject to several common increases, freezes, and reversals. Their absolute payment levels differ substantially.
+
+  The team must assign defensible accounting years to the undated entries, identify likely omissions or duplicates, and determine which portions of the reconstructed history remain too uncertain for audit reliance. Headcount changes, local bonuses, strikes, and payment deferrals may obscure common movements. Supporting payroll files are incomplete, some overlaps span only three years, and even dated reference records may contain posting errors. No reconstructed entry can be treated as a verified payment without corroborating evidence.
+candidates:
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

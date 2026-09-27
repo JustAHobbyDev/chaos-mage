@@ -1,0 +1,183 @@
+experiment: retrieval-v0.1
+arm: schema
+target_id: TARGET-01
+run: 2
+target_domain: legal/compliance work
+target: |-
+  A bank’s compliance team is investigating why its internal approval process repeatedly clears a corporate customer for onboarding even though the customer’s verified ownership structure requires enhanced due diligence under the bank’s written policy. The incorrect clearance occurs when reviewers use a particular dossier containing ownership declarations, registry extracts, intermediary agreements, jurisdiction disclosures, translated documents, and several policy-exception requests.
+
+  The team has a frozen copy of the applicable policy, the original dossier, timestamped decision records, and access to a segregated review environment that cannot authorize real accounts. It can submit modified copies of the dossier, withholding individual documents or groups of documents, and observe whether each submission receives ordinary clearance, an enhanced-review referral, or an insufficient-information finding. The ownership facts establishing the enhanced-review requirement remain fixed in a separately verified reference record.
+
+  The objective is to identify a compact, reproducible set of dossier contents that still produces the incorrect clearance, so counsel can document the defect and assess a narrowly scoped corrective control. The original dossier and all investigation records must be preserved, and no altered submission may enter a production customer file. Some documents depend on attachments or jointly satisfy completeness requirements, so their absence may make a review inconclusive rather than correct. Reviewer variation and periodic updates to reference data must also be controlled or recorded. Any finding must distinguish what reliably reproduces the clearance from what has actually been established about its cause.
+candidates:
+- id: CAND-02
+  instrument:
+    state: |
+      An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.
+    operation: |
+      Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.
+    signal: |
+      The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.
+    inference: |
+      The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.
+    limit: |
+      Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.
+- id: CAND-09
+  instrument:
+    state: |
+      The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.
+    operation: |
+      Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.
+    signal: |
+      The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.
+    inference: |
+      The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.
+    limit: |
+      Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.
+- id: CAND-14
+  instrument:
+    state: |
+      Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.
+    operation: |
+      Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.
+    signal: |
+      A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.
+    inference: |
+      The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.
+    limit: |
+      Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.
+- id: CAND-10
+  instrument:
+    state: |
+      A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.
+    operation: |
+      Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.
+    signal: |
+      The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.
+    inference: |
+      Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.
+    limit: |
+      Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.
+- id: CAND-11
+  instrument:
+    state: |
+      Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.
+    operation: |
+      Apply a probe whose reaction is promoted by material associated with the suspected residue.
+    signal: |
+      Responsive material produces an otherwise absent, localized observable reaction.
+    inference: |
+      The reaction supports the presence and location of material capable of producing that response.
+    limit: |
+      Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.
+- id: CAND-07
+  instrument:
+    state: |
+      A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.
+    operation: |
+      Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.
+    signal: |
+      The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.
+    inference: |
+      A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.
+    limit: |
+      Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.
+- id: CAND-05
+  instrument:
+    state: |
+      A set of observations can plausibly be explained by more than one underlying mechanism or condition.
+    operation: |
+      Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.
+    signal: |
+      New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.
+    inference: |
+      Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.
+    limit: |
+      The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.
+- id: CAND-03
+  instrument:
+    state: |
+      A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.
+    operation: |
+      Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.
+    signal: |
+      Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.
+    inference: |
+      The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.
+    limit: |
+      Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.
+- id: CAND-04
+  instrument:
+    state: |
+      Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.
+    operation: |
+      State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.
+    signal: |
+      The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.
+    inference: |
+      Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.
+    limit: |
+      Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.
+- id: CAND-13
+  instrument:
+    state: |
+      A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.
+    operation: |
+      Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.
+    signal: |
+      Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.
+    inference: |
+      The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.
+    limit: |
+      Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.
+- id: CAND-08
+  instrument:
+    state: |
+      An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.
+    operation: |
+      Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.
+    signal: |
+      Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.
+    inference: |
+      Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.
+    limit: |
+      Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.
+- id: CAND-12
+  instrument:
+    state: |
+      An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.
+    operation: |
+      Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.
+    signal: |
+      Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.
+    inference: |
+      The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.
+    limit: |
+      Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.
+- id: CAND-01
+  instrument:
+    state: |
+      A claim or event description is supported by one or more information sources whose accuracy, independence, or access may be uncertain.
+    operation: |
+      Compare the claim against other independently sourced information while assessing each source's credibility, access, dependence, and relevance.
+    signal: |
+      Independent sources converge on, contradict, or fail to support the same material features of the claim.
+    inference: |
+      Genuine convergence across credible independent sources increases support for the corroborated features, while contradiction or lack of independent support lowers confidence or identifies unresolved uncertainty.
+    limit: |
+      Sources may share an undisclosed common origin, copy one another, inherit the same bias or error, have unequal access, or converge because of common assumptions rather than independent observation. Multiple reports therefore do not automatically constitute independent evidence.
+- id: CAND-06
+  instrument:
+    state: |
+      An item or record passes through multiple handlers or locations, creating opportunities for substitution, alteration, contamination, or uncertainty about identity.
+    operation: |
+      Record each transfer and handling event with the responsible party, time, and purpose, then inspect that history for continuity and unexplained transitions.
+    signal: |
+      A continuous, internally consistent handling record links the examined item through its lifecycle, while gaps or contradictions identify breaks in documented custody.
+    inference: |
+      Documentary continuity supports the claim that the item examined is the item collected and that its handling history is accounted for; gaps weaken that provenance claim.
+    limit: |
+      Complete documentation does not itself prove that handlers recorded events truthfully or that no unrecorded alteration occurred, and missing records do not prove that alteration occurred. The strength of the inference depends on the reliability of the recording and safeguarding process.
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

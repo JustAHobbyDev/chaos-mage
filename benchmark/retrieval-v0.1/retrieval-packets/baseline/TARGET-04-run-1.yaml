@@ -1,0 +1,59 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-04
+run: 1
+target_domain: product/customer behavior
+target: |-
+  A subscription software company sees highly variable delays between trial signup and first successful project, but its dashboards treat all unfinished trials as one group. The team suspects that customers with different needs are being combined, making a single reminder schedule ineffective.
+
+  The trial experience advances users through a sequence of setup tasks. At every task, users can either continue working or spend time in the same persistent evaluation workspace, which contains pricing details, security documentation, examples, and comparison notes. Users can revisit that workspace and return to setup as often as they wish. Some accounts finish quickly; others complete similar amounts of work but spend much longer evaluating before proceeding.
+
+  Available data include timestamped task starts and completions, workspace visits, return visits to setup, reminder delivery, and eventual activation or abandonment. The team can recruit comparable trial cohorts and hold task order, workspace content, and reminder timing constant during a limited study.
+
+  The objective is to determine whether the aggregate delays conceal distinguishable customer behavior patterns and whether those patterns could support better-timed assistance. Customers may share accounts, activity tracking cannot reveal intent, and different needs may produce similar timelines. Device performance, company approval requirements, and changes to the trial experience can also alter completion times. Any proposed customer labels must therefore have support beyond timing alone.
+candidates:
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

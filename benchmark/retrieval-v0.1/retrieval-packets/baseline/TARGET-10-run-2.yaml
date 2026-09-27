@@ -1,0 +1,57 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-10
+run: 2
+target_domain: creative/editorial production
+target: |-
+  A magazine is preparing a long-form essay for publication when the author notices that the page proofs contain a politically sensitive sentence she says she deleted. The commissioning editor remembers approving the deletion, but the copyeditor believes the sentence was restored at the author’s request. The layout designer received two files with the same name and cannot remember which one became the print layout.
+
+  Available materials include email attachments, shared-drive version history, editorial comments, production tickets, and exports from the layout software. Some entries identify who sent or received a file, when it moved, and why; others contain only a filename or a brief “approved” message. A freelance proofreader worked offline for two days, and their returned document was uploaded by a production assistant. Several timestamps reflect uploads rather than the actual editing times.
+
+  The managing editor must decide whether the current proofs represent the text the author authorized and identify which uncertainties require clarification before release. Printing begins tomorrow, the freelancer is temporarily unreachable, and the author will answer only a short set of focused questions. Neither matching filenames nor confident recollections can be treated as conclusive, but incomplete records alone are not grounds for accusing anyone of making unauthorized changes.
+candidates:
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

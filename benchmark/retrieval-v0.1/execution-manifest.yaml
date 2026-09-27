@@ -1,0 +1,39 @@
+version: '0.1'
+status: prepared-before-retrieval
+protocol_commit: c0daa4ef06f7c077d87e7e3232a72fefabac7308
+benchmark_commit: a3793f671b5cf3796071f887d7fc086f53d81d28
+corpus_snapshot: 9a5bc7e626d1e5f27d6ecec224f70dbc08a6a3a2
+candidate_count: 14
+candidate_files:
+  schema_arm:
+    path: benchmark/retrieval-v0.1/candidates/schema-arm.yaml
+    sha256: f3d8a2d8f929d80ed3fc4db3c73737ef9fc03341c4ac5780bcf380144eb6928f
+  name_practice_arm:
+    path: benchmark/retrieval-v0.1/candidates/name-practice-arm.yaml
+    sha256: 63ebaaa77b552d4dd2e30fb01681747e60d28c85e7003c74aa29db1ffbaa5389
+retrieval_runs:
+  expected: 60
+  prepared: 60
+packet_manifest:
+  path: benchmark/retrieval-v0.1/retrieval-packets/manifest.yaml
+  sha256: 88d1dc30e0aa133f64dfad3f427ae2027c936844c8da6c4bcb3d7f7135606a5e
+execution_configuration:
+  path: benchmark/retrieval-v0.1/execution-config.yaml
+  sha256: 9f0b8e63816db4e819fb46ce8064739279fff0947ec2fdab030f7593feb1e1fa
+execution_document:
+  path: benchmark/retrieval-v0.1/RETRIEVAL-EXECUTION.md
+  sha256: 593aed7858196a88603cd999e7886b304511ce0c55f7392b68361bb5f0b38e11
+support_files:
+- path: scripts/prepare-retrieval-v0.1.py
+  sha256: bc62e28b8438e0c496ef83b0a22934ebb9b76a9a651221bbd754cdf522a7dd99
+- path: scripts/run-retrieval-v0.1.py
+  sha256: 9de7dd6fac90c59044e146f62f0dce44082b493c0a0c5f58c6afa3af275de6c5
+- path: scripts/retrieval_v01.py
+  sha256: 185d5bc2d63e73744ff0851809f5475d4bc4507f69e41edec75275a915a2c76d
+- path: scripts/requirements-retrieval-v0.1.txt
+  sha256: 0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a
+- path: scripts/test_retrieval_v01.py
+  sha256: 8e5ce18c2ad1fc997e090b3c801b023f98a8fd1121e3c3479ba9c3c1564cbf6a
+generation_environment:
+  python: 3.14.7
+  pyyaml: 6.0.3

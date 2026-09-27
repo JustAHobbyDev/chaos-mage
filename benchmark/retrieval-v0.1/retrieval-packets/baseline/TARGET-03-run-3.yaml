@@ -1,0 +1,57 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-03
+run: 3
+target_domain: supply-chain operations
+target: |-
+  A medical-device manufacturer must decide by 16:00 whether to divert next week’s production to a backup resin supplier. Its primary supplier says a fire at a regional distribution warehouse has destroyed all stock allocated to the manufacturer and will delay deliveries by at least three weeks. Switching suppliers would cost $180,000 and require a shortened but mandatory quality-release process; waiting could halt assembly within five days.
+
+  The procurement team has the supplier’s incident notice, two logistics newsletters reporting the same three-week disruption, a warehouse operator’s inventory extract, a carrier’s shipment-status feed, and a municipal emergency-response bulletin. Both newsletters quote an unnamed industry contact and use nearly identical wording. The inventory extract, generated six hours before the reported fire, lists the manufacturer’s resin lots in two separate buildings. The emergency bulletin confirms a fire at the warehouse address but identifies only one affected building and says nothing about inventory damage. The carrier feed shows two allocated loads as “collected,” although that status can be entered when dispatch paperwork is created rather than when a truck departs.
+
+  The team can request clarification from the warehouse operator and carrier before the deadline, but neither guarantees a response. It must recommend whether to authorize the diversion, specifying which assumptions about lost stock and delivery timing are sufficiently supported and which remain uncertain. Customer commitments cannot be changed today, and no unapproved resin may enter production.
+candidates:
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

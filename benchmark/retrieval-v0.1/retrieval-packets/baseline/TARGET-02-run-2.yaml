@@ -1,0 +1,57 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-02
+run: 2
+target_domain: education/learning
+target: |-
+  A middle-school mathematics coordinator wants to know whether students still rely on a shortcut introduced during an earlier fractions unit: treating a fraction with larger numbers as necessarily larger. Recent homework looks accurate, but most questions could be answered correctly using either that shortcut or valid fraction reasoning. The original lesson recordings are unavailable, and several students have since received tutoring.
+
+  The coordinator has students’ homework, brief teacher notes, and an editable bank of fraction-comparison activities. Some activities include diagrams, some request explanations, and others ask only for a choice. Across the bank, different reasoning strategies sometimes agree and sometimes lead to distinct answers. The school’s platform can retain each student’s initial choice, written explanation, and subsequent revisions.
+
+  Develop a short assessment plan that helps the coordinator identify which students, and which kinds of comparisons, warrant further instructional attention. It must fit within fifteen minutes, avoid grades or public labels, and accommodate students with limited written English. Account for guessing, reading difficulties, and alternative explanations for similar answers. Correct performance must not be treated as proof that the shortcut was never learned, nor should an error establish where it originated. Feedback during the assessment could change students’ reasoning before later responses are collected.
+candidates:
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.

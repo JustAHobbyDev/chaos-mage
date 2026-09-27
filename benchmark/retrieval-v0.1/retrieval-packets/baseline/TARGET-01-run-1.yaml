@@ -1,0 +1,57 @@
+experiment: retrieval-v0.1
+arm: baseline
+target_id: TARGET-01
+run: 1
+target_domain: legal/compliance work
+target: |-
+  A bank’s compliance team is investigating why its internal approval process repeatedly clears a corporate customer for onboarding even though the customer’s verified ownership structure requires enhanced due diligence under the bank’s written policy. The incorrect clearance occurs when reviewers use a particular dossier containing ownership declarations, registry extracts, intermediary agreements, jurisdiction disclosures, translated documents, and several policy-exception requests.
+
+  The team has a frozen copy of the applicable policy, the original dossier, timestamped decision records, and access to a segregated review environment that cannot authorize real accounts. It can submit modified copies of the dossier, withholding individual documents or groups of documents, and observe whether each submission receives ordinary clearance, an enhanced-review referral, or an insufficient-information finding. The ownership facts establishing the enhanced-review requirement remain fixed in a separately verified reference record.
+
+  The objective is to identify a compact, reproducible set of dossier contents that still produces the incorrect clearance, so counsel can document the defect and assess a narrowly scoped corrective control. The original dossier and all investigation records must be preserved, and no altered submission may enter a production customer file. Some documents depend on attachments or jointly satisfy completeness requirements, so their absence may make a review inconclusive rather than correct. Reviewer variation and periodic updates to reference data must also be controlled or recorded. Any finding must distinguish what reliably reproduces the clearance from what has actually been established about its cause.
+candidates:
+- id: CAND-03
+  name: Chromatography
+  practice: Analytical chemistry
+- id: CAND-12
+  name: Provenance reconstruction
+  practice: Archival and provenance research
+- id: CAND-11
+  name: Luminol latent-trace detection
+  practice: Forensic investigation
+- id: CAND-06
+  name: Chain-of-custody verification
+  practice: Forensic investigation
+- id: CAND-07
+  name: Dechallenge and rechallenge
+  practice: Clinical diagnosis
+- id: CAND-02
+  name: Seismic tomography
+  practice: Seismology and geophysics
+- id: CAND-10
+  name: Step-response probing
+  practice: Control and systems engineering
+- id: CAND-01
+  name: Source corroboration
+  practice: Intelligence analysis
+- id: CAND-13
+  name: Delta debugging
+  practice: Software debugging and testing
+- id: CAND-04
+  name: Analysis of Competing Hypotheses
+  practice: Intelligence analysis
+- id: CAND-08
+  name: Regression bisection
+  practice: Software debugging and testing
+- id: CAND-09
+  name: Serial monitoring
+  practice: Clinical diagnosis
+- id: CAND-14
+  name: Dendrochronological crossdating
+  practice: Dendrochronology and paleoclimate
+- id: CAND-05
+  name: Differential diagnosis
+  practice: Clinical diagnosis
+instruction: Rank the three instruments whose operational structure is most applicable to this target.
+  Prefer structural fit over vocabulary or source-domain resemblance. Return exactly three opaque IDs
+  in ranked order, with an optional short structural rationale after the ranking.
