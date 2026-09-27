@@ -1,0 +1,34 @@
+case_id: CASE-003
+source:
+  name: Regression bisection
+  practice: Software debugging and testing
+  instrument:
+    state: 'An ordered sequence of revisions contains a transition in a reproducibly testable property,
+      with at least one earlier state known not to have the property and one later state known to
+      have it.
+
+      '
+    operation: 'Test an intermediate revision, use the result to discard the incompatible portion
+      of the remaining history, and repeat the partition-and-test process until the transition is
+      localized.
+
+      '
+    signal: 'Each tested revision is classified on one side or the other of the target property,
+      progressively shrinking the interval that can contain the transition.
+
+      '
+    inference: 'Repeated elimination constrains the first revision associated with the observed change
+      to the final unresolved boundary or commit.
+
+      '
+    limit: 'Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes,
+      interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique
+      localization or identify a boundary that is correlated with rather than solely causal of the
+      behavior.
+
+      '
+target:
+  domain: Software regression debugging
+  problem: A service began returning incorrect results after a series of commits. Engineers have
+    revision history, reproducible test inputs, application logs, and some incomplete traces. Determine
+    where the behavior changed and which explanations remain plausible.

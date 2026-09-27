@@ -61,3 +61,55 @@ No borrowed product-origin analogy is needed.
 API access and live compatibility remain untested until authorized execution.
 Private seeds/keys are required for full regeneration; public hashes suffice for
 execution. This entry authorizes no measurement calls.
+
+## Entry #2 — 2026-09-27 — Ontological-distance calibration
+
+### Domains
+
+- Existing lexical inputs: accepted five-field instruments and authored target
+  problems. Read-only source corpus; copied case packets owned by this experiment.
+- Biddable researcher: interprets disagreements and supplies later reference labels.
+- External model service: variable judgments about ordinary practice, exposed via
+  fresh Codex processes. Receives one packet and fixed instructions per invocation.
+- Machine-owned lexical outputs: frozen prompts, raw runs, validated judgments,
+  metrics, and review. No writes to retrieval artifacts or source instruments.
+
+### Frame split
+
+Preparation transforms source records and target descriptions into frozen packets.
+Commanded measurement collects separate judgments; transformation computes
+agreement. Research review interprets this evidence without automatic adjudication.
+
+### Requirements (per frame, with explicit out-of-scope)
+
+Every case must have two fresh independent contexts with identical case instructions.
+Representation differences, naturalization, and uncertainty must remain explicit.
+Evidence must be auditable without treating reference expectations as ground truth.
+Retrieval, usefulness, schema redesign, and production filtering are out of scope.
+
+### Invariance test
+
+Hashes fix packets and instructions. Target-native practice and model behavior can
+change and are not directly observed here. Reframe results as model reproducibility
+on these packets, not proof of actual practitioner consensus. Record uncertainty
+and the unavailable backend snapshot; preserve raw events for local audit.
+
+### Stakeholder test
+
+The researcher needs disagreements, not an automatically improved answer. Fresh
+per-case processes suit that stakeholder; shared conversational memory would not.
+No borrowed product or stakeholder analogy drives this design.
+
+### Open questions — decided here, with reasoning
+
+- Use 20 purposive cases, with both contrast directions, and identical A/B prompts.
+- Freeze initial results before writing any reference label file. Agent-synthesized
+  expectations must be labeled as such, never presented as collected human ratings.
+- Invalid output stays invalid, without repair; incomplete data blocks completion.
+- Same-model contexts test repeatability, not independent model-family validity.
+- User explicitly authorizes live classification; no additional permission gate.
+
+### Carried forward
+
+Practitioner evidence, independent human ratings, and model-family replication are
+future research questions. Stop after the report; add no numeric decision thresholds.

@@ -66,3 +66,7 @@ STATE --apply OPERATION--> SIGNAL --licenses--> INFERENCE
 The initial batch is meant to stress the schema. Recurring awkward fits are evidence about the representation and should be recorded rather than silently repaired by adding fields.
 
 The next preregistered phase is [docs/retrieval-mapping-test-v0.1.md](docs/retrieval-mapping-test-v0.1.md), which tests schema-only cross-domain retrieval and mapping against a name/practice baseline.
+
+The separate [ontological-distance prototype](distance/README.md) measures
+representational displacement and independent classifier agreement. It does not
+filter or modify the retrieval catalogue.

@@ -1,0 +1,311 @@
+{
+  "type": "object",
+  "properties": {
+    "classification": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_native_profile": {
+          "type": "object",
+          "properties": {
+            "entities": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relations": {
+              "type": "string",
+              "minLength": 1
+            },
+            "processes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operations": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observables": {
+              "type": "string",
+              "minLength": 1
+            },
+            "inferences": {
+              "type": "string",
+              "minLength": 1
+            },
+            "failure_modes": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "entities",
+            "relations",
+            "processes",
+            "operations",
+            "observables",
+            "inferences",
+            "failure_modes"
+          ],
+          "additionalProperties": false
+        },
+        "source_transfer_profile": {
+          "type": "object",
+          "properties": {
+            "entities": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relations": {
+              "type": "string",
+              "minLength": 1
+            },
+            "processes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operations": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observables": {
+              "type": "string",
+              "minLength": 1
+            },
+            "inferences": {
+              "type": "string",
+              "minLength": 1
+            },
+            "failure_modes": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "entities",
+            "relations",
+            "processes",
+            "operations",
+            "observables",
+            "inferences",
+            "failure_modes"
+          ],
+          "additionalProperties": false
+        },
+        "displacement": {
+          "type": "object",
+          "properties": {
+            "entities": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "relations": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "processes": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "operations": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "observables": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "inferences": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "failure_modes": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "entities",
+            "relations",
+            "processes",
+            "operations",
+            "observables",
+            "inferences",
+            "failure_modes"
+          ],
+          "additionalProperties": false
+        },
+        "naturalization": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "native",
+                "partially-naturalized",
+                "non-native",
+                "uncertain"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "evidence",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "final_class": {
+          "type": "string",
+          "enum": [
+            "Native",
+            "Adjacent",
+            "Remote",
+            "Alien"
+          ]
+        },
+        "class_rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "case_id",
+        "target_native_profile",
+        "source_transfer_profile",
+        "displacement",
+        "naturalization",
+        "final_class",
+        "class_rationale",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "classification"
+  ],
+  "additionalProperties": false
+}
