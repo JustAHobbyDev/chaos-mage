@@ -1,0 +1,31 @@
+{
+  "case_id": "019",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is an inverse problem: an unsampled interior alters signals along many crossing paths; predictions from a candidate model are compared to observations; spatially structured residuals constrain the interior model; coverage, error, and non-uniqueness limit it. The mapping reproduces each step with functional counterparts: handoff network as interior, recorded routes as paths, a handoff-delay model whose predicted route times are compared to measured times, route-specific residuals as signal, and joint residual constraint on internal delays as inference. The key source warrant, that path observations are a systematic function of interior properties along the path, is supplied by the target evidence that handoff traversal time contributes to total delay under the studied conditions. The limit field retains sparse coverage, measurement error and non-unique fits, adds the target-relevant analogue of a non-stationary medium (load changes), and correctly bounds the inference by separating a fitted delay from a causal managerial explanation."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The target question asks which parts of the network account for observed end-to-end delays. The mapped inference yields a fitted distribution of internal handoff delays consistent with the observed route timings, which is a direct, bounded answer to that question: it localizes delay contribution to parts of the network, with the explicit caveat that the fit constrains rather than uniquely identifies the distribution and does not establish why a handoff is slow. No substitution of question occurs."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (fitting a handoff-delay model to recorded route timings across overlapping paths and iterating on residuals) produces Y (a residual pattern and a fitted set of per-handoff delays) that warrants Z (a constrained attribution of end-to-end delay to network parts). The stated evidence supplies both the measurement (routes and timings recorded across overlapping paths) and the empirical relation (handoff traversal contributes additively to total delay), so the chain does not rest on source imagery. The inference is stated as constraint over distributions that could explain the data, consistent with the non-uniqueness limit, so it is bounded rather than circular."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The tomographic inverse-problem structure transfers intact to route-timing inversion over a handoff network; the target evidence independently establishes the path-additivity relation the inference depends on; and the mapping bounds its conclusion with the appropriate limits (coverage, load non-stationarity, measurement error, non-uniqueness, and fitted delay not equalling managerial cause). No specific unresolved condition determines whether the mapping works, so the status is Valid rather than Conditional."
+  },
+  "uncertainty": [
+    "Resolution of the fit depends on how well the recorded routes overlap and cover individual handoffs; the packet states overlapping paths exist but not whether coverage suffices to resolve every handoff of interest. This affects how sharply the answer localizes, not whether the inference follows.",
+    "The additivity of handoff traversal times is established only 'under the studied operating conditions'; queueing interactions under different load could violate the per-path additive model. The mapping's limit field already flags load changes, so this is a bound on scope rather than a gap in the mapping.",
+    "Whether handoff delays are stationary over the recording window is not stated; tomography assumes a static medium, and drift would blur the fitted distribution. The limit field acknowledges this."
+  ]
+}

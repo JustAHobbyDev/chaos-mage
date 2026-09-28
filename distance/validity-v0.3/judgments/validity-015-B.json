@@ -1,0 +1,36 @@
+{
+  "case_id": "015",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping reproduces the source chain intact: bracketed endpoints (state), midpoint test with discard of the incompatible half (operation), pass/fail classification shrinking the interval (signal), final boundary as first associated revision (inference), and carries the source limits (non-sole causation, flaky tests, unbuildable revisions, multiple transitions). However the source state requires a reproducibly testable property with endpoints known good and known bad. The target evidence states each endpoint was tested only once and repeatability and disappear/reappear structure are unchecked. The mapping's own state field acknowledges this as a precondition rather than establishing it. Whether the elimination steps are warranted therefore depends on a specific unresolved target condition: that the property is reproducible and the history contains a single monotonic transition."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The target question asks where in the ordered revision history the regression first appeared. The mapped inference answers exactly that: the final adjacent-revision boundary localizes the first revision associated with the regression. The limit field explicitly bounds the contribution (associated, not necessarily sole cause). No substitute question is answered."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing midpoint tests and discarding incompatible halves produces a shrinking interval that warrants a localized boundary, which is intelligible and bounded. But each elimination is only warranted if a single pass/fail observation reliably classifies a revision. With endpoints tested once and intermediate repeatability unchecked, a flaky test or a nonmonotonic history could make individual discards wrong, so the chain rests on an unestablished empirical relation between one observation and true revision state. The mapping names this dependency but does not resolve it."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Endpoint reproducibility: re-run the test on the oldest and newest revisions several times and confirm the oldest consistently passes and the newest consistently fails; if either result varies, the bracket is not established and exclusions cannot be trusted.",
+      "Per-revision test reliability: establish that a single pass/fail run classifies an intermediate revision correctly, e.g. by repeating tests at sampled intermediate revisions or running each midpoint test multiple times before discarding a half.",
+      "Transition structure: check that the property does not disappear and reappear within the range (e.g. sample several intermediate revisions before bisecting, or confirm a single transition after localization by testing neighbors on both sides); multiple transitions would invalidate particular eliminations and leave only one of several boundaries localized.",
+      "Buildability: confirm intermediate revisions can be built and tested, or define a policy for skipping unbuildable revisions so the interval still shrinks around a testable boundary."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The mapping faithfully transfers the bisection chain and its limits into the target, and its inference directly addresses the retained question with an explicitly bounded claim. No criterion fails. But the source's state precondition (reproducibly testable property with known-good and known-bad endpoints) is not established by the target evidence, which reports one run per endpoint and unchecked repeatability and monotonicity. The mapping itself flags this as a prerequisite. Concrete, identifiable measurements (repeated endpoint and midpoint runs, a check for multiple transitions, buildability) would resolve it without changing the question, so the transfer is Conditional rather than Valid or Invalid."
+  },
+  "uncertainty": [
+    "The packet does not state how many revisions lie between the endpoints or whether any are known to be unbuildable, so the practical severity of the buildability limit is unknown.",
+    "It is unknown whether the regression's failure mode is deterministic or timing/environment dependent; this determines how many repeated runs are needed to establish reproducibility.",
+    "The evidence does not indicate whether the revision history is linear; a branched or merged history could weaken the ordered-sequence assumption in ways the packet does not address."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "005",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping retains many-path measurements, forward predictions, iterative adjustment, residual signals and a non-unique internal reconstruction. Its shared delay field depends on handoff parameters remaining comparable across workloads, which is explicitly untested. Coverage, measurement and attribution limits are retained."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "Constraining internal handoff delays could provide a bounded answer about which network parts account for end-to-end delays, without establishing managerial causes. That localization depends on whether shared handoff parameters meaningfully explain the sampled requests despite workload variation."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Recorded routes and timings support intelligible predictions and residual calculations. Interpreting fitted delays as constraints on network parts requires establishing parameter comparability; otherwise workload differences could be absorbed into misleading location-specific estimates."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Establish whether handoff-delay parameters remain comparable across the sampled workloads. Measure handoff timings on repeated or overlapping routes across those workloads and test whether a shared parameter set explains route timings within measurement uncertainty, without systematic workload-dependent discrepancies."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The proposed inverse reconstruction preserves the source mechanism and addresses the retained question in principle, but its localization warrant depends on an explicit, empirically testable comparability condition."
+  },
+  "uncertainty": [
+    "The packet does not establish whether workload variation materially changes handoff-delay parameters.",
+    "Path coverage and measurement precision are unspecified, so the achievable localization resolution and degree of non-uniqueness remain unknown."
+  ]
+}

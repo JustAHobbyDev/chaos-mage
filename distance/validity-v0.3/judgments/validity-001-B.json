@@ -1,0 +1,31 @@
+{
+  "case_id": "001",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is: unobservable interior -> many-path travel measurements compared against a forward model -> spatially structured residuals -> inverted constraint on an internal property field, with coverage, error, and non-uniqueness limits. The mapping keeps every link: handoffs are not timed directly but their processing delays accumulate additively along many overlapping request routes (the forward model, which the packet states has been checked under controlled conditions); end-to-end times are compared to the additive handoff-delay model and iteratively updated against residuals; structured residuals are the signal; the inference is an explicitly non-unique constraint on the handoff-delay field. The limit field carries over the source's core caveats: path coverage, non-uniqueness, timing error (clock error stands in for measurement and source-timing error), and workload variation stands in for the assumption of a stable medium during sampling. Regularization is not named explicitly, but 'constrain the fit' implies it and its absence does not drop a step or warrant."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which handoffs account for end-to-end delay. Under the stipulated additive delay model, a handoff-delay field is exactly an allocation of end-to-end delay to handoffs, so an inverted field answers the question directly. The inference is explicitly bounded: it yields the set of delay fields consistent with the residuals, not a unique causal explanation, and that bound is honest about the identifiability limits inherent to path inversion. The question is retained unchanged."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (timing many overlapping routes with synchronized timestamps and comparing to an additive per-handoff delay model) produces Y (a residual vector structured by which handoffs each route traverses) that warrants Z (a constrained estimate of per-handoff delay, bounded by the rank and coverage of the route-handoff incidence). The inputs named in the evidence, request identifiers, routes, synchronized timestamps, and a checked additive model, are the specific things the operation needs. The inference does not exceed what the residuals can support and does not rest on seismic imagery."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a functional transfer of travel-time tomography onto an additive route-delay inversion, with the forward model stipulated as checked, the required measurements stated as available, the source's coverage and non-uniqueness limits carried over, and the inference explicitly bounded to a constrained delay field rather than a proven cause. No unresolved condition stands between the operation and the bounded inference, so the status is Valid rather than Conditional."
+  },
+  "uncertainty": [
+    "The additive delay model is stated as checked under controlled operating conditions; the mapping's limit field treats workload variation as a fit-degrading factor rather than a model-breaking one. If handoff delays interact strongly under real load (queueing coupling, non-stationarity across the measurement window), residuals would contain structure the additive model cannot attribute, widening the constrained set but not changing the bounded form of the inference.",
+    "The mapping does not state whether route coverage spans the handoff set with enough independent paths to make individual handoffs identifiable; this is acknowledged under 'coverage' and 'non-uniqueness' but its actual degree in the target is unknown from the packet.",
+    "'Clock error' assumes the synchronized timestamps are the dominant timing error; other error sources such as inconsistent request-boundary definitions are not named but would fall under the same measurement-error limit."
+  ]
+}

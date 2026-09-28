@@ -1,0 +1,30 @@
+{
+  "case_id": "011",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "not-preserved",
+      "rationale": "The source chain is state (bracketed transition) -> operation (test an intermediate revision and discard the half incompatible with the result) -> signal (each tested revision classified pass/fail, shrinking the candidate interval) -> inference (the transition is constrained to the final boundary). The mapping's operation explicitly removes the test: it keeps the more recently dated half 'without testing a midpoint'. The signal 'the interval halves on every step' is then a property of the schedule, not an observation, so no revision is ever classified on either side of the property. The elimination warrant that makes the final boundary meaningful has been dropped, not merely restated in different vocabulary. The state and limit fields resemble the source, but the operation and signal substitute unconditional discarding for evidence-driven discarding, which is a material loss of the mechanism."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The target question asks where in the ordered history the reproducible regression first appeared. The mapped procedure always terminates at the newest revision regardless of where the transition lies, because it deterministically discards the older half each step without consulting any test result. The inference 'the single remaining revision is the first one with the property' is therefore unsupported: the newest revision is known to fail from the evidence, but nothing in the procedure establishes that it is the first failing revision. The stated evidence (stable tests, single transition, linear history) removes the source limits that would otherwise complicate bisection, but the mapping does not use that evidence. The procedure answers 'which revision is newest', not the retained question."
+    },
+    "operational_coherence": {
+      "status": "incoherent",
+      "rationale": "Performing X (repeatedly keeping the newer half without testing) produces Y (an interval that shrinks by schedule) which does not warrant Z (that the surviving revision is the first failing one). The halving is genuine but carries no information about the property, so the inference does not follow as mapped. The claim of localization rests on the source imagery of bisection ('interval halves', 'single remaining revision') rather than on any measurement performed in the target. No named measurement is missing that could be added without changing the supplied operation, since the operation explicitly forbids the midpoint test; this is an inference that does not follow, not an unresolved condition."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "The mapping preserves the bracketed-transition state and paraphrases the source limits, but its operation removes the midpoint test that gives bisection its eliminative warrant. Without a pass/fail classification at each step, halving the interval is uninformative and the procedure always returns the newest revision, which is already known to fail and is not shown to be the first failure. Mechanism fidelity and operational coherence fail and the target question is not addressed. Failure dominates, so the transfer is Invalid; no unresolved conditions are recorded because the defect is a dropped mechanism step in the supplied mapping, not a missing measurement that could be established without amending the mapping."
+  },
+  "uncertainty": [
+    "The mapping's limit field mentions 'multiple transitions', which the target evidence rules out, so the limit is stated more broadly than the target requires; this does not affect the verdict.",
+    "It is possible the author intended 'without testing a midpoint' as shorthand for some other scheme, but the assessment is confined to the mapping as written and does not repair it."
+  ]
+}

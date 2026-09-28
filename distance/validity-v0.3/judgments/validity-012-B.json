@@ -1,0 +1,30 @@
+{
+  "case_id": "012",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The target mapping is a near-identity restatement of the source instrument. State (ordered revisions bracketing a reproducible pass→fail transition), operation (test midpoint, discard the incompatible half, repeat until adjacent revisions bracket the change), signal (pass/fail observations shrinking the interval), and inference (final boundary localizes the first revision associated with the regression) are each carried over without loss or substitution. The limit field retains the source's key caveats: correlation rather than sole causation, flaky tests, unbuildable revisions, and multiple transitions. The mapping omits explicit mention of nonmonotonic behavior, interactions among revisions, and wrong endpoints, but 'multiple transitions' and 'need not be the sole cause' cover the substance, and the omitted items are ruled out by the stipulated evidence rather than being lost warrants."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The target question asks where in the ordered revision history the reproducible regression first appeared. The mapped inference answers exactly that: the final adjacent-revision boundary identifies the first revision associated with the regression. The evidence stipulates the preconditions the mechanism requires (oldest passes, newest fails, stable repeated tests, single transition on a linear history), so the answer is justified rather than merely plausible. The limit properly bounds the claim to 'first revision associated with' rather than asserting sole causation."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing midpoint tests on a linear history with a stipulated single, stable transition deterministically halves the candidate interval per test and terminates at an adjacent pass/fail pair. That pair warrants the claim that the regression first appears at the failing revision of the pair. The chain is intelligible, empirically grounded in direct observation, and not circular: the pass/fail observations are independent of the conclusion they support. The stipulated evidence removes the conditions (flakiness, multiple transitions, nonlinearity) that would otherwise make eliminations unreliable, so no unresolved measurement or empirical relation remains."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. Source and target are the same practice, and the five-field mapping reproduces the bisection mechanism faithfully, including its correlation-versus-causation limit. The stipulated evidence satisfies every precondition the mechanism needs (bracketing endpoints, stable tests, single transition, linear history), so the inference to the first regressing revision follows without any unresolved condition. Buildability of intermediate revisions is not stated in the evidence, but the mapping's limit already names unbuildable revisions as invalidating particular eliminations rather than the method, and no packet fact suggests it is at issue, so it does not rise to a Conditional."
+  },
+  "uncertainty": [
+    "The evidence does not explicitly state that every intermediate revision is buildable and testable; the mapping's limit acknowledges this as a per-elimination hazard rather than a method failure, and the packet gives no indication it applies here.",
+    "The mapping's limit field drops the source's explicit mention of nonmonotonic behavior, interactions among revisions, and incorrectly chosen endpoints. The stipulated single-transition, stable-test evidence makes these moot for this case, but the omission slightly narrows the stated caveats relative to the source."
+  ]
+}

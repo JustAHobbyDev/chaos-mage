@@ -1,0 +1,31 @@
+{
+  "case_id": "008",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "not-preserved",
+      "rationale": "The source chain is: a state of multiple candidate explanations -> an operation of generating candidates and gathering evidence that bears differently on them, with repeated plausibility revision -> a signal consisting of a support/contradiction/non-discrimination pattern across competitors -> an inference that narrows the plausible set without early commitment. The mapping substitutes every step. State: it imports literal clinical conditions (fever, anemia, dehydration) with admittedly no software counterparts, rather than the abstract state of competing software explanations. Operation: it replaces evidence discrimination with vocabulary matching ('call high CPU a fever') and commits to a single diagnosis at the outset, which is the exact failure (premature closure) the source warns against. Signal: a verbal match between an adjective and a symptom name is not a pattern of evidential support across hypotheses. Inference: a single selected diagnosis replaces reprioritization of a set. Only the limit field restates the source's limits faithfully, and it asserts an 'evidence-discrimination operation' that the operation field does not actually contain, so the limit is internally inconsistent with the rest of the mapping. This is loss and substitution, not a functional transfer using different vocabulary."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The retained question asks which explanations of intermittent request failures remain plausible after the available evidence. The packet's stated evidence (logs that discriminate cache failure, network loss and configuration error, with fault-injection-validated signatures) is exactly the kind of discriminating evidence the question depends on, yet the mapping never uses it. Instead the inference delivers a single clinical diagnosis and asserts it identifies the software mechanism. That answers a different question (which clinical label best matches the incident wording) and the claimed relation between a clinical label and a software failure mechanism is unsupported by anything in the packet. Shared subject matter (a failing 'patient') is the only connection."
+    },
+    "operational_coherence": {
+      "status": "incoherent",
+      "rationale": "Performing X (matching incident adjectives to clinical symptom names) produces Y (a clinical diagnosis label) which cannot warrant Z (identification of the software mechanism causing request failures). No measurement of the service is taken, no hypothesis is tested against logs or fault-injection signatures, and the label 'fever' has no defined relation to any software state. The inference rests solely on source imagery; it is not a case where a named missing measurement could complete the chain, because the chain itself is a wording correspondence rather than an operation on target evidence."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Which explanations of the intermittent request failures remain plausible after the available evidence?",
+      "reframed_question": "Which single clinical diagnosis best matches the wording of the incident description, and what software mechanism does that diagnosis name?",
+      "relationship": "The reframe is enacted implicitly by the inference field rather than proposed explicitly. It replaces set-narrowing over software hypotheses using discriminating evidence with single-label selection by vocabulary match. It does not contribute to the original question: it produces no plausibility ordering of cache, network or configuration explanations and does not consume the stated log or fault-injection evidence."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "All three criteria fail. The mapping discards the source's essential evidence-discrimination operation and plausibility-revision inference, substituting clinical vocabulary matching and early single-cause commitment. It answers a different question from the retained target question and ignores the packet's stated discriminating evidence. The operational chain does not follow as mapped and rests only on source imagery. The limit field's assertion that clinical material is unnecessary is correct in principle, but the supplied mapping does not perform the functional transfer that assertion presupposes, and the assessment cannot amend the mapping to supply it."
+  },
+  "uncertainty": [
+    "Whether the implicit substitution of a single-diagnosis question counts as a 'reframe' or merely as not addressing the target is a judgment call; it was recorded as an enacted reframe because the inference field commits to it.",
+    "The limit field states a correct abstract principle (evidence discrimination does not depend on clinical material). This was treated as not rescuing the mapping because the operation and signal fields contain no evidence-discrimination step; a reviewer weighting the limit field more heavily could argue for partial mechanism retention, but that would require amending the supplied mapping.",
+    "The packet's synthetic evidence (discriminating logs, validated fault-injection signatures) was accepted as given; the verdict does not depend on its truth, since the mapping does not use it either way."
+  ]
+}

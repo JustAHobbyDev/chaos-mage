@@ -1,0 +1,37 @@
+{
+  "case_id": "016",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The chain is carried over intact: a set of known paths (routes) crossing unobserved segments (handoffs), end-to-end travel times per path, comparison with a candidate segment-delay model, iterative residual reduction, and a bounded inference to a delay field with explicit non-uniqueness. Source limits map sensibly: path coverage to route coverage, measurement error to clock error, non-uniqueness retained; 'uncertain source locations' drops out because routes are known, which is a legitimate simplification rather than a loss. What is not yet established is the forward model. In seismology the relation between medium properties and travel time is physics; in the target the mapping's own state field says the relation between handoff processing and measured route time 'can be tested after logging and clock checks'. If route time is not approximately the sum of per-handoff delays (e.g. parallel branches, retries, contention effects that depend on which other routes are active), the linearized inversion the mapping relies on does not hold. Whether this additive relation holds is the specific unresolved target condition."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which internal handoffs account for end-to-end delay. The mapped inference yields a constrained set of handoff-delay fields consistent with the joint route residuals, explicitly disclaiming a unique causal explanation. That is an attribution of delay to handoffs, which is what the question asks for, delivered as an explicitly bounded contribution (a resolved set or null-space-limited estimate rather than a single named culprit). The question is not swapped for a different one and the relation between the inference and the question is direct."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing the operation (record entry/exit events, compute end-to-end time per route, fit a handoff-delay model, inspect residuals) would produce structured residuals that warrant a constrained delay field, provided three named things are established. First, synchronized or offset-corrected clocks: the evidence states synchronized timestamps are not installed and clock comparability under load must be checked; without this, residuals could be clock artifacts. Second, the additive forward model between handoff delays and route time must be verified. Third, the delay field must be treated as stationary across the observation window or workload must be conditioned on, since the mapping's own limit notes varying workload and the inversion assumes all paths sample the same medium. Each is a concrete measurement or empirical relation, not an appeal to the analogy working."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Clock comparability: install the documented logging interface, measure inter-node clock offset and drift under representative load, and confirm the resulting timing error is small relative to the handoff delays being resolved (or apply offset correction before fitting).",
+      "Forward-model additivity: verify that end-to-end route time is approximately the sum of per-handoff delays by comparing summed entry/exit intervals to measured route totals on a sample of routes; identify parallel branches, retries, or cross-route contention that would break linearity and either model them explicitly or restrict the fit to routes where additivity holds.",
+      "Coverage and identifiability: construct the route-by-handoff incidence matrix from the known routes and check its rank and null space; report which handoffs or handoff combinations are resolvable and which are confounded, rather than presenting a single unique field.",
+      "Stationarity under varying workload: bin observations by load regime or include workload as a covariate so that residuals across routes are compared under comparable conditions; otherwise time-varying delay will be misattributed to spatial (handoff) structure."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The tomographic chain of known paths, path-integrated measurements, model-residual iteration, and non-unique bounded inference is transferred faithfully, and the inference addresses the retained question as a bounded attribution of delay to handoffs. The mapping is conditional because the target's forward model (route time as an additive function of handoff delays) and the measurement infrastructure (comparable clocks, stationarity across workload, sufficient overlapping-route coverage) are stated in the packet as not yet established. Each is a concrete, checkable condition, so the transfer is Conditional rather than Invalid."
+  },
+  "uncertainty": [
+    "The evidence says the logging interface can record entry and exit events per handoff; if those are reliable, per-handoff delays might be measured directly, making the path-inversion step partly redundant. This does not invalidate the mapping but affects whether the tomographic framing is the most direct route to the answer.",
+    "The number of routes relative to the number of handoffs, and the degree of route overlap, is not given, so identifiability of individual handoffs is unknown.",
+    "Whether routes are fixed or dynamically chosen under load is not stated; dynamic routing would weaken the 'routes are known' premise in the mapping's state field.",
+    "The packet does not state what magnitude of handoff delay matters, so the required clock accuracy threshold cannot be judged from the packet alone."
+  ]
+}

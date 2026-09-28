@@ -1,0 +1,32 @@
+{
+  "case_id": "020",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain intact: a multiply-explainable state (one failure signature, three candidate mechanisms), an operation of holding competitors open while inspecting discriminating logs and controlled probes and revising support, a signal of support/contradiction/non-discrimination, and an inference of reprioritize/eliminate/retain without early commitment. The limit carries over the source's key constraints: hypothesis-generation coverage (missing hypotheses), evidence independence (dependent logs), test sensitivity/specificity (weak probes) and cognitive bias (anchoring). Premature closure, base-rate neglect and confirmation bias are not named individually, but the substance of the limit is retained and no step or warrant is substituted."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The target question asks which explanations remain plausible after the available evidence. The mapped inference produces exactly that: the set of explanations retained after elimination and reprioritization. The answer is bounded to the generated set (cache, network, configuration), which the mapping's own limit acknowledges, matching the source's constraint that results depend on which hypotheses were generated."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Inspecting logs and running controlled probes produces observations whose patterns of support or contradiction warrant retaining or eliminating each mechanism. The stipulated evidence that logs can distinguish the three mechanisms and that fault injection has validated the diagnostic signatures under the current configuration supplies the discriminative warrant (the sensitivity/specificity analog), so the chain is intelligible and the inference bounded rather than circular or imagery-based."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the state→operation→signal→inference chain and the relevant source limits, the inference directly answers the retained target question, and the stipulated evidence establishes that the logs and probes actually discriminate among the candidate mechanisms, so the operational chain is coherent without needing any further condition."
+  },
+  "uncertainty": [
+    "The packet stipulates that logs and probes can discriminate the three mechanisms but does not include the actual failure observations, so the concrete plausible set cannot be derived here; only the validity of the procedure for producing it is assessed.",
+    "The hypothesis set is closed to cache, network and configuration; explanations outside that set (e.g., upstream dependency or resource exhaustion) are not covered, which the mapping's limit acknowledges but does not resolve.",
+    "Fault injection validated signatures under the current configuration; whether intermittent failures in production are reliably captured by the same logs is not stated, though the evidence is assessed as given.",
+    "Independence of the log evidence is flagged as a limit but not established either way in the packet."
+  ]
+}

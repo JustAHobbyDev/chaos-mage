@@ -1,0 +1,30 @@
+{
+  "case_id": "009",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "not-preserved",
+      "rationale": "The source chain requires independently observed propagation behavior across many paths, compared against a candidate model, with residuals driving iterative adjustment. The mapped operation substitutes the model's own predicted times for observations and compares the model to itself. The observation step, the discrepancy signal, and the iterative adjustment are all lost. The mapped limit lists source-like constraints (coverage, non-uniqueness, clock error) but these have nothing to constrain once no observed data enters the procedure."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The target question asks which handoffs account for actual end-to-end delay. The mapped inference claims the selected delays explain the actual request delays, but the procedure never touches actual delays. The packet's stated evidence says no travel times are recorded, so the only route to that question would be measurement that the mapping does not perform. The claimed relation between the zero residual and real delays is unsupported."
+    },
+    "operational_coherence": {
+      "status": "incoherent",
+      "rationale": "Performing X (assign model-predicted times, then compare against the same model) necessarily produces Y (zero residual on every route) for any candidate model whatsoever. Y therefore cannot warrant Z (that the selected delays are the true ones). The inference rests solely on a circular construction; the signal is a tautology, not a discriminating outcome."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "All three criteria fail. The mapping replaces the source's core observation-versus-prediction comparison with a self-comparison that yields zero residual by construction, so the signal carries no information and the inference does not follow. The absence of recorded travel times in the target could have supported a Conditional verdict for a mapping that compared observed times to the model, but the supplied mapping does not do that, and the packet forbids repairing it. Failure dominates."
+  },
+  "uncertainty": [
+    "The packet's evidence states that no travel times are recorded; it is unknown whether timestamps or logs exist from which travel times could later be derived. This does not change the verdict because the mapping as written uses no observed times regardless.",
+    "The phrase 'the same model' in the operation is read literally as self-comparison. If the author intended a different model as comparator, that intent is not expressed in the mapping and cannot be assumed."
+  ]
+}

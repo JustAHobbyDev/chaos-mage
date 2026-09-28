@@ -1,0 +1,35 @@
+{
+  "case_id": "005",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The chain is carried over intact: an unobserved internal property (per-handoff delay) is inferred from many path-integrated observations (end-to-end route timings) by predicting from a candidate model, forming residuals, and iteratively adjusting, with non-uniqueness, sparse coverage and measurement error retained as limits. The source's tacit warrant, however, is that a single stationary internal structure underlies all sampled paths. The mapping states this explicitly ('using one internal delay field depends on comparable handoff behavior across the sampled workloads'), and the packet evidence says that comparability is untested. Whether one delay field is a legitimate object of inversion is therefore a specific unresolved target condition, not a lost step."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which parts of the network account for observed end-to-end delays. The mapped inference yields the set of internal delay distributions consistent with the joint residual pattern, which is a direct, explicitly bounded answer: it localizes delay to handoffs only up to non-uniqueness and path coverage, and the limit disclaims that a fitted delay establishes a managerial cause. No different question is substituted."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing the fit on recorded routes and timings produces route-specific residuals, and a structured residual pattern intelligibly warrants a constrained delay field. The inference follows as mapped and is bounded. It is conditional because pooling requests from varying workloads into one inverse problem requires an empirical relation not yet established: that handoff delays are comparable across those workloads. If they are not, residual structure could reflect workload mixture rather than location, producing artifacts the mapping's own limit anticipates ('load changes')."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Comparability of handoff delays across sampled workloads must be tested, e.g. by stratifying recorded requests by workload class, fitting delay fields separately, and checking whether fitted per-handoff delays and residual patterns agree across strata, or by adding a workload covariate and testing whether it absorbs residual structure.",
+      "Path coverage sufficiency must be established: verify that the recorded route set provides enough independent handoff combinations (e.g. rank or resolution analysis of the route-to-handoff incidence matrix) to localize delays to individual parts rather than only to route-level aggregates.",
+      "Measurement error in recorded total timings should be characterized so that residual structure can be distinguished from noise before it is attributed to internal delays."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The five-field mapping faithfully reproduces the tomographic state→operation→signal→inference chain and its limits, and the inference gives a bounded answer to the retained question. Validity hinges on one named empirical condition the packet itself flags as untested, comparability of handoff behavior across workloads, plus establishable checks on path coverage and timing error. These are identifiable measurements, so the transfer is Conditional rather than Valid or Invalid."
+  },
+  "uncertainty": [
+    "The packet does not say whether 'parts' in the target question means only handoff points or also processing stages within nodes; the mapping models handoff delays only, so processing time is either folded into handoffs or unmodeled.",
+    "The number and diversity of recorded routes relative to the number of handoffs is unknown, so identifiability cannot be judged from the packet.",
+    "The magnitude of timing measurement error and whether workload is recorded per request are not stated, which affects how the comparability test could be run."
+  ]
+}
