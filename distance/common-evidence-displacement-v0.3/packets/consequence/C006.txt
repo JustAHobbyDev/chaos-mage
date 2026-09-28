@@ -1,0 +1,382 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C006",
+  "stage": "consequence",
+  "mapping_A": {
+    "source": {
+      "name": "Provenance reconstruction",
+      "practice": "Archival and provenance research",
+      "instrument": {
+        "state": "An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.\n",
+        "operation": "Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.\n",
+        "signal": "Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.\n",
+        "inference": "The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.\n",
+        "limit": "Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.\n"
+      }
+    },
+    "mapping": {
+      "state": "The draft leaves have partial dated custody and assembly traces.",
+      "operation": "Cross-check the A/B/C custody records and physical join feature to reconstruct supported people, places and ordering links. Follow up by marking gaps between possession, attachment and composition rather than filling them from disputed paper dating.",
+      "signal": "Consistent dated possession links and physical relative-order constraints may coexist with unresolved revision timing.",
+      "inference": "Bound the surviving draft assembly history while preserving uncertainty about when A was revised relative to attachment.",
+      "limit": "Custody does not establish composition; missing witnesses or undocumented earlier transfers remain possible."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "cross-check supplied custody links",
+          "parameters": {
+            "leaves": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "resulting_signal": {
+            "custody": [
+              {
+                "leaf": "A",
+                "person": "editor",
+                "day": 7
+              },
+              {
+                "leaf": "B",
+                "person": "editor",
+                "day": 9
+              },
+              {
+                "leaf": "C",
+                "person": "editor",
+                "day": 9
+              }
+            ],
+            "relative_join": {
+              "id": "join",
+              "observation": "A fastening through B is physically overlain by the C attachment; B attached before C."
+            }
+          },
+          "resource_use": {
+            "record_accesses": 4,
+            "analysis_passes": 1,
+            "work_minutes": 45
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "cross-check supplied custody links",
+          "parameters": {
+            "check": "composition versus possession"
+          },
+          "resulting_signal": {
+            "revision_before_day": 12,
+            "revision_relative_to_B": "not determined",
+            "basis": {
+              "id": "quote",
+              "observation": "Authenticated day-12 letter quotes replacement R on A."
+            }
+          },
+          "resource_use": {
+            "record_accesses": 2,
+            "analysis_passes": 1,
+            "work_minutes": 20
+          }
+        }
+      ],
+      "resource_use": {
+        "physical_assays": 0,
+        "record_accesses": 6,
+        "analysis_passes": 2,
+        "work_minutes": 65
+      },
+      "limits": "Custody does not establish composition; missing witnesses or undocumented earlier transfers remain possible.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "mapping": {
+      "state": "Three stated revision-and-assembly sequences fit different portions of the shared manuscript evidence.",
+      "operation": "Compare every supplied documentary and physical feature against H1-H3 in an explicit inconsistency matrix; emphasize diagnostic contradictions. Follow up by removing disputed paper dating and checking which exclusions survive.",
+      "signal": "Cross-hypothesis consistency patterns and sensitivity to disputed dating distinguish elimination from mere best fit.",
+      "inference": "Weaken contradicted formation sequences and state the unresolved assembly-versus-revision questions for subsequent inquiry.",
+      "limit": "Unlisted sequences, dependent features and subjective interpretation may mislead; surviving the matrix is not proof of a chronology."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "compare every feature against hypotheses",
+          "parameters": {
+            "hypotheses": {
+              "H1": "A revised before B then C were attached",
+              "H2": "A revised after B then C were attached",
+              "H3": "C attached before B; A revision time open"
+            }
+          },
+          "resulting_signal": {
+            "matrix": {
+              "H1": {
+                "join": "consistent",
+                "quote": "consistent",
+                "witness": "consistent",
+                "paper": "uncertain"
+              },
+              "H2": {
+                "join": "consistent",
+                "quote": "consistent",
+                "witness": "consistent",
+                "paper": "uncertain"
+              },
+              "H3": {
+                "join": "inconsistent",
+                "quote": "consistent",
+                "witness": "consistent",
+                "paper": "uncertain"
+              }
+            }
+          },
+          "resource_use": {
+            "record_accesses": 7,
+            "analysis_passes": 1,
+            "work_minutes": 60
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "remove disputed dating and repeat comparison",
+          "parameters": {
+            "omit": "paper"
+          },
+          "resulting_signal": {
+            "matrix": {
+              "H1": {
+                "join": "consistent",
+                "quote": "consistent",
+                "witness": "consistent"
+              },
+              "H2": {
+                "join": "consistent",
+                "quote": "consistent",
+                "witness": "consistent"
+              },
+              "H3": {
+                "join": "inconsistent",
+                "quote": "consistent",
+                "witness": "consistent"
+              }
+            },
+            "remaining": [
+              "H1",
+              "H2"
+            ]
+          },
+          "resource_use": {
+            "record_accesses": 3,
+            "analysis_passes": 1,
+            "work_minutes": 30
+          }
+        }
+      ],
+      "resource_use": {
+        "physical_assays": 0,
+        "record_accesses": 10,
+        "analysis_passes": 2,
+        "work_minutes": 90
+      },
+      "limits": "Unlisted sequences, dependent features and subjective interpretation may mislead; surviving the matrix is not proof of a chronology.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "literary textual formation",
+    "question": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?"
+  },
+  "native_baseline": {
+    "target_domain": "literary textual formation",
+    "target_task": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+    "reference_practitioner": "Literary scholar specializing in manuscript genetics and textual formation, without computational stylometry training.",
+    "ordinary_methods": [
+      "Compare manuscript witnesses, handwriting, deletions, insertions and paper features.",
+      "Reconstruct revision layers and provenance with close reading and archive context.",
+      "Distinguish composition order from narrative order and acknowledge missing witnesses."
+    ],
+    "ordinary_evidence": [
+      "Draft variants, material features, correspondence, dated witnesses and archival provenance."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Formal signal alignment and controlled reader experiments are not assumed ordinary; manuscript scholars differ in quantitative training."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "All documentary and visible material observations below are shared.",
+      "A has a bounded erased patch under R. A calibrated non-destructive optical probe responds to residual ink material; controls and known cross-reactants are characterized. It localizes responsive material, not an event or date.",
+      "If responsive material is found, a separately calibrated spectral collation can compare its legible pattern with Q or known cross-reactants. This follow-up can establish a local reading; it cannot date assembly.",
+      "The physical B-before-C join observation is reliable. Paper dating remains uncertain."
+    ],
+    "artifacts": {
+      "custody": [
+        {
+          "leaf": "A",
+          "person": "editor",
+          "day": 7
+        },
+        {
+          "leaf": "B",
+          "person": "editor",
+          "day": 9
+        },
+        {
+          "leaf": "C",
+          "person": "editor",
+          "day": 9
+        }
+      ],
+      "features": [
+        {
+          "id": "join",
+          "observation": "A fastening through B is physically overlain by the C attachment; B attached before C."
+        },
+        {
+          "id": "quote",
+          "observation": "Authenticated day-12 letter quotes replacement R on A."
+        },
+        {
+          "id": "witness",
+          "observation": "Independent day-4 witness contains reading Q; it does not locate Q on A."
+        },
+        {
+          "id": "paper",
+          "observation": "Paper batch suggests day 8 but this dating is disputed."
+        }
+      ],
+      "hypotheses": {
+        "H1": "A revised before B then C were attached",
+        "H2": "A revised after B then C were attached",
+        "H3": "C attached before B; A revision time open"
+      }
+    },
+    "initial_observations": [
+      "Ordinary inspection cannot read the erased patch. H1 and H2 both fit the currently visible observations."
+    ],
+    "known_uncertainties": [
+      "Custody does not equal composition. The relative timing of A revision and B attachment is not directly observed."
+    ],
+    "available_affordances": [
+      "cross-check supplied custody links",
+      "compare every feature against hypotheses",
+      "remove disputed dating and repeat comparison",
+      "probe erased patch and controls",
+      "collate responsive undertext with witness Q"
+    ],
+    "constraints": [
+      "No destructive sampling or new archive sources."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "physical_assays": 4,
+      "record_accesses": 12,
+      "analysis_passes": 2,
+      "work_minutes": 120
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

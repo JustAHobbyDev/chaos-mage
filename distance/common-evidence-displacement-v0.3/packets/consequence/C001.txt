@@ -1,0 +1,365 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C001",
+  "stage": "consequence",
+  "mapping_A": {
+    "source": {
+      "name": "Provenance reconstruction",
+      "practice": "Archival and provenance research",
+      "instrument": {
+        "state": "An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.\n",
+        "operation": "Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.\n",
+        "signal": "Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.\n",
+        "inference": "The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.\n",
+        "limit": "Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.\n"
+      }
+    },
+    "mapping": {
+      "state": "The bundle and individual letters have incomplete but independently dated dispatch and custody traces.",
+      "operation": "Cross-check all receipt, custody and contemporaneous event records to connect letters to dated dispatch and possession links. Follow up by reconciling L2 with its event reference and marking unsupported composition intervals.",
+      "signal": "Independent compatible dates constrain dispatch order and show gaps in documented history.",
+      "inference": "Establish bounded relative and calendar dispatch chronology, keeping original composition and missing transfers uncertain.",
+      "limit": "Incomplete custody is not proof of continuity; dispatch is distinct from composition and records can share hidden errors."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "cross-check custody and dispatch records",
+          "parameters": {
+            "records": "all receipts and custody links"
+          },
+          "resulting_signal": {
+            "dispatch_anchors": {
+              "L1": 11,
+              "L3": 13,
+              "L4": 15
+            },
+            "custody": [
+              {
+                "object": "bundle",
+                "person": "recipient",
+                "week": 16
+              },
+              {
+                "object": "bundle",
+                "person": "archive",
+                "week": 40
+              }
+            ]
+          },
+          "resource_use": {
+            "record_accesses": 5,
+            "analysis_passes": 1,
+            "work_minutes": 45
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "check independent anchors",
+          "parameters": {
+            "letter": "L2",
+            "contemporaneous_event": "election"
+          },
+          "resulting_signal": {
+            "compatible_dispatch_weeks": [
+              12
+            ],
+            "composition": "unknown"
+          },
+          "resource_use": {
+            "record_accesses": 8,
+            "analysis_passes": 1,
+            "work_minutes": 30
+          }
+        }
+      ],
+      "resource_use": {
+        "record_accesses": 13,
+        "analysis_passes": 2,
+        "work_minutes": 75
+      },
+      "limits": "Incomplete custody is not proof of continuity; dispatch is distinct from composition and records can share hidden errors.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Dendrochronological crossdating",
+      "practice": "Dendrochronology and paleoclimate",
+      "instrument": {
+        "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+        "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+        "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+        "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+        "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+      }
+    },
+    "mapping": {
+      "state": "The ordered letter-event sequence overlaps the independently dated calendar with possible omitted weeks.",
+      "operation": "Shift the event sequence against the calendar and compare distinctive multi-week patterns, allowing omitted weeks while preserving order. Retain all compatible alignments. Follow up by checking them against the independent receipt anchors and explicitly identifying gaps.",
+      "signal": "Repeated event-pattern agreement across the calendar and receipt witnesses constrains offsets and missing increments.",
+      "inference": "Assign bounded calendar positions to the event-linked dispatches and retain uncertainty about composition and omitted letters.",
+      "limit": "Repetitive events, short overlap, wrong references or a failed contemporaneity bridge would mislead; no composition date follows merely from dispatch alignment."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "align ordered event patterns to dated calendar",
+          "parameters": {
+            "letter_order": [
+              "L1",
+              "L2",
+              "L3",
+              "L4"
+            ]
+          },
+          "resulting_signal": {
+            "compatible_calendar_alignments": [
+              [
+                11,
+                12,
+                13,
+                15
+              ]
+            ]
+          },
+          "resource_use": {
+            "record_accesses": 11,
+            "analysis_passes": 1,
+            "work_minutes": 55
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "check independent anchors",
+          "parameters": {
+            "receipt_anchors": {
+              "L1": 11,
+              "L3": 13,
+              "L4": 15
+            }
+          },
+          "resulting_signal": {
+            "retained_alignments": [
+              [
+                11,
+                12,
+                13,
+                15
+              ]
+            ],
+            "omitted_weeks": [
+              14
+            ],
+            "composition": "unknown"
+          },
+          "resource_use": {
+            "record_accesses": 3,
+            "analysis_passes": 1,
+            "work_minutes": 25
+          }
+        }
+      ],
+      "resource_use": {
+        "record_accesses": 14,
+        "analysis_passes": 2,
+        "work_minutes": 80
+      },
+      "limits": "Repetitive events, short overlap, wrong references or a failed contemporaneity bridge would mislead; no composition date follows merely from dispatch alignment.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?"
+  },
+  "native_baseline": {
+    "target_domain": "archival chronology",
+    "target_task": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+    "reference_practitioner": "Archivist specializing in documentary provenance and historical correspondence, without dendrochronology or signal-processing specialization.",
+    "ordinary_methods": [
+      "Trace custody and creators; compare dated references, handwriting, postmarks, paper and event mentions.",
+      "Cross-check independent dating clues and preserve uncertain intervals.",
+      "Separate physical arrangement from original order."
+    ],
+    "ordinary_evidence": [
+      "Letters, envelopes, accession records, dated calendars, material clues and independent event records."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Pattern comparison is ordinary, but quantitative alignment of long measured sequences is not assumed customary."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "All calendar, letters and custody records below are independently authenticated and available in full.",
+      "Each listed letter describes the event of its dispatch week; this contemporaneity link is established independently. The letter sequence preserves weekly order but can omit weeks.",
+      "Receipt weeks are direct dispatch anchors, not composition dates. The calendar and receipt series have separate origins."
+    ],
+    "artifacts": {
+      "calendar": {
+        "10": "fair",
+        "11": "flood",
+        "12": "election",
+        "13": "fire",
+        "14": "oath",
+        "15": "frost",
+        "16": "fair"
+      },
+      "letter_sequence": [
+        {
+          "letter": "L1",
+          "event": "flood"
+        },
+        {
+          "letter": "L2",
+          "event": "election"
+        },
+        {
+          "letter": "L3",
+          "event": "fire"
+        },
+        {
+          "letter": "L4",
+          "event": "frost"
+        }
+      ],
+      "receipts": [
+        {
+          "letter": "L1",
+          "dispatch_week": 11
+        },
+        {
+          "letter": "L3",
+          "dispatch_week": 13
+        },
+        {
+          "letter": "L4",
+          "dispatch_week": 15
+        }
+      ],
+      "custody": [
+        {
+          "object": "bundle",
+          "person": "recipient",
+          "week": 16
+        },
+        {
+          "object": "bundle",
+          "person": "archive",
+          "week": 40
+        }
+      ]
+    },
+    "initial_observations": [
+      "The bundle is undated as a whole; L2 has no direct dispatch receipt."
+    ],
+    "known_uncertainties": [
+      "Letters may have been composed earlier; an omitted letter is not evidence no letter existed."
+    ],
+    "available_affordances": [
+      "cross-check custody and dispatch records",
+      "align ordered event patterns to dated calendar",
+      "identify omitted weeks",
+      "check independent anchors"
+    ],
+    "constraints": [
+      "No new collections or documents."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "record_accesses": 20,
+      "analysis_passes": 2,
+      "work_minutes": 90
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "M011",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The chain is intact: an unsampled internal structure (per-service delay changes) alters observables along many overlapping paths (routes r1-r4 traversing A-D); the operation measures many path observables, compares them to a forward model (the calibrated additive delay model given as a synthetic fact), adjusts candidate maps to reduce residuals, and explicitly retains the non-unique solution set rather than collapsing it; the signal is structured route-difference residuals; the inference is a constrained internal delay-change map. Source limits (sparse coverage, non-uniqueness, model error, measurement error) are carried into the target limit field and the inference is held to replay scope. With the supplied catalog, r1-r3 leave exactly one null direction (A versus D, which co-occur in r1 and r2), and r4 is linearly independent of r1-r3, so the held-out route functions as genuine added path coverage in the tomographic sense, not decoration."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which deployed change accounts for the regression and for bounded causal evidence separating it from load. Only one deployment differs (the cache-policy flag), so the operative question is whether the deployment produces a delay change and on which component, versus load-only variation. Holding load fixed and contrasting old versus new configuration on each route isolates the configuration effect from load by design; a null difference within the 1 ms error bound supports load-only variation, a nonzero structured difference refutes it. The r1-r3 system determines dB and dC uniquely and dA+dD jointly; r4 separates A from D, so the mapping can discriminate the stated candidates (B-containing dependency versus confined to A) and detect a D-side contribution the candidate list omits. The inference is explicitly bounded as a contribution to attribution under the replay model, not a code-mechanism proof, matching the question's own request for bounded evidence."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (six low-load endpoint trials: old/new on r1, r2, r3) produces Y (three route-level delay differences with error at most about 2 ms each), which under the stated additive model yields exact constraints on four unknowns with one free direction; the follow-up (two low-load trials on r4) produces a fourth independent equation whose predicted value differs across the retained solution set, so the measured residual selects among them. Budget is respected: 8 of 10 endpoint trials, 1 primary operation, 1 follow-up, 2 analysis passes (fit, then held-out residual check), no external sources or live changes. The inference does not rely on source imagery; it rests on the calibrated additive model and route membership supplied as facts."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping reproduces the tomographic state-operation-signal-inference chain with a real forward model, multi-path constraint solving, retained non-uniqueness and an independent held-out path, all within the stated budget and affordances. It answers the retained question in explicitly bounded form: a fixed-load configuration contrast is the causal lever separating deployment effect from load, and the route algebra localizes the effect among A, B, C, D. Residual gaps (no high-load trials, so config-by-load interaction and the exact apportionment of the live 30 ms are not quantified) are acknowledged inside the mapping's own limit and inference fields rather than left as unstated warrants, so they are recorded as uncertainty rather than as conditions on validity."
+  },
+  "uncertainty": [
+    "The mapping runs only low-load trials, so it cannot quantify a configuration-by-load interaction or say how much of the live 30 ms rise is deployment versus load; the mapping's own bounds acknowledge this, but a reader wanting apportionment would need the two unused trials spent on high-load contrasts, which the mapping does not propose.",
+    "Single trials per condition are adequate only because the synthetic fact bounds endpoint error at 1 ms; if replay variance were larger in practice the residual tolerances would need widening.",
+    "The candidate list omits a D-only or mixed effect; the design can detect it via r4, but interpretation of such a result relative to the stated candidates is not spelled out in the mapping.",
+    "Replay findings are stated not to generalize to every live workload; the mapping respects this but the transfer therefore supports attribution within replay, not a live-production guarantee."
+  ]
+}

@@ -1,0 +1,240 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C011",
+  "stage": "prospective",
+  "mapping_A": {
+    "source": {
+      "name": "Provenance reconstruction",
+      "practice": "Archival and provenance research",
+      "instrument": {
+        "state": "An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.\n",
+        "operation": "Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.\n",
+        "signal": "Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.\n",
+        "inference": "The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.\n",
+        "limit": "Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.\n"
+      }
+    },
+    "mapping": {
+      "state": "The custody and copying of distinctive clause K may differ from the histories of whole documents.",
+      "operation": "Track the exact K wording as the object across p1-p6, connecting dated bidder possession, independently authenticated attachment receipt and official insertion; follow up by checking generic P0 wording and explicitly preserving missing authorship and common-origin links.",
+      "signal": "Compatible or conflicting clause-transmission links identify what is actually supported beyond whole-document possession.",
+      "inference": "Reconstruct a bounded pre-publication clause history bearing on steering, distinguishing transmission support from motive or final attribution.",
+      "limit": "Identical wording need not establish a unique origin; missing transactions, copying and incomplete records constrain the history."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Provenance reconstruction",
+      "practice": "Archival and provenance research",
+      "instrument": {
+        "state": "An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.\n",
+        "operation": "Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.\n",
+        "signal": "Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.\n",
+        "inference": "The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.\n",
+        "limit": "Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.\n"
+      }
+    },
+    "mapping": {
+      "state": "Tender-document custody and copying have dated but incomplete traces.",
+      "operation": "Track BD and O1 as whole documents through p1-p6, cross-check receipts, editing logs and public registration; follow up by marking missing links and comparing the older policy record without treating clause identity as document identity.",
+      "signal": "Compatible or conflicting dated custody and possession links emerge at document granularity.",
+      "inference": "Bound document possession before publication and identify gaps relevant to possible steering, without establishing motive or clause authorship.",
+      "limit": "Incomplete transfers, common origins and mistaken document identity limit reconstruction; possession is not proof of intentional steering."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?"
+  },
+  "native_baseline": {
+    "target_domain": "investigative reporting",
+    "target_task": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "reference_practitioner": "Investigative reporter specializing in municipal procurement and documentary accountability.",
+    "ordinary_methods": [
+      "Trace document provenance and corroborate claims across independent records and interviews.",
+      "Construct a dated event sequence; compare competing explanations and seek disconfirming evidence.",
+      "Distinguish allegations, corroborated facts and unresolved gaps."
+    ],
+    "ordinary_evidence": [
+      "Tender versions, scoring sheets, emails, public registers and interview accounts.",
+      "Authentication and source-independence information."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Newsrooms vary in formal evidence matrices; basic corroboration and chronology are assumed ordinary."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "The full authenticated records below are available to either investigation. Mail receipt p2 was independently generated; summaries of it are not additional sources.",
+      "BD hash identifies the complete bidder draft; the exact distinctive clause K is present in BD and O1. No source establishes motive or rules out an unrecorded common origin."
+    ],
+    "artifacts": {
+      "records": [
+        {
+          "id": "p1",
+          "day": 1,
+          "origin": "bidder draft",
+          "document": "BD",
+          "clause": "K",
+          "text": "three regional depots",
+          "recipient": "bidder"
+        },
+        {
+          "id": "p2",
+          "day": 3,
+          "origin": "independent mail receipt",
+          "document": "attachment hash BD",
+          "clause": "unknown",
+          "text": "attachment received",
+          "recipient": "official"
+        },
+        {
+          "id": "p3",
+          "day": 4,
+          "origin": "official editing log",
+          "document": "O1",
+          "clause": "K",
+          "text": "three regional depots inserted",
+          "recipient": "official"
+        },
+        {
+          "id": "p4",
+          "day": 5,
+          "origin": "public register",
+          "document": "O1",
+          "clause": "K",
+          "text": "three regional depots",
+          "recipient": "public"
+        },
+        {
+          "id": "p5",
+          "day": 2,
+          "origin": "older policy register",
+          "document": "P0",
+          "clause": "generic",
+          "text": "regional service capacity",
+          "recipient": "public"
+        },
+        {
+          "id": "p6",
+          "day": 4,
+          "origin": "official memo",
+          "document": "memo",
+          "clause": "K",
+          "text": "capacity rationale; author of wording unstated",
+          "recipient": "committee"
+        }
+      ]
+    },
+    "initial_observations": [
+      "The awarded bidder met clause K; competing bidders did not all meet it."
+    ],
+    "known_uncertainties": [
+      "Advance access and clause transmission can be supported without establishing intentional steering."
+    ],
+    "available_affordances": [
+      "inspect every supplied record",
+      "track whole-document custody",
+      "track clause-level copying",
+      "cross-check source independence",
+      "compare alternative explanations"
+    ],
+    "constraints": [
+      "No new interviews, documents or external searches."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "record_accesses": 12,
+      "analysis_passes": 2,
+      "work_minutes": 90
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

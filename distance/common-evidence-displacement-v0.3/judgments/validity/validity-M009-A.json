@@ -1,0 +1,31 @@
+{
+  "case_id": "M009",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping preserves reproducible failure, removable parts, subset/complement testing, retention of failing reductions, and test-relative minimization. Search order, budget, incomplete deletion checks, and oracle scope explicitly bound the inference; neither unique causation nor general user necessity is claimed."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Finding rule combinations sufficient to block activation and checking their single deletions provides an explicitly bounded contribution to identifying parts requiring joint investigation. It addresses the interaction component of the retained question without claiming to establish population-wide necessity or a complete feature ranking."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The stipulated deterministic, calibrated replay executes every subset with a complete reset, so reductions produce interpretable activation outcomes. A retained failing set establishes test-relative sufficiency; completed single-deletion checks establish local minimality. The procedure explicitly leaves untested minimality unresolved when the shared trial budget runs out."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass for the stated bounded investigation. The supplied operational facts support the reduction procedure, and its limitations prevent replay findings from being promoted to general user necessity."
+  },
+  "uncertainty": [
+    "No reduction results are supplied, so the retained rules, deletion outcomes, and existence of a multi-rule interaction remain unknown.",
+    "The trial cap may prevent full single-deletion verification; the mapping appropriately requires that minimality remain unresolved in that event.",
+    "Replay findings do not establish real-user necessity or a unique underlying causal mechanism."
+  ]
+}

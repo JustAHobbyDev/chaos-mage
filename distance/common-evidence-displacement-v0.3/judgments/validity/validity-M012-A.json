@@ -1,0 +1,30 @@
+{
+  "case_id": "M012",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The calibrated exposure step, paired time-series measurements, temporal response features, and bounded inference preserve the source chain. The mapping retains limits on settling, disturbances, initial state, nonlinear response, and extrapolation without claiming unique identification or equilibrium."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Measuring cohort errors alongside support queues and controls directly contributes to assessing segment deterioration. Testing persistence and using response timing to guide observation and reversible exposure inquiries provides an explicitly bounded contribution to the retained question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The stipulated calibrated replica supports a known exposure step and reliable paired measurements. Sampling hours 1–4 and following up at hours 5–6 fits the one-step, six-sample, six-hour budget. Those trajectories can characterize the tested response and guide subsequent inquiries without requiring a real-user rollout change."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass: the mapping preserves step-response probing and applies its bounded inference directly to rollout monitoring within the supplied operational constraints."
+  },
+  "uncertainty": [
+    "The response trajectories are not supplied, so actual deterioration, persistence, and the appropriate next observation or action remain unknown.",
+    "Six hours cannot establish long-run equilibrium or a unique causal mechanism, and replica findings may not generalize to the live rollout."
+  ]
+}

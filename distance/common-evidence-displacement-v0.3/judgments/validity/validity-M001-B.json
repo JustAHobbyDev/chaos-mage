@@ -1,0 +1,35 @@
+{
+  "case_id": "M001",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is intact. State: ambiguity between sustained change and transient fluctuation after a single-period observation (live A-B waits of 11 and 13 hours against a 7-hour low-demand baseline). Operation: repeat a comparable measurement (A-B end-to-end wait) at several points and evaluate it against a defined expected-variation rule (historical low baseline plus the stated common two-hour busy-slot intake offset). Signal: a persistence or reversion pattern not available from one ticket. Inference: constrains whether the underlying state is changing. The mapping's limit carries over the source cautions on changing conditions, sampling and over-reading a trend, and correctly adds that repeatability does not localize a component. Busy/low stratification is a legitimate instance of the source's 'evaluate against expected variation', not a substitution."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The retained question has two parts: where approval handoffs accumulate delay, and which bounded changes could reduce it. The mapped inference establishes only that the A-B route's own delay, net of shared intake, is persistent rather than busy-slot fluctuation, and explicitly declines to say whether team A or B is responsible. That is a genuine bounded contribution to 'where' at route level and resolves the persistence item the packet lists as open, but it does not reach handoff-level localization and says nothing about candidate changes. Concrete bridges exist in the packet's own affordances (overlapping-route trials on A-C and B-C with additive delay-map fitting; testbed fixed-staffing comparison) that would connect this finding to both parts of the question without changing it. The mapping does not perform them and the budget states later inquiries are not performed, so the relation is unresolved rather than unsupported."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing four alternating low/busy A-B observations plus two further low-demand observations (six of eight ticket trials, one primary operation and one follow-up, within the ledger) produces a stratified trajectory. Comparing low-slot values to the 7-hour baseline and busy-slot values to 7 plus the stated 2-hour intake offset yields a defined change rule. Sustained exceedance in both strata warrants the bounded inference that the A-B route itself, not shared intake or demand mix, carries persistent added delay. The inference stops where the data stop: it does not claim team-level attribution, which endpoint totals cannot support. The chain is intelligible and bounded; the packet's additivity fact (within 0.2 hours) makes the offset subtraction legitimate."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+      "reframed_question": "Is the observed A-B route delay increase sustained and internal to the route, rather than busy-slot demand fluctuation from shared intake?",
+      "relationship": "The mapping enacts a narrowing rather than proposing one. The narrowed question is a prerequisite to the first half of the original: it confirms that delay accumulates on the A-B route and rules out shared intake as the explanation, but it does not localize to a specific handoff and drops the second half about bounded changes entirely. It contributes to the original question as a first stage, not as an answer."
+    },
+    "unresolved_conditions": [
+      "Handoff-level localization: establish whether team A or B carries the added delay by sending controlled tickets along the overlapping A-C and B-C routes in matched demand slots and fitting an additive per-team delay map against the historical values (ab 7, ac 5, bc 8), using the packet's stated additivity within 0.2 hours. The mapping's remaining budget (two ticket trials, no further primary operations) does not cover this.",
+      "Bounded changes: establish which intervention reduces the delay by running the testbed fixed-staffing comparison on the localized team and measuring end-to-end A-B waits before and after, then confirming in a separate live assessment as the packet's known uncertainties require. The mapping proposes no such step."
+    ],
+    "final_status": "Conditional",
+    "rationale": "Mechanism fidelity is preserved: the mapping is a faithful serial-monitoring design with a defined change rule and appropriate limits. Operational coherence holds: six stratified A-B observations within budget produce a trajectory that warrants a bounded persistence inference. Target fidelity is conditional: the inference is an honest bounded contribution to the route-level 'where' and to the packet's open persistence item, but it does not reach the handoff-level 'where' or the 'which bounded changes' half of the retained question. The bridges are concrete and available in the packet's affordances but unperformed. No criterion fails, one is conditional, so the transfer is Conditional."
+  },
+  "uncertainty": [
+    "Whether a persistence-only finding counts as an 'explicitly bounded contribution' (addressed) or requires the unperformed localization bridge (conditional) is a judgment call; I chose conditional because the second half of the question is untouched and the mapping itself defers the work.",
+    "Within-slot variance of testbed waits is not stated; with six observations the persistence judgment depends on that variance being small relative to the observed 4 to 6 hour excess, which the packet does not guarantee.",
+    "The historical baseline is from a prior low-demand period and live tickets are 'new-period'; a period-level shift unrelated to A-B handoffs would be indistinguishable from a route-internal increase using A-B observations alone.",
+    "The mapping's alternating low/busy schedule assumes the analyst can select demand slots freely; the packet states all branches can choose any route and demand slot, so this is taken as given."
+  ]
+}

@@ -1,0 +1,487 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C010",
+  "stage": "consequence",
+  "mapping_A": {
+    "source": {
+      "name": "Serial monitoring",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+        "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+        "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+        "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+        "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+      }
+    },
+    "mapping": {
+      "state": "An adverse rollout snapshot may reflect transient variation or sustained deterioration.",
+      "operation": "Hold current settings and repeat matched treated/comparison error and support-queue measurements at hours 1-4. Follow up at hours 5-6; compare trajectories with baseline and use two consecutive error measurements above 3 percent as the stated investigation alert, not as a causal proof.",
+      "signal": "Persistence or reversal of matched adverse trajectories distinguishes a sustained change from an isolated snapshot.",
+      "inference": "Constrain whether the segment is deteriorating and whether to investigate or pause, while leaving causal explanation open.",
+      "limit": "Mix shifts, concurrent inputs and six-hour censoring limit conclusions; a monitoring threshold is not an ontological score or proof of rollout harm."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 1
+          },
+          "resulting_signal": {
+            "treated_error_percent": 3,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 2
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 9,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 3
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 4
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 5
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "repeat matched measurements while holding settings",
+          "parameters": {
+            "hour": 6
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1,
+            "analysis_passes": 2
+          }
+        }
+      ],
+      "resource_use": {
+        "time_samples": 6,
+        "input_steps": 0,
+        "analysis_passes": 2,
+        "horizon_hours": 6
+      },
+      "limits": "Mix shifts, concurrent inputs and six-hour censoring limit conclusions; a monitoring threshold is not an ontological score or proof of rollout harm.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Step-response probing",
+      "practice": "Control and systems engineering",
+      "instrument": {
+        "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+        "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+        "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+        "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+        "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+      }
+    },
+    "mapping": {
+      "state": "Cohort exposure is a controllable input whose time-varying segment response bears directly on rollout decisions.",
+      "operation": "Apply the calibrated exposure step and record both channels and controls at hours 1-4. Characterize delay, peak, overshoot and possible later shift in errors and queue, then follow up at hours 5-6 to test persistence. Let the measured temporal response determine the next observation window and reversible exposure inquiry.",
+      "signal": "The paired trajectories can reveal lagged, transient or persisting effects of this exposure step.",
+      "inference": "Characterize bounded segment response for rollout observation and reversible-action choices without identifying a unique mechanism or assuming equilibrium.",
+      "limit": "Six hours may not show settling; disturbances, initial state and nonlinear response limit extrapolation beyond this operating point."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "step exposure",
+          "parameters": {
+            "from": 0,
+            "to": 1
+          },
+          "resulting_signal": {
+            "step_applied": true
+          },
+          "resource_use": {
+            "input_steps": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 1
+          },
+          "resulting_signal": {
+            "treated_error_percent": 3,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 2
+          },
+          "resulting_signal": {
+            "treated_error_percent": 6,
+            "control_error_percent": 2,
+            "treated_queue": 12,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 3
+          },
+          "resulting_signal": {
+            "treated_error_percent": 5,
+            "control_error_percent": 2,
+            "treated_queue": 10,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 4
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 5
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "measure both channels and controls",
+          "parameters": {
+            "hour": 6
+          },
+          "resulting_signal": {
+            "treated_error_percent": 4,
+            "control_error_percent": 2,
+            "treated_queue": 8,
+            "control_queue": 4
+          },
+          "resource_use": {
+            "time_samples": 1,
+            "horizon_hours": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "compare response delay peak and persistence",
+          "parameters": {
+            "analyzed_channels": [
+              "error",
+              "queue"
+            ]
+          },
+          "resulting_signal": {
+            "error": {
+              "peak": 6,
+              "first_peak_hour": 2,
+              "last_two": [
+                4,
+                4
+              ],
+              "equilibrium": "not established beyond six hours"
+            },
+            "queue": {
+              "peak": 12,
+              "first_peak_hour": 2,
+              "last_two": [
+                8,
+                8
+              ],
+              "equilibrium": "not established beyond six hours"
+            }
+          },
+          "resource_use": {
+            "analysis_passes": 2
+          }
+        }
+      ],
+      "resource_use": {
+        "time_samples": 6,
+        "input_steps": 1,
+        "analysis_passes": 2,
+        "horizon_hours": 6
+      },
+      "limits": "Six hours may not show settling; disturbances, initial state and nonlinear response limit extrapolation beyond this operating point.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?"
+  },
+  "native_baseline": {
+    "target_domain": "product-rollout monitoring",
+    "target_task": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "reference_practitioner": "Product operations analyst specializing in staged rollout monitoring, without formal control-system identification training.",
+    "ordinary_methods": [
+      "Track cohort metrics over time against pre-rollout baselines and comparison groups.",
+      "Inspect segment differences and investigate anomalies with support and product teams.",
+      "Pause or roll back an exposure and compare subsequent measurements when warranted."
+    ],
+    "ordinary_evidence": [
+      "Exposure logs, cohort outcomes, error and support rates, deployment history and comparison-group trends."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Monitoring conventions vary; causal conclusions require controls, and designed dynamic identification is outside the scoped baseline."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "Two isolated, representative rollout replicas can be reset to the same starting state. One controls cohort exposure; another controls support-routing fraction. Either is available to both branches.",
+      "A known 0-to-1 step can be applied to either input. Independent calibration establishes stable comparable controls and reliable time sampling for each channel, but does not disclose the current response trajectory.",
+      "One time sample returns treated and comparison error rates and support-queue counts. The observation horizon is six hourly samples. Holding current settings is also available.",
+      "Baseline error is 2 percent and baseline support queue is 4. A routing experiment affects the support subsystem; any inference about cohort deterioration needs the cohort channel too."
+    ],
+    "artifacts": {
+      "initial_metrics": {
+        "error_percent": 2,
+        "queue": 4
+      },
+      "current_snapshot": {
+        "error_percent": 3,
+        "queue": 8
+      },
+      "channels": [
+        "cohort_error_percent",
+        "support_queue"
+      ],
+      "inputs": [
+        "exposure",
+        "routing",
+        "hold"
+      ],
+      "sample_hours": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "initial_observations": [
+      "The current snapshot is adverse; persistence, transient shape, and the next safe observation window remain unresolved."
+    ],
+    "known_uncertainties": [
+      "Six hours cannot establish long-run equilibrium or a unique causal mechanism; replicas may not generalize."
+    ],
+    "available_affordances": [
+      "repeat matched measurements while holding settings",
+      "step exposure",
+      "step routing fraction",
+      "measure both channels and controls",
+      "compare response delay peak and persistence"
+    ],
+    "constraints": [
+      "At most one input step in the primary procedure; no real-user rollout change."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "time_samples": 6,
+      "input_steps": 1,
+      "analysis_passes": 2,
+      "horizon_hours": 6
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

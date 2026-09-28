@@ -1,0 +1,34 @@
+{
+  "case_id": "M010",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: a nested, certified revision chain with a known passing endpoint (0) and failing endpoint (7) and exactly one transition. Operation: replay a floor-midpoint revision, discard the half inconsistent with the observed pass/fail, repeat. Signal: each pass/fail result shrinks the interval. Inference: the first failing revision is the boundary. The source limits (flakiness, nonmonotonicity, multiple transitions, wrong endpoints) are explicitly handled by the stated synthetic certifications of repeatability and a single transition, and the mapping's limit field names those certifications as essential. Three replays suffice for eight revisions, well within the 20-trial ledger, and manifest inspection is a listed affordance. The extra replay of both boundary revisions is redundant but does not alter the mechanism. The mapping also correctly carries the source caveat that the boundary is association, not sole causation."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The retained question has two parts: which proposal parts are necessary for activation, and what interactions block a simple ranking. Bisection on a nested chain where each revision adds one rule yields exactly one rule whose addition, in the presence of all earlier rules, flips the replay. That is a bounded lead for the first part only within the replay world. It cannot say whether that rule alone breaks activation or whether it interacts with earlier rules (the packet itself lists 'either guard alone' and 'interactions' as live explanations), and it says nothing about the necessity of the other six rules. The mapping openly defers interaction necessity to later testing, and the budget states later inquiries are not performed. A concrete bridge exists in the world: subset trials of the boundary rule alone and combined with its predecessors are a listed affordance. Because that identifiable measurement could connect the boundary to the necessity and interaction claims without changing the question, this is conditional rather than not-addressed. The 'for users' clause is explicitly bounded out by both the stated facts and the mapping's limit, so it is treated as a declared scope boundary rather than a failure."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the bisection replays produces a deterministic pass/fail sequence, which under the stated single-transition and repeatability certifications warrants identifying the first failing revision and, via the manifest, the single rule added there. The inference is stated as a bounded dependency lead and does not overclaim independent feature effect or real-user necessity. The chain from operation to signal to inference is intelligible and does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+      "reframed_question": "Which revision in the certified nested chain is the first to fail the activation replay, and which single rule was added at that boundary?",
+      "relationship": "The mapping enacts a narrowing: it converts a necessity-and-interaction question over seven separable rules into a linear transition-localization question over eight revisions. The narrowed answer contributes a bounded lead to the first half of the original question (one rule associated with the replay failure in the context of its predecessors) but does not answer which other parts are necessary or what interactions exist; the mapping explicitly defers the interaction half. It does not substitute a different target; it delivers a partial, honestly labeled contribution."
+    },
+    "unresolved_conditions": [
+      "Interaction and necessity bridge: establish whether the boundary rule alone reproduces activation failure, and whether it fails only in combination with specific earlier rules. Establish by replaying rule subsets (the boundary rule alone, and the boundary rule with each predecessor subset) using the 'test any rule subset' affordance; the mapping's own operation declines this, so it remains unresolved within the packet.",
+      "Ranking bridge: the question asks what prevents a simple feature ranking across all seven rules; bisection tests only one path through the nested chain. Establish by ablation trials of rules other than the boundary rule (removing each from revision 7 or adding each to revision 0) to determine whether any other part independently affects the replay."
+    ],
+    "final_status": "Conditional",
+    "rationale": "Mechanism fidelity and operational coherence pass: the bisection chain, its warrants, and its limits transfer cleanly into a synthetic world that certifies exactly the preconditions the source needs. Target fidelity is conditional: the mapping localizes one rule associated with the replay transition and honestly labels it as revision association, but the retained question asks about necessity of parts and about interactions, which require subset or ablation trials the mapping explicitly defers. Those trials are an identifiable, affordable measurement in the stated world, so the gap is a named unresolved bridge rather than a mechanism loss or an unsupported inference. No criterion fails, so the status is Conditional."
+  },
+  "uncertainty": [
+    "Judgment call between 'conditional' and 'not-addressed' for target fidelity: the mapping answers a narrower question (revision association) and defers interactions by design; I treated the explicit labeling plus an identifiable in-world bridge as sufficient for conditional.",
+    "The 'for users' clause cannot be bridged within the packet (no new participant study, replay stated not to model population necessity); I treated the mapping's explicit disclaimer as a declared scope boundary rather than an additional unresolved condition.",
+    "The follow-up step 'replay both boundary revisions' is redundant with bisection results already obtained; I did not treat this as a mechanism defect, but it consumes the single immediate follow-up slot that could otherwise have hosted a subset trial."
+  ]
+}

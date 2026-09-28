@@ -1,0 +1,32 @@
+{
+  "case_id": "M013",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The chain is intact: state (signing present in the failing workflow, removable via bypass and restorable via reset with no carryover) maps to the source's removable/reintroducible factor; operation (per-schedule enabled vs bypassed comparison, then restore signing and rerun all four) is a genuine dechallenge followed by rechallenge; signal (diminution under bypass, recurrence under restore, or absence of change) matches the source's temporal-association signal; inference (bounded causal contribution of signing) matches 'increases support for a causal contribution'. Source limits carry over: the mapping's signal and limit acknowledge that persistent failures may have other causes and that the replay does not establish universal necessity, echoing 'temporal response alone does not exclude alternative causes'. The stated facts (reset removes carryover, artifacts and other settings fixed) control the source's concurrent-change limit, and the rechallenge step addresses spontaneous resolution. Nothing beyond the packet's affordances is required, and the 4x2 + 4 = 12 trials fit the replay_trials ledger with one primary operation and one follow-up."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which dependencies account for intermittent publication failures and what bounded remedy is supported. Signing is the only dependency the affordances allow to be manipulated; the mapping tests it directly and gives an explicitly bounded contribution: whether signing contributes to the s2/s4 failures and whether bypass cures failures across this schedule set. Failures that persist under bypass (e.g., s4, where l4 records mirror unavailability) are explicitly attributed to other dependencies rather than to signing, so the 'which dependencies' part is answered for signing and bounded by exclusion for the mirror path. The remedy claim is limited to this schedule set and the isolated workflow, matching the stated facts. The question is not swapped for another."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the bypassed replays yields per-schedule publication success/failure outcomes that can be compared against the enabled replays of the same schedules; restoring signing and rerunning yields recurrence or non-recurrence. Diminution-plus-recurrence warrants a bounded causal contribution by signing, absence of diminution warrants rejecting bypass as the remedy for that schedule, and mixed outcomes warrant the stated 'other dependencies' conclusion. The inference is bounded to this schedule set and isolated workflow. No unmeasured relation is required, and the reasoning does not rely on source imagery or circularity. Counterbalancing trial order is redundant given the independent reset but adds no cost or incoherence."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful dechallenge/rechallenge on the one manipulable dependency, fits the stated budget exactly, preserves the source's alternative-cause and reintroduction-safety limits, and answers the retained question with an explicitly bounded contribution about signing and about bypass as a remedy for this schedule set, while attributing residual failures to other dependencies rather than overreaching."
+  },
+  "uncertainty": [
+    "The packet does not state whether replays of a fixed schedule are deterministic; if 'intermittent' means nondeterministic within a schedule, a single bypassed trial per schedule gives limited power, though the restore-and-rerun step partially checks stability.",
+    "The mirror dependency (l4, s4) cannot be manipulated with the given affordances, so its contribution is inferred only by exclusion when failures persist under bypass, not tested directly.",
+    "The design consumes all 12 replay trials, leaving no slack for repeating an ambiguous schedule.",
+    "Counterbalancing trial order is unnecessary given the independent reset between trials; it does not affect validity."
+  ]
+}

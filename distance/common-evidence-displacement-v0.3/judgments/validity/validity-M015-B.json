@@ -1,0 +1,32 @@
+{
+  "case_id": "M015",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is intact: the state (a single adverse snapshot cannot separate transient fluctuation from sustained change) maps directly; the operation repeats comparable measurements over time while holding settings, using matched treated/comparison channels and a defined change rule (two consecutive error readings above 3 percent), which matches the source's 'expected variation or a defined change rule'; the signal is a temporal pattern (persistence or reversal) unavailable from one snapshot; the inference constrains sustained-vs-transient without claiming cause. Relevant source limits are carried over in target terms: concurrent inputs (interventions between observations), mix shifts (changing measurement conditions), six-hour censoring (poorly chosen intervals), and the explicit caveat that the threshold is not proof (threshold artifacts). The mapping does not substitute a causal-identification step for the monitoring step, and it does not require literal clinical materials."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks whether the rollout is deteriorating for a segment and what observation or reversible action should follow. The mapping answers the first part through persistence or reversal of the treated cohort's error and queue trajectories against the comparison group and baseline, using the cohort error channel as the packet requires. It answers the second part with a bounded recommendation: the two-consecutive-sample rule triggers investigation or a pause, both of which are reversible and within the native practitioner's ordinary methods. Causal explanation is explicitly left open, which is a bounded contribution rather than an evasion of the question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (hold settings; take matched treated/comparison error and queue samples at hours 1-4, then 5-6) produces Y (a six-point trajectory per channel relative to a calibrated comparison group) that warrants Z (declare persistence if the treated error stays above 3 percent for two consecutive samples and the comparison does not, declare reversal if it returns toward the 2 percent baseline, and act accordingly). The procedure fits the ledger: one primary operation, one immediate follow-up, six time samples within the six-hour horizon, two analysis passes, and no input step, which the budget allows to go unused. The packet stipulates calibrated comparison controls and reliable sampling, so the comparison channel supplies the expected-variation reference. The inference is bounded to an investigation alert rather than a harm claim, and it does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful transfer of serial monitoring: repeated matched measurements under held settings, a temporal-pattern signal, a bounded sustained-vs-transient inference, and target-appropriate limits. It addresses both halves of the retained question within the stated budget and affordances without changing the question or claiming causal identification. No specific unresolved target condition determines whether the chain holds, so the result is Valid rather than Conditional."
+  },
+  "uncertainty": [
+    "The alert rule (two consecutive error readings above 3 percent) is stipulated rather than derived from measured within-condition variance; the packet's calibrated comparison group mitigates but does not quantify this, and the mapping itself flags the threshold as non-probative.",
+    "The mapping's alert rule is stated on the treated error channel alone; the matched comparison channel is measured and used for trajectory comparison, but the mapping does not state an explicit differential rule, leaving some room for a comparison-group drift to be misread.",
+    "Six hourly samples cannot rule out slower deterioration or later reversal, as the packet's known_uncertainties state; the mapping acknowledges this censoring.",
+    "Replica-to-production generalization is assumed by the packet and not tested by the procedure."
+  ]
+}

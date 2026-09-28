@@ -1,0 +1,31 @@
+{
+  "case_id": "M016",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The calibrated routing step perturbs a controllable subsystem; hourly queue measurements and controls expose delay, peak, return and persistence. Those response features constrain its dynamics and inform observation timing. The mapping retains finite-horizon, disturbance, nonlinearity and operating-point limits without claiming a unique mechanism or long-run equilibrium."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Selecting a support-alert observation window contributes explicitly to the requested next observation. The mapping bounds this contribution to the support subsystem, records the cohort channel too, and hands the result to full-segment review without treating queue behavior as a verdict on cohort deterioration."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The stipulated calibration and representative resettable replica support an interpretable routing-step response. Its observed timing and persistence can inform a bounded support-monitoring window. One step, six samples, a primary analysis and a persistence follow-up fit the stated resources; the subsequent full-segment review is a handoff rather than a claimed completed investigation."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+      "reframed_question": "What support-alert observation window is appropriate given the queue's response to a routing-fraction step?",
+      "relationship": "This explicitly narrowed subtask contributes to the original question's observation component. Its result is handed to full-segment review, while the cohort-deterioration question remains unresolved."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping preserves step-response probing and uses its result for a coherent, explicitly bounded contribution to the retained target question."
+  },
+  "uncertainty": [
+    "No response trajectory is supplied, so the actual observation window and persistence finding cannot yet be determined.",
+    "Six hourly samples limit temporal resolution and cannot establish long-run equilibrium or a unique causal mechanism.",
+    "Replica findings may not generalize to the live rollout, and cohort deterioration remains for full-segment review."
+  ]
+}

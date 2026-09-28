@@ -1,0 +1,35 @@
+{
+  "case_id": "M003",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact: claims backed by sources of uncertain access and dependence (state) -> cross-check each record for claim, access, authenticity and independence, explicitly discounting l2 as a copy of l1 (operation) -> independent receipts and process records converge or conflict on specific failed dependencies (signal) -> raise support for the corroborated features while withholding inference where independent support is absent (inference). The source limit (shared origin, copying, common bias, unequal access) is carried over as dependent summaries, shared bugs and incomplete observation producing false convergence. The added clause that corroboration is not a causal experiment does not substitute a step; it correctly marks the boundary of what corroboration warrants."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The question has two parts. The first (which dependencies account for the failures) is addressed in bounded form: l1+l3 independently corroborate an s2 failure consistent with the signer path, l4+l5 corroborate an s4 failure consistent with the mirror path, l2 adds nothing, and l6/l7 show s1/s3 succeeding, so the mapping justifiably concludes that no single dependency accounts for all failures. The second part (what bounded remedy is supported) is not answered; the mapping deliberately stops at naming the missing causal test. A concrete bridge exists in the packet without changing the question: the replay affordance (signing enabled vs bypassed on s2/s4, then restore) is available within the stated budget but is not performed by the mapping."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the cross-check on l1-l7 with l2 collapsed into l1 produces an intelligible result: two independently corroborated failure schedules tied to different dependency paths, one dependent duplicate discarded, and no independent evidence for a signing-bypass remedy. That result warrants exactly the bounded inference stated: increased support for failure locations, refusal to generalize a signing remedy to s4 (a mirror failure), and identification of the replay test as the outstanding step. The inference is not circular and does not rest on source imagery. A minor overstatement is that l3 and l5 corroborate the publication outcome rather than the specific failed dependency, which is attested only by the single process record on each schedule; the mapping's own limit on incomplete observation covers this."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Whether the signing dependency causally accounts for the s2 failure and whether bypass is a remedy for it: establish by replaying s2 (and s4 as a control) with signing enabled and bypassed in the isolated workflow, then restoring signing, within the 12 replay-trial budget.",
+      "Whether any remedy addresses the s4 failure: the corroborated s4 record implicates the mirror, not the signer, so the supported remedy scope must be established per dependency rather than by signing bypass alone."
+    ],
+    "final_status": "Conditional",
+    "rationale": "Mechanism fidelity and operational coherence pass: the corroboration chain and its independence limit transfer cleanly to the log/receipt records, and the bounded inference follows from the cross-check. Target fidelity is conditional because the mapping answers the dependency-location half of the question but defers the remedy half to a replay test that the packet makes available yet the mapping does not perform. No criterion fails, so the status is Conditional with the specified replay test as the outstanding condition."
+  },
+  "uncertainty": [
+    "The dependency graph lists two paths (build->signer->registry and build->mirror->registry) without stating whether publication requires both or either; this affects how strongly a single-path failure explains a non-publication and is not resolved by the packet or the mapping.",
+    "l1 and l4 are self-reports from the failing process; the independent receipts (l3, l5) corroborate the outcome, not the named dependency, so dependency attribution rests on one source per schedule plus the graph.",
+    "The mapping's 'signing-remedy claims' are implied by the packet's known uncertainties rather than stated as an explicit claim by any record.",
+    "The mapping's narrowing of the remedy half to 'which remedy test is still needed' was treated as a bounded partial answer rather than a reframe; a stricter reading could log it as a reframe."
+  ]
+}

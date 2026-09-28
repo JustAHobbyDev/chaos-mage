@@ -1,0 +1,31 @@
+{
+  "case_id": "M009",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is intact. State: the packet stipulates a deterministic, fully resetting replay oracle over seven separable toggles with the empty set (revision 0) passing and the full set (revision 7) failing, which is exactly the precondition ddmin requires. Operation: alphabetic contiguous partitioning, subset-then-complement testing, retaining failing reductions and increasing granularity is a faithful ddmin. Signal: pass/fail per reduced set. Inference: a test-relative minimal or near-minimal failure-inducing subset, with untested minimality explicitly labeled unresolved when the 20-trial cap binds. Limits: the mapping carries over search-order and budget constraints and the source caveat that a minimal failing set is not the unique causal mechanism, and adds the packet's own caveat that it is not general user necessity."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The second half of the question (what interactions prevent a simple ranking) is directly answered: if the retained failing set has more than one element and each permitted single deletion returns pass, that is a demonstrated interaction that defeats independent per-feature ranking; if a single deletion still fails, the set was not 1-minimal and the mapping says so. The first half is answered in inverted form: ddmin identifies parts whose joint presence blocks replay activation rather than parts 'necessary' for activation. Since the empty rule set passes, no rule is necessary for replay activation in the literal sense, and the failure-inducing set is the meaningful bounded contribution. The mapping's limit explicitly excludes real-user necessity, consistent with the packet's stated fact that the replay is not a model of population-wide necessity."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Running ddmin on seven rules under a deterministic oracle produces a sequence of pass/fail outcomes that, by construction, yields a failing subset at each retained step. Both preconditions (test of empty set passes, full set fails) are stipulated. Budget use is intelligible: the ddmin run is the single primary operation, the single-deletion checks are the single immediate follow-up, and both draw on the shared 20 replay trials. For a two-rule interaction, a worked trace uses roughly fifteen trials, within cap; worse cases may exhaust the cap before 1-minimality, and the mapping bounds the claim accordingly rather than overclaiming."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+      "reframed_question": "Which subset of the current rules is a test-relative minimal failure-inducing set in the deterministic activation replay, and does any single deletion from that set still reproduce the failure?",
+      "relationship": "The mapping implicitly inverts 'necessary for activation' into 'sufficient to induce failure'. This contributes to the original question by identifying the parts that must be jointly changed or removed for the replay to reach activation and by directly testing whether an interaction (rather than any single feature) drives the failure, which is the ranking-blocking interaction the question asks about. It does not, and by the packet's stated facts cannot, establish real-user necessity; the mapping states this bound."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The target environment stipulates precisely the conditions delta debugging needs (deterministic resettable oracle, separable removable parts, passing empty set and failing full set), the operation is a faithful ddmin with an explicit budget-aware stopping rule, and the inference is bounded to test-relative minimality and interaction detection with real-user necessity excluded. The shift from necessity-for-activation to failure-induction is recorded as a reframe but does not change the assessment target, since it is the natural contribution of the source mechanism to that question and is explicitly bounded."
+  },
+  "uncertainty": [
+    "The 20-trial cap may be exhausted before full 1-minimality is checked for some failure structures; the mapping handles this by labeling minimality unresolved rather than claiming it, so it is a bound on the result, not a validity gap.",
+    "The mapping does not use the nested revision history or the certified single pass-to-fail transition, which could locate the failing revision in about three trials; ignoring an available affordance is a design choice, not a mechanism or coherence failure, and it is noted only as a missed efficiency.",
+    "Whether the inverted framing (failure-inducing set rather than activation-necessary set) satisfies a reader who wanted a literal 'necessary parts' list is a judgment call; in the stipulated replay the empty set passes, so the inverted answer is the only substantive one available."
+  ]
+}

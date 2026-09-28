@@ -1,0 +1,217 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C014",
+  "stage": "prospective",
+  "mapping_A": {
+    "source": {
+      "name": "Differential diagnosis",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+        "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+        "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+        "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+        "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+      }
+    },
+    "mapping": {
+      "state": "The live checkout regression admits deployment and load explanations.",
+      "operation": "Compare the three stated explanations. Run r1 under old/new at low/high load, update which explanations survive; immediately follow with old/new low-load r2 to discriminate an A-confined effect from other deployment effects.",
+      "signal": "Configuration and load contrasts may support, contradict or fail to distinguish candidate causes.",
+      "inference": "Narrow plausible explanations for the deployment-associated regression and select a dependency for later investigation; do not claim a unique mechanism.",
+      "limit": "Unlisted causes, uninformative contrasts and replay generalization limit diagnosis. Tests distinguish alternatives only to their sensitivity."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "mapping": {
+      "state": "Three supplied explanations compete for the same checkout evidence.",
+      "operation": "Build a full evidence-by-hypothesis inconsistency matrix from the supplied live records. Obtain old/new low-load r1 and r2 contrasts and compare each against every explanation. Follow up by dropping the confounded live aggregate and repeating the matrix, emphasizing surviving contradictions rather than support counts.",
+      "signal": "The cross-hypothesis pattern of contradictions may remain or disappear when uncertain live evidence is removed.",
+      "inference": "Weaken incompatible explanations and expose the next discriminating route or missing hypothesis, without treating a surviving explanation as proved.",
+      "limit": "Missing alternatives, dependent records and subjective diagnosticity can mislead; the replay findings are bounded to the calibrated regime."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "Configurations old and new differ only in the deployed cache-policy flag. Live traffic volume also changed, so the live association alone is confounded.",
+      "An isolated resettable replay can cross either configuration with low or high load on any listed route. A route trial returns endpoint latency in ms.",
+      "Independent calibration in this replay established an additive service-delay model at fixed load, endpoint measurement error bounded by 1 ms, and stable route membership. Calibration does not reveal current component delays.",
+      "Candidate explanations are a deployment effect on the B-containing dependency, a deployment effect confined to A, and load-only variation. Alternatives may be incomplete."
+    ],
+    "artifacts": {
+      "routes": {
+        "r1": [
+          "A",
+          "B",
+          "D"
+        ],
+        "r2": [
+          "A",
+          "C",
+          "D"
+        ],
+        "r3": [
+          "B",
+          "C"
+        ],
+        "r4": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "deployment_log": [
+        "old then new cache-policy flag; no other configuration change"
+      ],
+      "live_summary": {
+        "old_median_ms": 40,
+        "new_median_ms": 70,
+        "old_load": "low",
+        "new_load": "high"
+      }
+    },
+    "initial_observations": [
+      "The aggregate live route-r1 latency rose by 30 ms; attribution and component contributions are unresolved."
+    ],
+    "known_uncertainties": [
+      "No component-level timings are available. Replay effects need not generalize to every live workload."
+    ],
+    "available_affordances": [
+      "inspect supplied logs",
+      "compare hypotheses against supplied records",
+      "run endpoint replay(route, configuration, load)",
+      "fit candidate additive delay maps",
+      "test a held-out route"
+    ],
+    "constraints": [
+      "No internal service probes or live deployment changes.",
+      "All analyses use the same supplied route catalog."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "endpoint_trials": 10,
+      "analysis_passes": 2,
+      "maximum_replay_slots": 10
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

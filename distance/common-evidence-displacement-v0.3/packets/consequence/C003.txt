@@ -1,0 +1,800 @@
+# Common-evidence comparative epistemic displacement
+
+Assess only the supplied pair, fixed task, ordinary-practice baseline and shared
+starting state. Both mappings have exactly the same evidence, affordances and
+resource budget. Do not construct, repair, or reassess validity of mappings. Do not
+browse, call external tools, retrieve context, or use other judgments. Source
+identity and unusual vocabulary are not evidence of displacement.
+
+Displacement means a change from ordinary target inquiry in representing, acting,
+observing, inferring and choosing what to investigate next. It is not usefulness,
+confidence in the target answer, difficulty, number of steps, or source prestige.
+Do not invent a narrower baseline or lend one branch an unobserved result. Shared
+capability/calibration facts establish affordances; they do not disclose future
+outcomes. A mapping's signal and inference fields describe possible signals and
+bounded warrants, not promises that a favorable result will occur.
+
+If stage is prospective: compare operation choice, anticipated kinds of evidence,
+warrants, decomposition and expected inquiry trajectory. Realized outcomes are
+not supplied. Do not assume success, discriminating results, or full budget use.
+
+If stage is consequence: compare the supplied simulated operations and realized
+observations, what they license, which hypotheses change and what follows. Both
+branches start at the identical state and operate in the same underlying world.
+An uninformative result can legitimately limit consequential displacement. Do not
+invent additional trials or future results. Later proposed inquiries are proposals,
+not actions already performed inside the stipulated budget.
+
+First decide whether the mappings differ meaningfully in epistemic departure:
+- yes: at least one material difference, including material opposing advantages;
+- no: differences do not establish materially different displacement;
+- uncertain: the supplied information cannot support that decision; identify what
+  is missing, rather than using uncertainty merely because comparison is difficult.
+
+Compare five criteria separately. Each returns A, B, balanced or indeterminate
+with a rationale addressing both mappings against the baseline:
+1. action: which more substantially changes what the practitioner does?
+2. observables: which more substantially changes what counts as meaningful evidence?
+3. inferential_warrant: which more substantially changes why evidence supports a conclusion?
+4. problem_decomposition: which more substantially changes operationally meaningful parts or relations?
+5. inquiry_trajectory: which more substantially changes what is investigated next?
+
+Also return four comparative diagnostics using those same relations:
+- local_depth: which produces the deeper departure at its most changed point?
+- inquiry_propagation: which propagates its epistemic change through more steps
+  inside this stipulated investigation?
+- task_reach: which altered reasoning governs more of the complete target task,
+  including task portions left unresolved by this bounded investigation?
+- native_reducibility: which is harder to translate back into ordinary target
+  practice without losing an operationally important distinction?
+Balanced is no meaningful advantage on that comparison; indeterminate means
+insufficient information. These are pairwise relations, never intrinsic ratings.
+
+Return exactly one overall relation:
+- A_dominates: A has at least one materially greater epistemic departure, and B
+  has no countervailing displacement advantage of comparable importance.
+- B_dominates: the symmetric condition.
+- tradeoff: each has a material advantage in different consequential respects,
+  with no principled supplied basis for collapsing them into a winner. This is
+  not mere difficulty, uncertainty, equal displacement, or any tiny opposing edge.
+- approximately_equal: no meaningful comparative displacement difference is
+  established, even if mechanisms or vocabulary differ.
+- insufficient_information: a defensible comparison needs missing information.
+
+Enforce: meaningful_difference no -> approximately_equal; uncertain ->
+insufficient_information; yes -> A_dominates, B_dominates, or tradeoff. A genuine
+local-depth versus task-reach conflict belongs under yes/tradeoff, not no/equality.
+
+Explain the most important difference and explicitly address local depth, inquiry
+propagation, task reach and native reducibility in decisive_basis. Explain why any
+opposing advantages are comparable or not. One central difference can decide the
+comparison. Never count criterion wins, average categories, assign weights, or
+produce a numerical composite. Return confidence clear or close and an uncertainty
+list; insufficiency must name missing information. Return only the required JSON.
+
+
+CASE PACKET
+{
+  "case_id": "C003",
+  "stage": "consequence",
+  "mapping_A": {
+    "source": {
+      "name": "Delta debugging",
+      "practice": "Software debugging and testing",
+      "instrument": {
+        "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+        "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+        "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+        "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+        "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+      }
+    },
+    "mapping": {
+      "state": "The current failing onboarding rule set can be partitioned and reduced under a fixed reproducible oracle.",
+      "operation": "Use deterministic ddmin with alphabetic contiguous partitions: test subsets then complements, retain a failing reduction, and increase partition count if no reduction succeeds, stopping at the shared trial cap. Follow up by testing the final set and each permitted single deletion while budget remains; label untested minimality unresolved.",
+      "signal": "Some reduced sets reproduce failure while others pass, defining a test-relative minimality boundary if fully checked.",
+      "inference": "Identify a bounded failure-inducing interaction set and whether any tested single deletion preserves failure, directing joint feature investigation rather than independent ranking.",
+      "limit": "Search order, budget and oracle scope constrain minimality; a minimal failing set is neither a unique causal mechanism nor general user necessity."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "A",
+              "B",
+              "C"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "A",
+              "B",
+              "C"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "A"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "fail"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "fail"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "fail"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "C",
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "D",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "fail"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "E"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "partition rules or revisions",
+          "parameters": {
+            "final_set": [
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "resulting_signal": {
+            "checked": [
+              {
+                "rules": [
+                  "B",
+                  "C",
+                  "D",
+                  "E"
+                ],
+                "failure": true
+              },
+              {
+                "rules": [
+                  "C",
+                  "D",
+                  "E"
+                ],
+                "failure": false
+              },
+              {
+                "rules": [
+                  "B",
+                  "D",
+                  "E"
+                ],
+                "failure": true
+              },
+              {
+                "rules": [
+                  "B",
+                  "C",
+                  "E"
+                ],
+                "failure": false
+              }
+            ],
+            "all_final_checks_completed": false,
+            "limit": "Only tested permitted reductions support minimality; no unique mechanism or population necessity."
+          },
+          "resource_use": {
+            "analysis_passes": 2
+          }
+        }
+      ],
+      "resource_use": {
+        "replay_trials": 20,
+        "analysis_passes": 2,
+        "maximum_slots": 20
+      },
+      "limits": "Search order, budget and oracle scope constrain minimality; a minimal failing set is neither a unique causal mechanism nor general user necessity.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Differential diagnosis",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+        "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+        "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+        "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+        "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+      }
+    },
+    "mapping": {
+      "state": "The fixed activation failure has copy, individual-guard and interaction explanations.",
+      "operation": "Use the shared current replay and rule roles to retain competing explanations. Test current rules without A, without B and without D, comparing every result to those explanations. Follow up by testing B alone and D alone to distinguish individual-guard accounts from an interaction possibility.",
+      "signal": "Discriminating replay outcomes support, contradict or leave open candidate dependency explanations.",
+      "inference": "Narrow which parts plausibly obstruct activation and which interaction deserves the next inquiry, without asserting all necessary product features.",
+      "limit": "Unlisted mechanisms and replay-specific sensitivity limit diagnosis; individually harmless rules may interact and do not prove population-wide necessity."
+    },
+    "realized": {
+      "operations_and_observations": [
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "fail"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "A",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "primary",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "A",
+              "B",
+              "C",
+              "E",
+              "F",
+              "G"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "B"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1
+          }
+        },
+        {
+          "phase": "followup",
+          "affordance": "test any rule subset",
+          "parameters": {
+            "rules": [
+              "D"
+            ],
+            "revision": null
+          },
+          "resulting_signal": {
+            "activation": "pass"
+          },
+          "resource_use": {
+            "replay_trials": 1,
+            "maximum_slots": 1,
+            "analysis_passes": 2
+          }
+        }
+      ],
+      "resource_use": {
+        "replay_trials": 5,
+        "analysis_passes": 2,
+        "maximum_slots": 5
+      },
+      "limits": "Unlisted mechanisms and replay-specific sensitivity limit diagnosis; individually harmless rules may interact and do not prove population-wide necessity.",
+      "status": "Simulated realized observations in the common authored world; no omniscient facts supplied."
+    }
+  },
+  "common_start": {
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?"
+  },
+  "native_baseline": {
+    "target_domain": "product-proposal decomposition",
+    "target_task": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "reference_practitioner": "Product manager specializing in onboarding discovery and usability studies, without formal program-reduction training.",
+    "ordinary_methods": [
+      "Decompose proposals into user needs, flows, assumptions and dependencies.",
+      "Run usability sessions with prototypes and compare activation funnels or staged variants.",
+      "Use qualitative failure observations and small experiments to prioritize changes."
+    ],
+    "ordinary_evidence": [
+      "Interview notes, prototype task completion, funnel events, feature dependencies and observed user errors."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Practices vary; formal minimality searches and routing inversions are not assumed routine."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "A deterministic onboarding replay is calibrated against the fixed activation task. Each permitted rule subset is executable and resets completely; one trial returns pass/fail for activation. This is not a model of population-wide user necessity.",
+      "Eight executable revisions form a nested history. Independent certification establishes repeatability and exactly one pass-to-fail transition on this chain, without disclosing its location. Revision 0 passes; revision 7 fails.",
+      "Rules A-G are separable toggles. A is welcome copy, B an identity prerequisite, C a theme, D a navigation guard, E a tooltip, F an optional survey, G a confirmation banner.",
+      "Plausible explanations include copy confusion, either guard alone, and interactions. Existing replay traces show a guard wait but do not identify its cause."
+    ],
+    "artifacts": {
+      "revisions": {
+        "0": [],
+        "1": [
+          "A"
+        ],
+        "2": [
+          "A",
+          "D"
+        ],
+        "3": [
+          "A",
+          "B",
+          "D"
+        ],
+        "4": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "5": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "6": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "7": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      },
+      "current_rules": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "known_endpoints": {
+        "0": "pass",
+        "7": "fail"
+      }
+    },
+    "initial_observations": [
+      "Current replay cannot reach activation; deciding which proposal parts require joint investigation remains open."
+    ],
+    "known_uncertainties": [
+      "Replay minimality, revision association and real-user necessity are different claims."
+    ],
+    "available_affordances": [
+      "inspect existing traces and revision manifests",
+      "test any rule subset",
+      "test any archived revision",
+      "partition rules or revisions",
+      "update competing explanations"
+    ],
+    "constraints": [
+      "No new participant study; no changing the replay success criterion."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "replay_trials": 20,
+      "analysis_passes": 2,
+      "maximum_slots": 20
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
+}

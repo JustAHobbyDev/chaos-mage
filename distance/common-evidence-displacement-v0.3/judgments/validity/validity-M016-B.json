@@ -1,0 +1,36 @@
+{
+  "case_id": "M016",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain: a controllable input (routing fraction) with an observable time-varying output (support queue) as state; a known 0-to-1 step with trajectory recording across the six-sample horizon as operation; delay, peak, return and persistence features as signal; and a dynamics-based characterization as inference. Recording treated and comparison replicas at each sample addresses the fact that the system starts from an adverse, non-equilibrium snapshot (queue 8 vs baseline 4), since differencing against the held comparison isolates the step response. The limit field carries over finite horizon, disturbances, nonlinearity and operating-point dependence. The mapping's 'duplicate-alert queue' label is not in the packet, but the channel it refers to (support_queue) is, so this is vocabulary drift rather than a lost step."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The inference explicitly declines the first half of the retained question (whether the segment is deteriorating) and offers a bounded contribution to the second half (what observation should follow) by sizing a support-queue observation window from the measured response. That bounding is honest and consistent with the packet fact that a routing experiment affects the support subsystem only. However, the contribution reaches the rollout question only if the queue's dynamic response to a routing perturbation is informative about how the queue behaves under exposure-driven load, which is the perturbation the rollout question actually concerns. That bridge is concrete and testable but not established in the mapping, so the contribution is conditional rather than addressed."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing the routing step on a reset replica and sampling both channels plus controls at hours 1-4, then 5-6, fits the ledger (one input step, six samples, one primary operation, one follow-up, two analysis passes) and would produce delay, peak, return and persistence features for the queue. Deriving an observation window from those features (e.g., window at least as long as observed return time) is intelligible. Two named conditions remain: the empirical relation that the queue's routing-step dynamics represent its dynamics under other drivers at this operating point, and confirmation that the hours 5-6 follow-up continues the same stepped replica rather than starting from an independent reset, since the ledger allows no second input step and a reset follow-up could not test persistence of the stepped trajectory."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+      "reframed_question": "Given the support queue's measured response to a calibrated routing-fraction step, what observation window is appropriate for monitoring the support channel before handing off to ordinary full-segment review?",
+      "relationship": "The mapping enacts a narrowing: it sets aside the deterioration judgment and the cohort channel's interpretation, and answers only a window-selection subtask for the support channel. This contributes to the 'what observation should follow' part of the original question and does not answer the 'is it deteriorating' part. The contribution is real only under the bridge that queue dynamics measured via routing transfer to queue behavior under exposure-driven load; otherwise the reframed answer characterizes the routing subsystem rather than the rollout."
+    },
+    "unresolved_conditions": [
+      "Establish that the support queue's response dynamics (delay, peak, return time) to the routing step represent the queue's dynamics under exposure-driven load at this operating point. Within budget: compare the differenced treated-minus-comparison response against the comparison replica's own unperturbed queue trajectory over the same six hours to check whether the return-time scale is consistent. Outside budget: an exposure-step replica run would test it directly.",
+      "Confirm that the hours 5-6 follow-up samples continue the same stepped replica rather than starting from an independent reset, as the 'both branches start from an independent reset' constraint could be read either way; if a reset is required, persistence cannot be tested without a second input step the ledger does not allow.",
+      "State the rule that converts response features into an observation window (e.g., window not shorter than observed return or settling time, or the horizon if no return occurs within six hours) so the inference is bounded rather than left to judgment."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. Mechanism fidelity is preserved: the step-response chain, the use of controls, and the relevant limits are carried into the replica-based routing experiment within the stated ledger. Target fidelity and operational coherence are both conditional for the same reason: the mapping's bounded output, a support-queue observation window, only contributes to the rollout question if routing-step queue dynamics are representative of queue behavior under exposure-driven load, and that empirical relation is identifiable and testable but not established. A secondary coherence condition concerns whether the follow-up continues the stepped replica. The mapping does not claim more than it can warrant, so the result is Conditional rather than Invalid."
+  },
+  "uncertainty": [
+    "The budget constraint 'Both branches start from an independent reset of this same world' is ambiguous: it most plausibly refers to the native and transfer branches each getting a fresh world, but if it applies to the primary/follow-up split, the persistence test at hours 5-6 would not be executable with one input step.",
+    "The mapping uses 'duplicate-alert queue' and 'support-alert observation window', terms absent from the packet; I read them as referring to the support_queue channel and a monitoring window for that channel, but the intended meaning of 'alert' is not specified.",
+    "Isolating the step response by differencing treated and comparison replicas assumes the ongoing pre-existing transient (baseline 4 to snapshot 8) combines additively with the routing-step response; the packet does not state whether the queue behaves linearly enough for that.",
+    "The mapping selects routing rather than the available exposure step; the packet does not say why, and this choice, not the transfer mechanism, is what limits relevance to the cohort question."
+  ]
+}

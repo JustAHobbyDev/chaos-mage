@@ -1,0 +1,32 @@
+{
+  "case_id": "M005",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is intact. State: the mapping starts from a fixed failure with several live explanations (copy confusion via A, guard B alone, guard D alone, interactions), matching the stated packet facts. Operation: it holds those explanations open and gathers evidence that bears differently on them, since 'all minus A', 'all minus B' and 'all minus D' each test whether one rule is required for the failure, and the follow-up 'B alone' and 'D alone' tests whether a guard is sufficient by itself, which separates single-guard accounts from a joint B-D dependence. Signal: deterministic pass/fail outcomes per subset are compared to each explanation, giving the source's support/contradiction/non-discrimination pattern. Inference: explanations are reprioritized or eliminated without committing to one cause. Limits: 'unlisted mechanisms' carries the source's hypothesis-generation constraint, 'replay-specific sensitivity' carries test sensitivity, and the explicit retention of competitors addresses premature closure. Iteration is compressed to one pre-specified follow-up, but the budget permits only one, and the follow-up still discriminates in every outcome branch, so no material step is lost."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has two parts. The interaction clause is addressed directly: the five subset tests can show whether removing either guard alone restores activation while neither guard alone breaks it, which is exactly the pattern that defeats a simple per-feature ranking. The necessity clause is addressed as an explicitly bounded contribution. The inference identifies which redesign parts obstruct activation in the calibrated replay and disclaims both completeness ('without asserting all necessary product features') and real-user generalization ('do not prove population-wide necessity'), consistent with the packet's stated uncertainty that replay minimality and real-user necessity are different claims. The mapping does not answer a different question; it answers the same one within the replay's stated scope and says so."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (five subset replays, each a complete reset with a certified repeatable pass/fail) produces Y (a pass/fail vector over A-removed, B-removed, D-removed, B-alone, D-alone) that warrants Z (narrowing). Every outcome branch is informative: a pass on a removal test shows that rule is required for the failure; a fail on a solo-guard test shows that guard is sufficient; passes on all removal tests together with passes on both solo tests indicate a joint dependence; fails on all three removal tests push the cause toward C, E, F, G or redundancy, which the solo tests then partly resolve. Resource use fits the ledger: one primary operation of three elementary trials, one immediate follow-up of two, five of twenty replay trials, two analysis passes. No new participant study or criterion change is required. The inference is bounded to plausibility narrowing and next-inquiry selection, not a completeness claim."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the differential-diagnosis chain of competing explanations, discriminating evidence, support/contradiction signal and non-committal narrowing, with limits that track the source's hypothesis-generation and sensitivity constraints. It addresses the retained question within the replay's stated scope, directly for the interaction clause and with explicit bounding for the necessity clause. The five subset replays are executable under the budget and each outcome pattern warrants a specific narrowing, so no named measurement or bridge is left unresolved and unresolved_conditions is empty."
+  },
+  "uncertainty": [
+    "The question asks which parts are 'necessary for users to complete activation' while the inference speaks of parts that 'obstruct activation'. Since revision 0 (no rules) passes, obstruction is the only necessity-relevant relation the replay can expose, and the mapping bounds itself accordingly. A stricter reader could treat this as an implicit reframe rather than a bounded contribution.",
+    "The follow-up (B alone, D alone) is fixed in advance rather than chosen after seeing the first three results. It remains informative in every branch, but it is less adaptive than the source's 'repeatedly revise' operation; the one-follow-up budget makes full adaptivity impossible anyway.",
+    "The mapping does not use the nested revision chain or the certified single pass-to-fail transition. This is not required by the source, but it means interactions involving only C, E, F or G are left to the 'unlisted mechanisms' limit rather than tested.",
+    "Assessment relies on the packet's stated facts that the replay is deterministic and fully resets; if replay outcomes were noisy, the single-trial-per-subset design would need repeats, but the packet certifies repeatability."
+  ]
+}

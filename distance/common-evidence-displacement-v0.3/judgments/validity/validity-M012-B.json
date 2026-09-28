@@ -1,0 +1,32 @@
+{
+  "case_id": "M012",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The chain survives intact: a controllable input (cohort exposure on an isolated replica) drives outputs observable over time (cohort error percent and support queue, treated versus calibrated comparison); a single known 0-to-1 step is applied and the trajectory recorded across the six-sample horizon; the signal is read as temporal features (delay, peak, overshoot, later shift, persistence); the inference is confined to constraining how the segment reacts to the perturbation rather than identifying a unique mechanism or assuming equilibrium. Source limits are carried over explicitly (no settling within six hours, disturbances, initial state, nonlinearity, operating-point dependence). The choice of the exposure input rather than routing respects the packet fact that cohort inference needs the cohort channel, and the operation fits the ledger: one input step, six time samples split across the primary procedure (hours 1-4) and the single permitted immediate follow-up (hours 5-6), two analysis passes."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks whether the rollout is deteriorating for a segment and what observation or reversible action should follow. The mapped procedure yields treated-versus-control trajectories for both channels after an exposure step, which distinguishes a transient adverse response from a persisting one and thereby bears directly on whether the adverse current snapshot reflects ongoing deterioration attributable to exposure. The inference is explicitly bounded to characterizing that response as the basis for the next observation window and a reversible exposure choice; it does not claim causation in the live population or long-run equilibrium. That is a justified, bounded contribution to both halves of the question. The mapping stops short of stating a decision rule tying particular trajectory shapes to particular actions, which limits how fully the second half is answered, but it does not answer a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the step on a replica reset to the common starting state, with calibrated controls and reliable sampling stipulated as facts, produces paired hourly trajectories. Comparing treated and comparison channels across hours 1-4 and then 5-6 produces measurable delay, peak, and persistence features. Those features warrant a bounded statement about whether exposure induces a lagged, transient, or persisting shift in errors and queue, which is the evidence needed to select the next observation window or a reversible exposure change. No step relies on source imagery alone and no empirical relation beyond the stipulated calibration must be established first. Hourly resolution limits detection of sub-hour delay and the horizon may not reveal settling, both acknowledged in the mapped limit."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the state-operation-signal-inference chain of step-response probing with its limits, stays within the stated budget and constraints, selects the input whose response bears on cohort deterioration, and confines its inference to a bounded characterization that informs the retained question's observation and reversible-action choices. The remaining weaknesses (replica generalization, no explicit decision rule, coarse sampling) are acknowledged limits or interpretive gaps rather than lost mechanism steps, unsupported inferences, or establishable conditions that gate validity."
+  },
+  "uncertainty": [
+    "Whether the replica reset state corresponds to the pre-rollout baseline (error 2, queue 4) or the current adverse snapshot (error 3, queue 8) is not stated; the 0-to-1 step implies an unexposed start, but this affects how the measured response maps onto the live segment's current condition.",
+    "The packet itself flags that replicas may not generalize to the live population; the mapping acknowledges operating-point dependence but the strength of the transfer from replica response to live-segment deterioration rests on the stipulated 'representative' status of the replicas.",
+    "The mapping defers the choice of observation window and reversible action to the measured response without stating a decision rule (for example, persistent elevation at hours 5-6 relative to controls versus return toward baseline), so the second half of the question is informed rather than fully resolved by the mapped inference.",
+    "Six hourly samples give coarse temporal resolution; delay, overshoot, and peak features shorter than the sampling interval or settling beyond hour 6 will not be resolved, as the mapped limit notes."
+  ]
+}

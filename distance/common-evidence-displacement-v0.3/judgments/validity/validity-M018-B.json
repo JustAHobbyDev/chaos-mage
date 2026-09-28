@@ -1,0 +1,32 @@
+{
+  "case_id": "M018",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the ACH chain intact. State: three explicitly named hypotheses (B-side deployment effect, A-confined deployment effect, load-only) compete for the same latency evidence. Operation: each evidence item (live aggregate, replay contrasts) is scored against every hypothesis, inconsistency is emphasized over support counts, and the follow-up that drops the confounded live aggregate and re-runs the matrix is a direct counterpart of the source's sensitivity test. Signal: the cross-hypothesis contradiction pattern and whether it survives removal of weak evidence. Inference: weaken incompatible explanations without treating the survivor as proved. The limit field carries forward missing alternatives, dependent records and subjective diagnosticity, and adds the replay-regime bound. No step is substituted, and no requirement absent from the source is introduced."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which deployed change accounts for the regression and what bounded causal evidence separates it from load variation. Under the stated additive fixed-load model, old/new contrasts on r1 (A,B,D) and r2 (A,C,D) at low load make distinct predictions: load-only predicts no change on either route within the 1 ms error bound; an A-confined effect predicts equal shifts on both; a B-side effect predicts a shift on r1 only. Holding load fixed while varying configuration is exactly the causal separation the question requests, and the mapping delivers it as an explicitly bounded contribution (bounded to the calibrated replay regime, with the hypothesis set flagged as possibly incomplete). The single deployed change is the cache-policy flag, so the question reduces to locating its effect, which the A-versus-B discrimination handles."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the four replay trials (r1 and r2, old and new configuration, low load) fits within the budget of 10 endpoint trials and one primary operation; the matrix rebuild uses the second analysis pass and the single follow-up. The trials produce two contrast values that the affordance 'fit candidate additive delay maps' turns into per-hypothesis consistency judgments; the resulting pattern warrants weakening whichever hypotheses predict the wrong contrasts. The live aggregate is correctly treated as non-diagnostic (all three hypotheses fit a 40 to 70 ms rise under changed load) and removed in the sensitivity pass. The inference is bounded and does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful ACH transfer whose chosen evidence (fixed-load old/new contrasts on two routes sharing A and D but differing in B versus C) is genuinely diagnostic among the three stated hypotheses under the packet's stated calibration facts, and the inference is explicitly bounded rather than treated as proof. The follow-up sensitivity step mirrors the source and stays within the investigation budget. No question change was proposed or enacted."
+  },
+  "uncertainty": [
+    "The mapping tests only low-load contrasts. If the cache-policy effect interacts with load (manifesting only at high load), a null low-load result would be misread as favoring load-only; the mapping's regime bound acknowledges this but does not spend remaining trial budget on a high-load contrast.",
+    "The mapping does not spell out the per-hypothesis predicted contrast pattern; it is implied by the 'fit candidate additive delay maps' affordance and the stated additive model rather than stated explicitly.",
+    "The stated hypothesis set may be incomplete (e.g., an effect on D or a mixed A-plus-B effect); r1/r2 contrasts alone cannot separate an A-confined effect from an effect on the shared D component, which the mapping's 'missing hypothesis' clause covers but does not resolve.",
+    "Replay results are stated not to generalize to every live workload; the transfer from replay regime to the live high-load regression is bounded, not established."
+  ]
+}

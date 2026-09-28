@@ -1,0 +1,33 @@
+{
+  "case_id": "M014",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "State keeps the multi-explanation condition (deployment vs load). Operation keeps the source chain: hold competing candidates, gather evidence that bears differently on them (r1 old/new x low/high isolates configuration from load; r2 old/new at low load contrasts an A-containing/B-free route against the A+B route), and revise after each pass. Signal keeps support/contradiction/non-discrimination. Inference keeps narrowing without early commitment to a unique cause. Limit retains the source's hypothesis-set and sensitivity constraints (unlisted causes, uninformative contrasts, tests discriminate only to their sensitivity) plus replay generalization. The mapping uses the packet's stipulated three candidates rather than generating new ones, but the source's hypothesis-generation limit is carried explicitly, so no warrant is lost."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which deployed change accounts for the regression and what bounded causal evidence separates it from load. The packet stipulates one configuration change and three candidates. The r1 factorial replay directly supplies the bounded causal evidence: a config contrast at fixed load separates deployment effect from load-only variation under the calibrated additive model with 1 ms error. The r2 follow-up discriminates the A-confined hypothesis (r2 shifts with config) from the B-containing hypothesis (r2 does not shift). The inference claims only narrowing and a dependency to prioritize, which is an explicitly bounded contribution rather than a substituted question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The procedure fits the budget: one primary operation (four r1 cells), one immediate follow-up (two r2 cells), six endpoint trials of ten, two analysis passes. Given stated facts (additive delays at fixed load, 1 ms measurement bound, stable route membership, resettable replay), running these contrasts produces latency differences whose sign and size warrant the stated eliminations: a null config contrast on r1 contradicts both deployment hypotheses; a nonzero r1 contrast with a null r2 contrast supports the B-containing hypothesis; matching nonzero contrasts support the A-confined hypothesis. The inference is bounded to the listed alternatives and acknowledges that shared components (A, D in both routes) and unlisted causes cannot be separated by this design."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful, budget-feasible instance of differential diagnosis: competing stated causes are held open, a factorial config-by-load replay on r1 separates deployment from load, and a route contrast on r2 discriminates the two deployment hypotheses under the packet's calibrated additive model. The inference stays bounded to narrowing and prioritization, and the limit carries the source's hypothesis-set, sensitivity and generalization constraints. No unresolved bridge or missing measurement gates the chain; remaining weaknesses are design limitations the mapping already acknowledges rather than validity failures."
+  },
+  "uncertainty": [
+    "The mapping does not state replicate counts per cell; with a 1 ms error bound and a 30 ms live regression, single trials are likely sufficient, but small component effects near the bound would be undetectable.",
+    "The r2 follow-up is pre-committed at low load only. If the r1 factorial reveals a deployment effect that appears only under high load, the low-load r2 contrast may be uninformative for discriminating A-confined from B-containing effects; the mapping's signal and limit fields acknowledge non-discrimination but do not adapt the follow-up.",
+    "Components A and D appear in both r1 and r2, so a deployment effect on D (unlisted) would mimic the A-confined hypothesis; the mapping's 'unlisted causes' limit covers this but the inference could misattribute if the candidate set is incomplete.",
+    "Mixed effects (deployment affecting both A and B) would produce nonzero contrasts on both routes of unequal size; the mapping's bounded inference tolerates this but does not explicitly describe how it would be reported.",
+    "Replay-to-live generalization is stated as a known uncertainty in the packet and retained in the limit; the inference about the live regression is therefore indirect."
+  ]
+}

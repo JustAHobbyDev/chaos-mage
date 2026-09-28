@@ -1,0 +1,31 @@
+{
+  "case_id": "M011",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Overlapping routes provide endpoint observations that constrain hidden service-delay changes. Comparing measured differences with additive-model predictions and adjusting compatible maps preserves the inverse-modeling chain. Non-uniqueness, sparse coverage, measurement error and model limits remain explicit."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Old/new comparisons at fixed low load isolate the cache-policy flag within replay because it is the only configuration difference. This provides bounded evidence distinguishing a deployment effect from load-only variation, without claiming complete attribution of the live regression or identifying a code mechanism."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Independent calibration establishes the additive model, stable route membership and bounded endpoint error. The proposed measurements therefore constrain service-delay changes operationally. Six initial endpoint trials and two follow-up trials fit the ledger; fitting and held-out assessment fit two analysis passes. No later inspection is needed to support the stated bounded inference."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping preserves model-based inference from overlapping paths and supplies a controlled deployment contrast relevant to attribution. Its conclusions remain explicitly limited to measured replay constraints."
+  },
+  "uncertainty": [
+    "Replay results are not supplied, so the direction, magnitude and localization of any deployment effect remain unknown.",
+    "The non-unique solution set from r1-r3 may permit broad r4 predictions, limiting the discriminatory strength of the held-out residual check.",
+    "Low-load replay does not establish deployment effects at high load or their contribution to the full live regression; candidate explanations may also be incomplete."
+  ]
+}
