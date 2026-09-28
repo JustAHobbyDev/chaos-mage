@@ -1,0 +1,266 @@
+{
+  "completed_at": "2026-09-28T08:50:49.611551+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.044s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance",
+        "-p",
+        "test_harness.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.384s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/boundary-v0.2",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "primary-001-A: failed\n................\n----------------------------------------------------------------------\nRan 16 tests in 1.682s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/v0.3/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 14.135s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/validity-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "validity-017-B: failed\n...............\n----------------------------------------------------------------------\nRan 15 tests in 5.635s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "validity-019-A: failed\n.....................\n----------------------------------------------------------------------\nRan 21 tests in 2.702s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "20 frozen cases verified"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/review/verify_review.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified: 38 judgments; 19 reviewed pairs; all disagreement fields; 10 Remote/Alien reviews; metrics and retry coverage; private v0.1/v0.2 hashes"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/v0.3/verify_preparation.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"preserved_files\": 174,\n  \"prepared_cases\": 24,\n  \"retrospective_examples\": 12,\n  \"planned_judgments\": 48,\n  \"status\": \"PREPARED / UNEXECUTED\"\n}"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "verify-results: OK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/review/review_tools.py",
+        "verify",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified all 48 judgments, 24 case reviews, eight contrasts and metrics; private execution hashes checked"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/review/review_tools.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "validity-M004-B: failed\n...........................\n----------------------------------------------------------------------\nRan 27 tests in 3.982s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.304s\n\nOK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 28, 'orientation_controls': 6, 'comparison_judgments': 68}"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 28, 'orientation_controls': 6, 'comparison_judgments': 68}"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "output": "?? distance/comparative-displacement-v0.3/metrics.json\n?? distance/comparative-displacement-v0.3/review/\n?? distance/review/comparative-displacement-v0.3.md"
+    }
+  ],
+  "test_count": 129,
+  "all_checks_passed": true
+}
