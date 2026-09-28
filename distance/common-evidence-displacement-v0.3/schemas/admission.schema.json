@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "mapping_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "validity_A": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "validity_B": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "admitted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "mapping_id",
+    "target_id",
+    "validity_A",
+    "validity_B",
+    "admitted"
+  ],
+  "additionalProperties": false
+}

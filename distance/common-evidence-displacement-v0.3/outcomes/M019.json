@@ -1,0 +1,147 @@
+{
+  "mapping_id": "M019",
+  "target_id": "T03",
+  "world_id": "W-T03",
+  "world_sha256": "d0924ad511dc498f6b2c73c76b2911b79384796dce924d897e4508a5b5af3604",
+  "common_state_sha256": "7256e410844d616b2b6e69e72426e5fbba10b220318740c948214867335f0ec9",
+  "mapping_sha256": "1c9533e1a8deb9598a664f843a20781542e0cfd22fe269b87486efef27447cfe",
+  "operation_performed": {
+    "recipe": "assembly",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "compare every feature against hypotheses",
+        "parameters": {
+          "hypotheses": {
+            "H1": "A revised before B then C were attached",
+            "H2": "A revised after B then C were attached",
+            "H3": "C attached before B; A revision time open"
+          }
+        },
+        "resulting_signal": {
+          "matrix": {
+            "H1": {
+              "join": "consistent",
+              "quote": "consistent",
+              "witness": "consistent",
+              "paper": "uncertain"
+            },
+            "H2": {
+              "join": "consistent",
+              "quote": "consistent",
+              "witness": "consistent",
+              "paper": "uncertain"
+            },
+            "H3": {
+              "join": "inconsistent",
+              "quote": "consistent",
+              "witness": "consistent",
+              "paper": "uncertain"
+            }
+          }
+        },
+        "resource_use": {
+          "record_accesses": 7,
+          "analysis_passes": 1,
+          "work_minutes": 60
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "remove disputed dating and repeat comparison",
+        "parameters": {
+          "omit": "paper"
+        },
+        "resulting_signal": {
+          "matrix": {
+            "H1": {
+              "join": "consistent",
+              "quote": "consistent",
+              "witness": "consistent"
+            },
+            "H2": {
+              "join": "consistent",
+              "quote": "consistent",
+              "witness": "consistent"
+            },
+            "H3": {
+              "join": "inconsistent",
+              "quote": "consistent",
+              "witness": "consistent"
+            }
+          },
+          "remaining": [
+            "H1",
+            "H2"
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 3,
+          "analysis_passes": 1,
+          "work_minutes": 30
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "matrix": {
+        "H1": {
+          "join": "consistent",
+          "quote": "consistent",
+          "witness": "consistent",
+          "paper": "uncertain"
+        },
+        "H2": {
+          "join": "consistent",
+          "quote": "consistent",
+          "witness": "consistent",
+          "paper": "uncertain"
+        },
+        "H3": {
+          "join": "inconsistent",
+          "quote": "consistent",
+          "witness": "consistent",
+          "paper": "uncertain"
+        }
+      }
+    },
+    {
+      "matrix": {
+        "H1": {
+          "join": "consistent",
+          "quote": "consistent",
+          "witness": "consistent"
+        },
+        "H2": {
+          "join": "consistent",
+          "quote": "consistent",
+          "witness": "consistent"
+        },
+        "H3": {
+          "join": "inconsistent",
+          "quote": "consistent",
+          "witness": "consistent"
+        }
+      },
+      "remaining": [
+        "H1",
+        "H2"
+      ]
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "physical_assays": 0,
+    "record_accesses": 10,
+    "analysis_passes": 2,
+    "work_minutes": 90
+  },
+  "limits": "Unlisted sequences, dependent features and subjective interpretation may mislead; surviving the matrix is not proof of a chronology."
+}

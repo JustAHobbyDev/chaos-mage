@@ -1,0 +1,28 @@
+{
+  "case_id": "M015",
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "evidence": [
+      "{\"investigation_budget\": {\"immediate_followups\": 1, \"new_external_sources\": 0, \"other_constraints\": [\"Both branches start from an independent reset of this same world.\", \"A procedure may contain elementary trials, but all consume the common ledger.\", \"Unused resources are allowed; proposed later inquiries are not performed within this budget.\"], \"primary_operations\": 1, \"resource_ledger\": {\"analysis_passes\": 2, \"horizon_hours\": 6, \"input_steps\": 1, \"time_samples\": 6}}, \"native_baseline\": {\"ordinary_evidence\": [\"Exposure logs, cohort outcomes, error and support rates, deployment history and comparison-group trends.\"], \"ordinary_methods\": [\"Track cohort metrics over time against pre-rollout baselines and comparison groups.\", \"Inspect segment differences and investigate anomalies with support and product teams.\", \"Pause or roll back an exposure and compare subsequent measurements when warranted.\"], \"reference_practitioner\": \"Product operations analyst specializing in staged rollout monitoring, without formal control-system identification training.\", \"target_domain\": \"product-rollout monitoring\", \"target_task\": \"Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?\", \"uncertainty\": [\"Scoped authored hypothesis, not verified practitioner consensus.\", \"Monitoring conventions vary; causal conclusions require controls, and designed dynamic identification is outside the scoped baseline.\"]}, \"shared_state\": {\"artifacts\": {\"channels\": [\"cohort_error_percent\", \"support_queue\"], \"current_snapshot\": {\"error_percent\": 3, \"queue\": 8}, \"initial_metrics\": {\"error_percent\": 2, \"queue\": 4}, \"inputs\": [\"exposure\", \"routing\", \"hold\"], \"sample_hours\": [1, 2, 3, 4, 5, 6]}, \"available_affordances\": [\"repeat matched measurements while holding settings\", \"step exposure\", \"step routing fraction\", \"measure both channels and controls\", \"compare response delay peak and persistence\"], \"constraints\": [\"At most one input step in the primary procedure; no real-user rollout change.\"], \"facts\": [\"Authored synthetic environment; no real persons or organizations.\", \"Two isolated, representative rollout replicas can be reset to the same starting state. One controls cohort exposure; another controls support-routing fraction. Either is available to both branches.\", \"A known 0-to-1 step can be applied to either input. Independent calibration establishes stable comparable controls and reliable time sampling for each channel, but does not disclose the current response trajectory.\", \"One time sample returns treated and comparison error rates and support-queue counts. The observation horizon is six hourly samples. Holding current settings is also available.\", \"Baseline error is 2 percent and baseline support queue is 4. A routing experiment affects the support subsystem; any inference about cohort deterioration needs the cohort channel too.\"], \"initial_observations\": [\"The current snapshot is adverse; persistence, transient shape, and the next safe observation window remain unresolved.\"], \"known_uncertainties\": [\"Six hours cannot establish long-run equilibrium or a unique causal mechanism; replicas may not generalize.\"]}, \"target\": {\"domain\": \"product-rollout monitoring\", \"question\": \"Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?\"}}"
+    ]
+  },
+  "mapping": {
+    "state": "An adverse rollout snapshot may reflect transient variation or sustained deterioration.",
+    "operation": "Hold current settings and repeat matched treated/comparison error and support-queue measurements at hours 1-4. Follow up at hours 5-6; compare trajectories with baseline and use two consecutive error measurements above 3 percent as the stated investigation alert, not as a causal proof.",
+    "signal": "Persistence or reversal of matched adverse trajectories distinguishes a sustained change from an isolated snapshot.",
+    "inference": "Constrain whether the segment is deteriorating and whether to investigate or pause, while leaving causal explanation open.",
+    "limit": "Mix shifts, concurrent inputs and six-hour censoring limit conclusions; a monitoring threshold is not an ontological score or proof of rollout harm."
+  }
+}

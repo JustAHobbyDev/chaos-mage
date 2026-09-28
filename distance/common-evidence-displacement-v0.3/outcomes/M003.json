@@ -1,0 +1,155 @@
+{
+  "mapping_id": "M003",
+  "target_id": "T07",
+  "world_id": "W-T07",
+  "world_sha256": "082e52ab6dc18983ad045b02b6cdd229fa6322ec37434d982e0885fc3987a2bf",
+  "common_state_sha256": "1550272cfbcc659919985df4b3873dc60b973ee0b1ceb5cddce4ed9ff423251d",
+  "mapping_sha256": "05e177731af850c5cfa79eedadba02fe16a3792658965bfe5503bc9aba977ac1",
+  "operation_performed": {
+    "recipe": "corroboration",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "cross-check supplied logs and receipts",
+        "parameters": {
+          "records": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7"
+          ]
+        },
+        "resulting_signal": {
+          "s2_independent_sources": [
+            {
+              "id": "l1",
+              "source": "signer process",
+              "schedule": "s2",
+              "observation": "signer timeout"
+            },
+            {
+              "id": "l3",
+              "source": "independent registry receipt",
+              "schedule": "s2",
+              "observation": "publication absent"
+            }
+          ],
+          "s4_independent_sources": [
+            {
+              "id": "l4",
+              "source": "mirror process",
+              "schedule": "s4",
+              "observation": "mirror unavailable"
+            },
+            {
+              "id": "l5",
+              "source": "independent registry receipt",
+              "schedule": "s4",
+              "observation": "publication absent"
+            }
+          ],
+          "successful_schedules": [
+            {
+              "id": "l6",
+              "source": "registry receipt",
+              "schedule": "s1",
+              "observation": "published"
+            },
+            {
+              "id": "l7",
+              "source": "registry receipt",
+              "schedule": "s3",
+              "observation": "published"
+            }
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 7,
+          "analysis_passes": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "audit source dependence",
+        "parameters": {
+          "copied_record": "l2"
+        },
+        "resulting_signal": {
+          "l2_additional_independent_support": false,
+          "remedy": "No intervention outcome is present in these records."
+        },
+        "resource_use": {
+          "record_accesses": 2,
+          "analysis_passes": 1
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "s2_independent_sources": [
+        {
+          "id": "l1",
+          "source": "signer process",
+          "schedule": "s2",
+          "observation": "signer timeout"
+        },
+        {
+          "id": "l3",
+          "source": "independent registry receipt",
+          "schedule": "s2",
+          "observation": "publication absent"
+        }
+      ],
+      "s4_independent_sources": [
+        {
+          "id": "l4",
+          "source": "mirror process",
+          "schedule": "s4",
+          "observation": "mirror unavailable"
+        },
+        {
+          "id": "l5",
+          "source": "independent registry receipt",
+          "schedule": "s4",
+          "observation": "publication absent"
+        }
+      ],
+      "successful_schedules": [
+        {
+          "id": "l6",
+          "source": "registry receipt",
+          "schedule": "s1",
+          "observation": "published"
+        },
+        {
+          "id": "l7",
+          "source": "registry receipt",
+          "schedule": "s3",
+          "observation": "published"
+        }
+      ]
+    },
+    {
+      "l2_additional_independent_support": false,
+      "remedy": "No intervention outcome is present in these records."
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "replay_trials": 0,
+    "record_accesses": 9,
+    "analysis_passes": 2,
+    "maximum_slots": 0
+  },
+  "limits": "Shared bugs, incomplete observation and dependent summaries can create false convergence; corroboration of location is not a causal remedy experiment."
+}

@@ -1,0 +1,109 @@
+{
+  "mapping_id": "M008",
+  "target_id": "T06",
+  "world_id": "W-T06",
+  "world_sha256": "5b5f67774f83b3006664da2a611d9c09c13bc4e18611818bc816524735f0764a",
+  "common_state_sha256": "9c48c4b5029a13dbcbe1c9f35996dcbd28600924f251b9750e8d882584ba524e",
+  "mapping_sha256": "91094907d7fe9d6f1ef4bff6272e21286136ba3a9de97df314158ddd45e6074d",
+  "operation_performed": {
+    "recipe": "alignment",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "align ordered event patterns to dated calendar",
+        "parameters": {
+          "letter_order": [
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ]
+        },
+        "resulting_signal": {
+          "compatible_calendar_alignments": [
+            [
+              11,
+              12,
+              13,
+              15
+            ]
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 11,
+          "analysis_passes": 1,
+          "work_minutes": 55
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "check independent anchors",
+        "parameters": {
+          "receipt_anchors": {
+            "L1": 11,
+            "L3": 13,
+            "L4": 15
+          }
+        },
+        "resulting_signal": {
+          "retained_alignments": [
+            [
+              11,
+              12,
+              13,
+              15
+            ]
+          ],
+          "omitted_weeks": [
+            14
+          ],
+          "composition": "unknown"
+        },
+        "resource_use": {
+          "record_accesses": 3,
+          "analysis_passes": 1,
+          "work_minutes": 25
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "compatible_calendar_alignments": [
+        [
+          11,
+          12,
+          13,
+          15
+        ]
+      ]
+    },
+    {
+      "retained_alignments": [
+        [
+          11,
+          12,
+          13,
+          15
+        ]
+      ],
+      "omitted_weeks": [
+        14
+      ],
+      "composition": "unknown"
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "record_accesses": 14,
+    "analysis_passes": 2,
+    "work_minutes": 80
+  },
+  "limits": "Repetitive events, short overlap, wrong references or a failed contemporaneity bridge would mislead; no composition date follows merely from dispatch alignment."
+}

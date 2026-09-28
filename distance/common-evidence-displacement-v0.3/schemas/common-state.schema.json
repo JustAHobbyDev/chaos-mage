@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "domain",
+        "question"
+      ],
+      "additionalProperties": false
+    },
+    "native_baseline": {
+      "type": "object",
+      "properties": {
+        "target_domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "target_task": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reference_practitioner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "ordinary_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "ordinary_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "target_domain",
+        "target_task",
+        "reference_practitioner",
+        "ordinary_methods",
+        "ordinary_evidence",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    },
+    "shared_state": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "artifacts": {
+          "type": "object"
+        },
+        "initial_observations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "known_uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "available_affordances": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "required": [
+        "facts",
+        "artifacts",
+        "initial_observations",
+        "known_uncertainties",
+        "available_affordances",
+        "constraints"
+      ],
+      "additionalProperties": false
+    },
+    "investigation_budget": {
+      "type": "object",
+      "properties": {
+        "primary_operations": {
+          "const": 1
+        },
+        "immediate_followups": {
+          "const": 1
+        },
+        "new_external_sources": {
+          "const": 0
+        },
+        "resource_ledger": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minProperties": 1
+        },
+        "other_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "required": [
+        "primary_operations",
+        "immediate_followups",
+        "new_external_sources",
+        "resource_ledger",
+        "other_constraints"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "target",
+    "native_baseline",
+    "shared_state",
+    "investigation_budget"
+  ],
+  "additionalProperties": false
+}

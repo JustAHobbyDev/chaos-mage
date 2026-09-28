@@ -1,0 +1,28 @@
+{
+  "case_id": "M014",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "{\"investigation_budget\": {\"immediate_followups\": 1, \"new_external_sources\": 0, \"other_constraints\": [\"Both branches start from an independent reset of this same world.\", \"A procedure may contain elementary trials, but all consume the common ledger.\", \"Unused resources are allowed; proposed later inquiries are not performed within this budget.\"], \"primary_operations\": 1, \"resource_ledger\": {\"analysis_passes\": 2, \"endpoint_trials\": 10, \"maximum_replay_slots\": 10}}, \"native_baseline\": {\"ordinary_evidence\": [\"Version and configuration history; request traces; latency distributions; resource counters.\", \"Controlled replay and rollback observations.\"], \"ordinary_methods\": [\"Compare deployment and latency timelines, stratifying traffic and configuration.\", \"Replay representative workloads, bisect revisions and test competing causes in staging.\", \"Use rollback and controlled reintroduction when safe; inspect traces and resource metrics.\"], \"reference_practitioner\": \"Production reliability engineer specializing in web-service incident diagnosis.\", \"target_domain\": \"production-regression diagnosis\", \"target_task\": \"Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?\", \"uncertainty\": [\"Scoped authored hypothesis, not verified practitioner consensus.\", \"Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty.\"]}, \"shared_state\": {\"artifacts\": {\"deployment_log\": [\"old then new cache-policy flag; no other configuration change\"], \"live_summary\": {\"new_load\": \"high\", \"new_median_ms\": 70, \"old_load\": \"low\", \"old_median_ms\": 40}, \"routes\": {\"r1\": [\"A\", \"B\", \"D\"], \"r2\": [\"A\", \"C\", \"D\"], \"r3\": [\"B\", \"C\"], \"r4\": [\"A\", \"B\", \"C\"]}}, \"available_affordances\": [\"inspect supplied logs\", \"compare hypotheses against supplied records\", \"run endpoint replay(route, configuration, load)\", \"fit candidate additive delay maps\", \"test a held-out route\"], \"constraints\": [\"No internal service probes or live deployment changes.\", \"All analyses use the same supplied route catalog.\"], \"facts\": [\"Authored synthetic environment; no real persons or organizations.\", \"Configurations old and new differ only in the deployed cache-policy flag. Live traffic volume also changed, so the live association alone is confounded.\", \"An isolated resettable replay can cross either configuration with low or high load on any listed route. A route trial returns endpoint latency in ms.\", \"Independent calibration in this replay established an additive service-delay model at fixed load, endpoint measurement error bounded by 1 ms, and stable route membership. Calibration does not reveal current component delays.\", \"Candidate explanations are a deployment effect on the B-containing dependency, a deployment effect confined to A, and load-only variation. Alternatives may be incomplete.\"], \"initial_observations\": [\"The aggregate live route-r1 latency rose by 30 ms; attribution and component contributions are unresolved.\"], \"known_uncertainties\": [\"No component-level timings are available. Replay effects need not generalize to every live workload.\"]}, \"target\": {\"domain\": \"production-regression diagnosis\", \"question\": \"Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?\"}}"
+    ]
+  },
+  "mapping": {
+    "state": "The live checkout regression admits deployment and load explanations.",
+    "operation": "Compare the three stated explanations. Run r1 under old/new at low/high load, update which explanations survive; immediately follow with old/new low-load r2 to discriminate an A-confined effect from other deployment effects.",
+    "signal": "Configuration and load contrasts may support, contradict or fail to distinguish candidate causes.",
+    "inference": "Narrow plausible explanations for the deployment-associated regression and select a dependency for later investigation; do not claim a unique mechanism.",
+    "limit": "Unlisted causes, uninformative contrasts and replay generalization limit diagnosis. Tests distinguish alternatives only to their sensitivity."
+  }
+}

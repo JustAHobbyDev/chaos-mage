@@ -1,0 +1,28 @@
+{
+  "case_id": "M001",
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": [
+      "{\"investigation_budget\": {\"immediate_followups\": 1, \"new_external_sources\": 0, \"other_constraints\": [\"Both branches start from an independent reset of this same world.\", \"A procedure may contain elementary trials, but all consume the common ledger.\", \"Unused resources are allowed; proposed later inquiries are not performed within this budget.\"], \"primary_operations\": 1, \"resource_ledger\": {\"analysis_passes\": 2, \"maximum_slots\": 8, \"ticket_trials\": 8}}, \"native_baseline\": {\"ordinary_evidence\": [\"Ticket histories, queue lengths, staffing schedules, service-level targets and interviews.\"], \"ordinary_methods\": [\"Map actual workflow and ownership; compare timestamps and queues across case types.\", \"Interview participants and inspect exception cases.\", \"Pilot explicit handoff changes and compare turnaround, accounting for staffing and demand.\"], \"reference_practitioner\": \"Operations improvement analyst specializing in service-team handoffs, without control-engineering training.\", \"target_domain\": \"organizational handoff delays\", \"target_task\": \"Where do approval handoffs accumulate delay, and which bounded changes could reduce it?\", \"uncertainty\": [\"Scoped authored hypothesis, not verified practitioner consensus.\", \"Some analysts use process mining; dynamic system estimation from designed excitation is outside this scoped baseline.\"]}, \"shared_state\": {\"artifacts\": {\"historical_low_wait_hours\": {\"ab\": 7, \"ac\": 5, \"bc\": 8}, \"live_ab_hours\": [11, 13], \"routes\": {\"ab\": [\"A\", \"B\"], \"ac\": [\"A\", \"C\"], \"bc\": [\"B\", \"C\"]}}, \"available_affordances\": [\"inspect supplied histories\", \"repeat comparable route observations\", \"send controlled tickets along overlapping paths\", \"fit delay maps\", \"compare fixed staffing intervention in testbed\"], \"constraints\": [\"No internal timestamps or live staffing change.\"], \"facts\": [\"Authored synthetic environment; no real persons or organizations.\", \"A resettable ticket testbed represents teams A, B and C with known overlapping routes. At fixed staffing/demand, independently checked end-to-end waits are additive within 0.2 hours.\", \"Historical low-demand endpoint waits are listed. New-period live tickets mix ordinary and busy slots. Busy slots add a common two-hour intake wait outside these three teams.\", \"A ticket observation returns route, demand slot and end-to-end wait; internal stage waits are unavailable. All branches can choose any route and demand slot.\"], \"initial_observations\": [\"Delay increased on the main A-B route; whether the pattern persists and which internal team contributes remain open.\"], \"known_uncertainties\": [\"The testbed is bounded; staffing remedies still require separate live assessment.\"]}, \"target\": {\"domain\": \"organizational handoff delays\", \"question\": \"Where do approval handoffs accumulate delay, and which bounded changes could reduce it?\"}}"
+    ]
+  },
+  "mapping": {
+    "state": "Main-route approval delay may be sustained or just demand-related fluctuation.",
+    "operation": "Repeat A-B endpoint waits in four comparable new-period slots, alternating low/busy demand and stratifying against the supplied historical low-demand baseline. Follow up with two further low-demand observations to check persistence; keep expected two-hour intake variation separate.",
+    "signal": "The repeated stratified trajectory distinguishes a sustained main-route increase from busy-slot variation.",
+    "inference": "Locate persistent delay on the A-B path and prioritize those handoffs for further bounded investigation; do not identify a unique hidden team from a route total.",
+    "limit": "Mix changes, sampling and testbed generalization limit inference; repeatability does not itself localize a component."
+  }
+}

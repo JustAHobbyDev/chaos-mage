@@ -1,0 +1,145 @@
+{
+  "mapping_id": "M001",
+  "target_id": "T04",
+  "world_id": "W-T04",
+  "world_sha256": "8de23ecb56723e16cf68744ebacdfedb71c6816d3dcab20b490f8c1b58a9f007",
+  "common_state_sha256": "c92619b947b088a746c3d11203dc43af176c573348d9916217389dfc3e769c40",
+  "mapping_sha256": "fb6fff64f3a3b02ba4051a57b3e52b0fb2dcb23b017abcc37a96966c2eef6808",
+  "operation_performed": {
+    "recipe": "monitor",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "busy",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 13
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "busy",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 13
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "repeat comparable route observations",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1,
+          "analysis_passes": 2
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "busy_intake_hours",
+    "new_wait_hours",
+    "routes"
+  ],
+  "resulting_signal": [
+    {
+      "wait_hours": 11
+    },
+    {
+      "wait_hours": 13
+    },
+    {
+      "wait_hours": 11
+    },
+    {
+      "wait_hours": 13
+    },
+    {
+      "wait_hours": 11
+    },
+    {
+      "wait_hours": 11
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "ticket_trials": 6,
+    "analysis_passes": 2,
+    "maximum_slots": 6
+  },
+  "limits": "Mix changes, sampling and testbed generalization limit inference; repeatability does not itself localize a component."
+}

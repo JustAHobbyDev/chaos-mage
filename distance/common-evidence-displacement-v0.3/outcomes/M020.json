@@ -1,0 +1,96 @@
+{
+  "mapping_id": "M020",
+  "target_id": "T03",
+  "world_id": "W-T03",
+  "world_sha256": "d0924ad511dc498f6b2c73c76b2911b79384796dce924d897e4508a5b5af3604",
+  "common_state_sha256": "7256e410844d616b2b6e69e72426e5fbba10b220318740c948214867335f0ec9",
+  "mapping_sha256": "60e2cba0386e7258c3e1bbd45c951c0473126863285e6873eaed896b47d143ac",
+  "operation_performed": {
+    "recipe": "probe",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "probe erased patch and controls",
+        "parameters": {
+          "patch": "under R"
+        },
+        "resulting_signal": {
+          "localized_response": true,
+          "positive_control": true,
+          "negative_control": false
+        },
+        "resource_use": {
+          "physical_assays": 3,
+          "analysis_passes": 1,
+          "work_minutes": 60
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "collate responsive undertext with witness Q",
+        "parameters": {
+          "comparison": "Q and characterized cross-reactants"
+        },
+        "resulting_signal": {
+          "identified_reading": "Q",
+          "below_reading": "R",
+          "dated_bridge": [
+            {
+              "id": "quote",
+              "observation": "Authenticated day-12 letter quotes replacement R on A."
+            },
+            {
+              "id": "witness",
+              "observation": "Independent day-4 witness contains reading Q; it does not locate Q on A."
+            }
+          ],
+          "unresolved": "The local Q-before-R sequence does not establish revision relative to attaching B."
+        },
+        "resource_use": {
+          "physical_assays": 1,
+          "record_accesses": 2,
+          "analysis_passes": 1,
+          "work_minutes": 30
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "controls",
+    "patch",
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "localized_response": true,
+      "positive_control": true,
+      "negative_control": false
+    },
+    {
+      "identified_reading": "Q",
+      "below_reading": "R",
+      "dated_bridge": [
+        {
+          "id": "quote",
+          "observation": "Authenticated day-12 letter quotes replacement R on A."
+        },
+        {
+          "id": "witness",
+          "observation": "Independent day-4 witness contains reading Q; it does not locate Q on A."
+        }
+      ],
+      "unresolved": "The local Q-before-R sequence does not establish revision relative to attaching B."
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "physical_assays": 4,
+    "record_accesses": 2,
+    "analysis_passes": 2,
+    "work_minutes": 90
+  },
+  "limits": "Cross-reactants, degradation and detection limits restrict absence claims. A local reading does not settle complete draft assembly or whether revision preceded attachment."
+}

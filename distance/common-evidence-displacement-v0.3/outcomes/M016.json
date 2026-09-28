@@ -1,0 +1,222 @@
+{
+  "mapping_id": "M016",
+  "target_id": "T08",
+  "world_id": "W-T08",
+  "world_sha256": "28389450b3712195a6e41b71058cd11b0849839521e6235d090f34722535a340",
+  "common_state_sha256": "60955f1585511510b2ced5e2fd50c2842d9c4eb1ec58a5fd7dbc3dae1bdc5b03",
+  "mapping_sha256": "c51658bf61fffc52837396ba2f2ab9b9990518734255da28339f554890cd958a",
+  "operation_performed": {
+    "recipe": "narrow_step",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "step routing fraction",
+        "parameters": {
+          "from": 0,
+          "to": 1
+        },
+        "resulting_signal": {
+          "step_applied": true
+        },
+        "resource_use": {
+          "input_steps": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 1
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 2
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 12,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 3
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 6,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 4
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 4,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 5
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 4,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "measure both channels and controls",
+        "parameters": {
+          "hour": 6
+        },
+        "resulting_signal": {
+          "treated_error_percent": 2,
+          "control_error_percent": 2,
+          "treated_queue": 4,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "compare response delay peak and persistence",
+        "parameters": {
+          "analyzed_channels": [
+            "queue"
+          ]
+        },
+        "resulting_signal": {
+          "queue": {
+            "peak": 12,
+            "first_peak_hour": 2,
+            "last_two": [
+              4,
+              4
+            ],
+            "equilibrium": "not established beyond six hours"
+          }
+        },
+        "resource_use": {
+          "analysis_passes": 2
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "control_error",
+    "control_queue",
+    "response_model",
+    "routing_error",
+    "routing_queue"
+  ],
+  "resulting_signal": [
+    {
+      "step_applied": true
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 12,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 6,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 4,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 4,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 2,
+      "control_error_percent": 2,
+      "treated_queue": 4,
+      "control_queue": 4
+    },
+    {
+      "queue": {
+        "peak": 12,
+        "first_peak_hour": 2,
+        "last_two": [
+          4,
+          4
+        ],
+        "equilibrium": "not established beyond six hours"
+      }
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "time_samples": 6,
+    "input_steps": 1,
+    "analysis_passes": 2,
+    "horizon_hours": 6
+  },
+  "limits": "Finite horizon, disturbances and nonlinearity limit the dynamic inference; queue behavior alone cannot settle the full rollout task."
+}

@@ -1,0 +1,41 @@
+{
+  "families": {
+    "A": {
+      "cli": "codex",
+      "requested_model": "gpt-6-astra",
+      "effort": "high"
+    },
+    "B": {
+      "cli": "claude",
+      "requested_model": "claude-fable-5-1[1m]",
+      "effort": "high"
+    }
+  },
+  "timeout_seconds": 900,
+  "max_concurrent_processes": 1,
+  "scheduler": "sequential frozen B.2 schedule",
+  "codex_disabled_features": [
+    "apps",
+    "plugins",
+    "memories",
+    "multi_agent",
+    "shell_tool",
+    "unified_exec",
+    "browser_use",
+    "computer_use",
+    "image_generation",
+    "view_image",
+    "hooks",
+    "skill_search"
+  ],
+  "temperature": "provider default; unset",
+  "seed": "provider default; unset",
+  "service_tier": "provider default; unset",
+  "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+  "effort_comparison": "Equal labels do not imply equal compute",
+  "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+  "expected_cli_versions": {
+    "A": "codex-cli 0.157.1",
+    "B": "2.1.283 (Claude Code)"
+  }
+}

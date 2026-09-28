@@ -1,0 +1,103 @@
+{
+  "mapping_id": "M006",
+  "target_id": "T06",
+  "world_id": "W-T06",
+  "world_sha256": "5b5f67774f83b3006664da2a611d9c09c13bc4e18611818bc816524735f0764a",
+  "common_state_sha256": "9c48c4b5029a13dbcbe1c9f35996dcbd28600924f251b9750e8d882584ba524e",
+  "mapping_sha256": "1e3f24e93e6dd4d9aa280bab0a0f48ede4808e1edcbad5b728f159f37b87b8b6",
+  "operation_performed": {
+    "recipe": "custody",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "cross-check custody and dispatch records",
+        "parameters": {
+          "records": "all receipts and custody links"
+        },
+        "resulting_signal": {
+          "dispatch_anchors": {
+            "L1": 11,
+            "L3": 13,
+            "L4": 15
+          },
+          "custody": [
+            {
+              "object": "bundle",
+              "person": "recipient",
+              "week": 16
+            },
+            {
+              "object": "bundle",
+              "person": "archive",
+              "week": 40
+            }
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 5,
+          "analysis_passes": 1,
+          "work_minutes": 45
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "check independent anchors",
+        "parameters": {
+          "letter": "L2",
+          "contemporaneous_event": "election"
+        },
+        "resulting_signal": {
+          "compatible_dispatch_weeks": [
+            12
+          ],
+          "composition": "unknown"
+        },
+        "resource_use": {
+          "record_accesses": 8,
+          "analysis_passes": 1,
+          "work_minutes": 30
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "dispatch_anchors": {
+        "L1": 11,
+        "L3": 13,
+        "L4": 15
+      },
+      "custody": [
+        {
+          "object": "bundle",
+          "person": "recipient",
+          "week": 16
+        },
+        {
+          "object": "bundle",
+          "person": "archive",
+          "week": 40
+        }
+      ]
+    },
+    {
+      "compatible_dispatch_weeks": [
+        12
+      ],
+      "composition": "unknown"
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "record_accesses": 13,
+    "analysis_passes": 2,
+    "work_minutes": 75
+  },
+  "limits": "Incomplete custody is not proof of continuity; dispatch is distinct from composition and records can share hidden errors."
+}

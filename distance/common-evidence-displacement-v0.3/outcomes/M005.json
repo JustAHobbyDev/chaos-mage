@@ -1,0 +1,146 @@
+{
+  "mapping_id": "M005",
+  "target_id": "T05",
+  "world_id": "W-T05",
+  "world_sha256": "9f32c9e894a3f39c229c23267a3dac7d642402acb5fb0a4ce402c1813c2978e2",
+  "common_state_sha256": "5be77aa3c69a10cb1e0a120d463e10f1fc06afd6bbde4912bda2fa53ea837fc9",
+  "mapping_sha256": "55301a9df675ffa8d947d8eeeea623f8842bd3d16e99139284fdb8613a45ee7c",
+  "operation_performed": {
+    "recipe": "diagnosis",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "test any rule subset",
+        "parameters": {
+          "rules": [
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "revision": null
+        },
+        "resulting_signal": {
+          "activation": "fail"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "test any rule subset",
+        "parameters": {
+          "rules": [
+            "A",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "revision": null
+        },
+        "resulting_signal": {
+          "activation": "pass"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "test any rule subset",
+        "parameters": {
+          "rules": [
+            "A",
+            "B",
+            "C",
+            "E",
+            "F",
+            "G"
+          ],
+          "revision": null
+        },
+        "resulting_signal": {
+          "activation": "pass"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "test any rule subset",
+        "parameters": {
+          "rules": [
+            "B"
+          ],
+          "revision": null
+        },
+        "resulting_signal": {
+          "activation": "pass"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "test any rule subset",
+        "parameters": {
+          "rules": [
+            "D"
+          ],
+          "revision": null
+        },
+        "resulting_signal": {
+          "activation": "pass"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1,
+          "analysis_passes": 2
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "failure_interaction",
+    "predicate",
+    "rule_names"
+  ],
+  "resulting_signal": [
+    {
+      "activation": "fail"
+    },
+    {
+      "activation": "pass"
+    },
+    {
+      "activation": "pass"
+    },
+    {
+      "activation": "pass"
+    },
+    {
+      "activation": "pass"
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "replay_trials": 5,
+    "analysis_passes": 2,
+    "maximum_slots": 5
+  },
+  "limits": "Unlisted mechanisms and replay-specific sensitivity limit diagnosis; individually harmless rules may interact and do not prove population-wide necessity."
+}

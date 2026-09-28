@@ -1,0 +1,172 @@
+{
+  "mapping_id": "M015",
+  "target_id": "T08",
+  "world_id": "W-T08",
+  "world_sha256": "28389450b3712195a6e41b71058cd11b0849839521e6235d090f34722535a340",
+  "common_state_sha256": "60955f1585511510b2ced5e2fd50c2842d9c4eb1ec58a5fd7dbc3dae1bdc5b03",
+  "mapping_sha256": "8197e31acd23dad09ac2e04625038593a2b1e0d32e8ce8d7e0f1baf81a278a0a",
+  "operation_performed": {
+    "recipe": "monitor",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 1
+        },
+        "resulting_signal": {
+          "treated_error_percent": 3,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 2
+        },
+        "resulting_signal": {
+          "treated_error_percent": 4,
+          "control_error_percent": 2,
+          "treated_queue": 9,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 3
+        },
+        "resulting_signal": {
+          "treated_error_percent": 4,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 4
+        },
+        "resulting_signal": {
+          "treated_error_percent": 4,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 5
+        },
+        "resulting_signal": {
+          "treated_error_percent": 4,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "repeat matched measurements while holding settings",
+        "parameters": {
+          "hour": 6
+        },
+        "resulting_signal": {
+          "treated_error_percent": 4,
+          "control_error_percent": 2,
+          "treated_queue": 8,
+          "control_queue": 4
+        },
+        "resource_use": {
+          "time_samples": 1,
+          "horizon_hours": 1,
+          "analysis_passes": 2
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "control_error",
+    "control_queue",
+    "hold_error",
+    "hold_queue",
+    "response_model"
+  ],
+  "resulting_signal": [
+    {
+      "treated_error_percent": 3,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 4,
+      "control_error_percent": 2,
+      "treated_queue": 9,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 4,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 4,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 4,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    },
+    {
+      "treated_error_percent": 4,
+      "control_error_percent": 2,
+      "treated_queue": 8,
+      "control_queue": 4
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "time_samples": 6,
+    "input_steps": 0,
+    "analysis_passes": 2,
+    "horizon_hours": 6
+  },
+  "limits": "Mix shifts, concurrent inputs and six-hour censoring limit conclusions; a monitoring threshold is not an ontological score or proof of rollout harm."
+}

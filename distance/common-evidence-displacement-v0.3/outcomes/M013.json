@@ -1,0 +1,248 @@
+{
+  "mapping_id": "M013",
+  "target_id": "T07",
+  "world_id": "W-T07",
+  "world_sha256": "082e52ab6dc18983ad045b02b6cdd229fa6322ec37434d982e0885fc3987a2bf",
+  "common_state_sha256": "1550272cfbcc659919985df4b3873dc60b973ee0b1ceb5cddce4ed9ff423251d",
+  "mapping_sha256": "b1821edfa143c33f483ea92c038101ee882a5436d3a101296bd94b75869dbe9a",
+  "operation_performed": {
+    "recipe": "reversal",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s1",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s1",
+          "signing_enabled": false
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s2",
+          "signing_enabled": false
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s2",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "failure"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s3",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s3",
+          "signing_enabled": false
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s4",
+          "signing_enabled": false
+        },
+        "resulting_signal": {
+          "publication": "failure"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "replay schedules with signing enabled or bypassed",
+        "parameters": {
+          "schedule": "s4",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "failure"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "restore signing and repeat",
+        "parameters": {
+          "schedule": "s1",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "restore signing and repeat",
+        "parameters": {
+          "schedule": "s2",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "failure"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "restore signing and repeat",
+        "parameters": {
+          "schedule": "s3",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "success"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "restore signing and repeat",
+        "parameters": {
+          "schedule": "s4",
+          "signing_enabled": true
+        },
+        "resulting_signal": {
+          "publication": "failure"
+        },
+        "resource_use": {
+          "replay_trials": 1,
+          "maximum_slots": 1,
+          "analysis_passes": 2
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "mirror_failure_schedules",
+    "publication_rule",
+    "signer_failure_schedules"
+  ],
+  "resulting_signal": [
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "failure"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "failure"
+    },
+    {
+      "publication": "failure"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "failure"
+    },
+    {
+      "publication": "success"
+    },
+    {
+      "publication": "failure"
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "replay_trials": 12,
+    "record_accesses": 0,
+    "analysis_passes": 2,
+    "maximum_slots": 12
+  },
+  "limits": "The controlled replay does not prove universal necessity or safety of a live bypass; other dependencies may sustain failures."
+}

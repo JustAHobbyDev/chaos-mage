@@ -1,0 +1,149 @@
+{
+  "mapping_id": "M018",
+  "target_id": "T01",
+  "world_id": "W-T01",
+  "world_sha256": "b2a9911b3acdebb6a9d84b4921c6b7ebd5ef1f2b14b452d65ad6e79aa2373011",
+  "common_state_sha256": "0b7b875d7349064b157f9b0c1306925b5c00785be7222216373dafcb0d33a344",
+  "mapping_sha256": "e2351f41d228a7d94ab41ea9d518f41399db620362d48459fcbc66214ec2ce76",
+  "operation_performed": {
+    "recipe": "matrix",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r1",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 40
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r1",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 60
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r2",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 50
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r2",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 52
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "compare hypotheses against supplied records",
+        "parameters": {
+          "evidence": "live aggregate plus both controlled contrasts"
+        },
+        "resulting_signal": {
+          "r1_change_ms": 20,
+          "r2_change_ms": 2,
+          "load_only": "inconsistent with fixed-load differences",
+          "A_confined": "inconsistent with unequal differences on two A-containing routes",
+          "B_containing_dependency": "not eliminated, but a B-only effect does not explain r2"
+        },
+        "resource_use": {
+          "analysis_passes": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "compare hypotheses against supplied records",
+        "parameters": {
+          "omit": "confounded live aggregate"
+        },
+        "resulting_signal": {
+          "controlled_contradictions_unchanged": true,
+          "unresolved": "B-associated explanation needs another contribution for r2; missing hypotheses remain"
+        },
+        "resource_use": {
+          "analysis_passes": 1
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "base_delay_ms",
+    "measurement_error_ms",
+    "new_increment_ms",
+    "route_membership"
+  ],
+  "resulting_signal": [
+    {
+      "endpoint_latency_ms": 40
+    },
+    {
+      "endpoint_latency_ms": 60
+    },
+    {
+      "endpoint_latency_ms": 50
+    },
+    {
+      "endpoint_latency_ms": 52
+    },
+    {
+      "r1_change_ms": 20,
+      "r2_change_ms": 2,
+      "load_only": "inconsistent with fixed-load differences",
+      "A_confined": "inconsistent with unequal differences on two A-containing routes",
+      "B_containing_dependency": "not eliminated, but a B-only effect does not explain r2"
+    },
+    {
+      "controlled_contradictions_unchanged": true,
+      "unresolved": "B-associated explanation needs another contribution for r2; missing hypotheses remain"
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "endpoint_trials": 4,
+    "analysis_passes": 2,
+    "maximum_replay_slots": 4
+  },
+  "limits": "Missing alternatives, dependent records and subjective diagnosticity can mislead; the replay findings are bounded to the calibrated regime."
+}

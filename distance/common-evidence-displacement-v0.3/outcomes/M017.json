@@ -1,0 +1,103 @@
+{
+  "mapping_id": "M017",
+  "target_id": "T02",
+  "world_id": "W-T02",
+  "world_sha256": "4138ff06d39d2620cb335c76d2f22562117f4d3d9fc81414cf9ef88fb13fce4e",
+  "common_state_sha256": "09aed3593351a53f6ce5c2e5be9ea59f92eb7b4a2152fb460fc630cae96f0134",
+  "mapping_sha256": "a453597092bd62842a6e842435ab361810227b6c11ecf8b20fdfe414db7b0847",
+  "operation_performed": {
+    "recipe": "whole",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "track whole-document custody",
+        "parameters": {
+          "record_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6"
+          ]
+        },
+        "resulting_signal": {
+          "BD_possession_days": [
+            1,
+            3
+          ],
+          "O1_edit_and_publication_days": [
+            4,
+            5
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 6,
+          "analysis_passes": 1,
+          "work_minutes": 45
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "cross-check source independence",
+        "parameters": {
+          "compare_records": [
+            "p2",
+            "p5",
+            "p6"
+          ]
+        },
+        "resulting_signal": {
+          "generic_policy_wording": "regional service capacity",
+          "wording_authorship": "capacity rationale; author of wording unstated",
+          "unresolved": [
+            "motive",
+            "unrecorded common source",
+            "who chose clause K"
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 3,
+          "analysis_passes": 1,
+          "work_minutes": 30
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "document_identity",
+    "records",
+    "unknowns"
+  ],
+  "resulting_signal": [
+    {
+      "BD_possession_days": [
+        1,
+        3
+      ],
+      "O1_edit_and_publication_days": [
+        4,
+        5
+      ]
+    },
+    {
+      "generic_policy_wording": "regional service capacity",
+      "wording_authorship": "capacity rationale; author of wording unstated",
+      "unresolved": [
+        "motive",
+        "unrecorded common source",
+        "who chose clause K"
+      ]
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "record_accesses": 9,
+    "analysis_passes": 2,
+    "work_minutes": 75
+  },
+  "limits": "Incomplete transfers, common origins and mistaken document identity limit reconstruction; possession is not proof of intentional steering."
+}

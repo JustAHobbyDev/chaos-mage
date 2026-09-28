@@ -1,0 +1,265 @@
+{
+  "mapping_id": "M011",
+  "target_id": "T01",
+  "world_id": "W-T01",
+  "world_sha256": "b2a9911b3acdebb6a9d84b4921c6b7ebd5ef1f2b14b452d65ad6e79aa2373011",
+  "common_state_sha256": "0b7b875d7349064b157f9b0c1306925b5c00785be7222216373dafcb0d33a344",
+  "mapping_sha256": "9aac22ff33b966f9efa02caf67a6553629573749f32887d8edda77e8c2a98dca",
+  "operation_performed": {
+    "recipe": "inverse",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r1",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 40
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r1",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 60
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r2",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 50
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r2",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 52
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r3",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 50
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r3",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 68
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "fit candidate additive delay maps",
+        "parameters": {
+          "constraints": {
+            "r1": 20,
+            "r2": 2,
+            "r3": 18
+          }
+        },
+        "resulting_signal": {
+          "zero_map_residual_ms": {
+            "r1": 20,
+            "r2": 2,
+            "r3": 18
+          },
+          "equations": [
+            "dA+dB+dD=20",
+            "dA+dC+dD=2",
+            "dB+dC=18"
+          ],
+          "compatible_family": "dB=18, dC=0, dA+dD=2; A and D not separated",
+          "held_out_prediction": "r4 difference = 18+dA; not a unique number yet"
+        },
+        "resource_use": {
+          "analysis_passes": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r4",
+          "configuration": "old",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 60
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "run endpoint replay(route, configuration, load)",
+        "parameters": {
+          "route": "r4",
+          "configuration": "new",
+          "load": "low"
+        },
+        "resulting_signal": {
+          "endpoint_latency_ms": 78
+        },
+        "resource_use": {
+          "endpoint_trials": 1,
+          "maximum_replay_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "fit candidate additive delay maps",
+        "parameters": {
+          "held_out_r4_difference_ms": 18
+        },
+        "resulting_signal": {
+          "fit_increment_ms": {
+            "A": 0,
+            "B": 18,
+            "C": 0,
+            "D": 2
+          },
+          "residuals_ms": {
+            "r1": 0,
+            "r2": 0,
+            "r3": 0,
+            "r4": 0
+          },
+          "limit": "Exact fit in this synthetic additive replay; no code-level or live-world attribution."
+        },
+        "resource_use": {
+          "analysis_passes": 1
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "base_delay_ms",
+    "measurement_error_ms",
+    "new_increment_ms",
+    "route_membership"
+  ],
+  "resulting_signal": [
+    {
+      "endpoint_latency_ms": 40
+    },
+    {
+      "endpoint_latency_ms": 60
+    },
+    {
+      "endpoint_latency_ms": 50
+    },
+    {
+      "endpoint_latency_ms": 52
+    },
+    {
+      "endpoint_latency_ms": 50
+    },
+    {
+      "endpoint_latency_ms": 68
+    },
+    {
+      "zero_map_residual_ms": {
+        "r1": 20,
+        "r2": 2,
+        "r3": 18
+      },
+      "equations": [
+        "dA+dB+dD=20",
+        "dA+dC+dD=2",
+        "dB+dC=18"
+      ],
+      "compatible_family": "dB=18, dC=0, dA+dD=2; A and D not separated",
+      "held_out_prediction": "r4 difference = 18+dA; not a unique number yet"
+    },
+    {
+      "endpoint_latency_ms": 60
+    },
+    {
+      "endpoint_latency_ms": 78
+    },
+    {
+      "fit_increment_ms": {
+        "A": 0,
+        "B": 18,
+        "C": 0,
+        "D": 2
+      },
+      "residuals_ms": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0
+      },
+      "limit": "Exact fit in this synthetic additive replay; no code-level or live-world attribution."
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "endpoint_trials": 8,
+    "analysis_passes": 2,
+    "maximum_replay_slots": 8
+  },
+  "limits": "Sparse paths, non-uniqueness, model error and measurement limits remain. Do not substitute hidden component truth for measured constraints or generalize beyond replay."
+}

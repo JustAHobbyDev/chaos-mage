@@ -1,0 +1,241 @@
+{
+  "mapping_id": "M002",
+  "target_id": "T04",
+  "world_id": "W-T04",
+  "world_sha256": "8de23ecb56723e16cf68744ebacdfedb71c6816d3dcab20b490f8c1b58a9f007",
+  "common_state_sha256": "c92619b947b088a746c3d11203dc43af176c573348d9916217389dfc3e769c40",
+  "mapping_sha256": "d97dc1624fadd155331577c0512d3c1f3b20684873fef35b8f49dff5c78a9d32",
+  "operation_performed": {
+    "recipe": "inverse",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 11
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "ac",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 5
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "ac",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 5
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "bc",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 12
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "send controlled tickets along overlapping paths",
+        "parameters": {
+          "route": "bc",
+          "demand": "low",
+          "staffing_B_intervention": false
+        },
+        "resulting_signal": {
+          "wait_hours": 12
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "primary",
+        "affordance": "fit delay maps",
+        "parameters": {
+          "initial_candidate": "zero internal waits",
+          "observations": {
+            "ab": [
+              11,
+              11
+            ],
+            "ac": [
+              5,
+              5
+            ],
+            "bc": [
+              12,
+              12
+            ]
+          }
+        },
+        "resulting_signal": {
+          "initial_residual_hours": {
+            "ab": 11,
+            "ac": 5,
+            "bc": 12
+          },
+          "fitted_wait_hours": {
+            "A": 2.0,
+            "B": 9.0,
+            "C": 3.0
+          },
+          "final_residual_hours": [
+            0,
+            0,
+            0
+          ]
+        },
+        "resource_use": {
+          "analysis_passes": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "compare fixed staffing intervention in testbed",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": true
+        },
+        "resulting_signal": {
+          "wait_hours": 9
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "compare fixed staffing intervention in testbed",
+        "parameters": {
+          "route": "ab",
+          "demand": "low",
+          "staffing_B_intervention": true
+        },
+        "resulting_signal": {
+          "wait_hours": 9
+        },
+        "resource_use": {
+          "ticket_trials": 1,
+          "maximum_slots": 1,
+          "analysis_passes": 1
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "new_wait_hours",
+    "routes",
+    "test_staffing_B_reduction_hours"
+  ],
+  "resulting_signal": [
+    {
+      "wait_hours": 11
+    },
+    {
+      "wait_hours": 11
+    },
+    {
+      "wait_hours": 5
+    },
+    {
+      "wait_hours": 5
+    },
+    {
+      "wait_hours": 12
+    },
+    {
+      "wait_hours": 12
+    },
+    {
+      "initial_residual_hours": {
+        "ab": 11,
+        "ac": 5,
+        "bc": 12
+      },
+      "fitted_wait_hours": {
+        "A": 2.0,
+        "B": 9.0,
+        "C": 3.0
+      },
+      "final_residual_hours": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "wait_hours": 9
+    },
+    {
+      "wait_hours": 9
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "ticket_trials": 8,
+    "analysis_passes": 2,
+    "maximum_slots": 8
+  },
+  "limits": "The additive model is calibrated only here; measurement error and live queue dynamics limit localization and remedy generalization."
+}

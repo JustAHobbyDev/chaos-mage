@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "mapping_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "world_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "world_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "common_state_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mapping_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "operation_performed": {
+      "type": "object",
+      "properties": {
+        "recipe": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "phase": {
+                "type": "string",
+                "enum": [
+                  "primary",
+                  "followup"
+                ]
+              },
+              "affordance": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "parameters": {
+                "type": "object"
+              },
+              "resulting_signal": {
+                "type": "object"
+              },
+              "resource_use": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "required": [
+              "phase",
+              "affordance",
+              "parameters",
+              "resulting_signal",
+              "resource_use"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "recipe",
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "world_facts_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "resulting_signal": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "engine_sha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "engine_sha256",
+        "method"
+      ],
+      "additionalProperties": false
+    },
+    "resource_use": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minProperties": 1
+    },
+    "limits": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "mapping_id",
+    "target_id",
+    "world_id",
+    "world_sha256",
+    "common_state_sha256",
+    "mapping_sha256",
+    "operation_performed",
+    "world_facts_used",
+    "resulting_signal",
+    "derivation",
+    "resource_use",
+    "limits"
+  ],
+  "additionalProperties": false
+}

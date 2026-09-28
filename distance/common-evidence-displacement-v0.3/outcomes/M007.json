@@ -1,0 +1,119 @@
+{
+  "mapping_id": "M007",
+  "target_id": "T03",
+  "world_id": "W-T03",
+  "world_sha256": "d0924ad511dc498f6b2c73c76b2911b79384796dce924d897e4508a5b5af3604",
+  "common_state_sha256": "7256e410844d616b2b6e69e72426e5fbba10b220318740c948214867335f0ec9",
+  "mapping_sha256": "18f983b177acde3db115c89bcb6432f10373f225576b1dce1b2d05e49b38be32",
+  "operation_performed": {
+    "recipe": "custody",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "cross-check supplied custody links",
+        "parameters": {
+          "leaves": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "resulting_signal": {
+          "custody": [
+            {
+              "leaf": "A",
+              "person": "editor",
+              "day": 7
+            },
+            {
+              "leaf": "B",
+              "person": "editor",
+              "day": 9
+            },
+            {
+              "leaf": "C",
+              "person": "editor",
+              "day": 9
+            }
+          ],
+          "relative_join": {
+            "id": "join",
+            "observation": "A fastening through B is physically overlain by the C attachment; B attached before C."
+          }
+        },
+        "resource_use": {
+          "record_accesses": 4,
+          "analysis_passes": 1,
+          "work_minutes": 45
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "cross-check supplied custody links",
+        "parameters": {
+          "check": "composition versus possession"
+        },
+        "resulting_signal": {
+          "revision_before_day": 12,
+          "revision_relative_to_B": "not determined",
+          "basis": {
+            "id": "quote",
+            "observation": "Authenticated day-12 letter quotes replacement R on A."
+          }
+        },
+        "resource_use": {
+          "record_accesses": 2,
+          "analysis_passes": 1,
+          "work_minutes": 20
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records"
+  ],
+  "resulting_signal": [
+    {
+      "custody": [
+        {
+          "leaf": "A",
+          "person": "editor",
+          "day": 7
+        },
+        {
+          "leaf": "B",
+          "person": "editor",
+          "day": 9
+        },
+        {
+          "leaf": "C",
+          "person": "editor",
+          "day": 9
+        }
+      ],
+      "relative_join": {
+        "id": "join",
+        "observation": "A fastening through B is physically overlain by the C attachment; B attached before C."
+      }
+    },
+    {
+      "revision_before_day": 12,
+      "revision_relative_to_B": "not determined",
+      "basis": {
+        "id": "quote",
+        "observation": "Authenticated day-12 letter quotes replacement R on A."
+      }
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "physical_assays": 0,
+    "record_accesses": 6,
+    "analysis_passes": 2,
+    "work_minutes": 65
+  },
+  "limits": "Custody does not establish composition; missing witnesses or undocumented earlier transfers remain possible."
+}

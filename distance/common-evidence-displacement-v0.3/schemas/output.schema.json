@@ -1,0 +1,433 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "prospective",
+        "consequence"
+      ]
+    },
+    "meaningful_difference": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "uncertain"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "status",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "criteria": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "observables": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "inferential_warrant": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "problem_decomposition": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "inquiry_trajectory": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "action",
+        "observables",
+        "inferential_warrant",
+        "problem_decomposition",
+        "inquiry_trajectory"
+      ],
+      "additionalProperties": false
+    },
+    "consequence_structure": {
+      "type": "object",
+      "properties": {
+        "local_depth": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "inquiry_propagation": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "task_reach": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "native_reducibility": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "balanced",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "local_depth",
+        "inquiry_propagation",
+        "task_reach",
+        "native_reducibility"
+      ],
+      "additionalProperties": false
+    },
+    "decisive_basis": {
+      "type": "object",
+      "properties": {
+        "most_important_difference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "local_depth": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inquiry_propagation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "task_reach": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "native_reducibility": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "most_important_difference",
+        "local_depth",
+        "inquiry_propagation",
+        "task_reach",
+        "native_reducibility",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "overall_relation": {
+      "type": "string",
+      "enum": [
+        "A_dominates",
+        "B_dominates",
+        "tradeoff",
+        "approximately_equal",
+        "insufficient_information"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "close"
+      ]
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  },
+  "required": [
+    "case_id",
+    "stage",
+    "meaningful_difference",
+    "criteria",
+    "consequence_structure",
+    "decisive_basis",
+    "overall_relation",
+    "confidence",
+    "uncertainty"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "meaningful_difference": {
+            "properties": {
+              "status": {
+                "const": "yes"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overall_relation": {
+            "enum": [
+              "A_dominates",
+              "B_dominates",
+              "tradeoff"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "meaningful_difference": {
+            "properties": {
+              "status": {
+                "const": "no"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overall_relation": {
+            "enum": [
+              "approximately_equal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "meaningful_difference": {
+            "properties": {
+              "status": {
+                "const": "uncertain"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overall_relation": {
+            "enum": [
+              "insufficient_information"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

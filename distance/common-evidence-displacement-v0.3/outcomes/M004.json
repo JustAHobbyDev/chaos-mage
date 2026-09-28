@@ -1,0 +1,148 @@
+{
+  "mapping_id": "M004",
+  "target_id": "T02",
+  "world_id": "W-T02",
+  "world_sha256": "4138ff06d39d2620cb335c76d2f22562117f4d3d9fc81414cf9ef88fb13fce4e",
+  "common_state_sha256": "09aed3593351a53f6ce5c2e5be9ea59f92eb7b4a2152fb460fc630cae96f0134",
+  "mapping_sha256": "1fe8ad58e204c730b3ee933d4edc575815b2091472d6b12bc5623ff4854b8f25",
+  "operation_performed": {
+    "recipe": "clause",
+    "steps": [
+      {
+        "phase": "primary",
+        "affordance": "track clause-level copying",
+        "parameters": {
+          "record_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6"
+          ]
+        },
+        "resulting_signal": {
+          "K_occurrences": [
+            {
+              "record": "p1",
+              "day": 1,
+              "document": "BD"
+            },
+            {
+              "record": "p3",
+              "day": 4,
+              "document": "O1"
+            },
+            {
+              "record": "p4",
+              "day": 5,
+              "document": "O1"
+            },
+            {
+              "record": "p6",
+              "day": 4,
+              "document": "memo"
+            }
+          ],
+          "independent_receipt": {
+            "id": "p2",
+            "day": 3,
+            "origin": "independent mail receipt",
+            "document": "attachment hash BD",
+            "clause": "unknown",
+            "text": "attachment received",
+            "recipient": "official"
+          }
+        },
+        "resource_use": {
+          "record_accesses": 6,
+          "analysis_passes": 1,
+          "work_minutes": 45
+        }
+      },
+      {
+        "phase": "followup",
+        "affordance": "cross-check source independence",
+        "parameters": {
+          "compare_records": [
+            "p2",
+            "p5",
+            "p6"
+          ]
+        },
+        "resulting_signal": {
+          "generic_policy_wording": "regional service capacity",
+          "wording_authorship": "capacity rationale; author of wording unstated",
+          "unresolved": [
+            "motive",
+            "unrecorded common source",
+            "who chose clause K"
+          ]
+        },
+        "resource_use": {
+          "record_accesses": 3,
+          "analysis_passes": 1,
+          "work_minutes": 30
+        }
+      }
+    ]
+  },
+  "world_facts_used": [
+    "records",
+    "unknowns"
+  ],
+  "resulting_signal": [
+    {
+      "K_occurrences": [
+        {
+          "record": "p1",
+          "day": 1,
+          "document": "BD"
+        },
+        {
+          "record": "p3",
+          "day": 4,
+          "document": "O1"
+        },
+        {
+          "record": "p4",
+          "day": 5,
+          "document": "O1"
+        },
+        {
+          "record": "p6",
+          "day": 4,
+          "document": "memo"
+        }
+      ],
+      "independent_receipt": {
+        "id": "p2",
+        "day": 3,
+        "origin": "independent mail receipt",
+        "document": "attachment hash BD",
+        "clause": "unknown",
+        "text": "attachment received",
+        "recipient": "official"
+      }
+    },
+    {
+      "generic_policy_wording": "regional service capacity",
+      "wording_authorship": "capacity rationale; author of wording unstated",
+      "unresolved": [
+        "motive",
+        "unrecorded common source",
+        "who chose clause K"
+      ]
+    }
+  ],
+  "derivation": {
+    "engine_sha256": "6b5293c51876fd92723f6fbf5824d86a813919fbc1a341d67f90cce3d1bd4dc8",
+    "method": "Deterministic replay of the declared operation using only the identified frozen facts; inspect this source for arithmetic and qualitative record transforms."
+  },
+  "resource_use": {
+    "record_accesses": 9,
+    "analysis_passes": 2,
+    "work_minutes": 75
+  },
+  "limits": "Identical wording need not establish a unique origin; missing transactions, copying and incomplete records constrain the history."
+}
