@@ -1,0 +1,29 @@
+{
+  "case_id": "M002",
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Comparable daily per-stage waiting-time summaries, staffing and ticket-mix records exist for eight weeks."
+    ]
+  },
+  "mapping": {
+    "state": "Handoff delays may be persistent or transient.",
+    "operation": "Repeat comparable waiting-time measurements by stage and case type and evaluate trajectories against expected variation.",
+    "signal": "Persistent increases, reversals or stable delay trajectories distinguish stages.",
+    "inference": "Locate sustained delay accumulation and prioritize bounded investigation of those stages.",
+    "limit": "Mix changes, sampling, interventions and regression to the mean can mimic improvement or deterioration."
+  }
+}

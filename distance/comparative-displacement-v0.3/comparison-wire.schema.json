@@ -1,0 +1,352 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "criteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "tie",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ]
+        },
+        "observables": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "tie",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ]
+        },
+        "inferential_warrant": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "tie",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ]
+        },
+        "problem_decomposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "tie",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ]
+        },
+        "inquiry_trajectory": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "tie",
+                "indeterminate"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "relation",
+            "rationale"
+          ]
+        }
+      },
+      "required": [
+        "action",
+        "observables",
+        "inferential_warrant",
+        "problem_decomposition",
+        "inquiry_trajectory"
+      ]
+    },
+    "mapping_A": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "counterfactual_native": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "likely",
+                "unlikely",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "local_displacement": {
+              "type": "string",
+              "enum": [
+                "low",
+                "moderate",
+                "high"
+              ]
+            },
+            "global_propagation": {
+              "type": "string",
+              "enum": [
+                "low",
+                "moderate",
+                "high"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "local_displacement",
+            "global_propagation",
+            "rationale"
+          ]
+        }
+      },
+      "required": [
+        "counterfactual_native",
+        "scope"
+      ]
+    },
+    "mapping_B": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "counterfactual_native": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "likely",
+                "unlikely",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "local_displacement": {
+              "type": "string",
+              "enum": [
+                "low",
+                "moderate",
+                "high"
+              ]
+            },
+            "global_propagation": {
+              "type": "string",
+              "enum": [
+                "low",
+                "moderate",
+                "high"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "local_displacement",
+            "global_propagation",
+            "rationale"
+          ]
+        }
+      },
+      "required": [
+        "counterfactual_native",
+        "scope"
+      ]
+    },
+    "decisive_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary_criterion": {
+          "type": "string",
+          "enum": [
+            "action",
+            "observables",
+            "inferential_warrant",
+            "problem_decomposition",
+            "inquiry_trajectory",
+            "none"
+          ]
+        },
+        "centrality": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "propagation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "irreducibility": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "primary_criterion",
+        "centrality",
+        "propagation",
+        "irreducibility",
+        "rationale"
+      ]
+    },
+    "overall_relation": {
+      "type": "string",
+      "enum": [
+        "A_more_displacing",
+        "B_more_displacing",
+        "tie",
+        "indeterminate"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "close"
+      ]
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  },
+  "required": [
+    "case_id",
+    "criteria",
+    "mapping_A",
+    "mapping_B",
+    "decisive_basis",
+    "overall_relation",
+    "confidence",
+    "uncertainty"
+  ]
+}

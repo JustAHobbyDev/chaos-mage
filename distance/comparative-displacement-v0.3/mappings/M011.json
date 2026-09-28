@@ -1,0 +1,30 @@
+{
+  "case_id": "M011",
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A synthetic rollout sandbox exposes a reversible known step in the fraction of segment support requests assigned to a new routing rule, keeping rollout exposure and traffic mix fixed. Timestamped duplicate-alert queue measurements cover initial, transient and later behavior; a matched unchanged queue tracks disturbances.",
+      "This diagnostic concerns only whether a brief alert spike is a routing transient. Its result is passed to the existing cohort-monitoring review; it supplies neither a replacement deterioration assessment nor a new rule for selecting other evidence sources."
+    ]
+  },
+  "mapping": {
+    "state": "A narrow support-routing subtask accepts a controlled input step and yields a time-varying duplicate-alert queue.",
+    "operation": "Apply the known routing-fraction step and record the duplicate-alert trajectory through peak, delay, overshoot and settling relative to the unchanged queue.",
+    "signal": "Transient response features distinguish an immediate spike from a persistent routing effect at this operating point.",
+    "inference": "Characterize this bounded support-alert response to inform the observation window for that alert before the ordinary segment review; leave the other cohort evidence and subsequent rollout inquiry unchanged.",
+    "limit": "Noise, initial state, disturbances, nonlinear response and insufficient follow-up limit extrapolation; a transient support-queue result alone neither proves nor excludes broader segment deterioration."
+  }
+}

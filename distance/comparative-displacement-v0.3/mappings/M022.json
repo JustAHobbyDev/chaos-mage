@@ -1,0 +1,29 @@
+{
+  "case_id": "M022",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Staging reproduces the latency increase under fixed replay; deployed versions, resource traces and configuration history are available."
+    ]
+  },
+  "mapping": {
+    "state": "A checkout slowdown has plausible code, capacity and configuration explanations.",
+    "operation": "Maintain those competing diagnoses, inspect replay traces and targeted tests that discriminate them, and revise their plausibility as results arrive.",
+    "signal": "The findings support, contradict or fail to distinguish each diagnosis.",
+    "inference": "Reprioritize explanations for the regression without prematurely asserting a unique cause.",
+    "limit": "Unlisted hypotheses, dependent traces, insensitive tests and anchoring can mislead."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "M028",
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Replay traces and a catalog of competing explanations are available, with uncertain measurements flagged."
+    ]
+  },
+  "mapping": {
+    "state": "Several explanations fit the latency regression.",
+    "operation": "Build an explicit evidence-by-hypothesis inconsistency matrix; assess each trace against every explanation, emphasize diagnostic contradictions and repeat comparisons with uncertain traces removed.",
+    "signal": "Some hypotheses retain important inconsistencies under the sensitivity checks.",
+    "inference": "Weaken incompatible causes and retain alternatives that survive the observed evidence.",
+    "limit": "Missing causes, shared trace errors and subjective diagnosticity can bias the matrix; survival is not proof."
+  }
+}

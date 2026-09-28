@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mapping_1": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mapping_2": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mapping_A": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mapping_B": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "baseline_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "cohort": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "orientation-control"
+      ]
+    },
+    "control_of": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "case_id",
+    "target_id",
+    "mapping_1",
+    "mapping_2",
+    "mapping_A",
+    "mapping_B",
+    "baseline_sha256",
+    "cohort",
+    "control_of"
+  ]
+}

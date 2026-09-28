@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mapping_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "admitted": {
+      "type": "boolean"
+    },
+    "origin": {
+      "type": "string",
+      "enum": [
+        "historical",
+        "new"
+      ]
+    },
+    "validity_A": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "validity_B": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "judgment_files": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "B": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ]
+    },
+    "judgment_sha256": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "B": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ]
+    }
+  },
+  "required": [
+    "mapping_id",
+    "target_id",
+    "admitted",
+    "origin",
+    "validity_A",
+    "validity_B",
+    "judgment_files",
+    "judgment_sha256"
+  ]
+}

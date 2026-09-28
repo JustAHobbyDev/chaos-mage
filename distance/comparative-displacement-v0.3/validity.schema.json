@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chaos-mage:v0.3:validity",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "validity": {
+      "$ref": "#/$defs/validity"
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "case_id",
+    "validity",
+    "uncertainty"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "validity": {
+      "type": "object",
+      "properties": {
+        "mechanism_fidelity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "preserved",
+                "conditionally-preserved",
+                "not-preserved"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "target_fidelity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "addressed",
+                "conditional",
+                "not-addressed"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "operational_coherence": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "coherent",
+                "conditional",
+                "incoherent"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "target_reframe": {
+          "type": "object",
+          "properties": {
+            "occurred": {
+              "type": "boolean"
+            },
+            "original_question": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reframed_question": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "relationship": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "occurred",
+            "original_question",
+            "reframed_question",
+            "relationship"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "occurred": {
+                    "const": true
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "original_question": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "reframed_question": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "occurred": {
+                    "const": false
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "original_question": {
+                    "type": "null"
+                  },
+                  "reframed_question": {
+                    "type": "null"
+                  },
+                  "relationship": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "unresolved_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        },
+        "final_status": {
+          "type": "string",
+          "enum": [
+            "Valid",
+            "Conditional",
+            "Invalid"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "mechanism_fidelity",
+        "target_fidelity",
+        "operational_coherence",
+        "target_reframe",
+        "unresolved_conditions",
+        "final_status",
+        "rationale"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Valid"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "addressed"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "coherent"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "unresolved_conditions": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Conditional"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "properties": {
+                    "mechanism_fidelity": {
+                      "properties": {
+                        "status": {
+                          "const": "not-preserved"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "not": {
+                  "properties": {
+                    "target_fidelity": {
+                      "properties": {
+                        "status": {
+                          "const": "not-addressed"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "not": {
+                  "properties": {
+                    "operational_coherence": {
+                      "properties": {
+                        "status": {
+                          "const": "incoherent"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "conditionally-preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "conditional"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "conditional"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "unresolved_conditions": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "final_status": {
+                "const": "Invalid"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "not-preserved"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "target_fidelity": {
+                    "properties": {
+                      "status": {
+                        "const": "not-addressed"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "operational_coherence": {
+                    "properties": {
+                      "status": {
+                        "const": "incoherent"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "M010",
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "An ordered synthetic prototype history has a known successful earlier revision and failing later revision under the same deterministic recorded activation replay. Every intermediate revision is executable. Independent exhaustive prior characterization establishes a single transition for this fixed replay, not a population claim.",
+      "Revision manifests identify the changed interaction rules at the boundary; a boundary may contain several interacting changes. The study seeks a bounded contribution to the broader parts-and-interactions question."
+    ]
+  },
+  "mapping": {
+    "state": "An ordered onboarding revision history brackets one reproducible activation-failure transition.",
+    "operation": "Test intermediate revisions on the fixed activation replay, discard the incompatible half of the remaining history, and repeat until the transition is localized; inspect the boundary manifest without assigning independent feature effects.",
+    "signal": "Success or failure at each tested revision shrinks the interval containing the activation transition.",
+    "inference": "Localize the first revision associated with failure and the proposal parts changed there, selecting a bounded interaction cluster for further necessity testing rather than claiming that each changed part is independently necessary.",
+    "limit": "Flakiness, unexecutable revisions, nonmonotonicity and incorrect endpoints would invalidate localization; even a unique boundary can contain interacting changes and establishes association rather than a unique cause or general user necessity."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "M023",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "software-release workflow failures",
+    "question": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A controlled release emulator exposes end-to-end artifact transit times over many known overlapping dependency paths. Internal job timestamps are withheld. Repeated trials with injected stage delays validate an additive timing model in the emulator; delayed arrival triggers the reproducible publication timeout."
+    ]
+  },
+  "mapping": {
+    "state": "Hidden per-stage transit delays affect observed end-to-end propagation along release paths.",
+    "operation": "Send equivalent artifacts across known paths, compare measured times with a candidate internal stage-delay map, and iteratively invert structured residuals to refine the map and test held-out routes.",
+    "signal": "Path-specific time discrepancies identify combinations of hidden delays compatible with timeouts.",
+    "inference": "Constrain an internal delay map and candidate dependency remedies for the timeout within the emulator.",
+    "limit": "Sparse coverage, measurement noise, model assumptions, regularization and non-unique maps limit causal specificity and live-system generalization."
+  }
+}
