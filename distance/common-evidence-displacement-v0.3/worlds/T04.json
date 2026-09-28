@@ -1,0 +1,121 @@
+{
+  "world_id": "W-T04",
+  "target_id": "T04",
+  "observable_start": {
+    "target": {
+      "domain": "organizational handoff delays",
+      "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?"
+    },
+    "native_baseline": {
+      "target_domain": "organizational handoff delays",
+      "target_task": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+      "reference_practitioner": "Operations improvement analyst specializing in service-team handoffs, without control-engineering training.",
+      "ordinary_methods": [
+        "Map actual workflow and ownership; compare timestamps and queues across case types.",
+        "Interview participants and inspect exception cases.",
+        "Pilot explicit handoff changes and compare turnaround, accounting for staffing and demand."
+      ],
+      "ordinary_evidence": [
+        "Ticket histories, queue lengths, staffing schedules, service-level targets and interviews."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Some analysts use process mining; dynamic system estimation from designed excitation is outside this scoped baseline."
+      ]
+    },
+    "shared_state": {
+      "facts": [
+        "Authored synthetic environment; no real persons or organizations.",
+        "A resettable ticket testbed represents teams A, B and C with known overlapping routes. At fixed staffing/demand, independently checked end-to-end waits are additive within 0.2 hours.",
+        "Historical low-demand endpoint waits are listed. New-period live tickets mix ordinary and busy slots. Busy slots add a common two-hour intake wait outside these three teams.",
+        "A ticket observation returns route, demand slot and end-to-end wait; internal stage waits are unavailable. All branches can choose any route and demand slot."
+      ],
+      "artifacts": {
+        "routes": {
+          "ab": [
+            "A",
+            "B"
+          ],
+          "ac": [
+            "A",
+            "C"
+          ],
+          "bc": [
+            "B",
+            "C"
+          ]
+        },
+        "historical_low_wait_hours": {
+          "ab": 7,
+          "ac": 5,
+          "bc": 8
+        },
+        "live_ab_hours": [
+          11,
+          13
+        ]
+      },
+      "initial_observations": [
+        "Delay increased on the main A-B route; whether the pattern persists and which internal team contributes remain open."
+      ],
+      "known_uncertainties": [
+        "The testbed is bounded; staffing remedies still require separate live assessment."
+      ],
+      "available_affordances": [
+        "inspect supplied histories",
+        "repeat comparable route observations",
+        "send controlled tickets along overlapping paths",
+        "fit delay maps",
+        "compare fixed staffing intervention in testbed"
+      ],
+      "constraints": [
+        "No internal timestamps or live staffing change."
+      ]
+    },
+    "investigation_budget": {
+      "primary_operations": 1,
+      "immediate_followups": 1,
+      "new_external_sources": 0,
+      "resource_ledger": {
+        "ticket_trials": 8,
+        "analysis_passes": 2,
+        "maximum_slots": 8
+      },
+      "other_constraints": [
+        "Both branches start from an independent reset of this same world.",
+        "A procedure may contain elementary trials, but all consume the common ledger.",
+        "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+      ]
+    }
+  },
+  "facts": {
+    "old_wait_hours": {
+      "A": 2,
+      "B": 5,
+      "C": 3
+    },
+    "new_wait_hours": {
+      "A": 2,
+      "B": 9,
+      "C": 3
+    },
+    "busy_intake_hours": 2,
+    "routes": {
+      "ab": [
+        "A",
+        "B"
+      ],
+      "ac": [
+        "A",
+        "C"
+      ],
+      "bc": [
+        "B",
+        "C"
+      ]
+    },
+    "test_staffing_B_reduction_hours": 2
+  },
+  "mutation_policy": "Immutable world. Interventions select specified counterfactual response functions; neither branch changes the other.",
+  "authorship_limit": "Synthetic stipulations support internal consistency, not empirical validation or practitioner consensus."
+}

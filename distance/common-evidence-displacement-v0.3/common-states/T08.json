@@ -1,0 +1,91 @@
+{
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?"
+  },
+  "native_baseline": {
+    "target_domain": "product-rollout monitoring",
+    "target_task": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "reference_practitioner": "Product operations analyst specializing in staged rollout monitoring, without formal control-system identification training.",
+    "ordinary_methods": [
+      "Track cohort metrics over time against pre-rollout baselines and comparison groups.",
+      "Inspect segment differences and investigate anomalies with support and product teams.",
+      "Pause or roll back an exposure and compare subsequent measurements when warranted."
+    ],
+    "ordinary_evidence": [
+      "Exposure logs, cohort outcomes, error and support rates, deployment history and comparison-group trends."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Monitoring conventions vary; causal conclusions require controls, and designed dynamic identification is outside the scoped baseline."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "Two isolated, representative rollout replicas can be reset to the same starting state. One controls cohort exposure; another controls support-routing fraction. Either is available to both branches.",
+      "A known 0-to-1 step can be applied to either input. Independent calibration establishes stable comparable controls and reliable time sampling for each channel, but does not disclose the current response trajectory.",
+      "One time sample returns treated and comparison error rates and support-queue counts. The observation horizon is six hourly samples. Holding current settings is also available.",
+      "Baseline error is 2 percent and baseline support queue is 4. A routing experiment affects the support subsystem; any inference about cohort deterioration needs the cohort channel too."
+    ],
+    "artifacts": {
+      "initial_metrics": {
+        "error_percent": 2,
+        "queue": 4
+      },
+      "current_snapshot": {
+        "error_percent": 3,
+        "queue": 8
+      },
+      "channels": [
+        "cohort_error_percent",
+        "support_queue"
+      ],
+      "inputs": [
+        "exposure",
+        "routing",
+        "hold"
+      ],
+      "sample_hours": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "initial_observations": [
+      "The current snapshot is adverse; persistence, transient shape, and the next safe observation window remain unresolved."
+    ],
+    "known_uncertainties": [
+      "Six hours cannot establish long-run equilibrium or a unique causal mechanism; replicas may not generalize."
+    ],
+    "available_affordances": [
+      "repeat matched measurements while holding settings",
+      "step exposure",
+      "step routing fraction",
+      "measure both channels and controls",
+      "compare response delay peak and persistence"
+    ],
+    "constraints": [
+      "At most one input step in the primary procedure; no real-user rollout change."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "time_samples": 6,
+      "input_steps": 1,
+      "analysis_passes": 2,
+      "horizon_hours": 6
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}

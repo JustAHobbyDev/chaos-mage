@@ -1,0 +1,177 @@
+{
+  "world_id": "W-T07",
+  "target_id": "T07",
+  "observable_start": {
+    "target": {
+      "domain": "software-release workflow failures",
+      "question": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?"
+    },
+    "native_baseline": {
+      "target_domain": "software-release workflow failures",
+      "target_task": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?",
+      "reference_practitioner": "Release engineer specializing in CI/CD pipeline troubleshooting, without forensic trace or process-tomography specialization.",
+      "ordinary_methods": [
+        "Inspect logs, dependency graphs, artifact lineage and environment differences.",
+        "Reproduce failures and reduce configurations or bisect changes.",
+        "Compare successful and failed runs and test candidate fixes in isolated pipelines."
+      ],
+      "ordinary_evidence": [
+        "Job logs, build manifests, dependency versions, environment snapshots and reproducible test outcomes."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Pipeline instrumentation is routine; end-to-end path inversion without per-stage logs is not assumed standard practice."
+      ]
+    },
+    "shared_state": {
+      "facts": [
+        "Authored synthetic environment; no real persons or organizations.",
+        "An isolated release workflow can replay the four fixed schedules with an optional signing dependency enabled or bypassed, then restore it. Reset removes carryover; artifact contents and all other settings are fixed.",
+        "Existing authenticated logs below are accessible to both branches. l2 copies l1 and is not independent corroboration.",
+        "A trial returns publication success/failure; a remedy here is limited to this schedule set. Bypass is safe only in this isolated workflow."
+      ],
+      "artifacts": {
+        "records": [
+          {
+            "id": "l1",
+            "source": "signer process",
+            "schedule": "s2",
+            "observation": "signer timeout"
+          },
+          {
+            "id": "l2",
+            "source": "summary copied from l1",
+            "schedule": "s2",
+            "observation": "signer timeout"
+          },
+          {
+            "id": "l3",
+            "source": "independent registry receipt",
+            "schedule": "s2",
+            "observation": "publication absent"
+          },
+          {
+            "id": "l4",
+            "source": "mirror process",
+            "schedule": "s4",
+            "observation": "mirror unavailable"
+          },
+          {
+            "id": "l5",
+            "source": "independent registry receipt",
+            "schedule": "s4",
+            "observation": "publication absent"
+          },
+          {
+            "id": "l6",
+            "source": "registry receipt",
+            "schedule": "s1",
+            "observation": "published"
+          },
+          {
+            "id": "l7",
+            "source": "registry receipt",
+            "schedule": "s3",
+            "observation": "published"
+          }
+        ],
+        "schedule_set": [
+          "s1",
+          "s2",
+          "s3",
+          "s4"
+        ],
+        "dependency_graph": [
+          "build -> signer -> registry",
+          "build -> mirror -> registry"
+        ]
+      },
+      "initial_observations": [
+        "With signing enabled, s1/s3 published and s2/s4 did not; absent publication may have multiple causes."
+      ],
+      "known_uncertainties": [
+        "Existing associations do not prove that signing is responsible or that bypass cures all failures."
+      ],
+      "available_affordances": [
+        "cross-check supplied logs and receipts",
+        "audit source dependence",
+        "replay schedules with signing enabled or bypassed",
+        "restore signing and repeat"
+      ],
+      "constraints": [
+        "No live release or new external sources."
+      ]
+    },
+    "investigation_budget": {
+      "primary_operations": 1,
+      "immediate_followups": 1,
+      "new_external_sources": 0,
+      "resource_ledger": {
+        "replay_trials": 12,
+        "record_accesses": 14,
+        "analysis_passes": 2,
+        "maximum_slots": 12
+      },
+      "other_constraints": [
+        "Both branches start from an independent reset of this same world.",
+        "A procedure may contain elementary trials, but all consume the common ledger.",
+        "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+      ]
+    }
+  },
+  "facts": {
+    "records": [
+      {
+        "id": "l1",
+        "source": "signer process",
+        "schedule": "s2",
+        "observation": "signer timeout"
+      },
+      {
+        "id": "l2",
+        "source": "summary copied from l1",
+        "schedule": "s2",
+        "observation": "signer timeout"
+      },
+      {
+        "id": "l3",
+        "source": "independent registry receipt",
+        "schedule": "s2",
+        "observation": "publication absent"
+      },
+      {
+        "id": "l4",
+        "source": "mirror process",
+        "schedule": "s4",
+        "observation": "mirror unavailable"
+      },
+      {
+        "id": "l5",
+        "source": "independent registry receipt",
+        "schedule": "s4",
+        "observation": "publication absent"
+      },
+      {
+        "id": "l6",
+        "source": "registry receipt",
+        "schedule": "s1",
+        "observation": "published"
+      },
+      {
+        "id": "l7",
+        "source": "registry receipt",
+        "schedule": "s3",
+        "observation": "published"
+      }
+    ],
+    "signer_failure_schedules": [
+      "s2"
+    ],
+    "mirror_failure_schedules": [
+      "s4"
+    ],
+    "publication_rule": "failure if mirror fails, or signing enabled and signer fails; otherwise success"
+  },
+  "mutation_policy": "Immutable world. Interventions select specified counterfactual response functions; neither branch changes the other.",
+  "authorship_limit": "Synthetic stipulations support internal consistency, not empirical validation or practitioner consensus."
+}

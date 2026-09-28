@@ -1,0 +1,190 @@
+{
+  "world_id": "W-T05",
+  "target_id": "T05",
+  "observable_start": {
+    "target": {
+      "domain": "product-proposal decomposition",
+      "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?"
+    },
+    "native_baseline": {
+      "target_domain": "product-proposal decomposition",
+      "target_task": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+      "reference_practitioner": "Product manager specializing in onboarding discovery and usability studies, without formal program-reduction training.",
+      "ordinary_methods": [
+        "Decompose proposals into user needs, flows, assumptions and dependencies.",
+        "Run usability sessions with prototypes and compare activation funnels or staged variants.",
+        "Use qualitative failure observations and small experiments to prioritize changes."
+      ],
+      "ordinary_evidence": [
+        "Interview notes, prototype task completion, funnel events, feature dependencies and observed user errors."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Practices vary; formal minimality searches and routing inversions are not assumed routine."
+      ]
+    },
+    "shared_state": {
+      "facts": [
+        "Authored synthetic environment; no real persons or organizations.",
+        "A deterministic onboarding replay is calibrated against the fixed activation task. Each permitted rule subset is executable and resets completely; one trial returns pass/fail for activation. This is not a model of population-wide user necessity.",
+        "Eight executable revisions form a nested history. Independent certification establishes repeatability and exactly one pass-to-fail transition on this chain, without disclosing its location. Revision 0 passes; revision 7 fails.",
+        "Rules A-G are separable toggles. A is welcome copy, B an identity prerequisite, C a theme, D a navigation guard, E a tooltip, F an optional survey, G a confirmation banner.",
+        "Plausible explanations include copy confusion, either guard alone, and interactions. Existing replay traces show a guard wait but do not identify its cause."
+      ],
+      "artifacts": {
+        "revisions": {
+          "0": [],
+          "1": [
+            "A"
+          ],
+          "2": [
+            "A",
+            "D"
+          ],
+          "3": [
+            "A",
+            "B",
+            "D"
+          ],
+          "4": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "5": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "6": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "7": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        "current_rules": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "known_endpoints": {
+          "0": "pass",
+          "7": "fail"
+        }
+      },
+      "initial_observations": [
+        "Current replay cannot reach activation; deciding which proposal parts require joint investigation remains open."
+      ],
+      "known_uncertainties": [
+        "Replay minimality, revision association and real-user necessity are different claims."
+      ],
+      "available_affordances": [
+        "inspect existing traces and revision manifests",
+        "test any rule subset",
+        "test any archived revision",
+        "partition rules or revisions",
+        "update competing explanations"
+      ],
+      "constraints": [
+        "No new participant study; no changing the replay success criterion."
+      ]
+    },
+    "investigation_budget": {
+      "primary_operations": 1,
+      "immediate_followups": 1,
+      "new_external_sources": 0,
+      "resource_ledger": {
+        "replay_trials": 20,
+        "analysis_passes": 2,
+        "maximum_slots": 20
+      },
+      "other_constraints": [
+        "Both branches start from an independent reset of this same world.",
+        "A procedure may contain elementary trials, but all consume the common ledger.",
+        "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+      ]
+    }
+  },
+  "facts": {
+    "revisions": {
+      "0": [],
+      "1": [
+        "A"
+      ],
+      "2": [
+        "A",
+        "D"
+      ],
+      "3": [
+        "A",
+        "B",
+        "D"
+      ],
+      "4": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "5": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "6": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "7": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "failure_interaction": [
+      "B",
+      "D"
+    ],
+    "rule_names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "predicate": "fail exactly when both B and D are enabled; all other configurations pass"
+  },
+  "mutation_policy": "Immutable world. Interventions select specified counterfactual response functions; neither branch changes the other.",
+  "authorship_limit": "Synthetic stipulations support internal consistency, not empirical validation or practitioner consensus."
+}

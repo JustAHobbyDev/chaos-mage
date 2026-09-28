@@ -1,0 +1,97 @@
+{
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "Configurations old and new differ only in the deployed cache-policy flag. Live traffic volume also changed, so the live association alone is confounded.",
+      "An isolated resettable replay can cross either configuration with low or high load on any listed route. A route trial returns endpoint latency in ms.",
+      "Independent calibration in this replay established an additive service-delay model at fixed load, endpoint measurement error bounded by 1 ms, and stable route membership. Calibration does not reveal current component delays.",
+      "Candidate explanations are a deployment effect on the B-containing dependency, a deployment effect confined to A, and load-only variation. Alternatives may be incomplete."
+    ],
+    "artifacts": {
+      "routes": {
+        "r1": [
+          "A",
+          "B",
+          "D"
+        ],
+        "r2": [
+          "A",
+          "C",
+          "D"
+        ],
+        "r3": [
+          "B",
+          "C"
+        ],
+        "r4": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "deployment_log": [
+        "old then new cache-policy flag; no other configuration change"
+      ],
+      "live_summary": {
+        "old_median_ms": 40,
+        "new_median_ms": 70,
+        "old_load": "low",
+        "new_load": "high"
+      }
+    },
+    "initial_observations": [
+      "The aggregate live route-r1 latency rose by 30 ms; attribution and component contributions are unresolved."
+    ],
+    "known_uncertainties": [
+      "No component-level timings are available. Replay effects need not generalize to every live workload."
+    ],
+    "available_affordances": [
+      "inspect supplied logs",
+      "compare hypotheses against supplied records",
+      "run endpoint replay(route, configuration, load)",
+      "fit candidate additive delay maps",
+      "test a held-out route"
+    ],
+    "constraints": [
+      "No internal service probes or live deployment changes.",
+      "All analyses use the same supplied route catalog."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "endpoint_trials": 10,
+      "analysis_passes": 2,
+      "maximum_replay_slots": 10
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}

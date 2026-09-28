@@ -1,0 +1,18 @@
+{
+  "target_domain": "production-regression diagnosis",
+  "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+  "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+  "ordinary_methods": [
+    "Compare deployment and latency timelines, stratifying traffic and configuration.",
+    "Replay representative workloads, bisect revisions and test competing causes in staging.",
+    "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+  ],
+  "ordinary_evidence": [
+    "Version and configuration history; request traces; latency distributions; resource counters.",
+    "Controlled replay and rollback observations."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+  ]
+}

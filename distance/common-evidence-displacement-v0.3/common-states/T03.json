@@ -1,0 +1,106 @@
+{
+  "target": {
+    "domain": "literary textual formation",
+    "question": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?"
+  },
+  "native_baseline": {
+    "target_domain": "literary textual formation",
+    "target_task": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+    "reference_practitioner": "Literary scholar specializing in manuscript genetics and textual formation, without computational stylometry training.",
+    "ordinary_methods": [
+      "Compare manuscript witnesses, handwriting, deletions, insertions and paper features.",
+      "Reconstruct revision layers and provenance with close reading and archive context.",
+      "Distinguish composition order from narrative order and acknowledge missing witnesses."
+    ],
+    "ordinary_evidence": [
+      "Draft variants, material features, correspondence, dated witnesses and archival provenance."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Formal signal alignment and controlled reader experiments are not assumed ordinary; manuscript scholars differ in quantitative training."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "All documentary and visible material observations below are shared.",
+      "A has a bounded erased patch under R. A calibrated non-destructive optical probe responds to residual ink material; controls and known cross-reactants are characterized. It localizes responsive material, not an event or date.",
+      "If responsive material is found, a separately calibrated spectral collation can compare its legible pattern with Q or known cross-reactants. This follow-up can establish a local reading; it cannot date assembly.",
+      "The physical B-before-C join observation is reliable. Paper dating remains uncertain."
+    ],
+    "artifacts": {
+      "custody": [
+        {
+          "leaf": "A",
+          "person": "editor",
+          "day": 7
+        },
+        {
+          "leaf": "B",
+          "person": "editor",
+          "day": 9
+        },
+        {
+          "leaf": "C",
+          "person": "editor",
+          "day": 9
+        }
+      ],
+      "features": [
+        {
+          "id": "join",
+          "observation": "A fastening through B is physically overlain by the C attachment; B attached before C."
+        },
+        {
+          "id": "quote",
+          "observation": "Authenticated day-12 letter quotes replacement R on A."
+        },
+        {
+          "id": "witness",
+          "observation": "Independent day-4 witness contains reading Q; it does not locate Q on A."
+        },
+        {
+          "id": "paper",
+          "observation": "Paper batch suggests day 8 but this dating is disputed."
+        }
+      ],
+      "hypotheses": {
+        "H1": "A revised before B then C were attached",
+        "H2": "A revised after B then C were attached",
+        "H3": "C attached before B; A revision time open"
+      }
+    },
+    "initial_observations": [
+      "Ordinary inspection cannot read the erased patch. H1 and H2 both fit the currently visible observations."
+    ],
+    "known_uncertainties": [
+      "Custody does not equal composition. The relative timing of A revision and B attachment is not directly observed."
+    ],
+    "available_affordances": [
+      "cross-check supplied custody links",
+      "compare every feature against hypotheses",
+      "remove disputed dating and repeat comparison",
+      "probe erased patch and controls",
+      "collate responsive undertext with witness Q"
+    ],
+    "constraints": [
+      "No destructive sampling or new archive sources."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "physical_assays": 4,
+      "record_accesses": 12,
+      "analysis_passes": 2,
+      "work_minutes": 120
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}

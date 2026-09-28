@@ -1,0 +1,186 @@
+{
+  "world_id": "W-T06",
+  "target_id": "T06",
+  "observable_start": {
+    "target": {
+      "domain": "archival chronology",
+      "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?"
+    },
+    "native_baseline": {
+      "target_domain": "archival chronology",
+      "target_task": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+      "reference_practitioner": "Archivist specializing in documentary provenance and historical correspondence, without dendrochronology or signal-processing specialization.",
+      "ordinary_methods": [
+        "Trace custody and creators; compare dated references, handwriting, postmarks, paper and event mentions.",
+        "Cross-check independent dating clues and preserve uncertain intervals.",
+        "Separate physical arrangement from original order."
+      ],
+      "ordinary_evidence": [
+        "Letters, envelopes, accession records, dated calendars, material clues and independent event records."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Pattern comparison is ordinary, but quantitative alignment of long measured sequences is not assumed customary."
+      ]
+    },
+    "shared_state": {
+      "facts": [
+        "Authored synthetic environment; no real persons or organizations.",
+        "All calendar, letters and custody records below are independently authenticated and available in full.",
+        "Each listed letter describes the event of its dispatch week; this contemporaneity link is established independently. The letter sequence preserves weekly order but can omit weeks.",
+        "Receipt weeks are direct dispatch anchors, not composition dates. The calendar and receipt series have separate origins."
+      ],
+      "artifacts": {
+        "calendar": {
+          "10": "fair",
+          "11": "flood",
+          "12": "election",
+          "13": "fire",
+          "14": "oath",
+          "15": "frost",
+          "16": "fair"
+        },
+        "letter_sequence": [
+          {
+            "letter": "L1",
+            "event": "flood"
+          },
+          {
+            "letter": "L2",
+            "event": "election"
+          },
+          {
+            "letter": "L3",
+            "event": "fire"
+          },
+          {
+            "letter": "L4",
+            "event": "frost"
+          }
+        ],
+        "receipts": [
+          {
+            "letter": "L1",
+            "dispatch_week": 11
+          },
+          {
+            "letter": "L3",
+            "dispatch_week": 13
+          },
+          {
+            "letter": "L4",
+            "dispatch_week": 15
+          }
+        ],
+        "custody": [
+          {
+            "object": "bundle",
+            "person": "recipient",
+            "week": 16
+          },
+          {
+            "object": "bundle",
+            "person": "archive",
+            "week": 40
+          }
+        ]
+      },
+      "initial_observations": [
+        "The bundle is undated as a whole; L2 has no direct dispatch receipt."
+      ],
+      "known_uncertainties": [
+        "Letters may have been composed earlier; an omitted letter is not evidence no letter existed."
+      ],
+      "available_affordances": [
+        "cross-check custody and dispatch records",
+        "align ordered event patterns to dated calendar",
+        "identify omitted weeks",
+        "check independent anchors"
+      ],
+      "constraints": [
+        "No new collections or documents."
+      ]
+    },
+    "investigation_budget": {
+      "primary_operations": 1,
+      "immediate_followups": 1,
+      "new_external_sources": 0,
+      "resource_ledger": {
+        "record_accesses": 20,
+        "analysis_passes": 2,
+        "work_minutes": 90
+      },
+      "other_constraints": [
+        "Both branches start from an independent reset of this same world.",
+        "A procedure may contain elementary trials, but all consume the common ledger.",
+        "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+      ]
+    }
+  },
+  "facts": {
+    "records": {
+      "calendar": {
+        "10": "fair",
+        "11": "flood",
+        "12": "election",
+        "13": "fire",
+        "14": "oath",
+        "15": "frost",
+        "16": "fair"
+      },
+      "letter_sequence": [
+        {
+          "letter": "L1",
+          "event": "flood"
+        },
+        {
+          "letter": "L2",
+          "event": "election"
+        },
+        {
+          "letter": "L3",
+          "event": "fire"
+        },
+        {
+          "letter": "L4",
+          "event": "frost"
+        }
+      ],
+      "receipts": [
+        {
+          "letter": "L1",
+          "dispatch_week": 11
+        },
+        {
+          "letter": "L3",
+          "dispatch_week": 13
+        },
+        {
+          "letter": "L4",
+          "dispatch_week": 15
+        }
+      ],
+      "custody": [
+        {
+          "object": "bundle",
+          "person": "recipient",
+          "week": 16
+        },
+        {
+          "object": "bundle",
+          "person": "archive",
+          "week": 40
+        }
+      ]
+    },
+    "dispatch_weeks": {
+      "L1": 11,
+      "L2": 12,
+      "L3": 13,
+      "L4": 15
+    },
+    "composition_weeks": "unknown"
+  },
+  "mutation_policy": "Immutable world. Interventions select specified counterfactual response functions; neither branch changes the other.",
+  "authorship_limit": "Synthetic stipulations support internal consistency, not empirical validation or practitioner consensus."
+}

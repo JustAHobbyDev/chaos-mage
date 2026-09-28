@@ -1,0 +1,120 @@
+{
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?"
+  },
+  "native_baseline": {
+    "target_domain": "investigative reporting",
+    "target_task": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "reference_practitioner": "Investigative reporter specializing in municipal procurement and documentary accountability.",
+    "ordinary_methods": [
+      "Trace document provenance and corroborate claims across independent records and interviews.",
+      "Construct a dated event sequence; compare competing explanations and seek disconfirming evidence.",
+      "Distinguish allegations, corroborated facts and unresolved gaps."
+    ],
+    "ordinary_evidence": [
+      "Tender versions, scoring sheets, emails, public registers and interview accounts.",
+      "Authentication and source-independence information."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Newsrooms vary in formal evidence matrices; basic corroboration and chronology are assumed ordinary."
+    ]
+  },
+  "shared_state": {
+    "facts": [
+      "Authored synthetic environment; no real persons or organizations.",
+      "The full authenticated records below are available to either investigation. Mail receipt p2 was independently generated; summaries of it are not additional sources.",
+      "BD hash identifies the complete bidder draft; the exact distinctive clause K is present in BD and O1. No source establishes motive or rules out an unrecorded common origin."
+    ],
+    "artifacts": {
+      "records": [
+        {
+          "id": "p1",
+          "day": 1,
+          "origin": "bidder draft",
+          "document": "BD",
+          "clause": "K",
+          "text": "three regional depots",
+          "recipient": "bidder"
+        },
+        {
+          "id": "p2",
+          "day": 3,
+          "origin": "independent mail receipt",
+          "document": "attachment hash BD",
+          "clause": "unknown",
+          "text": "attachment received",
+          "recipient": "official"
+        },
+        {
+          "id": "p3",
+          "day": 4,
+          "origin": "official editing log",
+          "document": "O1",
+          "clause": "K",
+          "text": "three regional depots inserted",
+          "recipient": "official"
+        },
+        {
+          "id": "p4",
+          "day": 5,
+          "origin": "public register",
+          "document": "O1",
+          "clause": "K",
+          "text": "three regional depots",
+          "recipient": "public"
+        },
+        {
+          "id": "p5",
+          "day": 2,
+          "origin": "older policy register",
+          "document": "P0",
+          "clause": "generic",
+          "text": "regional service capacity",
+          "recipient": "public"
+        },
+        {
+          "id": "p6",
+          "day": 4,
+          "origin": "official memo",
+          "document": "memo",
+          "clause": "K",
+          "text": "capacity rationale; author of wording unstated",
+          "recipient": "committee"
+        }
+      ]
+    },
+    "initial_observations": [
+      "The awarded bidder met clause K; competing bidders did not all meet it."
+    ],
+    "known_uncertainties": [
+      "Advance access and clause transmission can be supported without establishing intentional steering."
+    ],
+    "available_affordances": [
+      "inspect every supplied record",
+      "track whole-document custody",
+      "track clause-level copying",
+      "cross-check source independence",
+      "compare alternative explanations"
+    ],
+    "constraints": [
+      "No new interviews, documents or external searches."
+    ]
+  },
+  "investigation_budget": {
+    "primary_operations": 1,
+    "immediate_followups": 1,
+    "new_external_sources": 0,
+    "resource_ledger": {
+      "record_accesses": 12,
+      "analysis_passes": 2,
+      "work_minutes": 90
+    },
+    "other_constraints": [
+      "Both branches start from an independent reset of this same world.",
+      "A procedure may contain elementary trials, but all consume the common ledger.",
+      "Unused resources are allowed; proposed later inquiries are not performed within this budget."
+    ]
+  }
+}
