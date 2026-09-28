@@ -1,0 +1,61 @@
+{
+  "case_id": "C031",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A removes one modal and restores it in a counterbalanced trial. The baseline PM already runs staged prototype variants and small experiments, so toggling a single feature off and on is an ordinary act with one added restoration step. B partitions the rule set, tests subsets and their complements, keeps only reductions that still reproduce failure, and stops when no permitted single reduction preserves it. That iterative reduction search is a different kind of operation from comparing a few staged variants, and the baseline explicitly says formal minimality searches are not routine."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's signal is completion or abandonment rate changing after removal and restoration, which is the same funnel and task-completion evidence the PM already collects, read in temporal association with the toggle. B treats each reduced configuration's outcome as one of three signals: failure preserved, completion, or unresolved because the combination is dependency-invalid. Failure-preservation across reduced subsets and the separate unresolved category are new kinds of evidence, not more observations of an ordinary kind."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A licenses a bounded causal contribution of the modal from a reproducible removal-and-recurrence response. That is stronger than a one-shot variant comparison but is the same evidence-to-conclusion relation as the baseline's staged-variant comparison, with recurrence added. B licenses a claim of joint sufficiency: the retained rule set reproduces failure under the oracle and no permitted single removal does, so the parts matter together. That warrant is test-relative and explicitly explains why independent ranking can miss interactions, which no ordinary variant comparison supports."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A keeps the modal as one feature among the PM's existing needs, flows and dependencies, and leaves other dependencies unresolved. B introduces the failure-inducing configuration as a partitionable set of rules, a minimal failure-inducing interaction set, and dependency-invalid combinations tracked separately. These distinctions enable a stopping condition and an answer in the form of an interaction set rather than a ranked list, which is what the second half of the target question asks for."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same question, A sends the PM to confirm the modal, then presumably to the next single feature, with interactions still unaddressed. B sends the PM into iterative partition and complement tests on the replay, then to interpreting the retained interaction set and the unresolved combinations. A's context requires only prototypes and matched participants, so its next steps stay within usability studies. B's context is a deterministic replay with an oracle, so its claim is restricted to that replay and the following question becomes whether the interaction set holds for real users. Both contexts are stated and usable, and B's next question differs more from ordinary practice."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A PM running usability sessions with prototypes would ordinarily disable a suspected modal and compare completion. The counterbalanced restoration is a modest addition, but the same behavior of toggling one feature and comparing funnels would probably occur without the clinical framing."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the deliberate restoration step to check recurrence, which slightly strengthens the single-factor causal claim. It changes little downstream: the answer remains a per-feature contribution, other dependencies stay unresolved, and the interaction half of the target question is untouched."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline states that formal minimality searches are not routine, and the PM lacks program-reduction training. Systematic subset and complement testing with a retention rule and separate handling of unresolved outcomes would not probably arise from ordinary staged-variant comparison."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant and decomposition: joint sufficiency of a test-relative minimal interaction set replaces per-feature contribution. Downstream it changes the stopping condition, the form of the answer, and the next question about generalizing beyond the replay. Propagation is moderate rather than high because the stated context restricts claims to one recorded path, so validation with real users returns to ordinary usability methods."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The target question asks what interactions prevent a simple feature ranking. B's warrant of joint sufficiency under a minimality test directly addresses that core question, while A's single-factor removal-response warrant addresses only one feature's contribution and leaves interactions unresolved by its own statement.",
+    "propagation": "B's warrant sets a stopping condition, defines what counts as a finished answer, and generates the next question about whether the interaction set holds for real users. A's warrant leaves subsequent hypotheses, tests and claims in ordinary per-feature form.",
+    "irreducibility": "Ordinary language can describe A fully as turning the modal off and on across matched participants. It cannot preserve B's distinction between a reduction that preserves failure, one that completes, and one that is unresolved, nor the reason to stop when no single permitted removal preserves failure. Removing the delta debugging structure removes the reason to run complement tests and the license to claim joint sufficiency.",
+    "rationale": "B changes every criterion more than A, but the decisive point is the warrant: A improves confidence within the baseline's existing evidence-to-conclusion relation, while B introduces a different relation that answers the interaction part of the question. A's counterbalanced rechallenge is a real but minor addition. The differing evidence contexts do not block comparison, because both are stated and each mapping's claim is assessed within its own context. B's restriction to a replay limits its reach but does not reduce the change to the practitioner's loop."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "B's evidence context is a deterministic replay of one recorded path, so its displacement may be confined to the prototype phase, with real-user validation returning to ordinary practice.",
+    "Some PMs informally test feature subsets across staged variants, which could narrow B's action gap, though the baseline says minimality searches are not routine.",
+    "A's counterbalanced restoration may be slightly more non-ordinary for a PM than assessed here, but it does not reach the interaction question."
+  ]
+}

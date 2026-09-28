@@ -1,0 +1,61 @@
+{
+  "case_id": "C016",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A cross-checks receipts and logs while assessing their independence and access, extending ordinary log inspection and run comparison. B sends equivalent artifacts over overlapping paths and iteratively reconstructs hidden stage delays, including held-out route tests. Reproduction and isolated testing are ordinary baseline acts, but path-based inverse reconstruction introduces a substantially different operation. Withheld timestamps alone do not establish this difference."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A makes agreement, contradiction and copying dependence among ordinary records explicit signals. B treats the structured pattern of observed-minus-predicted transit times across overlapping paths as evidence about hidden delay combinations. This changes the meaningful signal beyond collecting additional timing observations."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A supports failure locations through credible, independent corroboration, refining the baseline's comparison of records and outcomes. B supports candidate internal delay maps through their ability to explain pathwise timing discrepancies under the emulator's validated additive model and predict held-out routes. Its warrant depends on constrained inverse reconstruction, with non-uniqueness limiting attribution, rather than direct agreement among records describing a failure."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A distinguishes independently generated evidence from copied or commonly affected reports, enabling the engineer to avoid double-counting support for an existing workflow location. B connects known dependency paths to latent stage-delay variables and distinguishes alternative maps compatible with aggregate measurements. Dependency stages themselves are ordinary entities; treating their delays as jointly constrained hidden quantities enables a new reconstruction task."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "In A's supplied context, the engineer seeks an independent receipt or log with relevant access, resolves contradictions and proceeds to remedy testing. In B's emulator context, the engineer compares route times with model predictions, refines compatible delay maps and tests held-out routes before bounding candidate remedies. These are different evidence contexts, not interchangeable options on a pooled dataset. Nevertheless, B's model-guided trajectory departs further from the baseline than A's source cross-checking; the difference rests on inversion and predictive testing, not missing internal timestamps."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A release engineer already inspecting logs, manifests and artifact lineage would probably cross-check records to locate a failed transition. Explicit credibility, access and copying assessments sharpen that behavior, but substantially similar investigation is plausible without the imported framework."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The strongest local change is making source dependence an explicit condition of evidential support, so several agreeing reports may count as only one source. This can revise confidence and prompt another evidence check, while leaving the broader sequence of workflow localization, reproduction and candidate-fix testing largely intact."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline includes reproduction, instrumentation and isolated fix testing, but does not assume end-to-end path inversion is standard. Joint reconstruction of latent stage delays from overlapping routes is therefore unlikely to arise as substantially the same behavior for this practitioner without the imported structure, although the packet does not establish practitioner consensus."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "Inverse reconstruction substantially changes how aggregate observations warrant claims about internal dependencies. Within the emulator, that change propagates through the delay-map representation, route experiments, residual signals, held-out validation and limits on remedy attribution. Its broad influence within that inquiry does not establish transfer to a live release system."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "B changes the basis for answering the core dependency-attribution question: hidden stage delays become candidates because they explain aggregate path behavior under a validated model. A improves the credibility of reports locating failures within an otherwise familiar investigation.",
+    "propagation": "B's warrant determines which delay maps remain viable, what route predictions require testing and how narrowly a remedy claim must be stated when several maps fit. A's independence checks can redirect evidence collection and qualify claims, but generally feed back into the baseline's established troubleshooting sequence.",
+    "irreducibility": "Ordinary engineering language can express both mappings. Removing B's joint path constraints, residual structure and inverse-model reasoning would remove the basis for reconstructing hidden delays and testing map predictions. Removing A's explicit corroboration framework would lose useful dependence checks, but much of its investigative behavior remains supported by ordinary record comparison.",
+    "rationale": "B is more displacing because its central warrant reorganizes representation, observation and subsequent testing across the bounded emulator inquiry. A contributes a meaningful safeguard against false convergence, but that refinement has less downstream reach. B's ordinary elements, including reproduction and isolated testing, do not erase the operational change introduced by inversion. The ordering does not depend on counting criterion advantages or assuming that B supports live-system conclusions."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline is an authored hypothesis rather than verified practitioner consensus, so counterfactual-native judgments remain provisional.",
+    "B constrains delay maps and candidate remedies within the emulator; non-uniqueness, coverage and model assumptions limit causal specificity and live-system generalization.",
+    "The mappings have different supplied evidence contexts. Their actual next measurements cannot be compared as choices from one shared dataset, but their operational departures from the stated baseline are sufficiently specified for this ordering."
+  ]
+}

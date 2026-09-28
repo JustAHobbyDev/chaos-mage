@@ -1,0 +1,62 @@
+{
+  "case_id": "C004",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline already tracks cohort metrics over time against pre-rollout and comparison groups, and pauses or rolls back when warranted. Mapping A's operation (repeat comparable segment measurements, compare trajectories with expected variation, apply an alert rule) is that same inspection act with a slightly more formal change rule. Mapping B introduces a designed forward perturbation: a known 10%-to-20% exposure step in a consented sandbox cohort under fixed traffic mix, run specifically to record the transient. The baseline's pause/rollback is remediation followed by comparison, not an identification experiment; the baseline text explicitly places designed dynamic identification outside scope. B changes the kind of act."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats persistence, trend, reversal and threshold crossing across daily measurements as the signal; these are more observations of the ordinary kind the baseline already inspects. B treats temporal shape features of the response to a known input (delay, peak, overshoot, settling time, steady-state shift relative to controls) as the signal. Overshoot and settling are not things the baseline looks for; they are a new kind of evidence rather than more timestamps."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is corroboration over time: a sustained trend against expected variation and comparison groups supports 'state is changing.' That is the baseline's existing evidence-to-conclusion relation. B's warrant is differential perturbation response: because the input step is known and a comparison cohort tracks disturbances, the response features are attributed to the exposure change and license claims about the segment's dynamics at that operating point (e.g., how long before outcomes settle). This is a different reason for an observation to support a claim, even though B explicitly declines to assert mechanism."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's entities are deterioration vs transient fluctuation and an alert rule; the baseline already distinguishes real deterioration from noise via comparison groups, so this is mostly relabeling. B recasts exposure as a controllable input, outcomes as an output, and splits the response into initial state, transient and later behavior at a stated operating point. That decomposition enables something new: choosing observation windows from measured settling time and judging whether snapshot deterioration is a transient overshoot rather than a steady-state shift."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same target question, A sends the analyst to keep taking comparable daily measurements, check for mix changes and concurrent interventions, and pause if the trend persists, which is where the baseline would go anyway. B sends the analyst to schedule a controlled step in the sandbox cohort, measure delay and settling against the unchanged cohort, and then set observation windows and exposure decisions from those features. Applicability differs: B depends on a consented sandbox cohort, fixed traffic mix and minute-level data being available, as its evidence context states; A's context is generic daily data. Within each stated context, B redirects the next inquiry more, and its inference is bounded to the tested step."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The baseline's first ordinary method is tracking cohort metrics over time against baselines and comparison groups. A practitioner would repeat measurements, watch for sustained adverse movement, worry about mix shifts, and pause when a trend holds, without importing clinical serial-monitoring language."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is a slightly more explicit alert rule and attention to regression to the mean; that is a refinement of the existing monitoring act, not a new one. Because the act, signal and warrant match the baseline, downstream hypotheses, tests and stopping conditions are essentially unchanged."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The reference analyst lacks control-system identification training and the baseline explicitly excludes designed dynamic identification. They might pause and compare, but would not run a controlled forward step to extract overshoot and settling time and then derive observation windows from them."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The designed step and its transient-feature observables are a different kind of act and evidence from ordinary monitoring. Propagation is moderate rather than high: the mapping restricts itself to characterizing response at one operating point, disclaims mechanism, and feeds back into observation windows and reversible exposure decisions, while the eventual deterioration judgment still rests on comparing outcomes to controls."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "action",
+    "centrality": "The designed exposure step bears directly on the core question, since it is the means of deciding whether apparent deterioration is transient or persistent and what reversible action follows; A's monitoring refinement touches the same question but does not change how it is approached.",
+    "propagation": "B's step response produces settling and overshoot estimates that reset observation windows and the timing of exposure decisions, changing later tests and stopping conditions; A's alert rule leaves those as in baseline.",
+    "irreducibility": "Ordinary language of tracking, comparison groups and pause-and-compare cannot preserve B's distinctions of transient versus steady-state response or settling time as a window-setting quantity. Remove the step-response framing and there is no reason to run a controlled step in a sandbox or to look for overshoot; A's content survives fully in baseline terms.",
+    "rationale": "All five criteria favor B, but the decisive point is that B introduces a non-ordinary act, a controlled identification step, from which its new observables, warrant and next inquiry all follow, whereas A coincides with the baseline's existing practice. No criterion favors A. B's disclaimed mechanism and single-operating-point limit temper its reach, which is why global propagation is moderate, but they do not offset the central change in the kind of investigation."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "The two evidence contexts are asymmetric (daily cohort data for A versus a consented sandbox with minute-level data for B); the comparison holds within each stated context, but B's displacement is contingent on that sandbox being available.",
+    "Whether the baseline's pause-or-rollback-and-compare already functions as an informal step response would narrow B's action advantage; the baseline frames it as remediation, not identification.",
+    "B's explicit refusal to assert mechanism and its operating-point limit make its downstream reach less than the local change suggests.",
+    "A's defined alert rule may be marginally more formal than typical baseline monitoring, but not enough to register as a distinct act."
+  ]
+}

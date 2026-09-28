@@ -1,0 +1,62 @@
+{
+  "case_id": "C011",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts are mapping the workflow, comparing recorded timestamps and queues, interviewing, inspecting exceptions, and piloting explicit handoff changes. Mapping A adds a different kind of act: injecting tagged test tickets with identical workload along known overlapping routes as designed probes, then performing inverse reconstruction of a hidden per-stage wait map from end-to-end residuals. The baseline explicitly places dynamic estimation from designed excitation outside its scope. Mapping B repeats comparable daily per-stage wait measurements over eight weeks and evaluates the sequence; that is more observations of the ordinary kind the analyst already draws from ticket histories, organized by time rather than a new operation."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "Mapping A treats the spatially structured mismatch between predicted end-to-end traversal times from a candidate wait map and observed probe times as the signal, and the pattern of residuals across overlapping paths is what carries information. That is a new kind of evidence relative to raw timestamps and queue lengths. Mapping B treats persistence, reversal, trend, or threshold crossing in daily per-stage wait summaries as the signal. That is a temporal feature extracted from ordinary timestamp data, a modest sharpening of what the baseline already compares across case types and over pilot periods."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrant is direct comparison and corroboration: stage timestamps, queue lengths, interviews and pilot before-and-after turnaround converge on a bottleneck. Mapping A licenses claims about hidden stage waits because a candidate wait map reproduces the observed residual pattern across many overlapping paths, with explicit non-uniqueness and regularization limits, which is a model-fit inversion warrant rather than direct reading. Mapping B licenses a claim that a stage's delay is sustained because the increase persists across repeated comparable measurements beyond expected variation. That is a temporal corroboration warrant close to the baseline's own practice of comparing turnaround while accounting for staffing and demand; it adds a change rule but not a different evidence-to-conclusion relation."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "Mapping A introduces hidden per-stage wait contributions as unknowns, path coverage and resolution as properties of the probe design, and non-uniqueness among wait maps that fit equally well. These distinctions enable asking which additional routes would discriminate between competing localizations, which the baseline has no vocabulary for. Mapping B introduces a persistent versus transient classification of each stage's delay and expected variation bands. That distinction enables prioritizing stages with sustained accumulation, which is useful but largely relabels the baseline's existing practice of separating structural bottlenecks from demand or staffing fluctuations."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the target question, Mapping A sends the practitioner toward designing further test-ticket routes to improve coverage, choosing regularization, checking whether residuals are reduced by an adjusted wait map, and then bridging the testbed result to live queues, since its evidence context validates additive traversal only in a low-load synthetic testbed and warns it may not generalize. Mapping B sends the practitioner toward extending or refining the daily monitoring series, defining change thresholds, checking mix, staffing and intervening changes as confounds, and then bounded investigation of stages with persistent increases. B's eight weeks of comparable live records apply directly to the task, while A's applicability is bounded to the testbed regime. Even with that bound, A redirects the next measurement and hypothesis more than B, whose next steps closely resemble ordinary timestamp comparison and pilot evaluation."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The reference analyst has stage-level ticket histories and would ordinarily read waits directly and pilot changes. Routing controlled test tickets along overlapping paths and inverting end-to-end residuals into a hidden wait map is designed excitation with inverse reconstruction, which the baseline explicitly marks as outside scope. Without the tomographic ontology there is no reason to perform that act or to treat residual patterns as the signal."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component, inferential warrant through model-fit inversion of path residuals, is far from ordinary direct comparison. Propagation is moderate rather than high because the mapping's own limit confines validated inference to a low-load synthetic testbed, the live task still has stage-level ticket histories that reduce the need for inversion, and the second half of the target question about bounded changes still rests on ordinary pilots."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "An operations analyst comparing timestamps across case types and evaluating pilots while accounting for staffing and demand would probably plot per-stage waits over the eight weeks and distinguish sustained from temporary delay without importing serial monitoring. The explicit change rule and expected-variation framing sharpen this but do not create a behavior the baseline would not reach."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the observable, temporal persistence or reversal in daily stage summaries, which is a modest reorganization of ordinary timestamp evidence. It shifts prioritization toward stages with sustained increases and adds confound checks for mix and interventions, but later hypotheses, pilots and stopping conditions remain those of ordinary practice."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears on the core question of where delay accumulates: A locates hidden stage waits by fitting a candidate wait map to path-structured residuals across overlapping probe routes, whereas the baseline and B locate delay by directly comparing recorded stage times.",
+    "propagation": "The inversion warrant generates candidate wait maps as hypotheses, added probe routes as tests, residual reduction and non-uniqueness as stopping conditions, and claims explicitly hedged to the testbed regime. B's temporal warrant changes prioritization among stages but leaves later tests and claims as ordinary pilots and comparisons.",
+    "irreducibility": "Ordinary language of comparing timestamps across case types cannot express localization from residual patterns across overlapping paths or the non-uniqueness among fitting wait maps. Removing the tomographic structure removes the reason to route test tickets and to read residuals as evidence. B's persistent versus transient distinction can be stated in ordinary trend-comparison language without loss.",
+    "rationale": "A changes the warrant, the act, the signal, and the decomposition of the central localization question, while B introduces a modest temporal refinement of ordinary evidence that the analyst would likely reach anyway. No criterion favors B. The strongest opposing consideration is applicability: B's eight weeks of comparable live records apply directly to the task, whereas A's validated inference is confined to a low-load synthetic testbed and may not generalize, which limits A's global reach. That limit lowers how far A propagates, but does not make B's changes larger than A's on any criterion, so A is more displacing with clear confidence."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "Mapping A's evidence context exposes only endpoint timestamps, while the baseline's ticket histories include stage-level data; in the live setting the inversion may add less than in the testbed, which affects A's global propagation but not the direction of the comparison.",
+    "Whether A's testbed results transfer to live queues is unvalidated by its own limit, so the extent to which A changes live bounded-change decisions is uncertain.",
+    "The boundary between B's serial monitoring with change rules and ordinary trend-watching is a judgment call; some analysts who use process mining or control charts may already practice something close to B.",
+    "The baseline is a scoped authored hypothesis rather than verified practitioner consensus."
+  ]
+}

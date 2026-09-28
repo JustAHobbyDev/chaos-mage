@@ -1,0 +1,61 @@
+{
+  "case_id": "C025",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts are timeline comparison, replay, bisection, rollback/reintroduction, and trace inspection. A adds inverse reconstruction: fitting candidate internal delay maps to endpoint times across overlapping routes, calibrating the path-time model with injected delays, checking held-out routes, and iterating the map to reduce residuals. Paired old/new trials and reversal are ordinary, but the map-fitting and held-out-route validation are not. B's act is building an evidence-by-hypothesis matrix and rerunning it with uncertain traces removed; the underlying acts (inspect traces, test competing causes in staging) are the baseline's own, so B changes bookkeeping rather than the kind of operation."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A makes route-structured residual mismatch between predicted and observed endpoint times, and its disappearance under reversal, the meaningful signal. That is a new kind of evidence relative to latency distributions and per-span traces. B's signal is a comparative consistency/inconsistency pattern across hypotheses, which reorganizes existing trace evidence and flags uncertain traces; it adds no new kind of measurement, only an explicit view over ordinary ones."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "In the baseline, an observation supports attribution because rollback/reintroduction changes latency or because a trace directly shows where time went. In A, endpoint observations support a localization claim because a delay map that reduces structured residuals, survives held-out routes, and reverses with the deployment is constrained by the path geometry, subject to non-uniqueness. That is a model-fit warrant absent from the baseline. B's warrant is eliminative: hypotheses are weakened by diagnostic inconsistency that survives sensitivity checks. Bisection and rollback already carry an eliminative warrant, so B sharpens rather than replaces the evidence-to-conclusion relationship."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A introduces internal delay contributions per service on overlapping routes, path coverage, held-out routes, model residuals, and non-uniqueness as operational entities; these let the engineer localize which dependency changed without internal instrumentation and decide where coverage is too sparse to trust. B introduces a hypothesis catalog, a per-item diagnosticity judgment, and an uncertain-trace subset. Diagnosticity is a modestly new distinction, but the hypotheses and traces are the baseline's 'competing causes' and 'request traces' relabeled."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, the baseline heads toward bisect, rollback, and trace inspection. A sends the engineer toward designing route coverage, injecting calibration delays, checking held-out routes and the reversal state, then inspecting the dependency the map localizes. B sends the engineer toward finding evidence that discriminates among surviving hypotheses and rerunning the comparison without uncertain traces, which converges with ordinary staging tests of competing causes. The contexts differ: A's harness exposes only endpoint times on overlapping routes, while B has replay traces. That difference explains why A's next steps are coverage-driven, but A's trajectory would remain non-ordinary even with traces, and B's would remain ordinary even with only endpoint times, so the comparison holds."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline explicitly scopes out any formal inverse-problem specialty. The engineer would run paired old/new trials and reversal natively, but would not fit iterated delay maps to endpoint times, hold out routes, or reason about coverage and non-uniqueness without the imported ontology."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component, the inverse-fit warrant and residual signal, is far from ordinary trace inspection. Propagation is moderate rather than high because the attribution of the regression to the isolated deployed change versus load is still carried by ordinary paired trials at fixed load; the imported structure mainly governs localization within the change's effect, the held-out and reversal stopping conditions, and which dependency to inspect next."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Testing competing causes in staging is an ordinary method here. An engineer would enumerate candidate causes, check traces against them, and discount unreliable measurements without the ACH label; the explicit matrix and formal sensitivity rerun are additions in rigor, not in investigative behavior."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The explicit inconsistency matrix with sensitivity checks changes how evidence is weighed and how the stopping condition is stated (surviving hypotheses, survival not proof). It does not change acts, evidence sources, or next measurements, so the change stays confined to the evaluation step."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears on the core question's evidential half: what bounded causal evidence distinguishes the deployed change from load variation. A answers it with a route-constrained delay map validated by injected delays, held-out routes and reversal, while the baseline answers with rollback deltas and direct traces. B's eliminative warrant bears on the same question but is already present in bisection and rollback.",
+    "propagation": "A's warrant changes later hypotheses (which service contribution moved), the tests (held-out routes, calibration injections), the stopping condition (residual reduction plus reversal), and the claim form (localization bounded by non-uniqueness). B changes the stopping condition wording and adds a sensitivity rerun but leaves tests and claims otherwise ordinary.",
+    "irreducibility": "Ordinary language cannot preserve A's distinctions: without a hidden delay map over overlapping paths there is no reason to compute structured residuals, hold out routes, inject calibration delays, or worry about coverage artifacts. B's distinctions (candidate causes, discriminating evidence, unreliable traces) are expressible in ordinary incident-diagnosis language, and the matrix can be dropped without removing any act.",
+    "rationale": "A changes why endpoint observations license a localization claim, and that change pulls the action, observables, decomposition, and next inquiry along with it. B's advantages are real but slight: it makes elimination explicit and adds a sensitivity check, which the reference practitioner would approximate natively. No criterion favors B, and A's one central warrant change would outweigh B even if B had minor advantages elsewhere. The differing evidence contexts do not undermine this: A's displacement does not depend on the absence of traces, and B's ordinariness does not depend on their presence."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "Evidence contexts differ: A's harness exposes only endpoint times while B has replay traces; the packet gives no common observability state, though the direction of the comparison does not appear to hinge on it.",
+    "Part of A's contribution (paired old/new trials, reversal) is ordinary, and the tomographic localization addresses mechanism within the change more than the 'which deployed change' attribution itself, so A's global propagation could be judged lower.",
+    "B's diagnosticity assessment and formal sensitivity rerun could be more displacing for teams with low experimental maturity, which the baseline flags as variable."
+  ]
+}

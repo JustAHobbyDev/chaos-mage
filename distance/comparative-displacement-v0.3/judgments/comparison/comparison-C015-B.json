@@ -1,0 +1,61 @@
+{
+  "case_id": "C015",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts are inspection of logs and lineage, reproduction, bisection, and isolated fix tests. A introduces inverse reconstruction: sending equivalent artifacts across many known overlapping paths, fitting a hidden stage-delay map to end-to-end times, and validating on held-out routes. The baseline itself flags path inversion without per-stage logs as non-standard. B's act is cross-checking receipts, worker logs and store records with an independence assessment, which is inspection of ordinary evidence with added provenance scrutiny."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A treats path-specific residuals between measured transit times and a candidate model's predictions as the signal, a structured-mismatch evidence kind the baseline does not use; the baseline reads timestamps and log content directly. B's signal is agreement or conflict among record sources about the artifact and failed transition, which is more observations of an ordinary kind, refined by tracing whether a summary was copied."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrant is direct observation and reproduction: a log shows the failure, a bisected change or fix removes it. A licenses a claim because a delay map fitted to residuals across paths predicts held-out routes, with non-uniqueness and regularization limiting causal specificity. B keeps corroborative warrant but conditions it on source independence, so agreement among derivative records is discounted. That is a refinement of ordinary corroboration, not a new evidence-to-conclusion relation."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A introduces a hidden per-stage delay field, path coverage, residual structure and a family of compatible maps as working entities; these enable choosing which additional paths to sample and which delay combinations are consistent with the timeout. B distinguishes independent from dependent sources and shared instrumentation bugs. This enables discounting copied summaries but largely relabels lineage checks the baseline already performs."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, A sends the practitioner toward adding path coverage, tightening the delay map, and testing held-out routes inside the emulator, then to remedies targeted at inferred delay combinations, with live generalization flagged as a separate step. B sends the practitioner toward tracing provenance of reports and then to ordinary remedy testing at the corroborated failure location, close to the baseline's compare-runs-then-test path. A's context withholds internal timestamps while B's assumes multiple record sources exist; this difference is noted but A's trajectory remains the larger departure."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "Without per-stage timestamps, a release engineer would ordinarily add instrumentation, reproduce, or bisect rather than infer a stage-delay map from end-to-end times over overlapping paths and validate on held-out routes."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component, inverse reconstruction with residual-fit warrant, is far from ordinary practice. Within the emulator it redirects observables, decomposition and next steps, but the mapping's own limit confines claims to the emulator and leaves live-system remedy confirmation to ordinary testing, so propagation to the full target inquiry is moderate."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Cross-checking registry receipts, worker logs and artifact-store records for the same release is ordinary lineage inspection; the engineer would probably reach the same behavior, with the independence framing making copied summaries an explicit check rather than a new act."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The largest change is conditioning agreement on source independence and traced copying. It adjusts how much weight a converging record receives but does not alter the acts performed, the kind of evidence, or the subsequent remedy testing."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears on the core question of which dependencies account for the failures: A supports that claim by model fit to structured residuals and held-out prediction rather than by direct observation or reproduction.",
+    "propagation": "The residual-fit warrant generates A's new entities, its next measurements, and its stopping condition of an adequately constrained map, and shapes which remedies are candidates, though live confirmation returns to ordinary testing.",
+    "irreducibility": "Ordinary language cannot preserve the distinction between a delay map constrained by residuals and a log-observed delay; removing the tomographic structure removes the reason to send artifacts along overlapping paths and to treat residual patterns as evidence. B's independence distinction can be expressed as ordinary lineage and duplicate-record checks.",
+    "rationale": "A changes the warrant, the act, the signal kind and the decomposition together, with the warrant change being the central driver. B refines corroboration weighting within ordinary inspection. No criterion favors B, so the difference in overall displacement is defensible despite A's emulator-bounded reach."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "A's evidence context withholds internal timestamps, a situation the baseline does not assume; if per-stage logs were available, the inversion might not be chosen and A's displacement in a live setting is less clear.",
+    "B's context states copied summaries can be traced, which may already make independence assessment part of ordinary lineage inspection, so B's small displacement could be even smaller.",
+    "A's limit on live-system generalization makes the global propagation judgment depend on how much of the target inquiry counts as emulator work versus live remedy confirmation."
+  ]
+}

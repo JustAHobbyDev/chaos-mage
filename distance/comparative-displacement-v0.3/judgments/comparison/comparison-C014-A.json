@@ -1,0 +1,61 @@
+{
+  "case_id": "C014",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's trace inspection and discriminating staging tests closely match ordinary testing of competing causes. B adds a systematic evidence-by-hypothesis comparison and removal of uncertain traces to test sensitivity. That removal changes the evidence used in the comparison, introducing a modestly different investigative operation rather than merely more inspections."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "Both use ordinary traces and findings. A treats their support, contradiction or non-discrimination as signals already relevant to ordinary diagnosis. B additionally treats the persistence of important inconsistencies across evidence-removal comparisons as a meaningful signal. Its change concerns the structure and robustness of evidence, not a new measurement source."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's revision of competing explanations is substantially native to the baseline. B makes diagnostic contradiction and its persistence after excluding uncertain traces an explicit basis for weakening causes. This modestly changes how elimination is justified, although neither surviving the matrix nor reprioritizing diagnoses establishes which deployed change caused the regression."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's code, capacity and configuration explanations largely reproduce distinctions already operational in the baseline. B organizes each trace's relationship to every hypothesis and distinguishes comparisons with and without uncertain evidence. These relations enable detection of shared evidential support and exclusions dependent on uncertain traces; they are more than renamed candidate causes."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A directs the engineer toward discriminating replay tests and trace inspection, consistent with ordinary staging diagnosis. B directs attention toward contradictions across all cataloged explanations and whether exclusions persist when uncertain traces are removed. A explicitly has reproduction under fixed replay; B supplies replay traces, a hypothesis catalog and flagged uncertainty. B's next comparison is therefore supported, but its context does not establish whether load has been controlled or whether further staging interventions are available."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The reference engineer already tests competing causes in staging and inspects traces, resource metrics and configuration history. Maintaining alternatives and revising them after discriminating results would probably occur without the diagnostic ontology."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The largest change is explicit discipline around retaining competing explanations and avoiding premature closure. Its operations, evidence and updating largely preserve the ordinary investigative loop, so little downstream redirection follows."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "Contradiction-based testing of competing causes is native to the baseline. The packet does not establish whether this engineer would independently compare every trace against every explanation and systematically repeat those comparisons after removing uncertain traces."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The strongest change is the explicit inconsistency comparison and sensitivity check governing elimination. It propagates into which causes remain plausible and which evidential dependencies warrant further inquiry. Its reach is bounded: it retains ordinary traces and hypotheses and does not itself supply controlled causal evidence separating a deployment effect from load variation."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The reliability of eliminating competing causes bears directly on identifying the deployed change and bounding that attribution against alternatives such as load variation.",
+    "propagation": "B makes sensitivity to uncertain traces relevant to whether a cause should remain excluded, affecting the surviving hypotheses and subsequent comparisons. A largely continues the baseline's ordinary discrimination and revision.",
+    "irreducibility": "Ordinary engineering language can express both mappings. A's operational distinctions are already substantially present in the baseline. Removing B's systematic contradiction and evidence-removal structure would remove its explicit reason to check whether an exclusion depends on uncertain traces; retaining that behavior would retain the operational substance of the mapping.",
+    "rationale": "B introduces a modest but central additional condition on hypothesis elimination: important incompatibilities should be assessed across alternatives and checked against uncertainty in the evidence. Its matrix and inquiry changes support that condition. A's targeted tests can provide direct causal evidence in its fixed-replay context, but those acts are already ordinary here. B's greater displacement therefore follows from the changed basis for managing exclusions, not from superior causal evidence, formal vocabulary or the number of criterion advantages."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "close",
+  "uncertainty": [
+    "The baseline is a scoped authored hypothesis, and does not specify how routinely engineers use exhaustive inconsistency comparisons or evidence-removal sensitivity checks.",
+    "B's context does not establish fixed-load reproduction or availability of controlled interventions. A's fixed-replay evidence cannot be transferred to B.",
+    "Neither mapping supplies actual results sufficient to identify a deployed cause; the comparison concerns the investigative behavior each introduces."
+  ]
+}

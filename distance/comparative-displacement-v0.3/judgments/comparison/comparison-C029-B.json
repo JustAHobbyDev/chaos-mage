@@ -1,0 +1,62 @@
+{
+  "case_id": "C029",
+  "confidence": "close",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline already traces document provenance and compares explanations. A introduces a different act: inverse reconstruction of a custody chain for each distinctive scoring clause across private bidder drafts and official sheets, cross-checking editor copy events against message records and marking per-clause gaps. B's act is building an exhaustive evidence-by-explanation table and re-running it after excluding uncertain records; the matrix formalizes ordinary comparison of explanations, and the exclusion re-run is a modest new step rather than a new kind of operation."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A makes a new kind of signal meaningful: a clause-custody sequence, including a documented pre-publication transfer of specific language from a bidder draft to an official document, detectable even when whole-document histories look clean. B's signal is a comparative pattern of robust contradictions across explanations, which is a recoding of ordinary evidence (tender versions, emails, timestamps) rather than a new evidence type."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is corroboration: independent records forming compatible chronological links establish a transfer, which matches the baseline's cross-record corroboration, though the resulting lineage is applied as evidence of influence. B shifts the warrant from support and corroboration toward eliminative weighting: an explanation is weakened by diagnostic inconsistency, and survival under exclusion of uncertain records licenses confidence. The baseline already seeks disconfirming evidence, so this is a moderate rather than large change, but it is a larger warrant change than A's."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A changes the operational entity from the document to the distinctive clause, giving each clause its own custodians, dated copying transactions, locations and gaps. This enables detecting steering-relevant transfer inside documents whose overall provenance is unremarkable and separates established transitions from unresolved intervals per clause. B names three explicit alternatives (favoritism, legitimate revision, clerical error) and sorts evidence by diagnosticity; the baseline already compares competing explanations, so this mostly relabels an existing distinction."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, A sends the reporter to authenticated editor logs and message records to date specific clause transfers and close named gaps, a new evidence source at phrase granularity; its context assumes such logs exist. B sends the reporter toward whichever records discriminate among the three explanations and toward a re-evaluation with uncertain-timestamp records dropped; its context notes timestamp uncertainty. B's next step is a structured version of seeking disconfirming evidence, which is ordinary; A's next step targets an evidence source and unit the baseline does not use."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "A procurement reporter would ordinarily notice scoring language matching a bidder's draft and would use available editor logs. Whether they would systematically treat each clause as a tracked object with its own dated custody chain and explicitly marked gaps, rather than comparing whole documents, is not settled by the baseline."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The largest change is the unit of provenance shifting from document to clause, which is a granularity change within an ordinary method rather than a wholly new method. It propagates to what counts as an established fact about steering and to the stopping condition (bounded histories with named gaps), but by its own limit it does not address motive or adjudicate the alternative explanations."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The baseline already compares competing explanations and seeks disconfirming evidence, and its uncertainty note treats basic comparison as ordinary while formal matrices vary. The reporter would likely reach substantially the same comparative behavior; the explicit table and exclusion re-run are formalizations."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant emphasis on diagnostic inconsistency and robustness under record exclusion, a modest shift from ordinary disconfirmation seeking. Because the matrix organizes all evidence against all three explanations, it shapes the whole assessment and the final claim about surviving explanations, giving it wider reach than its local novelty."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "problem_decomposition",
+    "centrality": "The clause-as-tracked-object distinction bears directly on the core question: whether scoring language traveled from the preferred bidder before official adoption is the primary documentary evidence of steering.",
+    "propagation": "It determines which logs and messages are sought next, what is treated as a signal (clause-custody sequences and pre-publication transfers), which transitions are reported as established versus gaps, and when the reconstruction stops.",
+    "irreducibility": "Ordinary 'trace document provenance' does not preserve per-clause custody chains where whole-document histories are clean; removing the clause-level ontology removes the reason to reconstruct custody per clause and to read a dated copying event as a transfer of scoring language.",
+    "rationale": "A changes a central entity and the signals built on it, and that change drives the action and next inquiry. B's advantage on inferential warrant is real but modest: the baseline already compares explanations and seeks disconfirming evidence, and the baseline's own uncertainty flags matrices as a formalization that varies among newsrooms. One central decomposition change that feeds action, observables and trajectory outweighs B's moderate warrant refinement. The differing evidence contexts (authenticated phrase-level logs for A, uncertain timestamps for B) do not block comparison because both mappings operate on the same tender versions, sheets and messages in the baseline."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "Whether phrase-level comparison of bidder drafts to scoring sheets is already routine in procurement reporting, which would reduce A's displacement.",
+    "Whether a formal evidence-by-explanation matrix with sensitivity re-evaluation is ordinary for the reference newsroom; the baseline notes practice varies.",
+    "A's displacement depends on its supplied context of authenticated editor logs at phrase granularity; without such logs the clause-custody act may collapse toward ordinary document comparison.",
+    "B's exclusion re-run is motivated by its own context of uncertain timestamps; its relative weight would shift if the same timestamp uncertainty applied to A's logs."
+  ]
+}

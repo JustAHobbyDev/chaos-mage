@@ -1,0 +1,61 @@
+{
+  "case_id": "C006",
+  "criteria": {
+    "action": {
+      "relation": "tie",
+      "rationale": "A introduces explicit elimination through an all-explanations inconsistency matrix and removal of uncertain observations. B introduces a designed exposure probe with transient and later-response measurement. Both change investigative operations, but baseline practice already includes inspecting evidence and perturbing exposure through pauses or rollbacks. Neither the matrix's additional comparisons nor the exposure increase alone establishes a substantially greater change in kind."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A makes contradictions across explanations meaningful, reorganizing ordinary telemetry, support summaries and exposure history into diagnostic evidence. B makes delay, overshoot, settling and persistent shift meaningful features of the response to a known input. These are more than additional timestamps: their relationships distinguish transient deterioration from later behavior and determine appropriate observation windows. This more substantially changes the signal extracted from baseline outcome tracking."
+    },
+    "inferential_warrant": {
+      "relation": "tie",
+      "rationale": "A licenses weakening explanations through diagnostic inconsistency and sensitivity to uncertain evidence. B licenses operating-point-specific claims about response dynamics through controlled exposure changes and temporal features relative to controls. Both meaningfully extend ordinary baseline and comparison-group reasoning. B's perturbation warrant partly overlaps ordinary rollback comparisons, while A's contradiction-based screening also changes how evidence supports conclusions; neither warrants a clear advantage here."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A explicitly separates competing causes, individual observations, uncertain records and evidence-to-explanation consistency relations. Those distinctions enable selective elimination and sensitivity checks. B separates input from output and transient from later response, enabling dynamic characterization, but exposure, outcomes and temporal comparisons already appear in the baseline. A more extensively reorganizes the explanation space."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A directs the analyst toward the observation or reversible action that best discriminates surviving explanations, using its supplied records. B directs the analyst toward a known exposure step, measurements spanning the response, and follow-up timed to delay and settling. Its supplied sandbox, fixed traffic mix and comparison cohort support that trajectory; these facilities cannot be assumed for A. The greater displacement lies in dynamics governing subsequent measurements and decisions, rather than in B merely having an available sandbox."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "Ordinary anomaly investigation could compare rollout harm with alternative explanations. The baseline does not establish whether the analyst would systematically test every observation against every explanation, emphasize contradictions and remove uncertain evidence to check sensitivity."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The largest change is the explicit organization and elimination of explanations. It affects interpretation and selection of the next discriminating inquiry, while retaining ordinary evidence sources and broadly familiar investigative operations."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The analyst would ordinarily track trends and might compare outcomes after a rollback. Substantially the same designed probe and systematic characterization of delay, overshoot and settling is unlikely under this scoped baseline, which expressly excludes designed dynamic identification."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "Treating the controlled response's temporal structure as the principal signal substantially changes observation and interpretation. That change propagates into probe design, follow-up duration and reversible exposure decisions, while remaining bounded to the tested operating point and leaving causal mechanism unresolved."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "observables",
+    "centrality": "B's distinction between transient and persistent deterioration directly affects both whether the segment is deteriorating and when an exposure decision is justified.",
+    "propagation": "Response features determine what must be measured, how long observation should continue, which claims the probe supports and what reversible exposure action follows.",
+    "irreducibility": "Ordinary language can express both mappings' distinctions. However, removing B's dynamic-response structure would remove the specific reason to measure overshoot and settling and to let those features govern observation windows. Ordinary trend and rollback comparisons alone do not preserve that operational structure. A likewise requires its explicit inconsistency relations to preserve systematic elimination.",
+    "rationale": "B is more displacing because its changed signal reorganizes the measurement-to-decision sequence at the core of the target question. A has the stronger decomposition of competing explanations and a substantive elimination warrant, while action and warrant differences do not independently establish an ordering. B's advantage rests on the central downstream role of response shape, rather than criterion counts or access to experimental facilities."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "close",
+  "uncertainty": [
+    "The baseline does not specify how systematically ordinary analysts compare and eliminate alternative explanations.",
+    "Ordinary time-series monitoring and rollback comparisons overlap parts of B; the displacement depends on its supplied designed response characterization.",
+    "A's context does not establish access to B's sandbox or measurements. The comparison preserves each context and does not infer that A lacks intervention capability."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "case_id": "C002",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's act is bypass-then-restore of a single dependency in an isolated pipeline with repeated counterbalanced trials and a matched control. The baseline already reduces configurations, bisects, and tests candidate fixes in isolated pipelines; the restore step and control pipeline add rigor to an ordinary removal-and-retest operation. B's act is inverse reconstruction: send equivalent artifacts over many overlapping paths, fit an additive stage-delay map to end-to-end times, iterate on residuals and test held-out routes. The baseline itself notes that end-to-end path inversion without per-stage logs is not standard, so B introduces a new kind of investigative operation rather than more of an ordinary one."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's signal is publication completion recorded by registry receipts under bypass versus restoration, compared with a control pipeline. Completion outcomes and comparison of passing versus failing runs are ordinary evidence. B's signal is path-specific discrepancy between measured transit times and a candidate delay map's predictions, treated as structured residual mismatch. Neither logs nor run outcomes carry that meaning in the baseline; the residual becomes evidence only relative to the model, which is a new kind of signal."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A licenses a claim because failures diminish on removal and recur on restoration relative to a control. Ordinary bisection and fix testing already infer contribution from removal-then-observe; adding rechallenge and counterbalancing strengthens confidence but keeps the same evidence-to-conclusion relation. B licenses a claim because a pattern of residuals across many paths constrains which hidden delay combinations could have produced the observed times, explicitly subject to non-uniqueness and regularization. Support flows from model fit under coverage constraints, not from direct observation of a stage or a perturbation response. That is a different warrant."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A keeps the ordinary entities: a named dependency, a failure outcome, a control pipeline, and a bounded remedy. Carryover and counterbalancing are procedural refinements. B introduces hidden per-stage transit delays as unobserved parameters, an additive delay map over known paths, path coverage, held-out routes, and a family of non-unique maps compatible with the timeouts. These distinctions enable asking which delay combinations fit and which routes discriminate among them, questions the baseline decomposition cannot pose."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same question, A sends the engineer to confirm bypass as a remedy, check for carryover or spontaneous variation, and bound the claim to tested schedules. That closely tracks the baseline's reproduce, reduce and test-fix path. B sends the engineer to refine a delay map, choose held-out routes to break non-uniqueness, and only then derive candidate dependency remedies within the emulator. A's context supplies a bypassable dependency and control pipeline; B's context withholds internal timestamps and validates an additive model. The withheld timestamps are a contextual constraint, not evidence of displacement on their own, but the next inquiries B generates differ in kind from the baseline's."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A release engineer who suspects an optional signing step would bypass it, rerun the fixed schedules, and restore it to see whether failures return. Running a matched control pipeline and counterbalanced repeats is added discipline, not a behavior the engineer needs the clinical framing to reach."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the formalized rechallenge with control and counterbalancing, a modest tightening of ordinary fix testing. It does not alter which entities are considered, what counts as evidence, or the remaining steps of the inquiry."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "Without the tomographic framing, the engineer would seek per-stage logs or instrument jobs rather than fit a hidden delay map to end-to-end times over many paths and iterate on structured residuals with held-out routes. The baseline states this inversion is not assumed standard practice."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The warrant and the observable both change: evidence is residual mismatch against a model, and support comes from fit under coverage constraints with acknowledged non-uniqueness. The change reaches the decomposition and the next inquiries within the emulator, but the mapping's own limit bounds it to that emulator and yields only candidate remedies, so it does not fully reshape the remedy half of the target question or live-system claims."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears on the core question of which dependencies account for failures: B answers it by constraining a hidden delay map from residual patterns, whereas A and the baseline answer it by observing outcome change after removing a dependency.",
+    "propagation": "B's warrant determines subsequent hypotheses as families of compatible maps, tests as held-out routes chosen to discriminate among them, and stopping conditions as residual reduction bounded by non-uniqueness. A's downstream steps remain the baseline's confirm-and-bound-the-fix loop.",
+    "irreducibility": "Ordinary language of logs, bisection and run comparison cannot express residual mismatch against a predicted delay map or non-unique map families; remove the imported structure and there is no reason to send artifacts over overlapping paths or to treat time discrepancies as signal. A's counterbalanced rechallenge can be restated as repeated remove-and-restore testing without losing operational content.",
+    "rationale": "B changes every criterion, and the warrant change is central and irreducible. A changes almost nothing in kind; its distinctive contributions are rigor and a control pipeline within an ordinary perturbation test. The only consideration favoring A is that it directly tests a bounded remedy, which is usefulness rather than displacement. No criterion favors A on displacement, so the ordering does not rest on counting."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "The two evidence contexts differ: A supplies a bypassable dependency and control pipeline, B withholds internal timestamps and supplies an additive-model emulator. The comparison holds because both are synthetic isolated pipelines addressing the same question, but the differing constraints shape what each mapping can do.",
+    "Whether counterbalanced repeats with a matched control pipeline count as ordinary fix testing or a modest methodological import is a judgment; treating it as ordinary drives A's low ratings.",
+    "B's support for the remedy half of the question is indirect (candidate remedies from a non-unique map), which limits its global reach but does not affect the displacement ordering."
+  ]
+}

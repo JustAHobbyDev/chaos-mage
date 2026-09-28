@@ -1,0 +1,62 @@
+{
+  "case_id": "C030",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's act is inspection and cross-checking of registry receipts, worker logs and artifact-store records, which the baseline already lists under inspecting logs and artifact lineage; the only addition is tracing which records copy which. B's act is a reversible, counterbalanced removal and restoration of one dependency under a fixed schedule set with a matched unchanged pipeline run alongside. The baseline covers reducing configurations, bisecting and testing a fix in an isolated pipeline, so the bypass step is ordinary, but deliberate restoration to provoke recurrence, counterbalanced repetition, and a concurrent control pipeline are a controlled-perturbation design rather than a one-way reduction. B changes the kind of act more than A does."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A changes what counts as a signal by discounting convergence among records that share provenance: agreement between a build log and a dashboard summary derived from it stops being evidence. That is a genuine but narrow adjustment to ordinary log comparison. B makes the meaningful signal a phase-dependent pattern: failure rate falls during bypass, returns on restoration, and does so relative to the control pipeline's background rate. Ordinary fix-testing reads 'the fix worked'; B reads a differential response across reversals against a control, which is a new kind of evidence for an intermittent effect."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A keeps corroboration as the warrant and refines it: convergence supports a failure location only when the sources are independent in access and origin. The baseline's comparison of successful and failed runs already relies on corroboration, so A tightens rather than replaces the relation. B replaces 'reproduced and fixed' with 'reproducible differential response to reversible perturbation, controlled against spontaneous variation', and explicitly limits the claim to a bounded contributor rather than a unique cause. That is a different reason why the observation supports the claim, and it directly licenses the remedy half of the target question."
+    },
+    "problem_decomposition": {
+      "relation": "tie",
+      "rationale": "A adds a provenance layer over the evidence: which records are primary, which are copied, and which sources had access to which transition. That enables discounting false convergence and localizing the failed transition. B adds phases (baseline, bypass, restore), a matched control pipeline, and the distinction between a bounded contributor and a unique internal cause. That enables a scoped remedy claim. Both introduce operationally useful new distinctions on different sides of the inquiry, evidence structure versus hypothesis structure, and neither clearly outweighs the other on decomposition alone."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same question, A sends the engineer to trace record provenance, resolve conflicts between independent records, settle the failed transition, and then hand 'unresolved dependencies' to later remedy testing; the remedy itself is deferred. A's context applies to almost any release with multiple record sources. B sends the engineer to check whether recurrence holds on restoration, whether carryover or delayed effects distort the pattern, whether other schedules behave alike, and whether bypass is an acceptable bounded remedy. B's context is narrower: it requires an isolated reproducible pipeline, a fixed schedule set, and an optional dependency that can be safely bypassed and restored. Within that context B moves the next question further from ordinary practice, which would typically stop once bypass appears to fix the failures."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A release engineer troubleshooting a publication failure ordinarily compares registry receipts, worker logs and artifact-store records and notices when a dashboard summary merely restates a log. The formal independence and access assessment adds discipline but would probably not change which records are consulted or which transition is identified."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the warrant, where convergence is weighted by independence, but this is a refinement of ordinary log corroboration rather than a new relation. It affects only the localization step and leaves reproduction, fix testing and the remedy claim untouched."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "Bypassing the signing dependency in an isolated pipeline and seeing if failures stop is ordinary configuration reduction, and many engineers would repeat runs for an intermittent failure. Deliberately restoring the dependency to confirm recurrence, counterbalancing the order, and running a matched unchanged pipeline to track background variation are not assumed standard and might or might not be reached without the imported design."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant and the accompanying act: causal support from a controlled reversible perturbation rather than from reproduction plus a successful fix. That change resets the stopping condition (recurrence on restoration is required, not just disappearance on bypass), bounds the resulting claim to tested schedules, and shapes follow-up questions about carryover and other schedules. It does not alter the initial log inspection or the choice of suspected dependency."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The target question asks which dependencies account for intermittent failures and what bounded remedy is supported. B's warrant change bears directly on both halves: it is the reason the dependency is credited as a contributor and the reason bypass counts as a tested remedy. A's warrant change affects only the localization sub-task and defers the remedy.",
+    "propagation": "B's warrant changes the stopping condition (recurrence on restoration relative to a control, not just disappearance on bypass), the form of the final claim (bounded contributor, not unique cause), and the next tests (carryover, delayed effects, other schedules). A's change alters which records are trusted but leaves later hypotheses, fix tests and claims as in ordinary practice.",
+    "irreducibility": "Ordinary language of 'bisect and test the fix in an isolated pipeline' does not capture the requirement to restore the factor and observe recurrence against a concurrently run control; remove the dechallenge-rechallenge structure and there is no reason to restore the dependency or to run the matched pipeline. A's distinction, independent versus copied records, is expressible in ordinary log-lineage terms and removing the intelligence framing would not remove the reason to compare primary records.",
+    "rationale": "B changes the act, the signal and the warrant at the core of the question, and those changes propagate into the stopping rule and the remedy claim. A's changes are real but confined to a refinement of ordinary corroboration during localization. Problem decomposition is a tie and does not offset this, since A's provenance layer serves a peripheral step. B's overlap with ordinary reduction and fix testing keeps its displacement moderate, but it still exceeds A's, so the relation is B more displacing."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "Whether counterbalanced restoration with a matched control pipeline is a new kind of act or merely a careful version of ordinary bisection is a judgment call; it drives the size, not the direction, of B's displacement.",
+    "B's evidence context supplies an isolated reproducible pipeline and a safely bypassable optional dependency; outside that context its operation is unavailable and the comparison would narrow.",
+    "A's independence assessment may be more or less native depending on how much the reference engineer already distrusts derived summaries, which is not fixed by the baseline.",
+    "The baseline is a scoped authored hypothesis, not verified practitioner consensus."
+  ]
+}

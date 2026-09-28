@@ -1,0 +1,61 @@
+{
+  "case_id": "C034",
+  "confidence": "close",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A repeats comparable waiting-time measurements over eight weeks of daily per-stage summaries. The baseline already compares timestamps and queues from ticket histories, so the act is more observations of an ordinary kind. B's withdrawal of duplicate signoff in a matched pilot queue is close to the baseline's 'pilot explicit handoff changes and compare turnaround'. Its restoration step, reintroducing the suspected factor to see whether delay returns, is not an ordinary operation for an operations analyst, who would normally keep a change that appeared to help. That reintroduction is a distinct kind of controlled perturbation."
+    },
+    "observables": {
+      "relation": "tie",
+      "rationale": "A makes the trajectory (persistence, reversal, stable delay evaluated against expected variation) the signal instead of the level of delay at a stage. B adds recurrence of delay on restoration as a signal alongside the ordinary pilot signal of reduction on withdrawal. Each introduces one new signal class beyond the baseline's timestamp and queue comparisons; neither clearly changes what counts as evidence more than the other."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is that a temporal pattern constrains whether a stage's delay is sustained or transient. This refines localization but remains corroboration from repeated ordinary measurements. B's warrant is that a reproducible relationship across removal and reintroduction, compared against a matched unchanged queue, supports causal contribution by the factor. The baseline pilot infers from a single pre/post or pilot-versus-control comparison; B changes why the observation supports the claim by requiring reversal-and-recurrence rather than one-directional improvement."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A introduces a persistent-versus-transient split per stage and case type, which lets the analyst discard stages whose delay is fluctuation and prioritize sustained accumulation. The baseline compares stages by level and does not make this distinction. B's entities (a reversible factor, pilot versus matched queue, carryover) largely relabel the baseline's pilot-with-controls structure; the only new element is treating the policy as reinstatable, which is a small decomposition change."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the target question, A sends the practitioner to classify stage trajectories from the eight weeks of daily summaries and then investigate persistent stages by ordinary means; the next steps are ones the baseline would take anyway. B sends the practitioner to a pilot on one presupposed factor, then to a non-ordinary next step: reinstating the policy and checking recurrence before concluding. The contexts differ, A having longitudinal data and B having a reversible policy and matched queue, and B presupposes localization already done, but the direction B imposes on the next intervention departs further from ordinary practice."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "An operations analyst with eight weeks of daily per-stage waiting-time summaries would plausibly plot them over time and distinguish steady from spiky stages, accounting for mix and staffing, without importing serial monitoring."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the persistent-versus-transient decomposition of stages, which is a modest refinement of ordinary trend inspection of ticket histories. It changes which stages get prioritized but does not change the pilot, interview, or recommendation steps that follow."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "The withdrawal pilot with a matched queue is ordinary practice, so the practitioner would likely do that part. Reinstating duplicate signoff to test recurrence is not something the baseline methods motivate, and the mapping makes it conditional on justification, so whether behavior ends up substantially the same depends on whether restoration is actually performed."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant: causal support requires reversal and recurrence rather than one-directional pilot improvement. This changes the stopping condition for the pilot and the strength of the bounded recommendation, but it applies to one presupposed factor in one pilot queue and does not alter how delay is localized across stages."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The causal attribution of delay to duplicate signoff is central to the second half of the target question, which bounded changes could reduce delay. A's change bears on the first half, where delay accumulates, but only as a refinement of ordinary prioritization.",
+    "propagation": "B's warrant changes when the pilot may stop and what the recommendation may claim: improvement on withdrawal alone is no longer sufficient. A's change alters which stages are examined next but leaves subsequent tests and claims ordinary.",
+    "irreducibility": "Ordinary language of 'pilot and compare' preserves A's operations fully and preserves B's withdrawal step, but it does not supply a reason to reintroduce a removed policy. Removing the dechallenge-rechallenge structure removes the reason to perform the restoration and to treat recurrence as evidence.",
+    "rationale": "B changes a more central component, the warrant for causal contribution, and that change propagates to the pilot's stopping condition and the recommendation. A's advantage in problem decomposition is real but its operations, signals, and inferences remain within ordinary trend inspection of existing ticket histories, and its counterfactual is likely native. Observables tie. The judgment is close because B's non-ordinary step is conditional on justification and its scope is limited to one factor and one pilot queue."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "B's restoration step is conditional ('if justified'); if never performed, B collapses to an ordinary matched pilot and the comparison would approach a tie.",
+    "Whether the baseline's ordinary trend comparison already includes evaluation against expected variation or change rules is not specified; if it does, A's displacement is even lower.",
+    "The two contexts differ (longitudinal summaries for A, a reversible policy with matched queue for B), so the mappings address different halves of the target question rather than the same sub-question."
+  ]
+}

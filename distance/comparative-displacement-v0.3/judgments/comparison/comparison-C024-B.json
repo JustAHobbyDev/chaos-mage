@@ -1,0 +1,61 @@
+{
+  "case_id": "C024",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline ordinary methods already include comparing competing explanations, seeking disconfirming evidence, and corroborating across independent records and interviews. Mapping B's operation (compare each allegation across documents and accounts, checking credibility, access, provenance and dependence) restates the baseline's first ordinary method almost verbatim, and its context notes copied reports are already identified, so the act is routine. Mapping A adds two acts the baseline does not fix as ordinary: an exhaustive evidence-by-explanation table covering favoritism, legitimate specification revision and clerical error, and a re-evaluation of that table after excluding uncertain records (a sensitivity test). The baseline uncertainty explicitly says formal evidence matrices vary across newsrooms, so this is not assumed ordinary. The sensitivity exclusion is a distinct kind of operation, not just more effort."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "B's signal, independent accounts converging or conflicting on scoring changes and advance access, is exactly the baseline's ordinary evidence of corroboration and source independence. A's signal is which contradictions are robust, meaning which inconsistencies between a record and an explanation persist after uncertain timestamps are removed. That treats the stability of a contradiction under evidence exclusion as the meaningful signal, and explicitly demotes support counts. The baseline treats corroborated support as meaningful, so A changes what counts more than B does. The change is moderate because the baseline already values disconfirming evidence."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "B's warrant is that convergence of credible independent sources raises support for a feature; this is the baseline's own corroboration warrant with no change. A's warrant is that an explanation is weakened by diagnostic inconsistency that survives exclusion of unreliable records, and that accumulated consistent support does not license a conclusion. The baseline seeks disconfirming evidence, but it also relies on corroboration as support; A reorders these so that only discriminating inconsistency carries weight and a surviving explanation is not established guilt. That is a different evidence-to-conclusion relationship, not merely stronger confidence."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "B decomposes the case into allegations by source with access and dependence attributes; the baseline already distinguishes allegations, corroborated facts and gaps and already tracks source independence, so this is relabeling. A decomposes the case into an explicit closed set of rival explanations (including two benign ones), evidence items coded per explanation, a diagnosticity ranking of items, and a partition of records into certain and uncertain. The certain/uncertain partition and per-explanation coding enable the sensitivity re-run and identify which uncertain timestamps actually matter, which the baseline chronology does not by itself produce."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same target question, B sends the reporter toward finding additional independent sources for uncorroborated allegations, which is the baseline's default next step; B's context (copied reports identified, independently interviewed panel members) makes that even more routine. A sends the reporter toward records that would discriminate between favoritism, legitimate revision and clerical error, and specifically toward authenticating the uncertain timestamps whose exclusion changes which explanation survives. A's context supplies uncertain timestamps, which is what makes this next step distinctive; B's context supplies independence information that removes most of the corroboration work. The contexts differ, but both lie within the baseline's ordinary evidence types, so the comparison remains defensible."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "The reporter would natively compare explanations and seek disconfirming evidence, so the direction of inquiry overlaps. Whether they would build an exhaustive matrix, weight diagnosticity over support, and re-run the comparison excluding uncertain records is unclear; the baseline says formal matrices vary by newsroom."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant and its operational realization: robust diagnostic inconsistency after excluding uncertain records, rather than corroborated support, decides which explanations survive. This is moderate rather than high because disconfirmation is already part of ordinary practice. It propagates moderately: it changes which records are chased next, which timestamps must be authenticated, and how the final claim is phrased (explanations weakened, not guilt established)."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The baseline's first ordinary method is to trace provenance and corroborate claims across independent records and interviews, with source-independence information listed as ordinary evidence. Mapping B's operation, signal and inference restate that method, and its context already identifies copied reports."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "No component of B differs from ordinary practice beyond vocabulary. The reporter already checks access, dependence and provenance and already separates corroborated facts from unresolved allegations. Because nothing local changes, nothing downstream changes."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant governs the core question directly: what can be established about steering depends on what licenses weakening or retaining the favoritism explanation against the benign alternatives.",
+    "propagation": "It changes later tests (sensitivity re-run, authentication of the timestamps that matter), the hypotheses retained, the stopping condition (a survivor is not established guilt), and the wording of the final claim.",
+    "irreducibility": "Ordinary language can express 'seek disconfirming evidence', but without the imported structure there is no reason to demote corroborated support, to build the per-explanation table, or to re-evaluate after excluding uncertain records. Removing the structure removes the reason for the sensitivity act and for treating robust contradiction as the signal. For B, ordinary language already preserves every distinction.",
+    "rationale": "Mapping B is essentially the baseline's own corroboration method with no operational change, so it displaces almost nothing. Mapping A changes why evidence supports a claim (robust diagnostic inconsistency over support counts) and adds the sensitivity exclusion act that realizes it. No criterion favors B, and the action, observables, decomposition and trajectory differences all follow from A's warrant change. The differing evidence contexts (uncertain timestamps for A, identified copies for B) explain why each mapping's next step looks as it does, but do not undermine the comparison."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "The baseline already lists comparing competing explanations and seeking disconfirming evidence as ordinary, so part of A's warrant is native; the displacement rests on the diagnosticity weighting and sensitivity exclusion, which the baseline flags as variable across newsrooms rather than absent.",
+    "The two evidence contexts differ (uncertain timestamps versus identified copied reports and independent interviews); if B's context had included uncertain provenance, B's corroboration work would be less routine, though still within ordinary practice.",
+    "The scenario is authored and the practitioner consensus is not verified, per the baseline's own uncertainty."
+  ]
+}

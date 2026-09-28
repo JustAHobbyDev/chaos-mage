@@ -1,0 +1,62 @@
+{
+  "case_id": "C026",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline acts are usability sessions on prototypes, funnel comparison of staged variants, and small experiments that remove or add a feature and check whether users still complete activation. A tests the midpoint of an ordered revision history on a fixed replay and discards half the history each round; this is a systematic elimination rule applied to something the baseline already does loosely (comparing staged variants), so it is a disciplined version of an ordinary act plus a non-ordinary search dimension (chronology). B partitions the rule set, removes subsets or tests complements, and keeps only reductions that still reproduce failure, tracking dependency-invalid combinations as unresolved. The baseline's ablation aims to preserve completion; B's reduction deliberately preserves failure and continues until no permitted single removal keeps it failing. That failure-preserving minimality search is exactly what the baseline names as non-routine, and its orientation inverts the ordinary experiment, making B the larger change in the kind of act."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "Both mappings still observe the ordinary evidence kind: completion or failure of a recorded activation path on a prototype. A reinterprets each result as bounding an interval in history and treats the boundary manifest as the signal; that is ordinary pass/fail plus position. B treats three outcomes (fail, complete, unresolved) per reduced configuration and reads the pattern across subsets: a set whose every single removal restores completion is a new kind of evidence, an interaction signature not visible in per-feature funnel comparisons. A's boundary may contain interacting changes but does not separate them. B introduces more of a new signal type."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "Baseline warrant is corroboration: repeated observed errors and funnel drops on variants support prioritizing a part. A's warrant is elimination over an ordered sequence yielding the first revision associated with failure; it explicitly declines to assign independent necessity and hands a cluster to later testing, so its warrant is about when, not whether a part is necessary. B's warrant is differential removal: a part is retained because removing it restores completion under the oracle, and the minimal set is jointly sufficient for this failure. That redefines 'necessary' as test-relative minimality and licenses a claim about interactions (non-decomposability) that bears directly on the target question. B changes the evidence-to-conclusion relation for the core claim; A changes it for a preliminary localization claim."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "Baseline decomposes into needs, flows, assumptions and dependencies. A adds revisions, a bracketed transition, and a boundary manifest cluster; the new entity is the ordered history, which enables bounding which parts to test next but does not itself distinguish necessary from incidental parts. B adds removable rule parts, reduced configurations, permitted versus dependency-invalid reductions, unresolved outcomes, and a test-relative minimal failure-inducing set. These distinctions let the practitioner state which parts jointly produce failure and why a single-feature ranking misses that, which is the second half of the target question. B's distinctions do more operational work; A's are largely a relabeling of staged variants as a searchable sequence."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same starting question, A sends the practitioner to ask 'which revision first fails the replay', requiring an ordered history with a known good and bad endpoint and an independently established single transition; its stopping point is a boundary manifest, after which necessity testing resumes by ordinary means. B sends the practitioner to ask 'which subset of rules still fails', requiring removable parts and an oracle that flags invalid combinations; its stopping condition is that no permitted single reduction preserves failure, and its next steps are inspecting the retained interaction set and then generalizing beyond the one replay. A's context makes it a bounded detour that returns to ordinary practice; B's context governs the whole subsequent line of inquiry on this replay. Both restrict claims to one replay, so neither changes the generalization step."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "A product manager with a sequence of staged prototypes, one succeeding and a later one failing, would plausibly check intermediate stages to find where activation broke. Doing so as a strict halving search on a fixed replay is not routine, but the underlying behavior (test intermediate stages, look at what changed there) is close to ordinary staged-variant comparison. The formal halving discipline is the imported part; the direction of inquiry is not."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The most changed component is action: a binary search over revision history with a fixed replay oracle, treating chronology as the search space. That is a real change from comparing chosen variants. Its reach is limited because the output is a boundary manifest and an interaction cluster explicitly handed back for ordinary necessity testing; observables remain pass/fail completion, and the final claims about necessity are not licensed by the bisection itself."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline explicitly treats formal minimality searches as non-routine. Ordinary ablation removes a feature to see whether completion survives; B instead keeps removing while failure persists, tests complements, records unresolved dependency-invalid combinations, and stops only when no single permitted reduction preserves failure. A practitioner would not arrive at a failure-preserving minimal set with that stopping rule from usability sessions and funnel comparison alone."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is inferential warrant: necessity becomes test-relative minimality, and interaction becomes joint sufficiency of a set none of whose single removals keeps the failure. This reframes the core question. Propagation is moderate rather than high because the claim is confined to one deterministic replay; establishing population-wide necessity and prioritizing changes still return to ordinary usability and funnel evidence, and the hypotheses generated (joint interaction sets) feed those ordinary methods rather than replacing them."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "B's warrant change acts on the core question itself: what counts as a necessary part and what an interaction is. A's warrant change acts on a preliminary localization task (which revision) that the mapping itself says does not settle necessity.",
+    "propagation": "B changes the hypotheses (joint sets instead of ranked features), the test (complement and subset reductions), the stopping condition (no permitted single reduction preserves failure), and the form of the claim (test-relative minimal failure-inducing set). A changes the search procedure but hands its result back to ordinary necessity testing, so later hypotheses, tests and claims are largely unchanged.",
+    "irreducibility": "Ordinary language of dependencies and ablation cannot express 'minimal set under which every single removal restores completion, with dependency-invalid combinations held as unresolved'. Removing B's structure removes the reason to test complements, to keep reducing while failure persists, and to license the joint-sufficiency inference. A's structure, if removed, leaves a practitioner who still compares staged variants and inspects what changed; only the halving efficiency is lost.",
+    "rationale": "B is more displacing because its central change is in why a completion observation supports a necessity or interaction claim, and that change reaches the target question directly and reorganizes the subsequent inquiry on the replay. A's genuine non-ordinary feature, searching over chronology, is opposed evidence, and both mappings are elimination procedures from the same source practice, so the action criterion is close. But A's own inference clause defers the necessity question and establishes association only, so its displacement stays peripheral and low-propagating. Neither mapping changes the generalization step beyond the single replay, so that does not separate them."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "clear",
+  "uncertainty": [
+    "Both mappings come from the same debugging practice and are both elimination procedures; the action criterion is closer than the others, since bisection over chronology is a search dimension the baseline lacks even though staged-variant comparison is partly ordered.",
+    "The baseline is a scoped authored hypothesis; if a real onboarding practitioner routinely runs systematic ablation to a minimal failing configuration, B's local displacement would drop to moderate and the comparison would tighten.",
+    "A's evidence context assumes an independently established single transition; if that assumption is treated as part of the imported method rather than given, A's decomposition change would be somewhat larger, though still not reaching the necessity claim.",
+    "The two contexts differ (ordered history with bracketed endpoints versus removable rules with a validity oracle), but both test the same completion criterion on one deterministic replay, so the common state is sufficient for comparison; no missing distinction blocks it."
+  ]
+}

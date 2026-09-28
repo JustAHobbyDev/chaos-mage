@@ -1,0 +1,62 @@
+{
+  "case_id": "C006",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline acts are: track cohort metrics against baselines and comparison groups, investigate anomalies with teams, and pause or roll back exposure then compare. A's act is an analytic reorganization of that inspection: build an inconsistency matrix over rollout harm, seasonality and measurement change, then re-run the comparison with uncertain records removed. That is a new bookkeeping procedure but the underlying acts (compare telemetry, exposure history and support summaries against alternatives) are ordinary inspection. B introduces a designed controlled perturbation: a known 10%-to-20% exposure step under fixed traffic mix, with minute-level recording of the trajectory from initial state through transient to later behavior against an unchanged cohort. The baseline's staged increments and pause/rollback are operational changes compared before and after, not perturbations designed to expose dynamics, and the baseline uncertainty explicitly places designed dynamic identification outside ordinary practice. B changes the kind of investigative operation more."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "Baseline signals are level deviations: cohort error and support rates versus pre-rollout baselines and comparison groups. A re-weights those same observations by their diagnosticity, treating items that contradict some explanations as more meaningful than items consistent with all; this is a new attribute laid over ordinary evidence rather than a new measured quantity. B treats trajectory shape as the signal: delay, peak, overshoot, settling time and steady-state shift relative to controls. These features are not computed in ordinary snapshot monitoring and change what counts as deterioration (a transient overshoot that settles versus a persistent shift). Both mappings alter the signal, but B introduces a new evidence kind whereas A restructures the existing kind."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrant is corroborative: a segment metric worse than baseline and comparison group supports deterioration, with pause/rollback comparison giving informal differential support. A replaces this with eliminative warrant: an observation supports the rollout-harm claim only by being inconsistent with seasonality and measurement-change explanations, and the conclusion is licensed only if it survives removal of uncertain records, while explicitly withholding proof. That is a different evidence-to-conclusion relation. B's warrant is that output features following a known input step, relative to an unchanged cohort, characterize the segment's response at this operating point. This is a stronger, more structured version of the perturbation-response warrant the baseline already uses when it pauses exposure and compares subsequent measurements, extended to dynamics but not a different relation type. A changes why evidence supports the claim more."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A makes explicit a hypothesis set (rollout harm, seasonality, measurement change) and a diagnosticity relation between observations and hypotheses. The baseline analyst investigating anomalies with product and support teams already implicitly entertains these alternatives, so the new entities are largely formalizations, though the diagnosticity relation enables choosing observations by discriminating power. B introduces input versus output, transient versus steady state, operating point, background disturbance tracked by control cohort, and saturation/nonlinearity as bounds. The transient/steady-state stage split is operationally new: it determines when a reading counts and how long to observe before deciding, distinctions the baseline's before/after comparison lacks. B adds more operationally consequential distinctions."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the baseline's starting point (a segment looks worse), ordinary next steps are keep tracking, ask teams about changes, and pause if warranted. A sends the analyst toward the next most discriminating observation, e.g. whether the comparison cohort shows the same seasonal movement or whether a measurement pipeline change coincides with the drop, and toward a sensitivity re-check; these are close to what anomaly investigation with teams would surface, though more systematically selected. B sends the analyst toward extending the observation window until settling, reading persistence versus overshoot before any rollback, and setting exposure decisions and future observation windows from the measured response, possibly at another operating point. A's context (telemetry, support summaries, exposure history) requires nothing beyond ordinary evidence; B's context requires a consented sandbox cohort with a controllable step, fixed traffic mix and control cohort. That context dependence does not block comparison because both are applied to the same task and baseline, but it means B's trajectory is available only where such a cohort exists. Within that context, B's next inquiry departs further from ordinary practice."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A product operations analyst investigating an apparent segment drop would ordinarily check the comparison group for seasonality, ask whether a measurement or logging change coincided, and avoid asserting harm without controls. The substantive checks A recommends therefore arise natively; the explicit matrix and the sensitivity test with uncertain records removed are less native, but they refine rather than redirect the investigative behavior."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is inferential warrant: eliminative inconsistency with an explicit survival test replaces corroborative reading of metric deviation. This is a real change but a formalization of alternatives already considered. Globally it alters which observation is selected next and how the conclusion is phrased (weakened alternatives, no proof of harm), yet the acts, evidence kinds and stopping conditions remain ordinary."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline explicitly scopes designed dynamic identification outside ordinary practice. An analyst without control-system training would compare before/after levels around a staged increment or rollback but would not hold traffic mix fixed, record minute-level transients, or extract delay, overshoot and settling as decision-relevant quantities."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "The most changed components are action and observables: a designed exposure step against a control cohort with trajectory-feature extraction. This propagates broadly: what counts as deterioration (persistent shift versus settling transient), how long to observe before deciding (settling time as stopping condition), and how reversible exposure decisions are set. It is bounded by dependence on the tested operating point and on the sandbox context, and it reframes the question as response characterization rather than mechanism identification."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "action",
+    "centrality": "The designed step perturbation bears directly on the core question of whether the segment deteriorates in response to exposure, not on a peripheral task.",
+    "propagation": "The controlled step generates trajectory-feature observables, imposes settling as a stopping condition, and determines the observation window and reversible exposure decision, so later tests and claims change along with the act.",
+    "irreducibility": "Ordinary language of pause, roll back and compare cannot express transient versus steady-state or overshoot versus persistence. Remove the control ontology and there is no reason to fix traffic mix, sample at minute resolution, or wait for settling before deciding; the act loses its rationale.",
+    "rationale": "B introduces a non-ordinary investigative operation that the baseline explicitly excludes and that reshapes observables, stopping conditions and next inquiry. A wins on inferential warrant by replacing corroboration with elimination, and that is central to the claim, but the analyst's ordinary anomaly investigation already entertains the same alternatives, so the change is a formalization with moderate reach. B's advantage in action, observables, decomposition and trajectory is not a count but reflects that a single central act change propagates through the remainder of the loop, whereas A's warrant change leaves acts and evidence kinds intact. B is more displacing."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "Whether the baseline's pause/rollback-and-compare already counts as an informal step-response act, which would reduce B's action displacement to a matter of rigor.",
+    "Whether A's sensitivity re-run with uncertain records removed should count as a new investigative act rather than analytic bookkeeping.",
+    "B's displacement depends on the availability of a consented sandbox cohort with controllable exposure and fixed traffic mix; outside that context its operation is not performable.",
+    "The degree to which an ordinary analyst natively enumerates seasonality and measurement-change alternatives is asserted by the baseline as scoped hypothesis, not verified practice."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "case_id": "C017",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's operation (cross-check accession records, dated mentions, envelopes and inventories linking bundle to custodians and places; arrange dated links; mark gaps) is the baseline's first ordinary method almost verbatim. B introduces a distinct act: extracting ordered weekly event sequences from several letters and sliding them against each other and against the dated calendar until multi-week patterns lock, then reading residual misfits as omitted weeks. The baseline compares event mentions but does not perform iterative offset alignment of whole sequences, which its own uncertainty note flags as not customary."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats compatible independent records and their contradictions as signal, which is exactly the baseline's ordinary evidence use. B treats a new kind of signal: coherence of a repeated multi-week pattern at one offset, and the structured mismatch (a one-week gap in an otherwise matching run) that reveals an author's omitted week. The baseline reads single event mentions as anchors, not pattern coherence and residual misfit across a sequence."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is corroboration: independent records agree, so a bounded custody chronology is supported, with the ordinary caveat not to equate accession order with composition. B's warrant is alignment uniqueness: a date is assigned because only one offset makes the distinctive sequence match across letters and calendar, and an entry is judged omitted because it is the sole way to preserve the match. That is a different evidence-to-conclusion relationship from corroborating a mention against a calendar."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's distinction between custody history and composition date is already present in the baseline ('separate physical arrangement from original order'), so it adds little. B re-describes letters as overlapping sequential records with unknown offsets and possible missing increments, and introduces overlap between letters as an entity. This enables relative ordering of letters against one another even where the calendar is silent, and enables locating specific omitted weeks, neither of which the baseline's entities (letter, mention, custodian, gap) express."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same question, A sends the archivist to gather more accession and custodian records and fill custody gaps, which the baseline would do anyway. B sends them to tabulate every letter's weekly list, test candidate offsets against the calendar and against each other, hunt for the distinctive multi-week run that fixes alignment, and then check overlap length and event repetitiveness as stopping conditions. Applicability differs: B only applies to letters containing ordered event lists, and only where overlap is long and events are distinctive; the supplied context states these conditions hold for several letters, so the divergence is real for that subset, while A applies bundle-wide but changes nothing."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Tracing custody, cross-checking dated records, marking gaps and refusing to read accession order as composition order are all listed as the baseline's ordinary methods. The archivist would do this without the provenance-reconstruction framing, because it is their native framing."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "No component of the loop changes: the acts, signals, warrant and entities coincide with baseline practice. Because nothing local shifts, nothing propagates to later hypotheses or stopping conditions."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "The archivist would ordinarily match distinctive individual events to the dated calendar and reach some of the same dates. They are less likely to systematically align whole weekly sequences across letters, use residual misfit to identify omitted weeks, or order letters relative to each other via overlap. Part of the outcome is reachable natively; the systematic alignment and omission detection probably are not."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed components are the act and warrant: offset alignment with uniqueness as the license for dating, and structured misfit as evidence of omission. This is a real change but stays close to ordinary event-matching rather than importing a foreign instrument. Globally it reshapes the relative chronology among the event-list letters and adds new stopping conditions (overlap length, event distinctiveness), but leaves custody tracing, handwriting, postmarks and paper evidence untouched, and does not reach letters without event lists."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The target question is chronology itself. B changes why a date is assigned to a letter, which is the core claim, not a peripheral task such as custody description.",
+    "propagation": "Alignment uniqueness generates new downstream hypotheses (which week an author omitted, which letters overlap), new tests (does the pattern still lock if an entry is moved), and new stopping conditions (overlap too short or events too repetitive to trust the offset). These feed the relative and absolute chronology claims directly.",
+    "irreducibility": "Ordinary language can say 'this event is mentioned in the calendar on that date.' It cannot express 'this letter is dated because only one offset preserves the multi-week match, and week three is missing because the match otherwise breaks.' Remove the alignment structure and the reason to test offsets, notice residual misfit, or infer omissions disappears.",
+    "rationale": "A is co-extensive with the baseline on every criterion, so it displaces nothing. B changes the warrant for the central dating claim and, through it, the act, signal and next inquiry. No criterion favors A. The comparison is clear despite B's moderate rather than high scope, because the question is which mapping displaces more, and A displaces essentially none."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "How much of B's alignment an archivist would perform natively when matching several dated event mentions is a judgment call; the baseline says pattern comparison is ordinary but systematic sequence alignment is not.",
+    "B's reach is confined to the letters containing ordered weekly lists; the packet says 'several' without specifying the fraction of the bundle.",
+    "A's mapping nearly restates the baseline, so the comparison is asymmetric by construction rather than by a subtle difference between two novel ontologies.",
+    "Both evidence contexts fall within the baseline's ordinary evidence list, so the differing contexts do not block comparison, but they were not verified as jointly available to one practitioner."
+  ]
+}

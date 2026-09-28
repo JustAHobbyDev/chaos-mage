@@ -1,0 +1,61 @@
+{
+  "case_id": "C021",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's operation, repeating comparable segment measurements at multiple time points and checking them against expected variation, is the baseline's first ordinary method (track cohort metrics over time against pre-rollout baselines and comparison groups) with an explicit alert rule attached; the act itself is unchanged. B adds two acts the baseline does not describe: building an evidence-by-explanation inconsistency matrix and re-running the comparison with uncertain records removed to see whether the conclusion survives. The baseline's pause/rollback is retained by both, but B recasts it as a chosen discriminating test among stated rivals rather than a warranted response to an anomaly. The difference is modest because B's new acts are evaluative rather than new data-gathering, but it is still a non-ordinary kind of operation, whereas A introduces none."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats persistence, trend, reversal and threshold crossing as the meaningful signal. The baseline practitioner already reads cohort series against baselines and comparison trends, so this is at most a formalisation (an alert rule) of an ordinary signal, not a new kind of evidence. B makes the meaningful signal an observation's inconsistency with particular explanations and its diagnosticity across rollout harm, seasonality and measurement change; the same telemetry point matters not because it is high or trending but because it contradicts one rival and not another. That is a different kind of signal from more or better-organised trend observations."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "In A, an observation supports 'the segment is deteriorating' because the sequence shows sustained adverse movement beyond expected variation: corroboration accumulated over time, which is already how the baseline reads cohort trends versus comparison groups. In B, an observation supports a conclusion because it is inconsistent with rival explanations and the surviving comparison is robust to dropping uncertain records; the warrant is elimination and sensitivity, and B explicitly withholds any claim of proof of rollout harm. This changes why evidence licenses the claim, not just how confident the analyst is, and it is the most central change in either mapping."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A decomposes the problem into a segment time series, expected variation, and an alert threshold, with regression to the mean, mix change and concurrent interventions as distortions; all of these are present or implicit in ordinary trend monitoring. B introduces explicit named rival explanations as first-class entities (rollout harm, seasonality, measurement change), a matrix relating each evidence item to each explanation, a diagnosticity ordering among evidence items, and a marked class of uncertain records. These distinctions enable the practitioner to say which observation would separate the rivals and which conclusions rest on weak records, which the baseline's 'investigate anomalies with support and product teams' does not structure."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same question, A sends the practitioner to keep sampling until the alert rule fires or a reversal appears, then to investigate or pause exposure; this is the baseline's ordinary path with a formal trigger. B sends the practitioner to the next observation or reversible action chosen for its power to discriminate among the stated rivals, e.g. checking whether the unexposed comparison moves with the season or whether a metric definition changed, and to a sensitivity re-check before acting. Both evidence contexts fall within the baseline's ordinary evidence (exposure logs, cohort outcomes, support rates, comparison trends); B's context additionally marks uncertain records, which is what enables its sensitivity step, but nothing in either context prevents a common comparison. B changes the next question more."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The baseline already tracks cohort metrics over time against pre-rollout and comparison-group trends and pauses exposure when warranted. A product operations analyst would repeat measurements, look for sustained movement, and worry about noise, mix changes and concurrent deployments without importing the clinical serial-monitoring frame; the only added element is a defined alert rule, which many monitoring setups already have."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the observable, where a defined change rule and explicit trend-versus-transient distinction slightly formalise ordinary trend reading. That change does not alter the hypotheses considered, the warrant for claims, or the pause/rollback decision, which the baseline already contains, so it propagates little into the rest of the inquiry."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "A rollout analyst would informally consider seasonality and metric changes when investigating an anomaly with support and product teams, so some rival-checking behaviour would occur natively. But the explicit matrix, emphasis on disconfirming evidence, choice of the next observation by diagnosticity, and re-checking conclusions after removing uncertain records are not described in the baseline and would probably not arise as a structured procedure without the imported frame. The behaviour overlaps in part and diverges in part, so the counterfactual is uncertain."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the inferential warrant: claims are licensed by elimination of rivals and robustness to uncertain records rather than by corroborated trend. This change reaches into observables (diagnostic contradictions), decomposition (named rivals and a matrix) and the next inquiry (discriminating observation), and it reshapes the stopping condition by withholding a proof claim. It is not high because the data sources, the pause/rollback action and the overall goal remain ordinary."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change sits on the core question itself: whether an adverse segment reading counts as rollout deterioration is decided by inconsistency with rival explanations rather than by sustained trend, which is exactly what the target question asks.",
+    "propagation": "The eliminative warrant determines which hypotheses stay live, makes the next observation or rollback a discriminating test, adds a sensitivity re-check before action, and changes the stopping claim from 'deterioration confirmed' to 'rivals weakened, no proof claimed'.",
+    "irreducibility": "Ordinary trend-monitoring language can express A completely. It cannot preserve B's distinctions without importing them: without stated rivals and a diagnosticity ordering there is no reason to build the matrix, to treat a contradiction as the key signal, or to select the next observation by its power to separate explanations, and without marked uncertain records there is no reason to run the sensitivity check.",
+    "rationale": "A is essentially the baseline's own first method with a formal alert rule, so it displaces almost nothing. B changes why evidence supports the claim, and that single central change carries the observable, decomposition and trajectory changes with it. No criterion favours A, so there are no opposing differences to weigh; the relation is B_more_displacing on the warrant criterion, not on a count of criteria."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "The baseline is an authored hypothesis, not verified practitioner consensus; a real analyst may already run informal rival-explanation checks, which would narrow B's displacement.",
+    "B's evidence context marks uncertain records, which A's does not; the sensitivity step depends on that marking, so part of B's trajectory difference reflects its supplied context rather than the method alone.",
+    "B's new acts are evaluative rather than new data collection, so the action criterion difference is modest and could be read as a tie by a stricter reading of 'investigative operation'."
+  ]
+}

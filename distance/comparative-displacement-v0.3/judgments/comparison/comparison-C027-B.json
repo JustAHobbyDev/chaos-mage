@@ -1,0 +1,61 @@
+{
+  "case_id": "C027",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline already traces document provenance and builds dated sequences. A's operation (gather receipts, versions, messages; link whole documents to custodians; mark gaps) is the same act at the same granularity. B's operation adds a distinct act: isolating each distinctive clause, then reconstructing its copying transactions across private bidder drafts and official scoring sheets. This is sub-document inverse reconstruction rather than document chain-of-custody tracing. The change is modest because text comparison itself is within a reporter's repertoire, but systematic per-clause custody reconstruction is not the ordinary act."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's signals are receipts, custodial records and archived messages showing who held which document when, which are already listed baseline evidence. B treats dated copying events tied to long distinctive phrase sequences as the meaningful signal, and treats compatibility or contradiction between clause-custody traces, not document-custody traces, as informative. That is a new kind of evidence (clause travel) rather than more instances of an ordinary kind (document transfer)."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "Both mappings license conclusions by the same provenance logic: compatible independent chronological links establish a transfer. A's conclusion is bounded possession, supporting advance access. B's conclusion is that specific scoring language originated with the bidder before adoption, which speaks directly to steering of the award criteria. The warrant form is shared, but B changes what the chain licenses: origin of scoring content rather than opportunity. A's own limit notes possession cannot support the clause claim, so the difference is operational, not just stronger confidence."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A keeps the whole tender document as the tracked entity, matching baseline practice. B introduces the clause as an entity with its own custody history, explicitly distinct from the document's history, plus a private-draft to official-sheet path layer. This enables detecting steering even where whole-document custody is complete and innocuous, and separates 'had the document' from 'wrote the scoring rule.' A offers no new distinction beyond baseline."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the target question, A sends the reporter to close custody gaps with more receipts, message archives and custodian interviews about whole documents, which is the baseline path. B sends the reporter to identify distinctive scoring phrases, obtain editor logs, match phrases against bidder drafts, date the copying events, and then ask whether the travelled clauses determined scores. A's supplied context lacks editor logs while B's has them; the trajectory difference partly reflects that availability, but B's operation itself defines a different evidence source to seek and a different next hypothesis to eliminate (independent drafting versus copying)."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Tracing whole-document provenance, building a dated chronology and marking unresolved gaps are listed baseline methods using listed baseline evidence. The reporter would probably perform the same operations without the archival framing."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is explicit gap marking in a custody chronology, which the baseline already does by distinguishing corroborated facts from unresolved gaps. Nothing downstream in hypotheses, tests or stopping conditions changes."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "Reporters do sometimes notice that tender language matches a bidder's text, so a text comparison could arise natively. Systematic per-clause custody reconstruction with dated copying events and explicit gaps across bidder drafts and official sheets is less clearly ordinary; the baseline's own uncertainty about newsroom formality leaves this open."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the tracked entity: clause rather than document, with copying events as evidence. This propagates to what counts as a signal, what the chain licenses (origin of scoring language rather than access), the next evidence source sought, and what 'established' means for steering. It does not change the overarching corroboration logic or the motive limit."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "problem_decomposition",
+    "centrality": "Core. The target asks whether the award was steered. B's clause-level entity addresses the mechanism of steering (bidder language adopted as official scoring rule), while A's whole-document entity addresses only opportunity (advance access).",
+    "propagation": "B's decomposition generates the new observable (clause copying events), the different licensed claim (origin of scoring language), the next inquiry (match phrases, date copies, test independent drafting) and a different stopping condition (clause chain closed or gapped, not document chain). A changes none of these relative to baseline.",
+    "irreducibility": "Ordinary language can describe A fully: who had which document when. It cannot preserve B's operative distinction between a document's custody and a clause's custody without adopting the clause as tracked object; removing that structure removes the reason to pull editor logs, treat phrase sequences as signals, and license the origin inference.",
+    "rationale": "Both mappings import the same source, so displacement turns on what each does to the reporter's loop. A reproduces baseline provenance tracing at the same granularity and changes no component. B changes the unit of analysis, which drives the differences in observables, warrant and trajectory. No criterion favors A. The differing evidence contexts (editor logs in B only) are noted but do not undermine the comparison, because B's displacement lies in its operation and entity, not merely in the availability of logs."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "Whether clause-level text matching is ordinary in municipal procurement reporting is not settled by the baseline, which admits variation in newsroom formality.",
+    "B's evidence context includes authenticated editor logs that A's context lacks; some trajectory difference may reflect availability rather than the mapping's structure.",
+    "Both mappings share a single source, so the comparison rests on granularity of the tracked object rather than distinct imported mechanisms."
+  ]
+}

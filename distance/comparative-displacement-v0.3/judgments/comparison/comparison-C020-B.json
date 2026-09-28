@@ -1,0 +1,61 @@
+{
+  "case_id": "C020",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline: compare dated references, handwriting, postmarks and event mentions; cross-check clues. A performs a sliding quantitative alignment of content-free weekly count strips against dated office ledgers, with exhaustive competing-offset checks and rejection of incompatible alignments; this is an elimination-style inverse reconstruction the archivist does not ordinarily perform on numeric strips. B shifts ordered event lists against a dated calendar, but because entries are named events, matching them to the calendar is essentially the ordinary event-mention comparison; the added sequence-shift and omitted-week bookkeeping is a modest formalization rather than a new kind of act."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A makes a strip of dispatch counts, which carries no dating content on its face, into a meaningful dating signal only through repeated high/low pattern correspondence; it also treats structured residual mismatch (identifiable omitted weeks exposed by alignment) as evidence. That is a new kind of evidence for the archivist. B's observables are event mentions and a dated calendar, both listed as ordinary evidence; the omitted-week residual is a minor addition to an otherwise ordinary signal."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrant is corroboration: a clue supports a date because it matches an independently dated record. A's warrant is uniqueness of alignment: an offset is supported because distinctive multi-week patterns match across all witnesses under a calibrated shared scheduling signal and every competing offset fails, then a separately documented attachment link carries the increment date to a dispatch date. B's warrant remains corroboration of named-event matches against the calendar, so the reason the evidence supports a date is unchanged from ordinary practice."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A introduces operationally distinct layers: count increments with calendar positions, the strip-to-letter attachment link, dispatch date, and composition date, plus calendar anchors and letter links as objects that disagreements route toward. These distinctions enable separating a dated dispatch backbone from composition claims and localizing conflicts. B adds only omitted-week entries within a single event-list layer, which relabels the ordinary practice of preserving uncertain intervals."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same target question, A sends the archivist next to specific calendar anchors or attachment links where alignments disagree, and then to ordinary evidence for composition dates that dispatch dates cannot settle. B sends the archivist to confirm event-to-calendar matches and fill omitted weeks, which is where ordinary event-mention comparison would already lead. A's supplied context stipulates calibration and exhaustive offset checks; B's context is thinner but does not change the ordinary direction of inquiry."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "Without the crossdating ontology, the archivist would have no reason to treat undated numeric count strips as sequence-alignable dating evidence, to search competing offsets, or to read omitted weeks as diagnostic residuals; the baseline explicitly says quantitative alignment of long measured sequences is not customary."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant and observable: content-free counts become the backbone of absolute chronology through alignment uniqueness. Propagation is moderate rather than high because the mapping confines itself to dispatch dates, so custody tracing, handwriting, original-order separation and composition dating continue by ordinary methods, though those are now checked against the count-derived backbone."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Matching named weekly events in letters to an independently dated institutional calendar is the baseline's ordinary event-mention comparison; the archivist would reach substantially the same alignment and note gaps as uncertain intervals without importing crossdating."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The largest change is formalizing event matching as a shifted-sequence alignment with explicit omitted-week identification, a mild procedural tightening. It does not alter which evidence is used, why it supports dates, or where the archivist looks next."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change sits on the core question: the absolute chronology in A rests on alignment uniqueness of count patterns under a calibrated shared signal, not on corroborated content clues.",
+    "propagation": "It changes later claims (dispatch versus composition dates), tests (which anchors and links to probe when alignments disagree), and stopping conditions (an alignment is accepted only when competing offsets are excluded).",
+    "irreducibility": "Ordinary language of comparing dated references cannot express why a strip of counts dates a letter; removing the imported structure removes the reason to align the strips, to notice omitted-week residuals, and to license the offset inference.",
+    "rationale": "All five criteria favor A, but the decisive point is that A changes why evidence supports a date while B preserves the ordinary corroboration warrant with only procedural tightening. No criterion favors B. The shared source and B's slightly thinner evidence context do not offset this."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "B's 'event lists' are read as semantically identifiable named events; if they were content-free ordered patterns, B would move closer to A.",
+    "A's evidence context stipulates that calibration and exhaustive offset checks resolve uniqueness; this is authored, not demonstrated, and the comparison accepts it as supplied.",
+    "The baseline's note that pattern comparison is ordinary leaves some room to view B's sequence alignment as more than a formalization, but it does not change the ordering."
+  ]
+}

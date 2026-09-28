@@ -1,0 +1,62 @@
+{
+  "case_id": "C016",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline acts are log inspection, reproduction, bisection and comparing good versus failed runs. A's act is cross-checking registry receipts, build-worker logs and artifact-store records for the same release while tracing copied summaries; this is inspection with an added provenance check, an ordinary kind of operation. B's act is inverse reconstruction: send equivalent artifacts across many known overlapping paths in an emulator with per-stage timestamps withheld, fit an additive stage-delay map to end-to-end times, and validate on held-out routes. The baseline itself flags path inversion without per-stage logs as non-standard. B introduces a different kind of act, not merely more steps."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats agreement or conflict among independently generated records about the artifact and failed transition as the signal, and adds provenance (whether a record is a copy) as meaningful. That refines which ordinary records count, but the records themselves are ordinary evidence. B treats spatially structured residuals between predicted and measured transit times across paths as the signal, and the delay combinations compatible with the timeout. Structured residual mismatch across a path set is a new kind of evidence relative to job logs and reproducible outcomes."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "Baseline warrant is direct observation in logs plus reproduction of the failure. A's warrant is convergence among independent sources, discounted for copying and shared instrumentation; this shifts why a log entry supports a failure location, but only modestly, since the baseline already compares multiple runs and records. B's warrant is model fit: a hidden stage-delay map is supported because it reduces structured residuals and predicts held-out routes, subject to non-uniqueness and regularization. Support for the claim 'this dependency accounts for the timeout' becomes an inversion result rather than an observed log event, which is a different evidence-to-conclusion relationship."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A adds relations among evidence records: access, credibility and dependence between receipts, logs and summaries. This distinguishes independent attestation from copied attestation, enabling the practitioner to discount false convergence, but the workflow entities remain the same. B recasts the pipeline as hidden per-stage delays integrated along overlapping paths, with an additive timing model, path coverage, held-out routes and non-unique maps as operational entities. That decomposition enables asking which delay combinations fit and where coverage is too sparse to resolve them, distinctions the baseline does not have."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the target question, A sends the practitioner to ask whether the registry receipt and artifact-store record independently confirm the failed transition the build log reports, then to test a remedy on the corroborated location; this is close to baseline comparison of runs. B sends the practitioner to add path coverage, refine the delay map, check held-out routes, and select candidate dependency remedies compatible with the map. B's context confines this to the emulator with withheld internal timestamps and limited live-system generalization, so the trajectory diverges from baseline strongly inside the emulator but its stopping condition for the live target remains an ordinary reproduction. A's context of traceable copies applies directly to ordinary records."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A release engineer troubleshooting a publication failure would ordinarily compare build logs, registry receipts and artifact-store records for the same release and notice when a dashboard summary merely repeats a log. The explicit independence and copying-dependence assessment is a refinement of a cross-reference habit the baseline already contains."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The most changed component is inferential warrant: convergence counts only when sources are independent and not sharing an instrumentation bug. This is a real but modest shift from direct log observation. Downstream, it changes which failure location is trusted and which dependency is tested first, but the remedy testing, reproduction and stopping conditions remain ordinary."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "With per-stage job logs available, the reference practitioner would read stage timings directly rather than invert them from end-to-end transit times across many paths. The withheld-timestamp emulator setup and residual inversion with held-out validation are not part of ordinary CI/CD troubleshooting, as the baseline uncertainty itself states."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed components are the act and warrant: inverse reconstruction of a latent stage-delay map from structured residuals. That is far from ordinary log inspection. Propagation is moderate rather than high because the supplied context confines validity to the emulator, so the practitioner's later hypotheses and remedy candidates come from the map, but live-system confirmation and the bounded remedy claim still fall back on ordinary reproduction and isolated-pipeline tests."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears directly on the core question of which dependencies account for the failures: under B the answer is supported by model fit to structured residuals with held-out prediction, under A and the baseline it is supported by observed and corroborated log events.",
+    "propagation": "B's warrant changes later hypotheses (delay combinations compatible with the timeout), tests (added path coverage, held-out routes), and stopping conditions (residual reduction and non-uniqueness) within the emulator; A changes mainly which observed location is trusted before ordinary remedy testing.",
+    "irreducibility": "A's distinctions can be stated in ordinary language: check that two records are not copies of the same log and that they do not share an instrumentation bug. B's distinctions cannot: without the latent delay-map and residual-inversion structure there is no reason to withhold timestamps, run many overlapping paths, notice structured residuals, or evaluate held-out routes.",
+    "rationale": "B changes every stage of the control loop and the change is irreducible, whereas A's changes are ordinary cross-referencing with an added provenance discount. The opposing consideration is applicability: B's context limits the inversion to an emulator with artificially withheld timestamps and restricted live-system generalization, while A applies directly to ordinary evidence. That limits B's global reach but does not make its displacement smaller than A's; a confined but central warrant change still exceeds A's modest refinement."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "clear",
+  "uncertainty": [
+    "B's evidence context withholds internal timestamps that the baseline treats as ordinarily available, so part of B's displacement stems from an artificial constraint rather than the ontology alone.",
+    "B's limit on live-system generalization means the bounded remedy claim for the real target may still rest on ordinary reproduction, which could reduce B's effective propagation further than judged.",
+    "If shared instrumentation bugs are frequent in the target, A's independence assessment could matter more for the core claim than assumed here.",
+    "No common evidence state was supplied for both mappings; the comparison relies on each mapping's own stated context."
+  ]
+}

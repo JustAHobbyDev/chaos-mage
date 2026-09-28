@@ -1,0 +1,61 @@
+{
+  "case_id": "C032",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Baseline acts are timeline comparison, replay, bisection, rollback/reintroduction and direct trace inspection. Mapping A's acts (hold code/capacity/config candidates, run replay traces and targeted tests that discriminate them, revise) are the baseline's 'test competing causes in staging' with no new kind of operation. Mapping B adds an inverse reconstruction: repeated endpoint-time measurement across overlapping routes, fitting candidate internal delay maps, iteratively reducing structured residuals, and validating on held-out routes. Its paired old/new trials with reversal are ordinary rollback/reintroduction, but the map-fitting act is not in the baseline, which explicitly lacks an inverse-problem specialty."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats the same ordinary evidence (traces, test results, config history) as meaningful, reframed as support/contradiction/non-discrimination across candidates; that is a bookkeeping change over ordinary signals. B makes route-structured residuals between predicted and observed endpoint times across overlapping paths, their held-out-route consistency, and their reversal under the old state the meaningful signal. Structured mismatch against a model prediction is a new kind of evidence relative to latency distributions, traces and counters."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is comparative plausibility updating with elimination, which the baseline already uses through bisection, rollback and testing competing causes; A adds a caution against premature closure but not a different evidence-to-conclusion relation. B licenses a claim about which internal service contribution changed because the pattern of residuals across overlapping paths jointly constrains a delay map that predicts held-out routes and reverses with the deployment state, explicitly qualified by non-uniqueness and regularization. The attribution to the isolated deployed change itself still rests on ordinary paired trials, so the warrant change is in localization, not in the deployment-level attribution."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's entities (code, capacity, configuration hypotheses; discriminating tests) are distinctions the baseline already draws. B introduces routes as paths through overlapping services, a spatial delay map over service segments, path coverage, held-out routes, residual structure, and non-uniqueness of fitting solutions. These enable ranking which internal dependency to inspect next and stating where localization is underdetermined, which the baseline's per-request trace view does not frame."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same target question, A sends the practitioner to the next test that best discriminates code from capacity from configuration, which is where the baseline's bisection and competing-cause testing already point. B sends the practitioner to add or select routes to improve coverage, refit the delay map, check held-out routes, and then inspect the specific internal dependency the map localizes. Contexts differ: A has full traces, versions and resource traces available; B has only endpoint times on overlapping routes plus paired old/new trials. The comparison remains defensible because B's operations are non-ordinary even where traces exist, whereas A's remain ordinary under either context; the missing common state is only whether span-level traces would make B's inverse fitting redundant."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The baseline practitioner already replays workloads, bisects revisions, tests competing causes in staging and uses rollback; maintaining several candidate causes and choosing tests that discriminate them is standard incident diagnosis. The differential-diagnosis vocabulary would not change which tests are run or what is concluded."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the explicit bookkeeping of support/contradiction/non-discrimination across candidates, a mild formalization of ordinary competing-cause testing. It does not alter acts, signals, warrant or next steps, so it has little downstream reach."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "Fitting a service-segment delay map to endpoint times across overlapping routes, reducing structured residuals, validating on held-out routes and reasoning about non-uniqueness is an inverse-problem method the baseline explicitly excludes. An ordinary engineer would inspect traces or bisect rather than reconstruct internal delays from path-time patterns. The paired old/new trials with reversal, however, are ordinary rollback and would be done anyway."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The inverse reconstruction changes the act, the signal (structured residuals) and the warrant for localization, a large departure from direct trace inspection. Its reach is moderate rather than high because attribution to the isolated deployed change still rests on ordinary paired trials at fixed load, and the mapping's own limit states it does not identify the code-level mechanism, which returns to ordinary inspection."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change bears on the core question: why endpoint-time observations support a claim about which internal contribution changed with the deployed change, and how that is bounded against load variation.",
+    "propagation": "It changes subsequent hypotheses (candidate delay maps), tests (held-out routes, added coverage), stopping conditions (residual reduction under non-uniqueness) and the form of the claim (bounded localization rather than a single asserted cause).",
+    "irreducibility": "Ordinary language of comparing latencies before and after a change cannot express that residual structure across overlapping paths jointly constrains a delay map, that held-out routes test it, or that several maps may fit equally. Removing the tomographic structure removes the reason to fit maps, to notice residual patterns, and to pursue coverage or held-out validation.",
+    "rationale": "B introduces a different evidence-to-conclusion relation for localization, carried by a non-ordinary act and a new signal type, while A reproduces the baseline's competing-cause testing with only a plausibility-bookkeeping overlay. No criterion favors A. The opposing consideration is that B's deployment-level attribution uses ordinary paired trials and its limit concedes no code-level mechanism, which caps propagation at moderate but does not offset a central warrant change against A's near-zero displacement."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "Mapping B's context exposes only endpoint times; if span-level traces were available as in A's context, an ordinary engineer might localize delays directly and B's inverse fitting could be partly redundant, reducing its practical propagation.",
+    "Some mature reliability teams may already perform informal route-based decomposition of latencies, which would narrow B's displacement in action though not its warrant or decomposition.",
+    "The baseline is a scoped authored hypothesis, not verified practitioner consensus, so the boundary of ordinary staging experimentation is approximate."
+  ]
+}

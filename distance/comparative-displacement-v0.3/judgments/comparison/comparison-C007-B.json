@@ -1,0 +1,61 @@
+{
+  "case_id": "C007",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "tie",
+      "rationale": "Both mappings perform the same kind of act: a designed, reversible step on a controlled input with a matched unchanged comparison stream, recording the output trajectory. Baseline practice already pauses or rolls back exposure and compares subsequent measurements, so B's exposure step (10% to 20%) is close in form to an ordinary staged increase, with the novelty being that it is treated as a designed probe. A's routing-fraction step is an input the rollout analyst would not ordinarily manipulate, but it is still the same controlled-perturbation operation applied to a peripheral subtask. The difference between them is where the act is applied, not what kind of act it is."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "Both mappings introduce the same new kind of signal: temporal response features (delay, peak, overshoot, settling, steady-state shift) rather than level comparisons against baselines. B applies that signal to the core segment outcomes (error and support-queue trajectories), so the meaning of 'deteriorating' shifts from a snapshot difference to a trajectory with persistence and settling. A applies it only to the duplicate-alert queue to classify one spike as transient or persistent, and its evidence context states the result is passed to the ordinary review without changing what other cohort evidence counts. B changes what is treated as a meaningful signal for the target question; A changes it for one alert."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "Baseline warrant is corroboration: a cohort metric departs from pre-rollout baseline and comparison groups, so deterioration is inferred. In B, the claim about segment response and the reversible exposure decision are licensed by differential response features of the outcome trajectory relative to the control cohort after a known step, which is a different evidence-to-conclusion relation applied to the core question. In A, the same differential-response warrant is used, but only to license 'this alert spike is or is not a routing transient'; the deterioration assessment itself retains its ordinary warrant by stipulation."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "B decomposes the target into controllable input (exposure), observable output trajectories, transient versus steady-state components, delay and settling, and an operating point at which the characterization holds. These distinctions enable choosing observation windows and step sizes rather than reading a level. A introduces the transient/persistent distinction only for the support-alert queue and leaves the segment-level entities unchanged, so its new distinctions do not restructure the deterioration question."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "From the same starting question, B sends the practitioner toward 'what is the settling time and steady-state shift after the exposure step, and what observation window and reversible exposure step follow from that', changing the next measurement and stopping condition. A's supplied context explicitly bounds its trajectory: its result feeds the existing cohort-monitoring review and supplies no new rule for selecting other evidence, so the next question after A remains the ordinary segment review. The applicability contexts differ (A is a narrow routing subtask in a sandbox; B is a consented cohort at the core exposure input), and that difference is exactly what makes B's redirection reach the target inquiry while A's does not."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "An ordinary analyst investigating an alert spike with the support team would plausibly wait to see whether it persists, which approximates A's conclusion. But deliberately stepping the routing fraction and reading peak, delay and settling against a matched queue is not an ordinary act, so the behavior overlaps in outcome without matching in method."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the act and signal for one subtask: a designed routing-fraction step with trajectory features read against a control queue, which departs from ordinary anomaly investigation. The supplied context confines the result to an input for the existing review and forbids it from replacing the deterioration assessment or changing evidence selection, so the rest of the inquiry proceeds unchanged."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline notes that designed dynamic identification is outside its scope. The analyst would step exposure and compare levels against controls, but would not extract delay, overshoot and settling features or set observation windows and reversible exposure decisions from those features."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "The most changed component is the evidence and warrant for the core question: deterioration is read from trajectory features relative to a control cohort after a known step rather than from level comparisons. That change propagates to observation windows, stopping conditions and reversible exposure decisions, which are the two halves of the target question."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "B changes the warrant for the core deterioration claim and for the reversible-action decision; A changes the warrant only for a peripheral alert classification whose output is handed back to ordinary review.",
+    "propagation": "B's warrant change alters later hypotheses (transient versus persistent segment response), the next measurement (settling and steady-state shift), stopping conditions (observation windows) and the reversible exposure decision. A's context stipulates no downstream change beyond the spike question.",
+    "irreducibility": "'Wait and see if it persists' can paraphrase part of both mappings, but removing the step-response structure from B removes the reason to treat the exposure change as a designed probe, to read delay and settling as evidence, and to size observation windows from them. Removing it from A only removes one diagnostic, leaving the target inquiry's reasons intact.",
+    "rationale": "The two mappings import the same instrument, so the comparison turns on where the imported warrant operates. B installs the differential-response warrant at the core question and lets it drive observation windows and exposure decisions. A installs it in a quarantined subtask with an explicit statement that it changes neither the deterioration assessment nor evidence selection. The action criterion is a tie because both perform the same controlled-perturbation act, and A's act is arguably less ordinary in its input, but that does not offset a central warrant change with high reach versus a bounded one."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "Whether a staged exposure increase already counts as an ordinary step in baseline practice affects how non-ordinary B's action is, though not the warrant and observables findings.",
+    "A's low global reach rests on its supplied context stipulating that the result feeds ordinary review; without that stipulation A's reach would be harder to bound.",
+    "A's counterfactual is uncertain because ordinary spike investigation can reach a similar conclusion by passive waiting rather than a designed step."
+  ]
+}

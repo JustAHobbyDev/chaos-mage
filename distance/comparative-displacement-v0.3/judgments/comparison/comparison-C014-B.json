@@ -1,0 +1,62 @@
+{
+  "case_id": "C014",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "The baseline already tests competing causes in staging, bisects revisions, replays workloads and rolls back. Mapping A's operation (maintain competing diagnoses, inspect replay traces, run discriminating targeted tests) is the same set of acts under a clinical label. Mapping B adds two acts the baseline does not describe: constructing an explicit evidence-by-hypothesis inconsistency matrix that scores every trace against every explanation, and repeating the whole comparison with flagged uncertain traces removed. Neither is a new physical perturbation, but the leave-out sensitivity re-comparison is a distinct analytic operation rather than merely more steps, so B changes the kind of act more than A."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats findings as support, contradiction or non-discrimination across code, capacity and configuration diagnoses; the baseline engineer already reads traces, latency distributions and rollback results this way. B shifts the meaningful signal to inconsistency specifically (contradictions rather than fits), to per-item diagnosticity, and to whether an inconsistency persists after uncertain traces are dropped. Stability of a contradiction under evidence removal is a structured signal the baseline does not name, whereas A adds no new kind of evidence beyond ordinary trace and test results."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is comparative plausibility revision: discriminating evidence raises or lowers candidates, avoiding premature commitment. That is close to how the baseline engineer already weighs bisect and rollback outcomes. B's warrant is eliminative and explicitly bounded: a cause is weakened by important inconsistency, a survivor is retained only if its survival holds when uncertain traces are excluded, and survival is stated not to be proof. This changes why a trace licenses a claim (robustness of contradiction rather than accumulated fit) and changes the form of the final claim to a bounded surviving set, which bears directly on the target's demand for bounded causal evidence. The baseline's rollback and reintroduction already give causal warrant, so neither mapping adds a stronger warrant, but B changes the evidence-to-conclusion relation more."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's decomposition into code, capacity and configuration explanations relabels distinctions the baseline already draws between deployment, load and configuration. B introduces new operational entities: the matrix cell relating one evidence item to one hypothesis, a diagnosticity ranking of evidence items, and a partition of traces into reliable and flagged-uncertain. These enable the sensitivity re-comparison and the identification of which single traces are carrying the conclusion, which A's structure does not support."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "Starting from the target question, A sends the engineer toward targeted staging tests that discriminate the three candidate classes, which A's context (staging reproduction under fixed replay, resource traces, configuration history) supports directly; that is the baseline's bisect-and-test path. B sends the engineer first toward scoring existing traces against the full catalog, then toward the most diagnostic contradictions, then toward checking whether the surviving explanation depends on flagged uncertain measurements. B's context (a catalog of explanations with uncertain measurements flagged) is what makes that sensitivity step available; A's context lacks such flagging. The contexts differ, but the divergence in next inquiry is attributable to B's imported structure, not only to its richer flagging, since B's matrix step would alter the trajectory even without it."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A production reliability engineer already holds several candidate causes, replays workloads, bisects and rolls back to discriminate among them, and avoids committing early. Differential diagnosis vocabulary adds a name to this behavior without changing the acts, signals or next tests."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the explicit framing of competing diagnoses, which the baseline's 'test competing causes in staging' already contains. Because nothing new is done, observed or inferred, the framing does not alter later hypotheses, tests or stopping conditions."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The eliminative logic of bisect and rollback is ordinary, but building a full evidence-by-hypothesis matrix, ranking traces by diagnosticity, and re-running the comparison with flagged uncertain traces removed is not described in the baseline methods and is not something the reference engineer would probably do without the imported procedure. An engineer might informally distrust a noisy trace, but not systematically test conclusion sensitivity to it."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the inferential warrant and its associated signal: claims rest on robust inconsistency rather than accumulated fit, and the output is a bounded surviving set with an explicit sensitivity qualifier. This propagates to which traces are prioritized, to the stopping condition (survival under sensitivity checks, not proof), and to the form of the final claim, but it does not replace the baseline's physical experiments such as rollback and reintroduction, which remain the strongest causal evidence."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The changed warrant governs the core question: how a deployed change is licensed as the cause and how that causal claim is bounded against load variation. It is not a peripheral bookkeeping task.",
+    "propagation": "Adopting B changes which evidence is examined next (most diagnostic contradictions), the stopping condition (a hypothesis survives only if its survival is stable when uncertain traces are removed), and the form of the final claim (a bounded surviving set, explicitly not proof). A changes none of these relative to the baseline.",
+    "irreducibility": "Ordinary language can express 'this cause is ruled out by rollback' and 'that trace is noisy', but it does not supply the reason to re-run the entire comparison with uncertain traces excluded or to rank evidence by diagnosticity across all hypotheses. Removing the matrix and sensitivity structure removes the reason to perform that act and to qualify the claim in that way. A's structure can be removed with no operational loss.",
+    "rationale": "All five criteria point toward B, but the decisive one is the warrant change because it is central to the target's request for bounded causal evidence and it propagates to next inquiry and stopping condition. The strongest opposing consideration is that the baseline's bisect and rollback already provide eliminative causal warrant, so B's shift is moderate rather than large; but A is effectively native to the baseline, so even a moderate change in B establishes meaningfully greater displacement. No criterion favors A. The differing evidence contexts (A has staging reproduction and configuration history; B has flagged uncertain measurements) do not undermine the comparison, because B's matrix step would still alter the trajectory absent flagging and A's richer context only reinforces its convergence with ordinary practice."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "The evidence contexts differ: A's includes staging reproduction and configuration history, B's includes flagged uncertain measurements. B's sensitivity step partly depends on that flagging, so some of B's trajectory difference is context-enabled rather than purely ontology-driven.",
+    "Whether a reference engineer informally performs sensitivity checks on noisy traces varies with team maturity; the baseline notes teams differ in experimental maturity and is an authored scope, not verified consensus.",
+    "B's eliminative warrant overlaps with the eliminative logic already present in bisect and rollback, so the magnitude of the warrant change is moderate and could be argued to be a formalization rather than a new relation.",
+    "B's matrix procedure may in practice pull attention away from the baseline's strongest tool (controlled reintroduction); displacement here is assessed as change, not as improvement."
+  ]
+}

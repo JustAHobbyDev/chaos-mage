@@ -1,0 +1,63 @@
+{
+  "case_id": "C009",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts by mapping workflow, reading ticket histories and queue lengths, interviewing, and piloting explicit handoff changes with turnaround comparison. A introduces a different kind of act: injecting tagged, workload-identical probe tickets along designed overlapping team routes so that end-to-end times can be inverted into a hidden per-stage wait map. That is designed excitation plus inverse reconstruction, which the baseline's own uncertainty note places outside ordinary scope. B's core act, withdrawing a policy in a pilot queue and comparing against a matched unchanged queue, is the baseline's third ordinary method; the restoration step to check recurrence is a modest extension of the same perturbation kind, not a new kind of operation."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "Baseline treats stage timestamps, queue lengths, staffing schedules and interview accounts as direct signals. A makes the meaningful signal the path-structured residual between predicted and observed traversal times across overlapping routes; a single endpoint timestamp is uninformative until compared against a candidate wait map and other paths. This is a new kind of evidence, not more timestamps. B's signal, turnaround falling on withdrawal and recurring on restoration, is ordinary turnaround comparison; the recurrence observation adds a second ordinary-kind measurement rather than a new evidence type."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline licenses claims about where delay accumulates by direct reading of stage durations and corroboration from interviews and exception cases, and licenses intervention claims by before/after pilot comparison adjusted for staffing and demand. A replaces the localization warrant: a stage is implicated because a wait map containing it reduces residuals across many paths better than alternatives, subject to coverage, regularization and non-uniqueness. That is fit-consistency inference with explicit artifact risk, a different evidence-to-conclusion relationship. B's warrant is perturbation response against a matched control, which the baseline pilot already uses; rechallenge strengthens it through reproducibility of the on/off response but stays the same kind of warrant, and the mapping's own inference is framed as raising or lowering support for one suspected factor."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A decomposes the target into source-to-receiver paths, unobservable additive stage waits, path coverage, resolution and inversion artifacts. These enable questions the baseline cannot pose, such as which stages are unresolved because no pair of routes separates them, and whether an apparent hotspot is an artifact of sparse coverage. B introduces factor, effect, dechallenge phase, rechallenge phase, carryover and spontaneous variation, which largely relabel the baseline's pilot, control queue and confounders; the one added distinction, carryover after restoration, is useful but minor."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, the baseline's next step is to compare stage timestamps across case types and pilot a suspected handoff change. A sends the practitioner toward designing additional overlapping routes to improve coverage, checking whether alternative wait maps fit equally well, and only then nominating candidate handoff interventions, all bounded to a low-load synthetic testbed whose additive-time assumption may not hold in live queues. B sends the practitioner to withdraw duplicate signoff in a live matched pilot, then restore it and look for recurrence, bounding recommendations to that pilot. B's next steps closely track the baseline pilot with one extra reversal; A's next steps are about path design and model resolution, which the baseline never asks. A's applicability is narrower in setting, but the change in what is asked next is larger."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "With ordinary ticket histories an operations analyst would read stage-level timestamps directly and would not construct overlapping probe routes or iteratively invert residuals; the baseline explicitly places dynamic estimation from designed excitation outside its scope. A's evidence context, where only endpoint timestamps are exposed, is precisely the condition under which the imported inversion is needed and ordinary inspection is not available."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "Local displacement is high because localization shifts from direct inspection to inverse reconstruction from path-structured residuals, changing action, observable and warrant together. Global propagation is moderate rather than high because the supplied context confines validated inference to a low-load synthetic testbed with identical workloads, so the resulting wait map yields candidate interventions that still require ordinary live piloting, and the second half of the question, which bounded changes reduce delay, is only partially reached."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Withdrawing a suspected duplicate signoff in a pilot queue while tracking staffing and intake and comparing with an unchanged matched queue is the baseline's own ordinary pilot method. The restoration-and-recurrence step is a plausible addition an analyst might not think to do, but the surrounding behavior, evidence and conclusions would be substantially the same without the clinical framing."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the warrant, where reproducibility of the delay's disappearance and recurrence across withdrawal and restoration adds a reversal check not in the ordinary before/after pilot; this is a real but modest change. Global propagation is low because the act, evidence type, decomposition and next steps remain those of an ordinary matched pilot, and the inference is explicitly bounded to one factor in one pilot queue."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The changed warrant governs the core 'where does delay accumulate' part of the target question: A replaces direct reading of stage durations with fit-consistency of a hidden wait map against path-structured residuals, whereas B's warrant change touches only confirmation of one pre-suspected factor.",
+    "propagation": "A's warrant change drives later hypotheses about unresolved stages, tests defined as new route designs, a stopping condition defined by residual reduction and resolution, and claims hedged by non-uniqueness and artifacts. B's rechallenge adds one reversal step and then returns to ordinary pilot claims bounded to the pilot queue.",
+    "irreducibility": "Baseline language of timestamps, queues and pilots cannot express residual patterns across overlapping paths, coverage, or non-unique wait maps; removing the tomographic structure removes the reason to route probe tickets across designed paths and to treat prediction mismatch as the signal. B's distinctions, withdrawal, restoration, matched control and carryover, can all be stated in ordinary pilot language, and removing the clinical frame leaves the pilot intact.",
+    "rationale": "A changes the central localization warrant and, with it, the act, the evidence type, the decomposition and the next inquiry, none of which ordinary practice would produce. B is an extension of the baseline's own pilot method, with a modest reproducibility gain from restoration. The opposing considerations, that B operates in a live matched queue and answers the intervention half of the question more directly while A is confined to a synthetic testbed, concern applicability and usefulness, not the size of the change to the practitioner's control loop, and do not offset A's central warrant change."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "A's context exposes only endpoint timestamps; if the live target ordinarily records stage-level timestamps in ticket histories, the inversion is unnecessary there and A's practical reach into the real inquiry is smaller than its displacement of method.",
+    "A is validated only in a low-load synthetic testbed with additive traversal times; the supplied packet does not say whether the practitioner would carry the inverted wait map into live queues or only its candidate interventions.",
+    "Whether an ordinary operations analyst would restore a withdrawn policy to test recurrence is not settled by the baseline; if restoration is common in practice, B's local displacement is lower than stated.",
+    "The baseline's own note that some analysts use process mining leaves open how much timestamp-based localization is already routine, which slightly affects how novel A's path-based localization appears.",
+    "A addresses mainly the 'where' half and B mainly the 'which bounded change' half of the target question; the comparison treats displacement of the practitioner's loop, not completeness of coverage of the question."
+  ]
+}

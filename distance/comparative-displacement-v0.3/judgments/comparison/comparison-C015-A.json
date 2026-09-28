@@ -1,0 +1,61 @@
+{
+  "case_id": "C015",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "A introduces iterative inverse reconstruction of hidden stage delays from overlapping path measurements, followed by held-out route tests. Reproduction and timing measurements overlap with ordinary troubleshooting, but the inverse operation changes the investigative method. B adds explicit source-dependence assessment to familiar cross-checking of logs and records."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A treats structured discrepancies between predicted and measured path times as evidence constraining hidden delay combinations; the change is in the signal extracted, not merely additional timestamps. B treats agreement, contradiction and copying dependence among receipts and logs as meaningful, refining the baseline's use of ordinary records."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A licenses claims through constraints imposed by overlapping paths under the emulator's validated additive timing model, with held-out predictions checking the reconstruction. This differs substantially from inspecting traces and reproducing failures, while still allowing multiple compatible maps. B makes credibility and independence explicit conditions for corroboration, a smaller change to ordinary cross-record support."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A turns known workflow paths into coupled constraints on latent stage-delay variables, enabling reconstruction and identification of unresolved delay combinations. B distinguishes reporting sources by access and copying dependence, enabling duplicate evidence to be discounted. Both distinctions matter operationally, but A more substantially reorganizes how dependency failures are represented."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "In A's emulator, the next inquiries concern residual patterns, alternative compatible delay maps and held-out routes before candidate remedy tests. In B's record-rich context, they concern independent support, contradictions and copied reports before remedy testing. A redirects the ordinary troubleshooting sequence more substantially. These comparisons preserve the separate contexts: B's records are not available to A, and A's validated timing model is not attributed to B. Withheld timestamps alone do not establish displacement."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The engineer would plausibly reproduce timeouts, measure transit times and test fixes. Substantially the same iterative reconstruction of latent delays from coupled path residuals is less likely without the imported structure, given the stated lack of tomography specialization and the baseline's explicit uncertainty about this method being standard."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "The largest change is the model-based warrant connecting path residuals to hidden delay constraints. It propagates through representation, measurements, model revision, held-out tests and selection of candidate remedies. This reach concerns the emulator inquiry; it does not establish live-system generalization or uniquely identify a causal stage."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A release engineer already inspecting logs and artifact lineage would probably compare independently generated records of the same release and investigate disagreements. Explicit credibility and copying checks sharpen behavior that is substantially continuous with that practice."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The strongest change is treating source access and dependence as explicit conditions on corroboration, which can invalidate apparent agreement. Its broader reach is limited: ordinary records, failure-location hypotheses and isolated remedy testing remain the main investigative sequence."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "A changes the central basis for attributing timeout-relevant delay to workflow dependencies. B improves evidential support for reported failure locations but retains the baseline's general corroborative approach.",
+    "propagation": "A's inverse warrant governs which measurements constrain hypotheses, how residuals motivate model revisions, which routes test predictions and how narrowly remedy claims must be bounded. B's independence checks can redirect evidence gathering or suspend confidence, but introduce less restructuring of subsequent testing.",
+    "irreducibility": "Ordinary language can describe either mapping. Removing A's coupled path constraints and prediction-residual relationship would remove the reason those measurements support a hidden delay map. B's operational distinctions can largely be preserved through familiar instructions to cross-check records and avoid counting copied reports as independent evidence.",
+    "rationale": "A is more displacing because its central inference changes from direct troubleshooting evidence to constrained reconstruction, and that change organizes the rest of its inquiry. B's source-dependence distinctions are meaningful and can defeat false corroboration, but their centrality and downstream reach do not match A's restructuring. The conclusion rests on these mechanisms, not criterion counts or the absence of internal timestamps."
+  },
+  "overall_relation": "A_more_displacing",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline is an authored hypothesis rather than verified practitioner consensus, limiting confidence in predictions of native behavior.",
+    "A's reconstruction remains subject to coverage, noise, model assumptions and non-uniqueness; its supplied validation is confined to the emulator.",
+    "The mappings have different evidence contexts. These support comparison of their operational departures from the baseline, but not claims about their relative effectiveness in one shared release environment."
+  ]
+}

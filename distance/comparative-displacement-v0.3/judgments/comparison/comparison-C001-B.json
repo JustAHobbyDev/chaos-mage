@@ -1,0 +1,62 @@
+{
+  "case_id": "C001",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's operation (cross-check custody, transfer and location records, arrange dated links, mark gaps) is the baseline's first ordinary method almost verbatim; it adds no new kind of act. B introduces an inverse alignment search: sliding measured count sequences against independently dated reference series, exhaustively testing competing offsets, and rejecting incompatible alignments. The baseline archivist compares dated clues and postmarks but does not perform quantitative offset search over long measured sequences, which the baseline itself flags as not customary."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats as signal the same things the baseline already treats as signal: compatible independent dated records and conflicts between them. B makes a new kind of evidence meaningful: the repeated multi-week high/low pattern correspondence at a particular offset, and the structured anomaly of a missing or misplaced week that only appears as a residual mismatch once sequences are aligned. That is structured residual mismatch, not more instances of an ordinary clue."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is corroboration: independent records agree, so the bounded custody chronology is supported. That is exactly how the baseline licenses dating from postmarks, accession records and event mentions. B's warrant is differential fit: a calendar position is supported because one offset produces consistent pattern matches across all witnesses while every competing offset fails, and missing weeks are inferred from otherwise inconsistent residuals. The evidence-to-conclusion relation changes from agreement of independent witnesses to uniqueness of alignment under elimination of alternatives."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's entities (custodians, places, transfers, gaps, accession order versus composition) are already distinctions in the baseline; its warning not to equate accession order with composition restates the baseline's separation of physical arrangement from original order. B introduces operational entities the baseline lacks: ordered increment sequences, unknown offsets, reference series, overlaps between witnesses, missing increments, and a dispatch-date layer distinct from both custody and composition. These enable the letter set to be treated as mutually constraining witnesses rather than independently dated items."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "Under A the next step is what the baseline would do anyway: pull the next accession record or envelope and check consistency. Under B the next steps are calibrating strips against dated ledgers, testing offsets, checking overlap sufficiency, and, where alignments disagree, investigating specific calendar anchors or letter-strip attachment links. B's applicability context (strips, ledgers, documented attachment timing) is richer than A's, but that context is what determines whether the pathway exists at all; once present, B redirects inquiry toward alignment diagnostics rather than further record gathering."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Tracing custody, cross-checking dated references and preserving gaps are the baseline's listed ordinary methods. The archivist would perform essentially the same operations and reach the same bounded custody chronology without importing provenance-research vocabulary, because it is their own practice."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "No component of the control loop changes materially: the acts, signals, warrant and next questions coincide with ordinary archival practice. The only nuance, distinguishing possession dates from composition dates, is already part of the baseline's separation of arrangement from original order. With no local change there is nothing to propagate."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The archivist might notice the count strips as material clues and try to look individual numbers up in ledgers, but the baseline explicitly states that quantitative alignment of long measured sequences is not customary. Exhaustive competing-offset testing, treating overlapping strips as mutually constraining witnesses, and inferring omitted weeks from residual mismatch would not arise from ordinary practice without the crossdating ontology."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the warrant: dates are licensed by unique alignment under elimination of competing offsets rather than by corroboration of independent dated references. This changes the act (offset search), the signal (pattern match and residual anomalies) and the next inquiry (anchor and link checks). Propagation is moderate rather than high because B only constrains dispatch dates; composition dates, custody history and original-order questions still fall back to ordinary methods, and B's own inference limits state this."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant bears directly on the core question of what absolute chronology can be justified. B changes why a calendar date is justified for an undated letter, whereas A leaves the justification structure untouched.",
+    "propagation": "The alignment warrant generates new tests (competing-offset checks, overlap sufficiency), new stopping conditions (a unique alignment across all witnesses) and new claims (specific dispatch weeks and identified omitted weeks). Disagreements feed forward into which anchors or letter links to investigate next. A's warrant generates only the baseline's existing tests and claims.",
+    "irreducibility": "Ordinary archival language can describe A completely. It cannot preserve B's operationally important distinctions: without the notion of an offset and an alignment tested against alternatives, there is no reason to slide sequences, no residual mismatch to notice, no license to assign a week from pattern uniqueness, and no reason to pursue anchor recalibration.",
+    "rationale": "A is the baseline restated and displaces nothing. B changes the warrant, action, observables, decomposition and trajectory for the absolute-dating part of the question, with the warrant change being the central one from which the others follow. No criterion favors A. B's reach is bounded because dispatch dates do not settle composition or custody, but a central warrant change on the core question outweighs that limit. The asymmetric evidence contexts do not block comparison because the task and practitioner are the same and the baseline itself identifies the relevant operation as non-customary."
+  },
+  "overall_relation": "B_more_displacing",
+  "uncertainty": [
+    "B's evidence context supplies specialized materials (count strips, dated ledgers, documented attachment timing) absent from A's context; the comparison holds because the baseline fixes the same practitioner and task, but the two mappings are not tested against identical evidence.",
+    "Whether an archivist would treat the count strips as ordinary material clues and attempt informal ledger lookup is uncertain; this affects how far B's counterfactual departs from native practice but not the direction of the overall relation.",
+    "B's stipulated resolution of uniqueness and attachment-timing assumptions is a feature of the synthetic scenario; in a real case those limits could reduce B's reach.",
+    "The baseline is a scoped authored hypothesis rather than verified practitioner consensus."
+  ]
+}

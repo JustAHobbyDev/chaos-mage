@@ -1,0 +1,62 @@
+{
+  "case_id": "C033",
+  "confidence": "close",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts are workflow mapping, timestamp/queue comparison, interviews, exception inspection, and piloting an explicit handoff change with before/after turnaround comparison. A introduces a different kind of act: injecting tagged probe tickets along designed overlapping routes and then performing iterative inverse reconstruction of hidden per-stage waits from endpoint-only residuals. Nothing in the baseline reconstructs unobserved stage properties by model inversion. B's act is a controlled capacity step with a matched untouched queue and trajectory recording; the baseline already pilots changes and accounts for staffing and demand, so B's act is an ordinary pilot made more careful (control queue, minute-level trajectory) rather than a new kind of operation."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A's meaningful signal is the spatially (path-) structured mismatch between predicted and observed end-to-end times under a candidate wait map. That is a residual-mismatch evidence type the baseline does not use; the baseline reads timestamps and queue lengths directly. B's signal is temporal response features (delay, peak, overshoot, settling, migration of waiting downstream) derived from waiting and backlog series. Those series are ordinary evidence (queue lengths, ticket timestamps) observed more densely; reading transient versus settled shape is a real reinterpretation, but it is closer to more observations of an ordinary kind than A's model residuals."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrant: a stage is slow because its own timestamps or queue show it, or participants report it; a change works because turnaround improves relative to comparable periods. A replaces this with joint-constraint warrant: an endpoint time supports a claim about a specific hidden stage only because the pattern of residuals across overlapping paths constrains which stage assignments could produce it, with explicit non-uniqueness and regularization caveats. B keeps the baseline's comparative pilot warrant (treated vs matched queue) but adds that an early mean improvement does not license a 'settled' claim until the transient has passed and downstream queues settle. That is a substantive temporal qualification of the existing warrant, not a new evidence-to-conclusion relationship."
+    },
+    "problem_decomposition": {
+      "relation": "tie",
+      "rationale": "Baseline already has stages, owners, queues and case types. A adds paths as measurement channels, coverage/resolution, and identifiability of hidden stage waits; these enable asking whether a stage is resolvable at all, but the entities being localized (stage waits) are the baseline's stages. B adds temporal regimes (initial state, transient, settling, steady state), downstream migration of waiting, and the tested operating point; these enable distinguishing transient from durable improvement. Each introduces one operationally useful new layer on top of the same stage/queue structure, and neither clearly dominates."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, the baseline goes map → compare stage timestamps → interview → pilot → compare turnaround. A inserts an inverse-modeling phase before any intervention: next steps are adding overlapping routes to improve coverage, refitting the wait map, and checking non-uniqueness, with candidate handoff interventions chosen from the reconstructed map and explicitly bounded to the low-load additive testbed. B's next steps stay inside the baseline's pilot loop but change its stopping rule: choose observation windows by settling time, watch where waiting migrates, then pick the next reversible intervention, bounded to the tested operating point. A redirects the front half of the inquiry (localization); B alters the back half's stopping condition. A's redirection departs further from the ordinary sequence."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "An operations analyst confronted with only endpoint timestamps would ordinarily interview participants, inspect exception cases, or request stage-level logs. Designing overlapping probe routes and iteratively inverting residuals against candidate wait maps has no ordinary-practice motivation without the tomographic framing."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the inference step: localization by inverse reconstruction from path-structured residuals, with coverage and non-uniqueness as governing concerns, which is far from direct timestamp comparison. Propagation is moderate because the reconstruction feeds candidate handoff interventions, but the intervention and validation phase remains the baseline's ordinary pilot, and the mapping's own limit confines conclusions to the low-load testbed."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "The baseline already pilots changes and tracks queues while accounting for staffing and demand, so a capacity-step pilot with a comparison queue is within reach. Whether the analyst would treat overshoot, settling time and downstream migration as the decisive signal, and refuse to call an early mean improvement settled, is less clear; the baseline explicitly places designed-excitation dynamic estimation outside scope."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "moderate",
+      "rationale": "The most changed component is the observable/warrant pairing: temporal response features and the transient-versus-settled distinction replace before/after mean turnaround. The act itself is an ordinary pilot. Propagation is moderate because the change alters observation windows, the stopping condition for judging a change, and the choice of the next reversible intervention, but it does not change how delay is initially located."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change in A sits on the core question's first half, 'where do handoffs accumulate delay': A changes why any timing observation is taken to implicate a particular stage, from direct reading to joint constraint across overlapping paths.",
+    "propagation": "It changes which measurements are gathered next (route coverage), introduces identifiability checks and regularization caveats as stopping conditions, and determines which interventions are even candidates, before the ordinary pilot begins.",
+    "irreducibility": "Ordinary language cannot preserve A's distinctions: without the tomographic structure there is no reason to route overlapping probe tickets, no residual to notice, and no license to attribute an endpoint delay to an unobserved stage. B's key distinction, transient versus settled improvement with a matched control, can be largely stated in ordinary terms as 'wait longer, compare to an untouched queue, watch downstream backlog', even if the baseline analyst would not reliably do so.",
+    "rationale": "A changes action, observables and warrant together in the localization phase, and the warrant change is irreducible and central. B's real contribution is a stopping-rule and observation-window change on the intervention half of the question, plus temporal response features as signals; these are meaningful but operate inside the baseline's existing pilot-and-compare loop and are partly expressible in ordinary terms. Problem decomposition ties. The opposing consideration is that B's transient/settling distinction directly guards the 'which bounded changes reduce it' claim, which matters; it is not enough to offset A's replacement of the basic evidence-to-stage inference. Hence A is more displacing, but the margin is not wide."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "A's evidence context exposes only endpoint timestamps while B's exposes minute-level data at every handoff; A's inversion is partly forced by its sparser context, so some of its displacement reflects the scenario rather than the imported ontology. The comparison was made without pooling contexts.",
+    "A's regime is a low-load synthetic testbed with validated additive times; B's is a pilot at one operating point. Neither context was extended to live queues, and the mapping limits were preserved.",
+    "The baseline's own uncertainty notes that process mining is used by some analysts; if stage-level event logs were considered ordinary, A's need for inversion would look less native but B's trajectory reading might look closer to ordinary practice.",
+    "Whether the reference analyst would spontaneously distinguish transient from settled improvement in a pilot is judged uncertain, which is why confidence is close rather than clear."
+  ]
+}

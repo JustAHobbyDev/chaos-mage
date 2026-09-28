@@ -1,0 +1,62 @@
+{
+  "case_id": "C028",
+  "confidence": "close",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "The baseline already runs prototype sessions and compares staged variants. A's acts stay within that: targeted prototype comparisons and inspection of usability observations, selected for their discriminating power but not a new kind of operation. B adds a reversible perturbation on one component: disable the modal, then restore it in a counterbalanced trial with matched participants to see whether abandonment recurs. The reintroduction-and-recurrence step is a different kind of controlled act from the baseline's one-directional variant comparison, though it is confined to a single toggleable part."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "The baseline treats task failures, funnel drop-offs and user errors as the signals. A changes what counts as informative: an observed failure matters according to which dependency explanations it fits and which it contradicts, and a non-discriminating observation is itself a signal that another comparison is needed. B's signal is completion change on removal and recurrence on restoration; the recurrence component is new, but the underlying measure remains an ordinary completion-rate difference between variants for one modal. A restructures the reading of the whole failure set across verification, permissions and welcome flow; B adds one new signal shape for one factor."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "The baseline warrants prioritization by corroboration: parts implicated by observed failures and small variant experiments get ranked. A replaces this with an eliminative warrant: a part is treated as necessary because evidence contradicts rival explanations, and explanations are retained without commitment when evidence does not discriminate. That directly changes why a failure observation supports a necessity claim and supplies a reason to hold interactions open rather than rank. B's warrant is differential perturbation response, which the baseline's staged variant comparisons already use in one-directional form; the rechallenge adds reproducibility and therefore confidence, and it bounds the claim to one modal's contribution, but it is largely a stronger version of an existing warrant rather than a different relationship."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "The baseline decomposes into needs, flows, assumptions and dependencies. A adds a set of competing explanations, each tying activation failure to different proposal parts, with statuses of eliminated, reprioritized or retained. This enables choosing comparisons by which explanations they separate and marks unresolved interactions as explicit objects for further tests, which addresses the second half of the target question. B decomposes into one suspected factor against an otherwise fixed prototype and explicitly leaves other dependencies unresolved; that is a legitimate isolation but narrows rather than restructures the entity set."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same target question, A sends the practitioner to the next comparison that best separates the remaining explanations across the three observed failure points, and treats retained interactions as the next test targets. B sends the practitioner to the modal on-off-on trial and then to whether abandonment recurs, with the other dependencies left for later by the mapping's own statement. The applicability contexts differ: A's context covers failures at verification, permissions and the welcome flow, while B's context is a single modal that can be safely toggled. Even holding this difference in view, B's trajectory is bounded to one part and does not reach the interaction question, while A's trajectory governs the sequence of inquiry across the proposal."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "uncertain",
+      "rationale": "A product manager running discovery would plausibly form more than one hypothesis and run comparisons, but the ordinary method prioritizes by observed failures. Selecting comparisons for discriminating power, treating non-discriminating observations as informative, and retaining explanations without early commitment are not stated as routine in the baseline, so it is unclear whether the same behavior would emerge unaided."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "high",
+      "rationale": "The most changed component is the warrant, shifting from corroborative prioritization to elimination across competing explanations; the acts themselves remain ordinary sessions and prototype comparisons, so the local change is moderate rather than high. The change reaches far: it governs how every observed failure is read, which comparison is run next, and when the plausible set is narrow enough to stop, and it supplies the mapping's handling of interactions."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Disabling a modal in a prototype and comparing completion is an ordinary staged-variant comparison for this practitioner. The restore-and-check-recurrence step is less routine, but the core behavior of removing the suspected modal and observing completion would probably occur without the imported ontology."
+    },
+    "scope": {
+      "local_displacement": "moderate",
+      "global_propagation": "low",
+      "rationale": "The reversal perturbation with counterbalanced reintroduction is a genuinely different kind of act from the baseline's one-directional comparison, giving a moderate local change. Its reach is low: the mapping itself states that it assesses a bounded contribution of one modal and leaves other dependencies unresolved, so the rest of the necessity-and-interaction inquiry proceeds as before."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The warrant change in A bears on the core question: which parts are necessary and why interactions block a simple ranking. Eliminative reasoning across competing part-explanations is what licenses calling a part necessary and what justifies holding interactions open. B's warrant change concerns one modal's bounded causal contribution, a peripheral slice of the target.",
+    "propagation": "A's warrant changes subsequent hypotheses (the retained set), the choice of tests (discriminating comparisons), the stopping condition (plausible set sufficiently narrowed) and the form of the final claim (necessary parts plus retained interactions). B's rechallenge changes the claim about the modal and little else; by its own limit statement the other dependencies remain unresolved.",
+    "irreducibility": "Ordinary baseline language can express B nearly fully: turn the modal off, compare, turn it back on, compare again. It cannot easily preserve A's distinction between discriminating and non-discriminating evidence or the status of a retained-but-uncommitted explanation; removing that structure removes the reason to pick the next comparison and the reason to report interactions instead of a ranking.",
+    "rationale": "B holds the action criterion through a reversible perturbation the baseline does not perform, and that is a real difference. But its displacement is confined to one component and does not touch the interaction part of the question, and the practitioner would likely perform the removal comparison anyway. A's shift in why observations support necessity claims is central to the target question and reshapes observables, decomposition and trajectory across the whole proposal. One central warrant change with high reach outweighs a bounded non-ordinary act, so A is more displacing."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "Whether multi-hypothesis discrimination and retention without commitment are already routine for an onboarding-discovery product manager; the baseline does not state this either way.",
+    "Whether counterbalanced on-off-on trials with matched participants are within the baseline's 'small experiments', which would reduce B's action advantage further.",
+    "The evidence contexts differ in breadth: A's covers three failure points, B's covers one toggleable modal. B's low global reach is partly imposed by its context rather than by the instrument, though the mapping's own inference statement also bounds it.",
+    "Neither mapping fully answers the interaction half of the target question; A only retains interactions for further tests, so the judgment rests on A providing a reason to hold them open rather than on resolving them."
+  ]
+}

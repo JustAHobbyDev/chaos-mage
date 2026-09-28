@@ -1,0 +1,61 @@
+{
+  "case_id": "C019",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline practice compares staged prototype variants and runs small experiments. Mapping B removes one modal, observes, then restores it in a counterbalanced trial; this is a single-factor on/off comparison with a reversal step, close to an ordinary staged-variant test. Mapping A introduces an iterative partition-and-reduce search over the whole rule set: remove subsets, test complements, keep failure-preserving reductions, stop when no permitted single reduction preserves failure. That is an elimination-by-reduction procedure the baseline explicitly does not treat as routine ('formal minimality searches ... not assumed routine')."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "Baseline evidence is task completion, funnel events, observed errors. B's signal is completion rising on removal and abandonment recurring on restoration, which is ordinary completion evidence read across two conditions. A treats failure-preservation of a reduced rule combination as the signal and separately tracks unresolved (dependency-invalid) outcomes as a distinct evidence class. Which combinations still fail jointly, versus which cannot be tested, is a new kind of structured signal rather than more completion counts."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "B's warrant is temporal reversibility: the modal contributes causally because the effect disappears on removal and returns on restoration. That resembles the baseline's variant comparison with a stronger within-design reversal, so the evidence-to-conclusion link is only modestly changed. A's warrant is test-relative minimality: a retained rule set is claimed jointly sufficient for failure because every permitted further removal stops reproducing it. The claim about interactions is licensed by the structure of the reduction search itself, not by corroboration or single-factor response. This is a different reason why an observation supports a claim."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "B keeps the baseline's entities (one feature, completion outcome) and adds only a reversal condition; other dependencies remain explicitly unresolved. A reframes the redesign as a configuration of removable rule parts, introduces the 'minimal failure-inducing interaction set' as the answer object, and separates fail / complete / unresolved outcomes. Those distinctions are what allow the practitioner to say why an independent feature ranking misses interactions, which is the second half of the target question."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the same question, B sends the practitioner to remove and restore one modal with matched participants, then presumably to the next single feature; the interaction question stays unaddressed. A sends the practitioner to bisect the rule set against the replay oracle, chase unresolved combinations, and end at a minimal interaction set, then validate that set with real users since the claim is restricted to the replay. A's context (deterministic replay, validated oracle) is narrower in applicability than B's participant trials, but within that context it redirects the whole sequence of next measurements and the stopping condition."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline states formal minimality searches are not routine for this practitioner. A PM would compare staged variants and prioritize from qualitative failures, not run an iterative partition/complement reduction with a stopping rule and separate handling of unresolved outcomes."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "The most changed component is the warrant and action: a minimality-search over removable rules replaces variant comparison. This change propagates through representation (rule configuration), observation (failure-preservation and unresolved outcomes), inference (joint sufficiency), stopping condition, and the form of the final claim (an interaction set rather than a ranking). The replay-only restriction limits generalization but not how far the change reaches inside the inquiry."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "Toggling a single modal on and off across matched participants is close to the baseline's staged-variant comparison. The counterbalanced restore step is a modest refinement a usability-focused PM could plausibly adopt without the clinical framing."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is the reversal (rechallenge) warrant for one factor, a small step beyond variant comparison. It yields a bounded claim about one modal and explicitly leaves other dependencies and interactions unresolved, so it changes little of the rest of the inquiry."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The target question asks which parts are necessary and what interactions defeat a simple ranking. A's minimality warrant directly licenses claims about joint sufficiency of an interaction set, addressing the core question. B's reversibility warrant addresses a single factor and leaves interactions unresolved, a peripheral contribution to the core question.",
+    "propagation": "A's warrant changes the hypotheses (interaction sets rather than individual features), the tests (reduction and complement tests), the stopping condition (no permitted single reduction preserves failure), and the form of the claim. B changes only the confidence in one factor's contribution.",
+    "irreducibility": "Ordinary language of 'variant comparison' cannot preserve the distinction between a failure-preserving reduction and a merely different variant, nor the fail / complete / unresolved trichotomy, nor the stopping rule that defines minimality. Removing the delta-debugging structure removes the reason to perform the reduction search and the license to call a retained set jointly sufficient. B's distinctions (remove, restore, observe recurrence) can be stated in ordinary staged-variant language with little loss.",
+    "rationale": "All five criteria favor A, but the decisive basis is the warrant change because it is central to the interaction half of the target question and drives every downstream component. B has a real but small advantage in applicability: its participant-based context speaks to real users while A's claim is restricted to one deterministic replay. That limits A's generalization, not its displacement of the practitioner's control loop. No opposing criterion difference offsets A's central warrant change."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "A's displacement depends on the supplied deterministic replay and validated oracle; without such an oracle the reduction search may degrade toward ordinary variant comparison.",
+    "B's counterbalanced rechallenge might be judged slightly more non-ordinary if the reference PM never uses within-participant reversal designs; this would not change the overall relation.",
+    "Baseline is a scoped authored hypothesis, not verified practitioner consensus, so the routine/non-routine boundary for reduction searches is asserted rather than observed."
+  ]
+}

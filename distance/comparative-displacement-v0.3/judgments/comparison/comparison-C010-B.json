@@ -1,0 +1,61 @@
+{
+  "case_id": "C010",
+  "confidence": "clear",
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Baseline acts are decomposition, usability sessions, and comparison of staged variants or funnels. A introduces a different kind of operation: systematic subtractive reduction of a failing rule configuration, including testing complements and iterating until no permitted single removal preserves failure, with dependency-invalid combinations held as unresolved. The baseline explicitly says formal minimality searches are not routine. B's acts, generating candidate explanations and inspecting discriminating observations via targeted prototype comparisons, are the ordinary usability and small-experiment repertoire with a hypothesis list attached."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "Baseline signals are observed user errors, task completion, funnel drop-off and stated dependencies. A makes the meaningful signal whether a reduced rule set still reproduces the defined failure under the replay oracle, plus a distinct unresolved outcome class for dependency-invalid reductions. That is a new evidence kind: preservation of failure under removal rather than location of failure. B's signal, observations that fit some dependency explanations and contradict others, is the same observed-failure evidence read against a hypothesis list, a reorganization rather than a new kind of signal."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "Baseline warrants are corroborative: repeated observed failures at a step support prioritizing that part. A licenses a claim of joint sufficiency: retained parts jointly reproduce the failure because every permitted removal eliminates it, which directly explains why independent per-feature ranking can miss interactions. B's warrant is discrimination and elimination among candidate explanations, which is a modest sharpening of ordinary prioritization from qualitative evidence and remains plausibility-based rather than sufficiency-based."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A recasts the proposal as removable rule parts of a failing configuration and introduces a test-relative minimal failure-inducing interaction set, 1-minimality as a stopping notion, and a separate unresolved category. These distinctions enable the practitioner to say which interactions block ranking and to know when reduction can stop. B's entities, competing explanations over proposal parts and retained uncertain interactions, largely relabel the baseline's assumptions and dependencies without enabling a new operation."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "From the target question, A sends the practitioner to build or obtain a deterministic replay with removable rules and then to the next partition or complement test, with stopping when no single reduction preserves failure. Its stated context restricts claims to that replay, so population-wide necessity remains a follow-on question. B sends the practitioner to the next discriminating usability observation or prototype comparison across verification, permissions and the welcome flow, which is what the baseline already does next. A's context is narrower in applicability but changes the next step more."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "The baseline notes formal minimality searches are not routine for this practitioner. Without the reduction ontology there is no reason to test complements, iterate toward a 1-minimal set, or keep unresolved outcomes separate; staged-variant comparison would not converge on a joint-sufficiency claim."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "moderate",
+      "rationale": "The act and warrant, subtractive reduction yielding joint sufficiency, differ sharply from corroborative usability practice. Propagation is moderate rather than high because the stated evidence context confines claims to one deterministic replay of one recorded path, so questions of population necessity, nondeterminism and real-user behavior still fall back to ordinary sessions and funnels."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "A product manager running usability sessions already entertains several explanations for a drop-off, looks for observations that distinguish them, and runs small comparisons. Explicit hypothesis listing and elimination adds discipline but not a new kind of act, signal or warrant."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The most changed component is a more explicit hypothesis set with elimination bookkeeping. Downstream tests, evidence sources and stopping conditions remain ordinary sessions, funnel comparisons and prioritization under residual uncertainty."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The target question asks which parts are necessary and what interactions defeat simple ranking. A's joint-sufficiency warrant from failure preservation under removal speaks directly to that core, whereas B's plausibility narrowing addresses the same core only in the baseline's ordinary corroborative way.",
+    "propagation": "A's warrant changes the next tests (partitions and complements), the stopping condition (no single permitted removal preserves failure), and the form of the final claim (a test-relative minimal interaction set with unresolved cases set aside). B leaves later tests and claims in ordinary form.",
+    "irreducibility": "Ordinary language of staged variants and dependencies cannot express why complement tests are run, why unresolved outcomes must be tracked separately, or why a retained set licenses a joint-sufficiency claim. Removing the reduction structure removes the reason to perform those acts and to make that inference. B's distinctions can be restated fully as ordinary hypothesis-driven usability comparison.",
+    "rationale": "A changes the warrant at the center of the question and that change propagates to acts, signals and stopping conditions, while B mostly formalizes existing practice. No criterion favors B. A's narrower applicability context, a single deterministic replay, limits how far the change reaches but does not reduce the displacement of the loop it governs, and the baseline's population-level uncertainty is preserved rather than narrowed."
+  },
+  "overall_relation": "A_more_displacing",
+  "uncertainty": [
+    "A's evidence context assumes a deterministic replay oracle and a prototype built from removable interaction rules; if that artifact were unavailable, A's operational changes could not be enacted and its practical reach would shrink further.",
+    "B's evidence context (sessions and funnel records) matches the baseline's ordinary evidence, so its low displacement partly reflects context similarity rather than a defect in the mapping.",
+    "The baseline is an authored hypothesis, not verified practitioner consensus; a practitioner who already runs systematic ablation of prototype rules would see A as less non-ordinary."
+  ]
+}

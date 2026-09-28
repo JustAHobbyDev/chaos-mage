@@ -1,0 +1,61 @@
+{
+  "case_id": "C004",
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A repeats comparable measurements and evaluates trends, closely matching ordinary cohort monitoring. B deliberately applies a known exposure step to characterize the resulting dynamics. Ordinary pause or rollback already involves intervention, but B changes its investigative purpose and design: the perturbation elicits a response whose transient and later behavior are measured."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats persistence, trend and reversal as signals already meaningful in ordinary monitoring. B treats delay, overshoot, peak and settling relative to the exposure step and controls as evidence about the segment's response. The displacement comes from these response features, not simply from having minute-level rather than daily measurements."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A uses temporal persistence against expected variation to distinguish deterioration from fluctuation, preserving the baseline's monitoring warrant. B uses the shape of a response to a known perturbation, with fixed traffic mix and an unchanged comparison cohort, to constrain response dynamics at the tested operating point. This supports observation windows and exposure decisions without identifying a unique mechanism."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A largely preserves existing segments, measurements, comparison trends and variation. B operationally distinguishes input change, initial state, transient response and later behavior. Those distinctions enable separate questions about delayed effects, temporary overshoot and persistent shifts rather than treating every adverse movement as equivalent deterioration."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A directs the analyst toward further comparable daily observations and an alert-rule assessment, continuing the baseline trajectory. B directs the analyst toward a permitted sandbox step and measurement of the response through transient and later behavior, making response timing relevant to subsequent decisions. A's context supplies historical and unexposed trends; B's supplies controlled exposure and suitable response measurements. B's intervention cannot be presumed available in A's context, but its stated use introduces a different investigative trajectory relative to the shared baseline."
+    }
+  },
+  "mapping_A": {
+    "counterfactual_native": {
+      "status": "likely",
+      "rationale": "The analyst already tracks cohort metrics over time against baselines and comparison groups. Repeated comparable observations and distinguishing sustained deterioration from noise would probably arise without serial-monitoring terminology; an explicit alert rule modestly formalizes that behavior."
+    },
+    "scope": {
+      "local_displacement": "low",
+      "global_propagation": "low",
+      "rationale": "The clearest change is explicit attention to comparability, expected variation and an alert rule within existing monitoring. These refinements can affect when investigation or pausing occurs but do not substantially reorganize the evidence, inference or subsequent inquiry."
+    }
+  },
+  "mapping_B": {
+    "counterfactual_native": {
+      "status": "unlikely",
+      "rationale": "Ordinary rollback and follow-up could reveal temporal effects, but the scoped baseline excludes designed dynamic identification. Deliberately eliciting and interpreting a complete step response, including overshoot and settling, is therefore unlikely to arise as substantially the same investigative behavior within that baseline."
+    },
+    "scope": {
+      "local_displacement": "high",
+      "global_propagation": "high",
+      "rationale": "B substantially changes the warrant by linking response features to a designed exposure perturbation. This propagates through intervention design, meaningful signals, temporal decomposition, follow-up duration and reversible exposure decisions. Its reach across the inquiry is broad even though its conclusions remain bounded to the sandbox cohort and tested operating point."
+    }
+  },
+  "decisive_basis": {
+    "primary_criterion": "inferential_warrant",
+    "centrality": "The changed warrant directly addresses how segment outcomes respond to exposure and what observation window or reversible action should follow, both central to the retained question.",
+    "propagation": "Distinguishing delayed, transient and persistent responses changes candidate interpretations, required follow-up and when the analyst has enough evidence to choose an exposure action.",
+    "irreducibility": "Ordinary language can describe B without control-engineering terminology, but preserving its operations requires retaining the known perturbation and response-phase distinctions. Removing that structure removes the reason to elicit and interpret overshoot, delay and settling as response evidence. A's important distinctions are already largely preserved by ordinary trend-monitoring language.",
+    "rationale": "B changes the evidence-to-conclusion relationship around a core decision, while A mainly formalizes an existing relationship. B's action, signal and decomposition changes support and propagate that central warrant change. Baseline rollback provides some overlap with B, and the sandbox limits generalization, but neither reduces B to ordinary post-action comparison. The ordering rests on this operational difference, not criterion counts or richer data availability."
+  },
+  "overall_relation": "B_more_displacing",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline is a scoped authored hypothesis; actual practitioners' monitoring conventions may differ.",
+    "The packet does not establish that A's setting permits B's sandbox intervention; the comparison preserves their separate applicability contexts.",
+    "B characterizes response at the tested operating point and does not establish a unique mechanism or unrestricted generalization to other segments or exposure levels."
+  ]
+}
