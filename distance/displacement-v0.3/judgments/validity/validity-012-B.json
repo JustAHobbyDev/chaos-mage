@@ -1,0 +1,32 @@
+{
+  "case_id": "012",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain intact. State: exposure is a controlled input and segment error/support-queue outcomes are a time-observable output. Operation: a known step (10% to 20%) is applied under fixed traffic mix and the trajectory is recorded from initial state through transient to later behavior, matching the source operation. Signal: delay, peak, overshoot, settling and steady-state shift relative to controls are the same temporal features the source relies on. Inference: 'characterize the segment response at this operating point' is the source's 'characterize how the system reacts to perturbation', and the mapping explicitly declines to claim a unique mechanism, matching the source's 'constrain' rather than 'identify' warrant. Limits retain noise, initial state, saturation, other inputs, insufficient follow-up, nonlinearity and operating-point dependence ('extrapolation beyond the step'); external disturbances are not listed in the limit field but are handled operationally by the unchanged comparison cohort stated in the evidence. No step or warrant is lost or substituted."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question has two parts: whether the rollout is deteriorating for the segment, and what observation or reversible action should follow. A steady-state shift or sustained overshoot in segment outcomes relative to the comparison cohort after the step is a direct, bounded answer to the first part at the tested operating point. Delay and settling features directly inform the second part: how long to observe before judging, and whether reversing the exposure step is warranted. The inference is explicitly bounded to the tested step and to informing decisions rather than proving a cause, which is a legitimate bounded contribution rather than an answer to a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (stepping exposure 10% to 20% in a consented sandbox cohort under fixed traffic mix while an unchanged cohort runs alongside) produces Y (minute-level error and support-queue trajectories spanning initial state, transient and later behavior, differenced against the control) that warrants Z (a characterization of whether and when segment outcomes shift after exposure increases, and hence a choice of observation window and a reversible hold/rollback decision). Each link is stipulated in the evidence rather than assumed; the comparison cohort supplies the disturbance baseline the source needs. The inference does not rest on source imagery and is not circular: the trajectory features are measured, not presupposed."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a functional transfer of step-response probing onto a staged rollout: the packet's stated evidence supplies a controllable known step, a fixed operating context, time-resolved outputs covering the full response, and a concurrent control for disturbances. The inference is bounded to the tested operating point and to informing observation and reversible action, which is exactly what the source warrants. Remaining uncertainties concern execution quality (adequate follow-up length, representativeness of the sandbox cohort, choice of deterioration threshold) and are already acknowledged as limits rather than being gaps in the mapping itself."
+  },
+  "uncertainty": [
+    "Whether the stated observation window is long enough for outcomes to settle is not specified; the limit field acknowledges insufficient follow-up but the packet does not state the window length.",
+    "Whether the consented sandbox cohort is representative of the user segment named in the question is not stated; conclusions apply directly to the tested cohort and generalize only under the mapping's stated limits.",
+    "The packet does not define what magnitude of steady-state shift counts as 'deterioration'; this is a decision threshold the operator must set, not a defect in the mapping.",
+    "Support-queue measurements have inherent human-response lag that will appear as delay in the trajectory; this is captured by the delay feature but could be confused with system delay if not separated."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "014",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is: hidden interior structure alters propagation along many paths; measure many-path travel behavior; compare against a candidate model's predictions; iteratively adjust to reduce spatially structured residuals; infer a spatial property model bounded by coverage, noise, regularization and non-uniqueness. The mapping keeps every step with functional counterparts: hidden per-stage delays (slowness structure) alter end-to-end transit along known overlapping dependency paths (ray paths); equivalent artifacts are sent across many paths (sources/receivers); measured times are compared to a candidate stage-delay map and structured residuals are inverted iteratively; the output is a delay map constrained by residual patterns. The forward-model warrant is supplied by the packet: the emulator validates an additive timing model, which is the counterpart of the linear travel-time forward model. Held-out route testing is an addition but functions as a model check, not a substitution. The limit field carries over the relevant source limits (sparse coverage, noise, model assumptions, regularization, non-uniqueness) and adds the appropriate target-specific bound on causal specificity and live-system generalization."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which release-workflow dependencies account for intermittent publication failures and what bounded remedy is supported. The inference constrains an internal per-stage delay map for known dependency paths, and, because the packet states delayed arrival reproducibly triggers the publication timeout, stages whose estimated delays push paths past the timeout are identified as the accountable dependencies, up to acknowledged non-uniqueness. The remedy part is answered as an explicitly bounded contribution: candidate dependency remedies for the timeout within the emulator, with generalization to a live system expressly excluded. This is a justified, bounded answer rather than a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (sending equivalent artifacts across many known overlapping paths and recording end-to-end times, with internal timestamps withheld) produces Y (path-level time residuals against an additive candidate delay map, plus held-out route errors) that warrants Z (a set of per-stage delay maps compatible with the residuals, and, given the stated timeout-triggering relation, the stages implicated in timeouts). The additive model is stated as validated by injected-delay trials, so the inversion step is empirically grounded rather than borrowed imagery. The inference is bounded by non-uniqueness and emulator scope, so the chain is intelligible and does not rest on circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the tomographic state→operation→signal→inference chain and its limits, the packet supplies the additive forward-model warrant, the inference gives a bounded answer to the retained question within the emulator, and the operational chain from many-path timing measurements to a constrained delay map and candidate remedies is coherent. No unresolved bridge or measurement is required for the bounded inference as mapped; remaining concerns are limits already stated in the mapping, not conditions."
+  },
+  "uncertainty": [
+    "The question concerns intermittent failures while the mapping estimates a delay map; the mapping does not state whether inversion is per-trial or averaged, so how variability in stage delays is attributed across trials is not specified, though repeated trials in the evidence make it feasible within the mapped operation.",
+    "Identifiability of individual stage delays depends on how the known overlapping paths span the stages; the mapping acknowledges non-unique maps as a limit but the packet does not state the coverage structure.",
+    "Remedies are constrained only as candidates within the emulator; nothing in the packet supports transferring a remedy to a live release system, as the mapping's limit itself states.",
+    "The equivalence of 'dependencies' in the question with 'stages' on dependency paths in the mapping is assumed reasonable given the evidence wording but is not made explicit."
+  ]
+}

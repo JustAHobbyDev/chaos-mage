@@ -1,0 +1,37 @@
+{
+  "case_id": "022",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain intact: an unsampled internal structure (hidden per-service delays) alters propagation along many overlapping known paths (request routes); travel behavior is measured, compared with a forward-model prediction, and the model is iteratively adjusted to reduce spatially structured residuals (residuals patterned by services traversed); the residual pattern constrains a spatial model of internal properties (per-service delay map). The stated synthetic evidence supplies the warrant the source needs for the forward step: an additive path-time forward model validated by controlled injected delays, with payloads and load held fixed. The limit field retains the source's coverage, noise, regularization, model-mismatch and non-uniqueness caveats and adds that localization does not establish code-level cause, which is a tightening rather than a loss. Held-out route checking is an addition that does not substitute for any source step. Known route endpoints remove the source's source-location uncertainty rather than dropping a warrant."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The retained question asks which deployed change accounts for the regression and what bounded causal evidence separates it from load variation. The mapped inference delivers a per-service delay localization within the tested regime and explicitly disclaims code-level cause. That is a bounded contribution, but it answers 'which services carry the added delay' rather than 'which deployed change'. A concrete bridge could connect them without altering the question: a record of which deployed changes touched the localized services, plus a before/after or revert comparison on the same harness. The load-variation half is partly addressed by design (load held fixed on the harness), but the harness is staging and the regression is production; the packet does not state that the staging harness reproduces the production regression, so the fixed-load distinction transfers to production only if that reproduction is established."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing X (timed requests across many known routes, inverted against a validated additive forward model with held-out route checks) produces Y (a per-service delay map with structured residuals reduced) that warrants a bounded Z (localization of delay to services, subject to coverage and non-uniqueness). The chain is intelligible and not circular: the forward model is independently validated with injected delays, not inferred from the regression itself. However, localizing 'contributions to the new regression' requires a reference delay map from a pre-regression build or a change-reverted configuration; a single inverted map recovers steady-state per-service delays and cannot by itself separate the regression delta from baseline structure. That reference measurement is a named, obtainable input rather than a mechanism loss."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Reference delay map: run the same harness and inversion on the pre-regression build (or with candidate deployed changes reverted) so the difference between maps isolates the regression delta from steady-state per-service delays.",
+      "Service-to-change attribution: obtain the deployment record of which changes modified which services in the localized set, then confirm by reverting or bisecting those changes on the harness and observing the localized delay disappear; this moves the inference from 'which services' to 'which deployed change'.",
+      "Staging reproduction of the production regression: establish that the fixed-load staging harness reproduces the checkout latency increase observed in production, otherwise the fixed-load distinction from load variation does not transfer to the production regression.",
+      "Resolution and identifiability check: inject known delays at each candidate service on the current route set and verify the inversion recovers them distinctly, together with held-out route residuals, to confirm route coverage resolves the implicated services rather than a non-unique blend."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. Mechanism fidelity is preserved: the target is a genuine travel-time inversion over overlapping known paths with an independently validated additive forward model, and the source limits are retained. Target fidelity and operational coherence are conditional because the mapped inference localizes delay to services rather than to a deployed change, requires a pre-regression reference map to isolate the regression delta, and relies on the staging harness reproducing the production regression for the fixed-load distinction to bear on the question. Each condition names a specific measurement or record and how to obtain it, so the transfer is Conditional rather than Invalid."
+  },
+  "uncertainty": [
+    "The packet does not state whether the staging harness reproduces the production checkout latency regression; the assessment treats this as unestablished rather than assuming either way.",
+    "The packet does not state whether a pre-regression build or reverted configuration is available on the harness for a reference delay map.",
+    "The additive forward model was validated with injected delays; whether it holds under the actual regression mechanism (for example queueing or contention that is non-additive across routes) is unknown and is covered only by the mapping's model-mismatch limit.",
+    "Target fidelity could arguably be scored 'addressed' as an explicitly bounded contribution, since the mapping disclaims code-level cause; it is scored 'conditional' because the question's first clause ('which deployed change') is reachable only through the named attribution bridge."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "007",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the full chain. State: the stipulated evidence supplies a reproducible failure (deterministic replay), removable parts (interaction rules), and repeatable tests (validated replay oracle). Operation: partition, remove subsets or complements, retain reductions that still fail, stop when no permitted single reduction preserves failure; this is the ddmin 1-minimality stopping rule, and unresolved outcomes are held separately as in the source. Signal: reduced sets that fail, complete, or return unresolved is the same three-valued oracle. Inference: a test-relative minimal failure-inducing set, not a global minimum. Limits carry over: nondeterminism, invalid reductions, environment, search order, and the explicit disclaimer that the retained set demonstrates reproducibility under the test rather than a unique cause. No step is substituted and no requirement absent from the source is added."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The second clause of the question (what interactions prevent a simple feature ranking) is answered directly: a 1-minimal failure-inducing set of size greater than one is, by construction, a set of rules that fail only jointly, which is exactly the case an independent per-feature ranking cannot represent. The first clause (which parts are necessary for completion) receives an explicitly bounded contribution rather than a full answer: within this replay, each rule in the 1-minimal set is necessary for the failure, so removing any one restores completion, which identifies the parts that jointly block activation. The mapping states its scope honestly (joint sufficiency for this failure, no population-wide necessity claim), and the evidence restricts the claim to this replay. The question is retained, not swapped."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the reduction loop against the validated oracle yields pass/fail/unresolved verdicts for each candidate subset (Y), and retaining only failing reductions until no single permitted removal preserves failure warrants a 1-minimal, oracle-relative failure-inducing rule set (Z). The evidence supplies the two things the procedure needs: deterministic reproduction and a fixed completion criterion applied after each reduction. Dependency-invalid combinations returning unresolved is handled by the source's own three-valued semantics. The inference is bounded to the replay and the oracle, so nothing rests on analogy alone."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful instance of delta debugging applied to a prototype whose stipulated properties (deterministic replay, removable rules, validated oracle with unresolved outcomes) match the source's preconditions. The inference is bounded to a test-relative minimal failure-inducing set, which directly explains why interactions defeat independent feature ranking and gives a replay-scoped account of which redesign parts jointly block activation. The mapping's limits correctly disclaim unique causation and population-wide necessity, so no unresolved condition is needed for the claim as stated."
+  },
+  "uncertainty": [
+    "The question asks which parts are necessary for completion; the mapping delivers the dual, a minimal set jointly sufficient for failure. These coincide only in the negative sense that removing any member of the 1-minimal set restores completion in this replay. Parts necessary for completion in a passing configuration are not identified by this procedure.",
+    "The evidence covers a single recorded activation path. A different recorded path could yield a different minimal set; the mapping and evidence both scope the claim to this replay, but the question's phrasing about users in general is broader than what is established.",
+    "The oracle's validity is a stipulated synthetic fact. If the completion criterion diverged from real activation, the result would still be oracle-relative but less meaningful.",
+    "1-minimality does not guarantee a globally minimal or unique interaction set; a different partition order may retain a different set, and unresolved (dependency-invalid) outcomes can keep extra rules in the retained set."
+  ]
+}

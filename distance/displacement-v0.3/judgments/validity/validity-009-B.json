@@ -1,0 +1,32 @@
+{
+  "case_id": "009",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain intact. State: claims of uncertain-independence sources maps to publication claims and failure locations from partially dependent sources. Operation: comparison against independently sourced information with explicit assessment of access, credibility and dependence maps to cross-checking receipts and logs with the same three assessments. Signal: convergence/contradiction/absence maps to agreement or conflict on artifact and failed transition, which are the material features of the claim. Inference: convergence raises support and non-support flags unresolved uncertainty maps to raised support for corroborated failure locations plus identification of unresolved dependencies. Limit: common origin, copying, shared bias, unequal access maps to shared instrumentation bugs, copied summaries and unequal access producing false convergence. No warrant is dropped or substituted; the independence caveat that does the real work in the source is retained."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which dependencies account for intermittent failures and what bounded remedy is supported. The inference does not claim a full causal answer or a remedy; it explicitly bounds itself to raising support for corroborated failure locations (artifact and failed transition, which narrow the candidate dependencies) and to identifying unresolved dependencies as inputs to remedy testing. That is an explicitly bounded contribution to the retained question rather than an answer to a different one. The stated evidence (independent registry receipts, worker logs and artifact-store records for the same release, with traceable copied summaries) is the kind of material the operation consumes."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the cross-check of registry receipts, build-worker logs and artifact-store records for a release, after assessing whether each was independently generated and whether any summary was copied, produces observable agreement or conflict on which artifact was published and which transition failed. Agreement across sources judged independent warrants higher confidence in that failure location; conflict or a single-source claim warrants flagging it as unresolved for testing. The stated evidence supplies independence and copy-traceability, so no unestablished measurement is required, and the limit field correctly blocks treating shared-instrumentation convergence as corroboration. The chain does not rest on source imagery or circularity."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the source's state, operation, signal, inference and, importantly, its independence limit; it addresses the target question as an explicitly bounded contribution (corroborated failure locations and flagged unresolved dependencies feeding remedy testing) without claiming a remedy it cannot support; and the operational chain from cross-checking independently generated records to a confidence judgement about the failed transition is intelligible and bounded given the stated evidence. No concrete condition remains that must be established for the mapping as written to function."
+  },
+  "uncertainty": [
+    "Corroborating where a failure occurred (artifact and failed transition) narrows but does not by itself establish which dependency causally accounts for it; the mapping bounds itself to feeding remedy testing rather than claiming attribution, and the verdict relies on that bounding.",
+    "The question concerns intermittent failures across releases, while the stated evidence describes corroboration for a single release; establishing a pattern across instances is a repeat application of the same operation, not part of this mapping.",
+    "The 'bounded remedy' half of the question is deferred to remedy testing rather than answered; the mapping is scored as an explicitly bounded contribution, not a complete answer.",
+    "The stated evidence asserts source independence and traceable copies as synthetic facts; if shared instrumentation underlies receipts and logs, the limit field applies and the corroboration would weaken."
+  ]
+}

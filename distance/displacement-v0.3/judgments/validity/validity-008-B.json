@@ -1,0 +1,32 @@
+{
+  "case_id": "008",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "All five fields carry over the source chain intact. State: multiple plausible explanations (code, capacity, configuration) for one observation set. Operation: hold the competitors open, gather evidence that bears differently on them (replay traces, targeted tests), revise plausibility iteratively. Signal: support / contradiction / non-discrimination pattern across competitors. Inference: reprioritize or eliminate without early commitment to a single cause, matching the source's explicit refusal to force premature closure. Limit: unlisted hypotheses, dependent (non-independent) traces, insensitive tests, and anchoring map directly onto the source's hypothesis-generation, evidence-independence, sensitivity/specificity and cognitive-bias limits. Nothing is substituted or dropped; the mapping does not overclaim beyond the source (it does not promise a unique cause, which the source also does not)."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question has two parts: which deployed change accounts for the regression, and what bounded causal evidence distinguishes it from load variation. The mapping includes capacity (load variation) as an explicit competitor alongside code and configuration, so the differential directly targets the second part: the stated synthetic fact that staging reproduces the increase under fixed replay is discriminating evidence that contradicts pure load variation, because replay holds load constant while the change set varies. For the first part, deployed versions and configuration history (stated evidence) supply the candidate set over which targeted tests can reprioritize or eliminate. The inference is explicitly bounded: it narrows and ranks deployed-change explanations rather than guaranteeing a single one, which is a justified bounded contribution to the retained question, not an answer to a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (maintain code / capacity / configuration diagnoses; run fixed-replay traces and targeted tests such as per-version or per-config comparisons using the available version and configuration history) produces Y (each result supports, contradicts, or fails to separate specific diagnoses) that warrants Z (reprioritization or elimination of diagnoses, including elimination of load variation when the regression reproduces under fixed replay). The chain is intelligible from the packet's own evidence, does not rest on clinical imagery, and is not circular: the discriminating power comes from controlled replay and version/config variation, not from assuming the answer."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping is a faithful functional transfer of differential diagnosis: competing explanations held open, discriminating evidence gathered, plausibility revised, with the source's limits carried over. Applied to the target, the stated staging reproduction under fixed replay is concrete discriminating evidence against load variation, and the available version and configuration history gives a defined candidate set for targeted tests to reprioritize deployed-change explanations. The inference is bounded (narrowing, not guaranteed unique attribution) and the mapping states that bound explicitly, so it addresses the retained question without reframing it. All three criteria pass with no unresolved operational condition."
+  },
+  "uncertainty": [
+    "The mapping names 'targeted tests that discriminate' without specifying them; the packet's version and configuration history make such tests (per-version or per-config replay comparison) available in principle, but their actual sensitivity is unknown and is correctly flagged by the mapping's own limit field.",
+    "Whether the narrowed set collapses to a single deployed change depends on hypothesis coverage and test resolution; the mapping deliberately does not promise this, so it is a scope bound rather than a defect.",
+    "Staging reproduction under fixed replay rules out load variation as sole cause only to the extent staging is representative of production; the packet asserts reproduction but not fidelity of the environment.",
+    "The mapping's inference wording ('reprioritize explanations') is softer than the question's 'which deployed change'; I treated this as a bounded answer rather than a question change, and recorded no reframe."
+  ]
+}

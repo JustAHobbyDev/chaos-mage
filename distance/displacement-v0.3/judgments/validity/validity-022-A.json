@@ -1,0 +1,31 @@
+{
+  "case_id": "022",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Overlapping routes, a validated additive forward model, structured timing residuals and iterative fitting preserve the tomography chain from hidden properties to constrained internal models. Held-out routes test predictions, and the mapping retains coverage, noise, model-mismatch, regularization and non-uniqueness limits."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The mapping estimates service-delay locations within the staging regime. It supplies no comparison linking those delays to a particular deployed change or distinguishing that change from production load variation. Fixed staging load controls variation during harness measurements but does not establish the cause of the production regression. The explicit localization bound does not establish this missing causal relation."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Given the stipulated validation of the additive path-time model, measurements on known overlapping routes can constrain per-service delays. Held-out predictions provide a meaningful check, and the inference appropriately allows non-unique solutions without claiming code-level causation."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+      "reframed_question": "Where in the service network can delay contributions to the regression be localized within the tested staging regime?",
+      "relationship": "The inference shifts from deployed-change attribution to service-delay localization. Localization could guide diagnosis, but the supplied mapping does not connect it to the requested causal attribution or production load alternative."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "The transfer preserves the inverse-model mechanism and supports a bounded localization inference, but that inference does not address the retained causal attribution question."
+  },
+  "uncertainty": [
+    "No deployment comparisons or evidence linking particular changes to inferred service delays are supplied.",
+    "Whether staging delay behavior represents the production regression is unspecified.",
+    "Actual route coverage and timing errors are unspecified, so localization precision and uniqueness remain unknown."
+  ]
+}

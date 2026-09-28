@@ -1,0 +1,32 @@
+{
+  "case_id": "015",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the ACH chain intact: multiple explanations fitting the same evidence (state), explicit hypothesis enumeration with each evidence item scored against every hypothesis, emphasis on disconfirming items, and a sensitivity re-run with uncertain items removed (operation), robust inconsistency patterns surviving the sensitivity check (signal), and elimination-by-inconsistency leaving a surviving set rather than a proven cause (inference). The limit field carries the source's key warnings: missing hypotheses, correlated/unreliable evidence (shared trace errors), subjective diagnosticity, and survival-is-not-proof. Sensitivity to assumptions is narrowed to sensitivity to uncertain traces, and the signal field compresses the comparative pattern to 'some hypotheses retain inconsistencies', but neither drops a load-bearing step or warrant."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which deployed change accounts for the regression and what bounded evidence distinguishes it from load variation. The mapping does not promise positive identification; it delivers an explicitly bounded contribution: a narrowed surviving set of causes plus the diagnostic contradictions (traces inconsistent with specific hypotheses) that constitute the distinguishing evidence. The limit field's 'survival is not proof' makes the bound explicit, matching the question's request for bounded causal evidence rather than a definitive attribution. Load variation is a stated competitor in the question and the target evidence supplies a catalog of competing explanations, so it falls within 'every explanation' in the operation."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (building the evidence-by-hypothesis matrix over replay traces, scoring each trace against each deploy-change hypothesis and load variation, flagging contradictions, and re-running with flagged uncertain traces excluded) produces Y (a pattern of which hypotheses retain important inconsistencies robust to trace uncertainty) that warrants Z (down-weighting or removing those hypotheses and retaining the survivors). The inference is bounded to elimination, not confirmation, so it does not overreach what the matrix can support. No step relies on source imagery or on assuming the conclusion."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful application of ACH to differential diagnosis of a latency regression: it preserves the state-operation-signal-inference chain and the source's principal limits, addresses the retained question as an explicitly bounded elimination result with the discriminating traces as the distinguishing evidence, and describes an intelligible, bounded operational chain. No specific empirical bridge is missing from the mapping as written; remaining uncertainties concern target facts not stated in the packet rather than gaps in the mapping."
+  },
+  "uncertainty": [
+    "The packet does not state that load variation is included as an explicit hypothesis in the available catalog; if it is absent, the mapping's own 'missing causes' limit applies and the load-versus-change distinction would not be tested.",
+    "The diagnosticity of replay traces between a specific deployed change and load variation is not established in the packet; if replay does not control load, some traces may be non-discriminating, which the mapping's subjective-diagnosticity limit acknowledges but does not resolve.",
+    "The mapping narrows the source's sensitivity test to removal of uncertain traces and omits sensitivity to shared assumptions; this is a minor simplification that could matter if all hypotheses share an assumption about trace validity.",
+    "The mapping yields a surviving set, not a single identified change; whether that satisfies the questioner depends on how many hypotheses survive, which cannot be known from the packet."
+  ]
+}

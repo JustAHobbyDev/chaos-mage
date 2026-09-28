@@ -1,0 +1,30 @@
+{
+  "case_id": "018",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Hidden stage waits affect traversal times along known overlapping routes. Comparing endpoint times with candidate wait-map predictions and iteratively reducing residuals preserves the source's inverse-modeling chain. Validated additive timing supports the forward model, while coverage, regularization and non-uniqueness retain its relevant limits."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Localizing possible waiting stages and identifying candidate handoff interventions provides an explicitly bounded contribution to locating delay and considering changes that could reduce it. The mapping confines this contribution to the validated testbed and does not claim demonstrated intervention effectiveness."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Known routes and validated additive traversal times make endpoint measurements intelligible constraints on internal wait maps. Overlapping routes can constrain possible delay locations without requiring a unique solution; those locations support candidate interventions within the stated regime."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping preserves the inverse-problem mechanism, addresses the retained question through bounded localization and intervention candidates, and has an operational warrant supplied by the synthetic testbed evidence."
+  },
+  "uncertainty": [
+    "The packet does not specify route coverage or measurement precision, so localization resolution and uniqueness cannot be determined.",
+    "Effects of particular interventions and generalization to live queues remain unestablished; neither is claimed as demonstrated."
+  ]
+}

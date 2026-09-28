@@ -1,0 +1,32 @@
+{
+  "case_id": "018",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The chain is intact: an unobservable internal structure (per-team waiting properties) alters an observable that traverses it along many known overlapping paths (end-to-end ticket times); the operation is forward prediction from a candidate map plus iterative residual inversion; the signal is path-structured residuals; the inference is a constrained spatial/stage model. The source's linearity warrant (travel time as an integral along the path) is explicitly supplied by the stated synthetic fact that injected waits validate additive traversal times in the low-load regime. The limit field carries over coverage, measurement variability, regularization and non-uniqueness, and adds a regime bound. Nothing material is dropped or substituted; the added 'candidate interventions' clause is downstream use of the constrained model, hedged as candidates, not a replacement warrant."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks where approval handoffs accumulate delay and which bounded changes could reduce it. The inference localizes waiting-time structure to hidden stages, which answers the 'where' within the stated testbed, and identifies candidate interventions, which is an explicitly bounded contribution to the 'which changes' part (candidates derived from localization, not demonstrated reductions). The mapping bounds itself to the validated testbed regime and disclaims generalization to live queues, consistent with the evidence that the scenario is synthetic. No different question is answered."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (routing identical-workload tagged tickets over known overlapping routes and recording endpoint timestamps) produces Y (per-path totals whose residuals against a candidate wait map are structured by which stages each path shares) which warrants Z (a bounded, possibly non-unique estimate of per-stage waiting contributions). Additivity is stated as validated, routes are known, and repeated runs give error estimates, so the inversion is intelligible. Identifiability depends on the route overlap design, which the limit field acknowledges as coverage and non-uniqueness rather than assuming away. The inference is not circular and does not rest on source imagery."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping carries the tomographic state→operation→signal→inference chain onto a testbed whose stated synthetic facts supply the key warrants (known paths, identical workload, validated additive times, repeatable runs). The inference is bounded to localization within the testbed and to candidate interventions, which addresses the retained question without overreach. Known limits (coverage, non-uniqueness, regularization, regime dependence) are preserved rather than ignored. No specific unresolved condition determines whether the mechanism holds, so the status is Valid rather than Conditional."
+  },
+  "uncertainty": [
+    "The packet does not state how many overlapping routes exist or how they are designed, so whether every hidden stage is individually identifiable versus only in aggregate is unknown; the mapping's non-uniqueness limit covers this but its practical severity cannot be judged from the packet.",
+    "The 'which bounded changes could reduce it' half of the question is met only by candidate generation; the mapping does not include testing interventions, so any claim that a candidate actually reduces delay is not warranted by this transfer alone.",
+    "The limit field lists 'uncertain routing' and 'variable service times' while the evidence states routes are known and workload is identical; this is a conservative overstatement of limits rather than a defect, but it leaves unclear whether the candidate anticipates conditions beyond the stated testbed.",
+    "Applicability to any real organization is explicitly out of scope per the evidence; the validity judgment concerns the synthetic testbed regime only."
+  ]
+}
