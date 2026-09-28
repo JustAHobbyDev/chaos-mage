@@ -1,0 +1,63 @@
+{
+  "case_id": "C010",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Mapping A holds settings and repeats matched cohort measurements against baseline with a two-consecutive-readings alert rule, which is essentially the baseline's first ordinary method. Mapping B spends the single permitted input step on a designed 0-to-1 exposure perturbation in a replica and reads the paired trajectories as a step response with delay, peak, overshoot and settling features, which the baseline explicitly places outside scope. That is a material difference in departure from ordinary rollout monitoring."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's operation (hold, repeat matched error and queue samples, apply a threshold alert) is what a rollout analyst already does. B applies a calibrated exposure step in a replica specifically to elicit a response, consuming the one input step in the ledger; the baseline only steps exposure as a pause or rollback when warranted, not as a designed probe."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's meaningful evidence is persistence, reversal or threshold crossing of the tracked metrics, which is ordinary trend monitoring. B makes delay, peak, overshoot and later shift in the paired trajectories the meaningful features, treating transient shape as evidence rather than noise to wait out."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A warrants a conclusion about sustained versus transient change from repetition over time relative to expected variation, the same warrant as baseline trend tracking. B warrants conclusions about how the segment reacts to exposure from the shape of the response to a known input, a system-identification warrant absent from the baseline."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A decomposes the problem into stable state, transient fluctuation or directional change, matching ordinary anomaly-versus-trend thinking. B decomposes the rollout into a controllable input (exposure), two output channels with dynamics, transient versus later behavior, and an operating point, and explicitly separates the routing input from the cohort channel as a different system input."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A's next step is fixed in advance: a threshold alert triggers investigation or pause. B lets the measured delay and peak determine the next observation window and which reversible exposure inquiry follows, so the trajectory is shaped by response features rather than a pre-set rule."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "B's deepest point, reading transient overshoot and delay as characterizing segment dynamics from a designed perturbation, is a larger departure than A's deepest point, a two-consecutive-readings alert rule over held settings."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "B's response-feature framing governs the primary step, the hours 1-4 characterization, the hours 5-6 persistence check, and the choice of the next window. A's framing governs the repeated samples and one threshold decision, with the follow-up being more of the same."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "The task asks both whether the segment is deteriorating and what observation or reversible action should follow. A's inference explicitly stops at investigate-or-pause and leaves explanation open. B's response characterization is meant to inform both the deterioration judgment and the timing and form of reversible exposure action, including portions beyond the six-hour horizon."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A translates back to ordinary monitoring with no loss: track over time, alert on two readings above 3 percent. B's distinction between lagged, transient and persisting response to a known input, and using peak timing to set the next window, cannot be restated as trend tracking without losing the operational content."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B converts the rollout question into a designed input-output identification problem by spending the one permitted input step on an exposure probe and reading transient response features, whereas A performs the baseline's own ordinary trend monitoring under held settings with a threshold alert.",
+    "local_depth": "B is deeper at its most changed point: treating delay, peak and overshoot of the paired trajectories as evidence about segment dynamics. A's most changed point is a monitoring alert rule, which is ordinary practice.",
+    "inquiry_propagation": "B's framing propagates from the step through characterization, persistence check and choice of next window. A's propagates only through repeated matched samples to one alert decision.",
+    "task_reach": "B's altered reasoning bears on both halves of the task, deterioration and reversible action, and on how to observe beyond the horizon. A explicitly bounds itself to investigate-or-pause and leaves the rest to ordinary practice.",
+    "native_reducibility": "A reduces fully to baseline monitoring. B's lagged-transient-persisting distinction and response-driven window selection have no ordinary equivalent in the scoped baseline.",
+    "rationale": "A has no countervailing displacement advantage; its serial-monitoring source maps onto the first ordinary method almost verbatim. B departs on every criterion and the departures are consequential for what is measured, why it counts, and what follows. The baseline's own statement that designed dynamic identification is out of scope confirms B's displacement is not merely vocabulary. This is B_dominates, not a tradeoff."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline includes pausing or rolling back exposure and comparing subsequent measurements, which is itself a step change; B's departure rests on the designed, characterizing use of the step rather than on stepping per se.",
+    "Prospective stage: whether B's transient features will be discriminating within six hours is unknown and was not assumed.",
+    "A's stated 3 percent alert threshold matches the current snapshot, so its rule may trigger trivially, but this bears on usefulness rather than displacement and was not weighed."
+  ]
+}

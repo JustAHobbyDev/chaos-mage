@@ -1,0 +1,64 @@
+{
+  "case_id": "C013",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Mapping A reframes the regression as an inverse problem: route latency differences are treated as path integrals over unknown per-component delay changes, fitted as candidate additive maps, with non-uniqueness retained and a held-out route used to check predicted residuals. The baseline explicitly lacks a formal inverse-problem specialty. Mapping B's differential-diagnosis structure (enumerate competing causes, run configuration and load contrasts, eliminate or retain) is nearly isomorphic to the baseline's 'test competing causes in staging' and 'stratify traffic and configuration', so its departure is small. That asymmetry is material."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "A runs six fixed-load old/new trials across r1-r3, fits candidate delay maps, then spends two more trials on a deliberately held-out route to test residuals, never choosing a preferred map. That workflow (fit, retain solution set, validate on withheld path) is not among the baseline's replay, bisect, rollback or trace-inspection moves. B's 2x2 configuration-by-load run on r1 followed by an r2 contrast is a slightly more systematic version of the ordinary controlled-replay comparison the baseline already performs."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A makes spatially structured residuals between measured route differences and map predictions, plus held-out prediction residuals, the meaningful evidence; raw latency deltas matter only as constraints on a component map. The baseline reads latency distributions and contrasts directly. B keeps the baseline's observables: whether a configuration or load contrast shifts r1 and whether r2 shifts likewise; the pattern of support/contradiction across named hypotheses is what an engineer already looks at."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A warrants conclusions by constraint satisfaction under the calibrated additive model: a set of component delay-change combinations is compatible with the measured route sums and survives held-out residual checks, with non-uniqueness kept explicit. That is a different justification from the baseline's 'the contrast that reproduces the regression identifies the cause'. B's warrant is elimination by discriminating contrasts, which is the baseline warrant with hypothesis-set bookkeeping added."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A decomposes the system into service components as the unknowns and routes as sampling paths whose overlap structure determines identifiability (r1-r3 leave ΔA and ΔD entangled; r4 separates them). The baseline decomposes by revision, configuration flag and route. B decomposes by the three stated explanations and picks routes to discriminate among them, closer to ordinary practice, though its choice of r2 to isolate an A-confined effect does implicitly use route overlap."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "A's next steps are governed by residual structure and the retained solution set, directing later service inspection toward components the compatible maps implicate rather than toward a chosen hypothesis. B's next step is to select one dependency for later investigation after eliminating explanations, which is the ordinary post-contrast trajectory."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest point, fitting a non-unique component delay map from route sums and testing it on a held-out path, is a foreign method for the reference practitioner. B's deepest point, a factorial configuration-by-load contrast, sits inside ordinary staging practice."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "In A the inverse framing runs through every step inside the budget: trial selection at fixed load, map fitting, residual analysis, the held-out r4 design and the interpretation of its residuals. In B the diagnostic framing chiefly orders the two contrasts; the reasoning at each step is the ordinary contrast-reading."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "A's component-map reasoning governs attribution of the deployed change and the guidance for later service inspection, and it handles load by design (fixed low load) rather than by a separate ordinary comparison. B covers both halves of the target question but with baseline-style reasoning, so its altered reasoning governs little of the task even where it touches more of it."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "Translating A back into ordinary practice loses the retained non-unique solution set, the identifiability logic of route overlap and the held-out residual check as a validation step, all operationally important for what later inspection should target. B reduces to 'run controlled contrasts and drop explanations they contradict' with nothing operationally important lost."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A imports an inverse-problem method (fit per-component delay-change maps from overlapping route sums, retain non-unique solutions, validate on a held-out route) that the baseline explicitly lacks, while B's differential-diagnosis structure largely restates the baseline's own hypothesis-contrast practice.",
+    "local_depth": "A is deeper at its most changed point: map fitting with explicit non-uniqueness and held-out residual testing versus B's factorial contrast, which is ordinary staging work.",
+    "inquiry_propagation": "A's framing shapes trial choice, fitting, residual reading, held-out design and interpretation across the whole bounded investigation; B's framing mainly sequences two ordinary contrasts.",
+    "task_reach": "A's altered reasoning governs attribution and later inspection targeting, with load handled by fixed-load design; B addresses the load question more directly but with baseline reasoning, so it does not gain a displacement advantage there.",
+    "native_reducibility": "A cannot be reduced to ordinary practice without losing the solution-set retention, identifiability reasoning and held-out validation; B reduces cleanly.",
+    "rationale": "B's only candidate advantage is that it explicitly contrasts load, which bears on usefulness for the second half of the target question but not on displacement, since stratifying by load is an ordinary method. No countervailing displacement advantage of comparable importance exists, so A dominates."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "Some reliability engineers informally subtract overlapping routes to isolate a component, which would narrow A's departure on decomposition though not on solution-set retention or held-out validation.",
+    "B's explicit 2x2 configuration-by-load design on r1 could be read as a mild departure from typical single-contrast replay, but this would not change the overall relation.",
+    "A tests the load-only explanation only indirectly through fixed-load design; this affects usefulness rather than displacement and was not weighed as such.",
+    "The baseline is a scoped authored hypothesis rather than verified practitioner consensus."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "case_id": "C005",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Both mappings run ordinary old/new replay contrasts on r1 and r2, but A adds an explicit evidence-by-hypothesis inconsistency matrix and a sensitivity re-run that drops the confounded live aggregate, treating robustness of the contradiction pattern as the evidence. B's plan is a factorial configuration-by-load replay followed by a route contrast with plausibility reprioritization, which is close to the baseline engineer's stratify-and-replay routine. The difference in how evidence is weighed and re-checked is material."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "B's operations (r1 at old/new by low/high, then r2 old/new at low load) are essentially the baseline's replay-and-stratify procedure. A's replay trials are similarly ordinary, but A adds two structured analysis passes: a full inconsistency matrix over live records plus replay, then a repeat with the confounded live aggregate removed. Holding load fixed and relying on the calibrated additive model rather than measuring load directly is also a departure from ordinary stratification."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A makes the cross-hypothesis contradiction pattern, and specifically whether it persists when uncertain live evidence is dropped, the meaningful observable; support counts are explicitly de-emphasized. B's observable is the ordinary support/contradict/non-discriminate pattern from configuration and load contrasts, which the baseline already reads."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A warrants conclusions by elimination through surviving inconsistency weighted by diagnosticity, and refuses to treat a surviving explanation as proved. B warrants by iterative reprioritization of plausibility as trials accumulate, which mirrors ordinary testing of competing causes in staging."
+    },
+    "problem_decomposition": {
+      "relation": "balanced",
+      "rationale": "B decomposes the effect into configuration and load factors on r1 and then uses r2 to separate an A-confined effect from the B-dependency, which is ordinary stratification plus route contrast. A decomposes the problem into hypotheses crossed with evidence items and uses the same r1/r2 route contrast. Neither changes the operational parts (routes, components, flag, load) beyond baseline; A's matrix is a representational change, B's factorial is a baseline-style one."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "A's follow-up is aimed at exposing which evidence is load-bearing, the next discriminating route, or a missing hypothesis, so the next step is chosen by sensitivity and diagnosticity. B's next step is an ordinary route contrast and then selecting a dependency for later investigation, which is the baseline's bisect-and-narrow trajectory."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest departure is the sensitivity re-run that discards the confounded live aggregate and asks whether contradictions survive; the baseline has no analogous step. B's deepest point, the 2x2 config-by-load replay, is a standard staging experiment."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "A's matrix framing governs both the primary operation and the follow-up analysis pass, and shapes how the replay results are read. B's follow-up is an additional ordinary trial whose reading does not depend on a changed inferential frame."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "The target task includes both attribution to a deployed change and distinguishing it from load variation. A's eliminative, diagnosticity-weighted frame and explicit openness to missing hypotheses governs the unresolved remainder of attribution as well. B's factorial contrast addresses the load-variation part directly, but with baseline-style reasoning, so its altered reasoning covers less of the task. The edge is modest because A holds load fixed and relies on calibration rather than measuring load."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "B translates directly into ordinary staging experiments with no loss. A's distinction between support counts and surviving contradictions, and its robustness-to-evidence-removal check, would be lost if collapsed into the baseline's 'test competing causes in replay' step."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A changes what counts as evidence and why it warrants a conclusion, by weighing hypotheses on surviving contradictions and re-checking that pattern with the confounded live aggregate removed; B reproduces the baseline's stratified replay with plausibility updating.",
+    "local_depth": "A is deeper at its most changed point, the sensitivity re-run dropping the live aggregate, which has no baseline counterpart.",
+    "inquiry_propagation": "A's matrix and disconfirmation frame carries through the primary operation and the follow-up analysis; B's follow-up is an ordinary added trial.",
+    "task_reach": "A's eliminative frame and missing-hypothesis openness governs the unresolved attribution remainder; B's factorial load contrast covers the load-variation question but with ordinary reasoning, so A reaches modestly further.",
+    "native_reducibility": "B reduces to ordinary staging practice without loss; A loses the support-versus-contradiction and robustness distinctions if translated back.",
+    "rationale": "B's only countervailing edge is the explicit high-load replay contrast, which measures load directly rather than holding it fixed. That is the baseline's own stratification move rather than a displacement, so it is not comparable to A's change in evidence weighing and warrant. A therefore dominates, though the margin is modest because both rely on the same ordinary r1/r2 replay contrasts."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "close",
+  "uncertainty": [
+    "Both mappings' replay trials are ordinary; A's departure lies mostly in analysis passes whose depth depends on how rigorously the matrix and sensitivity check are executed, which is not observable prospectively.",
+    "B's direct high-load contrast could be read as a small decomposition advantage if the baseline is taken as not routinely varying load in replay.",
+    "Neither mapping uses the additive-delay fitting or held-out route affordances, so the comparison rests on a narrow slice of the available operations."
+  ]
+}

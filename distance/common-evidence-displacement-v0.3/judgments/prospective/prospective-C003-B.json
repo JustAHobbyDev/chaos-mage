@@ -1,0 +1,63 @@
+{
+  "case_id": "C003",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "A imports a formal reduction procedure (subset/complement testing, partition doubling, test-relative minimality with single-deletion checks) that the baseline explicitly does not treat as routine. B retains the baseline's own plausibility-weighing structure (competing explanations, targeted staged-variant ablations) and mainly disciplines it. The kinds of evidence, warrant and trajectory differ materially between the two."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "The baseline compares staged variants and runs small experiments guided by hypotheses. B's leave-one-out trials (without A, without B, without D; then B alone, D alone) are hypothesis-targeted ablations, a modest formalization of ordinary staged-variant comparison. A replaces this with an algorithmic ddmin loop over alphabetic contiguous partitions, testing complements, retaining any failing reduction, doubling partition count when nothing reduces, and then probing single deletions. That procedure is not something the reference practitioner ordinarily executes."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "B's meaningful evidence is discriminating pass/fail outcomes read against named explanations, close to the baseline's qualitative failure observations mapped to feature dependencies. A makes the pass/fail status of systematically reduced subsets and their complements meaningful as points on a minimality boundary, and introduces the category of untested minimality being explicitly unresolved. That is a new evidentiary object for this practitioner."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "B warrants conclusions by reprioritizing competing explanations as trials support or contradict them, which mirrors how product discovery already reasons from small experiments. A's warrant is that a retained reduced set is sufficient to reproduce the failure under the fixed oracle and that checked single deletions establish test-relative minimality, explicitly distinguishing this from unique causal mechanism or population necessity. Warrant-by-minimality is a distinct basis from warrant-by-plausibility."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "Both treat rules A-G as separable toggles, as the shared facts already do. B decomposes the problem into three explanation classes (copy, individual guard, interaction) and asks the trials to arbitrate among them, keeping the feature-dependency framing of the baseline. A recasts the rule set itself as a partitionable configuration whose operational unit is a jointly failure-inducing subset, and states the output should direct joint investigation rather than independent ranking. That reframing of the unit of analysis departs further from the baseline's feature-by-feature prioritization."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "B's next steps are chosen by which explanations remain live, which is how the baseline already chooses follow-up experiments. A's next steps are dictated by the reduction outcome: any failing reduction becomes the new configuration, no reduction triggers finer partitions, and the follow-up is single-deletion verification of the final set. The investigation's path is algorithm-driven rather than hypothesis-driven."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest point is the test-relative minimality boundary with complement testing and explicit unresolved-minimality labeling. B's deepest point is disciplined retention of competing explanations, which overlaps heavily with ordinary product discovery reasoning."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "In A each retained reduction rewrites the configuration for every subsequent trial and the partition schedule, so the epistemic change propagates through the whole loop and into the single-deletion follow-up. In B each trial updates explanation weights but the pre-planned trial list (without A/B/D, then B alone and D alone) is largely fixed in advance, so the change propagates less through the steps."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "The target question asks both which parts are necessary and what interactions prevent simple ranking. A's minimality-versus-ranking framing governs the second half directly and reshapes how the unresolved population-necessity question would be posed (as a joint set rather than ranked features). B's explanation-set framing narrows plausible obstructors but leaves the ranking question in the baseline's plausibility idiom. Both correctly disclaim population necessity."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "B translates back nearly losslessly: keep several hypotheses, run ablation variants, update. A's distinction between a test-relative 1-minimal failing set and a prioritized feature list, plus complement testing and partition doubling, cannot be restated in ordinary PM practice without losing the operational meaning of minimality."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A substitutes a formal minimality search (ddmin with complement testing and single-deletion verification) for the baseline's plausibility-driven variant comparison, whereas B refines that plausibility reasoning without leaving it.",
+    "local_depth": "A's minimality boundary is a deeper departure than B's competing-explanation bookkeeping, which the reference practitioner already approximates.",
+    "inquiry_propagation": "A's reduction outcome determines every later trial and the follow-up; B's trial list is mostly pre-specified and its updates are interpretive.",
+    "task_reach": "A's joint-set-versus-ranking framing governs the interaction half of the target question and shapes how the unresolved necessity question would be asked; B stays within the baseline's idiom for that portion.",
+    "native_reducibility": "A's test-relative minimality cannot be reduced to ordinary practice without losing a working distinction; B's hypothesis-and-ablation structure reduces almost fully.",
+    "rationale": "B's advantage is retention of multiple explanations without early commitment, but the baseline already reasons this way from small experiments and qualitative failures, so it is not a countervailing displacement of comparable importance. A is greater on every diagnostic and no material opposing advantage exists, so A dominates rather than a tradeoff."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline is an authored hypothesis; if real onboarding PMs routinely run systematic leave-one-out ablations, B's departure would be even smaller, not larger, so the direction is stable.",
+    "Prospective stage: whether A's partition schedule actually reduces the set within the 20-trial cap is unknown and was not assumed.",
+    "B's explicit interaction hypothesis (individual guard versus interaction) partially overlaps A's joint-set framing; the degree of that overlap is a judgment call."
+  ]
+}

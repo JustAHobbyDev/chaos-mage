@@ -1,0 +1,63 @@
+{
+  "case_id": "C014",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Mapping A proposes a factorial replay (configuration x load on r1, then configuration on r2) and iterative narrowing, which is essentially the ordinary staging-replay and route-contrast practice of a reliability engineer. Mapping B adds an explicit evidence-by-hypothesis inconsistency matrix and a sensitivity pass that removes the confounded live aggregate and re-evaluates, shifting what counts as evidence and why conclusions are warranted. That is a material difference in departure from the baseline."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A runs old/new at low/high load on r1 then old/new low-load r2; the baseline already replays workloads under stratified configuration and load and tests competing causes, so A's actions are ordinary. B runs fewer replays (low-load r1 and r2 contrasts) but adds two non-ordinary activities: constructing a formal inconsistency matrix over all supplied records and repeating it after deliberately dropping the confounded live aggregate. B changes practitioner activity more."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats contrasts as supporting, contradicting or non-discriminating, which is how an engineer already reads replay results. B redefines meaningful evidence as cross-hypothesis inconsistency weighted by diagnosticity, discounts support counts, and treats the live aggregate as an evidence item whose removal is itself an observable (do contradictions persist or vanish). That is a larger change in what counts as evidence."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is narrowing by reprioritization without claiming a unique mechanism, close to ordinary bisect-and-narrow reasoning. B's warrant is elimination by important inconsistency plus robustness of the surviving set when uncertain evidence is withdrawn, an explicit sensitivity-based justification the baseline does not formalize."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A decomposes by load factor and by route composition (r1 vs r2 isolates A-confined from B-dependency effects), which is an ordinary component/route/configuration decomposition. B decomposes the problem into an evidence-items-by-hypotheses matrix with per-item diagnosticity, a different operational structure than components and routes."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A ends by selecting a dependency for later investigation, a standard handoff. B's next step depends on whether contradictions survive removal of the live aggregate and explicitly aims to expose a missing hypothesis or the next discriminating route, so the sensitivity result steers what is investigated next in a way the baseline does not build in."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "B's deepest departure is the sensitivity re-run of the inconsistency matrix with confounded evidence removed; A's deepest point is a factorial replay design that ordinary practice already uses."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "B's matrix representation carries through the initial analysis, the replay contrasts and the repeated matrix, shaping each subsequent judgment. A's two replay steps propagate an ordinary narrowing logic."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "B's inconsistency-and-sensitivity framing governs how all attribution evidence, including the unresolved live-workload generalization and possible missing hypotheses, would be weighed. A's altered reasoning covers only the replay contrasts and a dependency selection."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A translates directly into staging replay and route contrast with no lost distinction. B's emphasis on contradictions over support and its robustness check under evidence removal are distinctions an ordinary write-up would flatten into 'we discounted the confounded live numbers'."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B introduces an explicit inconsistency matrix and a sensitivity pass that removes the confounded live aggregate, changing what counts as evidence and why conclusions hold; A's factorial replay and route contrast are ordinary reliability-engineering practice dressed in differential-diagnosis vocabulary.",
+    "local_depth": "B's sensitivity re-run is a deeper departure at its most changed point than A's replay design.",
+    "inquiry_propagation": "B's matrix structures both analysis passes and the follow-up; A's narrowing logic is the baseline's own.",
+    "task_reach": "B's evidence-weighting stance governs the whole attribution task including unresolved parts; A's reach is limited to the replay contrasts.",
+    "native_reducibility": "A reduces losslessly to ordinary replay; B's contradiction emphasis and robustness check lose an operational distinction when translated back.",
+    "rationale": "A has no countervailing displacement advantage. Its inclusion of a high-load arm may be more informative about the load-only hypothesis, but informativeness is not displacement, and stratified replay across load is a listed ordinary method. B's differences are modest in absolute terms but consistently exceed A's across every respect, so B dominates."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "Both mappings rely on the same replay affordance and additive-delay calibration, so B's absolute displacement is moderate rather than large.",
+    "A reliability engineer might informally discount the confounded live aggregate, which would narrow B's advantage on observables and warrant.",
+    "Outcomes are not supplied; whether B's sensitivity pass would actually change the surviving set is unknown at the prospective stage."
+  ]
+}

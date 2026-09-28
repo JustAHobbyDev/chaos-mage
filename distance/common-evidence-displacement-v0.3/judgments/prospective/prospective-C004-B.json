@@ -1,0 +1,63 @@
+{
+  "case_id": "C004",
+  "stage": "prospective",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Mapping A formalizes what the baseline engineer already does (list competing causes, replay under controlled load, rule causes out) into an explicit inconsistency matrix with a sensitivity pass. Mapping B recasts the route catalog as an inverse problem: endpoint-only route differences become linear constraints on unobserved per-component delay changes, with an explicitly retained non-unique solution set validated on a held-out route. The baseline is stated to lack any formal inverse-problem specialty, so B's departure is material while A's is largely a tidier version of ordinary hypothesis testing."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A runs old/new low-load replays on r1 and r2 and tabulates them against three hypotheses, then re-tabulates without the live aggregate; this is close to the baseline's ordinary 'test competing causes in staging'. B selects r1-r3 for path coverage, fits candidate additive delay-change maps to route residuals, and spends the follow-up on a held-out route r4 to check predicted residuals. Designing replays as path coverage for a fit and holding out a route for model validation is not among the baseline's ordinary methods."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's meaningful evidence remains endpoint latencies and the live records, reweighted toward items that contradict hypotheses rather than support them; a modest shift. B makes residuals between predicted and measured route differences, and the extent of the compatible delay-map set, the evidence of interest, and treats the held-out r4 residual as a validation signal. That is a larger change in what counts as evidence."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is eliminative: explanations weakened by important inconsistency, with sensitivity checked by dropping confounded evidence. The baseline already reasons by ruling out causes, so this sharpens rather than replaces ordinary warrant. B's warrant is that the pattern of route residuals under the calibrated additive model constrains a set of internal delay-change combinations, with held-out prediction as the check and non-uniqueness kept explicit. Reasoning from constraint sets rather than from point attributions is a different basis for conclusions than the baseline's trace inspection or bisection."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A decomposes the problem into three supplied hypotheses versus evidence items, plus an explicit slot for a missing hypothesis; the parts are hypotheses, which the baseline already uses. B decomposes it into per-component delay changes on A, B, C, D linked to routes as additive sums, so routes become measurement paths and services become unknowns. This reorganizes the target's parts and relations more substantially, even though no component-level timings exist."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A's next step is a repeated matrix without the live aggregate, then whatever discriminating route or missing hypothesis the surviving contradictions suggest; ordinary follow-on. B's next step is fixed by the model: a held-out route to test predicted residuals, then service inspection directed at the components the compatible set localizes. The trajectory is governed by the fitted map rather than by hypothesis survival, a larger change from baseline sequencing."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "A's deepest departure is the emphasis on inconsistency and the sensitivity pass that drops the confounded live aggregate. B's deepest departure is treating the route catalog as a linear inverse problem with a retained non-unique solution set, which the baseline explicitly lacks."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "Both mappings carry their change through the primary operation and the one follow-up. A's follow-up is a robustness re-run of the same matrix. B's follow-up depends on the fitted map's predictions for r4 and feeds forward into which services to inspect later, so the altered reasoning propagates further within and beyond the two steps."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "Both address load versus deployment via old/new low-load replays. The target task also asks which deployed change accounts for the regression; B's component-localization frame governs that attribution portion and the later inspection left unresolved, while A's frame governs only the ranking of the three supplied hypotheses and a prompt to look for missing ones."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A translates back almost losslessly: an engineer's list of candidate causes with a note on which observations contradict each. B's retained solution set and held-out residual check lose an operationally important distinction if reduced to ordinary practice, which would pick a preferred component or bisect rather than carry a set of compatible delay maps."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B introduces an inverse-problem representation absent from the baseline, turning endpoint route replays into constraints on unobserved per-component delay changes with explicit non-uniqueness and held-out validation; A refines the baseline's existing practice of testing competing causes into a formal inconsistency matrix.",
+    "local_depth": "B is deeper at its most changed point: routes as measurement paths and services as unknowns, with a solution set rather than a point answer. A's deepest change is a disciplined sensitivity pass on the hypothesis matrix.",
+    "inquiry_propagation": "B's fitted map determines the held-out test and directs later service inspection, so the change propagates through both budgeted steps and onward. A's second pass re-applies the same matrix logic with one evidence item removed.",
+    "task_reach": "B's altered reasoning covers the load-confound question and the component-attribution question, including the unresolved inspection stage. A's reasoning covers the load-confound question and the ranking of the three supplied hypotheses only.",
+    "native_reducibility": "A reduces to ordinary hypothesis elimination without loss. B cannot be reduced without losing the distinction between a compatible set of delay maps and a chosen attribution, which matters for how much later inspection is warranted.",
+    "rationale": "A's one possible countervailing advantage is its explicit attention to missing hypotheses and dependent evidence, but the baseline already tests competing causes in staging, so this is not a displacement of comparable importance to B's reformulation of the problem structure. No opposing advantage of comparable weight exists, so B dominates rather than a tradeoff."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "The baseline's stated lack of inverse-problem specialty is an authored scoping choice; a team with strong trace-based decomposition habits would make B's departure smaller.",
+    "Prospective stage: whether B's held-out residual is informative or A's sensitivity pass changes the ranking is unknown and was not assumed.",
+    "A's prompt to seek missing hypotheses could matter more if the true cause lies outside the three candidates, but that is not evidence of displacement from the supplied baseline."
+  ]
+}
