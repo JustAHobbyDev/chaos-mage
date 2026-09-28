@@ -1,0 +1,124 @@
+{
+  "verified_at_utc": "2026-09-28 23:17:09 UTC",
+  "base_result_commit": "c4c20194ceb80b8edccec9d3f5c41e253ec9dbd3",
+  "historical_tests": 129,
+  "b2_tests": 43,
+  "total_tests": 172,
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s distance -p test_harness.py",
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.911s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/boundary-v0.2 -p 'test_*.py'",
+      "exit_code": 0,
+      "output": ".............primary-001-A: failed\n...\n----------------------------------------------------------------------\nRan 16 tests in 3.256s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.173s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/v0.3/tests -p 'test_*.py'",
+      "exit_code": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 17.003s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/validity-v0.3 -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "..........validity-017-B: failed\n.....\n----------------------------------------------------------------------\nRan 15 tests in 8.125s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/displacement-v0.3 -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "................validity-019-A: failed\n.....\n----------------------------------------------------------------------\nRan 21 tests in 4.461s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/comparative-displacement-v0.3 -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "......................validity-M004-B: failed\n.....\n----------------------------------------------------------------------\nRan 27 tests in 6.172s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/comparative-displacement-v0.3/review -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.579s\n\nOK\n"
+    },
+    {
+      "command": "python -B distance/harness.py verify",
+      "exit_code": 0,
+      "output": "20 frozen cases verified\n"
+    },
+    {
+      "command": "python -B distance/boundary-v0.2/harness.py verify",
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": "python -B distance/boundary-v0.2/review/verify_review.py --private",
+      "exit_code": 0,
+      "output": "Verified: 38 judgments; 19 reviewed pairs; all disagreement fields; 10 Remote/Alien reviews; metrics and retry coverage; private v0.1/v0.2 hashes\n"
+    },
+    {
+      "command": "python -B distance/v0.3/verify_preparation.py",
+      "exit_code": 0,
+      "output": "{\n  \"preserved_files\": 174,\n  \"prepared_cases\": 24,\n  \"retrospective_examples\": 12,\n  \"planned_judgments\": 48,\n  \"status\": \"PREPARED / UNEXECUTED\"\n}\n"
+    },
+    {
+      "command": "python -B distance/validity-v0.3/review/review_tools.py verify --private",
+      "exit_code": 0,
+      "output": "Verified all 48 judgments, 24 case reviews, eight contrasts and metrics; private execution hashes checked\n"
+    },
+    {
+      "command": "python -B distance/displacement-v0.3/verify_completion.py --private",
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}\n"
+    },
+    {
+      "command": "python -B distance/comparative-displacement-v0.3/verify_completion.py --private",
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 28, 'orientation_controls': 6, 'comparison_judgments': 68}\n"
+    },
+    {
+      "command": "python -B distance/comparative-displacement-v0.3/review/diagnostics.py verify",
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/common-evidence-displacement-v0.3 -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "................................one: failed\n.....\n----------------------------------------------------------------------\nRan 37 tests in 1.339s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/common-evidence-displacement-v0.3/review -p 'test_*.py'",
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.783s\n\nOK\n"
+    },
+    {
+      "command": "python -B distance/common-evidence-displacement-v0.3/runner.py verify-results --private",
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": "python -B distance/common-evidence-displacement-v0.3/review/diagnostics.py verify",
+      "exit_code": 0,
+      "output": "{'planned_targets': 8, 'measured_targets': ['T01', 'T02', 'T03', 'T05', 'T06', 'T08'], 'planned_pairs': 16, 'primary_pairs': 10, 'orientation_controls': 4, 'admitted_mappings': 16, 'measured_unique_mappings': 14, 'repeated_mapping_ids': ['M007', 'M011', 'M014', 'M018', 'M019', 'M020'], 'same_source_pairs': 1, 'different_source_pairs': 9, 'complete_triangle_targets': ['T01', 'T03'], 'controls_targets': ['T01', 'T02', 'T03', 'T06']}\n"
+    },
+    {
+      "command": "python -B distance/common-evidence-displacement-v0.3/verify_completion.py --private",
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "notes": [
+    "Expected failure messages within test stdout exercise failure retention; all test processes exited successfully.",
+    "Provider measurements were not rerun during verification.",
+    "Completion SHA and remote equality are reported after the publication commit; a commit cannot contain its own hash."
+  ]
+}
