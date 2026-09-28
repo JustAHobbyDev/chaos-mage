@@ -1,0 +1,50 @@
+{
+  "case_id": "008",
+  "provisional": false,
+  "class": "Native",
+  "dimensions": {
+    "entities": {
+      "level": 0,
+      "rationale": "The mapped objects are competing candidate causes of a slowdown: code change, capacity, configuration. The baseline already names deployed changes, configuration history and load variation as the things under comparison; no new kind of object is introduced."
+    },
+    "relations": {
+      "level": 0,
+      "rationale": "The mapping links evidence to hypotheses by support, contradiction or non-discrimination. The baseline's bisecting, stratifying and testing competing causes already treat traces and replay results as bearing differentially on candidate causes."
+    },
+    "processes": {
+      "level": 0,
+      "rationale": "Iterative revision of which cause is most plausible as replay, rollback and trace results arrive is the ordinary shape of incident diagnosis; the baseline's bisect-and-test loop is exactly this process."
+    },
+    "operations": {
+      "level": 0,
+      "rationale": "Maintaining multiple diagnoses, inspecting replay traces and running targeted discriminating tests are listed baseline methods (replay workloads, bisect revisions, test competing causes, rollback and controlled reintroduction). Nothing the practitioner would not already do is required."
+    },
+    "observables": {
+      "level": 0,
+      "rationale": "The evidence inspected is unchanged: request traces, latency distributions, resource counters, version and configuration history, controlled replay and rollback observations. The mapping names no new measurement or signal."
+    },
+    "inferences": {
+      "level": 0,
+      "rationale": "Reprioritizing or eliminating causes without asserting a unique cause prematurely is the licensed conclusion of ordinary bisection and staging experiments; holding several causes open until rollback or replay discriminates them is standard reliability practice."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Unlisted hypotheses, dependent traces, insensitive tests and anchoring are all recognized hazards in incident diagnosis (confounded load, low-signal replays, fixating on the latest deploy). Naming them as a checklist is a slight explicit extension of what is usually tacit, but it does not change which warrants are trusted."
+    }
+  },
+  "rationale": "Stripping the clinical vocabulary leaves a description of ordinary production-regression triage: keep code, capacity and configuration causes open, run replays, bisects, rollbacks and trace inspections that separate them, and update which cause is favored as results come in. Every operation, observable and inference in the mapping is already present in the baseline's listed methods and evidence. The practitioner would not inspect, manipulate, compare or infer anything they would not reach for ordinarily. The disciplinary origin in clinical diagnosis is irrelevant to whether the practice is naturalized; it is.",
+  "epistemic_changes": {
+    "practitioner_actions": "No change. The engineer still compares deploy and latency timelines, replays fixed workloads in staging, bisects revisions, rolls back and reintroduces changes, and reads traces and resource metrics. The mapping at most makes the parallel maintenance of several candidate causes explicit rather than implicit.",
+    "noticed_features": "No change. The features attended to remain latency distributions, trace spans, resource counters, configuration diffs and version boundaries. The mapping adds only the framing that a result may fail to discriminate between causes, which the practitioner already recognizes when a replay is inconclusive.",
+    "evidential_warrants": "No change. Controlled replay, rollback and bisection remain the warrants for attributing the regression to a change rather than to load variation. Plausibility revision across hypotheses is how these warrants are already used.",
+    "next_inquiry": "No change. The next step is still the test that best separates the remaining candidate causes, such as a replay against the prior revision or a configuration revert. The explicit hazard list might prompt a check for an unconsidered cause, but that is a normal step in incident review."
+  },
+  "most_consequential_baseline_difference": "There is no consequential difference. The closest thing to one is that the mapping insists on explicitly enumerating and holding open multiple causes with graded plausibility rather than bisecting toward a single change first, and it names anchoring and unlisted hypotheses as hazards. Both are already ordinary in this baseline's testing of competing causes and do not reorganize evidence or inquiry.",
+  "boundary_status": "clear",
+  "nearest_alternative": null,
+  "uncertainty": [
+    "The baseline is an authored hypothesis; some teams bisect toward a single deploy before considering capacity or configuration, which would make explicit parallel hypothesis maintenance a small extension, but this would not rise past Adjacent and the baseline as written already lists testing competing causes.",
+    "The baseline explicitly excludes formal inverse-problem or probabilistic-inference specialties; the mapping does not require them, so this exclusion does not affect the classification.",
+    "Whether the practitioner ordinarily treats test sensitivity and trace independence as explicit concerns is uncertain; the mapping names them but does not introduce any method for assessing them, so this affects only the failure_modes level."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "case_id": "014",
+  "provisional": false,
+  "class": "Remote",
+  "dimensions": {
+    "entities": {
+      "level": 2,
+      "rationale": "Pipeline stages, dependency paths and artifacts are ordinary objects for the release engineer. The mapping reinterprets stages as unobservable cells of a hidden per-stage delay map to be reconstructed, rather than as jobs whose logs and timestamps are read directly."
+    },
+    "relations": {
+      "level": 2,
+      "rationale": "Dependency edges between stages are native. The mapping adds an additive path-sum relation linking hidden stage delays to end-to-end transit time across overlapping routes, which the baseline uses as a graph for lineage and ordering, not as a linear system of constraints."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "Artifact transit through stages and a timeout triggered by delayed arrival are ordinary pipeline processes. Framing transit as signal propagation is a mild extension that does not change what changes over time."
+    },
+    "operations": {
+      "level": 3,
+      "rationale": "Sending equivalent artifacts across known paths, comparing observed times with a candidate delay map, iteratively inverting structured residuals, regularizing, and validating on held-out routes replace the baseline's log inspection, bisection, configuration reduction and run comparison. Only testing candidate fixes in an isolated emulator remains ordinary."
+    },
+    "observables": {
+      "level": 2,
+      "rationale": "Pipeline durations are routinely visible to a release engineer, so timing data itself is not foreign. The mapping reinterprets the primary evidence as path-specific residuals between measured transit times and model predictions, in place of logs, manifests and environment snapshots."
+    },
+    "inferences": {
+      "level": 3,
+      "rationale": "The licensed conclusion is a constrained, possibly non-unique map of hidden stage delays and a set of delay combinations compatible with timeouts. The baseline infers a responsible dependency from direct log evidence, a bisected change or a reproduced environment difference, not from an inverse solution."
+    },
+    "failure_modes": {
+      "level": 3,
+      "rationale": "Sparse path coverage, regularization artifacts, model assumptions and non-unique delay maps are inverse-problem failure modes with no counterpart in the baseline, whose misleading warrants are flaky reproductions, environment drift and misread logs."
+    }
+  },
+  "rationale": "Removing the tomographic vocabulary does not leave ordinary CI/CD troubleshooting. The practitioner would ordinarily read per-stage logs and timestamps, bisect changes and compare successful against failed runs. The mapping instead treats per-stage delays as hidden quantities recovered by iteratively inverting end-to-end timing residuals across many overlapping paths, with held-out route validation and regularization. That reorganizes what counts as evidence, what is inferred and what is investigated next, so the case is Remote. It is borderline because timing-based reasoning, controlled reproduction and testing remedies in an isolated emulator are close to ordinary practice, and the withholding of internal timestamps is a scenario condition rather than something the mapping introduces.",
+  "epistemic_changes": {
+    "practitioner_actions": "Instead of inspecting job logs, bisecting changes and reducing configurations, the practitioner dispatches equivalent artifacts across a designed set of overlapping paths, fits a candidate stage-delay map to end-to-end times, and iteratively adjusts it to reduce structured residuals, checking predictions on held-out routes.",
+    "noticed_features": "Attention shifts from log content, dependency versions and environment differences to spatially structured patterns of timing residuals across paths, path coverage adequacy, and which stages are poorly constrained by the route set.",
+    "evidential_warrants": "Evidence becomes agreement between measured transit times and model predictions across many paths, plus held-out route prediction, rather than a log line, a reproduced failure on a bisected commit or an environment diff. Warrant strength depends on coverage and regularization rather than on direct observation.",
+    "next_inquiry": "Next steps become adding paths to improve coverage of under-constrained stages, testing alternative regularizations and checking non-uniqueness of the delay map, rather than obtaining per-stage logs, bisecting further or diffing environments."
+  },
+  "most_consequential_baseline_difference": "Per-stage delays are inferred as hidden unknowns by inverting aggregate end-to-end timings across overlapping paths, replacing direct inspection of per-stage logs and timestamps as the primary evidence for which dependency causes the failure.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Adjacent",
+  "uncertainty": [
+    "The baseline is an authored hypothesis; some release engineers routinely build timing models of pipeline critical paths, which would pull operations and observables toward Adjacent.",
+    "The withholding of internal timestamps is a feature of the supplied evidence, not the mapping; if per-stage logs were available the inversion would be largely redundant, and displacement is judged on the mapped method rather than on that availability.",
+    "The emulator-based remedy testing at the end of the mapping is native, so the Remote judgment rests on the inversion step dominating the inquiry rather than being an optional supplement.",
+    "Whether a release engineer would treat non-uniqueness and regularization as live concerns, versus simply picking the largest fitted delay, is not established by the baseline."
+  ]
+}

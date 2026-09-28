@@ -1,0 +1,50 @@
+{
+  "case_id": "021",
+  "provisional": false,
+  "class": "Native",
+  "dimensions": {
+    "entities": {
+      "level": 0,
+      "rationale": "The mapping's objects are user segments, repeated comparable segment measurements, and trajectories. The baseline already tracks cohort metrics over time by segment against pre-rollout baselines and comparison groups; no new object type is introduced."
+    },
+    "relations": {
+      "level": 0,
+      "rationale": "Links are exposure to segment outcome, segment trajectory to expected variation, and observed trend to comparison-group trend. These are the same exposure-versus-comparison and before-versus-after relations the baseline analyst ordinarily inspects."
+    },
+    "processes": {
+      "level": 0,
+      "rationale": "The change of interest is a segment deteriorating over time versus fluctuating transiently. Distinguishing sustained decline from noise across daily cohorts is the core process the rollout monitor already reasons about."
+    },
+    "operations": {
+      "level": 0,
+      "rationale": "Repeating measurements at multiple time points, applying an alert rule, investigating, and pausing exposure then re-measuring are listed baseline methods. The mapping renames these as serial monitoring without adding an action the analyst would not ordinarily perform."
+    },
+    "observables": {
+      "level": 0,
+      "rationale": "The evidence is persistence, trend, reversal or threshold crossing in daily cohort outcomes and support rates, read against pre-rollout and unexposed trends. This is exactly the baseline's ordinary evidence set; nothing new is measured or instrumented."
+    },
+    "inferences": {
+      "level": 0,
+      "rationale": "The licensed conclusion is whether the segment state is changing and whether to investigate or pause exposure. The baseline already draws pause-or-roll-back decisions from cohort trend comparisons; causal caution about needing controls is preserved rather than displaced."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Mix changes, irregular samples and concurrent interventions are already ordinary confound checks in rollout monitoring. Naming regression to the mean as an explicit threat to segments flagged for extreme early values is a small sharpening of vocabulary, accommodated without changing what the analyst checks."
+    }
+  },
+  "rationale": "Serial monitoring, stripped of clinical vocabulary, is the practice of repeating comparable measurements over time and judging the sequence against expected variation and a change rule. The baseline's product operations analyst already tracks cohort metrics over time against pre-rollout baselines and comparison groups, applies alert thresholds, investigates anomalies, and pauses exposure to compare subsequent measurements. Removing the source terminology leaves ordinary rollout monitoring unchanged. The mapping does not ask the analyst to inspect, manipulate, compare or infer anything they would not reach for ordinarily; the disciplinary origin in clinical diagnosis is irrelevant to the target practice. The only slight addition is the explicit articulation of regression to the mean as a failure mode, which refines wording rather than reorganizing evidence or inquiry.",
+  "epistemic_changes": {
+    "practitioner_actions": "No change. The analyst continues to repeat daily segment measurements, compare trajectories to comparison groups and pre-rollout trends, apply an alert rule, and pause exposure when warranted. These are the baseline's listed methods.",
+    "noticed_features": "No substantive change. Sustained trend, reversal and threshold crossing in segment outcomes are already what the analyst watches for. The mapping's framing of transient versus sustained deterioration matches ordinary anomaly triage.",
+    "evidential_warrants": "Unchanged. Trajectory comparison against expected variation and comparison-group trends is the ordinary warrant for a deterioration call. The mapping adds no new evidence type and keeps the baseline's caution that causal conclusions require controls.",
+    "next_inquiry": "Unchanged. The follow-on steps are to keep observing, investigate with support and product teams, or pause exposure and re-measure. The mapping's investigate-or-pause branch is the baseline's own decision structure."
+  },
+  "most_consequential_baseline_difference": "There is no consequential difference. The closest candidate is the explicit naming of regression to the mean as a distorting factor for segments selected on extreme early values. This slightly sharpens how the analyst articulates a known noise concern but does not alter what is measured, compared or decided.",
+  "boundary_status": "clear",
+  "nearest_alternative": null,
+  "uncertainty": [
+    "The baseline is an authored hypothesis; if actual rollout monitoring practice in a given organization relied on single-snapshot dashboards without formal alert rules or trajectory comparison, the mapping's defined change rule would read as a modest Adjacent extension rather than Native.",
+    "The mapping is terse and does not specify how expected variation or the alert rule is derived; if it implied formal statistical process control or sequential testing, the operations and inferences dimensions could rise, but the packet as written implies only ordinary threshold and trend comparison.",
+    "Whether regression to the mean is an ordinary named concern for this practitioner is uncertain; the underlying phenomenon is routinely recognized as novelty effects or noisy small-segment early readings, so the level-1 rating reflects vocabulary rather than practice."
+  ]
+}

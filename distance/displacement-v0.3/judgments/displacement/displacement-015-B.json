@@ -1,0 +1,52 @@
+{
+  "case_id": "015",
+  "provisional": false,
+  "class": "Adjacent",
+  "dimensions": {
+    "entities": {
+      "level": 1,
+      "rationale": "Candidate deployed changes, load variation, replay traces and latency distributions are ordinary objects for the reliability engineer. The explicit evidence-by-hypothesis matrix is a new bookkeeping object, but it holds only ordinary items and does not introduce a foreign kind of entity."
+    },
+    "relations": {
+      "level": 1,
+      "rationale": "The engineer already relates deploy timing to latency onset and traces to services and revisions. The mapping adds an explicit consistency/inconsistency link from every trace to every hypothesis and a comparative diagnosticity ordering among traces. This makes an informal 'does this fit change X?' judgment systematic rather than introducing a new kind of link."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "The diagnostic process of narrowing candidates over time is already how bisecting and rollback proceed. The added process is a sensitivity loop that repeats the comparison with uncertain traces removed, which extends ordinary narrowing without changing what the regression itself is understood to be."
+    },
+    "operations": {
+      "level": 2,
+      "rationale": "Building a full cross-product matrix, scoring each trace against all hypotheses simultaneously, deliberately weighting contradictions over fits, and re-running with flagged traces dropped are actions the engineer probably would not perform ordinarily; they usually test one leading candidate at a time via bisect, replay or rollback. This is a meaningful reinterpretation of how existing evidence is worked, though it sits alongside rather than replacing staging experiments."
+    },
+    "observables": {
+      "level": 1,
+      "rationale": "Evidence remains version history, traces, latency distributions and replay observations, all native. What changes is emphasis: the engineer is directed to notice which traces contradict which explanations and which traces discriminate strongly, rather than mainly where in the trace latency accrues. Flagged-uncertain measurements become a first-class input to the sensitivity check."
+    },
+    "inferences": {
+      "level": 1,
+      "rationale": "Eliminative conclusions ('this change cannot account for these traces') are already licensed by bisect and rollback outcomes. The mapping shifts the licensed output from a confirmed single cause toward a surviving set of alternatives with an explicit caution that survival is not proof, a modest reframing of an ordinary conclusion type."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Incomplete candidate lists and shared instrumentation or clock errors across traces are hazards the engineer already recognizes. Subjective diagnosticity judgments biasing the matrix is a new named warrant-failure, but it is an extension of ordinary worry about confirmation bias in incident narratives rather than a foreign failure category."
+    }
+  },
+  "rationale": "Removing the ACH vocabulary leaves an engineer who enumerates candidate causes, checks traces against them, discards candidates the evidence contradicts, and distrusts uncertain measurements. That core is ordinary incident diagnosis, and bisect and rollback are already eliminative tests. What the mapping adds is a formalized cross-evaluation: every trace scored against every hypothesis at once, contradictions weighted over confirmations, and the comparison repeated with uncertain traces removed. This is a meaningful reinterpretation of how existing evidence is organized and a set of operations the engineer would not usually perform, but the evidence base, the practitioner's experimental toolkit and the next investigative step remain intact. It does not reorganize inquiry around a foreign representation, so it is Adjacent rather than Remote, and the operational novelty keeps it from being Native.",
+  "epistemic_changes": {
+    "practitioner_actions": "The engineer would construct an explicit matrix of traces versus candidate explanations before or alongside bisecting, score each cell for consistency, focus on cells showing contradiction, and re-run the comparison with flagged-uncertain traces excluded. Ordinarily they would chase the leading candidate directly through timeline correlation, bisect and rollback.",
+    "noticed_features": "Attention shifts toward which traces contradict which explanations and which traces discriminate among hypotheses, and toward whether conclusions survive the removal of uncertain measurements. Ordinary attention centers on where latency accrues in the trace and whether onset aligns with a deploy.",
+    "evidential_warrants": "The same traces, latency distributions and version history serve as evidence, but a trace now warrants a conclusion by its inconsistency with a hypothesis rather than by its fit with a suspected cause. Robustness under trace removal becomes an additional warrant. Controlled rollback and replay observations remain admissible and are not displaced.",
+    "next_inquiry": "Instead of immediately testing the top suspect in staging, the engineer would next seek traces that discriminate among surviving hypotheses or firm up flagged measurements. Confirmatory rollback or controlled reintroduction still follows, since the mapping does not remove it; the matrix mainly reorders which candidate gets tested first."
+  },
+  "most_consequential_baseline_difference": "The engineer would evaluate all candidate causes simultaneously against every trace with contradiction weighted over confirmation, and would repeat that comparison with uncertain traces removed, rather than sequentially testing the leading suspect through bisect and rollback. This changes the order and framing of the work, not the evidence or the experimental toolkit.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Native",
+  "uncertainty": [
+    "Baseline scope: mature incident teams often keep an explicit hypotheses list in incident documents and rule candidates out against evidence; if that practice is taken as ordinary for this practitioner, the mapping reduces to Native.",
+    "Baseline scope: the baseline says experimental maturity varies across teams; a less experimental team relying mainly on timeline correlation would find the matrix a larger shift than assumed here.",
+    "The mapping is silent on rollback and staging replay; I assumed those ordinary experiments remain available and are not displaced. If the mapping were read as replacing experimental confirmation with observational matrix comparison, the operations and next_inquiry shifts would be larger and Remote would need reconsideration.",
+    "The packet uses 'trace' for both replay traces and evidence items; I treated a trace as an ordinary distributed or replay trace, which keeps observables native.",
+    "The baseline is an authored hypothesis, not verified practitioner consensus, so the line between ordinary informal elimination and the formal matrix is itself uncertain."
+  ]
+}

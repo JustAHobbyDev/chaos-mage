@@ -1,0 +1,51 @@
+{
+  "case_id": "017",
+  "provisional": false,
+  "class": "Adjacent",
+  "dimensions": {
+    "entities": {
+      "level": 1,
+      "rationale": "The objects are the same rollout, segment, metrics and candidate causes (rollout harm, seasonality, measurement change) the analyst already handles. The mapping only makes the explanation set an explicit, enumerated object rather than an informal background of alternatives."
+    },
+    "relations": {
+      "level": 2,
+      "rationale": "The consistency/inconsistency relation between each observation and each explanation, laid out as a matrix, is a new formal structure. The analyst ordinarily relates metrics to baselines and comparison groups, not each observation to every rival explanation simultaneously."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "Elimination by inconsistency replaces confirmation by trend divergence as the organizing dynamic, but the underlying inquiry (watch metrics, investigate anomalies, roll back when warranted) proceeds as before with the extra bookkeeping."
+    },
+    "operations": {
+      "level": 2,
+      "rationale": "Building an inconsistency matrix and re-running the comparison with uncertain records removed are actions the analyst probably would not perform ordinarily. Choosing the next observation or reversible action by its power to discriminate among explanations is a modest but real shift in how actions are selected."
+    },
+    "observables": {
+      "level": 1,
+      "rationale": "Telemetry, support summaries, exposure and deployment history remain the evidence. The mapping reweights them by diagnosticity and flags uncertain records, but introduces no new class of measurement."
+    },
+    "inferences": {
+      "level": 1,
+      "rationale": "The licensed conclusion becomes 'these explanations are weakened, this one survives, without proof of harm' instead of 'the segment looks worse than baseline.' The analyst's cautious causal stance already exists; the mapping sharpens its form."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Unlisted causes and shared telemetry error are already familiar monitoring pitfalls. Subjective diagnosticity judgments and misreading survival as proof are new named warrants to guard, accommodated without reorganization."
+    }
+  },
+  "rationale": "The mapping keeps the analyst's task, evidence and reversible actions intact but reorganizes how the evidence is arranged and read: every observation is scored against every rival explanation in a matrix, disconfirming items are privileged, the result is stress-tested by deleting uncertain records, and the next step is chosen for its discriminating power. That is a meaningful extension of ordinary trend-versus-baseline monitoring, yet the ordinary inquiry (cohort tracking, anomaly investigation, pause or rollback) still carries the work. No foreign representation replaces the analyst's objects or observables, so it is not Remote; the explicit matrix and sensitivity test are more than a relabeling of what a rollout analyst usually does, so it is not clearly Native.",
+  "epistemic_changes": {
+    "practitioner_actions": "Instead of tracking segment metrics against baselines and escalating when they diverge, the analyst first writes down the rival explanations, fills an observation-by-explanation inconsistency matrix, then re-checks the ranking with uncertain records removed before choosing a discriminating observation or reversible rollback.",
+    "noticed_features": "Attention shifts from magnitude of divergence toward which observations contradict which explanations, and toward how much the comparison depends on flagged uncertain records. Confirming evidence for rollout harm is deliberately downweighted.",
+    "evidential_warrants": "The same telemetry and support data count, but an item's weight now comes from its diagnosticity across explanations rather than from its salience or size. Uncertain records are treated as removable rather than averaged in.",
+    "next_inquiry": "The next step is selected as whichever observation or reversible action best splits the surviving explanations (for example pausing exposure to separate harm from seasonality), rather than as further monitoring of the worst-looking metric."
+  },
+  "most_consequential_baseline_difference": "The explicit inconsistency matrix with a remove-uncertain-records sensitivity pass: it changes how evidence is organized and weighted, and makes the choice of next observation or rollback a diagnosticity decision rather than a threshold or escalation decision.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Native",
+  "uncertainty": [
+    "Baseline scope: many rollout monitoring teams already run informal differential diagnosis (rollout vs seasonality vs instrumentation change) and use holdouts or rollbacks as discriminating tests; if that is ordinary for the scoped analyst, the mapping is close to Native.",
+    "The authored baseline is a hypothesis, not verified practice; the degree to which analysts already formalize alternative explanations in tables or runbooks is unknown.",
+    "The mapping's sensitivity test (removing uncertain observations) is the least naturalized element; whether it is routine in incident review conventions varies by organization.",
+    "Judgment of level 2 on relations and operations versus level 1 is close; a more formalization-friendly reading of ordinary practice would lower both."
+  ]
+}

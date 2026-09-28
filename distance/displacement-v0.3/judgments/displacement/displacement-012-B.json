@@ -1,0 +1,51 @@
+{
+  "case_id": "012",
+  "provisional": false,
+  "class": "Adjacent",
+  "dimensions": {
+    "entities": {
+      "level": 1,
+      "rationale": "Exposure level, segment cohorts, comparison cohort and outcome metrics are the analyst's ordinary objects. The mapping adds the 'response trajectory' as a named object with characteristic features (delay, peak, settling), which is a light re-labeling of the time series the analyst already tracks rather than a new kind of thing."
+    },
+    "relations": {
+      "level": 1,
+      "rationale": "The link between an exposure change and subsequent cohort outcomes, judged relative to a comparison group, is already the core relation in rollout monitoring. Casting it as an input-to-output dynamic relation with lag is an extension of the same causal comparison, not a new link structure."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "The analyst already expects metrics to move after an exposure bump and to stabilize or keep worsening. Partitioning that movement into initial state, transient and later behavior sharpens the phases but does not introduce a process the analyst would not already recognize."
+    },
+    "operations": {
+      "level": 1,
+      "rationale": "Applying the exposure step is just the staged rollout itself, and recording minute-level metrics against a control is ordinary. The added actions are extracting specific quantities (delay, overshoot magnitude, settling time, steady-state shift) from the recorded series; these are new measurements on familiar data, accommodated without changing how the analyst works."
+    },
+    "observables": {
+      "level": 2,
+      "rationale": "This is where the mapping shifts what counts as evidence. Ordinary practice judges deterioration mainly from level comparisons against baseline and control at reporting points. The mapping makes the shape of the transient (delay before onset, overshoot then partial recovery, time to settle) the evidence of interest, treating a spike that settles differently from a monotone climb. Analysts informally notice such shapes, but elevating them to measured, decision-bearing observables is a meaningful reinterpretation."
+    },
+    "inferences": {
+      "level": 1,
+      "rationale": "The licensed conclusions are modest: describe how the segment responded at this step and use that to set how long to watch and whether to hold, advance or reverse exposure. The analyst already infers pause-or-proceed from trends; using measured settling time to size the observation window is an extension, and the mapping explicitly avoids mechanism claims or model fitting."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Noise, confounding from other releases, unrepresentative initial state and too-short follow-up are already familiar hazards. The added warning that the response at 10 to 20 percent may not extrapolate to larger steps (nonlinearity, saturation) is a mild extension the analyst would readily accept, since staged rollouts already assume each step must be checked."
+    }
+  },
+  "rationale": "The staged rollout already supplies the step, the comparison cohort, and the time-series metrics, so the mapping's apparatus is largely ordinary practice under new names. The genuine change is evidential: the analyst is asked to read the transient shape (delay, overshoot, settling, steady-state offset relative to control) as the primary evidence of deterioration and as the basis for choosing observation windows, rather than judging levels at snapshots. That reorganizes what is noticed and measured without replacing the task, practitioner, methods or the decision structure (watch, hold, roll back). The mapping stops short of dynamic model identification, which the baseline marks as out of scope, and disclaims mechanism claims. Ordinary inquiry remains intact with a meaningful reinterpretation of evidence, which is Adjacent rather than Native or Remote.",
+  "epistemic_changes": {
+    "practitioner_actions": "The analyst still bumps exposure, watches segment metrics against the unchanged cohort, and decides whether to hold or roll back. Added actions are extracting delay, peak, overshoot and settling-time values from the minute-level series and using settling time to set the follow-up window before the next step.",
+    "noticed_features": "Instead of chiefly noticing whether error and support rates are above baseline or control at check points, the analyst notices the shape of the response: how long after the step deterioration begins, whether it overshoots and partially recovers, whether it settles, and where it settles relative to the control.",
+    "evidential_warrants": "A settled trajectory with a small steady-state offset is treated as evidence against persistent deterioration even if a transient peak occurred, and an unsettled or still-climbing trajectory is treated as evidence for it. Warrants remain tied to the control cohort and to this operating point, and do not license claims about mechanism or about larger exposure steps.",
+    "next_inquiry": "Next steps become: extend observation until settling is established, then choose the next exposure step or reversal; compare transient shapes across segments. Ordinary next steps such as consulting support and product teams about anomalies persist, and no model-fitting or designed perturbation series is introduced."
+  },
+  "most_consequential_baseline_difference": "Treating measured transient-shape features (delay, overshoot, settling time, steady-state offset versus control) as the decision-bearing evidence for deterioration and for sizing observation windows, in place of level comparisons at reporting snapshots.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Native",
+  "uncertainty": [
+    "Baseline scope: the authored baseline says the analyst tracks metrics over time against comparison groups; if ordinary practice already includes routinely reading spike-and-recover versus sustained-climb shapes from dashboards, the observables shift shrinks and the case moves to Native.",
+    "Baseline scope: if the analyst's ordinary practice is closer to threshold alerting on point-in-time levels, the shift toward trajectory features is larger than assessed, though still short of Remote because no model identification or designed perturbation is required.",
+    "The mapping's inference clause is deliberately weak (no unique mechanism, operating-point only); a stronger reading that used response features to fit or discriminate dynamic models would push the case toward Remote, per the baseline's own note that designed dynamic identification is out of scope.",
+    "Whether the consented sandbox cohort and minute-level data are ordinarily available does not affect the displacement judgment; it bears on evidential availability, which is excluded here."
+  ]
+}

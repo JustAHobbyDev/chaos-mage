@@ -1,0 +1,51 @@
+{
+  "case_id": "018",
+  "provisional": false,
+  "class": "Remote",
+  "dimensions": {
+    "entities": {
+      "level": 1,
+      "rationale": "Teams, stages, tickets, routes and per-stage waits are the analyst's ordinary objects. The mapping adds a 'candidate internal wait map' as a fitted model object and 'tagged test tickets' as probes, which are new but sit comfortably alongside ordinary workflow maps."
+    },
+    "relations": {
+      "level": 2,
+      "rationale": "Ordinarily a ticket's turnaround is decomposed by direct stage timestamps and ownership links. The mapping reinterprets routes as overlapping paths whose end-to-end times are linear sums over shared hidden stages, so that stage waits are related to observations only through path coverage and joint constraint across many routes."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "The underlying change is still tickets waiting and being handed off between teams. The mapping does not posit new dynamics; it holds waits as additive and stationary in the low-load regime, an idealization the analyst could accept without changing what they think is happening."
+    },
+    "operations": {
+      "level": 3,
+      "rationale": "Injecting identically loaded tagged tickets along designed overlapping routes, forward-predicting end-to-end times from a candidate wait map, computing residuals and iteratively inverting them with regularization is a designed-excitation inversion loop. The baseline explicitly places dynamic estimation from designed excitation outside scope; the analyst ordinarily maps workflow, reads histories, interviews and pilots changes."
+    },
+    "observables": {
+      "level": 3,
+      "rationale": "Evidence becomes endpoint-only probe timings and, decisively, the spatially structured pattern of misfit between predicted and observed path times. Ordinary evidence is intermediate ticket timestamps, queue lengths, staffing and interviews, which the mapping neither uses nor needs. Residuals against a model are a foreign evidential object here, independent of the testbed choosing to expose only endpoints."
+    },
+    "inferences": {
+      "level": 3,
+      "rationale": "Stage delay is licensed by joint inversion across paths: a stage is implicated because it is shared by slow routes and absent from fast ones, subject to coverage and non-uniqueness, rather than by reading its recorded wait or hearing participants describe it. The conclusion form is 'a family of wait maps consistent with the residuals', not an observed bottleneck."
+    },
+    "failure_modes": {
+      "level": 3,
+      "rationale": "Ill-conditioning, regularization artifacts, path-coverage gaps, non-unique wait maps and uncertain routing are the warrants that can mislead. The analyst's ordinary failure modes are confounding by staffing and demand, unrepresentative case selection and interview bias. The new modes require inspecting resolution and coverage, which the baseline has no practice for."
+    }
+  },
+  "rationale": "The mapping keeps the analyst's question and objects but replaces how delay is located. Ordinarily the analyst reads intermediate timestamps, queues and interviews and pilots explicit handoff changes. Under the mapping the analyst designs probe traffic over overlapping routes, forward-models end-to-end times from a hypothesized wait map, and treats path-structured residuals as the evidence that constrains hidden stage waits, accepting non-uniqueness and regularization as governing warrants. This reorganizes what is done, what counts as evidence and how a bottleneck is inferred, which the baseline itself marks as outside ordinary practice. The intervention step remains ordinary, which is why the case is borderline rather than clear.",
+  "epistemic_changes": {
+    "practitioner_actions": "Instead of mapping workflow from records and interviews, the analyst injects identically loaded tagged tickets along chosen overlapping team routes, builds a candidate per-stage wait map, predicts end-to-end times, and iteratively adjusts the map to reduce residuals under regularization.",
+    "noticed_features": "The analyst attends to which routes share which stages, the structure of misfit across routes, path coverage of each stage, and whether multiple wait maps fit equally well, rather than to individual slow tickets, queue lengths, ownership gaps or participant accounts.",
+    "evidential_warrants": "Delay at a stage is warranted by its consistent contribution to residual patterns across many paths within a validated additive regime, not by observed stage timestamps or testimony. Coverage, conditioning and regularization become part of the warrant.",
+    "next_inquiry": "The next steps become adding routes to improve coverage of poorly resolved stages, testing alternative regularizations or model assumptions, and checking testbed-to-live generalization, before returning to the ordinary step of piloting bounded handoff changes."
+  },
+  "most_consequential_baseline_difference": "Locating delay by inverting path-structured residuals from designed probe tickets against a hypothesized internal wait map, in place of reading intermediate timestamps and interviewing participants. This shifts the evidential basis from direct stage records to model-data misfit and introduces non-uniqueness and coverage as governing warrants.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Adjacent",
+  "uncertainty": [
+    "Baseline scope: some operations analysts already use process mining or send 'test' tickets through a workflow; if either were treated as ordinary here, the operations and observables levels would fall and the case would move toward Adjacent.",
+    "The additive decomposition of turnaround into stage waits is close to the ordinary practice of comparing timestamps across case types, so the relations level could reasonably be scored 1.",
+    "The testbed exposing only endpoint timestamps is a supplied-evidence constraint; the Remote judgment rests on the inversion method displacing ordinary evidence, not on that evidence being unavailable, but the two are hard to fully separate in this packet.",
+    "The end step, piloting bounded handoff changes, remains ordinary, which limits how far the displacement propagates into intervention decisions."
+  ]
+}

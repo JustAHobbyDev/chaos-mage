@@ -1,0 +1,50 @@
+{
+  "case_id": "016",
+  "provisional": false,
+  "class": "Native",
+  "dimensions": {
+    "entities": {
+      "level": 0,
+      "rationale": "The mapped objects are stages, case types and per-stage waiting times. These are exactly the units the baseline analyst already works with when mapping workflow and comparing timestamps and queues."
+    },
+    "relations": {
+      "level": 0,
+      "rationale": "Links are waiting time by stage, by case type and by day, plus the confounding links to staffing and ticket mix. The baseline already compares across case types and accounts for staffing and demand."
+    },
+    "processes": {
+      "level": 0,
+      "rationale": "Delay that persists, reverses or stays flat over weeks is the ordinary way an operations analyst describes queue behaviour. The persistent-versus-transient distinction is standard run-chart and control-chart thinking in service improvement, not a foreign dynamic."
+    },
+    "operations": {
+      "level": 0,
+      "rationale": "Repeating comparable daily waiting-time measurements and judging the sequence against expected variation is a run chart or control chart of turnaround time. Stripped of the clinical vocabulary this is routine baseline practice with eight weeks of summaries."
+    },
+    "observables": {
+      "level": 0,
+      "rationale": "The evidence is the daily per-stage waiting-time series together with staffing and ticket-mix records. This is a subset of the ordinary evidence listed for the baseline, viewed over time rather than at a single point."
+    },
+    "inferences": {
+      "level": 0,
+      "rationale": "Concluding that a stage with sustained rather than transient delay deserves bounded investigation is the ordinary prioritisation step before interviewing participants and piloting a handoff change. No new licence is introduced."
+    },
+    "failure_modes": {
+      "level": 0,
+      "rationale": "Mix shifts, uneven sampling, mid-period interventions and regression to the mean masquerading as improvement are the standard cautions an analyst applies to before-and-after turnaround comparisons. The term regression to the mean is clinical in origin but the warrant is already native."
+    }
+  },
+  "rationale": "The mapping asks the analyst to look at daily per-stage waiting times as a sequence over eight weeks, separate stages with sustained delay from those with transient spikes, and prioritise the sustained ones for bounded investigation while guarding against mix changes and interventions. Removing the serial-monitoring vocabulary leaves a run chart of turnaround time by stage and case type, which is ordinary operations improvement work. The analyst inspects nothing, manipulates nothing and infers nothing they would not ordinarily reach for. The explicit time-series framing is a slight change of emphasis from the baseline's listed cross-sectional and pilot comparisons, but it is accommodated without any reorganisation of evidence or inquiry. The baseline's own exclusion covers designed-excitation system estimation, which this mapping does not approach.",
+  "epistemic_changes": {
+    "practitioner_actions": "No new action. The analyst plots daily waiting time per stage and case type and reads the trajectory, which is what they would do with eight weeks of comparable summaries anyway, before moving to interviews, exception review and pilots.",
+    "noticed_features": "Nothing new is noticed. Persistence, reversal and flat trajectories are the features an operations analyst already reads off a run chart, alongside staffing and mix context.",
+    "evidential_warrants": "Warrants are unchanged. Sustained elevation relative to expected day-to-day variation already counts as evidence that a stage accumulates delay, and mix, staffing, interventions and reversion already count as reasons to distrust an apparent change.",
+    "next_inquiry": "The next step is unchanged. Stages showing sustained delay get bounded investigation through participant interviews, exception cases and a piloted handoff change, exactly as the baseline prescribes."
+  },
+  "most_consequential_baseline_difference": "There is no consequential difference. The only shift is a mild emphasis on reading waiting times as a daily trajectory rather than as a cross-sectional or before-and-after comparison, and trajectory reading is already ordinary for this practitioner.",
+  "boundary_status": "clear",
+  "nearest_alternative": null,
+  "uncertainty": [
+    "The baseline's listed methods emphasise cross-sectional comparison across case types and pilot before-and-after comparison; explicit time-series evaluation against expected variation is not named, so the judgment that run-chart reading is ordinary rests on general knowledge of operations improvement practice rather than on the authored baseline text.",
+    "If the scoped practitioner were narrower than typical, without familiarity with run or control charts, the operations and processes dimensions would move to level 1 and the class would become borderline Native with Adjacent as the alternative.",
+    "The baseline is an authored hypothesis, not verified consensus, and the scenario is synthetic, so no claim is made about real practitioner behaviour."
+  ]
+}

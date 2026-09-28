@@ -1,0 +1,185 @@
+{
+  "completed_at": "2026-09-28T05:18:23.917211+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.045s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance",
+        "-p",
+        "test_harness.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.369s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/boundary-v0.2",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "primary-001-A: failed\n................\n----------------------------------------------------------------------\nRan 16 tests in 1.692s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/v0.3/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 14.476s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/validity-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "validity-017-B: failed\n...............\n----------------------------------------------------------------------\nRan 15 tests in 5.803s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "validity-019-A: failed\n.....................\n----------------------------------------------------------------------\nRan 21 tests in 2.733s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "20 frozen cases verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/review/verify_review.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified: 38 judgments; 19 reviewed pairs; all disagreement fields; 10 Remote/Alien reviews; metrics and retry coverage; private v0.1/v0.2 hashes\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/v0.3/verify_preparation.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"preserved_files\": 174,\n  \"prepared_cases\": 24,\n  \"retrospective_examples\": 12,\n  \"planned_judgments\": 48,\n  \"status\": \"PREPARED / UNEXECUTED\"\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "verify-results: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/review/review_tools.py",
+        "verify",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified all 48 judgments, 24 case reviews, eight contrasts and metrics; private execution hashes checked\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/review/review_tools.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}

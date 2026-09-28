@@ -1,0 +1,50 @@
+{
+  "case_id": "024",
+  "provisional": false,
+  "class": "Native",
+  "dimensions": {
+    "entities": {
+      "level": 0,
+      "rationale": "Duplicate signoff step, pilot queue, matched comparison queue, stage waiting times, staffing and intake are the ordinary objects of a handoff analyst who maps workflow and compares queues across case types."
+    },
+    "relations": {
+      "level": 0,
+      "rationale": "The link is 'this approval step contributes to accumulated delay', which is exactly what the baseline's workflow mapping and timestamp comparison are meant to establish; no new kind of link is introduced."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "Delay falling when a step is removed is the ordinary pilot outcome. Delay recurring when the step is restored is a mild extension: the analyst ordinarily watches turnaround change after a change, not deliberately induced recurrence, but it is the same waiting-time dynamics."
+    },
+    "operations": {
+      "level": 1,
+      "rationale": "Withdrawing a signoff in a pilot queue and comparing against an unchanged queue while tracking staffing and demand is the baseline's third ordinary method. Deliberately restoring the step to test recurrence is an extra step the analyst would not routinely reach for, but it is a second pilot comparison, not a foreign manipulation."
+    },
+    "observables": {
+      "level": 0,
+      "rationale": "Stage waiting times from ticket histories, queue lengths, staffing schedules and intake volumes are the baseline's ordinary evidence; nothing new is measured."
+    },
+    "inferences": {
+      "level": 0,
+      "rationale": "Concluding that a step is a contributing delay source, with recommendations bounded to the pilot, is the ordinary licensed conclusion from a pilot-and-compare method that accounts for staffing and demand."
+    },
+    "failure_modes": {
+      "level": 1,
+      "rationale": "Concurrent changes and spontaneous variation are confounds the analyst already accounts for via staffing and demand. Carryover from the withdrawal period into the restoration period is a mild additional warning that ordinary single-direction pilots do not usually need."
+    }
+  },
+  "rationale": "Stripping the clinical vocabulary leaves: remove a suspected step in a pilot queue, watch stage waiting times against a matched queue while tracking staffing and intake, and optionally put the step back to see whether delay returns. The first part is verbatim the baseline's ordinary pilot method with ordinary evidence and the ordinary bounded inference. The rechallenge component adds one extra comparison and one extra confound (carryover), but does not change what counts as evidence, what is noticed, or what conclusion is licensed. The inquiry is not reorganized around a foreign representation, so the mapping is substantially already naturalized.",
+  "epistemic_changes": {
+    "practitioner_actions": "The analyst still pilots an explicit handoff change and compares turnaround against a matched queue. The only addition is deliberately restoring the removed signoff within the pilot to check whether delay comes back, a second pilot comparison the analyst would not routinely run but would recognize as the same kind of act.",
+    "noticed_features": "Stage waiting times, staffing and intake in the pilot and comparison queues, which the analyst already notices. Recurrence of delay after restoration is an added thing to look for, but it is the same waiting-time signal.",
+    "evidential_warrants": "Ticket-history timestamps and queue comparisons accounting for staffing and demand remain the warrant. A bidirectional response slightly strengthens the ordinary before/after-with-control warrant, and carryover is added to the confounds already considered; the class of evidence is unchanged.",
+    "next_inquiry": "The next step remains the ordinary one: extend or drop the change based on pilot turnaround, bounded to the pilot. The mapping does not redirect inquiry toward new objects or measurements."
+  },
+  "most_consequential_baseline_difference": "The deliberate restoration of the withdrawn signoff to test recurrence of delay. Ordinary pilots run one direction and compare; the mapping adds a reverse step and a carryover caveat. This is an extra comparison within the same method, not a change in evidence, inference or investigative direction.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Adjacent",
+  "uncertainty": [
+    "Baseline-scope uncertainty: the baseline is an authored hypothesis; whether ordinary handoff analysts ever deliberately reinstate a removed step to test recurrence is unverified. If they never do, the rechallenge step reads as a meaningful extension and the case tips to Adjacent.",
+    "Whether a matched unchanged comparison queue is ordinary for this practitioner is assumed from 'compare turnaround, accounting for staffing and demand'; if ordinary pilots are uncontrolled before/after comparisons, operations would sit slightly higher.",
+    "Carryover as a named confound is judged a mild extension; a reader might treat it as already ordinary under 'accounting for staffing and demand', which would lower failure_modes to 0 without changing the class."
+  ]
+}

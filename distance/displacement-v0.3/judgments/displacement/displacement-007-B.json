@@ -1,0 +1,51 @@
+{
+  "case_id": "007",
+  "provisional": false,
+  "class": "Remote",
+  "dimensions": {
+    "entities": {
+      "level": 2,
+      "rationale": "The baseline decomposes a proposal into user needs, flows, assumptions and dependencies. The mapping recasts the redesign as a configuration of removable interaction rules and introduces a new object of inquiry, a test-relative minimal failure-inducing subset, plus a replay oracle and a category of unresolved reductions. Rules-as-parts is a reinterpretation of the PM's feature list, not a wholesale replacement."
+    },
+    "relations": {
+      "level": 2,
+      "rationale": "The PM already tracks feature dependencies. The mapping adds subset and complement relations among rule parts and the notion of joint sufficiency of a retained set under a test, which is a different link than 'feature A depends on feature B'. Dependency-invalid combinations map onto existing dependency knowledge, which keeps this at reinterpretation."
+    },
+    "processes": {
+      "level": 2,
+      "rationale": "The baseline process is users attempting activation in sessions or funnels. The mapping's process is deterministic replay of one recorded path reproducing failure under successive reductions. Activation failure is still the change of interest, but it now occurs in a prototype replay rather than in a user, which meaningfully reinterprets what 'failure' is a process of."
+    },
+    "operations": {
+      "level": 3,
+      "rationale": "Partitioning rules, removing subsets, testing complements, and iterating until no permitted single reduction preserves failure is a search procedure the PM does not ordinarily perform. Comparing staged variants is native, but systematic complement testing driven by prior test outcomes toward a minimality stopping condition is a foreign action loop that organizes the whole inquiry."
+    },
+    "observables": {
+      "level": 3,
+      "rationale": "Ordinary evidence is interview notes, task completion, funnel events, dependency lists and observed user errors. The mapping's evidence is a per-reduction oracle verdict of fail, complete or unresolved on a replay. User behavior and qualitative error observation drop out entirely as warrants and are replaced by test verdicts on rule subsets."
+    },
+    "inferences": {
+      "level": 3,
+      "rationale": "The baseline licenses prioritization from observed user difficulty and funnel drop-off. The mapping licenses a claim that a retained rule set is jointly sufficient to reproduce the failure under the test, and that it is minimal relative to the search. The PM already suspects interactions defeat simple ranking, but the test-relative sufficiency and minimality warrant is a different kind of conclusion with a different scope restriction."
+    },
+    "failure_modes": {
+      "level": 2,
+      "rationale": "Baseline failure modes are small samples, prototype fidelity and misreading user errors. The mapping introduces search-order dependence, local versus global minimality, invalid reductions returning unresolved, and confusing reproducibility under a test with causal uniqueness. The population-generalization caution is partly native to usability practice, which keeps this from full replacement."
+    }
+  },
+  "rationale": "Removing the delta-debugging vocabulary does not leave ordinary onboarding discovery. The practitioner stops observing users and instead runs a systematic reduction search over rule subsets against a replay oracle, treats fail/complete/unresolved verdicts as the evidence, and concludes a test-relative minimal jointly sufficient interaction set. Staged variants and dependency decomposition are native, but the complement-testing loop with a minimality stopping condition, and the sufficiency inference it licenses, reorganize what is inspected, what counts as evidence, and what is done next. That is substantive epistemic displacement rather than an accommodated extension.",
+  "epistemic_changes": {
+    "practitioner_actions": "Instead of running usability sessions and comparing staged variants, the PM partitions the rule set, removes subsets, tests complements, and iterates based on which reductions still reproduce failure, stopping at one-minimality and logging unresolved combinations separately.",
+    "noticed_features": "Attention shifts from user hesitation, errors and funnel drop-off to which rule subsets preserve the failure verdict, which reductions are dependency-invalid, and whether any single further removal flips the outcome.",
+    "evidential_warrants": "Interview notes, task completion and funnel events are replaced as warrants by per-reduction oracle verdicts on a deterministic replay. A rule is deemed necessary for the failure because its removal makes the replay complete, not because users were observed struggling with it.",
+    "next_inquiry": "The follow-up question becomes whether a finer partition or different search order yields a smaller failing set, and whether unresolved combinations hide interactions, rather than which observed user problems to prioritize next."
+  },
+  "most_consequential_baseline_difference": "The evidential basis changes from observed user behavior to oracle verdicts on systematic rule-subset reductions, and the licensed conclusion becomes joint sufficiency of a test-relative minimal interaction set rather than prioritization from observed difficulty.",
+  "boundary_status": "borderline",
+  "nearest_alternative": "Adjacent",
+  "uncertainty": [
+    "Baseline scope: a PM with growth-experimentation experience might routinely ablate features in staged variants, which would make the reduction loop an extension and push the case toward Adjacent.",
+    "The supplied replay oracle is not ordinary evidence, but displacement is judged on what the practitioner does with it, not on its availability; if the PM merely read oracle results as another funnel comparison, the displacement would be smaller.",
+    "The interaction-defeats-ranking conclusion is partly native to dependency decomposition; the weight placed on the minimality and sufficiency qualifier drives the Remote call.",
+    "Baseline is an authored hypothesis and practices vary across product organizations."
+  ]
+}

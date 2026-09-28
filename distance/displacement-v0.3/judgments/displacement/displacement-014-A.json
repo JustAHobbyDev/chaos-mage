@@ -1,0 +1,50 @@
+{
+  "case_id": "014",
+  "provisional": false,
+  "class": "Remote",
+  "dimensions": {
+    "entities": {
+      "level": 1,
+      "rationale": "Stages, dependencies, artifacts and delays are ordinary troubleshooting objects. Treating hidden stage delays as a jointly estimated internal map extends their representation."
+    },
+    "relations": {
+      "level": 2,
+      "rationale": "Known dependency paths become overlapping additive constraints linking endpoint measurements to latent stage delays, reinterpreting the dependency graph as an inverse problem."
+    },
+    "processes": {
+      "level": 1,
+      "rationale": "Artifact transit, accumulated delays and publication timeouts remain familiar release processes, expressed through the emulator's additive timing model."
+    },
+    "operations": {
+      "level": 3,
+      "rationale": "The central diagnostic procedure becomes sending equivalent artifacts over selected paths, iteratively inverting residuals into a delay map and testing held-out routes. This substantially reorganizes the baseline's log inspection, reproduction, bisection and candidate-fix testing."
+    },
+    "observables": {
+      "level": 2,
+      "rationale": "Transit times and reproducible timeouts are familiar measurements, but structured discrepancies across overlapping routes become joint evidence about unobserved stages rather than merely indicators of slow or failed runs."
+    },
+    "inferences": {
+      "level": 2,
+      "rationale": "The practitioner infers compatible internal delay maps and candidate dependency remedies from path constraints. Diagnostic conclusions become conditional on the inverse model and its non-uniqueness."
+    },
+    "failure_modes": {
+      "level": 2,
+      "rationale": "Noise and model assumptions have ordinary troubleshooting counterparts, but uneven path coverage, regularization and indistinguishable delay maps introduce specific ways an inferred internal representation can mislead localization and remedy selection."
+    }
+  },
+  "rationale": "The mapping makes reconstruction of hidden stage delays from overlapping endpoint measurements the organizing diagnostic method. Reproduction and isolated testing remain recognizable, but what connects observations to dependency-level explanations changes substantively. Removing seismic terminology still leaves path inversion, which the fixed baseline explicitly does not assume to be standard practice. The displacement rests on that reorganization, not on withheld timestamps or disciplinary origin.",
+  "epistemic_changes": {
+    "practitioner_actions": "Design comparable artifact traversals, fit stage-delay maps against measured route times, refine structured residuals and test predictions on held-out routes.",
+    "noticed_features": "Attend to which routes overlap, how residuals vary across those routes and which combinations of hidden delays could explain the timeout pattern.",
+    "evidential_warrants": "Use compatibility with the additive timing constraints and held-out route behavior to constrain internal explanations, while retaining uncertainty from non-unique maps and model assumptions.",
+    "next_inquiry": "Investigate routes that distinguish competing delay maps and test candidate dependency remedies within the emulator, preserving the stated limits on live-system generalization."
+  },
+  "most_consequential_baseline_difference": "Dependency localization is organized around reconstructing latent stage delays from a system of endpoint timing constraints, changing the bridge from observed failure behavior to an internal explanation.",
+  "boundary_status": "clear",
+  "nearest_alternative": null,
+  "uncertainty": [
+    "The baseline is an authored scope hypothesis, not verified consensus; some release engineers may ordinarily use related inverse methods, but this practitioner is explicitly scoped without that specialization.",
+    "The packet does not specify the inversion algorithm or route-selection procedure, so their implementation details remain uncertain without changing the central displacement.",
+    "Emulator evidence and live-system applicability are separate from displacement: the supplied timing-model validation does not make inversion native, and limited generalization does not itself make it Remote."
+  ]
+}
