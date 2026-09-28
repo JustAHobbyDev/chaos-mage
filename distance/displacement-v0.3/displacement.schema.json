@@ -1,0 +1,259 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "provisional": {
+      "type": "boolean"
+    },
+    "class": {
+      "type": "string",
+      "enum": [
+        "Native",
+        "Adjacent",
+        "Remote"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "relations": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "processes": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "operations": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "observables": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "inferences": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "failure_modes": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "level",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "entities",
+        "relations",
+        "processes",
+        "operations",
+        "observables",
+        "inferences",
+        "failure_modes"
+      ],
+      "additionalProperties": false
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "epistemic_changes": {
+      "type": "object",
+      "properties": {
+        "practitioner_actions": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "noticed_features": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "evidential_warrants": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "next_inquiry": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "practitioner_actions",
+        "noticed_features",
+        "evidential_warrants",
+        "next_inquiry"
+      ],
+      "additionalProperties": false
+    },
+    "most_consequential_baseline_difference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "boundary_status": {
+      "enum": [
+        "clear",
+        "borderline"
+      ]
+    },
+    "nearest_alternative": {
+      "anyOf": [
+        {
+          "enum": [
+            "Native",
+            "Adjacent",
+            "Remote"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  },
+  "required": [
+    "case_id",
+    "provisional",
+    "class",
+    "dimensions",
+    "rationale",
+    "epistemic_changes",
+    "most_consequential_baseline_difference",
+    "boundary_status",
+    "nearest_alternative",
+    "uncertainty"
+  ],
+  "additionalProperties": false
+}

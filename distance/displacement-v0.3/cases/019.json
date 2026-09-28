@@ -1,0 +1,29 @@
+{
+  "case_id": "019",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Prototype sessions and funnel records expose failures at verification, permissions and the welcome flow."
+    ]
+  },
+  "mapping": {
+    "state": "Activation failure admits multiple explanations involving different proposal parts.",
+    "operation": "Generate competing explanations, inspect discriminating usability observations and targeted prototype comparisons, and update which explanations remain plausible.",
+    "signal": "Observed failures fit some dependency explanations and contradict others.",
+    "inference": "Narrow which parts plausibly obstruct activation and retain uncertain interactions for further tests.",
+    "limit": "Unlisted causes, dependent observations and insensitive tasks limit attribution and do not establish every necessary feature."
+  }
+}

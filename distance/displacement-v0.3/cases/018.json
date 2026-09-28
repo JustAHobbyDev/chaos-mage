@@ -1,0 +1,29 @@
+{
+  "case_id": "018",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A synthetic ticket-routing testbed uses known overlapping team routes; only endpoint timestamps are exposed. Tagged tickets have identical workload. Repeated runs and injected waits validate additive traversal times within this low-load testbed."
+    ]
+  },
+  "mapping": {
+    "state": "Internal team waiting properties cannot be directly observed but affect traversal times across many known paths.",
+    "operation": "Route timed test tickets across overlapping team paths, predict end-to-end times from candidate internal wait maps, and iteratively invert residuals to adjust those maps.",
+    "signal": "Path-structured timing discrepancies constrain which hidden stages contribute delay.",
+    "inference": "Localize possible internal waiting-time structure and identify candidate handoff interventions within the validated testbed regime.",
+    "limit": "Coverage, variable service times, uncertain routing, regularization and non-uniqueness limit inference; testbed effects may not generalize to live queues."
+  }
+}

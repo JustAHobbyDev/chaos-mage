@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chaos-mage:v0.3:candidate",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "mapping": {
+      "$ref": "#/$defs/instrument"
+    },
+    "native_baseline": {
+      "type": "object",
+      "properties": {
+        "target_domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "target_task": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reference_practitioner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "ordinary_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "ordinary_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "target_domain",
+        "target_task",
+        "reference_practitioner",
+        "ordinary_methods",
+        "ordinary_evidence",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    },
+    "provisional": {
+      "type": "boolean"
+    },
+    "applicability_assumption": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "scope": {
+          "const": "Assume only that the listed instantiation conditions hold; retain source, mapping, target question and native baseline exactly."
+        }
+      },
+      "required": [
+        "conditions",
+        "scope"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "source",
+    "target",
+    "mapping",
+    "native_baseline",
+    "provisional"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "instrument": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "signal": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limit": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "state",
+        "operation",
+        "signal",
+        "inference",
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "practice": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "instrument": {
+          "$ref": "#/$defs/instrument"
+        }
+      },
+      "required": [
+        "name",
+        "practice",
+        "instrument"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "domain",
+        "question",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

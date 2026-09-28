@@ -1,0 +1,29 @@
+{
+  "case_id": "006",
+  "source": {
+    "name": "Dechallenge and rechallenge",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+      "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+      "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+      "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+      "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "The extra welcome modal can be disabled and safely restored in otherwise fixed prototypes; matched participants perform the same activation task."
+    ]
+  },
+  "mapping": {
+    "state": "Activation abandonment co-occurs with an optional modal.",
+    "operation": "Remove the modal and observe completion, then restore it in a counterbalanced trial where justified and inspect whether abandonment recurs.",
+    "signal": "Abandonment decreases on removal and may recur on restoration.",
+    "inference": "Assess a bounded causal contribution of the modal to activation failure while leaving other dependencies unresolved.",
+    "limit": "Learning, participant differences, concurrent changes and persistent effects limit causality and generalization."
+  }
+}

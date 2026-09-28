@@ -1,0 +1,29 @@
+{
+  "case_id": "022",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A staging routing harness measures repeated end-to-end times on many known overlapping service paths while holding request payloads and load fixed. Internal per-service timing is unavailable. Controlled injected delays validated an additive path-time forward model on this harness."
+    ]
+  },
+  "mapping": {
+    "state": "Hidden service-delay structure changes propagation times across overlapping request routes.",
+    "operation": "Send timed requests on many known routes, predict path times from candidate per-service delay maps, and iteratively adjust those maps to reduce structured residuals, checking held-out routes.",
+    "signal": "Residual time patterns differ by the services traversed.",
+    "inference": "Constrain a spatial service-network delay map that localizes contributions to the new regression within this tested regime.",
+    "limit": "Uneven route coverage, jitter, model mismatch, regularization and non-unique solutions limit localization and do not prove a code-level cause."
+  }
+}

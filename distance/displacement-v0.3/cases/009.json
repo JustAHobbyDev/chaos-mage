@@ -1,0 +1,29 @@
+{
+  "case_id": "009",
+  "source": {
+    "name": "Source corroboration",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "A claim or event description is supported by one or more information sources whose accuracy, independence, or access may be uncertain.\n",
+      "operation": "Compare the claim against other independently sourced information while assessing each source's credibility, access, dependence, and relevance.\n",
+      "signal": "Independent sources converge on, contradict, or fail to support the same material features of the claim.\n",
+      "inference": "Genuine convergence across credible independent sources increases support for the corroborated features, while contradiction or lack of independent support lowers confidence or identifies unresolved uncertainty.\n",
+      "limit": "Sources may share an undisclosed common origin, copy one another, inherit the same bias or error, have unequal access, or converge because of common assumptions rather than independent observation. Multiple reports therefore do not automatically constitute independent evidence.\n"
+    }
+  },
+  "target": {
+    "domain": "software-release workflow failures",
+    "question": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Independent registry receipts, build-worker logs and artifact-store records describe the same release; copied summaries can be traced."
+    ]
+  },
+  "mapping": {
+    "state": "Publication claims and failure locations are reported by partially dependent sources.",
+    "operation": "Cross-check the material claims across independently generated receipts and logs, explicitly assessing access, credibility and copying dependence.",
+    "signal": "Independent sources agree or conflict on the artifact and failed transition.",
+    "inference": "Increase support for corroborated workflow failure locations and identify unresolved dependencies for remedy testing.",
+    "limit": "Shared instrumentation bugs, copied summaries and unequal access can produce false convergence."
+  }
+}

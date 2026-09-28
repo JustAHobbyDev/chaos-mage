@@ -1,0 +1,29 @@
+{
+  "case_id": "017",
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Telemetry, support summaries and exposure history can be compared across rollout harm, seasonality and measurement-change explanations; uncertain records are marked."
+    ]
+  },
+  "mapping": {
+    "state": "Several explanations fit apparent segment deterioration.",
+    "operation": "Compare each observation against every stated explanation in an inconsistency matrix and test whether conclusions survive removing uncertain observations.",
+    "signal": "Diagnostic contradictions differ across explanations.",
+    "inference": "Weaken inconsistent explanations and select the next discriminating observation or reversible action without claiming proof of rollout harm.",
+    "limit": "Unlisted causes, shared telemetry error and subjective diagnosticity can mislead."
+  }
+}

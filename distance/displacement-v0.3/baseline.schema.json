@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "target_domain": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_task": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "reference_practitioner": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "ordinary_methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1
+    },
+    "ordinary_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "target_domain",
+    "target_task",
+    "reference_practitioner",
+    "ordinary_methods",
+    "ordinary_evidence",
+    "uncertainty"
+  ],
+  "additionalProperties": false
+}

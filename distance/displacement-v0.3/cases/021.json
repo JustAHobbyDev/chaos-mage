@@ -1,0 +1,29 @@
+{
+  "case_id": "021",
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Exposure logs and comparable daily cohort outcomes and support rates exist, with pre-rollout and unexposed comparison trends."
+    ]
+  },
+  "mapping": {
+    "state": "A segment may be deteriorating, but isolated observations are noisy.",
+    "operation": "Repeat comparable segment measurements and compare trajectories with expected variation and a defined alert rule.",
+    "signal": "Sustained adverse trend or reversal distinguishes deterioration from a transient fluctuation.",
+    "inference": "Constrain whether segment state is changing and whether to investigate or pause exposure.",
+    "limit": "Regression to the mean, irregular samples, mix changes and concurrent interventions distort trajectories."
+  }
+}

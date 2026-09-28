@@ -1,0 +1,29 @@
+{
+  "case_id": "007",
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A deterministic replay of a recorded activation path reproduces failure in a prototype assembled from removable interaction rules. A validated replay oracle tests the same completion criterion after each permitted reduction; dependency-invalid combinations return unresolved. The claim is restricted to this replay, not all users."
+    ]
+  },
+  "mapping": {
+    "state": "A failure-inducing onboarding configuration has removable rule parts and repeatable tests.",
+    "operation": "Partition the rules, remove subsets or test complements, and retain reductions that still reproduce activation failure until no permitted single reduction preserves it; retain unresolved outcomes separately.",
+    "signal": "Certain reduced rule combinations still fail while others complete or cannot be tested.",
+    "inference": "Find a test-relative minimal failure-inducing interaction set, showing joint sufficiency for this failure and why independent feature ranking can miss interactions.",
+    "limit": "Nondeterminism, invalid reductions, environment and search order limit minimality; retained parts are not a unique cause or proof of population-wide necessity."
+  }
+}

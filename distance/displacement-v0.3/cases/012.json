@@ -1,0 +1,29 @@
+{
+  "case_id": "012",
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "product-rollout monitoring",
+    "question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+    "evidence": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A consented sandbox cohort permits a known step from 10% to 20% exposure under fixed traffic mix; minute-level error and support-queue measurements span the initial state, transient and later behavior. An unchanged comparison cohort tracks background disturbances."
+    ]
+  },
+  "mapping": {
+    "state": "Rollout exposure is a controllable input and segment outcomes are observable through time.",
+    "operation": "Apply the known exposure step and record the outcome trajectory through transient and later behavior; measure delay, peak, overshoot, settling and steady-state shift relative to controls.",
+    "signal": "The trajectory reveals response delays, overshoot and persistence beyond snapshot deterioration.",
+    "inference": "Characterize the segment response at this operating point to inform observation windows and reversible exposure decisions, without asserting a unique mechanism.",
+    "limit": "Noise, initial state, saturation, other inputs, insufficient follow-up and nonlinear response limit extrapolation beyond the step."
+  }
+}
