@@ -1,0 +1,63 @@
+{
+  "case_id": "C005",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Both branches ran the same r1 and r2 low-load old/new replays and saw identical values (r1 +20 ms, r2 +2 ms). B additionally ran r1 at high load under both configurations (old 50, new 70), which is a standard factorial replay an ordinary reliability engineer would run to separate deployment from load. A instead spent its remaining effort on two structured analysis passes: a full evidence-by-hypothesis inconsistency matrix, then a sensitivity re-run that drops the confounded live aggregate and reports which contradictions survive. A's realized analysis changes what counts as evidence (contradictions, not support), how conclusions are warranted (elimination with sensitivity to unreliable evidence, surviving is not proof) and what comes next (a missing hypothesis or a second contribution for r2). B's realized operations and implied reasoning track the ordinary bisect-and-replay baseline closely."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "Both ran ordinary endpoint replays. B's extra high-load trials are exactly what the baseline practitioner does (replay across load and configuration). A's distinctive actions are the explicit matrix construction and the second pass that deliberately omits the confounded live aggregate; these are procedural steps the ordinary engineer does not formally perform."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "For B, meaningful evidence is latency contrasts, as in the baseline. For A, the meaningful evidence is the cross-hypothesis pattern of inconsistency, with the live aggregate explicitly downgraded to removable evidence and the r2 +2 ms residual treated as a surviving contradiction against a B-only account."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A warrants conclusions by elimination through inconsistency and checks that eliminations survive removal of unreliable evidence, while refusing to treat the survivor as proved. B's warrant is ordinary controlled-contrast reasoning: fixed-load difference rules out load-only, r2 contrast rules out A-confined."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "B decomposes the live 30 ms into a load component and a deployment component via a 2x2 factorial, an ordinary decomposition. A decomposes the problem into a hypotheses-by-evidence matrix and separates reliable controlled contrasts from confounded live evidence, which reorganizes the problem in a way the baseline does not."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "A's followup surfaces that the B-associated explanation needs an added contribution for r2 and that hypotheses are missing, pointing next toward a new hypothesis or route contrasts (r3, r4). B's stated next step is to select a dependency for later investigation, the ordinary bisect continuation. B's high-load result does sharpen the load question, but that is baseline reasoning."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest departure is the sensitivity pass that discards the confounded live aggregate and reports whether controlled contradictions persist. B's most changed point, the high-load factorial, is a standard staging experiment."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "A's matrix-based framing carries through both analysis passes and shapes the identified next route. B's change does not propagate beyond ordinary sequential hypothesis testing; its analysis passes are not reported as altering method."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "A's altered reasoning governs attribution, the treatment of the confounded live number, and the unresolved r2 residual and missing-hypothesis portions of the task. B's observations cover the load-variation portion of the task more completely, but that is evidential reach with baseline reasoning, not altered reasoning."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "B translates back to ordinary practice with nothing lost. A is partly reducible (ignore the confounded live number), but the rule of weighting contradictions rather than support and testing eliminations against evidence removal is a distinction ordinary practice would tend to drop."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A's realized inconsistency matrix and its sensitivity re-run without the confounded live aggregate change what counts as evidence and why eliminations are warranted; B's realized work is an ordinary factorial replay with baseline reasoning.",
+    "local_depth": "A is deeper at its most changed point: the explicit removal of confounded evidence and check that contradictions survive. B's high-load contrast is standard practice.",
+    "inquiry_propagation": "A's framing propagates through both analysis passes and into the identified next inquiry (missing hypothesis, second contribution for r2). B's remains within ordinary sequential testing.",
+    "task_reach": "A's altered reasoning governs attribution, evidence reliability handling and the unresolved r2 residual. B's broader load measurement is useful but reflects baseline reasoning, which does not count as displacement.",
+    "native_reducibility": "B is fully reducible to ordinary practice. A loses the contradiction-over-support weighting and sensitivity discipline if translated back.",
+    "rationale": "B's countervailing strength is that its 2x2 design directly quantifies the load component (about 10 ms) and deployment component (about 20 ms), which bears on the target question. But that is usefulness of an ordinary experiment, not epistemic displacement, so it is not a comparable displacement advantage. A has a material departure in observables, warrant and trajectory with no comparable opposing displacement from B, so A dominates."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "close",
+  "uncertainty": [
+    "B's two analysis passes are listed in the ledger but no analysis signals are reported, so B's realized reasoning is inferred from its mapping rather than observed.",
+    "A mature reliability team might already practice informal hypothesis matrices, which would shrink A's departure from baseline.",
+    "The baseline is an authored hypothesis, not verified practitioner consensus."
+  ]
+}

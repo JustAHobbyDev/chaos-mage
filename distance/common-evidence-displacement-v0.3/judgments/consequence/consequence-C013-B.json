@@ -1,0 +1,63 @@
+{
+  "case_id": "C013",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "A reframes the regression as an inverse problem over the route catalog: route differences become linear constraints on component delay increments, a non-unique compatible family is retained, and a held-out route is chosen to check predicted residuals and resolve the degeneracy. B runs an old/new by low/high factorial on r1 and then a discriminating route, which is essentially the baseline's 'test competing causes in staging by controlled replay' with hypothesis bookkeeping. Both realized sequences produced informative results, but only A's alters how evidence is represented and warranted."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "A performs a fit of candidate additive delay maps from three route contrasts and then deliberately spends the follow-up on a held-out route selected because the first fit left dA and dD unseparated. B's actions (factorial replay on r1, then r2 old/new) are the ordinary staging contrasts a reliability engineer would run; the differential-diagnosis framing changes the bookkeeping but not the operations."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "In A the meaningful evidence is the residual between predicted and measured route differences and the structure of the compatible solution family (dB=18, dC=0, dA+dD=2; r4 predicted as 18+dA). In B the evidence is raw latency contrasts read directly as support or contradiction for listed hypotheses, which matches ordinary practice."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A's warrant is that the calibrated additive model plus route membership turns route contrasts into linear constraints, and that a held-out route matching its predicted residual (r4 difference 18 confirms dA=0, dD=2) validates the map. B's warrant is elimination by contrast: a fixed-load deployment effect refutes load-only, and r2 showing only 2 ms refutes an A-confined effect. That elimination logic is the baseline's own."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A decomposes the regression into per-component delay increments (A, B, C, D) as unknowns in a system defined by route membership, with an explicit degeneracy class. B decomposes only into the three explanations already listed in the shared state, which is how the baseline would already frame it."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "A's next step was driven by the fit result: r4 was chosen because 18+dA would separate A from D. B's follow-up on r2 was planned in advance as a standard discriminating route and would be the natural baseline move after seeing a fixed-load deployment effect."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest departure is treating the route catalog as a path-coverage inverse problem with a retained non-unique family and a held-out prediction check. B's deepest point, the factorial contrast showing 20 ms deployment and 10 ms load effects, is a standard controlled replay."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "A's first fit produced an explicit degeneracy and a parameterized prediction that determined the follow-up and its interpretation, then the refit closed to an exact map with zero residuals. B's two phases each eliminate one hypothesis but the second does not depend on a representation created by the first."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "A's component-level map governs the attribution portion and directs the unresolved later service inspection toward B (18 ms) and the small D contribution (2 ms). It does not address load variation at all, which is a real gap. B's reasoning covers both deployment and load but does so with baseline methods, so little altered reasoning governs anything."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "Translating A back to ordinary practice loses the distinction between a compatible solution family and a chosen map, and the role of the held-out route as a predicted-residual check rather than another contrast. B's procedure is already ordinary practice and reduces without loss."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A converts the route contrasts into a constrained inverse problem that yields component-level delay increments with an explicit degeneracy and a held-out validation, while B applies ordinary hypothesis-elimination replays.",
+    "local_depth": "A is deeper: the linear-constraint fit and retained non-unique family have no counterpart in B's factorial and discriminating-route contrasts.",
+    "inquiry_propagation": "A propagates further: the degeneracy dA+dD=2 and the prediction 18+dA shaped the follow-up choice and its reading, closing to an exact zero-residual map. B's steps are independent eliminations.",
+    "task_reach": "A's altered reasoning governs attribution and the unresolved service-inspection step, though it leaves the load question untouched. B reaches the load question but through baseline methods, so it contributes little altered reasoning.",
+    "native_reducibility": "A is harder to reduce; B is already native practice.",
+    "rationale": "B's genuine advantage is coverage of the load-variation half of the target question and direct refutation of load-only and A-confined explanations. That is usefulness within ordinary practice, not displacement, since a reliability engineer would run exactly those contrasts. It therefore does not countervail A's material departure in representation, warrant, decomposition and trajectory."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "A never varied load, so its exact map says nothing about the 10 ms live load component; this limits its task reach but does not create displacement for B.",
+    "B's hypothesis-tracking framing could be read as a modest representational shift, but the realized operations are indistinguishable from ordinary staging contrasts.",
+    "The baseline note that teams lack a formal inverse-problem specialty is an authored scoping assumption, not verified practice."
+  ]
+}

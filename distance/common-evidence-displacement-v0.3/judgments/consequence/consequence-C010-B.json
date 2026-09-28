@@ -1,0 +1,64 @@
+{
+  "case_id": "C010",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "A holds settings and repeats matched measurements against a threshold rule, which is essentially the baseline's own method of tracking cohort metrics over time against comparison groups, with a light formal alert. B spends the single input step on a controlled exposure perturbation in a replica and then characterizes the response by delay, peak, overshoot and persistence, which the baseline itself marks as designed dynamic identification outside its scope. The realized B trajectory (peak of 6 percent error and queue 12 at hour 2, settling to a persistent 4 percent / 8 plateau above 2 percent / 4 controls) delivers a transient-shape observable and a controlled-input warrant that A's flat 3,4,4,4,4,4 sequence cannot supply."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A's operation, holding settings and re-sampling both cohorts hourly with a two-consecutive-above-3-percent alert, is what an ordinary rollout analyst already does. B applies a known 0-to-1 exposure step in a reset replica and then measures, converting passive monitoring into a designed perturbation experiment. Both used six samples and two analysis passes, but B consumed the one available input step and A used none."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's meaningful evidence is persistence or reversal relative to control and threshold crossings; the realized signal was a plateau at 4 percent treated versus 2 percent control, flagged by the alert rule at hours 2-3. B's meaningful evidence is response-shape features: first peak at hour 2, overshoot to 6 percent and queue 12, decay to a last-two plateau of 4 and 8, and explicit non-establishment of equilibrium. Transient shape as a unit of evidence is not something the baseline treats as meaningful."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is that a sustained matched difference is unlikely to be transient noise, and A explicitly leaves causal explanation open, matching ordinary comparison-group reasoning. B's warrant is that the output trajectory following a known controlled input constrains the segment's response dynamics: the overshoot-then-plateau pattern is attributed to the exposure step and used to characterize lag and persistence. That is a controlled-input, response-feature warrant absent from the baseline."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A decomposes the problem into stable state versus transient fluctuation versus directional change, judged by sequence against a change rule, which mirrors the baseline's baseline-versus-trend framing. B decomposes the rollout into a controllable input, two output channels, and separable transient versus later-behavior components of the response, with the routing subsystem recognized as a distinct input. That input-output-dynamics partition is operationally different from ordinary cohort tracking."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A's realized result routes to the baseline next step: alert fired, investigate or pause, causal question left open. B's realized peak at hour 2 and elevated plateau direct the next observation window to the early-hours transient and motivate a reversible step-down of exposure to test whether the plateau reverses, with the measured response shaping the window length. B changes what is investigated next more than A does."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "At its most changed point, B replaces observational persistence checking with a controlled step and response-feature analysis that yielded an overshoot-then-plateau signature. A's most changed point, a formal two-sample alert threshold, is a modest formalization of ordinary practice."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "B's change propagates from the input step through the six samples into the analysis pass that extracts peak, delay and persistence, and then into the choice of next window and reversible action. A's change reaches the alert decision and stops, with the subsequent investigation proceeding by ordinary means."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "The target task asks both whether the segment is deteriorating and what observation or reversible action should follow. A's altered reasoning governs only the first part and hands the second to ordinary judgment. B's response characterization governs the deterioration judgment, attributes it to exposure, and sizes the next observation window and reversible exposure inquiry, including the unresolved long-run settling question."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A reduces to ordinary trend tracking with a threshold, losing nothing operationally important. B's distinction between the hour-2 overshoot and the persistent plateau, and its use of a controlled step to license attribution, can only be partly restated as roll out and watch; the transient-versus-steady-state distinction that sets the observation window would be lost."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B applied the single controlled exposure step and read the resulting trajectory as a dynamic response with a transient overshoot and a persisting offset, whereas A performed ordinary held-settings serial comparison against a threshold rule. B's realized observations were informative and discriminating, so the displacement was consequential rather than merely proposed.",
+    "local_depth": "B is deeper: controlled-step response characterization versus a light formalization of baseline trend monitoring.",
+    "inquiry_propagation": "B propagates further: step, sampling, feature extraction, then window and reversible-action choice, versus A's alert-then-investigate stop.",
+    "task_reach": "B governs both the deterioration judgment and the follow-on observation or reversible action, including the unresolved settling question; A governs only the deterioration judgment.",
+    "native_reducibility": "B's transient-versus-plateau distinction and controlled-input attribution do not reduce to ordinary practice without loss; A reduces cleanly.",
+    "rationale": "A has no countervailing displacement advantage. Its only distinctive element, the two-consecutive-sample alert rule, is a threshold convention within ordinary monitoring, and its inference explicitly leaves causal explanation open as the baseline would. B departs on every criterion and diagnostic, and its realized result, an overshoot to 6 percent and queue 12 at hour 2 followed by a persistent 4 and 8 plateau, is exactly the kind of evidence its altered warrant needs, so the departure is realized, not hypothetical. This is a clear B_dominates rather than a tradeoff."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "Both branches share six-hour censoring; neither established equilibrium, so the persistence of the plateau beyond hour 6 is unknown for both.",
+    "B's hour-2 overshoot could be a disturbance rather than a response feature; a single step in a replica cannot rule this out, though it does not affect the displacement comparison.",
+    "B's replica step began from unexposed state while A held an already-exposed state, so the two trajectories are not directly comparable as outcomes, only as inquiries.",
+    "The baseline is an authored scope, not verified practitioner consensus; if ordinary analysts routinely run replica exposure experiments with transient-shape analysis, B's displacement would shrink."
+  ]
+}

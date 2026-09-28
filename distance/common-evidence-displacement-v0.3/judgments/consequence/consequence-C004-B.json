@@ -1,0 +1,64 @@
+{
+  "case_id": "C004",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "A performs ordinary staging contrasts on two routes and organizes them in an explicit inconsistency matrix, ending with hypothesis elimination and an unresolved residual for r2. B reframes the same replay affordance as a path-coverage inverse problem over component unknowns, identifies an underdetermined solution family, selects a held-out route to break the A/D degeneracy, and realizes a zero-residual component-level delay map. The difference in representation, warrant and trajectory is material."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "Both run old/new low-load replays, which is ordinary staging practice. A adds two analysis passes over a hypothesis matrix; its follow-up removes the live aggregate and reruns the same comparison, realizing no change. B adds a third route, fits an additive delay map, derives a held-out prediction with an explicit free parameter, then runs r4 specifically to test that prediction. B's realized measure, fit, predict, hold-out sequence departs further from the baseline's replay-and-compare routine than A's matrix bookkeeping."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A's meaningful evidence stays as per-route old/new latency differences read as consistent or inconsistent with each named hypothesis, which are the baseline's own observables. B makes route residuals against predicted component maps, the compatible solution family (dB=18, dC=0, dA+dD=2) and the held-out r4 residual the primary evidence, none of which the baseline treats as observables."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is elimination by contradiction across the supplied hypotheses, close to ordinary differential diagnosis, plus a sensitivity check that changed nothing. B's warrant is that route differences across overlapping paths, under the calibrated additive model, constrain component delays, with non-uniqueness stated and a held-out route used as confirmation. That is an inverse-problem warrant the baseline explicitly lacks."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A keeps the problem decomposed as three named hypotheses versus items of evidence, and its realized output is an unexplained r2 residue plus a call for missing hypotheses. B decomposes the problem into four component unknowns linked by route membership equations, exposes which unknowns are separable (B, C) and which are degenerate (A versus D), and resolves the degeneracy. This is a different operational partition of the target."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A's realized next step was a sensitivity re-analysis that was uninformative, leaving the next route unspecified beyond 'find a discriminating route or missing hypothesis'. B's next step was chosen by the degeneracy in the solution family: r4 was selected because its prediction 18+dA isolates dA. The realized r4 result then directs later service inspection to B (18 ms) and D (2 ms). B changes what is investigated next more substantially and through a principled selection rule."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "B's deepest point, treating route overlap as path coverage and reading a degenerate solution family from the equations, is a larger departure than A's deepest point, which is an explicit contradiction matrix with a sensitivity drop that realized no change."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "B's inverse framing propagates from the r1-r3 fit into the held-out prediction, the r4 trials, the second fit and the resulting component attribution. A's matrix framing propagates only into a second pass that reproduced the first pass's contradictions unchanged."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "The target asks which deployed change accounts for the regression and what bounded evidence separates it from load. Both separate it from load via fixed-load contrasts. B additionally localizes the deployment-associated change to components B and D under the replay model, which governs the unresolved live-world and code-inspection portions of the task. A ends with load-only and A-confined weakened and the B-containing explanation incomplete for r2, leaving more of the task in ordinary hands."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A's matrix reduces cleanly to the baseline's 'test competing causes in staging' with a checklist. B's identification of a solution family, the degeneracy between A and D, and the choice of a held-out route to resolve it cannot be restated as ordinary per-route comparison without losing the distinction between separable and non-separable component contributions."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B converts the replay affordance into a component-level inverse problem with an explicit underdetermined family and a degeneracy-breaking held-out test, realizing a zero-residual attribution to B and D; A stays within ordinary hypothesis elimination and its follow-up was uninformative.",
+    "local_depth": "B is deeper at its most changed point: reading a solution family and a free parameter from route membership equations is farther from ordinary practice than A's contradiction matrix.",
+    "inquiry_propagation": "B's reframing carries through fit, prediction, held-out trials and refit; A's reframing carries only into a repeat pass whose contradictions were unchanged.",
+    "task_reach": "B's altered reasoning governs the attribution portion the target actually asks about and directs later service inspection; A's realized result leaves the B-containing explanation incomplete and the r2 difference unexplained.",
+    "native_reducibility": "B's separable-versus-degenerate component distinction has no ordinary counterpart; A's method translates directly to baseline staging comparison.",
+    "rationale": "A's only distinctive move, dropping the confounded live aggregate, realized no change, so its consequential displacement is limited to explicit elimination of two hypotheses, which ordinary staging contrasts would also yield. A's explicit attention to missing hypotheses is a small advantage not comparable in importance to B's realized component localization and degeneracy resolution. No criterion favors A materially, so this is B dominance rather than a tradeoff."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "The shared calibration already supplies an additive model, which makes B's fitting more accessible to an ordinary engineer than the source practice suggests; the degree of departure is judged against the stated baseline lacking inverse-problem specialty.",
+    "B's exact zero-residual fit is a property of the synthetic additive replay; in a noisier world the same operations would show smaller consequential displacement.",
+    "A's realized uninformative follow-up may understate what ACH sensitivity analysis could produce with different evidence; only the realized result is assessed here.",
+    "Whether A's explicit flagging of missing hypotheses counts as a material advantage is a judgment call; it was assessed as minor relative to B's realized attribution."
+  ]
+}

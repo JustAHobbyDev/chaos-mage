@@ -1,0 +1,63 @@
+{
+  "case_id": "C003",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "A imports a formal reduction procedure (partition/complement search, retained failing reduction, explicit 1-minimality checks with an 'unresolved' status) that the baseline PM does not use, and realized it through 20 trials ending in a reduced failing set {B,D,E} with B and D each shown necessary within it. B's leave-one-out and single-rule tests under a retained-hypotheses frame are close to the ordinary staged-variant experiments and yielded a coarser conclusion (B and D each necessary in the full set, individually harmless, hence interaction). The departures differ materially in kind and extent."
+  },
+  "criteria": {
+    "action": {
+      "relation": "A",
+      "rationale": "A ran a systematic subset-then-complement partition search with partition refinement and then single-deletion minimality checks (20 trials), a procedure foreign to ordinary onboarding discovery. B ran three leave-one-out variants and two single-rule variants (5 trials), which resemble ordinary staged-variant comparisons organized by competing explanations."
+    },
+    "observables": {
+      "relation": "A",
+      "rationale": "A treats each subset pass/fail as a point on a test-relative minimality boundary and explicitly records untested reductions as unresolved, making 'which removals still reproduce failure' the evidence. B treats each replay as discriminating among copy, single-guard and interaction explanations, which is close to how a PM already reads small experiments."
+    },
+    "inferential_warrant": {
+      "relation": "A",
+      "rationale": "A's warrant is that a retained reduction is sufficient to reproduce failure under the oracle, with minimality only as far as tested and explicitly separated from causal uniqueness and user necessity. B's warrant is ordinary elimination: a variant that passes when a rule is removed shows that rule is necessary in that context; individually harmless rules imply interaction. B's logic is standard practice."
+    },
+    "problem_decomposition": {
+      "relation": "A",
+      "rationale": "A recasts the rule set as a partitionable configuration and delivers a concrete interaction set {B,D,E} (with {B,C} and {D,E} passing), replacing feature ranking with joint-set investigation. B also shifts from ranking to interaction but only locates B and D as necessary within the full set without bounding which other rules participate."
+    },
+    "inquiry_trajectory": {
+      "relation": "A",
+      "rationale": "A's next steps are determined by the procedure: test the remaining permitted single deletion (E) and pursue joint investigation of B, D and E. B's next step is a less specified 'which interaction deserves inquiry'; the retained-hypothesis frame is how a PM would already proceed."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "A",
+      "rationale": "A's deepest point is the test-relative 1-minimality check with explicit unresolved status and the sufficiency-versus-necessity distinction; B's deepest point is standard hypothesis elimination."
+    },
+    "inquiry_propagation": {
+      "relation": "A",
+      "rationale": "A's reduction logic carried through partition refinement, the retained {B,C,D,E} reduction, and four follow-up deletion checks; B's frame carried through two short rounds of five trials."
+    },
+    "task_reach": {
+      "relation": "A",
+      "rationale": "A's minimal-interaction-set framing governs both halves of the target question (which parts, which interactions) and its stated limits govern the unresolved portions (revision association, user necessity). B's narrowing explicitly declines to assert necessary product features, covering less of the task."
+    },
+    "native_reducibility": {
+      "relation": "A",
+      "rationale": "A's distinction between a tested-minimal failing set and untested minimality, and between sufficiency under the oracle and necessity, is lost if restated as 'B and D matter'. B's result reduces cleanly to 'copy and single-guard explanations ruled out; it is an interaction'."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "A replaces feature ranking with a formal reduction to a bounded failing interaction set ({B,D,E}, B and D each necessary within it, E unresolved) governed by test-relative minimality, whereas B performs ordinary elimination among explanations and reaches only 'B and D interact with something'.",
+    "local_depth": "A is deeper: test-relative 1-minimality with an explicit unresolved label versus B's routine elimination.",
+    "inquiry_propagation": "A propagated its logic through partition refinement and follow-up deletion checks across 20 trials; B's propagated through two short rounds of 5 trials.",
+    "task_reach": "A's altered reasoning governs both the 'which parts' and 'what interactions' halves of the task plus the caveats on unresolved portions; B explicitly limits itself to narrowing explanations without asserting necessary features.",
+    "native_reducibility": "A's sufficiency-versus-necessity and tested-versus-untested minimality distinctions are operationally important and not preserved in PM vocabulary; B's conclusion translates without loss.",
+    "rationale": "B's only distinctive contribution is directly testing B alone and D alone to show individual harmlessness, but A's passing {B,C} and {D,E} trials establish the same point within a more concrete reduced set. B has no countervailing displacement of comparable importance, so A dominates rather than trading off."
+  },
+  "overall_relation": "A_dominates",
+  "confidence": "clear",
+  "uncertainty": [
+    "A's realized log contains repeated identical trials and a nonstandard ddmin ordering; this affects efficiency, not displacement, and was not treated as evidence either way.",
+    "Neither branch used the archived-revision affordance, so revision association remains untouched in both; task reach was judged on stated framing, not on that portion.",
+    "B's analysis passes are recorded on its final trial rather than as a separate step, leaving its exact reasoning steps less visible than A's."
+  ]
+}

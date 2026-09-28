@@ -1,0 +1,64 @@
+{
+  "case_id": "C014",
+  "stage": "consequence",
+  "meaningful_difference": {
+    "status": "yes",
+    "rationale": "Both branches obtained the same low-load r1 and r2 contrasts (20 ms vs 2 ms) and reach the same eliminations of load-only and A-confined explanations. They differ materially in how evidence is processed: A adds a high-load arm and treats the factorial replay as a standard staging experiment with no recorded analysis output, while B performs two explicit analysis operations that reclassify the confounded live aggregate, emphasize contradictions over support, and record an unexplained r2 residual as a missing-hypothesis slot. That is a material difference in observables, warrant and next-step framing, even though B's sensitivity re-run returned an unchanged result."
+  },
+  "criteria": {
+    "action": {
+      "relation": "B",
+      "rationale": "A ran six replays crossing configuration and load on r1 plus a low-load r2 contrast; this is the ordinary method of replaying workloads and stratifying by configuration and traffic. B ran four replays and then executed two discrete analysis operations: a full evidence-by-hypothesis matrix and a repeat with the live aggregate omitted. Performing formal matrix passes as budgeted steps is a modest departure from ordinary incident practice; A's factorial design is not."
+    },
+    "observables": {
+      "relation": "B",
+      "rationale": "A treats each replay latency as evidence in the ordinary way and records no change in evidential status. B explicitly demotes the live 30 ms aggregate as confounded, removes it, and treats the pattern of contradictions rather than support counts as the meaningful signal, recording that controlled contradictions are unchanged without the live record. The baseline ordinarily keeps the live timeline as primary evidence."
+    },
+    "inferential_warrant": {
+      "relation": "B",
+      "rationale": "A's warrant is ordinary controlled-contrast reasoning: a fixed-load 20 ms difference rules out load-only, and the near-zero r2 change rules out an A-confined effect. B reaches the same eliminations but grounds them in inconsistency across all hypotheses and adds a robustness warrant, that the eliminations survive removal of the confounded record, while explicitly refusing to treat the surviving B-containing explanation as proved. The realized signals in A contain no analysis output at all."
+    },
+    "problem_decomposition": {
+      "relation": "B",
+      "rationale": "A's factorial decomposes the live regression into a configuration component (20 ms at both loads) and a load component (10 ms at both configurations) with no interaction, which is what the baseline stratification would also produce. B restructures the problem as a hypothesis-by-evidence matrix and names the r2 residual as requiring another contributor beyond B, registering a missing-hypothesis slot. A's data contain the same 2 ms residual but do not restructure the problem around it."
+    },
+    "inquiry_trajectory": {
+      "relation": "B",
+      "rationale": "A's stated next step is to select a dependency for later investigation, but no realized analysis signal records which one or why. B's realized followup explicitly leaves the B-associated explanation needing another contribution for r2 and flags missing hypotheses, which directs the next inquiry toward a discriminating route such as r3 or r4 or toward a D-shared effect. B changes what is investigated next more substantially."
+    }
+  },
+  "consequence_structure": {
+    "local_depth": {
+      "relation": "B",
+      "rationale": "B's deepest departure is the sensitivity re-analysis that drops the live aggregate and checks whether contradictions survive. A's deepest point, the high-load arm confirming no configuration-load interaction, is a standard staging experiment. B's result was unchanged, which limits its consequence, but it still represents the deeper procedural departure."
+    },
+    "inquiry_propagation": {
+      "relation": "B",
+      "rationale": "B's altered treatment of evidence propagates from replay to matrix to sensitivity re-matrix to a named residual and missing-hypothesis flag within the budget. A's changes propagate only from the r1 factorial to the r2 followup, with no recorded analysis step carrying anything forward."
+    },
+    "task_reach": {
+      "relation": "B",
+      "rationale": "The task asks which deployed change accounts for the regression and what bounded evidence separates it from load. A's high-load arm answers the load-separation part directly and quantitatively, but through ordinary means. B's contradiction-centred matrix and explicit missing-hypothesis slot govern the unresolved portion of the task, the identification of the responsible dependency and the r2 residual, so B's altered reasoning reaches more of the complete task."
+    },
+    "native_reducibility": {
+      "relation": "B",
+      "rationale": "A translates back into ordinary practice with nothing lost; it is a two-factor staging replay plus a second route. B is mostly translatable as checking whether conclusions hold without the live data, but the discipline of weighting contradictions over support and holding an explicit slot for an unlisted cause is an operationally relevant distinction a reliability engineer would not ordinarily keep."
+    }
+  },
+  "decisive_basis": {
+    "most_important_difference": "B explicitly reclassifies the confounded live aggregate, re-runs the hypothesis comparison without it, and records an unexplained r2 residual as a missing-hypothesis slot, whereas A conducts an ordinary factorial replay with no recorded analysis output.",
+    "local_depth": "B's sensitivity re-analysis is the deepest single departure; A's high-load arm is ordinary practice.",
+    "inquiry_propagation": "B carries its altered evidence treatment through matrix, re-matrix, and a named next-step gap; A's chain stops at the r2 replay.",
+    "task_reach": "B's contradiction-based framing governs the still-unresolved dependency attribution and the r2 residual; A's extra load quantification serves the task but via baseline methods.",
+    "native_reducibility": "A reduces to ordinary staging practice without loss; B keeps an operationally relevant distinction in demoting confounded evidence and holding open an unlisted cause.",
+    "rationale": "Both branches got the same discriminating contrasts and the same eliminations, so the comparison turns on how each processed evidence. A's only distinctive move, crossing load on r1, is the baseline's own stratification method and produces no displacement even though it is useful. B's departures are modest and its sensitivity check returned an unchanged result, which caps their consequence, but they are real changes in observables, warrant, decomposition and next inquiry that A has no counterpart for. A has no countervailing displacement advantage of comparable importance, so B dominates, though closely."
+  },
+  "overall_relation": "B_dominates",
+  "confidence": "close",
+  "uncertainty": [
+    "A's realized record includes two analysis passes but no recorded analysis signal, so A's actual inferential output is unobserved and may have matched B's eliminations.",
+    "B's sensitivity followup produced an unchanged result, so much of its displacement is procedural rather than consequential.",
+    "Whether an explicit inconsistency matrix counts as a departure depends on the assumed experimental maturity of the reference engineer, which the baseline flags as variable.",
+    "The 2 ms r2 difference sits near the 1 ms per-measurement error bound, so the residual both branches rely on is marginal."
+  ]
+}
