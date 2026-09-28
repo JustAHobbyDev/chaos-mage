@@ -1,0 +1,153 @@
+# Direct comparative epistemic displacement
+
+Compare two fixed, valid mappings of the same retained target question against the
+one supplied ordinary-practice baseline. Do not construct, improve, repair, or
+reclassify validity of either mapping. Use only the supplied packet. Do not browse,
+call tools, retrieve context, or rely on other judgments. Source identities remain
+visible, but their prestige, disciplinary distance and unusual vocabulary are not
+evidence of displacement.
+
+A mapping is more ontologically displacing when adopting it changes more of the
+target's epistemic control loop, or a more central part, than the other mapping:
+represent → act → observe → infer → choose next inquiry.
+
+The baseline fixes the practitioner, ordinary methods and ordinary evidence. Its
+uncertainties remain uncertainties; do not silently narrow or enrich its scope.
+Each mapping includes its own stated evidence context. Preserve those contexts;
+do not pool them, lend observations from one to the other, or infer that an absent
+measurement makes a method unusual. Compare the operational changes each mapping
+would introduce to this same task and baseline. If differing contexts prevent a
+defensible comparison, identify exactly what common-state distinction is missing.
+
+Assess these five criteria separately. For each return relation A, B, tie, or
+indeterminate, plus a concrete rationale comparing both mappings with the baseline:
+
+1. action: Which mapping causes a more non-ordinary kind of investigative operation?
+   Compare inspection, controlled perturbation, inverse reconstruction, elimination,
+   or other actual acts. More steps or difficulty alone do not establish a change.
+2. observables: Which changes more substantially what is treated as a meaningful
+   signal? Distinguish more observations of an ordinary kind from a new kind of
+   evidence, such as structured residual mismatch rather than additional timestamps.
+3. inferential_warrant: Which changes why an observation supports a claim? Compare
+   the evidence-to-conclusion relationship, such as corroboration versus differential
+   perturbation response. Stronger confidence is not necessarily a different warrant.
+4. problem_decomposition: Which changes operationally meaningful entities, relations,
+   layers, paths, traces, hypotheses, stages or components? Relabeling an existing
+   distinction is weak evidence; explain what the new distinctions enable.
+5. inquiry_trajectory: From the same starting target question and ordinary practice,
+   compare the next question, measurement, intervention, comparison, hypothesis to
+   eliminate, or evidence source that A and B would respectively send the practitioner
+   toward. Address differences in supplied applicability contexts explicitly.
+
+For each mapping, answer the counterfactual in counterfactual_native: would the
+reference practitioner probably reach substantially the same investigative behavior
+without the imported ontology? Return likely, unlikely, or uncertain with rationale.
+This diagnostic is not the overall comparison.
+
+For each mapping describe scope independently:
+- local_displacement: low, moderate, or high, describing the difference between its
+  most changed epistemic component and ordinary practice.
+- global_propagation: low, moderate, or high, describing how far that change alters
+  the rest of the target inquiry.
+- rationale: explain both descriptions; a high local change with low global reach
+  is legitimate. Never combine these categories arithmetically.
+
+Then return one qualitative overall_relation: A_more_displacing,
+B_more_displacing, tie, or indeterminate. Do not derive it from criterion counts,
+majorities, sums, weights, numerical scores, complexity, usefulness, creativity,
+mapping difficulty, source exoticness, or weakness of target support.
+
+Explain the decisive basis using:
+- primary_criterion: one of the five criteria, or none if there is no decisive one.
+- centrality: does the changed component affect the core question or a peripheral task?
+- propagation: does it change later hypotheses, tests, stopping conditions or claims?
+- irreducibility: could ordinary-practice language preserve every operationally
+  important distinction? Would removing the imported structure remove the reason to
+  perform the act, notice the signal, license the inference, or pursue the next inquiry?
+- rationale: explain why this basis warrants the overall relation, including opposing
+  criterion differences. One central warrant change can outweigh several minor changes.
+These modifiers are explanations, not separately scored dimensions.
+
+Use tie when differences do not support a defensible claim of meaningfully greater
+overall displacement. Mechanisms need not be identical. Different criterion advantages
+can balance in centrality and downstream reach. Do not force ordering because mappings
+differ. Use indeterminate only for insufficient supplied information, naming the missing
+distinction in the rationale and uncertainty. Difficulty alone is not insufficiency.
+
+Return confidence clear or close as a qualitative description of this comparison, plus
+an uncertainty list. A directional overall relation must identify a decisive criterion.
+An indeterminate overall relation must explain the missing information. Return only
+the JSON object required by the supplied schema, with no additional fields.
+
+
+CASE PACKET
+{
+  "case_id": "C030",
+  "target_question": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?",
+  "mapping_A": {
+    "source": {
+      "name": "Source corroboration",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "A claim or event description is supported by one or more information sources whose accuracy, independence, or access may be uncertain.\n",
+        "operation": "Compare the claim against other independently sourced information while assessing each source's credibility, access, dependence, and relevance.\n",
+        "signal": "Independent sources converge on, contradict, or fail to support the same material features of the claim.\n",
+        "inference": "Genuine convergence across credible independent sources increases support for the corroborated features, while contradiction or lack of independent support lowers confidence or identifies unresolved uncertainty.\n",
+        "limit": "Sources may share an undisclosed common origin, copy one another, inherit the same bias or error, have unequal access, or converge because of common assumptions rather than independent observation. Multiple reports therefore do not automatically constitute independent evidence.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Independent registry receipts, build-worker logs and artifact-store records describe the same release; copied summaries can be traced."
+    ],
+    "mapping": {
+      "state": "Publication claims and failure locations are reported by partially dependent sources.",
+      "operation": "Cross-check the material claims across independently generated receipts and logs, explicitly assessing access, credibility and copying dependence.",
+      "signal": "Independent sources agree or conflict on the artifact and failed transition.",
+      "inference": "Increase support for corroborated workflow failure locations and identify unresolved dependencies for remedy testing.",
+      "limit": "Shared instrumentation bugs, copied summaries and unequal access can produce false convergence."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Dechallenge and rechallenge",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+        "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+        "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+        "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+        "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A synthetic isolated release pipeline reproduces intermittent publication timeouts under a fixed repeatable set of load schedules. A suspected optional signing dependency can be bypassed and safely restored while other versions, inputs and environments are held fixed.",
+      "Independent registry receipts record actual publication completion for repeated baseline, bypass and restoration runs; a matched unchanged pipeline tracks background variation."
+    ],
+    "mapping": {
+      "state": "An optional signing dependency is present during publication failures and can be reversibly removed.",
+      "operation": "Bypass the signing dependency, observe publication completion under the fixed schedule set, and restore it in counterbalanced repeated trials while comparing the unchanged pipeline.",
+      "signal": "Failures diminish after bypass and recur after restoration in a reproducible pattern relative to the comparison pipeline.",
+      "inference": "Increase or decrease support for that dependency as a bounded contributor to intermittent failure and for bypass as a tested remedy in this isolated workflow, without claiming universal necessity or a unique internal cause.",
+      "limit": "Spontaneous variation, concurrent changes, carryover, delayed effects and unsafe restoration can confound the response; results are bounded to the tested schedules and workflow."
+    }
+  },
+  "ordinary_practice_baseline": {
+  "target_domain": "software-release workflow failures",
+  "target_task": "Which release-workflow dependencies account for intermittent publication failures, and what bounded remedy is supported?",
+  "reference_practitioner": "Release engineer specializing in CI/CD pipeline troubleshooting, without forensic trace or process-tomography specialization.",
+  "ordinary_methods": [
+    "Inspect logs, dependency graphs, artifact lineage and environment differences.",
+    "Reproduce failures and reduce configurations or bisect changes.",
+    "Compare successful and failed runs and test candidate fixes in isolated pipelines."
+  ],
+  "ordinary_evidence": [
+    "Job logs, build manifests, dependency versions, environment snapshots and reproducible test outcomes."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Pipeline instrumentation is routine; end-to-end path inversion without per-stage logs is not assumed standard practice."
+  ]
+}
+}

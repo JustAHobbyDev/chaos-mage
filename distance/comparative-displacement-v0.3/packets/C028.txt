@@ -1,0 +1,152 @@
+# Direct comparative epistemic displacement
+
+Compare two fixed, valid mappings of the same retained target question against the
+one supplied ordinary-practice baseline. Do not construct, improve, repair, or
+reclassify validity of either mapping. Use only the supplied packet. Do not browse,
+call tools, retrieve context, or rely on other judgments. Source identities remain
+visible, but their prestige, disciplinary distance and unusual vocabulary are not
+evidence of displacement.
+
+A mapping is more ontologically displacing when adopting it changes more of the
+target's epistemic control loop, or a more central part, than the other mapping:
+represent → act → observe → infer → choose next inquiry.
+
+The baseline fixes the practitioner, ordinary methods and ordinary evidence. Its
+uncertainties remain uncertainties; do not silently narrow or enrich its scope.
+Each mapping includes its own stated evidence context. Preserve those contexts;
+do not pool them, lend observations from one to the other, or infer that an absent
+measurement makes a method unusual. Compare the operational changes each mapping
+would introduce to this same task and baseline. If differing contexts prevent a
+defensible comparison, identify exactly what common-state distinction is missing.
+
+Assess these five criteria separately. For each return relation A, B, tie, or
+indeterminate, plus a concrete rationale comparing both mappings with the baseline:
+
+1. action: Which mapping causes a more non-ordinary kind of investigative operation?
+   Compare inspection, controlled perturbation, inverse reconstruction, elimination,
+   or other actual acts. More steps or difficulty alone do not establish a change.
+2. observables: Which changes more substantially what is treated as a meaningful
+   signal? Distinguish more observations of an ordinary kind from a new kind of
+   evidence, such as structured residual mismatch rather than additional timestamps.
+3. inferential_warrant: Which changes why an observation supports a claim? Compare
+   the evidence-to-conclusion relationship, such as corroboration versus differential
+   perturbation response. Stronger confidence is not necessarily a different warrant.
+4. problem_decomposition: Which changes operationally meaningful entities, relations,
+   layers, paths, traces, hypotheses, stages or components? Relabeling an existing
+   distinction is weak evidence; explain what the new distinctions enable.
+5. inquiry_trajectory: From the same starting target question and ordinary practice,
+   compare the next question, measurement, intervention, comparison, hypothesis to
+   eliminate, or evidence source that A and B would respectively send the practitioner
+   toward. Address differences in supplied applicability contexts explicitly.
+
+For each mapping, answer the counterfactual in counterfactual_native: would the
+reference practitioner probably reach substantially the same investigative behavior
+without the imported ontology? Return likely, unlikely, or uncertain with rationale.
+This diagnostic is not the overall comparison.
+
+For each mapping describe scope independently:
+- local_displacement: low, moderate, or high, describing the difference between its
+  most changed epistemic component and ordinary practice.
+- global_propagation: low, moderate, or high, describing how far that change alters
+  the rest of the target inquiry.
+- rationale: explain both descriptions; a high local change with low global reach
+  is legitimate. Never combine these categories arithmetically.
+
+Then return one qualitative overall_relation: A_more_displacing,
+B_more_displacing, tie, or indeterminate. Do not derive it from criterion counts,
+majorities, sums, weights, numerical scores, complexity, usefulness, creativity,
+mapping difficulty, source exoticness, or weakness of target support.
+
+Explain the decisive basis using:
+- primary_criterion: one of the five criteria, or none if there is no decisive one.
+- centrality: does the changed component affect the core question or a peripheral task?
+- propagation: does it change later hypotheses, tests, stopping conditions or claims?
+- irreducibility: could ordinary-practice language preserve every operationally
+  important distinction? Would removing the imported structure remove the reason to
+  perform the act, notice the signal, license the inference, or pursue the next inquiry?
+- rationale: explain why this basis warrants the overall relation, including opposing
+  criterion differences. One central warrant change can outweigh several minor changes.
+These modifiers are explanations, not separately scored dimensions.
+
+Use tie when differences do not support a defensible claim of meaningfully greater
+overall displacement. Mechanisms need not be identical. Different criterion advantages
+can balance in centrality and downstream reach. Do not force ordering because mappings
+differ. Use indeterminate only for insufficient supplied information, naming the missing
+distinction in the rationale and uncertainty. Difficulty alone is not insufficiency.
+
+Return confidence clear or close as a qualitative description of this comparison, plus
+an uncertainty list. A directional overall relation must identify a decisive criterion.
+An indeterminate overall relation must explain the missing information. Return only
+the JSON object required by the supplied schema, with no additional fields.
+
+
+CASE PACKET
+{
+  "case_id": "C028",
+  "target_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+  "mapping_A": {
+    "source": {
+      "name": "Differential diagnosis",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+        "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+        "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+        "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+        "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Prototype sessions and funnel records expose failures at verification, permissions and the welcome flow."
+    ],
+    "mapping": {
+      "state": "Activation failure admits multiple explanations involving different proposal parts.",
+      "operation": "Generate competing explanations, inspect discriminating usability observations and targeted prototype comparisons, and update which explanations remain plausible.",
+      "signal": "Observed failures fit some dependency explanations and contradict others.",
+      "inference": "Narrow which parts plausibly obstruct activation and retain uncertain interactions for further tests.",
+      "limit": "Unlisted causes, dependent observations and insensitive tasks limit attribution and do not establish every necessary feature."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Dechallenge and rechallenge",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+        "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+        "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+        "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+        "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "The extra welcome modal can be disabled and safely restored in otherwise fixed prototypes; matched participants perform the same activation task."
+    ],
+    "mapping": {
+      "state": "Activation abandonment co-occurs with an optional modal.",
+      "operation": "Remove the modal and observe completion, then restore it in a counterbalanced trial where justified and inspect whether abandonment recurs.",
+      "signal": "Abandonment decreases on removal and may recur on restoration.",
+      "inference": "Assess a bounded causal contribution of the modal to activation failure while leaving other dependencies unresolved.",
+      "limit": "Learning, participant differences, concurrent changes and persistent effects limit causality and generalization."
+    }
+  },
+  "ordinary_practice_baseline": {
+  "target_domain": "product-proposal decomposition",
+  "target_task": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+  "reference_practitioner": "Product manager specializing in onboarding discovery and usability studies, without formal program-reduction training.",
+  "ordinary_methods": [
+    "Decompose proposals into user needs, flows, assumptions and dependencies.",
+    "Run usability sessions with prototypes and compare activation funnels or staged variants.",
+    "Use qualitative failure observations and small experiments to prioritize changes."
+  ],
+  "ordinary_evidence": [
+    "Interview notes, prototype task completion, funnel events, feature dependencies and observed user errors."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Practices vary; formal minimality searches and routing inversions are not assumed routine."
+  ]
+}
+}

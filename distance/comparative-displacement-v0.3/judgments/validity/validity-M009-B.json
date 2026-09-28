@@ -1,0 +1,32 @@
+{
+  "case_id": "M009",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is: an unsampleable interior alters propagation along many crossing paths (state); measure travel behavior on many paths, compare with a candidate model's predictions, iteratively adjust (operation); spatially structured discrepancies (signal); the discrepancy pattern constrains a spatial model of internal properties (inference); coverage, noise, regularization, model error and non-uniqueness limit it (limit). The mapping keeps each step: service-internal delays are not directly observed but alter end-to-end request times along overlapping routes; endpoint times across routes are compared with candidate delay maps and the maps are iteratively adjusted to reduce route-structured residuals; the residual pattern (and its reversal between deployment states) constrains where and how much delay changed; the limit field retains coverage, noise, regularization, model error and non-uniqueness, and adds a target-appropriate bound (replay regime only, no code-level mechanism). The additions of held-out route checks and a reversal state are validation steps consistent with the source's discrepancy-reduction logic, not substitutions. The stated injected-delay validation supplies the forward path-time model the inversion requires, paralleling a known velocity-to-travel-time relation. No warrant is lost."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has two parts: which deployed change accounts for the regression, and what bounded causal evidence distinguishes it from load variation. The stated evidence isolates one deployed configuration change in paired trials with load, payloads and other versions fixed, and reversal restores the old endpoint-time pattern; the mapping's inference uses exactly this, attributing the localized delay change to that isolated change at fixed load and characterizing the attribution as bounded to the replay regime. The tomographic component adds a bounded contribution beyond the paired trial: it localizes which service contributions changed and selects which dependency to inspect next, which the question's 'accounts for' plausibly includes. The inference is explicitly bounded (representative replay, fixed load, no unique code-level mechanism), so it is a justified bounded answer rather than a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (measuring repeated endpoint times over known overlapping routes in old, new and reversed deployment states, and inverting them against candidate delay maps whose path-time model was validated by injected delays, with held-out route checks) produces Y (a route-structured residual pattern that appears with the change and disappears on reversal) that warrants Z (a constraint on which service contributions changed with the isolated change, at fixed load, bounded to this replay and subject to non-uniqueness). Each link is intelligible: fixed load plus reversal is a genuine controlled contrast, the injected-delay validation establishes that endpoint times respond to service-level delays in a modelable way and that candidate services are distinguishable on these routes, and non-uniqueness is acknowledged rather than ignored. The inference does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the tomographic state→operation→signal→inference chain and its limits, applies it to the retained question using the stated controlled replay and reversal evidence, and produces a bounded, non-circular inference: the isolated deployed change is attributed to localized service-delay changes in the fixed-load replay regime, with the distinction from load variation resting on load being held fixed and on reversal. The mapping does not overclaim beyond that regime. The stated synthetic facts (path-time model validated by injected delays, candidate services distinguishable on these routes, paired trials with all else fixed, reversal restores the old pattern) supply the warrants the inversion needs, so no unresolved condition remains within the packet."
+  },
+  "uncertainty": [
+    "The 'distinguishes it from load variation' clause is satisfied by holding load fixed in the replay, which yields a bounded distinction in that regime rather than a demonstration that the regression is independent of load variation in production; the mapping's limit already states this restriction.",
+    "The inversion assumes an additive path-time model (endpoint time as a sum of service-level contributions along a route), analogous to travel-time summation along a ray. Queueing nonlinearities or contention could violate additivity under other loads; the packet states injected delays validated the model in this harness, and the assessment takes that as given.",
+    "The attribution to a specific deployed change rests on the stated paired-trial and reversal design; the tomographic component contributes localization of which service contributions changed, not the change attribution itself. Both are used together in the mapping, and the packet supplies both, but a reader should not credit the inversion alone with the causal attribution.",
+    "Non-uniqueness is acknowledged but not quantified; the packet states candidate services are distinguishable on these routes, and the assessment accepts that as a stated fact rather than an established resolution analysis."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "M027",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The source chain is intact at every step. State: a suspected factor (optional signing dependency) is present during the effect (publication failures) and is reversibly removable, matching the source's removable-and-reintroducible factor. Operation: bypass then restore under fixed schedules maps directly to dechallenge then rechallenge, and the target holds other versions, inputs and environments fixed, which answers the source's concurrent-change limit. Signal: failures diminish on bypass and recur on restoration in temporal association, identical in form to the source signal. Inference: a reproducible remove/restore relationship raises support for causal contribution, stated as increasing or decreasing support rather than proof, which matches the source's incremental warrant. The source limits (spontaneous resolution, concurrent changes, delayed or persistent effects, unsafe reintroduction) are all carried into the target limit field, with carryover added. The counterbalanced repeats and the matched unchanged pipeline are additions that strengthen the source's own controls against spontaneous variation rather than substituting a different mechanism; they are grounded in the packet's stated evidence, not invented."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which release-workflow dependencies account for intermittent publication failures and what bounded remedy is supported. The mapping's inference gives an explicitly bounded contribution to both parts: it raises or lowers support for one named candidate dependency as a contributor, and it evaluates bypass as a remedy tested only in this isolated workflow and schedule set. It disclaims universal necessity and a unique internal cause, so it does not overclaim to have enumerated all responsible dependencies. Testing one candidate is a legitimate bounded answer to a 'which dependencies' question when the candidate set is not fully covered, provided that boundary is stated, which it is. The inference does not drift to a different question (for example, why signing causes timeouts) and the claimed relation between the trial outcome and the question is direct."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (bypassing and then restoring the signing dependency across counterbalanced repeated runs under the fixed load schedules, with a matched unchanged pipeline running alongside) produces Y (a difference in publication completion rates between bypass and restoration phases, recorded by independent registry receipts, relative to the comparison pipeline's background rate) that warrants Z (a bounded increase or decrease in support for the dependency as a contributor and for bypass as a remedy in this workflow). The signal is independently observable via receipts rather than self-reported, the comparison pipeline gives a baseline against which 'diminish' and 'recur' can be read, and the stated synthetic evidence establishes that the failures are reproducible under the schedules, that bypass and restoration are safe and reversible, and that other factors are held fixed. The inference is bounded to what the trial can show and does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful transfer of dechallenge/rechallenge into a controlled A/B/A-style pipeline trial, retains every source limit, and adds controls (fixed schedules, counterbalancing, a matched comparison pipeline, independent receipts) that the packet's stated evidence supports. The inference is explicitly incremental and bounded to the tested dependency, schedules and workflow, so it neither overclaims a unique cause nor answers a different question. No condition needs to be established before the chain is intelligible."
+  },
+  "uncertainty": [
+    "The mapping tests a single candidate dependency; the question's 'which dependencies' is only partially covered, and other dependencies remain untested. This is stated as a bound, not a gap in the chain.",
+    "Because failures are intermittent, distinguishing bypass-phase from restoration-phase rates from background requires enough repeated runs. The mapping specifies repeated counterbalanced trials and a comparison pipeline but does not state a trial count; this is a design-adequacy detail rather than an unresolved empirical relation.",
+    "Bypass is evaluated only as a remedy for the failure symptom. Whether removing signing is acceptable on security or policy grounds is outside the mapped inference and is not claimed by it.",
+    "A positive result supports the dependency as a contributor but does not localize the internal cause (for example, signing latency under load versus a signing-service fault). The mapping correctly disclaims this.",
+    "The reversibility and safety of restoration, and the fixity of other factors, are taken as given from the packet's stated synthetic evidence."
+  ]
+}

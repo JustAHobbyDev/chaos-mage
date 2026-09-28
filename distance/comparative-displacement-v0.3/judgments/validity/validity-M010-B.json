@@ -1,0 +1,31 @@
+{
+  "case_id": "M010",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the full bisection chain. State: the stated evidence supplies an ordered revision history with a known passing earlier revision, a known failing later revision, a deterministic replay, executable intermediates, and an independently established single transition, which is exactly the source precondition. Operation: partition-and-test with discard of the incompatible half, repeated to localization, plus manifest inspection at the boundary. Signal: binary pass/fail per revision shrinking the interval. Inference: first revision associated with the change, explicitly not causal attribution to each part. Limit: flakiness, unexecutable revisions, nonmonotonicity, wrong endpoints, multi-change boundaries, and association-not-cause are all carried over. No step is dropped or substituted."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which parts are necessary for activation and what interactions block a simple ranking. The inference delivers an explicitly bounded contribution: it identifies the boundary revision and the proposal parts changed there as an interaction cluster whose pre-change form was needed for this fixed replay to activate, and it names that cluster as the unit for further necessity testing. It declines the population claim about users and declines to rank parts independently, which is consistent with evidence item three and with the interaction half of the question. It does not answer a different question or overclaim."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Running the deterministic replay on intermediate revisions yields a pass/fail result each time; given the stated single monotonic transition and executable revisions, repeated halving must terminate at a unique boundary revision. The revision manifest then yields a concrete set of changed interaction rules. That set warrants the bounded conclusion that the transition is associated with those changes on this replay, and the mapping stops there. No missing measurement or empirical relation is needed for the inference as stated."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The stated synthetic facts satisfy every bisection precondition the source requires, the operation and signal are transferred without alteration, and the inference is scoped to what bisection can actually deliver: a localized boundary and a candidate interaction cluster, with explicit refusal to assign independent feature effects or general user necessity. The mapping contributes to the retained question rather than replacing it, and no bridge condition is needed for the bounded inference to follow."
+  },
+  "uncertainty": [
+    "The bounded contribution rests on one fixed deterministic replay; how far the identified cluster bears on activation for other user paths is outside what this transfer establishes, and the mapping correctly does not claim it.",
+    "Usefulness of the result depends on the boundary manifest isolating a small enough cluster; if the boundary revision bundles many rule changes, the localization is still valid but the follow-up necessity testing carries most of the work.",
+    "The correspondence between revision manifests and 'proposal parts' is taken as a stated synthetic fact; if manifests did not faithfully enumerate changed rules, the association step would weaken."
+  ]
+}

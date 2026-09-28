@@ -1,0 +1,32 @@
+{
+  "case_id": "M011",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields keep the source chain intact. State: the sandbox exposes a controlled, reversible, known input step (routing fraction) with rollout exposure and traffic mix held fixed, and an observable time-varying output (duplicate-alert queue). Operation: apply the step and record the timestamped trajectory through initial, transient and later behavior, with a matched unchanged queue serving the source's role of separating disturbances from the response. Signal: the named features (peak, delay, overshoot, settling) are the source's temporal response features. Inference: distinguishing an immediate spike from a persistent effect is the source's 'distinguish candidate models / characterize reaction to perturbation'. Limit: noise, initial state, disturbances, nonlinearity, insufficient observation and operating-point dependence are all carried over and applied to extrapolation. No step or warrant is lost or substituted."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks whether the rollout is deteriorating for a segment and what observation or reversible action should follow. The mapped inference gives an explicitly bounded contribution: it classifies a brief alert spike as a routing transient or a persistent effect and uses the settling behavior to set the observation window for that alert before the existing cohort review. That directly answers the 'what observation should follow' part and supplies one input to the deterioration judgment without claiming to decide it. The packet's evidence states this scoping, and the mapping's limit field explicitly declines to prove or exclude broader deterioration, so the relation claimed is supported and not overstated."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Applying the known routing-fraction step and recording the duplicate-alert queue against the matched unchanged queue produces measurable delay, peak, overshoot and settling features. Those features warrant the bounded conclusions drawn: whether the spike decays to the prior level (transient) or shifts steady state (persistent) at this operating point, and how long the alert should be observed before review. The chain does not depend on source imagery or circular construction; the matched queue and fixed exposure give an intelligible basis for attributing the response to the step. The inference is bounded to this alert and operating point, consistent with the stated limits."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful instance of step-response probing applied to a narrow, controlled sandbox subtask, and its inference is explicitly bounded to a contribution (transient-vs-persistent classification and observation window) that feeds the retained deterioration question without substituting for it. No unresolved condition determines whether the chain holds; remaining uncertainties concern precision and generalization already acknowledged in the limit field."
+  },
+  "uncertainty": [
+    "The packet does not state the criterion for 'settled' (tolerance band or duration), so the boundary between a transient and a persistent effect is left to the reviewer; this affects precision, not whether the chain follows.",
+    "Whether the sandbox's 'later behavior' window is long relative to the queue's actual time constants is asserted by the evidence but not quantified.",
+    "Transfer of the sandbox result to the production operating point and to other segments is explicitly excluded by the mapping's limit; the diagnostic informs only this alert's observation window.",
+    "The step is applied to routing fraction, not to rollout exposure, so the response characterizes routing-rule dynamics rather than the rollout itself; the mapping states this boundary but the reader should not read the result as a rollout step response."
+  ]
+}

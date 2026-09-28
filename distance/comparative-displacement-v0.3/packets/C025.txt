@@ -1,0 +1,154 @@
+# Direct comparative epistemic displacement
+
+Compare two fixed, valid mappings of the same retained target question against the
+one supplied ordinary-practice baseline. Do not construct, improve, repair, or
+reclassify validity of either mapping. Use only the supplied packet. Do not browse,
+call tools, retrieve context, or rely on other judgments. Source identities remain
+visible, but their prestige, disciplinary distance and unusual vocabulary are not
+evidence of displacement.
+
+A mapping is more ontologically displacing when adopting it changes more of the
+target's epistemic control loop, or a more central part, than the other mapping:
+represent → act → observe → infer → choose next inquiry.
+
+The baseline fixes the practitioner, ordinary methods and ordinary evidence. Its
+uncertainties remain uncertainties; do not silently narrow or enrich its scope.
+Each mapping includes its own stated evidence context. Preserve those contexts;
+do not pool them, lend observations from one to the other, or infer that an absent
+measurement makes a method unusual. Compare the operational changes each mapping
+would introduce to this same task and baseline. If differing contexts prevent a
+defensible comparison, identify exactly what common-state distinction is missing.
+
+Assess these five criteria separately. For each return relation A, B, tie, or
+indeterminate, plus a concrete rationale comparing both mappings with the baseline:
+
+1. action: Which mapping causes a more non-ordinary kind of investigative operation?
+   Compare inspection, controlled perturbation, inverse reconstruction, elimination,
+   or other actual acts. More steps or difficulty alone do not establish a change.
+2. observables: Which changes more substantially what is treated as a meaningful
+   signal? Distinguish more observations of an ordinary kind from a new kind of
+   evidence, such as structured residual mismatch rather than additional timestamps.
+3. inferential_warrant: Which changes why an observation supports a claim? Compare
+   the evidence-to-conclusion relationship, such as corroboration versus differential
+   perturbation response. Stronger confidence is not necessarily a different warrant.
+4. problem_decomposition: Which changes operationally meaningful entities, relations,
+   layers, paths, traces, hypotheses, stages or components? Relabeling an existing
+   distinction is weak evidence; explain what the new distinctions enable.
+5. inquiry_trajectory: From the same starting target question and ordinary practice,
+   compare the next question, measurement, intervention, comparison, hypothesis to
+   eliminate, or evidence source that A and B would respectively send the practitioner
+   toward. Address differences in supplied applicability contexts explicitly.
+
+For each mapping, answer the counterfactual in counterfactual_native: would the
+reference practitioner probably reach substantially the same investigative behavior
+without the imported ontology? Return likely, unlikely, or uncertain with rationale.
+This diagnostic is not the overall comparison.
+
+For each mapping describe scope independently:
+- local_displacement: low, moderate, or high, describing the difference between its
+  most changed epistemic component and ordinary practice.
+- global_propagation: low, moderate, or high, describing how far that change alters
+  the rest of the target inquiry.
+- rationale: explain both descriptions; a high local change with low global reach
+  is legitimate. Never combine these categories arithmetically.
+
+Then return one qualitative overall_relation: A_more_displacing,
+B_more_displacing, tie, or indeterminate. Do not derive it from criterion counts,
+majorities, sums, weights, numerical scores, complexity, usefulness, creativity,
+mapping difficulty, source exoticness, or weakness of target support.
+
+Explain the decisive basis using:
+- primary_criterion: one of the five criteria, or none if there is no decisive one.
+- centrality: does the changed component affect the core question or a peripheral task?
+- propagation: does it change later hypotheses, tests, stopping conditions or claims?
+- irreducibility: could ordinary-practice language preserve every operationally
+  important distinction? Would removing the imported structure remove the reason to
+  perform the act, notice the signal, license the inference, or pursue the next inquiry?
+- rationale: explain why this basis warrants the overall relation, including opposing
+  criterion differences. One central warrant change can outweigh several minor changes.
+These modifiers are explanations, not separately scored dimensions.
+
+Use tie when differences do not support a defensible claim of meaningfully greater
+overall displacement. Mechanisms need not be identical. Different criterion advantages
+can balance in centrality and downstream reach. Do not force ordering because mappings
+differ. Use indeterminate only for insufficient supplied information, naming the missing
+distinction in the rationale and uncertainty. Difficulty alone is not insufficiency.
+
+Return confidence clear or close as a qualitative description of this comparison, plus
+an uncertainty list. A directional overall relation must identify a decisive criterion.
+An indeterminate overall relation must explain the missing information. Return only
+the JSON object required by the supplied schema, with no additional fields.
+
+
+CASE PACKET
+{
+  "case_id": "C025",
+  "target_question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+  "mapping_A": {
+    "source": {
+      "name": "Seismic tomography",
+      "practice": "Seismology and geophysics",
+      "instrument": {
+        "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+        "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+        "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+        "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+        "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A synthetic staging harness reproduces the production checkout regression for a representative fixed replay and load. Only endpoint times are exposed for known overlapping service routes. Injected delays validate the path-time model and distinguish candidate services on these routes.",
+      "Paired old/new deployment trials isolate one deployed configuration change, with all other versions, payloads and load fixed; reversal restores the old endpoint-time pattern. This supplies a bounded attribution bridge in this replay regime, not proof for every production request."
+    ],
+    "mapping": {
+      "state": "Hidden service-delay contributions change the travel behavior of checkout requests after the isolated deployed change.",
+      "operation": "Measure repeated endpoint times across overlapping routes in the old and new deployment states; compare them with predictions from candidate internal delay maps and iteratively adjust the maps to reduce structured residuals, checking held-out routes and the reversal state.",
+      "signal": "The route-structured discrepancies and their reversal constrain the locations and sizes of deployment-associated delay changes.",
+      "inference": "Constrain which service contributions changed with the isolated deployed configuration at fixed load, distinguishing its bounded contribution from load variation and selecting which internal dependency to inspect next.",
+      "limit": "Path coverage, measurement noise, regularization, model error and non-uniqueness limit localization; the controlled attribution is restricted to this representative replay and does not identify a unique code-level mechanism."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Replay traces and a catalog of competing explanations are available, with uncertain measurements flagged."
+    ],
+    "mapping": {
+      "state": "Several explanations fit the latency regression.",
+      "operation": "Build an explicit evidence-by-hypothesis inconsistency matrix; assess each trace against every explanation, emphasize diagnostic contradictions and repeat comparisons with uncertain traces removed.",
+      "signal": "Some hypotheses retain important inconsistencies under the sensitivity checks.",
+      "inference": "Weaken incompatible causes and retain alternatives that survive the observed evidence.",
+      "limit": "Missing causes, shared trace errors and subjective diagnosticity can bias the matrix; survival is not proof."
+    }
+  },
+  "ordinary_practice_baseline": {
+  "target_domain": "production-regression diagnosis",
+  "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+  "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+  "ordinary_methods": [
+    "Compare deployment and latency timelines, stratifying traffic and configuration.",
+    "Replay representative workloads, bisect revisions and test competing causes in staging.",
+    "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+  ],
+  "ordinary_evidence": [
+    "Version and configuration history; request traces; latency distributions; resource counters.",
+    "Controlled replay and rollback observations."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+  ]
+}
+}

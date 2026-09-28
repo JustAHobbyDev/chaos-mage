@@ -1,0 +1,2411 @@
+{
+  "at": "2026-09-28T07:23:55.706634+00:00",
+  "prepared_sha256": "bcab81c22a8e19222d02dea63b85f9cfb83c95d6fa1bb5da4e14e87ded85f6bd",
+  "planned_judgments": 16,
+  "runs": [
+    {
+      "id": "validity-M004-B",
+      "case_id": "M004",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:16:07.378181+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "d8186f48-d678-488e-992c-e1419ef40cf5",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[16].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[17].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[18].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M004-B",
+          "case_id": "M004",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:15:28.786099+00:00",
+        "packet_sha256": "11a1a4fa5b604e36d7b626e46acf9fbbff2435797a1d81a7e393372dcfbc9110",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "d8186f48-d678-488e-992c-e1419ef40cf5",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-mqoh5akb",
+        "fresh_session_requested": "d8186f48-d678-488e-992c-e1419ef40cf5",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/events.jsonl": "fed12c89dc2f8b707b62ccbe50b7749f86e9d67dae479989f0b3200856624557",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/prompt.txt": "11a1a4fa5b604e36d7b626e46acf9fbbff2435797a1d81a7e393372dcfbc9110",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/reservation.json": "d28c61681ccfbf340d02b9f1580cf54443fad925f8af1117662d3ba2d3f760dd",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/response.json": "af1b33b70893be0e23e46310e4360d62485f3527f1adcc3d20b597b29d54a51a",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-B/validation.json": "4d2fdbacf25b51a43160f6b75485c1d2bcb0f36b7cf2744696e6c42ac72a7872"
+      }
+    },
+    {
+      "id": "validity-M006-B",
+      "case_id": "M006",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:16:40.326636+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "c130269e-4e1c-4230-abd6-d277e389a5e9",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[13].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[14].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[15].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M006-B",
+          "case_id": "M006",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:16:09.749183+00:00",
+        "packet_sha256": "f5f25702ef9c58fdf2e60d7f085daf6e37ae7e2fd9a4c96f81b70e38f53c1eae",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "c130269e-4e1c-4230-abd6-d277e389a5e9",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-fxwbmq5n",
+        "fresh_session_requested": "c130269e-4e1c-4230-abd6-d277e389a5e9",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/events.jsonl": "52fbd836ad5fd6656e0818bbe60deb58792f5cb849888e3427180248e5ef2be8",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/prompt.txt": "f5f25702ef9c58fdf2e60d7f085daf6e37ae7e2fd9a4c96f81b70e38f53c1eae",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/reservation.json": "96bb97402ce5dcccf6173622c5bff0bd73f0e5f61939b98b6f51806fee03a2de",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/response.json": "caf7a925c016b1e94d0ebb30579f958d13f991c3eff46bf4e91a963ab2249f0b",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-B/validation.json": "d2015d56091a67bfa1aa7898f7f6d2ebc0e2aee9af3c8e994da75cb77522a92e"
+      }
+    },
+    {
+      "id": "validity-M004-A",
+      "case_id": "M004",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:16:59.703909+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6df-8572-7923-a185-50297c689ffe",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M004-A",
+          "case_id": "M004",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:16:42.792215+00:00",
+        "packet_sha256": "11a1a4fa5b604e36d7b626e46acf9fbbff2435797a1d81a7e393372dcfbc9110",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-yy29v691",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M004-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-yy29v691",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/events.jsonl": "55e9a6918322b3ec4aa6a67ceab7cf83f1f51450aa0101e9ab7b3229fd8019a8",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/prompt.txt": "11a1a4fa5b604e36d7b626e46acf9fbbff2435797a1d81a7e393372dcfbc9110",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/reservation.json": "2567f00e9fdc983ee9ccaf21f597036190dc1bb7e5ac63e544db49c48be7ac59",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/response.json": "921e262de33d7c6849472fdf66ae16acc99a12563c85f09ac5fd98677a7d0ef0",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M004-A/validation.json": "ee2ee5292ff8312097d3c26a842d04a671a83b91256d0aaddf7d39704a131489"
+      }
+    },
+    {
+      "id": "validity-M027-B",
+      "case_id": "M027",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:17:45.090555+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "48d95cba-391d-4b8f-b654-e6eee5674344",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[12].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[13].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[14].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M027-B",
+          "case_id": "M027",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:17:02.128526+00:00",
+        "packet_sha256": "b44aebaaa456637f284d591a31ba92a69fe7f7b0982c08099117291d7fdda317",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "48d95cba-391d-4b8f-b654-e6eee5674344",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-nsz7hcnx",
+        "fresh_session_requested": "48d95cba-391d-4b8f-b654-e6eee5674344",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/events.jsonl": "ab8530fa5bf1455dc41fc55e5c125cbae85861fb54c1ce058a2154a46a3a774c",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/prompt.txt": "b44aebaaa456637f284d591a31ba92a69fe7f7b0982c08099117291d7fdda317",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/reservation.json": "35b4e7da54bbce225928be033a538aec37eef3b5778b2540e49ed121e70c61f8",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/response.json": "3d952b1b7d856edcd08a395fcffd120d2d116317821f25bae518a065e43f30ed",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-B/validation.json": "c92e1d1456199125b78adb25e2a55368acbdc691735c0c33bac68b4578e7c693"
+      }
+    },
+    {
+      "id": "validity-M007-B",
+      "case_id": "M007",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:18:32.854163+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "fc508ab6-5a17-4506-b925-83e0bd6cad2d",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[16].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[17].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[18].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M007-B",
+          "case_id": "M007",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:17:47.445987+00:00",
+        "packet_sha256": "ac467d4802662034a73c6b87801ef5e6dcb81f83ba24c611c0dd685fec24452c",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "fc508ab6-5a17-4506-b925-83e0bd6cad2d",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-fkknsk6l",
+        "fresh_session_requested": "fc508ab6-5a17-4506-b925-83e0bd6cad2d",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/events.jsonl": "3aab3af876d220085a73a39e263fef5a00bb256ddd84f04750cbe576417524e4",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/prompt.txt": "ac467d4802662034a73c6b87801ef5e6dcb81f83ba24c611c0dd685fec24452c",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/reservation.json": "e7dce30df834866857203e982864a4c23aa2b27e1326cf85464ae9f47a990dd8",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/response.json": "5db6af40da945ff5410cb40fd47554893f1107073b0c933ae5c19c43e3038ce0",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-B/validation.json": "357ddd5479bbbc265a7e39997b61fe0357b33794fc56f3b488fd3f3aab073951"
+      }
+    },
+    {
+      "id": "validity-M027-A",
+      "case_id": "M027",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:18:52.416692+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e1-3aff-76c3-9ef8-67cbea89780d",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M027-A",
+          "case_id": "M027",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:18:35.301074+00:00",
+        "packet_sha256": "b44aebaaa456637f284d591a31ba92a69fe7f7b0982c08099117291d7fdda317",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-892ikfj_",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M027-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-892ikfj_",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/events.jsonl": "d2da87d2a96b91de7fd4df650836b3f187d6f01e6265783b291fa58587a43143",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/prompt.txt": "b44aebaaa456637f284d591a31ba92a69fe7f7b0982c08099117291d7fdda317",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/reservation.json": "352a27b21c6b5a47c38f9d9c7ce7b6c0bb33133e19947cebfd3516cafe14f594",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/response.json": "01198cdd709d16346566bb9761d66b91d8c2ee3b8dc13451d78748ec3e84b7dc",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M027-A/validation.json": "2f0221963f6442381327a384b0341a55fd59883c8f855a7ad3ec7c9aacbd67a3"
+      }
+    },
+    {
+      "id": "validity-M019-B",
+      "case_id": "M019",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:19:27.232556+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "2f70344d-bea0-45b1-865f-251ded53f032",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[9].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[10].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M019-B",
+          "case_id": "M019",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:18:54.877446+00:00",
+        "packet_sha256": "651ba63e8cee7de34fe5e634be79b5cffb87b3e96ddf320750a81cedade53c73",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "2f70344d-bea0-45b1-865f-251ded53f032",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-gd2q2apm",
+        "fresh_session_requested": "2f70344d-bea0-45b1-865f-251ded53f032",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/events.jsonl": "083791b220afd51d528a4f29dc41c70dfc0d9efd24ab30494a0aac65872c2ca2",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/prompt.txt": "651ba63e8cee7de34fe5e634be79b5cffb87b3e96ddf320750a81cedade53c73",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/reservation.json": "4c0d2f39a304999f3c63f0d2cc286381c72f547678d3da444d01d90ae5cd34a0",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/response.json": "95bddc0b054823646bf4447eec56fcbbcb741c3f02bacc1bb2c622687109d058",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-B/validation.json": "7f76f8ec179e288749c2b9d145e4c966d15686b2f85cc366060d110c5cb162e8"
+      }
+    },
+    {
+      "id": "validity-M006-A",
+      "case_id": "M006",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:19:49.695161+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e2-0f80-7f20-8fc3-333f95c59330",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M006-A",
+          "case_id": "M006",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:19:29.694646+00:00",
+        "packet_sha256": "f5f25702ef9c58fdf2e60d7f085daf6e37ae7e2fd9a4c96f81b70e38f53c1eae",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-ktueqifu",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M006-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-ktueqifu",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/events.jsonl": "5f716a689040a89b906fbb58e2b3a7ae98b0a637d39e6e50f48ef473fd58ee85",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/prompt.txt": "f5f25702ef9c58fdf2e60d7f085daf6e37ae7e2fd9a4c96f81b70e38f53c1eae",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/reservation.json": "b34c850113529c3268577c5bbf31dd7e0a393e161a28dfcd7e2011803e854fdd",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/response.json": "66c0165ca92ff9067a8e33b9a057496315d379de92658f020eb7a58a06523d62",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M006-A/validation.json": "ad0425ad7ebeffd838bfbb31e5af720c3ad99c2a23f7ff6aedba94c23464bbf4"
+      }
+    },
+    {
+      "id": "validity-M010-A",
+      "case_id": "M010",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:20:10.261136+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e2-670e-74b1-a1e6-207944b7c655",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M010-A",
+          "case_id": "M010",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:19:52.119820+00:00",
+        "packet_sha256": "25c3e560fb30c563b933bfadb6be4479d98675ab41d1003ba3b18f6ba2f4204b",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-fpqxy_wj",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M010-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-fpqxy_wj",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/events.jsonl": "dcc5d607a246935980d13ed9e4b36064840517c728e6d825393f75d7e4ba035e",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/prompt.txt": "25c3e560fb30c563b933bfadb6be4479d98675ab41d1003ba3b18f6ba2f4204b",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/reservation.json": "89e63a6b14ad7b1b7818e27a014d9f1cc7b236f2a0b2ee29c64a4688d4846d74",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/response.json": "9c15e2059b66db6f7a69caf3e2144121fbc5f6e8173e10a8e12260c3b915b8ea",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-A/validation.json": "c5ba286cc8fe0f6de019b0c148040d818185f53f40e3546f18c75a67f1017d18"
+      }
+    },
+    {
+      "id": "validity-M010-B",
+      "case_id": "M010",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:20:47.976525+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "1718df62-f5bd-4837-8e7b-01e75599eb6b",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[12].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[13].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[14].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M010-B",
+          "case_id": "M010",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:20:12.663477+00:00",
+        "packet_sha256": "25c3e560fb30c563b933bfadb6be4479d98675ab41d1003ba3b18f6ba2f4204b",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "1718df62-f5bd-4837-8e7b-01e75599eb6b",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-z5n6poiw",
+        "fresh_session_requested": "1718df62-f5bd-4837-8e7b-01e75599eb6b",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/events.jsonl": "5709959ad7714db63449a4af854da4fc64326ad509997a5a4921fb632bf331fc",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/prompt.txt": "25c3e560fb30c563b933bfadb6be4479d98675ab41d1003ba3b18f6ba2f4204b",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/reservation.json": "9fa8a195cf5ab8a8e9654262cff9066fd5042ef94256e40599b08ddf44ec4734",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/response.json": "ec07e5b52d249098fbd566ddf062b6092dc137098ef7a28c50f339276ee900d3",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M010-B/validation.json": "19474e592d4a0469512109352cf3e4c71e3fa61bc897c86489d9a3d926d6ff2a"
+      }
+    },
+    {
+      "id": "validity-M011-A",
+      "case_id": "M011",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:21:09.849873+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e3-4ac1-78d1-a6cc-733d0597dc2a",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M011-A",
+          "case_id": "M011",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:20:50.403128+00:00",
+        "packet_sha256": "6d8be11e24dff28b4e4a270d6970a03c8558885a96a3953649b157261ff1e6d1",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-d1bd72qr",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M011-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-d1bd72qr",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/events.jsonl": "7b059e6f9a69e6dac64c99bbd3c5291cd694a5ba59fa35b3944a13b8926c21f8",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/prompt.txt": "6d8be11e24dff28b4e4a270d6970a03c8558885a96a3953649b157261ff1e6d1",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/reservation.json": "a91966418ac22f0a5308842cbd5431ed42d0a0e0848caf4b65f331b670d5438c",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/response.json": "66f242e68e9a5668ddec871fa2e6f79f22191cce65efc6a1fbac920a8897aba4",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-A/validation.json": "4974c7d18f3c41471c7a9fb0fa7cc836fddaa8f5a7cf64cdb7ac4720462f8b81"
+      }
+    },
+    {
+      "id": "validity-M019-A",
+      "case_id": "M019",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:21:30.021304+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e3-a245-7d11-9eaa-883d00903192",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M019-A",
+          "case_id": "M019",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:21:12.305977+00:00",
+        "packet_sha256": "651ba63e8cee7de34fe5e634be79b5cffb87b3e96ddf320750a81cedade53c73",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-1if9bmwe",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M019-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-1if9bmwe",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/events.jsonl": "0a6b09758fe5663551ff77746cb5a1346d37123beceff67b09c5ec5ec731ee7a",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/prompt.txt": "651ba63e8cee7de34fe5e634be79b5cffb87b3e96ddf320750a81cedade53c73",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/reservation.json": "932542a31f3e8477f422cf436cf97670298d86f2df0a4b67b3737c6672a79f9d",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/response.json": "7fdd30a218763d94cd9be4cebe3dd5ad86658042ab603da695548fa562d6204b",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M019-A/validation.json": "4c31d74bfc1903faf129b9cb8f9bd10348dddf6724f3f8fb5ee1bdc18fac09c8"
+      }
+    },
+    {
+      "id": "validity-M009-A",
+      "case_id": "M009",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:21:52.650765+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e3-ef12-7c52-9c24-589f92f52cac",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M009-A",
+          "case_id": "M009",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:21:32.471881+00:00",
+        "packet_sha256": "fef3178fbc988ea70daa4970d7dd299b478e7c33026a4cd04a537eb3256e3540",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-te4bpefy",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M009-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-te4bpefy",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/events.jsonl": "407e73c5926fa94b36a3ea94244d804833a16934d0fbbd4cef6ee0c3099a9a55",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/prompt.txt": "fef3178fbc988ea70daa4970d7dd299b478e7c33026a4cd04a537eb3256e3540",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/reservation.json": "0450bd0e70aa60675c55785b2efe48f380c7b8d73339bdcdb9ac824d91ae096e",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/response.json": "027de5814aa7f883f29a37e71c8c0c5a9c73f981ca82e83fdaa0dd4954de7786",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-A/validation.json": "7b0da7b201f4dceab30eecfdf86fd7d17482c326a87eb2aa0435c9d060128afc"
+      }
+    },
+    {
+      "id": "validity-M009-B",
+      "case_id": "M009",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:22:44.609553+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "d7e7adeb-0118-4488-8a8e-7822ab05649e",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[22].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[23].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[24].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M009-B",
+          "case_id": "M009",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:21:55.046492+00:00",
+        "packet_sha256": "fef3178fbc988ea70daa4970d7dd299b478e7c33026a4cd04a537eb3256e3540",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "d7e7adeb-0118-4488-8a8e-7822ab05649e",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-3o9ctslg",
+        "fresh_session_requested": "d7e7adeb-0118-4488-8a8e-7822ab05649e",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/events.jsonl": "29be6e1833e76524c70f76d43e6e58d21f8b02b59c201265cdc3ac187919dcbb",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/prompt.txt": "fef3178fbc988ea70daa4970d7dd299b478e7c33026a4cd04a537eb3256e3540",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/reservation.json": "9fe07d73f1a1494ed671507dfd1c4afb01bd9e4dfaae9a520d70dbf44834b722",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/response.json": "e11c80fe2706333ce3dc500cc1174ded30ed50194aeaed57681cc567efa42c8d",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M009-B/validation.json": "809ff0c409c2aad0132af50a7841aae24978d0665e7c681d30c68e4fb9c1f0c4"
+      }
+    },
+    {
+      "id": "validity-M011-B",
+      "case_id": "M011",
+      "family": "B",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:23:23.826015+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "d07c6cf8-3292-4163-baa8-9c387430e8f8",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[16].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[17].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M011-B",
+          "case_id": "M011",
+          "family": "B"
+        },
+        "family": "B",
+        "started_at": "2026-09-28T07:22:47.010745+00:00",
+        "packet_sha256": "6d8be11e24dff28b4e4a270d6970a03c8558885a96a3953649b157261ff1e6d1",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "d07c6cf8-3292-4163-baa8-9c387430e8f8",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"validity\": {\n      \"$ref\": \"#/$defs/validity\"\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      },\n      \"minItems\": 0\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"validity\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false,\n  \"$defs\": {\n    \"validity\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"mechanism_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"preserved\",\n                \"conditionally-preserved\",\n                \"not-preserved\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_fidelity\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"addressed\",\n                \"conditional\",\n                \"not-addressed\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"operational_coherence\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"coherent\",\n                \"conditional\",\n                \"incoherent\"\n              ]\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"target_reframe\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"occurred\": {\n              \"type\": \"boolean\"\n            },\n            \"original_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"reframed_question\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            },\n            \"relationship\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"string\",\n                  \"minLength\": 1,\n                  \"pattern\": \"\\\\S\"\n                },\n                {\n                  \"type\": \"null\"\n                }\n              ]\n            }\n          },\n          \"required\": [\n            \"occurred\",\n            \"original_question\",\n            \"reframed_question\",\n            \"relationship\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"unresolved_conditions\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\",\n            \"minLength\": 1,\n            \"pattern\": \"\\\\S\"\n          },\n          \"minItems\": 0\n        },\n        \"final_status\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"Valid\",\n            \"Conditional\",\n            \"Invalid\"\n          ]\n        },\n        \"rationale\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"mechanism_fidelity\",\n        \"target_fidelity\",\n        \"operational_coherence\",\n        \"target_reframe\",\n        \"unresolved_conditions\",\n        \"final_status\",\n        \"rationale\"\n      ],\n      \"additionalProperties\": false\n    }\n  }\n}\n"
+        ],
+        "working_directory": "/tmp/comparative-isolated-1tfv0jrb",
+        "fresh_session_requested": "d07c6cf8-3292-4163-baa8-9c387430e8f8",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/events.jsonl": "c8f728ceeb3f344d060f063e41857ff1c740f72fc0e952759d8bcaed67fe56b7",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/prompt.txt": "6d8be11e24dff28b4e4a270d6970a03c8558885a96a3953649b157261ff1e6d1",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/reservation.json": "ebf0c7fcc986051ff2c230d992ca6ca5deefd066ad35a572bd62f2865cf73215",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/response.json": "2bb8ed25fe98c664c9053884175617986198c648e909e620d3b68af2182528c5",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M011-B/validation.json": "2ead5a3308391fb4cf3666adcd3acd4dbb24a672e2261b8e2ca365058bbcca54"
+      }
+    },
+    {
+      "id": "validity-M007-A",
+      "case_id": "M007",
+      "family": "A",
+      "audit": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-28T07:23:47.411179+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0e6e5-aba4-7742-9d5d-3cba3bb05d67",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "validity-M007-A",
+          "case_id": "M007",
+          "family": "A"
+        },
+        "family": "A",
+        "started_at": "2026-09-28T07:23:26.257181+00:00",
+        "packet_sha256": "ac467d4802662034a73c6b87801ef5e6dcb81f83ba24c611c0dd685fec24452c",
+        "schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen B.1 schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/comparative-isolated-_pny2q5i",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/validity-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/comparative-displacement-v0.3/validity/validity-M007-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/comparative-isolated-_pny2q5i",
+        "fresh_session_requested": "ephemeral",
+        "environment_policy": "Provider/model overrides and parent agent markers removed; existing on-disk subscription authentication",
+        "prepared_commit": "12b082d1eaf24a1ac1b2fc815d3f50d87eaaaefd"
+      },
+      "files": {
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/events.jsonl": "303532d8c4b6fb4dff02f43cc7466835f71d63c8177b07ac9b4d113c118fdb35",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/prompt.txt": "ac467d4802662034a73c6b87801ef5e6dcb81f83ba24c611c0dd685fec24452c",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/reservation.json": "4ed47de9ef786fb14ceea0ec01b80e4730d2f8dbf114c22a5d80a62edd645d32",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/response.json": "624aa98b88daf209fd598610dcb92f5630a00d66c5fd972cda640148bf17c6b4",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/comparative-displacement-v0.3/validity/validity-M007-A/validation.json": "845d78aca7a3ff9dbcbf343ebd7a3ff33a9a61881615939a1f0214221985d918"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+# Direct comparative epistemic displacement
+
+Compare two fixed, valid mappings of the same retained target question against the
+one supplied ordinary-practice baseline. Do not construct, improve, repair, or
+reclassify validity of either mapping. Use only the supplied packet. Do not browse,
+call tools, retrieve context, or rely on other judgments. Source identities remain
+visible, but their prestige, disciplinary distance and unusual vocabulary are not
+evidence of displacement.
+
+A mapping is more ontologically displacing when adopting it changes more of the
+target's epistemic control loop, or a more central part, than the other mapping:
+represent → act → observe → infer → choose next inquiry.
+
+The baseline fixes the practitioner, ordinary methods and ordinary evidence. Its
+uncertainties remain uncertainties; do not silently narrow or enrich its scope.
+Each mapping includes its own stated evidence context. Preserve those contexts;
+do not pool them, lend observations from one to the other, or infer that an absent
+measurement makes a method unusual. Compare the operational changes each mapping
+would introduce to this same task and baseline. If differing contexts prevent a
+defensible comparison, identify exactly what common-state distinction is missing.
+
+Assess these five criteria separately. For each return relation A, B, tie, or
+indeterminate, plus a concrete rationale comparing both mappings with the baseline:
+
+1. action: Which mapping causes a more non-ordinary kind of investigative operation?
+   Compare inspection, controlled perturbation, inverse reconstruction, elimination,
+   or other actual acts. More steps or difficulty alone do not establish a change.
+2. observables: Which changes more substantially what is treated as a meaningful
+   signal? Distinguish more observations of an ordinary kind from a new kind of
+   evidence, such as structured residual mismatch rather than additional timestamps.
+3. inferential_warrant: Which changes why an observation supports a claim? Compare
+   the evidence-to-conclusion relationship, such as corroboration versus differential
+   perturbation response. Stronger confidence is not necessarily a different warrant.
+4. problem_decomposition: Which changes operationally meaningful entities, relations,
+   layers, paths, traces, hypotheses, stages or components? Relabeling an existing
+   distinction is weak evidence; explain what the new distinctions enable.
+5. inquiry_trajectory: From the same starting target question and ordinary practice,
+   compare the next question, measurement, intervention, comparison, hypothesis to
+   eliminate, or evidence source that A and B would respectively send the practitioner
+   toward. Address differences in supplied applicability contexts explicitly.
+
+For each mapping, answer the counterfactual in counterfactual_native: would the
+reference practitioner probably reach substantially the same investigative behavior
+without the imported ontology? Return likely, unlikely, or uncertain with rationale.
+This diagnostic is not the overall comparison.
+
+For each mapping describe scope independently:
+- local_displacement: low, moderate, or high, describing the difference between its
+  most changed epistemic component and ordinary practice.
+- global_propagation: low, moderate, or high, describing how far that change alters
+  the rest of the target inquiry.
+- rationale: explain both descriptions; a high local change with low global reach
+  is legitimate. Never combine these categories arithmetically.
+
+Then return one qualitative overall_relation: A_more_displacing,
+B_more_displacing, tie, or indeterminate. Do not derive it from criterion counts,
+majorities, sums, weights, numerical scores, complexity, usefulness, creativity,
+mapping difficulty, source exoticness, or weakness of target support.
+
+Explain the decisive basis using:
+- primary_criterion: one of the five criteria, or none if there is no decisive one.
+- centrality: does the changed component affect the core question or a peripheral task?
+- propagation: does it change later hypotheses, tests, stopping conditions or claims?
+- irreducibility: could ordinary-practice language preserve every operationally
+  important distinction? Would removing the imported structure remove the reason to
+  perform the act, notice the signal, license the inference, or pursue the next inquiry?
+- rationale: explain why this basis warrants the overall relation, including opposing
+  criterion differences. One central warrant change can outweigh several minor changes.
+These modifiers are explanations, not separately scored dimensions.
+
+Use tie when differences do not support a defensible claim of meaningfully greater
+overall displacement. Mechanisms need not be identical. Different criterion advantages
+can balance in centrality and downstream reach. Do not force ordering because mappings
+differ. Use indeterminate only for insufficient supplied information, naming the missing
+distinction in the rationale and uncertainty. Difficulty alone is not insufficiency.
+
+Return confidence clear or close as a qualitative description of this comparison, plus
+an uncertainty list. A directional overall relation must identify a decisive criterion.
+An indeterminate overall relation must explain the missing information. Return only
+the JSON object required by the supplied schema, with no additional fields.
+
+
+CASE PACKET
+{
+  "case_id": "C006",
+  "target_question": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+  "mapping_A": {
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Telemetry, support summaries and exposure history can be compared across rollout harm, seasonality and measurement-change explanations; uncertain records are marked."
+    ],
+    "mapping": {
+      "state": "Several explanations fit apparent segment deterioration.",
+      "operation": "Compare each observation against every stated explanation in an inconsistency matrix and test whether conclusions survive removing uncertain observations.",
+      "signal": "Diagnostic contradictions differ across explanations.",
+      "inference": "Weaken inconsistent explanations and select the next discriminating observation or reversible action without claiming proof of rollout harm.",
+      "limit": "Unlisted causes, shared telemetry error and subjective diagnosticity can mislead."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Step-response probing",
+      "practice": "Control and systems engineering",
+      "instrument": {
+        "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+        "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+        "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+        "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+        "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A consented sandbox cohort permits a known step from 10% to 20% exposure under fixed traffic mix; minute-level error and support-queue measurements span the initial state, transient and later behavior. An unchanged comparison cohort tracks background disturbances."
+    ],
+    "mapping": {
+      "state": "Rollout exposure is a controllable input and segment outcomes are observable through time.",
+      "operation": "Apply the known exposure step and record the outcome trajectory through transient and later behavior; measure delay, peak, overshoot, settling and steady-state shift relative to controls.",
+      "signal": "The trajectory reveals response delays, overshoot and persistence beyond snapshot deterioration.",
+      "inference": "Characterize the segment response at this operating point to inform observation windows and reversible exposure decisions, without asserting a unique mechanism.",
+      "limit": "Noise, initial state, saturation, other inputs, insufficient follow-up and nonlinear response limit extrapolation beyond the step."
+    }
+  },
+  "ordinary_practice_baseline": {
+  "target_domain": "product-rollout monitoring",
+  "target_task": "Is the staged product rollout deteriorating for a user segment, and what observation or reversible action should follow?",
+  "reference_practitioner": "Product operations analyst specializing in staged rollout monitoring, without formal control-system identification training.",
+  "ordinary_methods": [
+    "Track cohort metrics over time against pre-rollout baselines and comparison groups.",
+    "Inspect segment differences and investigate anomalies with support and product teams.",
+    "Pause or roll back an exposure and compare subsequent measurements when warranted."
+  ],
+  "ordinary_evidence": [
+    "Exposure logs, cohort outcomes, error and support rates, deployment history and comparison-group trends."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Monitoring conventions vary; causal conclusions require controls, and designed dynamic identification is outside the scoped baseline."
+  ]
+}
+}

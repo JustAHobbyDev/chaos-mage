@@ -1,0 +1,153 @@
+# Direct comparative epistemic displacement
+
+Compare two fixed, valid mappings of the same retained target question against the
+one supplied ordinary-practice baseline. Do not construct, improve, repair, or
+reclassify validity of either mapping. Use only the supplied packet. Do not browse,
+call tools, retrieve context, or rely on other judgments. Source identities remain
+visible, but their prestige, disciplinary distance and unusual vocabulary are not
+evidence of displacement.
+
+A mapping is more ontologically displacing when adopting it changes more of the
+target's epistemic control loop, or a more central part, than the other mapping:
+represent → act → observe → infer → choose next inquiry.
+
+The baseline fixes the practitioner, ordinary methods and ordinary evidence. Its
+uncertainties remain uncertainties; do not silently narrow or enrich its scope.
+Each mapping includes its own stated evidence context. Preserve those contexts;
+do not pool them, lend observations from one to the other, or infer that an absent
+measurement makes a method unusual. Compare the operational changes each mapping
+would introduce to this same task and baseline. If differing contexts prevent a
+defensible comparison, identify exactly what common-state distinction is missing.
+
+Assess these five criteria separately. For each return relation A, B, tie, or
+indeterminate, plus a concrete rationale comparing both mappings with the baseline:
+
+1. action: Which mapping causes a more non-ordinary kind of investigative operation?
+   Compare inspection, controlled perturbation, inverse reconstruction, elimination,
+   or other actual acts. More steps or difficulty alone do not establish a change.
+2. observables: Which changes more substantially what is treated as a meaningful
+   signal? Distinguish more observations of an ordinary kind from a new kind of
+   evidence, such as structured residual mismatch rather than additional timestamps.
+3. inferential_warrant: Which changes why an observation supports a claim? Compare
+   the evidence-to-conclusion relationship, such as corroboration versus differential
+   perturbation response. Stronger confidence is not necessarily a different warrant.
+4. problem_decomposition: Which changes operationally meaningful entities, relations,
+   layers, paths, traces, hypotheses, stages or components? Relabeling an existing
+   distinction is weak evidence; explain what the new distinctions enable.
+5. inquiry_trajectory: From the same starting target question and ordinary practice,
+   compare the next question, measurement, intervention, comparison, hypothesis to
+   eliminate, or evidence source that A and B would respectively send the practitioner
+   toward. Address differences in supplied applicability contexts explicitly.
+
+For each mapping, answer the counterfactual in counterfactual_native: would the
+reference practitioner probably reach substantially the same investigative behavior
+without the imported ontology? Return likely, unlikely, or uncertain with rationale.
+This diagnostic is not the overall comparison.
+
+For each mapping describe scope independently:
+- local_displacement: low, moderate, or high, describing the difference between its
+  most changed epistemic component and ordinary practice.
+- global_propagation: low, moderate, or high, describing how far that change alters
+  the rest of the target inquiry.
+- rationale: explain both descriptions; a high local change with low global reach
+  is legitimate. Never combine these categories arithmetically.
+
+Then return one qualitative overall_relation: A_more_displacing,
+B_more_displacing, tie, or indeterminate. Do not derive it from criterion counts,
+majorities, sums, weights, numerical scores, complexity, usefulness, creativity,
+mapping difficulty, source exoticness, or weakness of target support.
+
+Explain the decisive basis using:
+- primary_criterion: one of the five criteria, or none if there is no decisive one.
+- centrality: does the changed component affect the core question or a peripheral task?
+- propagation: does it change later hypotheses, tests, stopping conditions or claims?
+- irreducibility: could ordinary-practice language preserve every operationally
+  important distinction? Would removing the imported structure remove the reason to
+  perform the act, notice the signal, license the inference, or pursue the next inquiry?
+- rationale: explain why this basis warrants the overall relation, including opposing
+  criterion differences. One central warrant change can outweigh several minor changes.
+These modifiers are explanations, not separately scored dimensions.
+
+Use tie when differences do not support a defensible claim of meaningfully greater
+overall displacement. Mechanisms need not be identical. Different criterion advantages
+can balance in centrality and downstream reach. Do not force ordering because mappings
+differ. Use indeterminate only for insufficient supplied information, naming the missing
+distinction in the rationale and uncertainty. Difficulty alone is not insufficiency.
+
+Return confidence clear or close as a qualitative description of this comparison, plus
+an uncertainty list. A directional overall relation must identify a decisive criterion.
+An indeterminate overall relation must explain the missing information. Return only
+the JSON object required by the supplied schema, with no additional fields.
+
+
+CASE PACKET
+{
+  "case_id": "C008",
+  "target_question": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+  "mapping_A": {
+    "source": {
+      "name": "Luminol latent-trace detection",
+      "practice": "Forensic investigation",
+      "instrument": {
+        "state": "Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.\n",
+        "operation": "Apply a probe whose reaction is promoted by material associated with the suspected residue.\n",
+        "signal": "Responsive material produces an otherwise absent, localized observable reaction.\n",
+        "inference": "The reaction supports the presence and location of material capable of producing that response.\n",
+        "limit": "Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "A synthetic draft contains ordinary-visible writing and localized erased undertext. A non-destructive probe produces a localized response promoted by the undertext ink; independently characterized controls establish its response behavior and known cross-reactants.",
+      "Independent collation identifies one responsive undertext phrase as the earlier reading beneath a visible replacement on the same leaf. Dated correspondence quotes the replacement. This supports that local revision constraint; it does not establish the full draft assembly sequence."
+    ],
+    "mapping": {
+      "state": "Earlier inscription material may remain as latent residue beneath one revised passage, invisible in ordinary inspection.",
+      "operation": "Apply the validated probe to that bounded passage and controls, recording localized responses while preserving the manuscript for later examination.",
+      "signal": "Otherwise absent localized reactions reveal responsive residual material, including the independently collated undertext beneath the replacement.",
+      "inference": "Support the presence and location of responsive inscription material; together with the supplied independent collation and dated quotation, constrain this local earlier-reading/later-replacement sequence while leaving other assembly claims open.",
+      "limit": "Cross-reactants, degradation and detection limits restrict absence claims; the reaction alone neither identifies a revision event nor dates composition, and it must not substitute for the independent documentary bridge."
+    }
+  },
+  "mapping_B": {
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "evidence_context": [
+      "Authored synthetic scenario; no claim about a real organization or person.",
+      "Three assembly hypotheses and independent manuscript features are specified; doubtful datings are marked."
+    ],
+    "mapping": {
+      "state": "Several revision-and-assembly sequences fit the surviving draft.",
+      "operation": "Compare every feature against all three sequences in an explicit inconsistency matrix, weight diagnostic contradictions qualitatively and test sensitivity to uncertain datings.",
+      "signal": "Some sequences conflict with distinctive corrections or physical joins more than others.",
+      "inference": "Weaken contradicted formation sequences while preserving alternatives and explicit uncertain intervals.",
+      "limit": "Missing alternatives, dependent features and subjective interpretation can make the surviving chronology wrong."
+    }
+  },
+  "ordinary_practice_baseline": {
+  "target_domain": "literary textual formation",
+  "target_task": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+  "reference_practitioner": "Literary scholar specializing in manuscript genetics and textual formation, without computational stylometry training.",
+  "ordinary_methods": [
+    "Compare manuscript witnesses, handwriting, deletions, insertions and paper features.",
+    "Reconstruct revision layers and provenance with close reading and archive context.",
+    "Distinguish composition order from narrative order and acknowledge missing witnesses."
+  ],
+  "ordinary_evidence": [
+    "Draft variants, material features, correspondence, dated witnesses and archival provenance."
+  ],
+  "uncertainty": [
+    "Scoped authored hypothesis, not verified practitioner consensus.",
+    "Formal signal alignment and controlled reader experiments are not assumed ordinary; manuscript scholars differ in quantitative training."
+  ]
+}
+}
