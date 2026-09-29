@@ -1,0 +1,30 @@
+{
+  "case_id": "N007",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Synthetic incident: checkout latency rose after three independently switchable deployed changes. In an isolated staging replay, workload, cache preparation and resource allocation can be restored exactly. Revision history associates each change with one of three processing stages. Representative traces, ordinary rollback/reintroduction, counters and candidate-cause tests are available to every procedure.",
+      "In the stipulated replay regime, excess end-to-end delay is the sum of stable nonnegative contributions of the stages traversed. This relation and the route membership are independently established target facts, not inferred from an analogy. Three routes traverse stages (1,2), (2,3), and (1,3); repeat measurements have supplied finite uncertainty bounds. No direct per-stage excess-delay counter is available in this fixture. Its absence does not make ordinary tracing non-native.",
+      "All procedures can access these route measurements, the route matrix, old/new revision replays, six additional route/revision tests and an ordinary confirmation replay. A contribution estimate addresses only this replay regime; identifying an affected stage constrains its associated change, and a controlled old/new comparison can test contribution. Neither ensures unique root cause or live-load generality."
+    ]
+  },
+  "mapping": {
+    "state": "Reconstruct the hidden interior from multiple traversals, then illuminate the unresolved region with another ray. Operational target state: The calibrated route model and ordinary candidate table describe multiple possible internal contributors. Decomposition: Represent hidden stages jointly, distinguish model mismatch from weak coverage, and connect only independently documented stage/change associations.",
+    "operation": "Fit bounded nonnegative stage contributions to overlapping-route timings. Examine residual structure; select an available additional route that separates remaining assignments, refit, and compare the implicated stage under its associated old/new deployed change with controlled reset. Next inquiry: Select the next route from unresolved assignments; stop additional probing at the six-test budget or when no available route separates them, then report surviving alternatives and confirmation limits.",
+    "signal": "Compatible assignments, route residuals, reduction of ambiguity after the selected route and controlled old/new contribution changes.",
+    "inference": "The joint constraints localize bounded contributions; discrimination-directed route selection tests unresolved structure and the controlled revision comparison tests the associated change within the replay.",
+    "limit": "Model misspecification, coverage, finite uncertainty and replay generalization remain limits; residual patterns are not automatic proof of a hidden mechanism."
+  }
+}

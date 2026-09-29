@@ -1,0 +1,30 @@
+{
+  "case_id": "N021",
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": [
+      "Synthetic approval workflow: ticket histories, queues, staffing, interviews and repeated total route times are available. Known routes pass through approval stages (1,2), (2,3), and (1,3). Within matched case type, staffing and demand, controlled calibration establishes additive stable stage waiting contributions with bounded timestamp error. Direct internal timestamps are unavailable in this fixture; ordinary timestamp comparison remains native practice.",
+      "All procedures can use the same route membership and total timings, including repeated observations and uncertainty bounds. Several nonnegative stage assignments may fit within those bounds. The route model applies only to this matched regime, not every organizational process.",
+      "The budget permits two additional route observations and one ordinary sandbox pilot of a candidate handoff change with a matched unchanged comparison. Estimating hidden waits can provide a bounded answer about where delay accumulates; it does not establish which live organizational remedy will work. Existing ownership and workflow records map each inferred stage to a handoff."
+    ]
+  },
+  "mapping": {
+    "state": "Read the organization as a patient under serial vital-sign surveillance: queue pressure and circulation time describe its hemodynamic course. Operational target state: An approval process has repeated turnaround and queue observations under known staffing and demand. Decomposition: Ordinary handoffs, queues and case types.",
+    "operation": "Compare repeated handoff and total-route timings with earlier comparable periods, noting persistent or changing delays and relevant staffing or demand changes. Next inquiry: Inspect delayed cases and pilot a bounded handoff change with a matched comparison.",
+    "signal": "Stable, rising or falling delay and queue patterns over time.",
+    "inference": "The trajectory supports bounded assessment of persistence or change; a timing trend alone does not identify its cause.",
+    "limit": "Sampling, demand confounding and changing case mix limit generalization."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "N017",
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": [
+      "Synthetic onboarding proposal: six independently switchable interface/rule elements and their dependencies are specified. A resettable replay of a fixed consented usability task supplies a deterministic pass/fail repeatable task test for activation blockage, with unresolved outcomes explicitly possible outside the defined valid configurations. Baseline full configuration reproducibly fails; removing every optional element passes. Deletions preserve a runnable flow only when listed dependency constraints hold.",
+      "Every procedure has the same user-error notes, funnel observations, repeatable task test, valid-deletion rules and budget of 80 replay tests. No deletion monotonicity or unique minimal explanation is assumed. Elements can interact; multiple failure-preserving subsets may exist. A fixed identifier order is available for reproducible deletion trials.",
+      "Failure means inability to complete this recorded activation task, not real-user population rejection. A failure-preserving subset and the pass results of its valid one-element deletions give bounded evidence about interactions and test-relative necessary elements within that subset, not global feature rankings or universal necessities."
+    ]
+  },
+  "mapping": {
+    "state": "Run a full failure-inducing-input reduction with explicit oracle and minimality boundaries. Operational target state: The same failing configuration, dependency constraints and repeatable task test support repeated reductions. Decomposition: Represent configurations, deletion boundaries and interactions rather than a single feature ranking.",
+    "operation": "Partition elements, test valid removals and complements, retain failure-preserving reductions, refine partitions when blocked and finish with all valid one-element deletions. Independently recheck the retained failure and selected interaction boundaries within the 80-test budget. Next inquiry: Choose the next partition/complement from remaining reduction uncertainty, prioritize unresolved interaction checks and report the exact achieved minimality at budget stop.",
+    "signal": "Failing subsets, passing deletions, unresolved trials and repeated interaction-boundary outcomes.",
+    "inference": "A reproducible retained subset is sufficient for this failure; only a completed deletion check supports one-deletion minimality. Complement and interaction tests distinguish alternative local explanations without global minimum or unique-root-cause claims.",
+    "limit": "Dependencies, unresolved outcomes, multiple minima and exhausted budget restrict conclusions."
+  }
+}

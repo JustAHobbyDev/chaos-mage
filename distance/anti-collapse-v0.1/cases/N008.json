@@ -1,0 +1,30 @@
+{
+  "case_id": "N008",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Synthetic incident: checkout latency rose after three independently switchable deployed changes. In an isolated staging replay, workload, cache preparation and resource allocation can be restored exactly. Revision history associates each change with one of three processing stages. Representative traces, ordinary rollback/reintroduction, counters and candidate-cause tests are available to every procedure.",
+      "In the stipulated replay regime, excess end-to-end delay is the sum of stable nonnegative contributions of the stages traversed. This relation and the route membership are independently established target facts, not inferred from an analogy. Three routes traverse stages (1,2), (2,3), and (1,3); repeat measurements have supplied finite uncertainty bounds. No direct per-stage excess-delay counter is available in this fixture. Its absence does not make ordinary tracing non-native.",
+      "All procedures can access these route measurements, the route matrix, old/new revision replays, six additional route/revision tests and an ordinary confirmation replay. A contribution estimate addresses only this replay regime; identifying an affected stage constrains its associated change, and a controlled old/new comparison can test contribution. Neither ensures unique root cause or live-load generality."
+    ]
+  },
+  "mapping": {
+    "state": "Read the path residuals as travel-time anomalies through a hidden interior, using the source inverse measurement chain. Operational target state: The same candidate table and calibrated route measurements describe a regression with hidden stage contributions. Decomposition: Keep ordinary deployed-change alternatives; stage variables are the operands required by the one inverse-constraint rule.",
+    "operation": "Use the candidate/test matrix. Compare the observed totals of all three known routes with sums predicted by candidate nonnegative stage contributions, adjust those contributions to fit, and retain every assignment consistent with the measurement bounds. Next inquiry: Use the same ordinary old/new replay or rollback confirmation for an implicated change; no new adaptive acquisition rule is added.",
+    "signal": "Across-route discrepancies and the set of stage contributions compatible with all measured totals.",
+    "inference": "Compatibility across overlapping routes constrains hidden stage contributions even without direct stage counters. Map constrained stages to their associated deployed changes as bounded candidate contribution evidence; do not infer a unique live cause.",
+    "limit": "The calibrated additive regime, route coverage, error and non-uniqueness bound the inference. A contribution interval containing zero cannot establish a nonzero contribution."
+  }
+}

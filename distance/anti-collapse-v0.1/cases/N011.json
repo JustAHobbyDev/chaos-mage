@@ -1,0 +1,30 @@
+{
+  "case_id": "N011",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": [
+      "Synthetic incident: checkout latency rose after three independently switchable deployed changes. In an isolated staging replay, workload, cache preparation and resource allocation can be restored exactly. Revision history associates each change with one of three processing stages. Representative traces, ordinary rollback/reintroduction, counters and candidate-cause tests are available to every procedure.",
+      "In the stipulated replay regime, excess end-to-end delay is the sum of stable nonnegative contributions of the stages traversed. This relation and the route membership are independently established target facts, not inferred from an analogy. Three routes traverse stages (1,2), (2,3), and (1,3); repeat measurements have supplied finite uncertainty bounds. No direct per-stage excess-delay counter is available in this fixture. Its absence does not make ordinary tracing non-native.",
+      "All procedures can access these route measurements, the route matrix, old/new revision replays, six additional route/revision tests and an ordinary confirmation replay. A contribution estimate addresses only this replay regime; identifying an affected stage constrains its associated change, and a controlled old/new comparison can test contribution. Neither ensures unique root cause or live-load generality."
+    ]
+  },
+  "mapping": {
+    "state": "Organize the clinical differential in a symptom-by-etiology chart. Operational target state: Three deployed changes and workload variation are candidate contributors to a new regression. Decomposition: Ordinary candidate causes recorded as matrix rows.",
+    "operation": "Perform the same competing-explanation and replay comparison, recording every candidate/test match or conflict in a matrix; record unresolved cells explicitly. Next inquiry: Use ordinary discriminating replay or rollback/reintroduction, then check recurrence; the matrix imposes no new test-selection or stopping rule.",
+    "signal": "The same latency, workload and replay observations are indexed by candidate and test.",
+    "inference": "Retain supported candidate contributions and unresolved alternatives using the same evidential logic as ordinary debugging; table completeness is not extra evidence.",
+    "limit": "Confounding, incomplete explanations and unrepresentative replay limit attribution."
+  }
+}

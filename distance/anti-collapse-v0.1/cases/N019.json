@@ -1,0 +1,30 @@
+{
+  "case_id": "N019",
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": [
+      "Synthetic approval workflow: ticket histories, queues, staffing, interviews and repeated total route times are available. Known routes pass through approval stages (1,2), (2,3), and (1,3). Within matched case type, staffing and demand, controlled calibration establishes additive stable stage waiting contributions with bounded timestamp error. Direct internal timestamps are unavailable in this fixture; ordinary timestamp comparison remains native practice.",
+      "All procedures can use the same route membership and total timings, including repeated observations and uncertainty bounds. Several nonnegative stage assignments may fit within those bounds. The route model applies only to this matched regime, not every organizational process.",
+      "The budget permits two additional route observations and one ordinary sandbox pilot of a candidate handoff change with a matched unchanged comparison. Estimating hidden waits can provide a bounded answer about where delay accumulates; it does not establish which live organizational remedy will work. Existing ownership and workflow records map each inferred stage to a handoff."
+    ]
+  },
+  "mapping": {
+    "state": "Design crossing rays to illuminate unresolved regions, then test the implicated handoff. Operational target state: The calibrated route system may leave hidden contributions nonidentifiable and may have model mismatch. Decomposition: Separate hidden waits, observation coverage and possible model mismatch.",
+    "operation": "Fit compatible waits, inspect structured residuals, choose up to two accessible routes that separate unresolved assignments, and refit. Distinguish persistent model mismatch from weak route coverage. Then run the ordinary matched sandbox pilot for an implicated handoff. Next inquiry: Acquire routes for identifiability rather than volume; stop at two or when none distinguishes assignments, then select and report the bounded pilot.",
+    "signal": "Changes in compatible assignments, residual structure, route discrimination and matched pilot turnaround.",
+    "inference": "New route constraints test unresolved internal structure; the separate pilot supplies bounded evidence about a candidate change, not proof of a unique cause.",
+    "limit": "Finite error, model assumptions, insufficient route geometry and regime dependence remain explicit."
+  }
+}
