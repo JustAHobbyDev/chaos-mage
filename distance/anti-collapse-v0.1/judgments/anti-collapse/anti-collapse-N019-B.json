@@ -1,0 +1,56 @@
+{
+  "case_id": "N019",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The native analyst compares direct timestamps and queues, interviews participants, inspects exception cases and pilots a change. The procedure instead fits a set of nonnegative stage waits compatible with route totals, inspects residual structure, and spends the two extra observations on routes chosen because they separate the still-compatible assignments, then refits. That inverse-estimation and discrimination-targeted selection step is not among the baseline's ordinary methods. The final matched sandbox pilot is ordinary."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "Pilot turnaround under matched staffing and demand is a native observable. The other observables are not: the shrinkage or change of the compatible assignment set, structured residuals of the route fit, and how well a candidate route discriminates between assignments. The baseline reads observed timestamps, queue lengths and interview accounts, not properties of a fitted set of hidden contributions."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Native warrant locates delay through observed timestamp and queue associations and treats pilots as bounded change assessments. Here the localization claim rests on route-sum constraints narrowing the admissible hidden assignments, with an explicit admission that several assignments may remain and that the fit may be wrong. The pilot warrant (bounded evidence, not proof of a unique cause) matches the baseline."
+      },
+      "problem_decomposition": {
+        "status": "present",
+        "rationale": "The baseline decomposes by workflow stage, ownership, case type and staffing or demand. The procedure splits the problem into hidden stage waits, adequacy of observation coverage (route geometry), and possible model mismatch. Separating 'we cannot tell because coverage is weak' from 'the additive model is wrong' is a distinction the baseline does not draw and it sends inquiry in different directions."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "Native next steps are inspecting exceptions, comparing affected handoffs and piloting. The procedure imposes an evidence-selection rule (acquire routes for identifiability, not volume) and a stopping condition (stop at two, or earlier when no accessible route distinguishes the remaining assignments), then selects the pilot target from the narrowed set. This changes which data are gathered next and when gathering ends."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The rule determines which two extra observations are taken, when observation stops, how an unresolved fit is interpreted (coverage versus mismatch), and which handoff is sent to the pilot. These change how inquiry proceeds rather than relabeling native steps. Only the closing pilot is the same epistemic logic as the baseline."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Compare total turnaround across routes and case types under matched staffing and demand, use interviews and exception cases to form a view of which handoff is slow, collect more tickets generally, then pilot a bounded change on the suspected handoff against an unchanged comparison.",
+      "lost_if_reduced": [
+        "An explicit set of stage-wait assignments compatible with route totals within error bounds, instead of a single suspected bottleneck",
+        "Selection of additional route observations by their ability to separate unresolved assignments rather than by volume or convenience",
+        "Diagnosis of structured residuals to separate persistent model mismatch from weak route coverage",
+        "A stopping condition tied to whether any accessible route still distinguishes assignments",
+        "Pilot target selection conditioned on the narrowed compatible set, with remaining non-identifiability reported"
+      ],
+      "rationale": "The native substitute still yields a pilot and a bounded change assessment, but it has no operation that represents multiple compatible hidden assignments, no criterion for choosing observations by discrimination, and no way to tell an unidentifiable case from a misspecified one. Those operations would disappear, not merely be renamed."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Additional observations must be chosen for their capacity to discriminate among still-compatible hidden-wait assignments, acquisition stops at two or when no accessible route discriminates, and an unresolved fit must be classified as weak coverage or model mismatch before a handoff is nominated for the pilot.",
+      "rationale": "A native analyst might informally difference route totals, but the baseline contains no rule that ties evidence selection to identifiability, no stopping condition based on discrimination, and no residual interpretation separating mismatch from coverage. These are operational constraints on what is measured and concluded, not notation added to existing reasoning."
+    },
+    "decisive_reason": "The procedure infers hidden stage waits from route totals as a set of compatible assignments and spends the limited extra observations on routes that separate those assignments, stopping when none does and distinguishing model mismatch from weak coverage. The baseline's timestamp and queue comparison, interviews, exception review and pilot contain no equivalent evidence-selection rule, stopping condition or residual interpretation, so substituting the native method removes those operations. Only the final matched pilot is ordinary.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus, so the boundary of ordinary practice is itself uncertain.",
+      "Some analysts use process mining, and an analyst could informally difference route totals across case types; this might approximate part of the fitting step, though not the discrimination-targeted selection or the mismatch-versus-coverage diagnosis.",
+      "The baseline excludes dynamic system estimation from designed excitation; whether static route-sum fitting with selected observations falls under that exclusion or is simply unaddressed is not stated.",
+      "The closing pilot and its bounded warrant are fully native, so the departure is confined to the localization and observation-selection stage."
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "case_id": "N007",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The first operative move is a joint bounded nonnegative fit of unobserved per-stage contributions to end-to-end timings of overlapping routes, followed by a refit after an added route. The baseline's ordinary actions are timeline comparison, replay, revision bisection, rollback/reintroduction and trace/counter inspection, and it explicitly excludes a formal inverse-problem specialty. Only the final controlled old/new comparison with reset is ordinary; the estimation step that chooses which change to compare is not."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The procedure reads the set of compatible stage assignments, route residuals against the additive model, and the reduction of ambiguity after an added route. The baseline's evidence is version history, traces, latency distributions, resource counters and replay/rollback observations. Residuals against a route model and the size of a surviving assignment set are derived quantities that ordinary toggling or tracing does not produce. The old/new contribution change is a native observable."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Localization is warranted by joint consistency of linear nonnegative constraints across overlapping routes, with uncertainty bounds propagated into a feasible set, rather than by directly toggling a change and seeing latency move. The native warrant is temporal association plus controlled rollback/reintroduction and disconfirming tests. The procedure keeps that interventional warrant only for the last step and adds an indirect, model-dependent warrant whose failure mode (misspecification showing up as residual structure) is itself treated as evidence."
+      },
+      "problem_decomposition": {
+        "status": "present",
+        "rationale": "The problem is decomposed into hidden stage contributions solved jointly through a route-membership matrix, with a separate distinction between model mismatch and weak coverage, and stage-to-change links admitted only when independently documented. The native decomposition is per candidate change or competing cause, tested one at a time or by bisection. The mismatch-versus-coverage split has no counterpart in the baseline's candidate-table framing."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "The next route is chosen because it separates the assignments still compatible with the fit, and probing stops at the six-test budget or when no available route can separate them, after which surviving alternatives are reported. The baseline does include inspecting discriminating traces and testing an alternative cause, so discrimination-directed choice is partly familiar. What differs is that the selection criterion and the stopping condition are computed from the unresolved assignment set of the joint model, which is an identifiability-based rule rather than a practitioner's choice of next suspect."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The joint fit changes what is measured, what counts as localization, which test is run next and when inquiry stops. It is not a relabeling of bisection: it produces a bounded feasible set and residuals that direct later tests, and it can end with explicitly unresolved alternatives where ordinary practice would continue toggling candidates. The materiality is local, since the confirming step is ordinary, but one central change is sufficient."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "In the staging replay, bisect or individually roll back and reintroduce each of the three switchable changes under exact reset, compare end-to-end latency distributions old versus new, and inspect representative traces and counters to see which stage slowed.",
+      "lost_if_reduced": [
+        "Joint estimation of bounded nonnegative per-stage contributions from overlapping-route timings when no per-stage counter exists",
+        "Route residuals used to separate model mismatch from weak coverage",
+        "Selection of the next route by its ability to separate assignments still compatible with the fit",
+        "Stopping condition tied to non-separability of remaining assignments, with a report of surviving alternatives"
+      ],
+      "rationale": "Native bisection and rollback could plausibly reach the same answer about which change matters in this fixture, since the three changes are independently switchable. But substituting it removes the indirect localization step, the residual interpretation and the identifiability-driven selection and stopping rules. Those are operations and constraints, not bookkeeping, so the reduction is not lossless even if the final conclusion coincides."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Localization must come from a jointly consistent bounded nonnegative fit over overlapping routes; the next test must be one that separates assignments still compatible with that fit; residual structure must be read as possible model mismatch or weak coverage rather than as proof of a mechanism; probing stops when no available route separates the remaining assignments or the six-test budget is reached.",
+      "rationale": "A practitioner might informally notice that slow routes share a stage, so there is a native intuition nearby. The procedure goes beyond making that explicit: it adds an evidence-selection rule, a residual-interpretation rule and a stopping condition, each of which changes which tests are run and what is reported. The baseline states that its scope has no formal inverse-problem specialty, so this is not ordinary practice written in notation."
+    },
+    "decisive_reason": "The procedure localizes the regression by jointly fitting hidden nonnegative stage contributions to overlapping-route timings and then picks further routes, and decides when to stop, from the set of assignments that fit leaves unresolved. The baseline instead localizes by directly toggling, bisecting or tracing candidate changes and explicitly excludes inverse-problem methods. Replacing the procedure with rollback/reintroduction removes the residual-based mismatch check and the identifiability-driven selection and stopping rules, so a real operational difference survives neutralization.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus; teams with higher experimental maturity may do informal cross-route triangulation that approaches this procedure.",
+      "Discrimination-directed choice of the next test overlaps with the baseline's 'inspect discriminating traces' and 'test an alternative cause', so the next-inquiry departure rests mainly on the fit-derived selection criterion and stopping rule.",
+      "Because the three changes are independently switchable, ordinary rollback/reintroduction may reach the same final attribution; the departure lies in how inquiry proceeds, not necessarily in the conclusion.",
+      "The final controlled old/new comparison with reset is fully native, so the departure is confined to the localization and test-selection stages."
+    ]
+  }
+}

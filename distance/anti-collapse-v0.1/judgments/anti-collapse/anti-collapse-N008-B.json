@@ -1,0 +1,55 @@
+{
+  "case_id": "N008",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The procedure does not toggle changes or inspect traces. It jointly fits nonnegative hidden stage contributions to the three overlapping route totals and retains every assignment that falls within the measurement bounds. The baseline's ordinary actions are timeline comparison, replay, bisection, rollback/reintroduction and trace inspection, and its scope explicitly excludes a formal inverse-problem specialty. Solving for unmeasured per-stage quantities from aggregate route sums is a different operation from any of these."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The object of attention is the set of stage-contribution assignments compatible with all measured route totals, plus the across-route discrepancies. The baseline's observables are directly measured: latency distributions, traces, resource counters, and replay or rollback outcomes. A feasible set of latent contributions, where no per-stage counter exists, is a derived set-valued observable that the baseline does not list."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "The warrant is cross-route compatibility under a known additive route-membership structure: overlapping sums constrain hidden terms without any intervention on the candidate change. The native warrant comes from temporal association plus controlled old/new comparison, rollback/reintroduction and disconfirming tests. The procedure adds a rule that a contribution interval containing zero cannot establish a nonzero contribution, and it requires non-unique assignments to be retained rather than resolved by picking a favourite."
+      },
+      "problem_decomposition": {
+        "status": "uncertain",
+        "rationale": "The procedure states that it keeps the ordinary deployed-change alternatives and treats stage variables only as operands of the inverse-constraint rule. Introducing latent per-stage contributions as an intermediate layer between route measurements and changes could be a modest re-decomposition. However, the baseline practitioner already reasons about stages through traces and revision history, so it is unclear whether this goes beyond ordinary stage-level thinking."
+      },
+      "next_inquiry": {
+        "status": "absent",
+        "rationale": "The procedure explicitly uses the same ordinary old/new replay or rollback confirmation for an implicated change and adds no new adaptive acquisition rule. The follow-up step is native."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The inverse-constraint step changes what evidence is produced and what may be concluded before any confirmation replay. It yields bounded per-stage contribution estimates from aggregate route totals, keeps all compatible assignments, and forbids asserting a nonzero contribution when the interval includes zero. This affects which change is implicated and how strongly, rather than relabelling or bookkeeping an existing native inference."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Informal shared-component triangulation from traces (slow routes share a stage, so suspect that stage's change), followed by per-change rollback/reintroduction or bisection in staging replay to measure old/new differences directly.",
+      "lost_if_reduced": [
+        "Quantitative inference of unmeasured per-stage contributions from overlapping route totals without intervening on each change",
+        "The set-valued observable: every nonnegative contribution assignment consistent with the measurement bounds, with non-uniqueness preserved",
+        "The explicit evidential constraint that a contribution interval containing zero cannot establish a nonzero contribution",
+        "Use of the nonnegativity and additive route structure as constraints that narrow candidates before confirmation"
+      ],
+      "rationale": "The native substitute identifies the responsible change by direct intervention or qualitative trace overlap. It can reach a similar final attribution in this fixture, but it does so by a different evidential route and produces neither the compatible-set observable nor the interval-based constraint. The baseline explicitly places formal inverse-problem methods outside its scope, so the closest native method is not the same operation under another name."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Retain all nonnegative stage-contribution assignments consistent with the route-total measurement bounds, and treat any stage whose contribution interval contains zero as not established as a contributor. The inference is bounded to the calibrated additive regime and the available route coverage.",
+      "rationale": "Informal 'which slow routes share a stage' reasoning is native, and the procedure could be seen as a quantified version of it. But the operational content goes beyond explicit notation. It imposes an evidence-retention rule (keep every compatible assignment), a non-establishment condition (zero-containing intervals), and a warrant drawn from solving overlapping sums rather than from intervention. These change what conclusions are licensed."
+    },
+    "decisive_reason": "The procedure infers hidden per-stage contributions by fitting nonnegative values to overlapping aggregate route totals and keeping the whole bounds-compatible set, with a zero-containing-interval rule limiting what can be claimed. The baseline attributes regressions through direct intervention (rollback/reintroduction, bisection, replay) and trace inspection, and explicitly excludes formal inverse-problem practice. Substituting the native method removes the compatible-set observable and the cross-route constraint warrant, even though the confirmation step afterwards is ordinary.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus; some reliability teams may do informal additive attribution across overlapping request paths, which would narrow the departure.",
+      "With three routes and three stages the route matrix is invertible, so the compatible set may shrink to a small interval box. The practical gap from back-of-envelope arithmetic by a native practitioner could then be modest.",
+      "Whether the latent stage variables count as a change in problem decomposition or only as operands for one rule is unresolved.",
+      "Next inquiry is unchanged from native practice, so the departure is local to the evidence-construction and warrant step."
+    ]
+  }
+}

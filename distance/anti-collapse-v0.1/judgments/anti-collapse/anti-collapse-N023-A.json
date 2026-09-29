@@ -1,0 +1,51 @@
+{
+  "case_id": "N023",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The procedure jointly reconstructs hidden stage waits from overlapping route totals, retaining every nonnegative assignment compatible with measurement bounds. This adds an inverse estimation operation beyond the baseline's timestamp and queue comparisons."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The raw evidence remains shared, but joint route residuals and compatible intervals for unobserved stage waits become derived objects of inquiry. They constrain hidden contributions rather than describe observed delay associations."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Supplied calibration licenses additive constraints such as route (1,2) totaling waits at stages 1 and 2. Intersecting constraints across routes warrants bounded hidden-stage localization. The baseline supplies observational comparisons and pilot-based change assessments, without this aggregate-to-stage warrant."
+      },
+      "problem_decomposition": {
+        "status": "absent",
+        "rationale": "The procedure preserves the mapped stages, handoffs and ownership units. Jointly estimating their waits implements the inverse warrant without introducing a separate decomposition of the organizational problem."
+      },
+      "next_inquiry": {
+        "status": "absent",
+        "rationale": "The prescribed next inquiry is the same ordinary matched sandbox pilot and bounded turnaround assessment. No distinct observation-selection or intervention rule is specified."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The inverse operation changes what can support localization: overlapping aggregate timings can bound hidden handoff contributions. Retaining all compatible assignments also limits attribution, prohibiting a nonzero-wait conclusion when zero remains compatible."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Map handoffs, compare route turnaround and queue evidence under matched conditions, inspect exceptions, and pilot a bounded handoff change.",
+      "lost_if_reduced": [
+        "Joint reconstruction of hidden stage contributions from overlapping aggregate route totals.",
+        "Stage-specific compatible intervals that govern whether a nonzero wait can be inferred."
+      ],
+      "rationale": "Ordinary comparisons can locate observed associations and pilots can assess changes, but neither preserves the calibrated aggregate-to-stage inference. Direct timestamp comparison remains native even though unavailable here; its unavailability is not the basis for departure."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "A hidden-stage attribution must respect every nonnegative assignment jointly compatible with all route totals and supplied error bounds; a stage cannot be inferred to have a nonzero wait when its compatible interval includes zero.",
+      "rationale": "The procedure introduces a model-based route from aggregate evidence to hidden contributions, with an explicit restriction on admissible conclusions. Its operational difference lies in that warrant and restriction, rather than in equations or systematic bookkeeping alone."
+    },
+    "decisive_reason": "Replacing calibrated joint inversion with ordinary workflow comparisons loses the ability to infer bounded hidden-stage contributions from overlapping route totals. That central change survives despite unchanged handoff units and ordinary follow-up pilots.",
+    "uncertainty": [
+      "The baseline is an authored scope rather than verified practitioner consensus, and some process-mining practice may include related estimation. The supplied baseline does not establish this inverse warrant as ordinary.",
+      "No numerical timings are supplied, so the resulting interval widths and whether any stage excludes zero remain unknown."
+    ]
+  }
+}

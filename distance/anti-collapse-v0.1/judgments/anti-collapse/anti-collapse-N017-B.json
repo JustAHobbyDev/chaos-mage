@@ -1,0 +1,57 @@
+{
+  "case_id": "N017",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The procedure runs a rule-driven reduction loop: partition the elements, test valid removals and their complements, keep any reduction that still fails, refine the partition when no reduction holds, and close with every valid one-element deletion. The baseline practitioner tests staged variants and small experiments chosen from observed user errors and suspected dependencies. Nothing in the baseline supplies a failure-preserving retention invariant, complement testing, or granularity refinement as the driver of what gets tested, and the baseline states formal minimality searches are not assumed routine."
+      },
+      "observable": {
+        "status": "uncertain",
+        "rationale": "The raw observation is the same pass/fail replay of a prototype task, which is ordinary baseline evidence. What changes is the unit recorded: a failing subset together with the pass results of all its valid one-element deletions, plus unresolved trials as a distinct third outcome. Whether that deletion-boundary record is a new observable or a structured arrangement of native task-completion results is unclear."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Sufficiency is licensed only by a reproducible retained failing subset, and test-relative necessity within that subset is licensed only by a completed set of one-element deletion checks. The baseline warrant runs from qualitative failure observations and variant comparisons to suggested interactions and priorities, explicitly without certifying a minimal failure explanation. The procedure therefore adds a specific condition under which a bounded minimality claim may be made, and withholds it when the check is incomplete."
+      },
+      "problem_decomposition": {
+        "status": "present",
+        "rationale": "The problem is carved into configurations, deletion boundaries and interactions over the six switchable elements, indifferent to what the elements mean to users. The baseline decomposes into user needs, flows, assumptions and dependencies. Dependencies appear in both, but in the procedure they act only as validity constraints on which deletions are runnable, not as the organizing structure. The departure is modest because the target question already asks about interactions that defeat a ranking."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "The next test is selected from remaining reduction uncertainty (which partition or complement is still untested, which interaction check is unresolved), and at budget exhaustion the procedure must report the exact minimality achieved. The baseline's next step is to revise a prototype, investigate an observed failure, or follow up a suspected dependency. The procedure's selection rule and stop-report are determined by search state rather than by a hypothesis about user behavior."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The reduction rule changes which configurations get tested, when testing stops, and what claim is permitted at the end. A practitioner following the baseline could end with a plausible account of which features matter and never have run the full one-element deletion set on a retained failing subset; the procedure forbids a minimality claim in that situation and requires stating how far reduction got. That is a change in evidence selection, stopping condition and permitted conclusion, not added wording or bookkeeping."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Hypothesis-driven staged-variant testing: remove or alter the features suspected from user-error notes and funnel observations, rerun the prototype task, and follow up suspected dependencies with small experiments.",
+      "lost_if_reduced": [
+        "The failure-preserving retention invariant that fixes each subsequent test on the current reduced failing configuration",
+        "Complement tests that distinguish alternative local explanations when a removal passes",
+        "Partition refinement as the prescribed response when no reduction preserves failure",
+        "The completed one-element deletion check as the required condition for a one-deletion minimality claim",
+        "The obligation to report exact achieved minimality when the budget runs out, rather than a priority judgment",
+        "Explicit handling of unresolved outcomes as restricting conclusions"
+      ],
+      "rationale": "Staged-variant testing can reach similar configurations by luck or judgment, but it carries no rule that guarantees the deletion boundary is fully tested, no complement step, and no criterion separating a certified one-deletion-minimal failing subset from a plausible story. Substituting it removes the warrant structure and the search-state-driven choice of next test. The baseline itself says its comparisons suggest interactions without certifying a minimal failure explanation and that formal minimality searches are not assumed routine."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "A test-relative necessity claim about elements in a failing subset is permitted only after all valid one-element deletions of that reproducibly failing subset have been tested and pass; otherwise the report must state the partial minimality actually achieved at budget stop, with unresolved outcomes and multiple possible minima limiting the conclusion.",
+      "rationale": "The baseline reasoning is qualitative and hypothesis-led; writing it out explicitly would give a list of suspected features and variant comparisons, not a reduction invariant with a completion criterion. The procedure adds a minimality criterion, a stopping and reporting condition, and an evidence-selection rule, each of which changes which tests are run and which conclusions may be drawn."
+    },
+    "decisive_reason": "The procedure replaces hypothesis-driven variant comparison with a failure-preserving reduction search whose conclusion is gated by a completed one-element deletion check and whose next test is chosen from remaining reduction uncertainty. The supplied baseline lacks that retention invariant, complement testing and minimality completion criterion, and explicitly treats formal minimality searches as non-routine, so substituting ordinary staged-variant testing loses the operation and the warrant.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus; some product practitioners may informally ablate features one at a time, which would narrow the gap on the action locus.",
+      "With six elements the configuration space is small relative to the 80-test budget, so an unstructured or exhaustive native sweep might reach the same deletion-boundary facts; the distinction then rests on the warrant and stopping rule rather than on reachable observations.",
+      "Whether the deletion-boundary record counts as a new observable or as structured native task-completion evidence is unresolved.",
+      "The independent recheck adds little under a deterministic replay test and was not counted as a departure."
+    ]
+  }
+}

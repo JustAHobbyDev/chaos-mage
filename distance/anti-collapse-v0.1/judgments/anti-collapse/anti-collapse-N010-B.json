@@ -1,0 +1,48 @@
+{
+  "case_id": "N010",
+  "anti_collapse": {
+    "status": "CLEAR_COLLAPSE",
+    "departures": {
+      "action": {
+        "status": "absent",
+        "rationale": "The action is to list competing explanations, compare them against traces, counters and matched replay tests, and weaken those contradicted. This is the baseline's ordinary method of replaying workloads, testing competing causes in staging and inspecting traces and resource metrics. No new operation is added: the procedure does not, for example, jointly solve the route measurements for per-stage contributions."
+      },
+      "observable": {
+        "status": "absent",
+        "rationale": "The observable is whether each candidate agrees or conflicts with observed latency, workload and replay behavior. These are the baseline's ordinary evidence types (latency distributions, traces, counters, controlled replay observations). No derived quantity, residual or per-stage estimate is introduced as a new thing to observe."
+      },
+      "inferential_warrant": {
+        "status": "absent",
+        "rationale": "The warrant retains supported candidates and unresolved alternatives and says temporal association alone does not identify a cause. This restates the baseline's inference pattern almost verbatim: temporal association suggests candidates, controlled tests support bounded contribution, and uncertainty remains under confounding. No new criterion for identification, falsification or uncertainty propagation is added."
+      },
+      "problem_decomposition": {
+        "status": "absent",
+        "rationale": "The decomposition is by ordinary candidate causes: deployed changes, load and configuration. This matches the baseline's stratification by deployment, traffic and configuration. The problem is not re-partitioned by route-stage structure or additive contributions, even though the fixture supplies those facts."
+      },
+      "next_inquiry": {
+        "status": "absent",
+        "rationale": "The next step is an ordinary discriminating replay or rollback/reintroduction, followed by checking whether the regression returns under comparable conditions. This is the baseline's ordinary next action of reverting/reintroducing a suspected change and checking reproduction under representative workloads. No rule constrains which test to select or in what order."
+      }
+    },
+    "materiality": {
+      "status": "immaterial",
+      "rationale": "Every element of the procedure maps onto a method, evidence type, inference pattern or next action already listed in the baseline. The stated limits (confounding, incomplete explanations, unrepresentative replay) are the baseline's own acknowledged uncertainties and do not function as a new stopping or evidence-selection rule. Nothing changes how the inquiry proceeds."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "yes",
+      "closest_native_equivalent": "Standard incident differential diagnosis: enumerate candidate causes (deployed changes, load, configuration), compare them against traces, counters and staging replay, discard contradicted candidates, then confirm by rollback/reintroduction under representative workload.",
+      "lost_if_reduced": [],
+      "rationale": "Substituting the ordinary competing-cause comparison with rollback/reintroduction reproduces the procedure's action, observables, warrant, decomposition and next step. No operation, observable, constraint or subsequent inquiry is lost, because the procedure specifies nothing beyond that practice."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "yes",
+      "new_epistemic_constraint": null,
+      "rationale": "The procedure states the ordinary hypothesis-elimination logic in plain terms and adds no formal structure. Its limits clause names general caveats already present in the baseline rather than an operational stopping condition, minimality criterion, residual interpretation or test-selection rule."
+    },
+    "decisive_reason": "The procedure consists only of enumerating candidate causes, checking them against traces, counters and matched replay, eliminating contradicted ones, and confirming by rollback/reintroduction. That is the same sequence the baseline lists as ordinary methods, inference patterns and next actions. It makes no use of the route matrix or the additive stage-contribution structure, and it adds no new observable, warrant, decomposition or next-step constraint, so replacing it with ordinary practice loses nothing.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis rather than verified practitioner consensus, though the procedure falls well inside even a conservative reading of it.",
+      "The phrase 'matched replay tests' could imply slightly stricter matching than some teams practise, but the baseline explicitly includes controlled replay and staging experiments, so this does not amount to a departure."
+    ]
+  }
+}

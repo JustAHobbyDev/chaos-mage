@@ -1,0 +1,56 @@
+{
+  "case_id": "N023",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The analyst proposes candidate nonnegative stage waits, forward-predicts every route total from the route map, compares against all measured totals jointly, and keeps the whole set of assignments that fit within error bounds. The baseline's ordinary actions are direct timestamp and queue comparison, interviews, exception inspection and pilots. None of these fits hidden per-stage quantities to aggregate totals or enumerates a feasible set."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The procedure produces joint route residuals and compatible intervals for unobserved stage waits. Baseline observables are directly recorded quantities: timestamps, queue lengths, staffing, turnaround. An interval for a hidden stage contribution derived from overlapping route totals is a different kind of evidence object, and a residual across routes is a consistency check the baseline does not contain."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Localization is licensed by overlap constraints among routes sharing stages, under calibrated additivity, rather than by observed delay at a stage. The baseline warrant is that timestamp and queue comparisons locate observed delay associations, and it says interviews alone do not establish hidden stage contributions. The procedure also adds an explicit non-identifiability rule: no nonzero wait is inferred when the compatible interval includes zero."
+      },
+      "problem_decomposition": {
+        "status": "uncertain",
+        "rationale": "The units stay the same mapped handoffs and stages, so the decomposition into handoffs is native. What changes is that the stage waits are treated as coupled unknowns constrained jointly by route membership rather than assessed stage by stage. Whether that is a changed decomposition or only a consequence of the new warrant is unclear; the procedure itself says it keeps the mapped handoff units."
+      },
+      "next_inquiry": {
+        "status": "absent",
+        "rationale": "The next step is the same ordinary matched sandbox pilot with an unchanged comparison, reporting observed turnaround without claiming live generality. That matches the baseline's next actions. The procedure does not state a rule for using the two additional route observations to shrink non-uniqueness, nor a rule for choosing the pilot target from the intervals."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The change alters what counts as evidence for where delay accumulates and what may be concluded. Without internal timestamps, the baseline analyst would rely on queues, interviews and exception cases to form a localization judgment. The procedure instead yields bounded intervals per stage from route totals, keeps all compatible assignments rather than one story, and forbids a nonzero-delay claim for any stage whose interval includes zero. That changes which handoffs can legitimately be named as delay sites before the pilot. It is not renaming or bookkeeping."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Compare total turnaround across routes and case types, together with queue lengths, staffing and interviews, to judge informally which handoff appears slow, then pilot a change at that handoff with a matched comparison.",
+      "lost_if_reduced": [
+        "Joint consistency check of candidate stage waits against all route totals at once (route residuals)",
+        "Compatible intervals for hidden stage waits derived from route overlap",
+        "Retention of every assignment within error bounds, making non-uniqueness explicit rather than settling on one attribution",
+        "The rule that a stage is not assigned a nonzero wait when its compatible interval includes zero",
+        "A warrant for bounded localization that does not depend on direct internal timestamps"
+      ],
+      "rationale": "The native substitute can compare route totals and may informally notice that routes sharing a stage are slower, but it has no operation that bounds each stage's contribution from the overlap structure and no rule governing claims under non-uniqueness. Replacing the procedure with it removes the interval observable, the feasible-set retention and the zero-inclusion constraint, all of which affect what localization claim is made."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Retain all nonnegative stage-wait assignments consistent with every route total within error bounds, and do not infer a nonzero wait for a stage whose compatible interval includes zero; localization claims are limited by calibration, route coverage and non-uniqueness.",
+      "rationale": "The baseline reasoning is comparison of observed timestamps and queues, not inverse inference of unobserved stage quantities from aggregates. The procedure is therefore not a formal restatement of that reasoning. It adds an evidence-use rule (fit all routes jointly), a residual interpretation, and a claim-restricting condition tied to the feasible interval. Operationally, some handoffs the native analyst might name as delay sites from interviews or queues would have to be reported as unresolved."
+    },
+    "decisive_reason": "The procedure locates delay by jointly fitting hidden nonnegative stage waits to overlapping route totals and reporting the full compatible interval per stage, with a bar on claiming nonzero delay when that interval includes zero. The baseline locates delay through directly observed timestamp and queue comparisons and has no inverse estimation from aggregates or non-uniqueness rule. Substituting the native method removes that observable, warrant and constraint, even though the follow-up pilot is fully ordinary.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus; some analysts may informally difference totals across routes sharing a stage, which would be a crude version of the same inference.",
+      "The baseline notes some analysts use process mining; it is unclear whether that would extend to inferring hidden stage waits from route totals, though process mining normally relies on event timestamps.",
+      "Whether joint estimation is a changed problem decomposition or only the implementation of the new warrant is unresolved, since handoff units are unchanged.",
+      "The next inquiry is fully native, so the departure is confined to the localization step."
+    ]
+  }
+}

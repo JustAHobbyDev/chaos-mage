@@ -1,0 +1,55 @@
+{
+  "case_id": "N002",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "Before spending the single allowed request, the procedure computes, for each accessible record, the largest number of accounts that would survive any predicted response, and requests the record with the smallest such number (ties broken by identifier). The packet stipulates that the native practitioner would choose by discretion and request R1 because it concerns the most prominent allegation. The rule therefore yields a different concrete act, requesting R3, by a fixed non-discretionary criterion. Provenance assessment, authentication and corroboration around that act are ordinary."
+      },
+      "observable": {
+        "status": "uncertain",
+        "rationale": "The kind of observable is unchanged: an authenticated record response, its consistency with the accounts, and source dependence. However, the record actually observed differs: R3's three-valued response rather than R1's steering-versus-rest response. Whether obtaining a different record of an ordinary kind counts as a changed observable, or only as a downstream consequence of the changed selection, is unclear. No new measurement type is introduced."
+      },
+      "inferential_warrant": {
+        "status": "absent",
+        "rationale": "The returned record is interpreted by ordinary bounded corroboration and disconfirmation. Treating an out-of-dictionary response as unresolved is a fixture condition available to all procedures and matches the native norm that gaps are not proof. The worst-case criterion governs which record is selected, not how the result licenses conclusions. The guarantee that any in-dictionary R3 value leaves at most one account follows from the selection rather than from a new interpretive warrant."
+      },
+      "problem_decomposition": {
+        "status": "absent",
+        "rationale": "The procedure explicitly keeps the same claims, the same three competing accounts and the same claim/source matrix. It introduces no new units of analysis or reconstruction units."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "The next inquiry step is fixed by the worst-case-discrimination rule rather than by allegation salience, redirecting the only budgeted request from R1 to R3. Under a one-request budget this determines the state of the inquiry afterwards. R1 could leave two accounts standing (specialization and clerical reuse) if its response disfavors steering, whereas any in-dictionary R3 response leaves at most one. Follow-up authentication and reporting remain ordinary."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The rule changes which record is requested under a one-request budget, and so changes what evidence enters the inquiry and how many accounts can remain afterwards. This is an evidence-selection constraint with an operational consequence, not renaming or bookkeeping. With the same inputs, the native procedure and this procedure take different actions and reach different possible end states."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Discretionary pursuit of a missing record to test alternative explanations and seek disconfirming evidence, choosing the record tied to the most prominent allegation (R1), followed by ordinary authentication and corroboration.",
+      "lost_if_reduced": [
+        "The fixed selection criterion that ranks records by the worst-case number of surviving accounts across predicted responses, instead of by allegation prominence",
+        "The resulting choice of R3 over R1 for the single budgeted request",
+        "The guarantee that any in-dictionary response leaves at most one retained account, where R1 may leave two undifferentiated",
+        "The removal of reporter discretion and salience from record selection, including the deterministic tie-break"
+      ],
+      "rationale": "The baseline includes seeking disconfirming evidence and missing records, but does not include a rule for choosing among candidate records by worst-case discrimination. The packet explicitly stipulates that the native choice would be R1. Substituting the native equivalent reverses the selection and loses the guaranteed discrimination among all three accounts, so the reduction is not lossless."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Evidence-selection rule: request the accessible record whose worst-case predicted response leaves the fewest surviving accounts, with a deterministic identifier tie-break. This replaces salience-driven discretionary choice for the single budgeted request.",
+      "rationale": "If the rule only made native reasoning explicit, it would reproduce the native choice of R1. Instead it produces R3, so it imposes a criterion not operating in the baseline. The native aim of seeking disconfirming evidence is shared, but the baseline does not specify comparing candidate records by their worst-case partition of the hypothesis set. The counting notation is not what matters; the changed selection and its consequence for the inquiry's end state are."
+    },
+    "decisive_reason": "With identical evidence, dictionary and budget, the procedure's worst-case survivor-count rule directs the single record request to R3, whereas the stipulated native discretionary practice requests R1 on grounds of allegation prominence. This is a different action and next inquiry that cannot be replaced by the native equivalent without losing guaranteed discrimination among all three accounts. Everything else (authentication, corroboration, decomposition, interpretive warrant) stays ordinary, but this one evidence-selection change is operational and irreducible.",
+    "uncertainty": [
+      "The native baseline is a scoped authored hypothesis, not verified practitioner consensus. Some experienced reporters may informally prefer the record that discriminates among the most explanations, which would narrow the departure.",
+      "The departure is local to record selection; interpretation, decomposition and follow-up are ordinary.",
+      "The rule's guarantee holds only for the supplied finite account set and validated response dictionary. Hidden accounts or out-of-dictionary responses leave the comparison unresolved.",
+      "Whether the changed record constitutes a changed observable or only a consequence of the changed action is unclear."
+    ]
+  }
+}

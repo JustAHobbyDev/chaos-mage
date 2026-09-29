@@ -1,0 +1,57 @@
+{
+  "case_id": "N015",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The procedure shifts long ordered measured count sequences against overlapping reference sequences and explicitly tests omitted or duplicated increments as alignment hypotheses, accepting only alignments within the supplied measurement tolerance and independent anchors. The baseline's ordinary actions are comparing discrete dating clues (postmarks, handwriting, event mentions, paper) and cross-checking them. The baseline explicitly states that quantitative alignment of long measured sequences is not assumed customary, and the reference practitioner is scoped as lacking the relevant sequence-matching specialization. Testing insertion/deletion of increments to reconcile runs is an operation with no counterpart in the listed ordinary methods."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The observable is relational: the match of a long count run against a reference at a given offset, plus the number and position of missing or extra increments required to reconcile them, plus the set of nonunique compatible alignments. The baseline's ordinary evidence is letters, envelopes, accession records, calendars, material clues and event records read as individual clues. The impression counts are available to all procedures, but the offset-dependent match and the required-gap quantities only exist as observables once the sliding alignment is performed; clue-by-clue comparison does not produce them."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "The warrant for an increment position comes from the fit of a long sequence to overlapping references under a tolerance, qualified by indel hypotheses, rather than from convergence of independent date clues. It then passes through a separately documented impression-to-letter relation that yields only a bounded writing interval. It also imposes a specific interpretive limit: a gap is an alignment requirement, not evidence of intentional omission. The baseline's convergence-of-clues warrant and its caution that custody or arrangement do not establish writing order are related in spirit, but the pattern-fit warrant over a measured series is a different basis for the date constraint."
+      },
+      "problem_decomposition": {
+        "status": "uncertain",
+        "rationale": "The task remains letter dating, as the procedure itself states. However, it inserts an intermediate stage: first position increments by alignment, then map increment positions to letters through the bounded impression-to-letter relation. Whether this two-stage structure counts as a changed decomposition or merely the measurement unit needed for the new observable is unclear; the procedure describes it minimally."
+      },
+      "next_inquiry": {
+        "status": "absent",
+        "rationale": "The procedure explicitly returns to ordinary independent-anchor checking and reporting of alternative intervals, with no new adaptive request rule. This matches the baseline's ordinary next actions of seeking independent anchors and preserving alternative chronologies."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The alignment operation changes what is done with the evidence, what is observed and what grounds the date constraint. It produces offset-specific matches and required missing/extra increments that can exclude or admit candidate chronologies, and it can leave several compatible alignments standing as explicit alternatives. This is not renaming or bookkeeping of clue comparison: the single permitted full alignment comparison is a distinct evidential operation whose result is then checked against one independent anchor."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Ordinary pattern comparison and cross-checking of independent dating clues (postmarks, event mentions against calendars, material and handwriting features), preserving uncertain intervals and ambiguous matches, followed by independent-anchor checks.",
+      "lost_if_reduced": [
+        "Sliding comparison of long measured count sequences against overlapping references across candidate offsets",
+        "Explicit testing of omitted and duplicated increments as hypotheses needed to reconcile sequences",
+        "The relational observable of match quality per offset and the required missing/extra increments",
+        "Acceptance criterion tied to a supplied measurement tolerance rather than qualitative resemblance",
+        "Enumeration of nonunique compatible alignments arising from repeated runs",
+        "The interpretive limit that a required gap is an alignment requirement and not automatically an intentional omission"
+      ],
+      "rationale": "The baseline treats qualitative pattern comparison as ordinary but expressly does not assume quantitative alignment of long measured sequences is customary for this practitioner. Substituting ordinary clue comparison would use the counts, at most, as isolated marks on individual letters and would not generate offset-dependent matches or indel requirements. The count sequences being accessible to all procedures does not make the alignment operation native; the operation and its outputs would be lost."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "A candidate date placement must correspond to an alignment of the long count run with overlapping references that falls within the supplied measurement tolerance, with any omitted or duplicated increments stated explicitly as requirements of that alignment, and must be consistent with independent anchors; all compatible alignments are retained, and the result constrains letters only to the bounded interval given by the impression-to-letter relation.",
+      "rationale": "This is not a tabulation of reasoning the archivist already performs. It adds an evidence-selection and acceptance rule over a measured series (tolerance-bounded fit with explicit indel testing) and a residual interpretation rule for gaps. These determine which chronologies survive and how gaps may be read, which has operational consequences beyond making ordinary clue convergence explicit."
+    },
+    "decisive_reason": "The procedure performs offset-shifting alignment of long measured count sequences with explicit omitted/duplicated-increment testing under a measurement tolerance, producing relational match and required-gap observables that ground the date constraint. The supplied baseline lists only qualitative clue and pattern comparison and explicitly declines to assume quantitative long-sequence alignment as customary, so replacing the procedure with ordinary clue cross-checking removes the alignment operation, its observables and its warrant.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis rather than verified practitioner consensus, so the boundary between ordinary pattern comparison and sequence alignment may be less sharp in actual practice.",
+      "The baseline states pattern comparison is ordinary; some archivists may informally compare serial or register-number runs, which could make part of the action an uncommon native variation rather than a fully non-native one.",
+      "Whether the intermediate increment-positioning stage constitutes a changed problem decomposition is unresolved.",
+      "Next inquiry is explicitly ordinary, so the departure is local to the alignment step and its observables and warrant."
+    ]
+  }
+}

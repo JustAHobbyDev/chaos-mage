@@ -1,0 +1,55 @@
+{
+  "case_id": "N013",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The native practitioner chooses staged variants or revised prototypes guided by observed errors and hypotheses about what to fix. The procedure instead runs a rule-governed search that preserves the failure: each valid one-element deletion is tried in fixed identifier order, kept only if failure recurs, and the search restarts from the reduced configuration. Trial selection is fixed by the rule and the current retained configuration, not by judgment about which feature looks suspicious, and the aim is to keep the failure while shrinking the configuration rather than to find a variant that passes."
+      },
+      "observable": {
+        "status": "uncertain",
+        "rationale": "The raw observable is the same pass/fail/unresolved outcome of the replayed task, which is ordinary prototype task completion in the baseline. What differs is the structured set collected: the chain of retained failing configurations plus the full set of passing one-element deletions around the final subset (the deletion boundary). Whether that counts as a new observable or as native observations arranged by a new selection rule is unclear."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "The baseline warrants bounded claims about flows and suggests interactions without certifying any minimal failure explanation. The procedure licenses a specific claim tied to how it stopped: a completed final pass establishes one-deletion minimality among valid deletions under this test, while a budget stop supports only a reduced sufficient subset. Unresolved outcomes are explicitly not counted as failure. That the warrant depends on the stopping condition is absent from native inference patterns."
+      },
+      "problem_decomposition": {
+        "status": "present",
+        "rationale": "The native decomposition is by user needs, flows, assumptions and dependencies, with per-feature priority as the output. The procedure makes the explanatory unit a jointly failure-preserving subset of elements and its tested deletion boundary. Necessity is defined relative to that subset rather than per feature, and several minimal subsets are admitted, which directly explains why a simple ranking fails."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "During the reduction the next trial is determined mechanically as the next valid deletion from the currently retained failing case, not chosen by following up a suspected dependency. Ordinary qualitative follow-up resumes only after the reduction ends and is then aimed at the interaction inside the retained subset. The post-reduction step is native; the in-reduction sequencing rule is not."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The retention rule, restart rule and stopping condition change which configurations get tested, in what order, when inquiry halts, and what claim may be made at halt. A practitioner following them would run different trials and reach a differently bounded conclusion (one-deletion-minimal failing subset versus reduced sufficient subset) than one comparing hypothesis-driven staged variants. This is more than relabelling or bookkeeping of the same trials."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Comparing staged prototype variants with selected features removed, guided by observed user errors and known dependencies, to see which variants complete the activation task and to suggest interactions and priorities.",
+      "lost_if_reduced": [
+        "The failure-preserving retention criterion: a deletion is kept only when failure recurs, so the search shrinks the failing case instead of looking for a passing variant.",
+        "The stopping condition of a complete pass with no accepted deletion, and the resulting one-deletion minimality claim among valid deletions.",
+        "The warrant distinction between a completed pass (one-deletion minimal) and a budget stop (reduced sufficient subset only).",
+        "The failing subset with its deletion boundary as the explanatory unit, replacing per-feature priority.",
+        "Rule-determined selection of the next trial from the current retained failing configuration in fixed order."
+      ],
+      "rationale": "Staged-variant comparison shares the basic act of removing elements and rerunning the task, but it has no rule for which removals to keep, no restart from the reduced failing case, and no halt criterion that certifies local minimality. The baseline states that formal minimality searches are not assumed routine and that its inference patterns do not certify a minimal failure explanation. Substituting the native method would give suggestive interaction evidence without the bounded minimality result or the subset-relative notion of necessity."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Accept a deletion only if the failure recurs on the reduced configuration, never counting unresolved as failure; continue from the reduced configuration; claim one-deletion minimality only after a complete pass over valid deletions accepts none, and otherwise (budget exhausted) claim only a reduced failure-sufficient subset.",
+      "rationale": "Native reasoning does not contain an implicit version of this rule that the procedure merely writes down. Native variant testing is hypothesis-driven and aimed at revising priorities. The procedure adds an evidence-selection rule, a stopping condition and a conclusion that depends on how the search stopped, which together govern which trials are run and what may be inferred."
+    },
+    "decisive_reason": "The procedure replaces hypothesis-driven comparison of staged variants with a failure-preserving greedy deletion search. It keeps a deletion only when failure recurs, restarts from the reduced case, and halts on a complete pass with no accepted deletion, which yields a one-deletion-minimal failing subset and its passing deletion boundary as the unit of explanation. The native baseline has no such retention rule, stopping condition or minimality warrant and explicitly does not assume formal minimality searches are routine, so reducing to staged-variant testing loses these operations.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified consensus. Some product practitioners may informally strip features one at a time until the problem disappears, which would narrow the gap.",
+      "Whether the deletion boundary is a new observable or only a systematic arrangement of native pass/fail task observations is unclear.",
+      "After the reduction ends, follow-up reverts to ordinary native practice, so the departure is confined to the reduction phase and its resulting warrant."
+    ]
+  }
+}

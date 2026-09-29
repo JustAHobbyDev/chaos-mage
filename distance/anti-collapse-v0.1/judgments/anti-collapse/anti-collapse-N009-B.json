@@ -1,0 +1,56 @@
+{
+  "case_id": "N009",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "The procedure builds competing offset/gap assignments jointly across all overlapping long count sequences and eliminates whole assignments that violate measurement bounds or anchors. The baseline's ordinary actions are clue-by-clue comparison of dated references, handwriting, postmarks and material, and it explicitly says quantitative alignment of long measured sequences is not assumed customary. Enumerating and pruning global alignment hypotheses, including omitted or duplicated increments, is a different operation from cross-checking individual dating clues."
+      },
+      "observable": {
+        "status": "present",
+        "rationale": "The attended observables are jointly compatible offsets, gap/duplication patterns across overlaps, and the set of surviving global assignments. Native observables are per-document clues (postmarks, event mentions, hands, paper) and the intervals they yield. An offset between sequences and a hypothesised omitted or duplicated increment are not quantities the baseline practitioner ordinarily produces or reads, although the underlying count records are open to everyone in the fixture."
+      },
+      "inferential_warrant": {
+        "status": "present",
+        "rationale": "Part of the warrant is native: independent anchors constrain intervals, and unresolved alternatives are kept rather than forced. The added warrant is that repeated correspondence across long overlapping sequences, under an explicit error model of omissions and duplications, licenses or excludes a chronology as a whole. A letter's date is justified by membership in a globally consistent assignment, not by convergence of that letter's own clues. The baseline allows pattern comparison to support a relative sequence, but not this global, error-modelled alignment warrant."
+      },
+      "problem_decomposition": {
+        "status": "present",
+        "rationale": "The unit of analysis shifts from individual letters with their own clue sets to joint chronology variables (offsets and gap alternatives) shared across all sequences, with anchors acting as constraints on the whole system. A change to one overlap's gap hypothesis propagates to every linked letter. The baseline decomposition of custody, original order and per-document dating clues does not include this coupling."
+      },
+      "next_inquiry": {
+        "status": "uncertain",
+        "rationale": "Seeking an independent anchor and checking conflicting clues are ordinary next actions in the baseline. The procedure adds a selection rule: spend the single permitted anchor check where surviving global assignments disagree, then recheck global consistency and stop. This is a discriminating evidence-selection constraint, but a careful archivist might also pick the anchor that resolves the live conflict, so it is unclear whether this locus alone exceeds native practice. It does depend on the non-native set of surviving assignments to define where to look."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "Joint alignment changes which chronologies are admissible. A locally plausible date for one letter can be rejected because it forces an inconsistent offset or an unsupported gap elsewhere, and distinctive versus repeated runs are resolved by global fit rather than local resemblance. It also determines where the single anchor check is spent and what the final report contains: surviving global assignments with residual ambiguity rather than per-letter intervals. These are changes in how inquiry proceeds, not relabelling or bookkeeping."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Cross-checking converging independent date clues letter by letter, using qualitative pattern comparison to support a relative sequence, seeking one further independent anchor, and preserving alternative chronologies and uncertain intervals.",
+      "lost_if_reduced": [
+        "Joint construction of offset/gap assignments across all overlaps, so that constraints propagate between sequences and letters",
+        "Explicit competing hypotheses for omitted or duplicated increments, tested against documented measurement bounds",
+        "Rejection of whole chronologies on global inconsistency rather than on per-clue conflict",
+        "The rule that the single anchor check is placed where surviving global assignments diverge",
+        "The global consistency recheck after the anchor observation"
+      ],
+      "rationale": "The native equivalent keeps the shared commitments to independent anchors and preserved ambiguity, but it handles the count sequences at most as another pattern clue compared locally. It drops the joint hypothesis space, the error-model alternatives and the global elimination step. The baseline itself flags quantitative alignment of long measured sequences as not assumed customary, so substituting ordinary practice removes the central operation rather than restating it."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "A date or order for any letter is admissible only as part of an offset/gap assignment that is jointly consistent across all sequence overlaps, measurement bounds and independent anchors. The single anchor check must be used at a point where surviving assignments differ, and unresolved assignments are reported as alternatives.",
+      "rationale": "This is not native cross-checking written in a table or notation. It imposes a global consistency requirement and an evidence-selection rule over a hypothesis space (offsets, omissions, duplications) that the baseline practitioner does not ordinarily construct. The consequence is that different chronologies survive and a different anchor may be checked than under clue-by-clue reasoning."
+    },
+    "decisive_reason": "The procedure tests whole offset/gap assignments jointly across long overlapping measured sequences, with explicit omitted/duplicated-increment alternatives, and rejects them on global inconsistency. The baseline works by per-document clue convergence and qualitative pattern comparison and explicitly does not assume quantitative long-sequence alignment as customary. Reducing to native practice removes the joint constraint propagation and the divergence-targeted anchor choice, which alters which chronologies are justified.",
+    "uncertainty": [
+      "The baseline is a scoped authored hypothesis, not verified practitioner consensus; some archivists may align serial numbering or register sequences in ways closer to this procedure.",
+      "The baseline treats pattern comparison as ordinary, and the line between qualitative pattern comparison and joint quantitative alignment is not sharply drawn in the packet.",
+      "Preserving alternative chronologies, seeking independent anchors and keeping the impression-to-letter bridge separately bounded are native or fixture-supplied, so the departure lies in the joint alignment and elimination step, not in those elements.",
+      "The stopping point after one anchor check is partly a consequence of the fixture budget rather than of the procedure itself."
+    ]
+  }
+}
