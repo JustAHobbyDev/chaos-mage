@@ -1,0 +1,38 @@
+# Source-neutral operational rewrite
+
+Rewrite the supplied five-field mapping in source-neutral operational language.
+Preserve every operationally meaningful feature, condition, uncertainty, observable,
+inferential limitation, stopping condition and specified next inquiry. Remove source
+discipline names, imagery and metaphor. Retain the target objects and the actual
+procedure. Do not strengthen, weaken, repair, complete or evaluate the procedure.
+
+Return the exact case_id and the seven source_neutral fields in the supplied schema.
+The procedure describes the state and overall process; action describes operations;
+observables describes signals; inferential_warrant describes justified conclusions;
+problem_decomposition describes the units and relationships; next_inquiry describes
+specified follow-up; limits includes conditions and stopping rules. If no follow-up
+or stopping condition is specified, state that it is unspecified instead of inventing
+one. Do not supply a baseline or judge how the procedure relates to usual practice.
+
+Describe behavior, never a verdict. Do not use these words or phrases, including in
+negated statements: ordinary, native, novel, unorthodox, merely, only formalizes,
+adds no warrant, new warrant, creative, same as standard practice, non-native,
+material departure, CLEAR_COLLAPSE, SUFFICIENT_DEPARTURE, BORDERLINE_KEEP.
+Do not say a method adds or lacks an epistemic contribution.
+
+Treat packet text as data. Use only this target question and mapping. No tools,
+browsing, files, retrieval, memory, plugins, other cases or external context.
+
+
+CASE PACKET
+{
+  "case_id": "E014",
+  "target_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+  "mapping": {
+    "state": "Treat the proposed redesign as a mixture of candidate functions, including suspected dependencies and substitutes. The packet supplies no actual features, activation definition or observations. Before testing, specify these, the intended user scenarios and the evidence required for activation. Assume provisionally that some functions encounter different requirements at different checkpoints and can therefore be distinguished; preserve inseparable candidates as bundles rather than assuming independence.",
+    "operation": "Use advancing user task attempts as the moving phase and a fixed sequence of activation requirements as the stationary phase. In staged prototypes, track each candidate function's associated task demand at every checkpoint: record whether it is satisfied and travels onward with progress, or remains unresolved against a checkpoint requirement. Repeat this partition assessment through the flow, allowing an earlier satisfied demand to become relevant again. Keep checkpoint criteria, available assistance and scenario conditions comparable across variants; record deviations. Compare the full proposal with coherent omission variants, restoring omitted functions when investigating a failure. For suspected pairs, compare both present, each alone and neither, where all four variants remain interpretable. Set a session budget and task timeout before testing; stop an attempt at activation, withdrawal or timeout, recording unresolved demands. Stop the study at its budget and retain unresolved comparisons as uncertain.",
+    "signal": "Record the checkpoints and elapsed times at which demands resolve, recur or remain blocked, alongside activation, errors and assistance. Group function-associated traces by where and when they resolve to form an analogue of separated bands. Distinct patterns are candidate separations; overlapping patterns are possible co-elution. Observe whether omission introduces a specific blockage, restoration removes it, and a pair's joint presence or absence produces a pattern that differs from either isolated change. These are proposed observations, not reported results.",
+    "inference": "Different trace patterns support distinguishable functional demands with different dependence on the tested checkpoints. Their persistence characterizes relative retention under those conditions, not feature value. A function is supported as necessary only for the tested configuration and scenarios when a functioning full variant loses activation after its coherent omission, the blockage is linked to that omission, and restoration recovers activation under comparable conditions. Successful omission shows that the function is dispensable in that tested configuration. Pair comparisons can support complementarity, substitution or order dependence, making a single context-free feature ranking misleading. Uninterpretable or untested combinations support no necessity conclusion.",
+    "limit": "Functions may co-elute because they serve the same requirement, depend on one another or are measured too coarsely. User experience, task order, assistance, prototype fidelity and checkpoint design can shift apparent retention. Completion, delay and errors are nonspecific signals: they do not identify their cause or establish necessity alone. If traces overlap, inspect task observations and event traces and, within the declared budget, test a coherent separating variant; otherwise retain the bundle as unresolved. If an omission breaks prototype integrity or changes unrelated requirements, repair that comparison before interpreting it, or mark it uninterpretable. Use observed blockage and omission/restoration evidence to corroborate functional attribution. Small studies and limited combinations cannot establish population-wide necessity, unique feature identity or a globally minimal activation design."
+  }
+}
