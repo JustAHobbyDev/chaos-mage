@@ -1,0 +1,44 @@
+{
+  "case_id": "E003",
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ],
+    "ordinary_inference_patterns": [
+      "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+      "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+    ],
+    "ordinary_next_actions": [
+      "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+      "Check whether an apparent fix reproduces under representative workloads."
+    ]
+  },
+  "source": {
+    "name": "Dechallenge and rechallenge",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+      "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+      "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+      "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+      "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+    }
+  }
+}

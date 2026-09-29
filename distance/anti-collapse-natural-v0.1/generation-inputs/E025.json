@@ -1,0 +1,43 @@
+{
+  "case_id": "E025",
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?"
+  },
+  "native_baseline": {
+    "target_domain": "organizational handoff delays",
+    "target_task": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "reference_practitioner": "Operations improvement analyst specializing in service-team handoffs, without control-engineering training.",
+    "ordinary_methods": [
+      "Map actual workflow and ownership; compare timestamps and queues across case types.",
+      "Interview participants and inspect exception cases.",
+      "Pilot explicit handoff changes and compare turnaround, accounting for staffing and demand."
+    ],
+    "ordinary_evidence": [
+      "Ticket histories, queue lengths, staffing schedules, service-level targets and interviews."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Some analysts use process mining; dynamic system estimation from designed excitation is outside this scoped baseline."
+    ],
+    "ordinary_inference_patterns": [
+      "Timestamp and queue comparisons locate observed delay associations; pilots accounting for staffing and demand support bounded change assessments.",
+      "Interviews suggest explanations but do not alone establish hidden stage contributions or a causal remedy."
+    ],
+    "ordinary_next_actions": [
+      "Inspect exception cases, compare affected handoffs and pilot a bounded workflow change.",
+      "Check turnaround under comparable demand and staffing before generalizing."
+    ]
+  },
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "E023",
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ],
+    "ordinary_inference_patterns": [
+      "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+      "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+    ],
+    "ordinary_next_actions": [
+      "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+      "Check whether an apparent fix reproduces under representative workloads."
+    ]
+  },
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  }
+}

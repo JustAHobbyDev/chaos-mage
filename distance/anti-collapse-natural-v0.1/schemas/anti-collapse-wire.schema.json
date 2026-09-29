@@ -1,0 +1,272 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "anti_collapse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "CLEAR_COLLAPSE",
+            "SUFFICIENT_DEPARTURE",
+            "BORDERLINE_KEEP"
+          ]
+        },
+        "departures": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "uncertain"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "status",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "observable": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "uncertain"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "status",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "inferential_warrant": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "uncertain"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "status",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "problem_decomposition": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "uncertain"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "status",
+                "rationale"
+              ],
+              "additionalProperties": false
+            },
+            "next_inquiry": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "uncertain"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "status",
+                "rationale"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "action",
+            "observable",
+            "inferential_warrant",
+            "problem_decomposition",
+            "next_inquiry"
+          ],
+          "additionalProperties": false
+        },
+        "materiality": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "material",
+                "immaterial",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "native_reduction": {
+          "type": "object",
+          "properties": {
+            "collapses_without_loss": {
+              "type": "string",
+              "enum": [
+                "yes",
+                "no",
+                "uncertain"
+              ]
+            },
+            "closest_native_equivalent": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "lost_if_reduced": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "collapses_without_loss",
+            "closest_native_equivalent",
+            "lost_if_reduced",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "formalization": {
+          "type": "object",
+          "properties": {
+            "merely_makes_native_reasoning_explicit": {
+              "type": "string",
+              "enum": [
+                "yes",
+                "no",
+                "uncertain"
+              ]
+            },
+            "new_epistemic_constraint": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "merely_makes_native_reasoning_explicit",
+            "new_epistemic_constraint",
+            "rationale"
+          ],
+          "additionalProperties": false
+        },
+        "decisive_reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "departures",
+        "materiality",
+        "native_reduction",
+        "formalization",
+        "decisive_reason",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "anti_collapse"
+  ],
+  "additionalProperties": false
+}
