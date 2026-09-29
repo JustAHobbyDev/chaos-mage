@@ -1,0 +1,40 @@
+{
+  "case_id": "E002",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Each step of the source chain has a functional counterpart. State: the internal distribution of added delay cannot be read directly but alters the latency of requests crossing the system on many path classes. Operation: per-request latencies are compared with a reference-model prediction and the model is iteratively adjusted to reduce residuals, with a coverage matrix and a synthetic-delay resolution test as the checkerboard counterpart. Signal: the structure of residuals across path classes, not their overall size. Inference: a constrained model of where delay sits, explicitly not proof of a unique cause. All six source limits are carried over with concrete counterparts (coverage, measurement error, uncertain path/version assignment, regularisation, additivity assumptions, non-uniqueness), and target-specific weakenings are added. The intervention follow-up is an addition to the source mechanism, not a substitution for any step."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The mapping keeps the target question and addresses both halves in form: attribution of delay to a changed cell, and three discriminators from load (residual persists at matched load, is absent on bypassing and old-version paths, onset aligns with the change's arrival per instance), plus an intervention-based causal bound. But target.evidence is empty, and the mapping itself lists assumptions (a)-(c) as not supplied by the packet. Whether a specific change can be named depends on path/version-tagged records, a comparable pre-regression window, and candidates crossed by differing path sets, or on a follow-up intervention. If candidates are collinear, the mapping yields only 'one or more of this set'. These are concrete bridges that leave the question unchanged."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The chain is intelligible and bounded: fitting per-cell increments against a load-response-only alternative yields residual patterns that discriminate a localised change from a shared load effect, and the mapping withholds attribution when coverage is collinear or the resolution test fails. The warrant from residual structure to cell attribution rests on empirical relations not established in the packet: that per-traversal delays are approximately additive along checkout paths (the mapping notes failure under parallel calls, queueing and tail latency), that the pre-regression load-response model holds in the post-regression load range, and that the inversion recovers a known injected delay under the actual coverage. The causal bound further requires a removal/reintroduction intervention at held load whose feasibility is unknown. These are named, establishable measurements rather than circular or imagery-based steps."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Per-request records must carry path identity and build/configuration/flag identity for the checkout system. Establish by auditing trace or joinable log data in both the pre- and post-regression windows, including sampling rate and version-assignment accuracy during rollout.",
+      "A pre-regression window with comparable instrumentation must exist, with load covariates overlapping the post-regression load range. Establish by checking data retention and comparing request rate, concurrency, queue depth and utilisation distributions across the two windows.",
+      "Candidate changes must be separately covered. Establish by building the coverage matrix and testing for collinearity between candidate cells and between candidates and load strata. If collinear, new paths must be created by a single-change canary, a flag flip on a traffic subset, or bisected builds under replay.",
+      "The per-traversal additive delay model and the chosen regularisation must resolve a localised delay under the actual coverage. Establish with the synthetic-delay resolution test (recovery in the correct cell at the correct magnitude) and by checking stability of estimates across regularisation settings.",
+      "The causal bound requires that removing and reintroducing the indicated change at held or matched load removes and restores the residual. Establish by controlled rollback/reintroduction or representative replay, after confirming that rollback is safe and that replay reproduces production data shape and concurrency."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The mapping preserves the tomographic state→operation→signal→inference chain and its limits, and its inference is bounded and self-gating. No criterion fails. Target fidelity and operational coherence are conditional because the packet supplies no target evidence: whether a specific deployed change can be named and distinguished from load depends on identifiable, establishable conditions — tagged per-request data, a comparable baseline, separable path coverage, a passed resolution test, and a feasible intervention at held load. The mapping names these itself and does not assert they hold."
+  },
+  "uncertainty": [
+    "target.evidence is empty: the number of candidate changes, the rollout style (mixed versions or all-at-once), the available instrumentation and the load data are all unknown, so no change can be named from the packet.",
+    "If all candidate changes shipped in a single deployment to all hosts simultaneously, path coverage is degenerate and the inversion contributes little beyond the follow-up interventions; the packet does not say whether this is the case.",
+    "The causal-bounding part of the answer comes from the appended intervention step (canary, flag flip, bisect, rollback/reintroduction) rather than from the tomographic inversion itself. It is assessed here as part of the supplied mapping; the inversion alone supports localisation and discrimination, not causal bounds.",
+    "The operational coherence call between 'coherent' and 'conditional' is close: the mapping's inference is conditional in form and self-gating, which could support 'coherent'. 'Conditional' was chosen because the additivity and resolution-recovery relations are empirical and unestablished.",
+    "The extent of non-stationarity (caches, autoscaling, data growth) and of latency-dependent path selection (timeouts, retries, load balancing) in the target system is unknown; either could undermine the reference model in ways the resolution test may not fully expose.",
+    "Tail-latency regressions may not decompose additively; whether the checkout regression is a mean shift or a tail phenomenon is not stated."
+  ]
+}

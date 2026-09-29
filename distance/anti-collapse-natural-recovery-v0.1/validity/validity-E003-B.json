@@ -1,0 +1,35 @@
+{
+  "case_id": "E003",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Each link of the source chain has a functional counterpart. State: a suspected deployed change is present while the latency regression is occurring, with its removability treated as something to check. Operation: remove the candidate from a bounded cohort, observe through settling windows, and reintroduce only where justified and within safety thresholds. Signal: latency decreases after removal and rises again after restoration, in temporal association with the perturbation. Inference: a reproducible removal/restoration relationship increases support for a causal contribution, not proof of sole causation. The source limits all carry over: spontaneous change, concurrent changes, delayed or persistent effects (queue drainage, caches, persistent data), unsafe or impossible reintroduction, and the insufficiency of timing alone. The contemporaneous control cohort and load stratification are additions that respond to the source's own concurrent-change limit; they do not substitute for the dechallenge/rechallenge logic. Downgrading to bundle-level attribution when the factor cannot be isolated keeps the tested factor identical to the factor actually perturbed."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has two parts. For 'which deployed change', the mapping selects a candidate from deployment history and traces, tests it, moves to a competing candidate after an adequate negative result, and bisects a responding bundle before attributing to one member. For 'what bounded causal evidence distinguishes it from load variation', it specifies a removal/restoration response that exceeds the change in an unchanged contemporaneous cohort within matched request-rate and request-mix strata, which makes load variation alone a less adequate explanation. The packet contains no evidence, and the mapping says plainly that it names no culprit without the proposed observations. It also bounds the claim to contribution under the tested version, configuration, traffic and capacity conditions. That is an explicitly bounded contribution to the original question, not an answer to a different one."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation yields the stated signal: cohort latency before and after removal and restoration, compared against a control and stratified by load, with timing, effect size and variability recorded. These are ordinary, directly measurable quantities in the target domain, so no unestablished proxy or empirical bridge is needed for the signal to bear on the inference. The inference is graded by what is actually observed: full removal-plus-restoration gives stronger support, removal-only gives limited attribution, a bundle response gives bundle-level attribution, and a negative result weakens the hypothesis only within tested conditions. Failure branches are explicit: stop causal interpretation when comparison is defeated, do not perturb production if reversibility or safety is unestablished, and retain staging as an inference boundary. The chain is not circular and does not rest on clinical imagery."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping carries the dechallenge/rechallenge chain and its limits into production-regression diagnosis without losing a step, addresses both parts of the retained question as an explicitly bounded contribution, and links operation to signal to inference through directly measurable quantities. Reversibility, safety, load matching and settling time are contingencies of execution, and the mapping handles each with its own branch and a correspondingly weaker inference, so they are not unresolved warrants that the validity of the transfer depends on. The mapping does not claim to have identified a culprit; it claims only that the proposed observations, if obtained, would increase or weaken support for a tested candidate within the tested conditions."
+  },
+  "uncertainty": [
+    "The packet's target evidence is empty, so no actual deployed change is identified and no observation has been made. The assessment covers the mapped procedure and its bounded inference, not any realised attribution.",
+    "It is unknown whether any candidate change in this target is independently reversible or safe to reintroduce. If not, attribution is limited to the bundle level or to removal-only evidence, as the mapping itself states.",
+    "It is unknown whether a comparable contemporaneous cohort can be formed without contamination from shared resources such as databases, caches or queues. Shared-resource interference could weaken the comparison with load variation.",
+    "If load cannot be matched in production, the inference rests on staging replay, and how representative that replay is of production checkout behaviour is not established in the packet.",
+    "Settling and propagation delays are to be specified in advance but are not known. A mis-specified window would make a negative result inconclusive.",
+    "The regression may arise from an interaction between a change and load, or from several changes together. The mapping bounds its claim to causal contribution, so a single change that 'accounts for' the regression may not exist.",
+    "Judging that no reframe occurred involves some discretion: the mapping narrows 'accounts for' to 'contributes causally under tested conditions', which was treated here as bounding the question and not changing it."
+  ]
+}

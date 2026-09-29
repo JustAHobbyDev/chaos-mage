@@ -1,0 +1,33 @@
+{
+  "case_id": "E004",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Each step of the source chain has a functional counterpart. State: handoff queues vary over time, and a single slow case or snapshot cannot separate persistent accumulation from a temporary surge. Operation: comparable measurements (waiting counts, pending ages, arrivals and departures, median and upper-tail elapsed times) are repeated at fixed times under fixed definitions and judged against a pre-specified expected-variation range, change threshold and persistence rule. Signal: persistence, progressive increase, reversal and threshold crossing. Inference: the temporal pattern constrains whether accumulation is sustained, worsening or resolving, and separates it from isolated peaks. The source limits are carried over in target terms (timestamp error, regression to the mean, missed samples, changing case mix or staffing, concurrent interventions, poorly chosen intervals and thresholds), with censoring and autocorrelation added. The pilot phase is monitoring of response to a change using the same rules, which stays within the source mechanism, and causal claims are explicitly withheld."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The 'where' part of the question is answered directly: per-handoff series within comparable case types locate accumulation, rather than an aggregate average. The 'which bounded changes' part receives an explicitly bounded contribution. One candidate change (automatic assignment to a named approver, limited to one handoff and case type) is proposed only if exception and ownership records suggest unclear assignment. It is then assessed with the same serial measurements plus downstream and quality guards, with revert and inconclusive branches. The mapping states that serial monitoring evaluates the candidate rather than establishing its cause, and restricts conclusions to the tested scope. The question itself is not changed."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the specified recording and weekly summaries yields time series of elapsed times, pending ages and queue imbalance. Persistent, concordant excursions beyond pre-specified ranges warrant the limited claim that a handoff is a location of observed delay accumulation. Sustained pilot improvement under comparable conditions, without downstream or quality deterioration, warrants retaining the change within the tested scope only. The inference does not depend on source imagery and is not circular. Inadequate counts, incomparable conditions or results within expected variation lead to an explicit inconclusive outcome rather than a forced conclusion. The fallback measure (ready-to-decision time) is acknowledged as mixing waiting and approval work. Data availability and threshold setting are handled as procedural preconditions inside the mapping, not as an unestablished relation on which the inference rests."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping keeps the serial-monitoring chain of time-varying state, repeated comparable measurement against a defined change rule, temporal pattern and constrained inference, along with the source limits in target form. It addresses both parts of the retained question: directly for locating accumulation, and as an explicitly bounded, non-causal contribution for identifying a candidate change. The inferences are hedged in proportion to what the signals can support, with inconclusive, stop and revert branches. The remaining unknowns (timestamp semantics, adequacy of four-week phases, threshold values) are flagged inside the mapping as verification steps or provisional choices. They affect whether a given run yields a conclusive result, not whether the mapped inference follows, so they are recorded as uncertainty rather than as conditions on validity."
+  },
+  "uncertainty": [
+    "The packet supplies no target evidence. Whether ticket histories actually record a reliable 'ready for approval' timestamp is the candidate's assumption, not an established fact. If it fails, pending-case ages and elapsed times could not be measured as specified, and the verdict would move toward Conditional.",
+    "The four-week baseline and pilot durations, the three-consecutive-week persistence rule, the minimum case counts and the change thresholds are provisional or unspecified. Their adequacy against seasonal variation, autocorrelation and low case volumes is unknown.",
+    "The mapping tests only one candidate change, and only if exception and ownership records point to unclear assignment. Serial monitoring does not itself generate candidate remedies, so the contribution to 'which bounded changes' may be narrow or empty in a given run.",
+    "Whether a comparable unchanged group is feasible is unknown. Without it, pilot improvement is harder to separate from regression to the mean or concurrent changes, as the mapping acknowledges.",
+    "Treating the intervention pilot as within serial monitoring (monitoring response to a change) rather than as an added experimental mechanism is a judgment call. A stricter reading could regard the pilot as going beyond the source instrument."
+  ]
+}

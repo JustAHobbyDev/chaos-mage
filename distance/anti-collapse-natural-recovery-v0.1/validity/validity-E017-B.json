@@ -1,0 +1,41 @@
+{
+  "case_id": "E017",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: the onboarding flow is a system with a controllable input (component availability) and a time-evolving observable output (progress toward activation), with initial progress recorded at a standardized checkpoint. Operation: an abrupt, held change of one component from available to unavailable is a genuine step input, and the trajectory is recorded from the checkpoint through a prespecified window. Signal: delay, time to a specified activation proportion, rate peaks, step reversals and plateau are temporal response features, and the mapping correctly restricts overshoot/oscillation to outputs that can show them (cumulative activation is monotone) and treats a plateau as in-window stability only. Inference: response features discriminate candidate accounts of the flow (gating, acceleration, compensation), matching the source's model discrimination. Source limits are carried over in target terms: noise, unequal starting state, floor/ceiling as saturation, nonlinearity, interacting components, insufficient observation time, and dependence on the tested configuration as operating point. The randomized control cohort and paired present/absent probes are additions compatible with the source, not substitutions for a lost step."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The inference is aimed at the retained question. Its necessity claims are explicitly bounded (dependence within the tested configuration, users and window; unassisted activation without a component as a counterexample to strict necessity), and its interaction claims (removal effects that differ by the other component's setting, trajectory crossings) speak directly to why a single ranking fails. But the packet gives no evidence and names no components, and the redesign is only proposed. Whether the results answer the question about activation, rather than about prototype task completion, depends on a bridge the mapping itself flags: real activation must be observably defined and measurable on an executable version of the redesign, and the actual components must be identified. That bridge could be established without changing the question."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing the step removal against a randomized full-redesign control would produce comparable activation trajectories, and the differences would warrant the bounded inferences as stated; the chain is intelligible and non-circular. It rests on empirical preconditions that are assumed rather than established: that availability of each component can be toggled reproducibly while other components, instructions and assistance rules stay fixed (or that inseparable components are handled as bundles); that starting states are comparable at the checkpoint; that baseline activation is away from floor/ceiling; and that sample size and window are adequate to resolve the prespecified effect sizes and distinguish the candidate accounts. Each is a nameable measurement or check, but none is supplied in the packet."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Component identification and separability: the packet specifies no components or dependencies. Establish by enumerating the proposed redesign's components from the proposal and mapping their dependencies, designating inseparable sets as bundles before probing.",
+      "Measurable real activation: the redesign is only proposed, so it is unknown whether an executable implementation exists. Establish by defining activation observably and confirming it can be recorded in an executable flow; if only a prototype is available, conclusions are limited to simulated task completion and do not answer the activation question.",
+      "Manipulation fidelity: the mapping assumes component availability can be changed reproducibly while preserving other conditions. Establish with manipulation checks and instrumentation audits confirming that only the named component differs between variant and control.",
+      "Starting-state comparability: establish through randomization balance checks on prior experience and recorded initial progress at the checkpoint.",
+      "Resolving power and window adequacy: establish with a pilot or baseline data estimating the activation rate (to rule out floor/ceiling masking) and the time-to-activation distribution, then confirm the prespecified sample size and observation window can detect the meaningful effect sizes and separate gating, acceleration and compensation accounts.",
+      "Interaction coverage: paired probes cover only selected component pairs. Establish which suspected dependencies are tested, and bound the interaction conclusions to those tested combinations."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The mapping preserves the step-response chain and translates the source limits into target terms, including correct handling of features that a cumulative output cannot exhibit. Its inferences are bounded and directed at the retained question on necessity and interactions. However, the packet contains no target evidence and no specified components, and the mapping assumes rather than establishes that availability can be manipulated cleanly, that real activation is measurable on an executable redesign, and that cohorts, baseline rates and the observation window support the comparison. These are specific, establishable conditions, so target fidelity and operational coherence are conditional and the final status is Conditional."
+  },
+  "uncertainty": [
+    "The packet provides no target evidence: the components, their dependencies, the user group, the activation definition and the baseline activation rate are all unknown.",
+    "It is unknown whether the proposed redesign exists in executable form or only as a proposal or prototype; this determines whether activation or only simulated task completion can be observed.",
+    "Much of the necessity and interaction inference rests on randomized between-cohort and paired-removal comparisons of completion. How much the transient trajectory features add beyond endpoint comparison is uncertain, although the gating-versus-acceleration distinction does depend on them.",
+    "The step is applied before users encounter the component, so the response is an ensemble-level cohort trajectory rather than a within-unit transient. I treated this as a functional equivalent of the source step, but the judgment is not certain.",
+    "Feasibility is unknown: the number of components, available traffic or participants, and any practical or ethical constraints on withholding components from real users may limit which single and paired probes can be run.",
+    "The mapping's bounded notion of necessity (dependence within the tested configuration) may fall short of what the question means by 'necessary'; I treated this as an explicit bound rather than a question change."
+  ]
+}

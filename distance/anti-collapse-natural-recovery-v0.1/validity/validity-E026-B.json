@@ -1,0 +1,34 @@
+{
+  "case_id": "E026",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Every step of the source chain has a functional counterpart. State: an explicit set of competing explanations (each deployed change, load variation alone, change-load interactions, combinations, dependency or measurement changes) held as proposed hypotheses, where timing evidence may fit more than one. Operation: hypotheses as matrix columns and evidence as rows, every observation rated against every hypothesis, emphasis on reliable contradictions rather than counts of supporting items, and sensitivity re-ranking after removing unreliable evidence, grouping dependent observations, and varying diagnosticity and assumptions. Signal: a comparative consistency/inconsistency pattern in which some items discriminate more strongly (matched-load present/absent contrasts versus a deployment timestamp). Inference: weaken or eliminate contradicted hypotheses and retain a surviving set. The source limits are carried over explicitly: incomplete candidate lists, dependent or correlated telemetry, unreliable measurements, subjective diagnosticity, shared assumptions, and 'a surviving hypothesis is not proven true'. The staging replays, bisection and rollback tests are additional evidence-generating steps whose results are entered into the same matrix against all hypotheses; they supplement rather than replace the eliminative comparison."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference is aimed at the retained question without altering it. For 'which deployed change', it specifies reporting the change identity, latency effect and tested workload/configuration scope only when controlled contrasts isolate it, the difference exceeds run-to-run variability, and competitors fare worse. For 'what bounded causal evidence distinguishes it from load variation', it names the discriminating contrasts: candidate present versus absent at matched load, load varied with the revision fixed, and effects confined to high load indicating interaction. Load variation alone is an explicit competing hypothesis. The packet supplies no evidence and the mapping says so ('No such observations are supplied here'), so it does not name a change. It instead gives an explicitly bounded contribution with defined fallbacks (candidate association if only timing aligns; unresolved alternatives if several survive), which are bounded answers to the same question rather than answers to a different one."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation yields the stated signal, and the signal warrants the stated inference in the target. Rating timeline, trace, latency-distribution and resource-counter observations plus controlled test results against all hypotheses produces a comparative pattern. A repeatable present/absent latency difference at matched load does contradict 'load variation alone' within the tested conditions. The mapping correctly notes that a latency rise with load at a fixed revision does not exclude a deployed contribution, and that rollback/reintroduction discriminates only if load, configuration, dependencies and measurement stay comparable. Attribution is gated on isolation, effect size relative to variability, and comparative performance of rivals, and the procedure terminates at an unresolved set when no safe, feasible discriminating test remains. The inference is therefore bounded under every outcome and does not rest on source imagery or circular construction. Assumptions about telemetry recoverability and staging representativeness are flagged as assumptions and scoped into the claim rather than left as hidden warrants."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping preserves the source's hypotheses, matrix evaluation, disconfirmation emphasis, sensitivity testing and eliminative inference, and carries over its limits, including that survival is not proof. It addresses the retained question directly by treating load variation as an explicit rival and naming the contrasts that would distinguish a deployed change from it, with attribution scoped to tested conditions. The operation-signal-inference chain is intelligible in the target and the inference remains bounded whether or not discriminating evidence is obtained, because the mapping prescribes downgraded claims (candidate association, unresolved set) when isolation fails. The absence of supplied evidence means no specific change is or can be named here, but the mapping does not claim otherwise, so this is not an unsupported inference; it limits what the executed procedure will yield, not the validity of the transfer as mapped."
+  },
+  "uncertainty": [
+    "The packet supplies no target evidence, so whether the procedure would actually single out one change or end at an unresolved set is unknown; the assessment concerns the mapping as a method, not an executed result.",
+    "The mapping assumes deployment identities, traffic strata, traces and latency measurements are recoverable. This is unverified in the packet; if they are not, the procedure would fall back to reporting unresolved alternatives.",
+    "Much of the causal discriminating power comes from the controlled interventions (staging replay, bisection, rollback/reintroduction), which go beyond the source's evidence-evaluation practice. I treated these as compatible evidence generation feeding the matrix, but a stricter reading could regard the causal warrant as coming from experimental design rather than from the transferred instrument.",
+    "Staging representativeness and matched-load comparability are empirical matters not established here. The mapping scopes its claims to tested conditions, but how far any result would explain the full production regression is unknown.",
+    "Consistency and diagnosticity ratings remain subjective analyst judgments, as in the source; the sensitivity checks mitigate but do not remove this.",
+    "Target fidelity could defensibly be read as 'conditional' rather than 'addressed' given the empty evidence list. I judged it addressed because the mapping delivers an explicitly bounded contribution with defined fallbacks rather than depending on an unstated bridge."
+  ]
+}

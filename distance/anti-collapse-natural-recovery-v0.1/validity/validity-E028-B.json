@@ -1,0 +1,39 @@
+{
+  "case_id": "E028",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The five fields carry the source chain intact. State: a composite of removable parts (baseline plus enumerated deployed deltas) with a pre-fixed failure predicate and repeatable testing. Operation: partition, test subsets and complements, retain reductions that still fail, increase granularity, stop at 1-minimality or budget. Signal: the pattern of fail/pass/unresolved outcomes across reduced configurations. Inference: a test-relative minimal or near-minimal sufficient set, not a unique cause. The source limits (interactions, nondeterminism, unresolved outcomes, environmental dependence, strategy dependence, reproducibility-not-mechanism) are each restated in target terms. The reproducibility requirement is kept as an explicit gating precondition rather than dropped or assumed. The added controls, repeats and follow-ups do not substitute for any source step."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference answers both parts of the retained question with an explicitly bounded contribution. On 'which deployed change': a single retained change is named as the candidate under test, and a multi-change set is stated as jointly sufficient (interaction) rather than attributed to one member. On 'bounded causal evidence versus load variation': compared configurations receive identical request rate and mix, so their latency difference cannot be a load difference; the multi-load follow-up shows load dependence of the effect; the production revert/reintroduction supports a causal contribution for the observed slice and period. The mapping explicitly declines to claim that production load played no part or to identify the mechanism, so the question is not overstated or swapped."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The X->Y->Z chain is intelligible and the inference is bounded, but whether performing X yields an informative Y in this target rests on empirical relations the packet does not establish (target evidence is empty and the mapping itself labels its preconditions as assumptions to check). Specifically: the regression must reproduce under fixed-load replay (baseline passes, full-delta fails); the deltas must be separable into deployable configurations; the latency gap must exceed run-to-run spread so that classifications are stable; and the replay-reproduced exceedance must correspond to the production regression for the test-relative result to bear on the production question. Each is an identifiable measurement. If reproduction at fixed load fails, the mapping itself states the reduction is not started and the instrument contributes nothing to the question."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Reproduction at fixed load: it is not established that the checkout latency regression reproduces under a replayed workload in a controlled environment. Establish by running repeated baseline and full-delta configurations against the fixed replay with the pre-stated predicate and confirming baseline passes and full-delta fails.",
+      "Separability and completeness of the delta set: it is not established that the deployed changes between last known-good and regressed deployments are fully enumerated and can be applied or reverted individually or in groups. Establish by enumerating the deployment diff (code, config, flags, dependencies, infrastructure) and attempting to build and start trial configurations, recording how many are unresolved.",
+      "Signal-to-noise of the latency predicate: it is not established that the latency gap exceeds run-to-run variation enough for stable fail/pass classification. Establish by estimating variance from repeated control runs and setting the number of repeats and the inconclusive band accordingly.",
+      "Test-to-production correspondence: it is not established that an exceedance reproduced in replay is the same phenomenon as the production regression. Establish by comparing magnitude and signature (affected request types, trace spans, load levels) between replay and production, and by the controlled revert and reintroduction on a production traffic slice against a concurrent comparison slice, where safe and approved."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The mapping faithfully preserves the delta-debugging state->operation->signal->inference chain and its limits, and its inference gives an explicitly bounded answer to both parts of the target question without changing it. However, the packet supplies no target evidence, and the instrument's applicability depends on concrete, measurable conditions that remain unestablished: reproduction of the regression under fixed-load replay, separability of the deployed changes, adequate signal relative to latency noise, and correspondence between the replay result and the production regression. These are identifiable measurements rather than appeals to the analogy working, so the transfer is Conditional rather than Valid or Invalid."
+  },
+  "uncertainty": [
+    "Target evidence is empty: no information on whether a last known-good deployment is identifiable, how many changes separate it from the regressed one, or whether a staging environment and recorded workload exist.",
+    "Whether the regression is load-independent at all is unknown; if it appears only with production traffic shape or data volume, the replay-based reduction cannot reach it and the mapping's fallback to ordinary practice applies.",
+    "Boundary between Valid and Conditional is a judgment call: the mapping self-gates on its preconditions and bounds its inference, so a reading that treats those checks as internal to the procedure could rate operational coherence as coherent. I rated it conditional because the preconditions are unresolved target facts that determine whether the procedure yields any signal.",
+    "Mechanism fidelity could alternatively be read as conditionally-preserved, since the source state (a reproducible failure) exists in the target only if fixed-load reproduction succeeds; I located that dependency under operational coherence instead.",
+    "Whether the production revert and reintroduction follow-up would be permitted is unknown; without it, support for the production-level claim rests on replay-to-production correspondence alone.",
+    "Causes outside the enumerated delta set (data growth, third-party latency, traffic-mix change) are not examined by the procedure and remain open competing explanations, as the mapping itself states."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "E025",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The five fields keep the functional roles of bisection. The ordered checkpoint list stands for the revision history; the verified within-allowance start and behind-allowance end stand for the good/bad endpoints; midpoint probing with discard of the incompatible half is retained; each probe gives a binary classification under a rule fixed in advance; and the inference is limited to the final unresolved handoff or interval. Every source limit (flaky test, unbuildable revision, nonmonotonicity, multiple changes, interactions, wrong endpoints) has a stated counterpart, and the correlational caveat is carried over. Preservation depends on unresolved target conditions. The tested property exists at intermediate checkpoints only if per-checkpoint cumulative allowances are defined. The classification must also be reproducible across cohorts and cross the allowance only once along the route. Elapsed time minus allowance is not inherently monotone, and the halving procedure does not detect a recovery inside a discarded half. The target 'transition' is also a threshold crossing of an accumulating quantity rather than a discretely introduced change, so the boundary's location depends on how allowances are set. The mapping acknowledges this rather than hiding it."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The target question asks where handoffs accumulate delay and which bounded changes could reduce it. The mapping answers where a cohort's cumulative elapsed time first falls behind a cumulative allowance, and explicitly disclaims that this handoff is the sole, largest or causal source of delay. That is a bounded contribution, but its link to 'where delay accumulates' needs a concrete bridge: the allowances must be meaningful baselines, and the localized handoff's own incremental time must materially exceed its allowance rather than being where small upstream overruns sum past the threshold. The retained elapsed-time figures could establish this without changing the question. The 'which changes' half is addressed only through an illustrative pilot whose candidates are explicitly not established remedies and whose comparison is observational."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Performing the probes yields binary checkpoint classifications that do warrant the bounded claim that a within-to-behind crossing lies in the final interval, provided the preconditions hold. The packet supplies no target evidence, so none is established: recoverable or loggable checkpoint times, pre-fixed allowances, verified endpoints, a sequential route, and comparable demand and staffing across probes. Each is an identifiable measurement or empirical relation. The chain is not circular, since classifications come from recorded times against a rule fixed before data are examined, and the inference is explicitly bounded. The mapping's own cost condition notes that where every handoff is already timestamped the halving adds nothing over direct comparison; that affects efficiency, not the coherence of the inference."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+      "reframed_question": "For one case type and a fixed cohort, at which handoff does cumulative elapsed time first move from within to behind a pre-set cumulative allowance, and is a change confined to that handoff followed by a within-allowance classification downstream and at final approval?",
+      "relationship": "The mapping enacts an operational narrowing rather than a replacement. The threshold-crossing location is a candidate answer to where delay accumulates and a site for a bounded pilot. It contributes to the original question only as a prioritization aid: it does not give the distribution of delay across handoffs, the crossing moves with the allowances chosen, and it is limited to the case type and period examined. The assessment is made against the original question."
+    },
+    "unresolved_conditions": [
+      "Per-checkpoint cumulative allowances must exist or be fixed before any data are examined, on a basis independent of the cohort's observed times. Establish by documenting the granularity of existing service targets or recording the agreed allocation in advance, and check how far the boundary moves under a plausible alternative allocation.",
+      "Both endpoints must be verified. Establish by auditing a sample of cases to confirm that the recorded submission time is the real start of the request, that the final timestamp records the decision rather than ticket closure, and that the cohort's end-to-end time exceeds the total allowance under the fixed rule.",
+      "Enough intermediate checkpoint times must be recoverable or loggable. Establish by auditing ticket histories for timestamp coverage per checkpoint and identifying which handoffs are informal or unrecorded.",
+      "The behind-allowance classification must cross only once along the route. Establish by classifying additional checkpoints on both sides of the final boundary, or all checkpoints where timestamps already exist, and by measuring how often rework loops occur in the cohort.",
+      "The classification must be reproducible. Establish by repeating the boundary classifications on a second comparable cohort and comparing the margin from the allowance with case-to-case variability and cohort size.",
+      "The route must be genuinely sequential for the case type, and collapsing parallel approvals or rework loops into single checkpoints must not hide the delay-bearing step. Establish by tracing the route on sample cases.",
+      "The localized handoff's own incremental elapsed time must materially exceed its own allowance, rather than the crossing resulting from small upstream overruns. Establish from the retained elapsed-time figures at the two bounding checkpoints, compared with increments at other observed handoffs.",
+      "For the 'which changes' part, the pilot comparison needs comparable demand and staffing before and after the change. Establish by recording volume and staffing for both periods, and if possible by a concurrent comparison cohort."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The mapping carries over the full bisection chain and every source limit with functionally matching counterparts, keeps the inference to a bounded, non-causal localization, and states its own assumptions and cost condition. The packet contains no target evidence, however, so the conditions that make the chain work are all unestablished: defined per-checkpoint allowances, verified endpoints, recoverable timestamps, single-crossing and reproducible classifications, and a sequential route. Each can be established by a named measurement. The link from 'first crossing of cumulative allowance' to 'where handoffs accumulate delay' also needs an identifiable empirical bridge. Since all three criteria are conditional and none fails, the derived status is Conditional."
+  },
+  "uncertainty": [
+    "The packet's target evidence is empty, so it is unknown whether the organization has per-checkpoint timestamps, per-checkpoint allowances, a sequential route, or a cohort that is actually late end to end.",
+    "The mapping states that 'the packet mentions service-level targets', but no such mention appears in the supplied packet. This is treated as an unestablished assertion by the candidate, not a target fact.",
+    "It is unknown whether the behind-allowance classification crosses only once along real approval routes. If recovery downstream or rework loops are common, the procedure may localize one of several crossings, or an artefactual one, without detecting it.",
+    "If allowances are negotiated rather than empirically grounded, the boundary location may mainly reflect the allocation. How sensitive the result is to allowance setting cannot be assessed from the packet.",
+    "Whether to record the threshold-crossing operationalization as a reframe or as an ordinary operational definition of the retained question is a judgment call. It is recorded as a narrowing, with the original question kept as the assessment target.",
+    "The choice between 'preserved' and 'conditionally-preserved' for mechanism fidelity is borderline. The structural chain and limits are fully carried over, and the conditional rating rests on whether the target has a reproducible single transition, which the packet does not show.",
+    "Pilot outcomes are observational. The packet gives no basis for judging whether comparable demand and staffing can be achieved, particularly where prospective logging extends over calendar time."
+  ]
+}
