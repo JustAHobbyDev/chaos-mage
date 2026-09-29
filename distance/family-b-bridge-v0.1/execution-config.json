@@ -1,0 +1,39 @@
+{
+  "providers": {
+    "fable": {
+      "requested_model": "claude-fable-5-1[1m]",
+      "reasoning_effort": "high",
+      "cli": "/var/home/d/.local/share/mise/installs/npm-anthropic-ai-claude-code/2.1.283/node_modules/.bin/claude",
+      "cli_version": "2.1.283 (Claude Code)",
+      "executable_sha256": "1bbfb0aa770f533a14a31546d35bf1820c104207606cb77858b1ccb04b8139c0"
+    },
+    "muse": {
+      "requested_model": "muse-spark-1.3-contributor",
+      "endpoint": "https://api.meta.ai/v1",
+      "route": "chat/completions",
+      "tier": "Contributor",
+      "credential_source": "environment",
+      "reasoning_effort": "high",
+      "client": "Python standard-library urllib.request",
+      "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+      "tools": [],
+      "history_messages": 0,
+      "strict_schema": true
+    }
+  },
+  "timeout_seconds": 900,
+  "max_concurrent_processes": 1,
+  "temperature": "provider default; unset",
+  "seed": "provider default; unset",
+  "harness_retries": 0,
+  "fallback_allowed": false,
+  "jsonschema_version": "4.23.0",
+  "preflight_budget": {
+    "fable": 2,
+    "muse": 2
+  },
+  "primary_budget": {
+    "fable": 12,
+    "muse": 12
+  }
+}
