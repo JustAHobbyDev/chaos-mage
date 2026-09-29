@@ -1,0 +1,294 @@
+{
+  "at": "2026-09-29T08:20:22.299639+00:00",
+  "input_commit": "a24cd80a1f35dd4c96daab24283746b0d9ff6d13",
+  "stage_inputs_sha256": "c0d9a8f4a09065348adc950b2e8f252a4e2c40a54bbe6479c2dc513415c28ab5",
+  "entries": [
+    {
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:20:13.874534+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec3f-d58c-7b40-afb3-2bf2ba98e8aa",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/events.jsonl": "6e87d5289093030d35a7ae11371407c7a282fd2338626f1ce050aa88556a67c3",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/prompt.txt": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/reservation.json": "5965d952c42f6db3ae61fa4897fd225e8d2ccc62d550dd61de4983fd2a01d79d",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/response.json": "f294ff1c7eef541296aebc9c1b3920c8afe7054a194ba6fa9239bf71a205a274",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/A/validation.json": "6980dd7fd8848913aa00f2a524068d9a50cb75d6c999a69f1811ff149b576fbf"
+      },
+      "reservation": {
+        "run": null,
+        "stage": "audit",
+        "family": "A",
+        "started_at": "2026-09-29T08:20:00.216229+00:00",
+        "input_commit": "a24cd80a1f35dd4c96daab24283746b0d9ff6d13",
+        "packet_sha256": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        "canonical_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "wire_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-pljrsah3",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/audit-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/probes/audit/A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-pljrsah3",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      }
+    },
+    {
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:20:22.298635+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "44e3856b-669c-4c71-a439-d4309c6d5fe0",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[1].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/events.jsonl": "b0ff7fd02438386b1cac62af3cd88cf40113a7d4ee41300150902b3ae5bfed65",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/prompt.txt": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/reservation.json": "8586943ebdbc6b1c45f2d0dc2897809ab882c1a1967dd2e163699f1259d14e86",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/response.json": "fbf9f9da510feff281e1eb9e871ab9916124a53ade72f49b41a21ffe896b9072",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/probes/audit/B/validation.json": "8ae85d48154bd1bc3e00b440573c6c5c60766ce1a724af46bce3cb6ddd47b33d"
+      },
+      "reservation": {
+        "run": null,
+        "stage": "audit",
+        "family": "B",
+        "started_at": "2026-09-29T08:20:13.901953+00:00",
+        "input_commit": "a24cd80a1f35dd4c96daab24283746b0d9ff6d13",
+        "packet_sha256": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        "canonical_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "wire_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "44e3856b-669c-4c71-a439-d4309c6d5fe0",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"checks\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"operation_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"signal_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"inference_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"limit_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"stopping_condition_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"next_inquiry_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_added_operational_content\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_source_imagery\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_verdict_language\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        }\n      },\n      \"required\": [\n        \"operation_preserved\",\n        \"signal_preserved\",\n        \"inference_preserved\",\n        \"limit_preserved\",\n        \"stopping_condition_preserved\",\n        \"next_inquiry_preserved\",\n        \"no_added_operational_content\",\n        \"no_source_imagery\",\n        \"no_verdict_language\"\n      ],\n      \"additionalProperties\": false\n    },\n    \"overall\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"pass\",\n        \"exclude\"\n      ]\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      }\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"checks\",\n    \"overall\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-85t5vl8u",
+        "working_directory_initially_empty": true,
+        "requested_session": "44e3856b-669c-4c71-a439-d4309c6d5fe0",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      }
+    }
+  ]
+}
