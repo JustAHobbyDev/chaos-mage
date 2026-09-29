@@ -1,0 +1,4131 @@
+{
+  "at": "2026-09-29T08:19:33.081146+00:00",
+  "stage": "neutralization",
+  "prepared_sha256": "7c4937d23d885b60e558972d86408c5957caf93e0de60c0a45c9edc7a2482490",
+  "stage_inputs_sha256": "7b0ba266921294f54534f03af22c5e57b03a856437dde9078b162677889646b4",
+  "execution_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+  "runs": [
+    {
+      "id": "neutralization-E024-B",
+      "case_id": "E024",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T07:58:50.972597+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "7593a7e0-bbb0-4d26-a7e6-8a1018d3678c",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E024-B",
+          "case_id": "E024",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T07:58:20.871817+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "d883bc336798290e4cc1f4d8f2b92511ad6c384f5669d47706556323d3bcb1da",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "7593a7e0-bbb0-4d26-a7e6-8a1018d3678c",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-afklaud6",
+        "working_directory_initially_empty": true,
+        "requested_session": "7593a7e0-bbb0-4d26-a7e6-8a1018d3678c",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "ab0415d97f9d1db059a4d2b69d95ed90e6b316d45041b3302a981825f9c2232c",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/events.jsonl": "857de7487a757ff49571aa7b9b2b158153c254f68684014f4a478c0f72e514c5",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/prompt.txt": "d883bc336798290e4cc1f4d8f2b92511ad6c384f5669d47706556323d3bcb1da",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/reservation.json": "691e62060ee3db7437fc4a882b0aa7a5659c1249d204ff908f362f345822de6f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/response.json": "ab0415d97f9d1db059a4d2b69d95ed90e6b316d45041b3302a981825f9c2232c",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E024-B/validation.json": "4347b5e788b646a854f3afed552d3a5a1e57f8f1ffd0cbfda1afb629ea670e8a"
+      }
+    },
+    {
+      "id": "neutralization-E008-B",
+      "case_id": "E008",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T07:59:21.330749+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "d943630d-54d9-4f79-a536-1d7cf38da6f6",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[5].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[6].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E008-B",
+          "case_id": "E008",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T07:58:54.289212+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "ce33fe8c30228e9bf0ab6b4070d010eba46ce131f46f31bb8c7758a935dd201b",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "d943630d-54d9-4f79-a536-1d7cf38da6f6",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-1pnftpbf",
+        "working_directory_initially_empty": true,
+        "requested_session": "d943630d-54d9-4f79-a536-1d7cf38da6f6",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "d17427024deeb2a0ebff15a129ba263428ecafe9f0d98d7c6d1460a837f2bb2c",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/events.jsonl": "9491826b5bc951485c4235fcbde02e70965e61443c8b4d1a14309e9d6585d312",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/prompt.txt": "ce33fe8c30228e9bf0ab6b4070d010eba46ce131f46f31bb8c7758a935dd201b",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/reservation.json": "c54318b6b2e9366a3e0d8ccba39c41eb834055351890dead455b25049a22eb32",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/response.json": "d17427024deeb2a0ebff15a129ba263428ecafe9f0d98d7c6d1460a837f2bb2c",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E008-B/validation.json": "9b11463787c33fddfe61b1ff1cab1db98457b24b9c2410e729ffb205c7c242f2"
+      }
+    },
+    {
+      "id": "neutralization-E011-A",
+      "case_id": "E011",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:00:23.185063+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec2c-f706-7951-8b0b-dc06e9a49b2c",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E011-A",
+          "case_id": "E011",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T07:59:24.719538+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "4d02f39b758b126deb71acbafeddc6613c63a5e4e580fa3f47420e8a7a1a7729",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-0wfvxdtt",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-0wfvxdtt",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "4a68be3be49eef401a3f3606d06d45851627607ce563489b62e8a652c6e161c4",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/events.jsonl": "0cfb55e5f8da30ffba2f325d8560657d45600a03cc13cb8d3bcce52fb9c83b01",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/prompt.txt": "4d02f39b758b126deb71acbafeddc6613c63a5e4e580fa3f47420e8a7a1a7729",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/reservation.json": "e78f6ccd0d73763f954f6488f29614af8b1e60a62f235ca8f4abb92523daad0e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/response.json": "4a68be3be49eef401a3f3606d06d45851627607ce563489b62e8a652c6e161c4",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E011-A/validation.json": "5e7d5bb2562be0edd7764a639f2733ed02ef19288efcedf4a9f5e3add2da3aee"
+      }
+    },
+    {
+      "id": "neutralization-E013-A",
+      "case_id": "E013",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:01:18.636006+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec2d-e90e-7380-ab49-17d86dbdc074",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E013-A",
+          "case_id": "E013",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:00:26.686674+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "3531b1832319767184af7e8dae423ae4cbc4042c2219e21100526d95232ea6fb",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-wybre73i",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-wybre73i",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "3b38e3f95f858ef5f41c16ef60dc00c11a38fa1541a1bfa68a7a9bd0e116c59c",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/events.jsonl": "8fa45a4a0b787e711802dc1527567dc90ca007b109aed8aedd61fe93f151703a",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/prompt.txt": "3531b1832319767184af7e8dae423ae4cbc4042c2219e21100526d95232ea6fb",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/reservation.json": "8d802d1e645e5dc855cd76508f2b3d03a61d72d9471feea68e07e905e310fe05",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/response.json": "3b38e3f95f858ef5f41c16ef60dc00c11a38fa1541a1bfa68a7a9bd0e116c59c",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E013-A/validation.json": "671514d0a873f391e80f9b63175c6a82304363223d2878610c2d4627adbc5488"
+      }
+    },
+    {
+      "id": "neutralization-E026-B",
+      "case_id": "E026",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:01:52.052592+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "498d4f7a-fd49-42b8-90b3-e23cdc0d93b6",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[5].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[6].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E026-B",
+          "case_id": "E026",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:01:22.053111+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "a5c0263b31cec92606621ede16295d0e969b9b2fd5548ae1cab3bd7268e8bb75",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "498d4f7a-fd49-42b8-90b3-e23cdc0d93b6",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-2ln5noz5",
+        "working_directory_initially_empty": true,
+        "requested_session": "498d4f7a-fd49-42b8-90b3-e23cdc0d93b6",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "42c777006e8ae9d9465d935bdfb2353a51d47a586b4e105f8ea782d61e24e9a3",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/events.jsonl": "ffabcad02603a27a39de9a4608b9be89c9074b962a4b2bb1dcdef415da2e451a",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/prompt.txt": "a5c0263b31cec92606621ede16295d0e969b9b2fd5548ae1cab3bd7268e8bb75",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/reservation.json": "abed2092a7cccea48e5e9f3b9c4feb2951b00b701afbf07ba7b0a2335a1f302b",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/response.json": "42c777006e8ae9d9465d935bdfb2353a51d47a586b4e105f8ea782d61e24e9a3",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E026-B/validation.json": "0fb1989164d33959e31cafc698d609cf254b82e9e7280fa6a1aae4fc4b6e6ebb"
+      }
+    },
+    {
+      "id": "neutralization-E003-B",
+      "case_id": "E003",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:02:30.387130+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "ef1b0dcf-7cf6-44a0-b3a8-1e93f345c152",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E003-B",
+          "case_id": "E003",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:01:55.377090+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "2838f9e13d0b295fb3c9309eece7c008ad344b560869054b889e9ceeb537ecb4",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "ef1b0dcf-7cf6-44a0-b3a8-1e93f345c152",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-nvfw6aqq",
+        "working_directory_initially_empty": true,
+        "requested_session": "ef1b0dcf-7cf6-44a0-b3a8-1e93f345c152",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "3d700b52d97a5f6a5bf4b7ead99e3ba98cd3ac16ff4ecd5a38fdaeda9d890768",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/events.jsonl": "a766f41f740668c9324d42700f427d55adc586545f0fff0481cb340f5e082a35",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/prompt.txt": "2838f9e13d0b295fb3c9309eece7c008ad344b560869054b889e9ceeb537ecb4",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/reservation.json": "1c5b8943ad3f666bd3e835c5e70687f793d19dca4901f7b10924b345d456c884",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/response.json": "3d700b52d97a5f6a5bf4b7ead99e3ba98cd3ac16ff4ecd5a38fdaeda9d890768",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E003-B/validation.json": "5006a2ee34a23a94cda51ada16d8ddd53fe510e1a8daab877d83d6b1af12934f"
+      }
+    },
+    {
+      "id": "neutralization-E014-B",
+      "case_id": "E014",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:03:03.465570+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "e350e96d-3965-4be7-9fab-625b7131214d",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[6].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E014-B",
+          "case_id": "E014",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:02:33.812371+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "10f89d5909ae798e1c10b520f7c2741c1a269082771d199ee97c8b5228304d62",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "e350e96d-3965-4be7-9fab-625b7131214d",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-jiebrqk3",
+        "working_directory_initially_empty": true,
+        "requested_session": "e350e96d-3965-4be7-9fab-625b7131214d",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "7fbd32edce79921763c21530161de270674dce01716e56b9a6754846fa658352",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/events.jsonl": "d9b921ef07a5324d3336b4b81a9a37c36f562e105125ab5a5782331c85f3bc8d",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/prompt.txt": "10f89d5909ae798e1c10b520f7c2741c1a269082771d199ee97c8b5228304d62",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/reservation.json": "e35d640511cb3c684896f8e227a17c03b553e493a4723128a819d767d3198957",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/response.json": "7fbd32edce79921763c21530161de270674dce01716e56b9a6754846fa658352",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E014-B/validation.json": "9116fd14313b5222c390ea41007d2c4d203ac497da10b9079afd03417e03f1b6"
+      }
+    },
+    {
+      "id": "neutralization-E017-B",
+      "case_id": "E017",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:03:44.382057+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "ac4a478a-c172-433c-8665-3c6d079f6f9e",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[10].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[11].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E017-B",
+          "case_id": "E017",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:03:06.911880+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "9b769bbee9c535eb1ee3a0c1981d48eaea0111803bbbda7fa4fb00a8eaefc09f",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "ac4a478a-c172-433c-8665-3c6d079f6f9e",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-ahgf0esn",
+        "working_directory_initially_empty": true,
+        "requested_session": "ac4a478a-c172-433c-8665-3c6d079f6f9e",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "ea3e0693023e32ab033c06756da117a5df2a6133a265dabe532baa8683386c45",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/events.jsonl": "e977d84e2d93477e50e747dec3025f7a94767845705297cccd113ae53af6ddc2",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/prompt.txt": "9b769bbee9c535eb1ee3a0c1981d48eaea0111803bbbda7fa4fb00a8eaefc09f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/reservation.json": "3b57bc5258b282cc9fa54dc8eca3544a0bbf252ef5c08c768066d1e72083cb54",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/response.json": "ea3e0693023e32ab033c06756da117a5df2a6133a265dabe532baa8683386c45",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E017-B/validation.json": "23c057f34ac846d5f26c900105126d955005b46ef4474987b4d93917cfcd960e"
+      }
+    },
+    {
+      "id": "neutralization-E005-B",
+      "case_id": "E005",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:04:22.669618+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "34bc0df3-f98f-4f01-8bdf-0bdc32410c38",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[10].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[11].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E005-B",
+          "case_id": "E005",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:03:47.661776+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "ec8248bd0df8e4df3be23cc46aa83aa0f8a5e00455298a42db8c4b4fa038de82",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "34bc0df3-f98f-4f01-8bdf-0bdc32410c38",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-skbgx_fi",
+        "working_directory_initially_empty": true,
+        "requested_session": "34bc0df3-f98f-4f01-8bdf-0bdc32410c38",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "44a6e14f68f87fb794e9ec0d597af5dc22d566e34925f5039bd5c3881b9bb9f1",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/events.jsonl": "cfb38ef92150d20d8333f530bb197adb4caf0055109e114951a5195dea9b270e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/prompt.txt": "ec8248bd0df8e4df3be23cc46aa83aa0f8a5e00455298a42db8c4b4fa038de82",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/reservation.json": "f4e91fa27fe39bcd36e8483034054da6c9e5a9dafdf68eb033b7e6a80d5c1d7f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/response.json": "44a6e14f68f87fb794e9ec0d597af5dc22d566e34925f5039bd5c3881b9bb9f1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E005-B/validation.json": "cf1ecac509853d02274d1d757128c1d0bf60ff37849e96589a40d774fa141db1"
+      }
+    },
+    {
+      "id": "neutralization-E021-B",
+      "case_id": "E021",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:05:02.115722+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "d623100d-2404-43d2-9a82-15f9de77864a",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E021-B",
+          "case_id": "E021",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:04:26.003279+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "d76233bfa95b36081674173b589966ef893c985310c1d89c6cd52b304c68b438",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "d623100d-2404-43d2-9a82-15f9de77864a",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-57dkb7jg",
+        "working_directory_initially_empty": true,
+        "requested_session": "d623100d-2404-43d2-9a82-15f9de77864a",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "1f709a6b25af4ce346d3f4187fb0881137503ae7b8c934af66fbe7ab2819277c",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/events.jsonl": "865aa41308ed38b15cb618b3b7b78e981c6748537a2e1275c2ef1c38ab14e5c1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/prompt.txt": "d76233bfa95b36081674173b589966ef893c985310c1d89c6cd52b304c68b438",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/reservation.json": "3e50c2056a206776117b2ecd0a144f90b01ae75718f0e6853ffa4a95d5b279d6",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/response.json": "1f709a6b25af4ce346d3f4187fb0881137503ae7b8c934af66fbe7ab2819277c",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E021-B/validation.json": "a595cc01bb1c0fd6f2e36e81843560a0523b12bf8b320cd6d6f5d949fcb1a620"
+      }
+    },
+    {
+      "id": "neutralization-E022-A",
+      "case_id": "E022",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:06:06.305341+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec32-2d31-7081-8b8e-562bee66ea0a",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E022-A",
+          "case_id": "E022",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:05:05.467001+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "d5e469271870eb0456e47dc0a82dfade34e00f0a1a730eb2826fe8c4713c1df4",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-cc5dee1c",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-cc5dee1c",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "568cc2827b631d298df193b4fc4d8f887f5fa6a98f507889a4953848f1645295",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/events.jsonl": "c7b859a135d436f1aa380c51bc3dbc1558b63603cf2e89cfec2b7bede37b0a46",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/prompt.txt": "d5e469271870eb0456e47dc0a82dfade34e00f0a1a730eb2826fe8c4713c1df4",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/reservation.json": "138d6a09e94a8f400d9294dd572f0b6e45cf66c917a9e75162c1b030c0c54571",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/response.json": "568cc2827b631d298df193b4fc4d8f887f5fa6a98f507889a4953848f1645295",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E022-A/validation.json": "df9845c598b2d9b00cd2d3443b30f18e20a9e1dbcd7060434fc4111cd763271e"
+      }
+    },
+    {
+      "id": "neutralization-E001-B",
+      "case_id": "E001",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:06:40.909581+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "735b7ee1-b0cf-4500-8351-f407cfb74d4e",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E001-B",
+          "case_id": "E001",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:06:09.710854+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "2ca9c750bf7139da465c2ff21342f37deed7f937cfaf41dc62a4ef3d8d69102f",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "735b7ee1-b0cf-4500-8351-f407cfb74d4e",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-c_hm0et6",
+        "working_directory_initially_empty": true,
+        "requested_session": "735b7ee1-b0cf-4500-8351-f407cfb74d4e",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "10b07100adf11d35d9df3ffebe209b76c01c1dbbfc189ad40f49fed59384e987",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/events.jsonl": "03bd6ab06cc9562d62f38f580fa7ed0c417a2e1f33379c1f753847fa8562e92d",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/prompt.txt": "2ca9c750bf7139da465c2ff21342f37deed7f937cfaf41dc62a4ef3d8d69102f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/reservation.json": "5faaed088bf445c57d5c81ed43a8b187ee596326312efd735a05dcc951870f9b",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/response.json": "10b07100adf11d35d9df3ffebe209b76c01c1dbbfc189ad40f49fed59384e987",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E001-B/validation.json": "eff47381f36a16ee6f71e00aaec5159efaff9db601bf4e9949eeec587b802b46"
+      }
+    },
+    {
+      "id": "neutralization-E006-A",
+      "case_id": "E006",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:07:46.529778+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec33-b062-7d73-9c0a-57e7cc33ec26",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E006-A",
+          "case_id": "E006",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:06:44.287279+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "e6f73a7caef7bf64186a016982dade13497d35a05136dabc476844c15b152712",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-ntd0dnyp",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-ntd0dnyp",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "651fff778df6022ac46f357d767abf23d6dd9feaa4405debb6b07adf0a7b7f82",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/events.jsonl": "98b95cfb7d3e5341ceef86745963b4e265dea2157e3c0fe89d91b3b088a1dfdf",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/prompt.txt": "e6f73a7caef7bf64186a016982dade13497d35a05136dabc476844c15b152712",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/reservation.json": "59350e8e1c0c24ed2e494d60e97bc3cc5a1edf03c0af6b322862ff900d8dd53b",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/response.json": "651fff778df6022ac46f357d767abf23d6dd9feaa4405debb6b07adf0a7b7f82",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E006-A/validation.json": "db567b0481b1fbb2263d3167c5cc379b2a37b2f2b73eb1b8e72c48b9ea68358c"
+      }
+    },
+    {
+      "id": "neutralization-E016-B",
+      "case_id": "E016",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:08:20.246845+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "9844ec97-4718-42cb-bee0-a9cd9b7a8e05",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E016-B",
+          "case_id": "E016",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:07:49.941606+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "90bb05306560a392e88c94909ae108e0dfa5261dfa98d121e9e5f42a49c56350",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "9844ec97-4718-42cb-bee0-a9cd9b7a8e05",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-cnwdsplh",
+        "working_directory_initially_empty": true,
+        "requested_session": "9844ec97-4718-42cb-bee0-a9cd9b7a8e05",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "be3594d824f95146fbb81ce6fb2ce542cb1de09ecb4ab978b903048e934c4c31",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/events.jsonl": "0fbce6aa90e3df409a08973116b5bb45d9a1fdb30218ce11fe16c20a50f0c592",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/prompt.txt": "90bb05306560a392e88c94909ae108e0dfa5261dfa98d121e9e5f42a49c56350",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/reservation.json": "7a3bbc07dc60ec1c6b70fdc54b361ce5403df8816ff71ed58211bb643ac5dc91",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/response.json": "be3594d824f95146fbb81ce6fb2ce542cb1de09ecb4ab978b903048e934c4c31",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E016-B/validation.json": "a99440e96f5f1d0b55a7a3d2764fd590cc0f7b2e71cfbb66daf4da57974aa4c7"
+      }
+    },
+    {
+      "id": "neutralization-E018-A",
+      "case_id": "E018",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:09:07.371409+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec35-3060-7b40-996f-8288c3f57951",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E018-A",
+          "case_id": "E018",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:08:23.692213+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "d5e4d9d6622119632f7118714ac73803075eff90ceb733a772d492fb34a29598",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-epwy3a82",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-epwy3a82",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "de667bf416fbd56a7099debbadf7bd948557900bd135fdc109819e36ee388114",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/events.jsonl": "73814f3e8fc510b256dccb98312c609bedab5ea56576de08f74374c2cf92ca41",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/prompt.txt": "d5e4d9d6622119632f7118714ac73803075eff90ceb733a772d492fb34a29598",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/reservation.json": "abba86a660c4730fe60a5757d1c8a88849913409cb5b0b848fca2289c8c6e583",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/response.json": "de667bf416fbd56a7099debbadf7bd948557900bd135fdc109819e36ee388114",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E018-A/validation.json": "760e0018fed03f7086ed20080a2d6e28b4d744cbe0318a2141a03bde70210e62"
+      }
+    },
+    {
+      "id": "neutralization-E012-A",
+      "case_id": "E012",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:10:07.097060+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec35-e84c-7d71-99f1-25e39f3637ff",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E012-A",
+          "case_id": "E012",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:09:10.769235+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "8faefd807d69102bc4ae9d890225ff912083a8ec020dc4083aed74807470b37d",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-gd8j54sc",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-gd8j54sc",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "f7eac89d3ba4c4b3a76c4627c9da34ad0da9523b660d7aaff52f3ade3c23c609",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/events.jsonl": "8d10e81604d2ba8eb3b0d78262760497311048becca006fc3a03db5586a26a0f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/prompt.txt": "8faefd807d69102bc4ae9d890225ff912083a8ec020dc4083aed74807470b37d",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/reservation.json": "c56a0e11a35606f384799caa19ff00fa96ba287dd96e19e203928077c665f825",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/response.json": "f7eac89d3ba4c4b3a76c4627c9da34ad0da9523b660d7aaff52f3ade3c23c609",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E012-A/validation.json": "b05b92a980e94d8ed9ed63650371a76e02aa29a1f5c9ebf1d24f0c13bf7c9873"
+      }
+    },
+    {
+      "id": "neutralization-E002-A",
+      "case_id": "E002",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:11:16.954324+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec36-d1db-7692-83ed-2af3e0a3e08d",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E002-A",
+          "case_id": "E002",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:10:10.566029+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "369c8e78476a664e3ce5d1b7c9fc1232cdd5a7f12f6e98e351af7f42653215f9",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-hdmln7uv",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-hdmln7uv",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "7b01a6435f5aa10be5ba2672b81542cdf2bdd8e79cd33d49169cdfbd197b68c1",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/events.jsonl": "d2b083e4806f895602a006c70678d4fcb7a9799b5fc69b4ff2590657bd9e7248",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/prompt.txt": "369c8e78476a664e3ce5d1b7c9fc1232cdd5a7f12f6e98e351af7f42653215f9",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/reservation.json": "58a6a6960a798ec6ed6e2dac3d5f81058dd1c8ba503ba1c6de459f4d17df04ef",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/response.json": "7b01a6435f5aa10be5ba2672b81542cdf2bdd8e79cd33d49169cdfbd197b68c1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E002-A/validation.json": "ac544a16ccced6cf833e7f35a43a13fc3f10eb17c920ad37a6cefffd26bcf20e"
+      }
+    },
+    {
+      "id": "neutralization-E020-A",
+      "case_id": "E020",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:12:14.923343+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec37-e4ea-7ae2-b1dc-7ae2d170721b",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E020-A",
+          "case_id": "E020",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:11:20.155991+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "34930fd1cc65306c0386fcf8595dd2613250038ce8fbd771cf4d5898d44d877e",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-h4ikiyz7",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-h4ikiyz7",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "d5facc4ba632ec180a1196699f2cd05a03781ae76243123b01ecfb7c1e2f6e65",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/events.jsonl": "19360bc96f306ec51ae984a2b41337442eb90f358bc9a326d799902c0af6ab36",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/prompt.txt": "34930fd1cc65306c0386fcf8595dd2613250038ce8fbd771cf4d5898d44d877e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/reservation.json": "ec2a42d601e99b8f41d5f2faf347ed434d43dd5cd12199f6b7e25586dc380d41",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/response.json": "d5facc4ba632ec180a1196699f2cd05a03781ae76243123b01ecfb7c1e2f6e65",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E020-A/validation.json": "8041c162e16f3bd3df82dc61e9e8a383b892aaa44c1b8147bcfe9e954b30ab45"
+      }
+    },
+    {
+      "id": "neutralization-E007-B",
+      "case_id": "E007",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:12:52.802880+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "e35aca5d-c851-4f21-9367-cc764b9d61e8",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[12].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[13].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E007-B",
+          "case_id": "E007",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:12:17.943999+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "bf9a4927834c84cd9d4cca3fc12dc28ffefb9b4cd239930893be7b493f23db3e",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "e35aca5d-c851-4f21-9367-cc764b9d61e8",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-p97tqyup",
+        "working_directory_initially_empty": true,
+        "requested_session": "e35aca5d-c851-4f21-9367-cc764b9d61e8",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "8bde64c64a29c586293af4373dd03e33eeb36461304be916875dc93b5810baee",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/events.jsonl": "ec0de1fbe6c2d09be2dd560e193c027ba073e4642630294f34eabd54e8d98f7a",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/prompt.txt": "bf9a4927834c84cd9d4cca3fc12dc28ffefb9b4cd239930893be7b493f23db3e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/reservation.json": "06475e3bf71ab6e300fe10203a1f4502b0457668524670a9838102058102670f",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/response.json": "8bde64c64a29c586293af4373dd03e33eeb36461304be916875dc93b5810baee",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E007-B/validation.json": "af3d60ce09f29dfca4c174b6fd393955b052c266e1b8c6856a8a319d9bc8c2d5"
+      }
+    },
+    {
+      "id": "neutralization-E025-A",
+      "case_id": "E025",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:13:52.688632+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec39-5787-76b0-8ed8-8139575e806b",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E025-A",
+          "case_id": "E025",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:12:55.865516+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "0d4c4418c74d5fe0665d5d569e81cd2f95af79a3b812463a7311d891f0f58cb1",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-1hqmser4",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-1hqmser4",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "8e82be57c8d79b47d0ff9ca9afa4d4e13d7625e48def5a1e2e10603e3c1d5e33",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/events.jsonl": "0f64b6ee9f235292fd3fa4b734e816027cee118666ab62b3045065c3a727b888",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/prompt.txt": "0d4c4418c74d5fe0665d5d569e81cd2f95af79a3b812463a7311d891f0f58cb1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/reservation.json": "095c0800fcc18f209b87f99c1b439e052b16ae20b32950fabec87633ef8a92a5",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/response.json": "8e82be57c8d79b47d0ff9ca9afa4d4e13d7625e48def5a1e2e10603e3c1d5e33",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E025-A/validation.json": "6f83ffd72359db1ae13ba36457ee58687b8ba8bb4aec23e78c0f047f6af53a29"
+      }
+    },
+    {
+      "id": "neutralization-E015-A",
+      "case_id": "E015",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:14:34.893649+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec3a-41ee-7d73-b982-3dc77ce29398",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E015-A",
+          "case_id": "E015",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:13:55.872068+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "e9c6ccc9e201ff2df1a033bb98eda769d3aafba7eb62729f083d1f4c48a2718e",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-y_b8pm52",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-y_b8pm52",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "cce40f93d1aa70a1de1dc1ff7a307d6e0c525f2b54d9cae593ef88f5c332cc29",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/events.jsonl": "5247f5c0f6c57ab93f1cdd38f90a6043d429095120a2d8e0467d96d9b35cd4b6",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/prompt.txt": "e9c6ccc9e201ff2df1a033bb98eda769d3aafba7eb62729f083d1f4c48a2718e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/reservation.json": "4d39cf8cea52269ca3855c318dacc5a8bec0de420d3cc344c5149afc1aabc7c5",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/response.json": "cce40f93d1aa70a1de1dc1ff7a307d6e0c525f2b54d9cae593ef88f5c332cc29",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E015-A/validation.json": "689468608989f1718bf41bc5f882abfda8fa386a61e42c3ea9924aef89fd45ca"
+      }
+    },
+    {
+      "id": "neutralization-E009-A",
+      "case_id": "E009",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:15:30.263601+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec3a-e700-7ed2-992f-33f808d076b6",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E009-A",
+          "case_id": "E009",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:14:38.110964+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "534614bb4095c4f025f873c6de75c57ffd5c2c9df0dbcdc40f6073e9988d3ad1",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-88w1ppt5",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-88w1ppt5",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "b99c077f92c81d2e6a408e03ca590c1993639c1ca1eefe298bd435b0468715cc",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/events.jsonl": "ebc0b6268364ff6fe20c7754c005b633f88a547c407c1aa9d5dfd5ad7c55aab4",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/prompt.txt": "534614bb4095c4f025f873c6de75c57ffd5c2c9df0dbcdc40f6073e9988d3ad1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/reservation.json": "e7ffbfbd57082f4dbde7bc3652684f853a7f78d3c8ecaf7c81e65cbf14ea4ab5",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/response.json": "b99c077f92c81d2e6a408e03ca590c1993639c1ca1eefe298bd435b0468715cc",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E009-A/validation.json": "fa7a82e58aeec37de2d00fbc4e0426aba78a258846255fc9f0ee3f55d0402bc8"
+      }
+    },
+    {
+      "id": "neutralization-E004-B",
+      "case_id": "E004",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:16:04.170093+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "c3cbd6fb-e5f2-4215-ba84-ecf0c2e60ac6",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[4].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[5].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E004-B",
+          "case_id": "E004",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:15:33.514676+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "e5625fc63a42a80bf7baf839dfbc69e263663fc59e9fea3468897ff1f628bb27",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "c3cbd6fb-e5f2-4215-ba84-ecf0c2e60ac6",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-8oldbm9v",
+        "working_directory_initially_empty": true,
+        "requested_session": "c3cbd6fb-e5f2-4215-ba84-ecf0c2e60ac6",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "653c9d1f065d8121e5bd65b123d72464ffbf13102972484a63750be3ce26e339",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/events.jsonl": "b98ef410336023879d7f1c0305202aba8034ed0e16b824bbc28af70cdf021776",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/prompt.txt": "e5625fc63a42a80bf7baf839dfbc69e263663fc59e9fea3468897ff1f628bb27",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/reservation.json": "e2958fe03bde397e947f3baf1bf06fe0d12b1e421dabc51092396004ff5b88a3",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/response.json": "653c9d1f065d8121e5bd65b123d72464ffbf13102972484a63750be3ce26e339",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E004-B/validation.json": "b2e3483ccb2391790958415b368ac5f125a8c65013b5740dc2f104b65a3ef26a"
+      }
+    },
+    {
+      "id": "neutralization-E019-B",
+      "case_id": "E019",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:16:41.499970+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "41cf07e9-e6c7-4a14-9309-f464291e33c0",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[8].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E019-B",
+          "case_id": "E019",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:16:07.335643+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "8d96dc5565660c1cefe1cb031b12b87a8e4b68b8dee2866a47c9472efd070633",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "41cf07e9-e6c7-4a14-9309-f464291e33c0",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-oiy1u5pq",
+        "working_directory_initially_empty": true,
+        "requested_session": "41cf07e9-e6c7-4a14-9309-f464291e33c0",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "f499b9cc7eab98a12c58bc4161853fbccf15154fa329a8d41c388472a032ae75",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/events.jsonl": "a2459d04f750f6cd39c9b1c2a6861a7f0e59ffcbb98deca30e9838ea13ffe332",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/prompt.txt": "8d96dc5565660c1cefe1cb031b12b87a8e4b68b8dee2866a47c9472efd070633",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/reservation.json": "474a0c59fedf0980db1ecb288daed8535a8e1dcb8f5d27d4ad11e53ed25464b1",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/response.json": "f499b9cc7eab98a12c58bc4161853fbccf15154fa329a8d41c388472a032ae75",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E019-B/validation.json": "5166432359ed381fc1abed78cd71e074945a8b9aa99b9aa0f15f36ff756775ca"
+      }
+    },
+    {
+      "id": "neutralization-E028-A",
+      "case_id": "E028",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:17:34.967690+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec3c-d934-7093-a881-8bc9cc478c07",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E028-A",
+          "case_id": "E028",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:16:44.765439+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "b9afc5b2e3c57f2165bfb6ce4af7a74f6e09030070b0bd96a9ce668a9d5a8a27",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-fnwjnsof",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-fnwjnsof",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "98fb0e8193371d8e0be6a0a0128d197140c616b1c361bf050988896a507126d0",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/events.jsonl": "a4d18605f9970fd294a88954c476878253a4b410ca24ed3588d605a7bab8d186",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/prompt.txt": "b9afc5b2e3c57f2165bfb6ce4af7a74f6e09030070b0bd96a9ce668a9d5a8a27",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/reservation.json": "6b449f8ba26c36e95a5baeebd3e7a5781d1c063813bc681108f92113a32c2ab7",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/response.json": "98fb0e8193371d8e0be6a0a0128d197140c616b1c361bf050988896a507126d0",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E028-A/validation.json": "278b101124a5bd8166dce6feebf65a8729a3f787d15319266637d2fba6882358"
+      }
+    },
+    {
+      "id": "neutralization-E023-B",
+      "case_id": "E023",
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:18:11.333632+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "fd770fad-ae0e-4d0f-85b7-614c26dab088",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[6].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[7].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E023-B",
+          "case_id": "E023",
+          "family": "B"
+        },
+        "stage": "neutralization",
+        "family": "B",
+        "started_at": "2026-09-29T08:17:38.124691+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "4dea3f244264b1fcf07819cc3f06b52e0dd242b73823e3d303fc413ae8a4273a",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "fd770fad-ae0e-4d0f-85b7-614c26dab088",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"source_neutral\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"procedure\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"action\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"observables\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"inferential_warrant\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"problem_decomposition\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"next_inquiry\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        },\n        \"limits\": {\n          \"type\": \"string\",\n          \"minLength\": 1,\n          \"pattern\": \"\\\\S\"\n        }\n      },\n      \"required\": [\n        \"procedure\",\n        \"action\",\n        \"observables\",\n        \"inferential_warrant\",\n        \"problem_decomposition\",\n        \"next_inquiry\",\n        \"limits\"\n      ],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"source_neutral\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-dokf410w",
+        "working_directory_initially_empty": true,
+        "requested_session": "fd770fad-ae0e-4d0f-85b7-614c26dab088",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "153093e7795e98fc34b6c56dee8ddfe078a4f84f5a86b192b5290da25b6c3152",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/events.jsonl": "f1cc951d07cd80a09b73d1d4e729d8df4e9434d229e4e892aaaad58de314b8b9",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/prompt.txt": "4dea3f244264b1fcf07819cc3f06b52e0dd242b73823e3d303fc413ae8a4273a",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/reservation.json": "54a88f3be05e6f7abfc9dd234d028bc63c919c85c5da015f98b36dae1731ae85",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/response.json": "153093e7795e98fc34b6c56dee8ddfe078a4f84f5a86b192b5290da25b6c3152",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E023-B/validation.json": "449440fd38f54ef78b7e4b8445ba16559f12eabe8562ed319ef64bb1b870e322"
+      }
+    },
+    {
+      "id": "neutralization-E010-A",
+      "case_id": "E010",
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T08:19:16.910060+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec3e-3479-7302-b2be-669f797adc86",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "reservation": {
+        "run": {
+          "id": "neutralization-E010-A",
+          "case_id": "E010",
+          "family": "A"
+        },
+        "stage": "neutralization",
+        "family": "A",
+        "started_at": "2026-09-29T08:18:14.558094+00:00",
+        "input_commit": "01d90b42eaa54658ea58465089c41c62218c4992",
+        "packet_sha256": "46d3939350a7e205e580ce44a0916602c6c1ab82340b746c58ee0fa1fcecbc0c",
+        "canonical_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "wire_schema_sha256": "074e06ef9b9a6f08085649fc8536c2ac79e10872a1ca782d7170b80dd90eafa7",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-u6sw9nho",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/schemas/neutralization-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-u6sw9nho",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      },
+      "response_sha256": "b1cc2f958dc51f7c72cde28455d88b8844d2f2ab77bc7c2bba10b657bcf0d01e",
+      "files": {
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/events.jsonl": "cef022e6b2dc1ec4fa95f7ca7b3c332f00800c6369e86f019c9df0cc7039a1d0",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/prompt.txt": "46d3939350a7e205e580ce44a0916602c6c1ab82340b746c58ee0fa1fcecbc0c",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/reservation.json": "684be292337a2263f8d68598483d27caf91c9871395f954a2f5b665d81890d60",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/response.json": "b1cc2f958dc51f7c72cde28455d88b8844d2f2ab77bc7c2bba10b657bcf0d01e",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-v0.1/neutralization/neutralization-E010-A/validation.json": "73f6614fc55c4d56aa7915c50cbbc654674692b4d0646005e17cac816493efea"
+      }
+    }
+  ]
+}
