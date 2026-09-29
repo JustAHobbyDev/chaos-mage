@@ -1,0 +1,255 @@
+{
+  "family_distributions": {
+    "A": {
+      "Valid": 22,
+      "Conditional": 0,
+      "Invalid": 2
+    },
+    "B": {
+      "Valid": 20,
+      "Conditional": 0,
+      "Invalid": 4
+    }
+  },
+  "status_agreement": {
+    "numerator": 22,
+    "denominator": 24
+  },
+  "excluded": [
+    {
+      "admission": {
+        "case_id": "N016",
+        "target_id": "T04",
+        "validity_A": "Valid",
+        "validity_B": "Invalid",
+        "admitted": false
+      },
+      "design_level": "B",
+      "returned_assessments": {
+        "A": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "Repeated timing comparisons across comparable periods produce persistence and change patterns that support bounded process-monitoring inference. Sampling and confounding remain acknowledged limits; the chart itself supplies no additional causal warrant."
+          },
+          "target_fidelity": {
+            "status": "addressed",
+            "rationale": "Monitoring contributes evidence about sustained delay on observed routes, and the matched sandbox pilot can assess a candidate change's effect on route timing. This is a bounded contribution: it does not uniquely locate hidden stage waits or establish effectiveness in live workflows."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "Comparable repeated route timings can reveal temporal patterns, and pilot timings can be compared with the unchanged comparison. The stipulated calibration and uncertainty bounds support these observations within the matched regime; recording handoff ownership does not itself measure internal waits."
+          },
+          "target_reframe": {
+            "occurred": false,
+            "original_question": null,
+            "reframed_question": null,
+            "relationship": null
+          },
+          "unresolved_conditions": [],
+          "final_status": "Valid",
+          "rationale": "The mapping preserves serial monitoring and provides a limited contribution to the retained question through route-level observations and a matched pilot, without claiming that a complete map establishes hidden waits or causal remedies."
+        },
+        "B": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "The serial-monitoring chain survives in thin form. The operation is repeated timing comparison of comparable route observations, the signal is persistence and change patterns across comparable periods, and the inference is ordinary process-monitoring inference about sustained versus transient change. The named limits (sampling, case mix, staffing confounding) correspond to the source limits on irregular sampling and changing measurement conditions, and the packet supplies bounded timestamp error and uncertainty bounds as the reference for expected variation. The 'vital-sign chart of the organizational circulation' is decorative imagery and the mapping explicitly denies it any warrant. Weaknesses: no change rule or threshold is stated, and regression to the mean and interventions between observations are not named, but no material step is substituted."
+          },
+          "target_fidelity": {
+            "status": "not-addressed",
+            "rationale": "The retained question is a localization question: where among approval handoffs delay accumulates, and which bounded changes could reduce it. The mapped signal and inference are temporal: whether route timings persist or change across periods. In the packet, internal timestamps are unavailable, only route totals are observed, stage contributions are already established as stable in the matched regime, and several nonnegative stage assignments fit the bounds. Persistence patterns in route totals do not discriminate among those assignments. The mapping records routes and handoffs in a table but gives no inference from route totals to stage-level waits, adds 'no additional selection constraint' for the two extra observations or the pilot, and states that the map is 'not a new causal warrant'. The pilot with matched comparison is an ordinary next step that could test one candidate change, but its choice is not informed by any localization result. Connecting the temporal signal to stage attribution would require adding an estimation step the mapping does not contain, which would amend the mapping rather than satisfy a condition."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "As mapped, repeated comparable route timings within the matched regime do produce persistence and change patterns, and those warrant the limited, explicitly bounded inference claimed: ordinary monitoring conclusions about sustained versus transient route-level delay, with no added causal warrant. The chain does not rest on the source imagery and is not circular. Caveat: 'record every ... handoff and delay' cannot be executed at handoff level because internal timestamps are unavailable, so only route-level delays can be tabulated. The chain is coherent for what it claims, but what it claims is not the target question."
+          },
+          "target_reframe": {
+            "occurred": true,
+            "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+            "reframed_question": "Do route-level approval timings show persistent or changing delay patterns across comparable periods, and does a piloted handoff change alter them relative to a matched unchanged comparison?",
+            "relationship": "The reframe is implicit and enacted by the mapping's signal and inference, not announced by the candidate. It offers at most a supporting check: it confirms that route delays are sustained rather than transient, and gives a bounded test of one candidate change. It does not localize delay to specific handoffs or narrow the set of stage assignments that fit the route totals, so it does not answer the original question. The assessment target was not changed."
+          },
+          "unresolved_conditions": [],
+          "final_status": "Invalid",
+          "rationale": "The mapping is a faithful but generic restatement of serial monitoring as ordinary process monitoring, and its bounded route-level inference is operationally coherent. It fails on target fidelity. The temporal persistence signal from route totals answers whether delay is sustained, not where among handoffs it accumulates. The mapping has no step that infers hidden stage waits from route totals, provides no selection constraint for the remaining observations or pilot, and disclaims any new warrant. Because failure on one criterion dominates, the transfer is Invalid. This is not a judgment on the usefulness of the monitoring practice or the pilot."
+        }
+      }
+    },
+    {
+      "admission": {
+        "case_id": "N018",
+        "target_id": "T05",
+        "validity_A": "Invalid",
+        "validity_B": "Invalid",
+        "admitted": false
+      },
+      "design_level": "B",
+      "returned_assessments": {
+        "A": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "Competing feature/dependency explanations are compared against repeated task outcomes and their compatibility patterns. Ordinary variant comparison supports retaining or reprioritizing explanations without requiring a unique cause. Task dependence, interactions and unresolved configurations bound this inference. Failure-preserving reduction and minimality are not requirements of the source mechanism."
+          },
+          "target_fidelity": {
+            "status": "not-addressed",
+            "rationale": "The mapped inference compares explanations for failure but supplies no warrant connecting those comparisons to necessary elements or demonstrated interactions that prevent simple ranking. Its disclaimer about minimality and ranking bounds the diagnostic result without establishing a contribution to the retained necessity-and-interaction question."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "Testing staged variants and recording outcomes against competing explanations can support bounded comparisons of their compatibility with observations. That diagnostic inference is intelligible, although it does not establish the target's requested necessity or interaction conclusions."
+          },
+          "target_reframe": {
+            "occurred": true,
+            "original_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+            "reframed_question": "Which candidate feature/dependency explanations are compatible with activation failures and other observations across staged variants?",
+            "relationship": "The mapping operationally substitutes explanation comparison for necessity and interaction analysis. This concerns the same onboarding failure, but the mapping does not establish how the diagnostic comparison answers the original question."
+          },
+          "unresolved_conditions": [],
+          "final_status": "Invalid",
+          "rationale": "The differential-diagnosis mechanism transfers coherently, but its mapped conclusion does not address the retained target question. The failure is the missing inferential connection to necessity and interactions, not the absence of a reduction procedure."
+        },
+        "B": {
+          "mechanism_fidelity": {
+            "status": "not-preserved",
+            "rationale": "The state (one failing proposal with several candidate explanations held as table rows) and the signal (task outcomes plus explanation compatibility) have recognisable counterparts to the source's competing hypotheses and support/contradiction pattern. The operation and inference do not carry over. The source operation gathers evidence that bears differently on the candidates and repeatedly revises their relative plausibility; the mapping only records outcomes for 'ordinary staged variants' and picks 'another plausible staged variant' with no rule for choosing variants that discriminate between rows and no revision step. The source inference is reprioritising, eliminating or retaining explanations to narrow the plausible set; the mapping replaces it with unspecified 'ordinary variant-comparison inference' plus a disclaimer. The phrase 'without changing the clinical logic' is an assertion, not a mapped step. The source limits on hypothesis-set completeness and on anchoring or premature closure are also dropped in favour of target-native limits only. What remains is a differential chart used as a recording format, which is generic resemblance rather than a preserved chain."
+          },
+          "target_fidelity": {
+            "status": "not-addressed",
+            "rationale": "The question asks which elements are necessary for the activation task and which interactions prevent a simple ranking. The mapped inference states no conclusion on either part; it says only that enumeration does not establish minimality or a ranking. The packet says bounded, test-relative necessity and interaction evidence comes from a failure-preserving subset together with the pass results of its valid one-element deletions. The mapping explicitly imposes no failure-preserving reduction criterion and gives no other rule linking the chosen variants to such a subset. Any relation between the recorded table and necessity or interaction is therefore unsupported as mapped. What the mapping would actually deliver is a log of which listed explanations are compatible with whichever variants were run, which shares subject matter with the question but does not answer it. The disclaimer bounds what is not shown without stating a contribution that is shown."
+          },
+          "operational_coherence": {
+            "status": "conditional",
+            "rationale": "Performing X is intelligible: running dependency-valid variants through the deterministic replay test and tabulating pass/fail and compatibility will produce Y, and the mapping does not overclaim or rely on circular construction or source imagery. Whether Y warrants any Z relevant to the target depends on something the mapping leaves open: which variants are staged. Only if the recorded set contains a failure-preserving subset and its valid one-element deletions, or otherwise covers the valid configuration space, would variant comparison license test-relative necessity or interaction statements. The inference rule itself ('ordinary variant-comparison inference') is named but not specified."
+          },
+          "target_reframe": {
+            "occurred": false,
+            "original_question": null,
+            "reframed_question": null,
+            "relationship": null
+          },
+          "unresolved_conditions": [
+            "Operational coherence only: whether the staged variants recorded within the 80-test budget include at least one failure-preserving subset and all of its valid one-element deletions (or all dependency-valid configurations). This could be established by auditing the recorded variant list against the valid-deletion rules. The mapping supplies no selection rule that ensures it, and meeting it would not restore the lost source operation and inference steps or supply the missing target inference."
+          ],
+          "final_status": "Invalid",
+          "rationale": "Two criteria fail, and failure dominates the conditional operational criterion. Mechanism fidelity fails because the source's discriminating evidence-gathering, iterative plausibility revision and narrowing inference are replaced by passive tabulation and an unspecified 'ordinary variant-comparison inference'. Target fidelity fails because the mapping states no inference about necessary elements or blocking interactions and explicitly omits the failure-preserving criterion through which the packet says such bounded evidence arises. The procedure is runnable and honestly bounded, but whether its records warrant anything about the question depends on an unspecified variant selection. Supplying a selection rule or an elimination step would amend the mapping rather than assess it, so the mapping as supplied is Invalid."
+        }
+      }
+    },
+    {
+      "admission": {
+        "case_id": "N021",
+        "target_id": "T04",
+        "validity_A": "Invalid",
+        "validity_B": "Invalid",
+        "admitted": false
+      },
+      "design_level": "A",
+      "returned_assessments": {
+        "A": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "Repeated comparable timing and queue observations produce temporal patterns that support bounded judgments about persistence or change. The mapping retains sampling and comparability limits and explicitly avoids inferring causes from trends; the fixture additionally bounds timestamp error and restricts the matched regime."
+          },
+          "target_fidelity": {
+            "status": "not-addressed",
+            "rationale": "The stated inference assesses persistence or change, without locating accumulated delay at particular handoffs. Direct internal timestamps are unavailable, and the mapping does not use the calibrated route relationships to infer hidden stage waits. Case inspection and a pilot are proposed inquiries, without findings connecting a particular handoff or change to the retained question."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "Available repeated total-route timings and queue observations can support the stated bounded temporal inference under comparable conditions. Although direct handoff timings are unavailable, the available observations suffice for this aggregate inference; they do not warrant handoff localization or remedy effectiveness."
+          },
+          "target_reframe": {
+            "occurred": true,
+            "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+            "reframed_question": "Are approval delays persistent, increasing, or decreasing over time?",
+            "relationship": "The mapping operationally narrows the inquiry to temporal behavior. This supplies descriptive context but does not establish where hidden waits accumulate or which changes could reduce them."
+          },
+          "unresolved_conditions": [],
+          "final_status": "Invalid",
+          "rationale": "The serial-monitoring mechanism supports a coherent temporal assessment, but the supplied inference does not address the retained localization and intervention question."
+        },
+        "B": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "The mapping keeps the serial-monitoring chain. The state is a process whose delay may be stable, fluctuating or changing. The operation is repeated comparable timings compared with earlier matched periods. The signal is a stable, rising or falling pattern. The inference is a bounded assessment of persistence or change, with the explicit caveat that a trend alone does not identify cause. The limits (sampling, demand confounding, changing case mix) correspond to the source's irregular sampling and changing measurement conditions. Measurement error, regression to the mean and interventions between observations are not named, but this is a thinning of the limits rather than a substitution of the mechanism. The patient/hemodynamic imagery is decorative and does no inferential work."
+          },
+          "target_fidelity": {
+            "status": "not-addressed",
+            "rationale": "The target asks where among the approval handoffs delay accumulates and which bounded changes could reduce it. The mapped inference answers whether delay persists or changes over time, and it disclaims causal identification. A temporal trajectory of route totals does not localize delay to a stage or handoff. The mapping never uses route membership, the additive stage contributions, or the ownership records that tie stages to handoffs. The operation's reference to repeated handoff timings relies on stage-level timestamps the packet says are unavailable in this fixture, so the only bridge to localization is known to be absent rather than unresolved. The 'which changes' part is reached only through an appended ordinary sandbox pilot, which is not warranted by the serial signal. Shared subject matter (approval delays) is not enough."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "As mapped, comparing repeated total-route timings across comparable periods under matched staffing and demand does yield stable, rising or falling patterns. Those patterns warrant the stated bounded inference about persistence versus change, and the mapping correctly declines to infer cause. The chain is intelligible and non-circular for the route-total series that are available. The handoff-level part of the operation cannot be performed in this fixture, but the stated inference does not depend on it. The coherence is for the inference the mapping actually makes, not for the target question."
+          },
+          "target_reframe": {
+            "occurred": true,
+            "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+            "reframed_question": "Is approval delay persistent, rising or falling over comparable periods, as opposed to transient fluctuation?",
+            "relationship": "The mapping implicitly replaces a localization-and-remedy question with a temporal-course question. The reframed answer is at most a preliminary: it can show that a delay is sustained and worth localizing, and serial comparison could later help read a pilot's before/after effect. It does not identify which stage or handoff accumulates delay, and it does not select a change. It therefore contributes context to the original question but does not answer it."
+          },
+          "unresolved_conditions": [],
+          "final_status": "Invalid",
+          "rationale": "The serial-monitoring mechanism is carried over faithfully and its bounded inference about persistence or change is coherent for the available route-total series. But that inference answers a different question from the retained target, which asks where delay accumulates across handoffs and which bounded change could reduce it. Trend detection over time does not localize delay. The only path to localization in the mapping (serial handoff-level timings) relies on data the packet states are unavailable, and the mapping offers no relation linking route-level trends to stage-level location. The appended pilot is ordinary practice, not something the serial signal warrants. Target fidelity fails, and failure dominates, so the transfer is Invalid. This is not a conditional case, because the gap is a known mismatch between inference and question rather than a missing measurement that could be established."
+        }
+      }
+    },
+    {
+      "admission": {
+        "case_id": "N022",
+        "target_id": "T06",
+        "validity_A": "Valid",
+        "validity_B": "Invalid",
+        "admitted": false
+      },
+      "design_level": "B",
+      "returned_assessments": {
+        "A": {
+          "mechanism_fidelity": {
+            "status": "preserved",
+            "rationale": "Comparing ordered annual-event references with independent calendars through candidate dates and compatible placements preserves the temporal-alignment mechanism. Anchored pattern matches and conflicts support chronology; repeated references and unreliable anchors remain ambiguous. Neither new constraints nor use of the impression sequences is essential to this transfer."
+          },
+          "target_fidelity": {
+            "status": "addressed",
+            "rationale": "Compatible placements and independent-anchor checks contribute directly to the bundle’s relative and absolute chronology, with unresolved intervals explicitly retained."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "Tabulating ordered references and candidate placements makes temporal agreements and conflicts inspectable. Those constraints and the independent anchor warrant bounded dating conclusions. The mapping explicitly denies that table size adds warrant."
+          },
+          "target_reframe": {
+            "occurred": false,
+            "original_question": null,
+            "reframed_question": null,
+            "relationship": null
+          },
+          "unresolved_conditions": [],
+          "final_status": "Valid",
+          "rationale": "The mapping preserves ordered-pattern alignment and anchor checking as a bounded contribution to chronology. Making an existing comparison explicit does not invalidate the transfer."
+        },
+        "B": {
+          "mechanism_fidelity": {
+            "status": "not-preserved",
+            "rationale": "The source mechanism is a sliding alignment of ordered increment sequences across overlapping records, where one alignment yields repeated multi-period pattern matches and exposes missing, extra or misassigned increments. The mapping does not perform this. Its operation is to tabulate already available ordinary clues (event mentions, candidate dates, date intervals) and re-check the same independent anchor, and it states outright that there is 'no new alignment constraint' and that 'table size adds no dating warrant'. The impression-count sequences, the long overlapping reference sequences and the documented omitted/duplicated impressions are the target counterparts of the source state, and the mapping never engages them. The signal is 'the same anchored pattern matches' in structured form, not an alignment-specific correspondence that detects anomalous increments. The limit field keeps only repeated references and unreliable anchors; it drops weak shared signal, insufficient overlap, local disturbance and incorrect reference chronologies. The reference to 'growth-ring crosschecks in a master chart' is source imagery rather than a functional counterpart. The state→operation→signal→inference chain has been replaced by ordinary provenance tabulation."
+          },
+          "target_fidelity": {
+            "status": "addressed",
+            "rationale": "The inference stays on the retained question. Ordinary date triangulation and ordered comparison of event references against independent calendars, with an anchor check and unresolved intervals preserved, gives an explicitly bounded contribution to the bundle's relative and absolute chronology. The packet says these ordinary checks permit a partial chronology. The mapping does not overclaim: it leaves repeated references ambiguous and disclaims any added warrant. The question is addressed in bounded form, but by ordinary means rather than by the transferred mechanism."
+          },
+          "operational_coherence": {
+            "status": "coherent",
+            "rationale": "Tabulating the ordinary clues and checking the independent anchor (X) produces a structured display of the same pattern matches and dating conflicts (Y). That supports only the ordinary triangulated partial chronology with ambiguities retained (Z). The chain is intelligible and the inference is bounded, since the mapping itself says the restructuring adds no dating warrant. It does not rest on a circular construction or on source imagery for its stated conclusion; it simply adds nothing beyond baseline practice."
+          },
+          "target_reframe": {
+            "occurred": false,
+            "original_question": null,
+            "reframed_question": null,
+            "relationship": null
+          },
+          "unresolved_conditions": [],
+          "final_status": "Invalid",
+          "rationale": "Mechanism fidelity fails, and failure dominates. The mapping substitutes tabulation of ordinary provenance and event-reference clues for the crossdating operation of aligning overlapping increment sequences. It disclaims any new alignment constraint or added warrant and leaves unused the impression-count sequences, overlapping reference sequences and anomaly records the packet supplies. What remains is a coherent, appropriately bounded ordinary procedure that addresses the target question in partial form, but it is not a transfer of the source instrument. This known mechanism loss cannot be repaired by adding conditions without amending the supplied mapping."
+        }
+      }
+    }
+  ],
+  "interpretation": "Four cases excluded without replacement. T04 loses both native controls; T05/T06 lose formalization designs. N018 and N022 expose compressed B descriptions that do not explicitly preserve the complete source chain for family B. Target-fidelity scope remains contested. These are selection limitations, not anti-collapse rejections."
+}
