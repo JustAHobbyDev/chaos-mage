@@ -1,0 +1,44 @@
+{
+  "policy": "Exact hash-bound exceptions for the three documented lexical false positives; no payload changes or new generations.",
+  "cases": [
+    {
+      "case_id": "E030",
+      "target_id": "T03",
+      "generator_family": "B",
+      "field": "explanation.operational_chain",
+      "excerpt": "the novel as a whole",
+      "finding": "false-positive self-label exclusion",
+      "explanation": "Literary noun: the work being studied, not a novelty self-assessment.",
+      "raw_sha256": "a2786ad45443a6e29d45cd79dada21a969c0b7dbc6954e7606137a77f754c92a",
+      "original_exclusion_retained": true,
+      "readmitted": true,
+      "payload_path": "distance/anti-collapse-natural-v0.1/failures/generation/generation-E030-B.txt"
+    },
+    {
+      "case_id": "E029",
+      "target_id": "T05",
+      "generator_family": "B",
+      "field": "mapping.state",
+      "excerpt": "novelty effects",
+      "finding": "false-positive self-label exclusion",
+      "explanation": "A behavioral temporal effect; not a self-assessment of the mapping. The same term also occurs in signal, inference, limit and explanation.",
+      "raw_sha256": "aa0f3d7fbb143d5f8ba29830132e70756b07dfc2c35bee9835eb389f8cbabf69",
+      "original_exclusion_retained": true,
+      "readmitted": true,
+      "payload_path": "distance/anti-collapse-natural-v0.1/failures/generation/generation-E029-B.txt"
+    },
+    {
+      "case_id": "E027",
+      "target_id": "T03",
+      "generator_family": "A",
+      "field": "mapping.limit",
+      "excerpt": "the whole novel's formation",
+      "finding": "false-positive self-label exclusion",
+      "explanation": "Literary noun in an inferential limit; not a novelty self-assessment.",
+      "raw_sha256": "39fc45405e08093bf247fa15d27e195ef3849452cfa3aefd0847cf8aa2dd39ce",
+      "original_exclusion_retained": true,
+      "readmitted": true,
+      "payload_path": "distance/anti-collapse-natural-v0.1/failures/generation/generation-E027-A.txt"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "E028",
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ],
+    "ordinary_inference_patterns": [
+      "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+      "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+    ],
+    "ordinary_next_actions": [
+      "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+      "Check whether an apparent fix reproduces under representative workloads."
+    ]
+  },
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  }
+}

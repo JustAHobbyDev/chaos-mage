@@ -1,0 +1,134 @@
+{
+  "case_id": "E002",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Use per-request latency and span durations, not aggregated percentiles",
+        "Build and inspect the coverage matrix before inverting.",
+        "compute residual = observed latency minus reference-model prediction at the observed load.",
+        "Run the identical inversion"
+      ],
+      "neutral_evidence": [
+        "Use per-request end-to-end latency and, where available, per-span durations.",
+        "Before estimating delay increments, build and inspect a coverage matrix",
+        "subtract the reference-model prediction at observed load from observed latency to obtain residuals.",
+        "Apply the identical estimation procedure"
+      ],
+      "rationale": "The paraphrase preserves the load-conditioned additive reference model, traversal-count coverage matrix, residual calculation, three competing model forms, regularisation variation, and synthetic-delay recovery test using the same coverage and sampling. Replacing inversion terminology with estimation does not change the operations."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The observable is the structure of the residuals across path classes, not their overall size.",
+        "they scale roughly with the number of traversals of that cell",
+        "they appear on instances still running the old version",
+        "This indicates a change in load sensitivity rather than a fixed added delay."
+      ],
+      "neutral_evidence": [
+        "Examine residual structure across path classes rather than overall residual size.",
+        "approximate scaling with that unit's traversal count",
+        "appearing on instances running the old version",
+        "indicate altered load sensitivity rather than fixed added delay."
+      ],
+      "rationale": "All change-related and load-related patterns remain, including matched-load persistence, bypass comparisons, low-load observations, and instance-specific onset. Mixed and unstructured residual interpretations, synthetic-delay recovery, regularisation sensitivity, and intervention responses are also retained."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "a constrained model of where added delay sits, not proof of a unique cause.",
+        "or does equally well, in which case no attribution is made",
+        "the change conditional on load, not apportioned between the two.",
+        "Causal contribution is bounded only after the follow-up intervention"
+      ],
+      "neutral_evidence": [
+        "a constrained estimate of the distribution of added delay, not proof of a unique cause.",
+        "If that alternative performs equally well, make no attribution.",
+        "the change conditional on load, without apportioning it between change and load.",
+        "Causal contribution is bounded only after removing and reintroducing the change"
+      ],
+      "rationale": "The paraphrase preserves estimated magnitudes with stated intervals, the separate-coverage, recovery, and stability requirements, the three observations distinguishing load, set-level attribution under collinearity, and the observational limitation. Causal contribution still requires intervention and is bounded by the explained fraction within covered paths, with the remainder unexplained."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Assumptions not supplied by the packet, to be checked before the procedure is used",
+        "If (c) fails, the observational data alone cannot separate the candidates.",
+        "A preference for a single changed cell can manufacture a single culprit.",
+        "it applies to the covered paths, load strata and time window only."
+      ],
+      "neutral_evidence": [
+        "The packet does not establish the prerequisites",
+        "If the differing-coverage prerequisite fails, observational data cannot separate candidates.",
+        "A regularisation preference for a single changed unit can produce a single-candidate estimate",
+        "Conclusions apply to the covered paths, load strata and time window."
+      ],
+      "rationale": "The prerequisites remain explicitly unestablished. Coverage, measurement, assignment uncertainty, regularisation artifacts, failed additivity, nonlinear load response, extrapolation, non-uniqueness, confounding, system drift, latency-dependent path selection, replay fidelity, and rollback limitations are retained. The single-candidate wording still identifies regularisation as a possible source of apparent uniqueness. Scope and all withdrawal or narrowing conditions remain explicit."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop iterating when residuals on held-out path classes are no larger than the pre-regression residual spread, or when further adjustment no longer reduces held-out residuals.",
+        "Stop without naming a single change if the leading candidates are collinear in coverage, or if the resolution test does not recover the synthetic delay."
+      ],
+      "neutral_evidence": [
+        "Stop iterating when residuals on held-out path classes are no larger than the pre-regression residual spread, or when further adjustment no longer reduces held-out residuals.",
+        "Stop without naming a single change when leading candidates have collinear coverage or the synthetic-delay test fails to recover the introduced delay."
+      ],
+      "rationale": "Both alternative iteration-stopping criteria and both conditions requiring termination without a single-change attribution are preserved."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "create new paths rather than refit.",
+        "a canary carrying a single change, a flag flip on a traffic subset, or bisected builds under replayed representative workload at matched load.",
+        "Where safe, follow with rollback and controlled reintroduction"
+      ],
+      "neutral_evidence": [
+        "obtain new request paths instead of continuing to refit the existing coverage.",
+        "a canary carrying a single change, a flag flip on a traffic subset, or bisected builds under replayed representative workload at matched load.",
+        "Where safe, follow with rollback and controlled reintroduction"
+      ],
+      "rationale": "The coverage-triggered follow-up, all three intervention options, representative workload and matched-load requirements, and conditional safety requirement for rollback and reintroduction remain unchanged."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Rows are path classes, columns are candidate cells, entries are traversal counts.",
+        "Stop iterating when residuals on held-out path classes",
+        "with the remainder reported as unexplained."
+      ],
+      "neutral_evidence": [
+        "The coverage matrix relates path classes to candidate units through traversal counts.",
+        "held-out path classes assess residuals beyond the classes used for fitting.",
+        "report the remainder as unexplained."
+      ],
+      "rationale": "The additional organization and explanatory summaries restate existing operations and their implications. Explaining held-out classes does not introduce another test. No new measurement, intervention, decision threshold, attribution rule, or causal claim is added."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Ray (source-to-receiver path)",
+        "Travel time",
+        "Model cell",
+        "Resolution test (checkerboard counterpart).",
+        "Uncertain source locations."
+      ],
+      "neutral_evidence": [
+        "A request path class is the ordered set of segments traversed",
+        "A segment-by-version/configuration unit receives an estimated per-traversal delay",
+        "introducing a known synthetic delay into a chosen unit",
+        "Path and version assignments may be uncertain"
+      ],
+      "rationale": "Source labels and imagery are removed, including rays, travel time, model cells, checkerboards, and source locations. Request paths, segment units, latency, and deployment identities remain as target entities. Neighboring units describes possible misassignment among those target units without retaining the source framing."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text makes the prohibited evaluative claims about ordinariness, novelty, creativity, departure from practice, formalization, or a new warrant. The paraphrase describes behavior and evidential conditions; its inferential_warrant field does not evaluate whether the procedure adds or lacks a warrant."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "E002",
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "native_baseline": {
+    "target_domain": "production-regression diagnosis",
+    "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+    "ordinary_methods": [
+      "Compare deployment and latency timelines, stratifying traffic and configuration.",
+      "Replay representative workloads, bisect revisions and test competing causes in staging.",
+      "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+    ],
+    "ordinary_evidence": [
+      "Version and configuration history; request traces; latency distributions; resource counters.",
+      "Controlled replay and rollback observations."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+    ],
+    "ordinary_inference_patterns": [
+      "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+      "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+    ],
+    "ordinary_next_actions": [
+      "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+      "Check whether an apparent fix reproduces under representative workloads."
+    ]
+  },
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "source_neutral": {
+      "type": "object",
+      "properties": {
+        "procedure": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "observables": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inferential_warrant": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "problem_decomposition": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "next_inquiry": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limits": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "procedure",
+        "action",
+        "observables",
+        "inferential_warrant",
+        "problem_decomposition",
+        "next_inquiry",
+        "limits"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "source_neutral"
+  ],
+  "additionalProperties": false
+}

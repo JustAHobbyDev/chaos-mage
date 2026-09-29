@@ -1,0 +1,129 @@
+{
+  "case_id": "E025",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Pick the checkpoint nearest the middle of the unresolved interval.",
+        "If it is behind, discard the later portion and treat this checkpoint as the new late endpoint.",
+        "using the same cohort for every probe where possible."
+      ],
+      "neutral_evidence": [
+        "Select the checkpoint nearest the middle of the unresolved interval.",
+        "If the checkpoint is behind allowance, discard the later portion of the interval and use it as the new late endpoint.",
+        "using the same cohort for every examination where possible."
+      ],
+      "rationale": "The paraphrase preserves fixed inputs, endpoint verification, checkpoint timing and classification, both interval-reduction branches, adjacent-checkpoint substitution for missing times, and conditional reuse of the cohort."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The underlying elapsed-time figures are kept alongside the classification.",
+        "the shrinking span between the latest checkpoint classified within allowance and the earliest checkpoint classified behind allowance.",
+        "With n handoffs and all checkpoints observable, roughly log2(n) probes are needed."
+      ],
+      "neutral_evidence": [
+        "with the underlying elapsed-time figures retained.",
+        "the shrinking interval between the latest checkpoint classified within allowance and the earliest checkpoint classified behind allowance.",
+        "With n handoffs and all checkpoints observable, roughly log2(n) examinations are needed."
+      ],
+      "rationale": "Binary classifications, retained measurements, interval shrinkage and the conditional probe estimate are preserved. Both texts also record skipped checkpoints, near-allowance classifications, cohort disagreement and pilot classifications at the downstream checkpoint and final approval."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "for this case type and cohort, the first point on the route where cumulative elapsed time moves from within allowance to behind allowance lies in the final unresolved handoff",
+        "that this handoff is the sole or largest source of delay, or that it causes the delay.",
+        "this supports (but does not prove)"
+      ],
+      "neutral_evidence": [
+        "For the examined case type and cohort, the reported result places the first transition from cumulative elapsed time within allowance to cumulative elapsed time behind allowance in the final unresolved handoff",
+        "The result alone does not establish that the handoff is the sole or largest source of delay or that it causes the delay.",
+        "this supports, without proving"
+      ],
+      "rationale": "Both locate the first allowance crossing within the final handoff or wider interval, restrict the conclusion to the examined case type and cohort, and identify a candidate for investigation. The negative causal and magnitude limits, conditional pilot support and interpretation of downstream-only improvement remain intact."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Assumptions not supplied by the packet: that per-checkpoint allowances exist or can be agreed in advance",
+        "Discarding half the route on one probe can then discard a real contributor.",
+        "Pilot comparisons remain observational unless demand and staffing are comparable.",
+        "The halving earns its cost only where each checkpoint time must be reconstructed or newly logged."
+      ],
+      "neutral_evidence": [
+        "The supplied information does not establish that checkpoint-level allowances exist or can be agreed in advance",
+        "discarding half the route after one examination can therefore exclude a real contributor.",
+        "Pilot comparisons remain observational unless demand and staffing are comparable.",
+        "The cost justification for halving applies where each checkpoint time must be reconstructed or newly logged."
+      ],
+      "rationale": "The paraphrase retains prerequisites and unresolved measurement assumptions, variability, unobservable checkpoints, recovery and loops, distributed delay, allowance sensitivity, interactions, incorrect endpoints, timestamp limitations, logging delays, route mixing, temporal and population scope, observational comparison limits and the conditional cost advantage."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Normal stop: the unresolved interval is a single handoff between two adjacent checkpoints.",
+        "Partial stop: the only checkpoints left are unobservable.",
+        "Halt without a result: an endpoint fails verification, or a checkpoint's classification flips when re-checked on a second comparable cohort."
+      ],
+      "neutral_evidence": [
+        "Stop with a localized result when the unresolved interval is one handoff between adjacent checkpoints.",
+        "Stop with a partial result when all remaining checkpoints are unobservable, reporting the interval of several handoffs.",
+        "Halt without a result if an endpoint fails verification or a checkpoint changes classification when checked on a second comparable cohort."
+      ],
+      "rationale": "All three stopping modes preserve their triggers and their distinct outcomes: localized result, wider partial result or no result."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Re-classify the two checkpoints bounding the localized handoff on a second comparable cohort.",
+        "Illustrative candidates, not established remedies",
+        "If the end-to-end classification is still behind allowance after the pilot, re-establish the endpoints and repeat the partitioning on the remaining route."
+      ],
+      "neutral_evidence": [
+        "After localization, reclassify the two checkpoints bounding the localized handoff using a second comparable cohort.",
+        "these are not established remedies.",
+        "If final approval remains behind allowance after the pilot, re-establish the endpoints and repeat the interval reduction on the remaining route."
+      ],
+      "rationale": "The paraphrase preserves boundary rechecking, exceptional-case inspection and interviews, a single confined pilot, the illustrative remedy options, reassessment at both outcome checkpoints under comparable conditions, and conditional repetition on the remaining route."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "That handoff is the priority candidate for exception-case inspection, interviews and a bounded pilot.",
+        "Parallel approvals and rework loops are collapsed into single checkpoints so the order is unambiguous."
+      ],
+      "neutral_evidence": [
+        "Use the handoff as the priority candidate for inspection of exceptional cases and interviews.",
+        "Parallel approvals and rework loops must be collapsed into single checkpoints to make the route's order unambiguous."
+      ],
+      "rationale": "The additional organization into procedure, decomposition and inquiry sections redistributes existing content. It adds no new action, measurement, decision rule, remedy, prerequisite or inference."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "the counterpart of the ordered revision history.",
+        "Flaky test:",
+        "Unbuildable revision:"
+      ],
+      "neutral_evidence": [
+        "an ordered list of checkpoints",
+        "High case-to-case variability or a small cohort can cause classifications to change between cohorts",
+        "Checkpoints without recoverable times, informal handoffs and parallel approvals cannot be examined"
+      ],
+      "rationale": "Source revision and testing imagery is removed while approval routes, checkpoints, handoffs and their limitations remain. References to interval division and halving describe the actual operation."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "The halving order then saves no effort over the analyst's ordinary stage-by-stage timestamp comparison."
+      ],
+      "neutral_evidence": [
+        "examining them in halving order saves no effort over comparing timestamps stage by stage."
+      ],
+      "rationale": "The paraphrase removes the original's 'ordinary' wording and retains only the conditional effort comparison. It makes no claim about novelty, conventionality, creativity, material departure or adding or lacking a new warrant."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

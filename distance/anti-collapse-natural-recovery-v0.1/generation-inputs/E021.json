@@ -1,0 +1,43 @@
+{
+  "case_id": "E021",
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?"
+  },
+  "native_baseline": {
+    "target_domain": "organizational handoff delays",
+    "target_task": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "reference_practitioner": "Operations improvement analyst specializing in service-team handoffs, without control-engineering training.",
+    "ordinary_methods": [
+      "Map actual workflow and ownership; compare timestamps and queues across case types.",
+      "Interview participants and inspect exception cases.",
+      "Pilot explicit handoff changes and compare turnaround, accounting for staffing and demand."
+    ],
+    "ordinary_evidence": [
+      "Ticket histories, queue lengths, staffing schedules, service-level targets and interviews."
+    ],
+    "uncertainty": [
+      "Scoped authored hypothesis, not verified practitioner consensus.",
+      "Some analysts use process mining; dynamic system estimation from designed excitation is outside this scoped baseline."
+    ],
+    "ordinary_inference_patterns": [
+      "Timestamp and queue comparisons locate observed delay associations; pilots accounting for staffing and demand support bounded change assessments.",
+      "Interviews suggest explanations but do not alone establish hidden stage contributions or a causal remedy."
+    ],
+    "ordinary_next_actions": [
+      "Inspect exception cases, compare affected handoffs and pilot a bounded workflow change.",
+      "Check turnaround under comparable demand and staffing before generalizing."
+    ]
+  },
+  "source": {
+    "name": "Seismic tomography",
+    "practice": "Seismology and geophysics",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  }
+}

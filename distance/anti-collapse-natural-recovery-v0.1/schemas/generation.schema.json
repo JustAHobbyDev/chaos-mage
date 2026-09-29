@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "practice": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "name",
+        "practice"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "domain",
+        "question"
+      ],
+      "additionalProperties": false
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "signal": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limit": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "state",
+        "operation",
+        "signal",
+        "inference",
+        "limit"
+      ],
+      "additionalProperties": false
+    },
+    "explanation": {
+      "type": "object",
+      "properties": {
+        "operational_chain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "why_source_structure_applies": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "operational_chain",
+        "why_source_structure_applies",
+        "uncertainty"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "source",
+    "target",
+    "mapping",
+    "explanation"
+  ],
+  "additionalProperties": false
+}

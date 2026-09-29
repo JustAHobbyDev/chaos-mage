@@ -1,0 +1,149 @@
+{
+  "case_id": "E023",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Construct a hypothesis table stating what each candidate predicts and what would contradict it",
+        "repeating runs with counterbalanced order and controlled warm-up",
+        "bisect revisions or selectively revert changes where technically valid, then repeat the discriminating comparison",
+        "Define the latency measure, practically meaningful effect, required precision, trial budget and safety thresholds before testing",
+        "otherwise retain staging evidence and its scope"
+      ],
+      "neutral_evidence": [
+        "Build a table listing, for each candidate, what it predicts and what observation would contradict it",
+        "repeating runs with counterbalanced order and controlled warm-up",
+        "bisect revisions or selectively revert changes where technically valid, then repeat the discriminating comparison",
+        "Before testing, define the latency measure, the practically meaningful effect size, the required precision, the trial budget and the safety thresholds",
+        "otherwise retain the staging evidence and state its scope"
+      ],
+      "rationale": "Every operational element of the original appears in the paraphrase with its conditions intact: prediction/contradiction table, stratified timeline inspection, use of traces and counters to discriminate, plausibility updating with retention of non-discriminated explanations, matched replay comparison with counterbalancing and warm-up control, lower/higher load testing, bisection or selective reversion, pre-specified test parameters, and conditional rollback/reintroduction. The conditional qualifiers ('where representative replay is available', 'where technically valid', 'where authorized and safe') are all retained. Differences are wording and the presentation as a numbered list."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "A repeatable latency increase on the suspect version at matched offered load and request mix would support a version contribution",
+        "A difference appearing only at higher load would support a change-by-load interaction",
+        "resource counters could support or contradict the predicted bottleneck",
+        "Deployment timing alone, an unmatched rollback during falling demand, or noisy comparisons would leave explanations insufficiently separated"
+      ],
+      "neutral_evidence": [
+        "A repeatable latency increase on the suspect version at matched offered load and request mix would support a version contribution",
+        "A difference that appears at higher load but not at lower load would support a change-by-load interaction",
+        "Resource counters could support or contradict the predicted bottleneck",
+        "Deployment timing by itself, a rollback performed without matching during falling demand, or noisy comparisons would leave the explanations insufficiently separated"
+      ],
+      "rationale": "All observable patterns are carried over with the same direction of support: version contribution, load variation, interaction, trace-based mechanistic support, counter-based support or contradiction, rollback/reintroduction strengthening, and the three non-discriminating patterns. The conditional 'would'/'could' framing is kept. 'Only at higher load' and 'at higher load but not at lower load' are equivalent."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Eliminate a candidate only within conditions where the test could reliably detect its predicted effect; otherwise retain it",
+        "supports that change's causal contribution for the tested workload, configuration and period",
+        "a load-dependent effect warrants an interaction claim",
+        "A comparison between bundled releases supports release-level attribution until individual changes are isolated",
+        "without claiming a unique universal cause"
+      ],
+      "neutral_evidence": [
+        "A candidate is eliminated solely within the conditions where the test could reliably detect its predicted effect; outside those conditions it is retained",
+        "supports that change's causal contribution for the tested workload, configuration and period",
+        "A load-dependent effect supports a claim of interaction between the change and load",
+        "A comparison between bundled releases supports attribution at the release level until individual changes are isolated",
+        "does not claim a unique universal cause"
+      ],
+      "rationale": "The inferential structure is preserved, including the negative inference limit on elimination, the scope bound on causal contribution, the 'where feasible' qualifier on corroboration, release-level versus change-level attribution, and the refusal to claim a unique universal cause. 'Warrants' becoming 'supports' is a wording change that does not alter the strength of the claim in context."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The candidate set may omit the actual mechanism",
+        "Correlated traces and resource counters are not independent confirmations",
+        "Null results remain limited by test sensitivity, sample size and workload coverage; apparent positive results by test specificity and uncontrolled differences",
+        "Rollback may alter several conditions together, so improvement alone does not isolate a change",
+        "Use relevant prior incident frequencies only if available",
+        "limit anchoring, premature closure, base-rate neglect and confirmation bias",
+        "Neither access to suitable experiments nor fidelity between staging and production is established by the packet"
+      ],
+      "neutral_evidence": [
+        "The candidate set may omit the actual mechanism",
+        "Correlated traces and resource counters are not independent confirmations",
+        "Null results are limited by test sensitivity, sample size and workload coverage; apparent positive results are limited by test specificity and uncontrolled differences",
+        "Rollback may alter several conditions together, so improvement alone does not isolate a change",
+        "Prior incident frequencies are used if available and relevant",
+        "limit over-weighting of an early-favored explanation, closing the inquiry before alternatives are tested, disregarding prior frequencies of causes, and selective attention to supporting evidence",
+        "Neither access to suitable experiments nor fidelity between staging and production is established by the packet"
+      ],
+      "rationale": "Each stated limit, uncertainty and unestablished precondition is present in the paraphrase. The four named reasoning errors are replaced by descriptive equivalents that map one-to-one. The 'only if available' condition on prior frequencies is rendered as 'if available' without the word 'only'; the conditionality itself is retained. Scope statements restated in the limits field are drawn from the original operation and inference fields and do not weaken any limit."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop a trial if safety thresholds are crossed",
+        "Stop narrowing when a reproducible discriminating contrast supports a bounded attribution and tested alternatives cannot explain that contrast alone, or when the trial budget or evidence access is exhausted"
+      ],
+      "neutral_evidence": [
+        "stop an individual trial if safety thresholds are crossed",
+        "Stop narrowing when a reproducible discriminating contrast supports a bounded attribution and the tested alternatives cannot explain that contrast alone, or when the trial budget or evidence access is exhausted",
+        "The process ends when a reproducible discriminating contrast supports a bounded attribution, or when the trial budget or evidence access is exhausted, without requiring that a single candidate be selected"
+      ],
+      "rationale": "Both stopping rules (trial-level safety stop and narrowing stop with its two alternative triggers) appear in full in the paraphrase's limits field, and the safety stop also appears as action step 11. The summary sentence in the procedure field abbreviates the narrowing rule by omitting the clause about tested alternatives, but the complete rule is stated elsewhere in the same paraphrase, so the condition is not lost."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If inconclusive, retain the unresolved candidates and specify the next discriminating trace, workload comparison or revision test; do not force a winner"
+      ],
+      "neutral_evidence": [
+        "retain the unresolved candidates and specify the next discriminating trace, workload comparison or revision test, without selecting a candidate as the answer",
+        "No further follow-up beyond these is specified"
+      ],
+      "rationale": "The inconclusive-case follow-up is preserved with the same three named options and the same prohibition on selecting a candidate. The additional items listed under next inquiry (bisection when changes remain bundled, retaining staging evidence when production rollback is unavailable) are restatements of conditional branches already in the original operation, and the paraphrase explicitly states that nothing further is specified."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "evidence requirements whose availability and reliability must be checked",
+        "otherwise retain staging evidence and its scope",
+        "use traces and resource counters to identify observations that distinguish candidates",
+        "Report supported candidates, contradicted candidates, unresolved alternatives and the scope of the evidence"
+      ],
+      "neutral_evidence": [
+        "must be checked before they are relied on",
+        "staging evidence and production evidence are kept distinct, each with its own stated scope",
+        "evidence sources are evaluated by whether they discriminate between candidates",
+        "practically meaningful effect size"
+      ],
+      "rationale": "No new step, measurement, threshold, tool or decision rule is introduced. The paraphrase contains a few small elaborations: 'before they are relied on', the statement that staging and production evidence are kept distinct with separate scopes, and the generalization that evidence sources are evaluated by discriminating power. Each is traceable to original text (the availability/reliability check, retention of staging evidence with its scope, reporting the scope of the evidence, and the use of traces and counters to distinguish candidates), so they are read as restatements, not new operations. The problem_decomposition field reorganizes existing content into units and relationships without adding procedures."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Construct a hypothesis table",
+        "do not force a winner",
+        "anchoring, premature closure, base-rate neglect and confirmation bias"
+      ],
+      "neutral_evidence": [
+        "Build a table listing, for each candidate, what it predicts and what observation would contradict it",
+        "instead of selecting a candidate",
+        "over-weighting of an early-favored explanation",
+        "checkout latency regression"
+      ],
+      "rationale": "The paraphrase contains no discipline names and no metaphors from a source field. The figurative 'force a winner' is rendered literally, and the named reasoning-error terms are replaced by plain descriptions. Target entities (checkout latency regression, deployed changes, versions, configurations, traces, resource counters, replay, rollback, staging and production) are all retained."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Evidence lists are empty because the feature is absent. The paraphrase describes the behavior only; it contains no statement that the procedure is ordinary, native, novel, unorthodox, a formalization, creative, a departure, or that it adds or lacks a warrant. The field name 'inferential_warrant' is a structural label, and its content describes what the evidence supports without evaluating the procedure. The original likewise contains no such language."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The packet does not name the source discipline, so the no_source_imagery check was made against apparent figurative or discipline-specific terms only; imagery tied to an unidentified source could have gone unrecognized.",
+    "The procedure summary sentence 'The process ends when a reproducible discriminating contrast supports a bounded attribution, or when the trial budget or evidence access is exhausted' omits the clause that tested alternatives cannot explain the contrast alone. The full rule appears in the limits field, so this was judged preserved, but a reader of the procedure field alone would see a weaker stopping condition.",
+    "The paraphrase presents the operation as a numbered list of 13 steps. If the numbering is read as a strict sequence, it imposes an order (for example, checking evidence availability as step 2 and defining test parameters as step 6) that the original does not fully specify. It was read as enumeration, not added sequencing.",
+    "The phrase 'staging evidence and production evidence are kept distinct, each with its own stated scope' goes slightly beyond the original's 'otherwise retain staging evidence and its scope'. It was judged derivable from the original's scope reporting and its statement that staging-production fidelity is not established, but a stricter reading could treat it as a minor addition.",
+    "The original's 'only if available' for prior incident frequencies is rendered as 'if they are available' and 'if available and relevant'. The dropped 'only' was judged a wording change, though it marginally softens the restriction.",
+    "Action step 13 says 'specify the next discriminating test' without the three named options; the full list appears in the next_inquiry field, so the content was judged preserved across the paraphrase as a whole."
+  ]
+}
