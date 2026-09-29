@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "validity_A": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "validity_B": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "admitted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "case_id",
+    "target_id",
+    "validity_A",
+    "validity_B",
+    "admitted"
+  ],
+  "additionalProperties": false
+}

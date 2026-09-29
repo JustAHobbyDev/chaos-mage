@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "required": [
+        "domain",
+        "question",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "native_baseline": {
+      "type": "object",
+      "properties": {
+        "target_domain": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "target_task": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reference_practitioner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "ordinary_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "ordinary_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "ordinary_inference_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "ordinary_next_actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "required": [
+        "target_domain",
+        "target_task",
+        "reference_practitioner",
+        "ordinary_methods",
+        "ordinary_evidence",
+        "uncertainty",
+        "ordinary_inference_patterns",
+        "ordinary_next_actions"
+      ],
+      "additionalProperties": false
+    },
+    "source_neutral": {
+      "type": "object",
+      "properties": {
+        "procedure": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "observables": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inferential_warrant": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "problem_decomposition": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "next_inquiry": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "procedure",
+        "action",
+        "observables",
+        "inferential_warrant",
+        "problem_decomposition",
+        "next_inquiry"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "target",
+    "native_baseline",
+    "source_neutral"
+  ],
+  "additionalProperties": false
+}
