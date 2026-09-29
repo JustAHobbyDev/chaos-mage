@@ -1,0 +1,33 @@
+{
+  "case_id": "N023",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the full source chain. State: hidden stage waits cannot be timestamped directly but contribute additively to the route totals that cross them. Operation: predict each route total from candidate nonnegative stage waits, compare against all measured totals, and adjust. Signal: joint route residuals and compatible intervals. Inference: the overlapping routes constrain a per-stage model of waits. The forward model that tomography relies on (path-integrated contributions) has a stated target counterpart: controlled calibration establishes additive, stable stage contributions with bounded timestamp error in the matched regime, and route membership is known. Source limits are carried over: calibration/model assumptions, route coverage, measurement error and non-uniqueness. The mapping retains every assignment within the error bounds rather than selecting one regularized solution, and it forbids inferring a nonzero wait when the interval includes zero, which respects the source's non-uniqueness caveat rather than dropping it."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has a localization part (where delay accumulates) and a remedy part (which bounded changes could reduce it). The mapping claims only an explicitly bounded contribution to the localization part. The packet supports this: hidden-wait estimation can provide a bounded answer about where delay accumulates, and ownership and workflow records map each inferred stage to a handoff. The mapping expressly disclaims establishing a remedy and routes that part to the budgeted ordinary matched sandbox pilot, reported without claiming live generality. No different question is substituted and no unsupported relation is claimed."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation on routes (1,2), (2,3) and (1,3) gives three route-sum constraints on three nonnegative stage waits. This incidence structure is full rank, so with bounded error the fit yields residuals and compatible intervals for each stage. Given the calibrated additive, stable regime, those intervals warrant bounded statements about each mapped handoff's contribution. The inference is bounded to the matched regime, to interval-valued conclusions, and to localization only. It does not rest on seismic imagery or circular construction; the 'hidden interior' phrasing is decorative and the warrant comes from the stated calibration and route map."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass on the packet's stated synthetic facts. The inverse-estimation mechanism is preserved with its forward-model warrant (calibrated additive stable stage waits, known route membership) and its limits (coverage, error, non-uniqueness, calibration scope). The inference addresses the localization part of the retained question as an explicitly bounded contribution, and leaves the remedy part to an ordinary matched sandbox pilot without overclaiming. The operation yields residuals and compatible intervals that warrant interval-bounded statements about the mapped handoffs. No unresolved operational warrant is needed for the bounded claim made, so the status is Valid rather than Conditional."
+  },
+  "uncertainty": [
+    "The packet does not give the width of the compatible intervals. They may be wide enough, or include zero for some stages, that localization is only weakly informative; the mapping bounds the claim accordingly but the practical resolution is unknown.",
+    "The remedy part of the question is not answered by the inverse estimation. It depends on a single sandbox pilot whose outcome is unknown, and the mapping does not say how the candidate change is chosen from the localization result.",
+    "Additivity and stability of the stage waits are taken as given from the stated calibration, and hold only within the matched case type, staffing and demand regime. Behaviour outside that regime is not covered.",
+    "The mapping does not say how the two budgeted additional route observations would be allocated, or whether they would materially tighten the intervals.",
+    "The mapping was judged as supplied. Treating the explicit scoping to the localization part as a bounded contribution rather than a question change is a judgment call."
+  ]
+}

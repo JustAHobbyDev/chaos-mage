@@ -1,0 +1,35 @@
+{
+  "case_id": "N013",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: a reproducibly failing configuration made of removable elements with a repeatable, resettable test (baseline fails, all-optional-removed passes). Operation: iterative failure-preserving reduction, here by one-element deletion in fixed order with restart after each retained deletion; this is the finest-granularity form of delta debugging's remove-and-retest loop, and coarse partitioning is not essential for six elements. Signal: which reduced configurations fail, pass, or are unresolved. Inference: a test-relative sufficient subset, with one-deletion minimality claimed only after a completed final pass and only a reduced sufficient subset claimed on a budget stop. The source limits carry over: no monotonicity assumed, unresolved outcomes not counted as failure, multiple minimal subsets possible, and reproduction under the test is not equated with a unique cause."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The mapping gives an explicitly bounded contribution to the retained question rather than a full answer. For the first clause, the pass results of valid one-element deletions from the retained failing subset identify which elements are test-relatively necessary within that subset for the activation blockage, which the packet itself stipulates as the available form of evidence. For the second clause, a retained subset of more than one element, each of whose valid single deletions passes, is direct evidence of a joint dependence that a per-feature ranking cannot express. The mapping disclaims global necessity, universal rankings, and real-user population claims, so it does not overstate what it answers."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X produces Y that warrants Z as mapped. The stipulated deterministic, resettable replay test yields pass/fail for each valid deletion; retaining a deletion only when failure recurs guarantees the retained configuration still fails; a complete pass with no accepted deletion establishes by direct observation that every valid single deletion passes, which is exactly one-deletion minimality among valid deletions. With six elements, restart-based single deletion needs roughly 21 tests in the worst case, well inside the 80-test budget, and the budget-stop branch is given a correspondingly weaker inference. Dependency constraints are respected by restricting trials and the minimality claim to valid deletions. The inference is not circular and does not rest on source imagery."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+      "reframed_question": "Which retained subset of switchable elements is sufficient to reproduce the activation-blockage failure on the recorded replay task, and which of its elements are one-deletion necessary for that failure among valid deletions?",
+      "relationship": "The mapping explicitly replaces feature-by-feature priority with the failure-preserving subset and its tested deletion boundary as the explanatory unit. This narrows the original question and inverts its polarity: it identifies elements necessary for the blockage on one recorded task, not parts necessary for users to complete activation in general. It contributes to the original question as bounded evidence: within the retained subset, removing any one validly deletable element restores task completion, and the joint dependence of the subset shows concretely why a simple ranking fails. It does not answer the original question globally, and the assessment above was made against the original question, not the reframed one."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a faithful single-element-deletion form of delta debugging applied to a target whose stipulated facts (deterministic resettable test, failing baseline, passing empty configuration, valid-deletion rules, 80-test budget) satisfy the source's state requirements. Its inference is limited to what the trials directly observe: a failure-reproducing subset, one-deletion minimality only on a completed final pass, and test-relative interaction evidence. It carries the source limits and makes no claim of global necessity, unique cause, or real-user generalisation. It contributes a bounded, not complete, answer to the target question, which the criteria accept as addressed."
+  },
+  "uncertainty": [
+    "The question asks which parts are necessary for completing activation, while the procedure identifies elements necessary for reproducing blockage. The link holds only within the retained subset and recorded task; breaking one minimal failing subset need not guarantee a pass in other configurations if several failure-preserving subsets exist.",
+    "The specific dependency constraints are not given in the packet. An element with retained dependents may never be validly deletable on its own, so its presence in the final subset could reflect the dependency structure rather than tested necessity for the failure.",
+    "The retained subset depends on the fixed identifier order. Other minimal failure-preserving subsets may exist and would not be found, so the interaction evidence is partial and not an enumeration of all interactions.",
+    "One-deletion minimality does not rule out smaller failing subsets reachable only by multi-element deletions, since monotonicity is not assumed. The mapping acknowledges this but does not test for it.",
+    "The packet says unresolved outcomes are possible outside the defined valid configurations. I assumed valid deletions always return pass or fail; if a valid deletion could return unresolved, minimality with respect to that deletion would not be established.",
+    "Results concern a single recorded, consented replay task. How far they transfer to real-user activation behaviour is unknown and is not claimed by the mapping.",
+    "No trial results are supplied, so the size and composition of the retained subset, and whether it shows any multi-element interaction at all, are unknown."
+  ]
+}

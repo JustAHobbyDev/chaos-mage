@@ -1,0 +1,34 @@
+{
+  "case_id": "N010",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: one observation (the latency rise) has several plausible explanations (three deployed changes, workload variation, configuration). Operation: list the rivals, gather evidence that bears differently on them (traces, counters, matched replay, rollback/reintroduction), and weaken those contradicted. Signal: a per-candidate pattern of agreement or conflict with observed latency, workload and replay behaviour. Inference: retain supported candidates and explicitly unresolved alternatives without committing early to one cause; the statement that temporal association alone does not identify a cause guards against anchoring on deployment timing. Source limits carry over in target terms: incomplete explanations corresponds to hypothesis-generation limits, confounding to evidence quality and independence, and unrepresentative replay to test validity. Sensitivity/specificity and cognitive biases are not named separately, but they are not contradicted and are partly covered by the confounding and temporal-association caveats. The febrile-patient imagery is decorative; the operational target state is stated separately and carries the mechanism."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The target question asks which deployed change accounts for the regression and what bounded causal evidence distinguishes it from load variation. The mapping puts the deployed changes and workload variation in the same candidate set and names the discriminating evidence: matched replay and rollback/reintroduction under comparable conditions, checking whether the regression returns. The packet stipulates that the changes are independently switchable and that workload, cache preparation and resource allocation can be restored exactly in replay, so this comparison holds load fixed while varying the change, which is the distinction the question asks for. The inference is explicitly bounded: supported contributions are retained, unresolved alternatives are kept, and attribution is limited by replay representativeness. This matches the packet's own statement that neither unique root cause nor live-load generality is ensured. The mapping does not name a specific change because the packet supplies no test outcomes; it gives a bounded contribution to the retained question rather than answering a different one."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing X (toggling each independently switchable change in a replay with workload restored exactly, alongside trace and counter comparison) produces Y (the regression persists, vanishes or returns under comparable conditions, for each candidate). Y warrants Z (weakening candidates contradicted by the controlled comparison and retaining those whose reintroduction reproduces the excess delay, with unresolved alternatives stated). The packet independently establishes that a controlled old/new comparison can test contribution, so the warrant rests on target facts and not on clinical imagery or a circular construction. The inference is bounded to the replay regime and does not overclaim unique causation."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a functionally faithful transfer of differential diagnosis to regression diagnosis: competing explanations including load variation, discriminating controlled interventions available in the target, a differential support signal, and a bounded narrowing inference with relevant limits. The operations it names (matched replay, rollback/reintroduction) are stipulated as available and as capable of testing contribution with workload held fixed, so the evidence it would produce bears directly on the retained question. The clinical vocabulary adds nothing and removes nothing from the warrant. No question change occurred, and no unresolved empirical bridge is needed for the procedure to be intelligible and bounded; the identity of the responsible change depends on test outcomes not supplied in the packet, which is a limit on the result and not on the validity of the transfer."
+  },
+  "uncertainty": [
+    "The packet supplies no measurement or replay outcomes, so which change (if any) is implicated cannot be stated; the assessment concerns the mapped procedure, not a result.",
+    "The mapping's signal and operation are stated generically and do not specify which of the available route/revision tests would be run or how agreement and conflict are scored against the stated uncertainty bounds.",
+    "The source limits of test sensitivity/specificity and cognitive biases (premature closure, base-rate neglect, confirmation bias) are not explicitly restated in the mapping's limit field; I judged them non-material omissions, but a stricter reading could treat this as partial limit loss.",
+    "The mapping does not address possible interactions among the three changes or more than one change contributing at once; single toggles could be ambiguous if contributions are not separable, although the packet stipulates additive stable stage contributions in the replay regime.",
+    "Whether staging replay findings generalise to live load is outside what the packet establishes; the mapping flags unrepresentative replay as a limit but cannot resolve it.",
+    "Configuration is listed as a candidate cause in the mapping, but the packet provides no evidence about configuration changes, so that alternative's status is unknown."
+  ]
+}

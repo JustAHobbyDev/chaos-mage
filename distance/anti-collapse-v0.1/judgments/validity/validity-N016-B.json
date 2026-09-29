@@ -1,0 +1,33 @@
+{
+  "case_id": "N016",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The serial-monitoring chain survives in thin form. The operation is repeated timing comparison of comparable route observations, the signal is persistence and change patterns across comparable periods, and the inference is ordinary process-monitoring inference about sustained versus transient change. The named limits (sampling, case mix, staffing confounding) correspond to the source limits on irregular sampling and changing measurement conditions, and the packet supplies bounded timestamp error and uncertainty bounds as the reference for expected variation. The 'vital-sign chart of the organizational circulation' is decorative imagery and the mapping explicitly denies it any warrant. Weaknesses: no change rule or threshold is stated, and regression to the mean and interventions between observations are not named, but no material step is substituted."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The retained question is a localization question: where among approval handoffs delay accumulates, and which bounded changes could reduce it. The mapped signal and inference are temporal: whether route timings persist or change across periods. In the packet, internal timestamps are unavailable, only route totals are observed, stage contributions are already established as stable in the matched regime, and several nonnegative stage assignments fit the bounds. Persistence patterns in route totals do not discriminate among those assignments. The mapping records routes and handoffs in a table but gives no inference from route totals to stage-level waits, adds 'no additional selection constraint' for the two extra observations or the pilot, and states that the map is 'not a new causal warrant'. The pilot with matched comparison is an ordinary next step that could test one candidate change, but its choice is not informed by any localization result. Connecting the temporal signal to stage attribution would require adding an estimation step the mapping does not contain, which would amend the mapping rather than satisfy a condition."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "As mapped, repeated comparable route timings within the matched regime do produce persistence and change patterns, and those warrant the limited, explicitly bounded inference claimed: ordinary monitoring conclusions about sustained versus transient route-level delay, with no added causal warrant. The chain does not rest on the source imagery and is not circular. Caveat: 'record every ... handoff and delay' cannot be executed at handoff level because internal timestamps are unavailable, so only route-level delays can be tabulated. The chain is coherent for what it claims, but what it claims is not the target question."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+      "reframed_question": "Do route-level approval timings show persistent or changing delay patterns across comparable periods, and does a piloted handoff change alter them relative to a matched unchanged comparison?",
+      "relationship": "The reframe is implicit and enacted by the mapping's signal and inference, not announced by the candidate. It offers at most a supporting check: it confirms that route delays are sustained rather than transient, and gives a bounded test of one candidate change. It does not localize delay to specific handoffs or narrow the set of stage assignments that fit the route totals, so it does not answer the original question. The assessment target was not changed."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "The mapping is a faithful but generic restatement of serial monitoring as ordinary process monitoring, and its bounded route-level inference is operationally coherent. It fails on target fidelity. The temporal persistence signal from route totals answers whether delay is sustained, not where among handoffs it accumulates. The mapping has no step that infers hidden stage waits from route totals, provides no selection constraint for the remaining observations or pilot, and disclaims any new warrant. Because failure on one criterion dominates, the transfer is Invalid. This is not a judgment on the usefulness of the monitoring practice or the pilot."
+  },
+  "uncertainty": [
+    "The choice between 'not-addressed' and 'conditional' on target fidelity is a judgment call. A reader could count the systematic table plus a matched pilot as an explicitly bounded contribution to the second half of the question (which bounded changes could reduce delay). I judged that contribution to come from the ordinary pilot, not from the mapped signal-to-inference chain.",
+    "It is unclear whether 'ordinary repeated timing comparison' is meant to include cross-route comparison of totals, which under the stated additive model could bound differences between stage waits. The mapping does not say so, and I did not read it in.",
+    "It is unknown whether repeated observations would tighten the route-total bounds enough to leave a single stage assignment. The packet states only that several nonnegative assignments may fit.",
+    "Mechanism fidelity could be read as conditionally-preserved because the mapping states no change rule or expected-variation reference. I treated the packet's uncertainty bounds and matched regime as supplying that reference.",
+    "Recording a target reframe is interpretive. The mapping never announces a question change, and the shift to a temporal question is inferred from its signal and inference fields."
+  ]
+}

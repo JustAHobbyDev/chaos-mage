@@ -1,0 +1,33 @@
+{
+  "case_id": "N007",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: stage contributions are not directly observable (no per-stage excess-delay counter) but systematically alter end-to-end delay on the routes that traverse them. Operation: timings on overlapping routes are fitted against a candidate contribution model, residuals are examined, and the model is refitted after an added route, which matches the source's iterative compare-and-adjust step. Signal: route residuals and the set of compatible assignments correspond to structured prediction discrepancies across paths. Inference: the joint constraints localise bounded contributions, which is a constrained model rather than a direct reading. Source limits carry over as model misspecification, coverage, finite uncertainty and non-uniqueness (surviving alternatives are reported), and the mapping states that residual patterns are not automatic proof. The discrimination-directed route selection and the controlled old/new comparison are additions to the source chain, not substitutions for any step of it."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question asks which deployed change accounts for the regression and what bounded causal evidence separates it from load variation. The mapping localises excess delay to a stage, links that stage to a change only through the independently documented revision-history association, and then tests that change with a controlled old/new comparison under exact reset of workload, cache and resources. Holding load fixed in the replay is what separates the change's contribution from load variation. The answer is explicitly bounded to the replay regime, with surviving alternatives and confirmation limits reported, which matches the packet's statement that neither unique root cause nor live-load generality is ensured. This is a justified, explicitly bounded contribution to the same question, not a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The additive nonnegative stage-contribution relation and the route membership are stipulated as independently established target facts, so the fit does not depend on the analogy. The three routes (1,2), (2,3), (1,3) form a nonsingular route matrix, so fitting the measured timings yields bounded per-stage estimates within the stated uncertainty. Residuals, a selected extra route and a refit produce observable reductions in ambiguity or expose model mismatch. The old/new comparison with controlled reset produces a contribution change that warrants a bounded causal claim about the associated change within the replay. A stopping rule (six-test budget, or no available separating route) and the reporting of surviving alternatives keep the inference bounded. The opening tomography imagery is accompanied by an operational target statement, so the inference does not rest on imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass with no unresolved conditions. The mapping preserves the multi-path, model-fit, residual and constrained-model chain along with the source's limits on coverage, uncertainty and non-uniqueness. It rests on independently stipulated target facts (the additive stage model, the route matrix, exact replay reset and the documented stage/change associations), not on the analogy. It answers the retained question with an explicitly bounded contribution: stage localisation plus a controlled old/new comparison under fixed workload, limited to the replay regime and reporting surviving alternatives. The mapping claims neither a unique root cause nor live-load generality, so the inference stays within what the packet's evidence supports."
+  },
+  "uncertainty": [
+    "Whether the finite uncertainty bounds on the route measurements are tight enough to separate the stage contributions is not stated; if they are wide, several assignments may survive, which the mapping would report, not resolve.",
+    "The content of the six additional route/revision tests is unspecified, so it is unknown whether any of them actually separates remaining assignments.",
+    "The revision-history association links each change to one stage, but the packet does not establish that a change cannot affect other stages or interact with other changes; the mapping lists model misspecification as a limit but does not quantify it.",
+    "The additive, stable, nonnegative contribution relation is stipulated only for the replay regime; whether the identified change accounts for the regression under live load remains outside the mapped inference.",
+    "The mapping was assessed as supplied; no empirical outcome of the procedure is given in the packet, so the judgment concerns the validity of the transfer, not whether it would succeed in identifying a single change."
+  ]
+}

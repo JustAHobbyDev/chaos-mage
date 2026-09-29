@@ -1,0 +1,33 @@
+{
+  "case_id": "N021",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the serial-monitoring chain. The state is a process whose delay may be stable, fluctuating or changing. The operation is repeated comparable timings compared with earlier matched periods. The signal is a stable, rising or falling pattern. The inference is a bounded assessment of persistence or change, with the explicit caveat that a trend alone does not identify cause. The limits (sampling, demand confounding, changing case mix) correspond to the source's irregular sampling and changing measurement conditions. Measurement error, regression to the mean and interventions between observations are not named, but this is a thinning of the limits rather than a substitution of the mechanism. The patient/hemodynamic imagery is decorative and does no inferential work."
+    },
+    "target_fidelity": {
+      "status": "not-addressed",
+      "rationale": "The target asks where among the approval handoffs delay accumulates and which bounded changes could reduce it. The mapped inference answers whether delay persists or changes over time, and it disclaims causal identification. A temporal trajectory of route totals does not localize delay to a stage or handoff. The mapping never uses route membership, the additive stage contributions, or the ownership records that tie stages to handoffs. The operation's reference to repeated handoff timings relies on stage-level timestamps the packet says are unavailable in this fixture, so the only bridge to localization is known to be absent rather than unresolved. The 'which changes' part is reached only through an appended ordinary sandbox pilot, which is not warranted by the serial signal. Shared subject matter (approval delays) is not enough."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "As mapped, comparing repeated total-route timings across comparable periods under matched staffing and demand does yield stable, rising or falling patterns. Those patterns warrant the stated bounded inference about persistence versus change, and the mapping correctly declines to infer cause. The chain is intelligible and non-circular for the route-total series that are available. The handoff-level part of the operation cannot be performed in this fixture, but the stated inference does not depend on it. The coherence is for the inference the mapping actually makes, not for the target question."
+    },
+    "target_reframe": {
+      "occurred": true,
+      "original_question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+      "reframed_question": "Is approval delay persistent, rising or falling over comparable periods, as opposed to transient fluctuation?",
+      "relationship": "The mapping implicitly replaces a localization-and-remedy question with a temporal-course question. The reframed answer is at most a preliminary: it can show that a delay is sustained and worth localizing, and serial comparison could later help read a pilot's before/after effect. It does not identify which stage or handoff accumulates delay, and it does not select a change. It therefore contributes context to the original question but does not answer it."
+    },
+    "unresolved_conditions": [],
+    "final_status": "Invalid",
+    "rationale": "The serial-monitoring mechanism is carried over faithfully and its bounded inference about persistence or change is coherent for the available route-total series. But that inference answers a different question from the retained target, which asks where delay accumulates across handoffs and which bounded change could reduce it. Trend detection over time does not localize delay. The only path to localization in the mapping (serial handoff-level timings) relies on data the packet states are unavailable, and the mapping offers no relation linking route-level trends to stage-level location. The appended pilot is ordinary practice, not something the serial signal warrants. Target fidelity fails, and failure dominates, so the transfer is Invalid. This is not a conditional case, because the gap is a known mismatch between inference and question rather than a missing measurement that could be established."
+  },
+  "uncertainty": [
+    "The phrase 'explicitly bounded contribution' could be read more generously: establishing that delay is sustained rather than transient is arguably a bounded preliminary to localization. On that reading target fidelity would be conditional rather than failed.",
+    "The packet does not say whether 'handoff timings' in the mapping means unavailable internal stage timestamps or some other available per-handoff record (for example queue observations or ticket histories). If per-handoff series were obtainable, serial comparison could bear on location.",
+    "The packet states that stage contributions are additive and stable in the matched regime. It is unknown whether any temporal change exists for serial monitoring to detect there; a finding of 'stable' would carry little information about location.",
+    "Whether two additional route observations give enough repeated points to separate a trend from expected variation is not established.",
+    "The mapping omits the source limits of measurement error, regression to the mean and interventions between observations. The pilot is itself an intervention between observations. I judged this a thinning of limits rather than a mechanism loss, but it is a judgment call."
+  ]
+}

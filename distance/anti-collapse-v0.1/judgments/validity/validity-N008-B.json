@@ -1,0 +1,33 @@
+{
+  "case_id": "N008",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Each step of the source chain has a functional counterpart in the mapping. State: per-stage excess delay cannot be read directly (no per-stage counter), but it systematically alters the end-to-end totals of routes that traverse the stages, matching the source's unsampled interior crossed by many paths. Operation: observed route totals are compared with sums predicted from candidate nonnegative stage contributions, the contributions are adjusted to fit, and every assignment within the measurement bounds is retained. This is the source's forward-model, compare and adjust loop. Signal: across-route discrepancies plus the compatible set of contributions correspond to spatially structured residuals. Inference: overlapping routes constrain the hidden contributions, as path residuals constrain an internal model. The source limits (coverage, measurement error, model assumptions, non-uniqueness) are carried over explicitly, including the rule that an interval containing zero cannot establish a nonzero contribution. The forward relation (additivity, route membership) is a stipulated target fact rather than something imported from the analogy, so no warrant is lost or substituted."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question asks which deployed change accounts for the regression and what bounded causal evidence distinguishes it from load variation. The mapping gives an explicitly bounded contribution: stage-contribution intervals in a replay regime where workload, cache preparation and resource allocation are restored exactly, so excess delay there is not attributable to load variation. The constrained stages are mapped to their changes through the stipulated revision-history association, and an implicated change is then checked by ordinary old/new replay or rollback. The mapping disclaims a unique live cause, which matches the packet's own statement that neither the estimate nor the comparison ensures unique root cause or live-load generality. It therefore answers the retained question as bounded candidate evidence rather than answering a different question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation (X) means fitting nonnegative stage contributions to the three measured route totals under the stipulated additive relation. The route matrix for routes (1,2), (2,3), (1,3) is full rank (determinant 2), so with finite uncertainty bounds this produces a bounded compatible set of stage contributions (Y). That set warrants the inference (Z) that particular stages carry nonzero or indeterminate excess delay in the replay regime, which constrains the associated changes as candidates subject to old/new confirmation. The warrant rests on independently established target facts (additivity, stability, nonnegativity, route membership, calibrated uncertainty), not on seismic imagery or a circular construction. Whether a given interval excludes zero is an outcome of the procedure, handled by the stated limit, and not an unresolved precondition of the chain."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping keeps the source's inverse-constraint chain (hidden contributions, multi-path forward prediction, residual comparison, constrained model) and its limits. It operates on stipulated target facts that make the inversion well-posed: additive, stable, nonnegative stage contributions, a known full-rank route matrix, and finite uncertainty bounds. The inference is restricted to the replay regime, presented as bounded candidate contribution evidence, tied to the stage-to-change association given in the packet, and followed by ordinary old/new or rollback confirmation. It does not claim a unique root cause or live-load generality. No unresolved measurement or empirical relation is needed for the chain to hold as mapped."
+  },
+  "uncertainty": [
+    "The packet gives no actual route totals or uncertainty magnitudes, so it is unknown whether any stage's interval will exclude zero. The procedure could leave one or more stages indeterminate.",
+    "The mapping does not name load variation explicitly. The discrimination from load relies on the stipulated exact restoration of workload, cache and resources in the staging replay, and does not extend to live-load conditions.",
+    "The revision-history link between each change and a stage is an association. A change could affect a stage other than its associated one, or several changes could contribute together, so stage-level constraint alone does not establish change-level causation without the old/new confirmation.",
+    "With exactly three routes for three stages the system is determined but has no redundancy. Across-route discrepancies cannot independently test the additive model from these three measurements, so its validity rests on the packet's stipulation. The mapping does not specify how the six additional route/revision tests are used.",
+    "The inversion depends on the stipulated stability and nonnegativity of stage contributions in the replay regime. Interaction effects between stages or changes would fall outside the mapped inference."
+  ]
+}

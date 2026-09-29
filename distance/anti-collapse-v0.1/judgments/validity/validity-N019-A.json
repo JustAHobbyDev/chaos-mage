@@ -1,0 +1,32 @@
+{
+  "case_id": "N019",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Calibrated additive stage waits determine observed route totals. Fitting compatible waits, examining residuals, selecting discriminating routes and refitting preserves the source's propagation-observation-model-inference chain. Measurement error, limited coverage, model assumptions and non-uniqueness remain bounded explicitly; additional observations need not yield a unique solution."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Compatible stage waits provide a bounded account of where delays accumulate, and existing records associate stages with handoffs. The separate matched sandbox pilot provides bounded evidence about a candidate change, addressing the remedy question without claiming effectiveness in live operations."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The stipulated calibration warrants deriving constraints on hidden waits from route totals. Up to two additional observations can narrow compatible assignments when informative, with an explicit stopping rule otherwise. The matched pilot supplies a separate outcome comparison; neither inference requires unique identification or universal applicability."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping preserves the inverse-model mechanism and its limitations while addressing both delay localization and candidate-change evaluation through appropriately bounded, distinct procedures."
+  },
+  "uncertainty": [
+    "The packet supplies no observed timings or pilot results, so particular delay locations and change effects cannot be determined.",
+    "Finite error may leave multiple compatible stage assignments; accessible additional observations may not distinguish them.",
+    "Residuals may not conclusively distinguish model mismatch from measurement error or limited coverage.",
+    "Pilot findings remain bounded to the sandbox and matched regime; live organizational effectiveness is not established."
+  ]
+}

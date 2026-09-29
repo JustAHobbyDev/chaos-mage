@@ -1,0 +1,30 @@
+{
+  "case_id": "N023",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Calibrated hidden stage waits determine overlapping route totals. Predicting totals, comparing residuals, adjusting candidate waits and retaining all error-compatible assignments preserves the inverse-model chain. Calibration, coverage, measurement error and non-uniqueness appropriately bound the inference."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Existing records connect inferred stages to handoffs, so compatible wait intervals provide an explicitly bounded contribution to locating accumulated delay. The mapping expressly leaves remedy effectiveness unestablished and limits the proposed matched pilot to observed sandbox turnaround."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The stipulated additive calibration makes each route total a constraint on its constituent stage waits. Jointly fitting overlapping routes produces compatible wait intervals that warrant bounded localization. Retaining all compatible assignments and withholding positive-wait claims when intervals include zero avoids overstating identification."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass under the stated synthetic calibration. The mapping preserves the mechanism and answers the localization component within explicit limits, without claiming an established remedy."
+  },
+  "uncertainty": [
+    "Numerical route totals and error bounds are not supplied, so the specific handoff intervals and their informativeness cannot be determined.",
+    "No pilot outcome is supplied; the mapping establishes neither a successful sandbox change nor effectiveness in live workflows."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "N019",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the source chain intact. State: stage waits are not directly observable but contribute additively to total route times over known routes (1,2), (2,3), (1,3), which is the counterpart of path-integrated propagation through an unsampled interior. Operation: fit candidate stage waits to route totals, inspect structured residuals, acquire further routes chosen to discriminate between assignments, and refit, which matches the source's compare-with-model and iterative adjustment. Signal: structured residuals and changes in the set of compatible assignments. Inference: the route constraints bound an internal assignment rather than identify a unique one. Source limits carry over explicitly: non-uniqueness, coverage geometry, measurement error, model assumptions and regime dependence. The forward-model warrant (additive, stable contributions with bounded timestamp error) is a stated packet fact from controlled calibration, not a candidate assertion. The sandbox pilot is an added, separately labelled step and does not substitute for any source step."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question has two parts. 'Where do handoffs accumulate delay' is addressed by the bounded estimate of stage waits, which the packet states can give a bounded answer and which ownership and workflow records map from stages to handoffs. 'Which bounded changes could reduce it' is addressed by the one matched sandbox pilot of a change at an implicated handoff, within budget. The mapping claims only bounded evidence about a candidate change, not proof of a unique cause or of a live remedy, which matches the packet's statement that wait estimation alone does not establish which remedy works. The contribution is explicitly bounded and stays on the retained question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation yields the stated signals and these warrant the stated inference. Fitting nonnegative stage waits to route totals under the calibrated additive model gives a set of compatible assignments and residuals. Adding up to two discriminating route observations narrows that set or shows that it cannot be narrowed. Persistent structured residuals after added coverage indicate model mismatch rather than weak coverage. The matched sandbox comparison yields a turnaround difference that warrants a bounded claim about that one change. A stop rule (two routes, or none that distinguishes assignments) keeps the procedure within budget and lets it end with non-identifiability reported rather than over-claimed. The inference does not rest on seismic imagery; the 'crossing rays' phrasing is restated operationally as route selection for identifiability."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The additive, stable, bounded-error route model needed for a tomography-style inversion is given as an established calibration fact within the matched regime. The mapping preserves the fit, residual, targeted-acquisition and refit chain and the source's non-uniqueness and coverage limits. It answers the localisation part of the question with a bounded estimate and the remedy part with a separate, budgeted matched sandbox pilot whose evidential reach is explicitly limited. No unresolved measurement or empirical relation is needed for the inference as mapped; the remaining unknowns affect how informative the result is, not whether the inference follows."
+  },
+  "uncertainty": [
+    "The packet does not say whether accessible additional routes exist that actually discriminate between the compatible assignments. If none do, the procedure ends with a wider, non-unique localisation and the choice of handoff to pilot is less well supported.",
+    "With only three route types plus at most two more observations, the ability to tell persistent model mismatch from weak coverage may be limited; residual structure on so few routes could be ambiguous.",
+    "The one sandbox pilot tests a single candidate change. It gives no comparison between alternative changes, and how far a sandbox result carries over to live operation is not established by the packet.",
+    "The additive stable model holds only within the matched case type, staffing and demand regime. Conclusions do not extend to other regimes or to conditions that drift during the added observations or the pilot.",
+    "The size of the timestamp error bounds relative to the differences between stage waits is not given, so how tight the resulting localisation is cannot be judged from the packet."
+  ]
+}

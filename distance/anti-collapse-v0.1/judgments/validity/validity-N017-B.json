@@ -1,0 +1,33 @@
+{
+  "case_id": "N017",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps each step of the source chain. State: a reproducibly failing configuration of removable parts with a repeatable oracle (the resettable deterministic task replay) and explicit validity constraints on deletions. Operation: partition, test valid removals and complements, retain failure-preserving reductions, refine granularity when blocked, and finish with all valid one-element deletions. Signal: failing subsets versus passing deletions, with unresolved trials kept as a distinct outcome class. Inference: the retained subset is sufficient to reproduce the failure under the test, and one-deletion minimality is claimed only when the deletion check is completed. Source limits carry over: interactions, unresolved outcomes, multiple minima, strategy and budget dependence, and the explicit disclaimer of global-minimum or unique-root-cause claims. Nondeterminism and environmental dependence are not named in the mapped limit, but the stated target facts fix them (deterministic, resettable replay of a fixed task) and the mapping adds independent rechecks of the retained failure, so no material warrant is lost."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The question has two parts. The interaction part is addressed directly: complement and interaction-boundary tests, together with passing one-element deletions from a failure-preserving subset, show where elements block activation only jointly, which is the evidence for why a simple per-feature ranking is not available. The necessity part is addressed as an explicitly bounded contribution: the mapping identifies which elements are test-relative necessary to the activation blockage within a retained subset, and so which removals restore completion of the recorded task. It does not claim universal necessity, a global ranking, or real-user population behaviour, which matches the bounds stated in the target evidence. The mapping answers the retained question within those bounds rather than substituting another question."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the reduction on six independently switchable elements with a deterministic pass/fail replay produces the mapped signal: a pass, fail or unresolved outcome per tested configuration. Those outcomes warrant the stated inference: a reproduced failing subset shows sufficiency under the test, and passing results for all valid single deletions show one-deletion minimality. The known endpoints (full configuration fails, all optional elements removed passes) guarantee a pass/fail boundary exists to be located. The procedure is feasible within budget: six binary elements give at most 64 configurations against 80 tests, and the mapping commits to reporting the exact minimality achieved if the budget runs out. Dependency constraints are handled by restricting to valid deletions and treating invalid configurations as unresolved. The inference is bounded and non-circular."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The target is structurally a configuration-reduction problem with a deterministic oracle, a reproducibly failing full configuration, a passing reduced baseline, explicit deletion-validity rules and a budget adequate for the reduction. The mapping carries over the delta-debugging chain step by step and retains its limits, claiming only test-relative sufficiency and one-deletion minimality where the deletion check is completed. It gives a bounded answer on which elements are necessary to the activation blockage and which interactions defeat a simple ranking, without global, unique-cause or population-level claims. No unresolved condition is required for the bounded inference to hold."
+  },
+  "uncertainty": [
+    "Polarity of 'necessary' in the question: the mapping identifies elements necessary to the activation failure within a retained subset (their removal restores completion). Read literally, 'necessary for users to complete activation' is a different claim; since the configuration with every optional element removed passes, no optional element is test-necessary for completion in that literal sense. The assessment reads the question in the test-relative sense given in the target evidence.",
+    "Population scope: the oracle is a replay of one recorded task, so results do not establish behaviour for real users generally. The mapping does not claim this, but the question's wording ('users') is broader than what the test can support.",
+    "The packet says dependency constraints are specified but does not list them. How many valid configurations exist, and whether dependency-forced co-deletions blur single-element necessity attributions, cannot be determined from the packet.",
+    "With possible multiple failure-preserving minima, the retained subset depends on partition strategy and the fixed identifier order; other minimal subsets may go unobserved unless the remaining budget is spent exploring them.",
+    "The frequency of unresolved outcomes is unknown; if many reductions hit invalid configurations, the achieved minimality may be weaker than one-deletion minimality. The mapping commits to reporting this rather than overclaiming."
+  ]
+}
