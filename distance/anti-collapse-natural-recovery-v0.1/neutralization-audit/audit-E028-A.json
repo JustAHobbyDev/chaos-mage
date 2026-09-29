@@ -1,0 +1,135 @@
+{
+  "case_id": "E028",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Partition the delta set into subsets, initially halves.",
+        "Retain any reduced configuration that still fails and recurse on it.",
+        "Interleave baseline and full-delta control runs throughout"
+      ],
+      "neutral_evidence": [
+        "Partition the change set into subsets, initially halves.",
+        "Retain any reduced configuration that still fails and repeat the reduction on it.",
+        "Interleave baseline and full-change control runs throughout"
+      ],
+      "rationale": "Both specify subset and complement configurations, identical replay with preset repeats, three-way classification, recursive reduction, finer partitions when needed, and control-based suspension and test restoration."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "the pattern of fail, pass and unresolved outcomes",
+        "together with the per-configuration latency distributions",
+        "larger than the run-to-run spread seen in the repeated control runs",
+        "No such observations have been made here."
+      ],
+      "neutral_evidence": [
+        "fail, pass, and unresolved outcomes",
+        "together with per-configuration latency distributions",
+        "exceeds the run-to-run spread in repeated control runs",
+        "No observations have been made in this packet."
+      ],
+      "rationale": "The paraphrase preserves outcome patterns, latency distributions, threshold preservation, comparison with control variation, control stability, and both follow-up signals. It retains their prospective, unobserved status."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If the reduction reaches a 1-minimal retained set",
+        "Each retained member is necessary for reproduction within that set under that test.",
+        "they jointly reproduce it",
+        "It does not show that production load played no part"
+      ],
+      "neutral_evidence": [
+        "If reduction reaches a 1-minimal retained set",
+        "Each retained member is necessary for reproduction within that set under that test.",
+        "they jointly reproduce the regression through an interaction",
+        "They do not establish that production load played no part"
+      ],
+      "rationale": "Both condition minimality on reaching a 1-minimal result, distinguish a single candidate from joint reproduction by several changes, and bound causal attribution to the test. Equal-load comparisons, multi-load interpretation, conditional production evidence limited to the observed slice and period, and the absence of mechanism or whole-regression attribution are preserved."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "These are assumptions to check, not facts supplied by the packet",
+        "compatible with load or environment dependence but does not establish it",
+        "Other sufficient subsets may exist and are not enumerated.",
+        "Causes outside the delta set"
+      ],
+      "neutral_evidence": [
+        "Preconditions must be checked; the packet does not establish that they hold.",
+        "compatible with load or environment dependence but does not establish either",
+        "other sufficient subsets may exist and are not enumerated",
+        "other causes outside that set remain unexamined competing explanations"
+      ],
+      "rationale": "All substantive limits remain: fixed predicate and inconclusive band, controlled representative replay, repeated baseline/full-change reproduction, deployability, interactions and masking, noise, inseparable or irreversible changes, environmental differences, replay omissions, partition-order dependence, enumerated-change scope, and metric/margin/load relativity. Negative causal limits and uncertainty about failed reproduction are explicit."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop when the retained set is 1-minimal",
+        "the remaining candidates are unresolved, or when the pre-agreed run budget is exhausted",
+        "Report the retained set as near-minimal in the latter two cases."
+      ],
+      "neutral_evidence": [
+        "Stop when the retained set is 1-minimal",
+        "remaining candidates are unresolved, or when the pre-agreed run budget is exhausted",
+        "report the retained set as near-minimal in these latter two cases"
+      ],
+      "rationale": "Both define 1-minimality by single-change reversion and retain the single-change-granularity unresolved stop, budget stop, and near-minimal reporting requirement. Initial reproduction failure prevents starting; unexpected control outcomes suspend reduction pending test restoration."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Re-run the retained set and the baseline at more than one fixed load level",
+        "Where it is safe and approved",
+        "compared against a concurrent slice without the change",
+        "ordinary stratified timeline and trace comparison"
+      ],
+      "neutral_evidence": [
+        "rerun the retained set and the baseline at more than one fixed load level",
+        "Where safe and approved",
+        "comparing it with a concurrent slice without the changes",
+        "proceed to stratified timeline and trace comparison"
+      ],
+      "rationale": "The paraphrase preserves both post-stop inquiries, the safety and approval condition, limited production scope, concurrent comparison, and the fallback inquiry when initial fixed-load reproduction fails."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "baseline plus all deltas",
+        "changes may only fail in combination, or may mask each other",
+        "reverting any single retained change makes the regression stop reproducing"
+      ],
+      "neutral_evidence": [
+        "the baseline plus all enumerated changes",
+        "combinations can fail when their parts pass, and changes can mask one another",
+        "The retained set is assessed as a group and by the effect of reverting each individual member within that group."
+      ],
+      "rationale": "The added organizational field, problem_decomposition, restates entities, relationships, tests, and limitations already present. It introduces no new action, prerequisite, measurement, decision rule, or causal entitlement."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Counterpart of the 'failure-inducing configuration composed of removable parts': baseline plus all deltas."
+      ],
+      "neutral_evidence": [
+        "The regressed configuration consists of the baseline plus all enumerated changes."
+      ],
+      "rationale": "The explicit source analogy is removed. The paraphrase retains checkout deployments, changes, configurations, controls, and operationally defined minimality without source-discipline names or metaphors."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "the practitioner's ordinary stratified timeline and trace comparison",
+        "This warrants a bounded causal contribution of the retained changes."
+      ],
+      "neutral_evidence": [
+        "proceed to stratified timeline and trace comparison",
+        "These conclusions support a bounded causal contribution of the retained changes."
+      ],
+      "rationale": "The paraphrase removes the ordinary-practice characterization and makes no claims about novelty, creativity, conventionality, formalization, departure, or a new warrant. Its causal-support statements describe the procedure's bounded inference."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

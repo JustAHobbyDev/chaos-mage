@@ -1,0 +1,133 @@
+{
+  "case_id": "E021",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Reconstruct actual routes, including rework, from ticket histories",
+        "iteratively adjust nonnegative handoff contributions to reduce discrepancies",
+        "using an explicit penalty to discourage unsupported differences between contributions",
+        "If a delay concentration survives these checks, propose one bounded pilot"
+      ],
+      "neutral_evidence": [
+        "Reconstruct the routes requests actually followed, including rework, from ticket histories",
+        "iteratively adjust handoff contributions, constrained to be nonnegative",
+        "applying an explicit penalty that discourages differences between contributions that the data do not support",
+        "If a delay concentration survives these checks, propose one bounded pilot"
+      ],
+      "rationale": "The paraphrase preserves scoping, route reconstruction, uncertain measurements, additive modeling, adjustment for operating conditions, penalized fitting, reserved-request and sensitivity checks, and the conditional bounded pilot."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "measured-minus-predicted durations grouped by route and shared handoffs",
+        "Repeated positive discrepancies on routes sharing a handoff, relative to otherwise comparable routes bypassing it",
+        "These are proposed observations, not reported findings."
+      ],
+      "neutral_evidence": [
+        "measured-minus-predicted durations, grouped by route and by shared handoffs",
+        "repeated positive discrepancies on routes that share a given handoff, relative to otherwise comparable routes that bypass that handoff",
+        "All of these are proposed observations; none are reported findings."
+      ],
+      "rationale": "Residual patterns, intermediate intervals, available queue records, prediction and stability checks, and pilot outcome measures are preserved. Their status as proposed observations remains explicit."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "handoffs always traversed together may be identifiable only as a combined delay region",
+        "without establishing its mechanism or a causal remedy",
+        "to the extent that its comparison accounts for alternative explanations",
+        "An inconclusive or unsuccessful pilot warrants withholding expansion"
+      ],
+      "neutral_evidence": [
+        "handoffs that are always traversed together may be identifiable solely as a combined delay region",
+        "it does not establish the mechanism of the delay or that a given change is a causal remedy",
+        "to the extent that its comparison accounts for alternative explanations",
+        "An inconclusive or unsuccessful pilot justifies withholding expansion"
+      ],
+      "rationale": "The paraphrase preserves constrained allocation rather than unique identification, conditional prioritization for inspection and a pilot, limited support for retaining a successful change, and withholding expansion after an inconclusive or unsuccessful pilot."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The packet does not establish that these conditions or records exist.",
+        "Multiple allocations can fit the same path times, and a good fit cannot establish causality.",
+        "withhold localization and revise the model or collect the missing observations",
+        "report the observed differences with that uncertainty and withhold causal attribution"
+      ],
+      "neutral_evidence": [
+        "The packet does not establish that these conditions hold or that the records exist.",
+        "Multiple allocations can fit the same path times, and a good fit cannot establish causality.",
+        "withhold localization",
+        "report the observed differences with that uncertainty and withhold causal attribution"
+      ],
+      "rationale": "All substantive limitations remain: unestablished prerequisites, coverage and timestamp problems, route uncertainty, omitted processing, selection and operating-condition changes, penalty and additive-model artifacts, nonidentifiability, causal limits, and restricted generalization. Model revision and missing-observation collection remain explicit in next_inquiry."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Set fit-improvement and iteration stopping rules before fitting; convergence alone does not validate the inferred locations.",
+        "stop early and revert if a guardrail is breached, otherwise end at the specified duration"
+      ],
+      "neutral_evidence": [
+        "fit-improvement and iteration stopping rules are set before fitting (their specific values are unspecified)",
+        "reaching convergence does not by itself validate the inferred locations",
+        "stop early and revert if a guardrail is breached, otherwise end at the specified duration"
+      ],
+      "rationale": "Both fitting and pilot stopping rules are preserved, including advance specification, early reversion, duration-based completion, and the negative inference limit on convergence. The paraphrase accurately identifies numerical fitting thresholds as unspecified."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "seek intermediate timestamps or additional naturally occurring routes before naming an individual bottleneck",
+        "revise the model or collect the missing observations",
+        "revisiting the proposed allocation or mechanism",
+        "Generalization beyond tested conditions requires further evidence."
+      ],
+      "neutral_evidence": [
+        "seek intermediate timestamps or additional naturally occurring routes before naming an individual handoff as the bottleneck",
+        "revise the model or collect the missing observations",
+        "revisit the proposed allocation of delay or the proposed mechanism",
+        "Obtain further evidence before generalizing beyond the tested case family and operating conditions."
+      ],
+      "rationale": "The paraphrase preserves the conditional follow-ups for insufficient coverage, unstable estimates or structured residuals, supported concentrations, unsuccessful pilots, and broader generalization."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Measure elapsed times across available entry-to-exit and intermediate-observation paths",
+        "Reserve requests for prediction checks and compare plausible route interpretations, penalties and model forms.",
+        "Specify pilot duration, a comparable control or staged comparison"
+      ],
+      "neutral_evidence": [
+        "Measure elapsed times over the available submission-to-approval paths and over paths between intermediate recorded events",
+        "Hold back a set of requests for prediction checks",
+        "compare results across plausible route interpretations, penalty settings and model forms",
+        "specify its duration, a comparable control or staged comparison"
+      ],
+      "rationale": "The additional organization and decomposition restate existing entities, relationships, checks, and pilot requirements. They introduce no new measurement, intervention, threshold, comparison method, or evidentiary requirement."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Individual requests are signals traversing routes",
+        "ticket events are observation points",
+        "the target counterpart of structured travel-time discrepancies"
+      ],
+      "neutral_evidence": [
+        "Each request follows a route from submission to approval",
+        "ticket events are the points at which its progress is recorded",
+        "The pattern of interest is repeated positive discrepancies"
+      ],
+      "rationale": "The signal and travel-time imagery is removed. Requests, workflow routes, ticket events, teams, queues, and handoffs remain as target entities. No source discipline name or source comparison remains."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text makes the prohibited evaluative claims about ordinariness, novelty, creativity, departure from practice, formalization, or a new warrant. The inferential_warrant heading introduces substantive inference conditions rather than an evaluative verdict."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

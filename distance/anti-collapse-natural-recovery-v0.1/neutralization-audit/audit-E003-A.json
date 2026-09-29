@@ -1,0 +1,117 @@
+{
+  "case_id": "E003",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "remove only the candidate from a bounded cohort, keeping a comparable contemporaneous cohort unchanged",
+        "Hold configuration and capacity stable",
+        "compare changes within matched load and traffic strata"
+      ],
+      "neutral_evidence": [
+        "remove the candidate alone from a bounded cohort and keep a comparable contemporaneous cohort unchanged",
+        "Hold configuration and capacity stable.",
+        "compare changes within matched load and traffic strata"
+      ],
+      "rationale": "The paraphrase preserves parameter specification, bounded removal, contemporaneous comparison, recorded measurements, observation windows, conditional reintroduction, and staging fallback."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "beyond the contemporaneous control's change and within comparable request-rate and request-mix strata",
+        "look for latency to rise again after the specified settling delay under comparable load",
+        "yields weaker or incomplete evidence"
+      ],
+      "neutral_evidence": [
+        "exceeding the change seen in the contemporaneous unchanged cohort, and occurring within comparable request-rate and request-mix strata",
+        "a rise in latency again after the specified settling delay under comparable load",
+        "Signals that count as weaker or incomplete evidence"
+      ],
+      "rationale": "Both specify the same removal and conditional restoration signals, timing and variability measurements, and weaker evidence from falling load, inconsistent responses, or early safety stops."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "increases support that the tested change contributes causally",
+        "does not establish that the change is the sole cause or that its effect is independent of load",
+        "without excluding delayed, persistent or untested load-dependent effects"
+      ],
+      "neutral_evidence": [
+        "increases support for the claim that the tested change contributes causally",
+        "It does not establish that the change is the sole cause, and it does not establish that the change's effect is independent of load.",
+        "without excluding delayed effects, persistent effects, or load-dependent effects that were not tested"
+      ],
+      "rationale": "Conditional causal support, tested-condition scope, limited removal-only and bundle attribution, and negative-test qualifications are preserved. The decomposition's separation wording describes the comparison's purpose; the explicit inference and limits retain uncertainty and possible load interaction."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "uncertain settling time makes a negative result inconclusive",
+        "Reintroduction may be unsafe or impossible, and staging replay may omit production behavior.",
+        "no procedure here identifies an actual culprit without the proposed observations"
+      ],
+      "neutral_evidence": [
+        "uncertain settling time makes a negative result inconclusive",
+        "reintroduction may be unsafe or impossible; staging replay may omit production behavior",
+        "The procedure does not identify which change is actually responsible without the proposed observations being made."
+      ],
+      "rationale": "The paraphrase retains spontaneous variation, confounding and interference, persistent effects, uncertain settling, load interactions, safety limitations, staging limitations, and the requirement for observations before attribution."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop reintroduction and restore the safer state if any threshold is crossed",
+        "stop causal interpretation if concurrent changes, control contamination or unmatched load defeat comparison",
+        "If reversibility or safety cannot be established, do not perturb production."
+      ],
+      "neutral_evidence": [
+        "If any threshold is crossed during reintroduction, stop reintroduction and restore the safer state.",
+        "If concurrent changes, contamination of the unchanged cohort, or unmatched load defeat the comparison, stop causal interpretation.",
+        "If reversibility or safety cannot be established, do not perturb production."
+      ],
+      "rationale": "The same safety stop, interpretation stop, and production prohibition remain. Both also prohibit reintroduction solely to provoke degradation after a nonresponsive removal test."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "inspect traces and test a competing candidate",
+        "isolate or bisect its members in staging before attributing the effect to one change",
+        "reintroduce the same candidate only if justified within the safety thresholds"
+      ],
+      "neutral_evidence": [
+        "inspect traces and test a competing candidate",
+        "isolate or bisect its members in staging before attributing the effect to one change",
+        "reintroduce the same candidate if justified within the safety thresholds"
+      ],
+      "rationale": "Follow-ups and their triggers are preserved, including staging replay when production load cannot be matched. The explicit statement that further follow-up is unspecified preserves the original's silence."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Treat its causal role, independent reversibility and experimental safety as hypotheses to check.",
+        "if these cannot be separated, the tested factor is the whole rollback bundle",
+        "A response confined to particular load strata may reflect an interaction between the change and load."
+      ],
+      "neutral_evidence": [
+        "hypotheses about causal role, reversibility and safety are checked separately",
+        "the whole bundle when it is not separable",
+        "a response confined to particular load strata is treated as a possible interaction between the change and load"
+      ],
+      "rationale": "The added organization restates existing entities, conditions, and relationships without introducing a new intervention, measurement, threshold, or follow-up. Separate treatment of the hypotheses does not specify additional tests."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text contains source-discipline names or source metaphors requiring removal. Checkout paths, cohorts, rollback bundles, traces, and staging remain as target entities."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "The paraphrase describes behavior and evidential limits without judging ordinariness, novelty, creativity, departure from practice, or whether a new warrant is added. The inferential_warrant field labels the inference rather than evaluating it."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

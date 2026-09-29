@@ -1,0 +1,156 @@
+{
+  "case_id": "E005",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Partition the failure-inducing omission set.",
+        "Test subsets of omissions and their complements by restoring the other omitted elements, holding the remaining flow, task and environment fixed.",
+        "Retain a smaller omission set only when it still meets the predefined activation-failure criterion",
+        "Treat structurally invalid variants and ambiguous or inconsistent outcomes as unresolved, not as activation failures.",
+        "At the endpoint, test restoring each remaining omitted element individually.",
+        "Follow up suspected interactions by testing neither, either and both omissions against the same fixed remainder, using only valid variants."
+      ],
+      "neutral_evidence": [
+        "Partition the omission set that produces activation failure.",
+        "Test subsets of the omissions and their complements by restoring the other omitted elements, while holding the remaining flow, task and environment fixed.",
+        "Keep a smaller omission set when, and only when, it still meets the predefined activation-failure criterion.",
+        "Classify structurally invalid variants and ambiguous or inconsistent outcomes as unresolved, not as activation failures.",
+        "At the endpoint, test restoring each remaining omitted element individually.",
+        "test four conditions against the same fixed remainder, using valid variants: neither omitted, each one omitted alone, and both omitted"
+      ],
+      "rationale": "Every operational step in the original state and operation fields appears in the paraphrase: representation as removable elements with dependencies, pre-defined criteria, the two reproducibility preconditions, partitioning, subset/complement testing with a fixed remainder, conditional retention, repartitioning, comparable allocation and exposure control, the unresolved classification, endpoint single restorations, provisional reporting, repetition from other sets or orders, and the interaction comparison. Two wording shifts were noted and judged non-material: 'only when' became 'when, and only when', and 'using only valid variants' became 'using valid variants'."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Record which omission configurations preserve activation failure, which restore activation and which remain unresolved, using prototype task completion and funnel events as outcome evidence.",
+        "Observed errors and session notes can locate where users become blocked, without determining necessity by themselves.",
+        "individually tolerated omissions that jointly block activation indicate that the corresponding elements may provide alternative support",
+        "A failure that disappears after an additional omission indicates context dependence or nonmonotonic behavior.",
+        "These are proposed observations to seek, not established findings."
+      ],
+      "neutral_evidence": [
+        "For each omission configuration, record whether it preserves activation failure, restores activation, or remains unresolved.",
+        "Outcome evidence is prototype task completion and funnel events.",
+        "Observed errors and session notes can indicate where users become blocked, but do not by themselves determine necessity.",
+        "omissions that are each tolerated individually but block activation when made jointly, indicating that the corresponding elements may provide alternative support",
+        "a failure that disappears after an additional omission, indicating context dependence or nonmonotonic behavior",
+        "These are proposed observations to look for, not established findings."
+      ],
+      "rationale": "The three outcome classes, the evidence sources, the restricted role of errors and session notes, both interaction patterns with their hedged readings ('may provide'), and the disclaimer that these are sought rather than established observations are all retained with equivalent meaning."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "A retained failing omission set identifies removals sufficient to reproduce activation failure under the defined test.",
+        "A verified 1-minimal set additionally shows that restoring any one of its omitted elements removes that failure in the tested configuration.",
+        "A singleton supports conditional necessity of that element with the reference remainder fixed.",
+        "A multiple-element set does not establish that every omitted element is individually necessary",
+        "support priorities for combinations and contexts rather than a simple independent feature ranking"
+      ],
+      "neutral_evidence": [
+        "A retained failing omission set identifies removals that are sufficient to reproduce activation failure under the defined test.",
+        "A verified endpoint set, in which the set reproducibly fails and each single restoration reproducibly succeeds, additionally shows that restoring any one of its omitted elements removes that failure in the tested configuration.",
+        "A set containing a single element supports conditional necessity of that element with the reference remainder held fixed.",
+        "A set containing multiple elements does not establish that each omitted element is individually necessary",
+        "support priorities stated for combinations and contexts, in place of a simple independent feature ranking"
+      ],
+      "rationale": "Each inferential step is carried over with its conditional qualifiers intact ('under the defined test', 'in the tested configuration', 'conditional necessity', 'reference remainder held fixed'). The negative inference limit for multi-element sets and its reason (jointly removed alternative routes) are preserved. The technical label '1-minimal' is replaced by its defining condition, which does not change the claim."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "it does not establish population-wide necessity",
+        "It minimizes failure-inducing omissions, not the successful redesign itself.",
+        "Reduction order can select different endpoints.",
+        "Single-restoration checks establish 1-minimality, not a globally smallest omission set; nonmonotonic interactions can conceal smaller failing sets.",
+        "Even reproducible failure does not uniquely identify its causal mechanism, and an element conditionally required in one configuration may be dispensable in another."
+      ],
+      "neutral_evidence": [
+        "does not establish population-wide necessity",
+        "The procedure minimizes failure-producing omissions, not the successful redesign itself.",
+        "The order of reduction can select different endpoints.",
+        "Single-restoration checks establish that no single restoration preserves failure, not that the omission set is the globally smallest; nonmonotonic interactions can conceal smaller failing sets.",
+        "Reproducible failure does not uniquely identify its causal mechanism.",
+        "An element conditionally required in one configuration may be dispensable in another."
+      ],
+      "rationale": "All scope restrictions, reproducibility threats (participant variability, learning, unresolved outcomes, environmental changes), the dependency caveat, order dependence, the local-versus-global minimality distinction, the causal-mechanism limit and the configuration-dependence limit are present. No uncertainty, conditionality or negative inference limit was dropped."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If either cannot be established, stop the minimization and investigate the reference flow or test reliability before drawing necessity conclusions.",
+        "repartition and refine until no tested reduction preserves failure",
+        "Stop with a test-relative 1-minimal result only if the current set reproducibly fails and every such single restoration reproducibly succeeds; otherwise report a provisional reduced set when unresolved outcomes or a declared testing budget prevent completion."
+      ],
+      "neutral_evidence": [
+        "If either cannot be established, the reduction is stopped and the reference flow or test reliability is investigated before any necessity conclusion is drawn.",
+        "Repartition and refine until no tested reduction preserves failure.",
+        "stop with a test-relative result of single-restoration minimality when, and only when, the current set reproducibly fails and every single restoration reproducibly succeeds; otherwise report a provisional reduced set when unresolved outcomes or a declared testing budget prevent completion"
+      ],
+      "rationale": "All three stopping conditions are retained: the precondition stop, the refinement termination criterion, and the endpoint stop with its provisional fallback. The endpoint stop is relocated from the action field to the limits field but is stated in full. 'Only if' is rendered as 'when, and only when'; given the original's 'otherwise' clause, this is read as equivalent in effect."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "investigate the reference flow or test reliability before drawing necessity conclusions",
+        "Where feasible, repeat from other failing omission sets or partition orders.",
+        "Follow up suspected interactions by testing neither, either and both omissions against the same fixed remainder, using only valid variants."
+      ],
+      "neutral_evidence": [
+        "investigate the reference flow or test reliability before drawing necessity conclusions",
+        "where feasible, repeat the reduction from other failing omission sets or with other partition orders",
+        "follow up suspected interactions by testing neither, either and both omissions against the same fixed remainder, using valid variants",
+        "No further follow-up is specified."
+      ],
+      "rationale": "The original has no dedicated follow-up field; its follow-ups are embedded in the state and operation fields. The paraphrase collects exactly those three and explicitly states that nothing further is specified, so no follow-up is invented or lost. The 'where feasible' conditionality is kept."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Where feasible, repeat from other failing omission sets or partition orders.",
+        "Different reduced sets and interaction results can therefore support priorities for combinations and contexts",
+        "Retain a smaller omission set only when it still meets the predefined activation-failure criterion"
+      ],
+      "neutral_evidence": [
+        "endpoints from different starting sets or partition orders are compared with one another",
+        "which distinguishes elements that may substitute for one another from failures that depend on context or behave nonmonotonically",
+        "Keep a smaller omission set when, and only when, it still meets the predefined activation-failure criterion.",
+        "Otherwise the failing omission set is iteratively reduced until no tested reduction still produces failure, followed by single-element restoration checks at the endpoint."
+      ],
+      "rationale": "The added problem_decomposition field and the closing sentence of the procedure field reorganize and summarize content already present; they introduce no new tests, measurements, thresholds or criteria. The explicit statement that endpoints are 'compared with one another' and the verb 'distinguishes' go slightly beyond the original's wording, but both follow from the original's use of different reduced sets and interaction results jointly. These are judged restatements, with residual uncertainty recorded."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "1-minimal",
+        "stop the minimization",
+        "failure-inducing omission set",
+        "so learning does not masquerade as an effect of restoration"
+      ],
+      "neutral_evidence": [
+        "single-restoration minimality",
+        "the reduction is stopped",
+        "omission set that produces activation failure",
+        "so that learning is not mistaken for an effect of restoring an element",
+        "prototype task completion and funnel events"
+      ],
+      "rationale": "The paraphrase names no source discipline and carries no metaphor from one. The originating jargon ('1-minimal', 'failure-inducing', 'minimization') is replaced with descriptive phrasing, and the figurative 'masquerade' is removed. Target entities (onboarding redesign, reference prototype, activation, funnel events, participants) are preserved. Remaining terms such as 'partition', 'complements' and 'nonmonotonic' are general descriptive vocabulary, and 'nonmonotonic' also appears in the original."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "No evaluative verdict language was found in the paraphrase, so there is nothing to excerpt. It makes no claim that the procedure is ordinary, native, novel, unorthodox, creative, a formalization, a departure, or that it adds or lacks a warrant. Phrases such as 'Specified follow-up' and 'No further follow-up is specified' describe content only. The original likewise contains no such language."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "'Only when' / 'only if' in the original is rendered as 'when, and only when' in two places (retention rule and endpoint stop). This formally turns a necessary condition into a biconditional. It was judged consistent with the original's surrounding text, but a stricter reading could treat it as a slight strengthening.",
+    "'Using only valid variants' became 'using valid variants' and 'interaction tests use valid variants'. The exclusivity marker is dropped; it was judged to be implied by context, but this is a judgment call.",
+    "The problem_decomposition field has no counterpart field in the original. Its statement that endpoints 'are compared with one another' and that the four-condition comparison 'distinguishes' two patterns is slightly more explicit than the original; it was judged a restatement, not an added operation.",
+    "The paraphrase restricts interaction tests to 'two omissions', whereas the original says only 'neither, either and both omissions'. Pairwise scope is implied by the original wording but not stated outright.",
+    "The source discipline is not named in the packet, so the assessment of source imagery removal rests on recognizing jargon such as '1-minimal' and 'failure-inducing' from the text alone."
+  ]
+}

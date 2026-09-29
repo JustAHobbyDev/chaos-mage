@@ -1,0 +1,155 @@
+{
+  "case_id": "E025",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Pick the checkpoint nearest the middle of the unresolved interval.",
+        "If it is behind, discard the later portion and treat this checkpoint as the new late endpoint.",
+        "skip it and probe an adjacent checkpoint",
+        "using the same cohort for every probe where possible"
+      ],
+      "neutral_evidence": [
+        "Select the checkpoint nearest the middle of the unresolved interval.",
+        "If the checkpoint is behind allowance, discard the later portion of the interval and use it as the new late endpoint.",
+        "skip it, examine an adjacent checkpoint and record that the final interval may consequently be wider",
+        "using the same cohort for every examination where possible"
+      ],
+      "rationale": "All six original steps appear in the paraphrase in the same order with the same conditions: fixing case type, cohort, checkpoint list, allowances and rule; endpoint verification; midpoint selection; the three ways of obtaining a time; classification; the two discard branches; the skip rule with its recorded widening; and repetition on the same cohort. 'Probe' becomes 'examine', which is a wording change only."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Each probe yields one binary classification for one checkpoint",
+        "The underlying elapsed-time figures are kept alongside the classification.",
+        "roughly log2(n) probes are needed",
+        "Disagreement between the first and second cohort at the final boundary."
+      ],
+      "neutral_evidence": [
+        "Each checkpoint examination yields a binary classification, within allowance or behind allowance, with the underlying elapsed-time figures retained.",
+        "roughly log2(n) examinations are needed",
+        "disagreement between the first and second comparable cohorts at the final interval endpoints",
+        "record whether classification changes at the checkpoint immediately after the localized handoff and at final approval"
+      ],
+      "rationale": "The per-examination binary classification, the retained elapsed-time figures, the shrinking span between the latest within-allowance and earliest behind-allowance checkpoints, the log2(n) estimate with its observability condition, and all four secondary observables are carried over. 'Final boundary' is rendered as 'final interval endpoints', which refers to the same two bounding checkpoints."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "lies in the final unresolved handoff, or in the final interval if checkpoints were skipped",
+        "that this handoff is the sole or largest source of delay, or that it causes the delay",
+        "this supports (but does not prove) that the handoff contributed materially",
+        "further delay accumulates elsewhere and the search is repeated",
+        "The halving earns its cost only where each checkpoint time must be reconstructed or newly logged."
+      ],
+      "neutral_evidence": [
+        "in the final unresolved handoff, or in the final interval when checkpoints have been skipped",
+        "The result alone does not establish that the handoff is the sole or largest source of delay or that it causes the delay.",
+        "this supports, without proving, that the handoff contributed materially",
+        "the procedure interprets this as further delay accumulating elsewhere and repeats the search",
+        "The cost justification for halving applies where each checkpoint time must be reconstructed or newly logged."
+      ],
+      "rationale": "The positive warrant, its scoping to case type and cohort, the priority-candidate status, the negative limits (not sole, not largest, not causal), and both pilot outcomes with their hedging are preserved. The cost condition is kept in substance but moved into the limits field, and 'only where' is softened to 'applies where'; the preceding sentence that halving 'saves no effort' when every handoff is timestamped keeps the restriction intelligible."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Discarding half the route on one probe can then discard a real contributor.",
+        "the boundary marks only where the cumulative total crosses the allowance",
+        "The boundary is correlated with the delay, not shown to be its sole cause.",
+        "Timestamps record status changes, not work.",
+        "Pilot comparisons remain observational unless demand and staffing are comparable.",
+        "Assumptions not supplied by the packet: that per-checkpoint allowances exist or can be agreed in advance"
+      ],
+      "neutral_evidence": [
+        "discarding half the route after one examination can therefore exclude a real contributor",
+        "the localized transition identifies where the cumulative total crosses the allowance, and that location changes if allowances are set differently",
+        "The transition is correlated with delay without establishing the handoff as its sole cause.",
+        "Status-change timestamps do not separate waiting time from working time within a stage.",
+        "Pilot comparisons remain observational unless demand and staffing are comparable.",
+        "The supplied information does not establish that checkpoint-level allowances exist or can be agreed in advance"
+      ],
+      "rationale": "Every limit has a counterpart: cohort variability and near-allowance unreliability, unobservable checkpoints, recovery downstream and rework loops, distributed delay with allowance dependence, origins elsewhere, wrong endpoints, and all five target-specific limits. The four starting conditions and both unsupplied assumptions are also present. Two small softenings occur: 'marks only where' loses 'only', and the assumptions are restated as things the supplied information does not establish rather than as assumptions the procedure makes. Neither removes a limit, because the sole-or-largest-source disclaimer and the allowance-dependence clause remain explicit."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Normal stop: the unresolved interval is a single handoff between two adjacent checkpoints.",
+        "Partial stop: the only checkpoints left are unobservable. Report the interval of several handoffs as the result.",
+        "Halt without a result: an endpoint fails verification, or a checkpoint's classification flips when re-checked on a second comparable cohort."
+      ],
+      "neutral_evidence": [
+        "Stop with a localized result when the unresolved interval is one handoff between adjacent checkpoints.",
+        "Stop with a partial result when all remaining checkpoints are unobservable, reporting the interval of several handoffs.",
+        "Halt without a result if an endpoint fails verification or a checkpoint changes classification when checked on a second comparable cohort."
+      ],
+      "rationale": "All three stopping conditions are present with the same triggers and the same reported outputs. They sit in the limits field and are summarised in the procedure field, which changes placement but not content."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Re-classify the two checkpoints bounding the localized handoff on a second comparable cohort.",
+        "Pilot one change confined to that handoff. Illustrative candidates, not established remedies",
+        "Re-apply the same classification at the checkpoint just after the handoff and at final approval, under comparable demand and staffing.",
+        "re-establish the endpoints and repeat the partitioning on the remaining route"
+      ],
+      "neutral_evidence": [
+        "reclassify the two checkpoints bounding the localized handoff using a second comparable cohort",
+        "Pilot one change confined to that handoff.",
+        "these are not established remedies",
+        "Reapply the same classification at the checkpoint immediately after the handoff and at final approval under comparable demand and staffing.",
+        "re-establish the endpoints and repeat the interval reduction on the remaining route"
+      ],
+      "rationale": "The four follow-up steps are preserved, including the second-cohort recheck, the single confined pilot, the three illustrative candidates with their disclaimer, the comparable-conditions requirement, and the repeat condition. 'End-to-end classification is still behind allowance' is rendered as 'final approval remains behind allowance', which is the same checkpoint."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "That handoff is the priority candidate for exception-case inspection, interviews and a bounded pilot.",
+        "waiting seen at the localized handoff may originate elsewhere, such as incomplete submissions upstream, an approver shared with other routes, or downstream batching"
+      ],
+      "neutral_evidence": [
+        "Use the handoff as the priority candidate for inspection of exceptional cases and interviews.",
+        "The identified handoff is connected to upstream submissions, approvers who may serve other routes, downstream batching and other handoffs that may contribute delay.",
+        "allowing improvement at the handoff to be distinguished from the end-to-end outcome",
+        "These conclusions remain subject to the limitations on interval reduction, measurement and comparison."
+      ],
+      "rationale": "No new step, measurement, threshold or decision rule appears. Sentences in the paraphrase without a verbatim original are restatements of existing content: the priority-candidate sentence is relocated from the inference, the decomposition sentence draws on the interactions limit, and the two-checkpoint comparison restates the pilot outcomes. The closing cross-reference to limitations is a pointer, not an operation."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "This list is the counterpart of the ordered revision history.",
+        "'Behind allowance' is the counterpart of the revision having the property",
+        "Flaky test",
+        "Unbuildable revision"
+      ],
+      "neutral_evidence": [
+        "High case-to-case variability or a small cohort can cause classifications to change between cohorts",
+        "Checkpoints without recoverable times, informal handoffs and parallel approvals cannot be examined",
+        "examining them in halving order saves no effort over comparing timestamps stage by stage"
+      ],
+      "rationale": "The paraphrase contains no reference to revisions, revision history, tests, builds or any source discipline name, and the source-labelled limit headings are replaced by their target descriptions. Target entities (checkpoints, handoffs, cohorts, allowances, ticket histories) are retained. 'Halving' remains, but it describes the interval-splitting behaviour and also appears in the original's target-side text."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "saves no effort over the analyst's ordinary stage-by-stage timestamp comparison"
+      ],
+      "neutral_evidence": [
+        "examining them in halving order saves no effort over comparing timestamps stage by stage",
+        "The cost justification for halving applies where each checkpoint time must be reconstructed or newly logged."
+      ],
+      "rationale": "The paraphrase makes no claim that the procedure is ordinary, native, novel, unorthodox, creative, a formalization, a departure, or that it adds or lacks a warrant. The word 'ordinary' in the original's cost condition is dropped. What remains is a conditional effort comparison between two ways of reading timestamps, which describes behaviour and cost."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The restrictive 'only' is dropped twice ('marks only where' becomes 'identifies where'; 'earns its cost only where' becomes 'applies where'). I judged these as wording changes because the surrounding sentences keep the restriction, but a stricter reading could treat them as weakened negative limits.",
+    "The original labels two items as assumptions the procedure makes; the paraphrase says the supplied information 'does not establish' them. The unverified status is kept, but the explicit statement that the procedure relies on them is less direct.",
+    "The cost condition moves from the inference field to the limits field. I assessed preservation across the whole paraphrase rather than field by field.",
+    "The decomposition sentence 'The identified handoff is connected to upstream submissions...' states a connection more flatly than the original's 'may originate elsewhere'; the hedged version is retained in the limits field.",
+    "'Halving' is kept in the paraphrase. I treated it as a description of the behaviour rather than source imagery, since the original uses it on the target side, but it could be read as a residual trace of the source method.",
+    "The retained effort comparison with stage-by-stage timestamp comparison is a comparison to an alternative practice. I treated it as preserved cost content rather than a verdict, since the word 'ordinary' was removed."
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "case_id": "E022",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Choose one input and one handoff.",
+        "Apply the change at a recorded time, all at once, and hold it.",
+        "In parallel, keep a disturbance log"
+      ],
+      "neutral_evidence": [
+        "Choose one input and one handoff.",
+        "Apply the entire change at the recorded time and hold it constant, making no other deliberate changes during the run.",
+        "In parallel, log staffing, incoming demand, case mix, calendar events and any other process changes."
+      ],
+      "rationale": "The paraphrase preserves intervention selection, advance specification, baseline recording, downstream measurements, fixed sampling, and disturbance logging."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "the interval between the step and the first change distinguishable from baseline variation",
+        "the height and timing of that peak",
+        "a queue that ramps without levelling, or an output that stops responding once a ceiling is reached"
+      ],
+      "neutral_evidence": [
+        "the interval between the input change and the first output change distinguishable from pre-change variation",
+        "the height and timing of the maximum",
+        "queues that continue growing without stabilizing, outputs that stop changing after reaching a maximum"
+      ],
+      "rationale": "All specified temporal features remain: response delay and order, approach speed, temporary excess, cycles, stabilization time, stable-level differences, failure to stabilize, and absence of response."
+    },
+    "inference_preserved": {
+      "status": "fail",
+      "original_evidence": [
+        "A queue that ramps and does not settle after an intake step suggests the stage is capacity-limited at the tested load",
+        "Every conclusion is conditional on the tested step size, direction, case class and the demand and staffing level in force."
+      ],
+      "neutral_evidence": [
+        "Continued queue growth without stabilization after an intake increase suggests that the stage is capacity-limited at the tested load",
+        "Every conclusion remains conditional on the tested change amount, direction, request class, demand and staffing."
+      ],
+      "rationale": "The capacity inference is narrowed from an intake change of unspecified direction to an intake increase. The original also permits applying that inference when queues keep growing after an intake decrease. Retaining general direction conditionality does not restore this omitted scope. The other explanatory constraints and candidate-remedy criteria are preserved."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "as a constraint on candidate explanations rather than a unique identification",
+        "These are assumptions to verify, not facts supplied by the packet",
+        "causal attribution of a remedy requires repetition under comparable demand and staffing."
+      ],
+      "neutral_evidence": [
+        "Treat observations as constraints on candidate explanations, without identifying a unique explanation.",
+        "Before acting, verify these assumptions",
+        "Causal attribution of a remedy requires repetition under comparable demand and staffing."
+      ],
+      "rationale": "The paraphrase preserves prerequisite verification, nonunique explanations, noise, initial-state uncertainty, response ceilings, behavioral changes, disturbances, confounding, observation duration, operating-condition dependence, feasibility constraints, timestamp validity, ethical bounds, and limited generalizability."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "outputs stay inside the settling band for the required consecutive intervals and the minimum window has elapsed",
+        "Revert the step, and keep the record as evidence of saturation or non-settling",
+        "a major logged disturbance overlaps the transient"
+      ],
+      "neutral_evidence": [
+        "outputs have remained within the preset band for the required consecutive intervals and the minimum observation window has elapsed",
+        "reverse the change and retain the record as evidence of a reached capacity or response limit, or failure to stabilize",
+        "a major logged disturbance overlaps the response period"
+      ],
+      "rationale": "Stabilization requires both the consecutive-interval criterion and minimum duration. Service-level or queue-limit breaches still trigger reversal and record retention. Major overlapping disturbances still require marking and repeating the run under comparable conditions."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Reverse the step and record the return trajectory, to check symmetry.",
+        "Repeat with a different step size, and at a different demand or staffing level.",
+        "Set the results beside the ordinary timestamp comparisons, exception-case reviews and interviews."
+      ],
+      "neutral_evidence": [
+        "Reverse the change and record the return over time to check whether responses in opposite directions are symmetric.",
+        "Repeat with a different change amount and at a different demand or staffing level.",
+        "Compare the results with timestamp comparisons, exception-case reviews and interviews."
+      ],
+      "rationale": "Reversal, variation in change size and operating conditions, repetition at other handoffs one input at a time, and comparison with the other evidence sources are retained."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "one approval workflow",
+        "Stage names here are placeholders; the real stages and owners come from the workflow map",
+        "approvers shared across stages"
+      ],
+      "neutral_evidence": [
+        "Use one workflow as the overall unit, with mapped stages and accountable owners as its component units.",
+        "Relevant relationships include downstream effects of upstream releases",
+        "shared approvers and staffing adjustments that connect multiple stages"
+      ],
+      "rationale": "The additional organization into procedure and decomposition sections restates existing entities, relationships, and actions. It introduces no new intervention, measurement, threshold, or follow-up. The inference restriction identified above is a scope loss rather than an added operation."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Dead time",
+        "Rise",
+        "Overshoot and peak",
+        "Steady-state change"
+      ],
+      "neutral_evidence": [
+        "the interval between the input change and the first output change",
+        "how quickly queue length, waiting time or completion rate approaches its new level",
+        "temporarily exceeds its eventual level",
+        "differences between pre-change and stable levels"
+      ],
+      "rationale": "The paraphrase replaces source-associated labels with descriptions of observable workflow behavior. Approval stages, queues, capacity, timestamps, and staffing remain as target entities; no source discipline names or metaphors remain."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "This adds response-to-designed-change evidence to the associations the ordinary timestamp and queue comparisons provide; it does not replace them."
+      ],
+      "neutral_evidence": [
+        "Interpret responses to the designed changes alongside the associations from timestamp and queue comparisons; those comparisons remain part of the assessment."
+      ],
+      "rationale": "The paraphrase describes combining evidence without declaring the procedure ordinary, novel, creative, a departure, or a source of new warrant. Candidate-remedy language concerns the tested workflow changes, not an evaluative verdict about the procedure."
+    }
+  },
+  "overall": "exclude",
+  "uncertainty": []
+}

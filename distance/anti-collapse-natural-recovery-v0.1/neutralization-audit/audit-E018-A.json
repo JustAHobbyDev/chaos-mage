@@ -1,0 +1,143 @@
+{
+  "case_id": "E018",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Record activation completion and the failure points in the full design (baseline).",
+        "Where feasible repeat the withdraw-restore cycle at least once.",
+        "Use fresh participants or cohorts for each phase",
+        "withdraw each singly, withdraw both, restore each singly, restore both",
+        "patch only the navigation and record the patch as a concurrent change"
+      ],
+      "neutral_evidence": [
+        "Record activation completion and failure points in the full design.",
+        "Where feasible, repeat the withdrawal and restoration cycle at least once.",
+        "Use fresh participants or cohorts for each phase",
+        "withdraw each singly, withdraw both, restore each singly, and restore both",
+        "change navigation alone to make the flow traversable and record that patch as a concurrent change"
+      ],
+      "rationale": "The paraphrase preserves the baseline, controlled withdrawal and restoration, conditional repetition, fresh cohorts, criteria for selecting pairs, pair-testing sequence, and navigation-only patching with concurrent-change recording. It also retains the full-design starting state and explicitly assumed prerequisites."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "activation completion falls, or failures concentrate at a step traceable to the missing component",
+        "completion returns to about the baseline level after restoration",
+        "withdrawing A alone or B alone changes nothing but withdrawing both produces a drop",
+        "Non-signal: no change on withdrawal, a drop that does not reverse on restoration, or a change that does not repeat on a second cycle."
+      ],
+      "neutral_evidence": [
+        "a fall in activation completion, or failures concentrated at a step traceable to the missing component",
+        "completion returning to approximately its initial full-design level after restoration",
+        "withdrawing A alone or B alone produces no change, but withdrawing both produces a drop",
+        "Specified non-signals are no change on withdrawal, a drop that does not reverse on restoration, or a change that does not repeat during a second cycle."
+      ],
+      "rationale": "The single-component alternatives, approximate recovery, timing, all three pairwise patterns, and all specified non-signals remain intact."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "increases support for a causal contribution",
+        "necessary given the other components that were present",
+        "A drop without recovery on restoration gives weaker support",
+        "not shown to be needed in this configuration",
+        "ranking limited to components whose response did not vary across the tested combinations"
+      ],
+      "neutral_evidence": [
+        "increases support for the component's causal contribution",
+        "necessary given the other components present",
+        "A drop without recovery after restoration provides weaker support",
+        "has not been shown to be needed in this configuration",
+        "Limit ranking to components whose responses did not vary across tested combinations."
+      ],
+      "rationale": "Both texts retain graded causal support, configuration/user-segment/task scope, conditional necessity, weaker support without recovery, and compensation as a reason that no change does not establish dispensability. Interaction findings still require conditional sets and restrict ranking to tested invariant responses."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "a temporal match may be coincidental",
+        "fresh cohorts introduce between-group differences",
+        "untested subsets and higher-order interactions remain unknown",
+        "no claim of a globally minimal set follows",
+        "Small usability samples and prototype completion do not establish population-wide or live-product necessity.",
+        "Temporal response alone does not exclude alternative causes."
+      ],
+      "neutral_evidence": [
+        "temporal alignment may be coincidental",
+        "fresh cohorts introduce between-group differences",
+        "untested subsets and higher-order interactions remain unknown",
+        "no globally minimal set follows",
+        "Small usability samples and prototype completion do not establish population-wide or live-product necessity.",
+        "Temporal response alone does not exclude alternative causes."
+      ],
+      "rationale": "The paraphrase preserves spontaneous variation, concurrent changes including navigation patches, delayed and persistent effects, cohort differences, unsafe or impossible testing, and broader flow disruption. It retains every stated restriction on generalization and causal exclusion."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If (c) does not hold, there is no occurring effect to withdraw against and the procedure does not start.",
+        "set a floor for activation completion and a list of user harms",
+        "end a live withdrawal and restore the component as soon as either is reached",
+        "Perform withdrawal of high-risk components in prototype sessions only, or not at all."
+      ],
+      "neutral_evidence": [
+        "If the full design does not produce enough activation completion for a drop to be visible",
+        "the procedure does not start",
+        "Before starting, set an activation-completion floor and a list of user harms",
+        "End a live withdrawal and restore the component as soon as either the floor or a listed harm is reached.",
+        "Withdraw high-risk components in prototype sessions only, or do not withdraw them."
+      ],
+      "rationale": "The entry condition, advance specification of thresholds and harms, immediate termination with restoration, and restriction on high-risk withdrawal are preserved. Moving these provisions into limits does not change their force."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "where withdrawal produces no change, do not drop the component on that basis; retest it with its suspected partner component also withdrawn"
+      ],
+      "neutral_evidence": [
+        "When withdrawal produces no change, do not remove the component from the redesign on that basis.",
+        "Retest it with its suspected partner component also withdrawn."
+      ],
+      "rationale": "The same observation triggers the same prohibition on removal and the same partner-withdrawal retest."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Each separable component (for example a step, prompt, default or guidance element) is a suspected factor",
+        "For components linked by the dependency map or by observed errors",
+        "withdrawing A alone or B alone changes nothing but withdrawing both produces a drop (substitutes)"
+      ],
+      "neutral_evidence": [
+        "The full redesign is divided into separable components, such as steps, prompts, defaults and guidance elements.",
+        "The dependency map and observed errors identify component pairs for joint testing.",
+        "substitution, where either component can compensate for the other's absence"
+      ],
+      "rationale": "The additional decomposition section reorganizes and explains content already present. It introduces no new intervention, measurement, selection criterion, threshold, or follow-up."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Dechallenge",
+        "Rechallenge",
+        "a naive state",
+        "same-user rechallenge is not a clean return"
+      ],
+      "neutral_evidence": [
+        "Withdraw one component",
+        "Restore the component and observe again.",
+        "prior onboarding exposure cannot be undone",
+        "Reusing users therefore does not return them to their initial state"
+      ],
+      "rationale": "Source-associated challenge terminology and return imagery are replaced by direct descriptions of withdrawal, restoration, and persistent exposure. No source discipline is named, and target entities such as onboarding components, activation, users, and cohorts remain."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text contains the prohibited evaluative verdicts about ordinariness, novelty, creativity, departure, formalization, or new warrant. The inferential_warrant field describes evidential implications without judging whether the procedure adds a warrant."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

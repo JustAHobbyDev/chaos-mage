@@ -1,0 +1,139 @@
+{
+  "case_id": "E029",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Monitor staged configurations serially: the full redesign plus configurations each withholding one component.",
+        "serially monitor four configurations: both present, only the first, only the second, neither.",
+        "at least four is a proposed working value, not a supplied fact",
+        "Log every other release, campaign, traffic-source change or instrumentation change as a dated annotation on the series."
+      ],
+      "neutral_evidence": [
+        "Repeatedly monitor the full redesign and configurations withholding one component each.",
+        "repeatedly monitor four configurations: both present, first present and second absent, second present and first absent, and both absent.",
+        "at least four is a proposed working value, not an established requirement",
+        "Annotate the series with the date of every other release, campaign, traffic-source change, and instrumentation change."
+      ],
+      "rationale": "All seven steps appear in the same order with the same content: fixed measurement definitions, reference series, pre-written change rule (three consecutive cohorts proposed), single-component withholding with concurrent or withhold-then-restore designs, four-configuration pair series, repeated usability sessions with the same task script, and dated annotations. 'Serially' becomes 'repeatedly' and 'not a supplied fact' becomes 'not an established requirement'; both keep the provisional status of the value and are wording changes rather than loss."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "the ordered sequence of per-cohort activation completion rates and step-level drop-off, read against the reference band and the annotated event log",
+        "Relocation: the step where drop-off concentrates moves after a component is withheld.",
+        "One component's withholding shifts the series only when the other is present or only when it is absent.",
+        "The size or direction of the shift differs between entry populations."
+      ],
+      "neutral_evidence": [
+        "the ordered sequence of per-cohort activation completion rates and step-level drop-off, interpreted against the reference band and dated event annotations",
+        "whether withholding changes the step at which drop-off concentrates",
+        "whether withholding one component shifts the series depending on the other's presence or absence",
+        "whether shift size or direction differs between entry populations"
+      ],
+      "rationale": "The observable and all six temporal patterns (persistence, reversal, transient, trend, threshold crossing, relocation) are retained, as are all four interaction patterns. The original's parenthetical readings (substitute, work only jointly) are moved into the inferential field rather than dropped. 'Only when present or only when absent' is compressed to 'depending on the other's presence or absence', which keeps the conditional dependence."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "supports a bounded claim: that component is needed for activation completion in the monitored population under the monitored conditions",
+        "supports only that the component is not needed at the effect size the series could detect; it does not show zero contribution",
+        "the component has no single contribution value",
+        "with that ordering limited to the tested configurations"
+      ],
+      "neutral_evidence": [
+        "supports the bounded conclusion that the component is needed for activation completion in the monitored population under the monitored conditions",
+        "supports the conclusion that the component is not needed at the effect size the series could detect; it does not establish zero contribution",
+        "no single contribution value describes that component across those configurations",
+        "with the ordering restricted to tested configurations"
+      ],
+      "rationale": "The bounded necessity claim, its conditions (concurrent reference in band, reversal where run), the negative limit on in-band results, the transient and trend readings, the conditional statement of interacting components, the rejection of a one-dimensional ranking for them, and the restricted ordering of non-dependent components are all present. The word 'only' is dropped in 'supports only that' and 'needed only together', but the explicit 'does not establish zero contribution' clause keeps the negative inference limit."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Concurrent arms and restoration reduce this but do not remove it.",
+        "the temporal pattern alone does not establish cause; necessity claims rest on the withholding design combined with the series",
+        "so no globally minimal component set is certified",
+        "Prototype sessions are small samples and support claims about flows and errors, not population-wide necessity."
+      ],
+      "neutral_evidence": [
+        "concurrent configurations and restoration reduce but do not eliminate this problem",
+        "Temporal patterns alone do not establish causation; necessity claims depend on the withholding design combined with the series",
+        "the procedure does not establish a globally minimal component set",
+        "Prototype sessions use small samples and support conclusions about flows and errors, not population-wide necessity."
+      ],
+      "rationale": "Every listed limit is carried over: measurement error, regression to the mean, irregular sampling, changing measurement conditions, confounding with calendar time, interval and threshold choice, different users per cohort with contamination from multi-configuration exposure, and the scope limits on causation, untested combinations, higher-order interactions and prototype sessions. The residual-confounding qualifier and the negative scope statements are intact."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "or when a prespecified maximum number of cohorts passes without either, in which case it is recorded as unresolved",
+        "End a withholding arm early and restore the component if completion falls below a floor set in advance."
+      ],
+      "neutral_evidence": [
+        "or when a prespecified maximum cohort count is reached without either outcome; record the last outcome as unresolved",
+        "End a withholding group early and restore the component if completion falls below a minimum rate set in advance."
+      ],
+      "rationale": "All three end conditions for a configuration and the early-termination floor with restoration are present. They sit in the limits field rather than the action field, which is a change of location and not of content. 'Record the last outcome as unresolved' is read as referring to the third listed case, matching the original; the phrasing is less explicit than 'in which case it is recorded as unresolved'."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "an unresolved configuration gets a longer series or a revised interval and threshold, set before the new series starts",
+        "A single-component result that conflicts with the dependency decomposition triggers the four-configuration series for that pair.",
+        "A relocated drop-off step is followed by sessions targeted at that step to investigate the mechanism."
+      ],
+      "neutral_evidence": [
+        "For an unresolved configuration, collect a longer series or use a revised interval and threshold, setting these before the new series begins.",
+        "If a single-component result conflicts with the dependency decomposition, run the four-configuration series for that pair.",
+        "If drop-off concentration moves to another step, conduct sessions targeted at that step to investigate the mechanism."
+      ],
+      "rationale": "The three follow-ups are reproduced with the same triggers and the same actions, including the requirement that revised interval and threshold be set before the new series begins."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "record where users fail, as a comparable qualitative observation alongside the funnel series",
+        "the redesign can be decomposed into components that can be shipped or withheld separately"
+      ],
+      "neutral_evidence": [
+        "Task steps connect recorded drop-off locations with usability-session failures.",
+        "The redesign is divided into components that must be independently deployable or withholdable.",
+        "Compare repeated observations across successive signup cohorts to distinguish sustained changes, transient fluctuations, and contributions that change over time."
+      ],
+      "rationale": "The paraphrase has a problem_decomposition field with no counterpart field in the original, but its content restates the original's assumptions, configurations, cohort structure, pair series and scope limits. No new step, measurement, threshold or decision rule is introduced. The sentence linking task steps to drop-off locations and session failures makes explicit a relation the original leaves implicit in running sessions alongside the step-level series and targeting sessions at a relocated step."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Analogy limits: clinical serial monitoring follows one patient, while here each cohort consists of different users",
+        "Concurrent arms and restoration reduce this but do not remove it.",
+        "End a withholding arm early"
+      ],
+      "neutral_evidence": [
+        "Successive cohorts contain different users, so the series measures a population-level process and depends on cohort similarity.",
+        "concurrent configurations and restoration reduce but do not eliminate this problem",
+        "End a withholding group early"
+      ],
+      "rationale": "The explicit clinical reference and the single-patient comparison are removed, with the underlying limit about different users per cohort kept. 'Arms' becomes 'configurations' or 'groups' and 'serially' becomes 'repeatedly'. Target entities (components, configurations, cohorts, activation, drop-off steps, usability sessions) are retained. 'Withholding' and 'follow-up window' remain but describe target operations on components and activation counting, not a source discipline."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [
+        "a one-dimensional feature ranking is not warranted for those components",
+        "at least four is a proposed working value, not an established requirement"
+      ],
+      "rationale": "The paraphrase contains no statement characterising the procedure as ordinary, native, novel, unorthodox, formalization, creative, a departure, or as adding or lacking a warrant. The two quoted phrases are the closest candidates: the first is an inference about the ranking of interacting components carried over from the original, and the second marks a parameter as provisional. Neither evaluates the procedure. Original evidence is empty because the original likewise contains no such verdict language."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The stopping phrase 'record the last outcome as unresolved' is less explicit than the original 'in which case it is recorded as unresolved'; it is read as referring to the maximum-cohort case, but could be misread as the most recent observed outcome.",
+    "The paraphrase drops 'only' in three places ('supports only that', 'needed only together', 'work only jointly'). These are judged wording changes because the explicit zero-contribution disclaimer and the conditional framing remain, but a stricter reading could treat them as slight weakening.",
+    "The sentence 'Task steps connect recorded drop-off locations with usability-session failures' states a linkage the original only implies; it is judged a restatement rather than added operational content.",
+    "Stopping conditions appear in the paraphrase's limits field and the paraphrase includes a problem_decomposition field absent from the original five-field mapping; field placement was treated as non-semantic.",
+    "'Novelty effects' is rendered as 'initial exposure effects' and 'not a supplied fact' as 'not an established requirement'; both are judged close in meaning but not identical."
+  ]
+}

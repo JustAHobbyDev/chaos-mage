@@ -1,0 +1,136 @@
+{
+  "case_id": "E003",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "remove only the candidate from a bounded cohort, keeping a comparable contemporaneous cohort unchanged",
+        "reintroduce the same candidate only if justified within the safety thresholds",
+        "If load cannot be adequately matched in production, use controlled representative workload replay in staging and retain that setting as an inference boundary"
+      ],
+      "neutral_evidence": [
+        "remove the candidate alone from a bounded cohort and keep a comparable contemporaneous cohort unchanged",
+        "reintroduce the same candidate if this is justified and within the safety thresholds",
+        "run controlled representative workload replay in staging and carry that setting forward as an inference boundary"
+      ],
+      "rationale": "Every operational element of the original appears in the paraphrase's numbered action list and procedure summary: pre-specification of metric, minimum response, strata, duration, delays and thresholds; candidate-only removal in a bounded cohort with an unchanged contemporaneous cohort; stable configuration and capacity; covariate recording in both cohorts; settling and measurement windows; matched-strata comparison; staging replay fallback; conditional reintroduction; bundle isolation or bisection. The starting-state content (candidate selection from history and traces, hypotheses to check, bundle as tested factor) is also carried over. 'only if justified' becomes 'if this is justified and within the safety thresholds'; the word 'only' is dropped, but conditionality is restated elsewhere ('conditionally reintroduce', 'reintroduction conditional on a removal-associated improvement, justification and safety thresholds'), so this is treated as a wording change."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "beyond the contemporaneous control's change and within comparable request-rate and request-mix strata",
+        "look for latency to rise again after the specified settling delay under comparable load",
+        "yields weaker or incomplete evidence rather than the proposed reproducible removal/restoration signal"
+      ],
+      "neutral_evidence": [
+        "exceeding the change seen in the contemporaneous unchanged cohort, and occurring within comparable request-rate and request-mix strata",
+        "a rise in latency again after the specified settling delay under comparable load",
+        "Signals that count as weaker or incomplete evidence instead of the proposed reproducible removal/restoration signal"
+      ],
+      "rationale": "Both sought signals (decrease on removal beyond the control's change within comparable strata; rise again on safe reintroduction after the settling delay) are preserved with their conditions. The recorded quantities (timing, effect size, variability, traces, resource behavior) are retained. All three weaker-evidence cases (decrease coinciding with falling load in both cohorts, inconsistent response, threshold-triggered early stop) are retained with the same downgraded evidential status."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "increases support that the tested change contributes causally to checkout latency in the tested version, configuration, traffic and capacity conditions",
+        "it does not establish that the change is the sole cause or that its effect is independent of load",
+        "Removal-only improvement supports a more limited attribution",
+        "without excluding delayed, persistent or untested load-dependent effects"
+      ],
+      "neutral_evidence": [
+        "increases support for the claim that the tested change contributes causally to checkout latency, within the tested version, configuration, traffic and capacity conditions",
+        "It does not establish that the change is the sole cause, and it does not establish that the change's effect is independent of load",
+        "An improvement observed on removal without a restoration observation supports a more limited attribution",
+        "without excluding delayed effects, persistent effects, or load-dependent effects that were not tested"
+      ],
+      "rationale": "The strength of the claim is unchanged ('increases support', not proof), the scope restriction to tested conditions is kept, and both negative inference limits (not sole cause, not load-independent) are kept. Removal-only, bundle-level and negative-test inferences are each preserved with their hedges. The added sentence that staging replay results are bounded by that setting restates the original operation's 'retain that setting as an inference boundary' and does not strengthen the inference."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Latency may improve or worsen spontaneously",
+        "uncertain settling time makes a negative result inconclusive",
+        "A response confined to particular load strata may reflect an interaction between the change and load",
+        "no procedure here identifies an actual culprit without the proposed observations"
+      ],
+      "neutral_evidence": [
+        "latency may improve or worsen spontaneously",
+        "uncertain settling time makes a negative result inconclusive",
+        "a response confined to particular load strata may reflect an interaction between the change and load",
+        "The procedure does not identify which change is actually responsible without the proposed observations being made."
+      ],
+      "rationale": "Each listed limit is carried over nearly verbatim: spontaneous change, confounders that mimic or obscure a response, effects outlasting removal, inconclusive negatives under uncertain settling time, load-strata interaction, unsafe or impossible reintroduction, staging omissions, and the statement that limits constrain attribution even when timing aligns. The closing disclaimer is preserved in meaning. The paraphrase additionally repeats scope and negative-inference limits taken from the original inference field; no limit is dropped or weakened."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop reintroduction and restore the safer state if any threshold is crossed",
+        "stop causal interpretation if concurrent changes, control contamination or unmatched load defeat comparison",
+        "If reversibility or safety cannot be established, do not perturb production",
+        "do not reintroduce solely to provoke harm"
+      ],
+      "neutral_evidence": [
+        "If any threshold is crossed during reintroduction, stop reintroduction and restore the safer state",
+        "If concurrent changes, contamination of the unchanged cohort, or unmatched load defeat the comparison, stop causal interpretation",
+        "If reversibility or safety cannot be established, do not perturb production",
+        "do not reintroduce for the sole purpose of provoking degradation"
+      ],
+      "rationale": "All four stopping or abstention rules appear in the paraphrase with the same triggers and the same consequences, both in the action list and again under 'Stopping rules' in the limits field. 'Control contamination' is rendered as contamination of the unchanged cohort and 'harm' as 'degradation'; these are wording changes that keep the same referents in this context."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "inspect traces and test a competing candidate",
+        "isolate or bisect its members in staging before attributing the effect to one change"
+      ],
+      "neutral_evidence": [
+        "inspect traces and test a competing candidate, without reintroducing for the sole purpose of provoking degradation",
+        "isolate or bisect its members in staging before attributing the effect to one change",
+        "No further follow-up beyond these is specified, including for the case where causal interpretation is stopped or where production perturbation is not performed."
+      ],
+      "rationale": "The original has no separate follow-up field; its follow-ups are embedded in the operation (competing candidate after a null removal, bundle bisection in staging, staging replay when load cannot be matched, conditional reintroduction). The paraphrase lists exactly these four and explicitly states that nothing further is specified, including for the stopped-interpretation and no-perturbation cases. The original is likewise silent on those cases, so the absence is preserved as an explicit absence and no new follow-up is introduced."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Treat its causal role, independent reversibility and experimental safety as hypotheses to check",
+        "compare changes within matched load and traffic strata",
+        "The comparison makes load variation alone a less adequate explanation"
+      ],
+      "neutral_evidence": [
+        "hypotheses about causal role, reversibility and safety are checked separately",
+        "so that the effect of the change is separated from the effect of load variation",
+        "traffic strata defined by request rate and request mix"
+      ],
+      "rationale": "No new step, parameter, threshold, measurement, tool or setting is introduced; the decomposition field reorganizes content already present in the original. Two glosses go slightly beyond the original wording. 'Checked separately' adds the word 'separately', which the original does not state, though the original does address the three hypotheses through distinct means (bundle identification, safety thresholds, the removal comparison). The purpose clause 'so that the effect of the change is separated from the effect of load variation' is phrased more definitely than the original's hedge, but the paraphrase's own inference field retains the hedged form. Defining strata by request rate and request mix matches the original signal field. These are judged to be non-material glosses, not added operational content; the residual doubt is recorded in the uncertainty list."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "actual culprit",
+        "solely to provoke harm",
+        "control contamination"
+      ],
+      "neutral_evidence": [
+        "which change is actually responsible",
+        "for the sole purpose of provoking degradation",
+        "contamination of the unchanged cohort"
+      ],
+      "rationale": "Neither text names a source discipline. The paraphrase replaces the figurative or borrowed terms present in the original ('culprit', 'provoke harm', 'control') with literal target-domain wording. Target entities are preserved: checkout paths, deployment/configuration history, request traces, rollback bundle, staging replay. Retained words such as 'cohort' and 'spontaneously' are plain descriptive terms that also appear in the original and carry no identifiable discipline name or metaphor within this packet."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Evidence lists are empty because the feature is absent. The paraphrase contains no statement characterizing the procedure as ordinary, native, novel, unorthodox, creative, mere formalization, a material departure, or as adding or lacking a new warrant. It describes the behavior, its conditions and its inferential bounds only. The phrase 'not as established facts' describes the epistemic status of the hypotheses, not an evaluation of the procedure."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The paraphrase's 'checked separately' for the causal-role, reversibility and safety hypotheses is not stated in the original, which only says they are 'hypotheses to check'. It is judged a non-material gloss, but a stricter reading could treat it as a small added procedural claim.",
+    "The purpose clause 'so that the effect of the change is separated from the effect of load variation' is more definite than the original's 'makes load variation alone a less adequate explanation'. It is judged non-material because the paraphrase's inference field keeps the hedged wording.",
+    "The original says 'reintroduce the same candidate only if justified within the safety thresholds'; the paraphrase's action step uses 'if' without 'only'. Conditionality is restated elsewhere in the paraphrase, so this is treated as wording, but the strict necessity reading is slightly less explicit in that one step.",
+    "The packet does not name the source discipline, so removal of source imagery can only be assessed from the texts themselves. Retained terms such as 'cohort' and 'spontaneously' could be residual source vocabulary, but they are also plain usage in the target domain.",
+    "Several paraphrase fields (problem_decomposition, next_inquiry) have no one-to-one counterpart in the five-field original; they were assessed against the original as a whole."
+  ]
+}

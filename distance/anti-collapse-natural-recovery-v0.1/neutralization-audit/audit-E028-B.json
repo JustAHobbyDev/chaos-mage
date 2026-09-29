@@ -1,0 +1,153 @@
+{
+  "case_id": "E028",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Partition the delta set into subsets, initially halves.",
+        "Retain any reduced configuration that still fails and recurse on it.",
+        "Interleave baseline and full-delta control runs throughout",
+        "If controls stop giving their expected outcomes, suspend the reduction and re-establish the test."
+      ],
+      "neutral_evidence": [
+        "Partition the change set into subsets, initially halves.",
+        "Retain any reduced configuration that still fails and repeat the reduction on it.",
+        "Interleave baseline and full-change control runs throughout to detect test-environment drift.",
+        "If either control stops producing its expected outcome, suspend reduction and re-establish the test."
+      ],
+      "rationale": "All operational steps are carried over in the same order: partitioning, subset and complement configurations, identical fixed replay with preset repeats, three-way classification, retain-and-recurse, finer granularity when nothing fails, and interleaved controls with suspension. The object acted on and the preconditions (fixed predicate, constant replayed load, baseline passes and full configuration fails, separable deployable changes) appear in the procedure and limits fields. The paraphrase drops 'only' from 'applies only that subset' and 'removes only that subset', but the subset/complement construction is unchanged in context. Stopping rules and follow-ups are relocated to other fields, not omitted."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Which reduced configurations preserve the threshold exceedance and which do not.",
+        "larger than the run-to-run spread seen in the repeated control runs",
+        "Whether interleaved controls remain stable: baseline still passing, full-delta still failing.",
+        "No such observations have been made here."
+      ],
+      "neutral_evidence": [
+        "which reduced configurations preserve the threshold exceedance; which cease to preserve it",
+        "exceeds the run-to-run spread in repeated control runs",
+        "whether interleaved controls remain stable, with the baseline passing and the full-change configuration failing",
+        "No observations have been made in this packet."
+      ],
+      "rationale": "The observable (pattern of fail, pass and unresolved outcomes under the same replayed workload plus per-configuration latency distributions) and all four informative observations are retained, including the follow-up signals at fixed load levels and in the production slice against a concurrent comparison slice. The statement that no observations have actually been made is kept. 'Cease to preserve' for 'do not' is a wording change without a change in what is observed."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Each retained member is necessary for reproduction within that set under that test.",
+        "they jointly reproduce it, which is an interaction, not that any one of them does so alone",
+        "configurations differing only in the retained changes received the same request rate and mix",
+        "It does not show that production load played no part in the observed regression"
+      ],
+      "neutral_evidence": [
+        "Each retained member is necessary for reproduction within that set under that test.",
+        "it does not establish that any member reproduces it alone",
+        "Configurations differing in the retained changes receive the same request rate and request mix",
+        "They do not establish that production load played no part"
+      ],
+      "rationale": "The conditional, test-relative sufficiency and necessity claims, the single-change versus multi-change distinction, the bounded load argument, the scope of the multi-load and production follow-ups (observed slice and period), and both negative limits (load not excluded, mechanism not identified) are all present. The paraphrase omits 'only' in 'differing only in the retained changes' and in 'appears only above some level'; the load-attribution conclusion and its conditionality are unchanged, so this is treated as wording rather than material loss. The clause about the entire production regression is drawn from the original limit field, not newly introduced."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "halves can both pass while the whole fails",
+        "Both leave a larger retained set than the true minimal one.",
+        "Other sufficient subsets may exist and are not enumerated.",
+        "remain open competing explanations",
+        "results hold for the chosen metric, margin and load levels only",
+        "nor that the whole production regression is due to the retained changes instead of being partly due to load"
+      ],
+      "neutral_evidence": [
+        "Interactions and masking can make both halves pass while the whole fails",
+        "these constraints can leave a retained set larger than the true minimal set",
+        "other sufficient subsets may exist and are not enumerated",
+        "remain unexamined competing explanations",
+        "Results are relative to the chosen metric, margin, and tested load levels.",
+        "rather than partly to load"
+      ],
+      "rationale": "All nine listed limits are represented: interactions, nondeterminism, unresolved outcomes from coupled or irreversible changes, environmental dependence, replay fidelity, strategy dependence, scope, threshold relativity and the inference limit. The precondition caveat that failure to reproduce is compatible with but does not establish load or environment dependence is also kept. No uncertainty, scope restriction or negative inference limit was found to be dropped."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop when the retained set is 1-minimal, meaning reverting any single retained change makes the regression stop reproducing.",
+        "or when the pre-agreed run budget is exhausted",
+        "Report the retained set as near-minimal in the latter two cases.",
+        "the instrument's precondition is not met and the reduction is not started"
+      ],
+      "neutral_evidence": [
+        "Stop when the retained set is 1-minimal: reverting any single retained change makes the regression stop reproducing.",
+        "or when the pre-agreed run budget is exhausted",
+        "report the retained set as near-minimal in these latter two cases",
+        "If this reproduction condition fails, reduction does not start."
+      ],
+      "rationale": "All three stopping conditions, the near-minimal reporting qualification for the latter two, the non-start condition when the regression does not reproduce at fixed load, and the suspension rule on control drift are present with the same meaning. They appear in the limits field instead of the action field, which is a relocation and not a loss."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Re-run the retained set and the baseline at more than one fixed load level",
+        "Where it is safe and approved, do a controlled revert and reintroduction",
+        "compared against a concurrent slice without the change",
+        "The case then falls back to the practitioner's ordinary stratified timeline and trace comparison."
+      ],
+      "neutral_evidence": [
+        "rerun the retained set and the baseline at more than one fixed load level",
+        "Where safe and approved, perform controlled reversion and reintroduction",
+        "comparing it with a concurrent slice without the changes",
+        "proceed to stratified timeline and trace comparison"
+      ],
+      "rationale": "Both post-stopping follow-ups are kept with their conditions (more than one fixed load level; safe and approved; limited production slice against a concurrent comparison slice). The fallback inquiry when the precondition fails is also kept, with the same trigger and the same destination activity."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "reverting any single retained change makes the regression stop reproducing",
+        "changes may only fail in combination, or may mask each other",
+        "each repeated enough times to estimate run-to-run variation"
+      ],
+      "neutral_evidence": [
+        "The retained set is assessed as a group and by the effect of reverting each individual member within that group.",
+        "combinations can fail when their parts pass, and changes can mask one another",
+        "Repeated runs provide per-configuration distributions and control variation"
+      ],
+      "rationale": "The paraphrase adds a problem_decomposition field with no direct counterpart field in the original, but each statement in it restates content already present in the original's state, operation or limit text (units, subset/complement relations, interactions and masking, coupled changes, single-member reverts, repeated runs). No new step, threshold, measurement, control or decision rule was found."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Counterpart of the 'failure-inducing configuration composed of removable parts'",
+        "the delta set",
+        "the instrument's precondition is not met"
+      ],
+      "neutral_evidence": [
+        "The regressed configuration consists of the baseline plus all enumerated changes.",
+        "Partition the change set into subsets, initially halves.",
+        "Stop when the retained set is 1-minimal"
+      ],
+      "rationale": "The explicit counterpart reference to a source construct is removed, 'delta set' and 'full-delta' become 'change set' and 'full-change', and 'the instrument' is dropped. No source discipline name or metaphor appears. Target entities (checkout deployment, baseline, staging, production slice, p95/p99) are kept. The term '1-minimal' is retained; it is a term of art but is given an in-line operational definition and is neither a discipline name nor a metaphor, so it is not counted as source imagery. This judgment is noted under uncertainty."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "the practitioner's ordinary stratified timeline and trace comparison",
+        "the warranted statement is that they jointly reproduce it"
+      ],
+      "neutral_evidence": [
+        "proceed to stratified timeline and trace comparison",
+        "supports the conclusion that they jointly reproduce the regression through an interaction"
+      ],
+      "rationale": "The paraphrase contains no claim that the procedure is ordinary, native, novel, unorthodox, a formalization, creative, a departure, or that it adds or lacks a warrant. The original's 'practitioner's ordinary' characterization of the fallback was removed. 'inferential_warrant' appears only as a field label, and statements of what the results 'support' or 'do not establish' describe inferential scope of the procedure's outputs, not an evaluation of the procedure."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The paraphrase retains the term '1-minimal'. It is defined operationally in-line and is not a discipline name or metaphor, but it is a recognizable term of art; a stricter reading of the source-imagery check could treat it as a residual source marker.",
+    "The source discipline is not named in the packet, so the no_source_imagery judgment rests on the visible counterpart phrase and the 'delta' vocabulary only.",
+    "The paraphrase drops 'only' in three places ('applies only that subset', 'differing only in the retained changes', 'appears only above some level'). These were judged to be wording changes because the surrounding context keeps the same construction and conclusion, but a stricter reading could regard the second as a slight loosening of the comparison's scope.",
+    "Content is redistributed across seven fields instead of five (preconditions and stopping rules moved into limits; follow-ups and fallback moved into next_inquiry; a problem_decomposition field added). Preservation was assessed across the whole paraphrase, not field by field.",
+    "'Which cease to preserve it' carries a mild temporal connotation absent from 'which do not'; judged not to change the observable."
+  ]
+}

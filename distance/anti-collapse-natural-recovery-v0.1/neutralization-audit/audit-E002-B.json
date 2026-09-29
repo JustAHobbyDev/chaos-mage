@@ -1,0 +1,149 @@
+{
+  "case_id": "E002",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Use per-request latency and span durations, not aggregated percentiles",
+        "Build and inspect the coverage matrix before inverting",
+        "State the regularisation explicitly",
+        "Add a known synthetic delay to a chosen cell"
+      ],
+      "neutral_evidence": [
+        "Use per-request end-to-end latency and, where available, per-span durations",
+        "build and inspect a coverage matrix whose rows are path classes",
+        "State the regularisation explicitly",
+        "introducing a known synthetic delay into a chosen unit"
+      ],
+      "rationale": "All six procedural steps (observable choice, pre-regression reference model conditional on load, coverage matrix inspection, residual computation, fitting three competing forms under varied regularisation, synthetic-delay recovery test) appear in the paraphrase's action field in the same order and with the same content. Original steps 7 and 8 are relocated to the limits and next_inquiry fields rather than dropped. 'Cell' is renamed 'unit' and 'inverting' becomes 'estimating delay increments', which are wording changes only."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The observable is the structure of the residuals across path classes, not their overall size.",
+        "residuals concentrate on paths that cross one changed cell",
+        "they shrink or vanish when compared within matched load strata",
+        "This indicates a change in load sensitivity rather than a fixed added delay."
+      ],
+      "neutral_evidence": [
+        "Examine residual structure across path classes rather than overall residual size",
+        "concentration on paths traversing one changed unit",
+        "shrinking or vanishing within matched load strata",
+        "indicate altered load sensitivity rather than fixed added delay"
+      ],
+      "rationale": "The paraphrase retains all four residual patterns (change-responsible with its five sub-features, load-responsible with its three sub-features, mixed, unstructured) and the three additional observables (synthetic delay recovery, movement of increments under regularisation, residual removal and return under intervention). The conditional framing ('If a deployed change is responsible, the expected pattern is') is kept."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "a constrained model of where added delay sits, not proof of a unique cause",
+        "or does equally well, in which case no attribution is made",
+        "the inversion supports only 'one or more of this set'",
+        "Causal contribution is bounded only after the follow-up intervention",
+        "with the remainder reported as unexplained"
+      ],
+      "neutral_evidence": [
+        "a constrained estimate of the distribution of added delay, not proof of a unique cause",
+        "If that alternative performs equally well, make no attribution",
+        "the supported statement is that one or more changes in that set account for the estimated delay",
+        "Causal contribution is bounded only after removing and reintroducing the change at held load",
+        "report the remainder as unexplained"
+      ],
+      "rationale": "The form of the supportable statement, the three-part criterion for a supported candidate, the three observations distinguishing change from load, the conditional-on-load attribution for the mixed pattern, the observational status of the estimation, and the intervention-based bound with unexplained remainder are all retained. The collinear case drops the word 'only' and appends 'account for the estimated delay', but the definite 'the supported statement' still restricts the conclusion to the set level, so the negative inference limit survives."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "A preference for a single changed cell can manufacture a single culprit",
+        "Tail latency does not decompose additively",
+        "A change deployed at the same time as a traffic shift remains confounded",
+        "it applies to the covered paths, load strata and time window only",
+        "If (c) fails, the observational data alone cannot separate the candidates"
+      ],
+      "neutral_evidence": [
+        "A regularisation preference for a single changed unit can produce a single-candidate estimate",
+        "tail latency does not decompose additively",
+        "A deployment coinciding with a traffic shift remains confounded",
+        "Conclusions apply to the covered paths, load strata and time window",
+        "If the differing-coverage prerequisite fails, observational data cannot separate candidates"
+      ],
+      "rationale": "Every listed limit category is carried over: coverage sparsity, measurement error, uncertain path/version assignment, regularisation effects, model assumption failures, non-uniqueness, system drift, latency-dependent path selection, staging/replay fidelity, rollback safety and confounding, scope restriction and withdrawal conditions, plus the three unverified prerequisites. Some restrictive words are softened ('only', 'alone' dropped; 'manufacture a single culprit' becomes 'produce a single-candidate estimate'), but each statement still reads as a limitation with the same scope, so these are treated as wording changes rather than material loss."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop iterating when residuals on held-out path classes are no larger than the pre-regression residual spread, or when further adjustment no longer reduces held-out residuals",
+        "Stop without naming a single change if the leading candidates are collinear in coverage, or if the resolution test does not recover the synthetic delay"
+      ],
+      "neutral_evidence": [
+        "Stop iterating when residuals on held-out path classes are no larger than the pre-regression residual spread, or when further adjustment no longer reduces held-out residuals",
+        "Stop without naming a single change when leading candidates have collinear coverage or the synthetic-delay test fails to recover the introduced delay"
+      ],
+      "rationale": "Both stopping conditions are present with both of their disjuncts. They are placed in the limits field rather than the action field, which is a relocation and not an omission. 'Resolution test' is renamed 'synthetic-delay test' with the same referent."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "create new paths rather than refit",
+        "a canary carrying a single change, a flag flip on a traffic subset, or bisected builds under replayed representative workload at matched load",
+        "Where safe, follow with rollback and controlled reintroduction of the indicated cell while load is held comparable"
+      ],
+      "neutral_evidence": [
+        "obtain new request paths instead of continuing to refit the existing coverage",
+        "a canary carrying a single change, a flag flip on a traffic subset, or bisected builds under replayed representative workload at matched load",
+        "Where safe, follow with rollback and controlled reintroduction of the change associated with the indicated unit while keeping load comparable"
+      ],
+      "rationale": "The follow-up trigger (coverage cannot separate candidates), the three intervention options, the 'where safe' condition and the held-load requirement are all retained. The added sentences about checking prerequisites and using the intervention to bound the accounted-for fraction restate content from the original state and inference fields."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "not aggregated percentiles, because percentiles do not add along a path",
+        "is smeared into neighbouring cells or the load term",
+        "Stop iterating when residuals on held-out path classes"
+      ],
+      "neutral_evidence": [
+        "Do not use aggregated percentiles for path summation because percentiles do not add along a path",
+        "assigns the delay partly or wholly to neighboring units or the load term",
+        "held-out path classes assess residuals beyond the classes used for fitting",
+        "units always traversed together remain jointly constrained"
+      ],
+      "rationale": "No new step, measurement, threshold, intervention or decision rule appears in the paraphrase. The identified additions are explanatory glosses of terms already in the original: 'for path summation' restates the original's stated reason, 'partly or wholly' unpacks 'smeared', and the problem_decomposition sentences on held-out classes, joint constraint and load strata spell out what the original's coverage matrix and stopping conditions already imply."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Ray (source-to-receiver path)",
+        "Travel time",
+        "Model cell",
+        "Resolution test (checkerboard counterpart)",
+        "Limits carried over from the source",
+        "where the analogy weakens"
+      ],
+      "neutral_evidence": [
+        "A segment-by-version/configuration unit receives an estimated per-traversal delay",
+        "introducing a known synthetic delay into a chosen unit",
+        "Path and version assignments may be uncertain",
+        "Apply the identical estimation procedure"
+      ],
+      "rationale": "The source-discipline vocabulary in the original (ray, source-to-receiver, travel time, model cell, anomalies, checkerboard, inversion, source locations, and references to a source and an analogy) does not appear in the paraphrase. It is replaced by target terms: request path class, latency, unit, synthetic-delay test, estimation, path and version assignment. Target entities (checkout system, builds, flags, hosts, spans, load covariates) are retained. Remaining terms such as 'residual', 'regularisation', 'smoothing' and 'coverage matrix' are general statistical vocabulary."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [
+        "The packet does not establish the prerequisites"
+      ],
+      "rationale": "The paraphrase contains no statement characterising the procedure as ordinary, native, novel, unorthodox, a formalization, creative, a departure, or as adding or lacking a warrant. The closest meta-level sentence, quoted above, reports that prerequisites are unverified, matching the original's 'Assumptions not supplied by the packet', and is not an evaluation of the procedure. The original evidence list is empty because the original also contains no such verdict language to compare against."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "Collinear-coverage inference: the original's 'supports only one or more of this set' loses the explicit 'only' and gains 'account for the estimated delay'. Judged as preserved because 'the supported statement' remains restrictive, but a stricter reading could treat this as a slight strengthening.",
+    "Scope statement: 'covered paths, load strata and time window only' appears without 'only' in the paraphrase. Judged a wording change; the restriction is still stated as the scope of conclusions.",
+    "Prerequisite failure: 'observational data alone cannot separate the candidates' appears without 'alone'. Judged minor because the paraphrase elsewhere directs to interventions for separation.",
+    "Regularisation limit: 'manufacture a single culprit' becomes 'produce a single-candidate estimate', which conveys the artefactual nature of the result less forcefully. Judged preserved because it sits within the limits list.",
+    "Step 1: 'Do not use aggregated percentiles for path summation' could be read as narrowing the original's broader instruction to use per-request data rather than percentiles as the observable. Judged a restatement of the original's own stated reason.",
+    "Field layout differs: stopping conditions and prerequisites are placed in the paraphrase's limits field, and state content is split across procedure, observables and problem_decomposition. The audit treats relocation as preservation."
+  ]
+}
