@@ -1,0 +1,302 @@
+{
+  "at": "2026-09-29T10:03:03.672314+00:00",
+  "input_commit": "df92d850b80ceffacb8ef6a0efb96839ee9c1145",
+  "stage_inputs_sha256": "75f08587419d1decf25d2ec2c37d9fab27fac9186ce1ce8192b33f9d12852141",
+  "entries": [
+    {
+      "family": "A",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T10:02:55.360712+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0ec9d-ced8-77c1-a519-892a4f184663",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          }
+        }
+      },
+      "files": {
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/events.jsonl": "c809ce3ae805e3a0eff702ee385c338b467d34cfd6e655b409295f26cf3858f2",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/prompt.txt": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/reservation.json": "848694a42883dcc9a51f6ac97aa0d64123068ebaae8ad349471a26f0a622fe61",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/response.json": "f294ff1c7eef541296aebc9c1b3920c8afe7054a194ba6fa9239bf71a205a274",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/validation.json": "53320367716417f6d2b2f336fc5382d1bc7083555173c7d5bcf2ddd38836c0c3"
+      },
+      "reservation": {
+        "run": null,
+        "stage": "audit",
+        "family": "A",
+        "started_at": "2026-09-29T10:02:39.145310+00:00",
+        "input_commit": "df92d850b80ceffacb8ef6a0efb96839ee9c1145",
+        "packet_sha256": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        "canonical_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "wire_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-anthropic-ai-claude-code/2.1.283/node_modules/.bin/claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93",
+            "B": "1bbfb0aa770f533a14a31546d35bf1820c104207606cb77858b1ccb04b8139c0"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/e-isolated-cpc179ai",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/schemas/audit-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/anti-collapse-natural-recovery-v0.1/probes/audit/A/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/e-isolated-cpc179ai",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      }
+    },
+    {
+      "family": "B",
+      "validation": {
+        "status": "valid",
+        "failure_category": null,
+        "error": null,
+        "finished_at": "2026-09-29T10:03:03.670892+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "system",
+            "subtype": "init",
+            "tools": [
+              "StructuredOutput"
+            ],
+            "mcp_servers": [],
+            "model": "claude-fable-5-1",
+            "permissionMode": "default",
+            "slash_commands": [],
+            "claude_code_version": "2.1.283",
+            "skills": [],
+            "plugins": [],
+            "per_turn_effort_active": true
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "c1f468e7-8d6d-47bf-8351-8c708ac9b4ae",
+          "requested_model": "claude-fable-5-1[1m]",
+          "returned_model_identifiers": [
+            "claude-fable-5-1"
+          ],
+          "model_metadata_provenance": [
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[0].model (runner init) "
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "events[1].message.model"
+            },
+            {
+              "value": "claude-fable-5-1",
+              "source": "result.modelUsage key"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "structured_output_calls": 1,
+            "observed_formatting_retries": 0,
+            "tool_error_count": 0,
+            "runner_turn_count": 2,
+            "observability": "Visible StructuredOutput calls/errors; hidden runner reprompts may not be exposed"
+          }
+        }
+      },
+      "files": {
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/events.jsonl": "0ea7097ef085c4aa6d515d2882cedcf103902755ddaf8615b306509af7d22d23",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/prompt.txt": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/reservation.json": "f27c1c317c2c575892e06476db90a26c44f52df0f016ca6f6e81b60c831bfa56",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/response.json": "fbf9f9da510feff281e1eb9e871ab9916124a53ade72f49b41a21ffe896b9072",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/anti-collapse-natural-recovery-v0.1/probes/audit/B/validation.json": "8c4127db43d170a3cb9cc4e1abcaa7d40599e0afedd510fc5030620119b34ada"
+      },
+      "reservation": {
+        "run": null,
+        "stage": "audit",
+        "family": "B",
+        "started_at": "2026-09-29T10:02:55.466655+00:00",
+        "input_commit": "df92d850b80ceffacb8ef6a0efb96839ee9c1145",
+        "packet_sha256": "ecdf4e5b9b38be7641d3e713be560852eb091152dc175932f7f216df3d9c4de9",
+        "canonical_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "wire_schema_sha256": "6a9d46d971855e5997d9dfdc0e71b1f2cf0719a51a4ddad28c89cc44c7eb1629",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            },
+            "B": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-anthropic-ai-claude-code/2.1.283/node_modules/.bin/claude",
+              "requested_model": "claude-fable-5-1[1m]",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "sequential frozen Experiment E schedule",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1",
+            "B": "2.1.283 (Claude Code)"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93",
+            "B": "1bbfb0aa770f533a14a31546d35bf1820c104207606cb77858b1ccb04b8139c0"
+          }
+        },
+        "cli_version": "2.1.283 (Claude Code)",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-anthropic-ai-claude-code/2.1.283/node_modules/.bin/claude",
+          "--print",
+          "--safe-mode",
+          "--setting-sources",
+          "",
+          "--settings",
+          "{\"disableAllHooks\": true, \"autoMemoryEnabled\": false, \"enabledPlugins\": {\"agents-md@builtin\": false, \"telemetry@builtin\": false}, \"disableClaudeAiConnectors\": true, \"syncClaudeAiSkills\": false, \"syncClaudeAiPlugins\": false}",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--no-session-persistence",
+          "--session-id",
+          "c1f468e7-8d6d-47bf-8351-8c708ac9b4ae",
+          "--model",
+          "claude-fable-5-1[1m]",
+          "--effort",
+          "high",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--json-schema",
+          "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"case_id\": {\n      \"type\": \"string\",\n      \"minLength\": 1,\n      \"pattern\": \"\\\\S\"\n    },\n    \"checks\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"operation_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"signal_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"inference_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"limit_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"stopping_condition_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"next_inquiry_preserved\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_added_operational_content\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_source_imagery\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        },\n        \"no_verdict_language\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"status\": {\n              \"type\": \"string\",\n              \"enum\": [\n                \"pass\",\n                \"fail\",\n                \"uncertain\"\n              ]\n            },\n            \"original_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"neutral_evidence\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"minLength\": 1,\n                \"pattern\": \"\\\\S\"\n              }\n            },\n            \"rationale\": {\n              \"type\": \"string\",\n              \"minLength\": 1,\n              \"pattern\": \"\\\\S\"\n            }\n          },\n          \"required\": [\n            \"status\",\n            \"original_evidence\",\n            \"neutral_evidence\",\n            \"rationale\"\n          ],\n          \"additionalProperties\": false\n        }\n      },\n      \"required\": [\n        \"operation_preserved\",\n        \"signal_preserved\",\n        \"inference_preserved\",\n        \"limit_preserved\",\n        \"stopping_condition_preserved\",\n        \"next_inquiry_preserved\",\n        \"no_added_operational_content\",\n        \"no_source_imagery\",\n        \"no_verdict_language\"\n      ],\n      \"additionalProperties\": false\n    },\n    \"overall\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"pass\",\n        \"exclude\"\n      ]\n    },\n    \"uncertainty\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\",\n        \"minLength\": 1,\n        \"pattern\": \"\\\\S\"\n      }\n    }\n  },\n  \"required\": [\n    \"case_id\",\n    \"checks\",\n    \"overall\",\n    \"uncertainty\"\n  ],\n  \"additionalProperties\": false\n}\n"
+        ],
+        "working_directory": "/tmp/e-isolated-i0c_9xg8",
+        "working_directory_initially_empty": true,
+        "requested_session": "c1f468e7-8d6d-47bf-8351-8c708ac9b4ae",
+        "environment_policy": "No inherited provider overrides or parent session; on-disk subscription authentication."
+      }
+    }
+  ]
+}
