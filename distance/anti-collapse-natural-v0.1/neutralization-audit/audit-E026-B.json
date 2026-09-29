@@ -1,0 +1,135 @@
+{
+  "case_id": "E026",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Make hypotheses matrix columns and evidence items rows",
+        "Compare candidate present versus absent at matched load, and vary load with the candidate held fixed",
+        "Use revision bisection if bundled changes remain indistinguishable",
+        "Reassess rankings after removing unreliable evidence, treating dependent observations as one evidence group"
+      ],
+      "neutral_evidence": [
+        "Build a table with explanations as columns and evidence items as rows",
+        "Compare candidate present versus candidate absent at matched load, and vary load with the candidate held fixed",
+        "If bundled changes remain indistinguishable, apply revision bisection",
+        "Reassess the rankings after removing unreliable evidence, treating dependent observations as a single evidence group"
+      ],
+      "rationale": "Every operational step in the original appears in the paraphrase in the same order and with the same conditions: up-front definitions, scoring each observation against each explanation as consistent, inconsistent or uninformative with rationale and reliability, separating missing evidence from contradiction, staging replay one change at a time, matched-load and fixed-candidate contrasts with repetition, bisection, conditional production rollback with predefined abort thresholds and recovery action, entry of results into the same table, sensitivity reassessment, and seeking a discriminating test for ties. The feasibility and safety qualifiers ('where feasible', 'only when safe') are retained. The final stop-attribution step is relocated to the limits field rather than dropped."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "a comparative pattern across the matrix, not a deployment timestamp alone",
+        "would contradict load variation alone within those conditions",
+        "would not by itself exclude a deployed contribution",
+        "No such observations are supplied here"
+      ],
+      "neutral_evidence": [
+        "a comparative pattern across the whole table, not a deployment timestamp alone",
+        "would contradict load variation alone, within those conditions",
+        "would not by itself exclude a contribution from a deployed change",
+        "No such observations are supplied in the packet"
+      ],
+      "rationale": "All five anticipated signal patterns are carried over with their hedges intact ('could support', 'would not by itself exclude', 'only to the extent that ... remain comparable'). The statement that no observations are supplied is kept, and the added gloss that the signals are anticipated rather than recorded restates that same point without changing meaning."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Attribute a bounded causal contribution to a particular change only if controlled contrasts isolate it",
+        "If only timing aligns, report a candidate association",
+        "report unresolved alternatives rather than naming a unique cause"
+      ],
+      "neutral_evidence": [
+        "A bounded causal contribution is attributed to a particular change only if all three hold",
+        "If only timing aligns, the result is reported as a candidate association",
+        "the result is reported as unresolved alternatives and no unique cause is named"
+      ],
+      "rationale": "The weakening or conditional elimination rule, the three conjunctive conditions for attribution, the reporting content (change identity, latency effect, tested scope, load interaction where supported), the timing-only fallback to candidate association, and the unresolved-alternatives outcome are all preserved. 'All three hold' makes explicit the conjunction already present in the original's 'only if ... , ... , and ...'. The negative inference limit that a surviving explanation is not proven true is repeated here from the original limit field, which does not change meaning."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Incomplete candidate lists, coupled deployments, shared assumptions, correlated telemetry, unreliable measurements and subjective diagnosticity judgments",
+        "Rollback may also alter caches or other state, limiting isolation of the code change",
+        "A surviving hypothesis is not proven true",
+        "need not explain the entire production regression or generalize beyond tested conditions"
+      ],
+      "neutral_evidence": [
+        "incomplete candidate lists, deployments coupled together, shared assumptions, correlated telemetry, unreliable measurements, and subjective judgments of how discriminating an item is",
+        "Rollback may also alter caches or other state, which limits isolation of the code change",
+        "A surviving explanation is not proven true",
+        "need not account for the entire production regression and need not generalize beyond the tested conditions"
+      ],
+      "rationale": "Each distortion source, the comparability assumption for matched-load comparisons, the staging representativeness dependency, the rollback state confound, the non-proof of surviving explanations, the scope limit on tested contributions, and the instruction to narrow the claim and retain affected alternatives are all present. No uncertainty, conditionality or negative inference limit is omitted."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "stop the experiment and restore the safer state if a threshold is crossed",
+        "Stop attribution at an unresolved set if no safe, feasible discriminating test remains"
+      ],
+      "neutral_evidence": [
+        "a production experiment is stopped and the safer state restored if an abort threshold is crossed",
+        "attribution stops at an unresolved set of explanations if no safe, feasible discriminating test remains"
+      ],
+      "rationale": "Both stopping conditions in the original, the experiment abort on threshold breach and the halt of attribution at an unresolved set, are stated in the paraphrase with the same triggers and the same resulting action. The abort rule appears in both the action and limits fields; the attribution stop appears in the limits field and in the procedure summary."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If alternatives remain tied, seek a trace or controlled comparison on which their predictions differ",
+        "If staging leaves material ambiguity, consider production rollback and controlled reintroduction only when safe",
+        "If these limitations undermine discrimination, narrow the claim and retain the affected alternatives"
+      ],
+      "neutral_evidence": [
+        "if alternatives remain tied after reassessment, seek a trace or a controlled comparison on which the tied explanations predict different outcomes",
+        "if staging leaves material ambiguity, consider production rollback and controlled reintroduction under the stated safety conditions",
+        "No further follow-up beyond these steps is specified"
+      ],
+      "rationale": "The original has no dedicated follow-up field; its follow-ups are conditional steps embedded in the operation and limit text. The paraphrase collects exactly those steps with their conditions and explicitly states that nothing further is specified, so no follow-up is lost or invented. 'After reassessment' reflects the original's ordering, where the tie clause follows the reassessment sentence."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "An effect confined to high load could support a change–load interaction",
+        "with a rationale and reliability assessment",
+        "No such observations are supplied here"
+      ],
+      "neutral_evidence": [
+        "so that change effects, load effects and their interaction can be separated",
+        "with a rationale and reliability rating",
+        "No observations are supplied in the packet, so no attribution is made here"
+      ],
+      "rationale": "The paraphrase adds a problem_decomposition field and a summary sentence in the procedure field, but both reorganize steps, units and relationships already in the original rather than introducing new actions, thresholds, tools or measurements. The purpose clause about separating change, load and interaction effects states what the original's two contrasts and signal patterns already imply. 'Reliability rating' is a wording variant of 'reliability assessment' with no scale specified. The closing remark that no attribution is made follows from the original's statement that no observations are supplied and is not an operational step."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "evidence matrix",
+        "Make hypotheses matrix columns and evidence items rows",
+        "varying diagnosticity judgments"
+      ],
+      "neutral_evidence": [
+        "a table that cross-references evidence against those explanations",
+        "Build a table with explanations as columns and evidence items as rows",
+        "varying the judgments of how discriminating each item is"
+      ],
+      "rationale": "The paraphrase names no source discipline and uses no metaphor. The original's framework-flavoured vocabulary (hypotheses, matrix, diagnosticity) is replaced with plain descriptions (explanations, table, how discriminating an item is). Target entities are retained: checkout workloads, deployed changes, revisions, configuration, traces, resource counters, staging, rollback. 'Revision bisection' is a target-domain term and is kept."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Evidence lists are empty because the feature is absent from both texts. The paraphrase contains no statement characterizing the procedure as ordinary, native, novel, unorthodox, creative, a formalization, a departure, or as adding or lacking a warrant. It describes only what is done, what is observed, and what is concluded under which conditions. The field label 'inferential_warrant' is a structural heading, not an evaluative claim about the procedure."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The paraphrase adds 'No observations are supplied in the packet, so no attribution is made here'. The first half is in the original; the 'so no attribution is made' conclusion is not stated there. I judged it a direct consequence rather than added content, but a stricter reading could treat it as an addition.",
+    "Step 8 reads 'consider production rollback and controlled reintroduction, and do so only when safe'. 'Do so' could refer to considering or to performing the rollback. The original's 'consider ... only when safe' has a similar ambiguity, so I treated this as preserved.",
+    "'Reliability rating' could imply a graded scale where the original says 'reliability assessment'. No scale is specified in either text, so I treated it as a wording change.",
+    "The problem_decomposition field has no counterpart field in the original. I assessed it as a restructuring of original content; its purpose clause ('so that change effects, load effects and their interaction can be separated') is implied rather than stated in the original.",
+    "Whether 'hypotheses', 'matrix' and 'diagnosticity' count as source-discipline imagery is not established by the packet, which does not name the source discipline. The check passes either way because the paraphrase contains none of these terms."
+  ]
+}

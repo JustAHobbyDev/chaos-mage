@@ -1,0 +1,119 @@
+{
+  "case_id": "E023",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Construct a hypothesis table stating what each candidate predicts and what would contradict it.",
+        "repeating runs with counterbalanced order and controlled warm-up",
+        "bisect revisions or selectively revert changes where technically valid"
+      ],
+      "neutral_evidence": [
+        "Build a table listing, for each candidate, what it predicts and what observation would contradict it.",
+        "repeating runs with counterbalanced order and controlled warm-up",
+        "bisect revisions or selectively revert changes where technically valid"
+      ],
+      "rationale": "The paraphrase preserves candidate construction, evidence checks, stratification, sequential updating, matched comparisons across load levels, change isolation, predefined test parameters, and conditional rollback/reintroduction."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "A difference appearing only at higher load would support a change-by-load interaction.",
+        "resource counters could support or contradict the predicted bottleneck.",
+        "Deployment timing alone, an unmatched rollback during falling demand, or noisy comparisons would leave explanations insufficiently separated."
+      ],
+      "neutral_evidence": [
+        "A difference that appears at higher load but not at lower load would support a change-by-load interaction.",
+        "Resource counters could support or contradict the predicted bottleneck.",
+        "Deployment timing by itself, a rollback performed without matching during falling demand, or noisy comparisons would leave the explanations insufficiently separated."
+      ],
+      "rationale": "Version, load, interaction, mechanism, and reversal signals retain their conditional meanings. Non-discriminating observations remain explicitly insufficient."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Eliminate a candidate only within conditions where the test could reliably detect its predicted effect; otherwise retain it.",
+        "supports that change's causal contribution for the tested workload, configuration and period.",
+        "A comparison between bundled releases supports release-level attribution until individual changes are isolated."
+      ],
+      "neutral_evidence": [
+        "A candidate is eliminated solely within the conditions where the test could reliably detect its predicted effect; outside those conditions it is retained.",
+        "supports that change's causal contribution for the tested workload, configuration and period.",
+        "A comparison between bundled releases supports attribution at the release level until individual changes are isolated."
+      ],
+      "rationale": "The paraphrase preserves sensitivity-dependent elimination, bounded causal contribution, load-versus-interaction inference, release-level attribution, unresolved alternatives, and the prohibition on claiming a unique universal cause."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The candidate set may omit the actual mechanism.",
+        "Correlated traces and resource counters are not independent confirmations.",
+        "Null results remain limited by test sensitivity, sample size and workload coverage; apparent positive results by test specificity and uncontrolled differences.",
+        "Neither access to suitable experiments nor fidelity between staging and production is established by the packet."
+      ],
+      "neutral_evidence": [
+        "The candidate set may omit the actual mechanism.",
+        "Correlated traces and resource counters are not independent confirmations.",
+        "Null results are limited by test sensitivity, sample size and workload coverage; apparent positive results are limited by test specificity and uncontrolled differences.",
+        "Neither access to suitable experiments nor fidelity between staging and production is established by the packet."
+      ],
+      "rationale": "All substantive uncertainties and negative inference limits remain, including telemetry and replay weaknesses, coupled changes, rollback confounding, conditional availability, and measures against biased candidate selection."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Stop a trial if safety thresholds are crossed.",
+        "Stop narrowing when a reproducible discriminating contrast supports a bounded attribution and tested alternatives cannot explain that contrast alone, or when the trial budget or evidence access is exhausted."
+      ],
+      "neutral_evidence": [
+        "stop an individual trial if safety thresholds are crossed.",
+        "Stop narrowing when a reproducible discriminating contrast supports a bounded attribution and the tested alternatives cannot explain that contrast alone, or when the trial budget or evidence access is exhausted."
+      ],
+      "rationale": "The complete stopping conditions are preserved in limits. Although the procedure overview abbreviates the attribution condition, the explicit stopping rule retains the requirement concerning tested alternatives."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "If inconclusive, retain the unresolved candidates and specify the next discriminating trace, workload comparison or revision test; do not force a winner."
+      ],
+      "neutral_evidence": [
+        "If the outcome is inconclusive, retain the unresolved candidates and specify the next discriminating trace, workload comparison or revision test, without selecting a candidate as the answer."
+      ],
+      "rationale": "The same inconclusive-outcome trigger, unresolved candidates, and three possible follow-up inquiries remain. Conditional revision isolation and repetition are also preserved."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Version/configuration history, comparable latency measurements, traces, resource counters and representative replay capability are evidence requirements whose availability and reliability must be checked.",
+        "Where authorized and safe, use rollback and controlled reintroduction",
+        "otherwise retain staging evidence and its scope."
+      ],
+      "neutral_evidence": [
+        "evidence requirements whose availability and reliability must be checked before they are relied on.",
+        "where authorized and safe, check reversal and reintroduction in production",
+        "otherwise retain the staging evidence and state its scope."
+      ],
+      "rationale": "The additional organization and decomposition restate existing actions and relationships. Checking evidence before reliance and making the production context explicit clarify the original requirements without introducing a new test, threshold, or inference."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "anchoring, premature closure, base-rate neglect and confirmation bias",
+        "predicted bottleneck"
+      ],
+      "neutral_evidence": [
+        "over-weighting of an early-favored explanation, closing the inquiry before alternatives are tested, disregarding prior frequencies of causes, and selective attention to supporting evidence",
+        "predicted bottleneck"
+      ],
+      "rationale": "The paraphrase describes the bias-related behaviors directly and contains no source discipline names or source metaphors. Retained terms such as bottleneck refer to the target system's resource behavior."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text evaluates the procedure as ordinary, novel, creative, unorthodox, a formalization, a departure, or as adding or lacking a new warrant. The inferential_warrant field describes evidential implications without making such a verdict."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": []
+}

@@ -1,0 +1,148 @@
+{
+  "case_id": "E022",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "large enough to be visible above baseline day-to-day variation, small enough to stay inside service-level targets and staff capacity",
+        "Apply the change at a recorded time, all at once, and hold it. Change nothing else deliberately during the run.",
+        "In parallel, keep a disturbance log: staffing, incoming demand, case mix, calendar events, and any other process change."
+      ],
+      "neutral_evidence": [
+        "large enough for its response to be distinguishable from pre-change day-to-day variation and small enough to remain within service-level targets and staff capacity",
+        "Apply the entire change at the recorded time and hold it constant, making no other deliberate changes during the run.",
+        "In parallel, log staffing, incoming demand, case mix, calendar events and any other process changes."
+      ],
+      "rationale": "All five operational steps carry over: one input at one handoff, change amount fixed in advance with both bounds, pre-set sampling interval, band, consecutive-interval count, minimum window (several multiples of the longest cycle, including batch or meeting cycles) and abort thresholds, abrupt held change with no other deliberate changes, per-interval recording from the changed handoff downstream plus end-to-end turnaround, and the parallel log. The two input options and the pre-change recording requirement are also retained. Differences are wording only."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Dead time: the interval between the step and the first change distinguishable from baseline variation at each stage, and the order in which stages begin to respond.",
+        "Non-settling: a queue that ramps without levelling, or an output that stops responding once a ceiling is reached.",
+        "Absence of response: no distinguishable change at a stage or in end-to-end turnaround."
+      ],
+      "neutral_evidence": [
+        "For each stage, record the interval between the input change and the first output change distinguishable from pre-change variation, and the order in which stages begin responding.",
+        "Record queues that continue growing without stabilizing, outputs that stop changing after reaching a maximum, and any absence of distinguishable change at a stage or in end-to-end turnaround."
+      ],
+      "rationale": "All eight temporal features have a counterpart: delay before first response and response order, speed of approach to the new level, temporary excess with height and timing, repeated build-up and drain compared with known cycles, time to stay within the band, net pre-change versus stable difference, non-stabilizing or ceiling-limited outputs, and absence of response. 'Throughput' becomes 'completion rate', which is a wording change. The overshoot example is reworded as 'an increased upstream release followed by a downstream queue increase', which keeps it illustrative."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "as a constraint on candidate explanations rather than a unique identification",
+        "A queue that ramps and does not settle after an intake step suggests the stage is capacity-limited at the tested load",
+        "Downstream overshoot after an upstream change suggests the change relocates delay rather than removing it.",
+        "Every conclusion is conditional on the tested step size, direction, case class and the demand and staffing level in force."
+      ],
+      "neutral_evidence": [
+        "Treat observations as constraints on candidate explanations, without identifying a unique explanation.",
+        "Continued queue growth without stabilization after an intake increase suggests that the stage is capacity-limited at the tested load and accumulates delay.",
+        "suggests that delay moves to another stage rather than being removed",
+        "Every conclusion remains conditional on the tested change amount, direction, request class, demand and staffing."
+      ],
+      "rationale": "Each observation-to-explanation link is retained with its hedged 'suggests' force: fixed waiting versus capacity shortage, capacity limitation at the tested load, backlog absorption, batching versus rework or escalation, relocation of delay, effect estimate under tested conditions, and binding delay elsewhere. The two answers to the target question keep all four candidate-remedy criteria. The non-uniqueness qualifier and the conditionality statement are both kept. One small narrowing exists: 'intake step' becomes 'intake increase'. This is judged non-material because a ramping queue is the response to increased intake, but it is recorded under uncertainty."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Small steps may be indistinguishable from baseline variation.",
+        "Timestamps may record logging rather than actual movement.",
+        "A single run is one realization.",
+        "conclusions may not generalize beyond the tested perturbation, and causal attribution of a remedy requires repetition under comparable demand and staffing"
+      ],
+      "neutral_evidence": [
+        "small changes may be indistinguishable from pre-change variation",
+        "stage timestamps exist and reflect actual work movement rather than logging time",
+        "A single run provides one observed instance, and conclusions may not generalize beyond the tested change.",
+        "Causal attribution of a remedy requires repetition under comparable demand and staffing."
+      ],
+      "rationale": "All eight general limits are present: noise, unknown initial state, saturation, behavioral nonlinearity, disturbances, interacting inputs, insufficient observation time and operating-point dependence. The target-specific limits on infeasible abrupt change, organizational change during the run, capped change size and the single run are also present, as are the generalization limit and the repetition requirement for causal attribution. The timestamp limit is not restated as a separate limit sentence; it appears only as an assumption to verify. That still flags the possibility that timestamps reflect logging time, so the content is judged retained. The causal-attribution requirement sits in the next_inquiry field rather than limits, which is relocation and not loss."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Settled: outputs stay inside the settling band for the required consecutive intervals and the minimum window has elapsed.",
+        "Abort: a service-level threshold is breached or a queue keeps growing past its limit.",
+        "keep the record as evidence of saturation or non-settling at that operating point",
+        "Contaminated: a major logged disturbance overlaps the transient. Mark the run and repeat it under comparable demand and staffing."
+      ],
+      "neutral_evidence": [
+        "End observation as stabilized when outputs have remained within the preset band for the required consecutive intervals and the minimum observation window has elapsed.",
+        "Abort if a service-level threshold is breached or a queue continues growing beyond its limit",
+        "retain the record as evidence of a reached capacity or response limit, or failure to stabilize, under the tested conditions",
+        "Mark a run as affected by a disturbance when a major logged disturbance overlaps the response period, and repeat under comparable demand and staffing."
+      ],
+      "rationale": "All three stopping conditions are retained with their joint criteria and consequences. The stabilized condition keeps both the band/consecutive-interval requirement and the minimum window. The abort condition keeps both triggers, the reversal and the retention of the record as evidence. The disturbance-affected condition keeps the marking and the repeat under comparable conditions. They appear in the limits field rather than the action field, which does not change their content."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Reverse the step and record the return trajectory, to check symmetry.",
+        "Repeat with a different step size, and at a different demand or staffing level.",
+        "Repeat at other handoffs, one input at a time.",
+        "Set the results beside the ordinary timestamp comparisons, exception-case reviews and interviews."
+      ],
+      "neutral_evidence": [
+        "Reverse the change and record the return over time to check whether responses in opposite directions are symmetric.",
+        "Repeat with a different change amount and at a different demand or staffing level.",
+        "Repeat at other handoffs, changing one input at a time.",
+        "Compare the results with timestamp comparisons, exception-case reviews and interviews."
+      ],
+      "rationale": "All four follow-ups are present with the same scope. The field also includes the repeat after a disturbance-affected run and the causal-attribution requirement; both come from the original's stopping conditions and limits, so nothing new is introduced."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "the real stages and owners come from the workflow map, not from assumption",
+        "existing backlog, in-flight items and unlogged informal queues",
+        "Repeat with a different step size, and at a different demand or staffing level."
+      ],
+      "neutral_evidence": [
+        "Use one workflow as the overall unit, with mapped stages and accountable owners as its component units.",
+        "Account for requests already queued or in flight at the start, informal queues that may be unrecorded, and request-class differences.",
+        "Compare runs across change amounts, directions, handoffs, demand levels and staffing levels while retaining the conditions specific to each run."
+      ],
+      "rationale": "The paraphrase adds a problem_decomposition field with no direct counterpart field, but each statement in it traces to original content: the workflow map and accountable owners, the (a)/(b) input distinction, downstream per-stage tracking, initial-state and informal-queue concerns, shared approvers and reactive staffing, and the repeat follow-ups. No new measurement, threshold, step or decision rule was found. 'Account for' and 'Compare runs' restate a limit and the follow-ups in directive form without specifying any new procedure. This reframing is judged non-material and is recorded under uncertainty."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Dead time",
+        "Overshoot and peak",
+        "Steady-state change",
+        "Saturation",
+        "Source limits, with their target counterparts"
+      ],
+      "neutral_evidence": [
+        "Record whether queue length or turnaround temporarily exceeds its eventual level",
+        "Measure the time until an output remains within the preset stability band.",
+        "Calculate differences between pre-change and stable levels",
+        "major logged disturbance"
+      ],
+      "rationale": "The source vocabulary (step, dead time, rise, overshoot, settling, steady-state, saturation, transient, operating point, trajectory, realization) is replaced by plain behavioral descriptions, and the 'Source limits' framing is removed. No discipline is named. Target entities are kept: approval workflow, handoffs, approvers, queues, tickets and turnaround. Remaining words such as 'input', 'output', 'sampling interval' and 'disturbance' are general-purpose terms and are not treated as source imagery, though that reading is recorded under uncertainty."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "Set the results beside the ordinary timestamp comparisons, exception-case reviews and interviews.",
+        "This adds response-to-designed-change evidence to the associations the ordinary timestamp and queue comparisons provide; it does not replace them."
+      ],
+      "neutral_evidence": [
+        "Compare the results with timestamp comparisons, exception-case reviews and interviews.",
+        "Interpret responses to the designed changes alongside the associations from timestamp and queue comparisons; those comparisons remain part of the assessment."
+      ],
+      "rationale": "The paraphrase drops the original's 'ordinary' and its 'adds ... evidence' wording. It keeps the behavioral content that designed-change responses are read together with the comparisons and do not replace them. No claim was found that the procedure is ordinary, native, novel, unorthodox, a formalization, creative, a departure, or that it adds or lacks a warrant."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The inference about a non-stabilizing queue is narrowed from 'intake step' (direction unspecified) to 'intake increase'. It is judged non-material, but a stricter reading could count it as a small scope change.",
+    "The original's target-specific limit 'Timestamps may record logging rather than actual movement' has no separate limit sentence in the paraphrase and appears only as an assumption to verify. It is judged retained in substance, but a stricter reading could treat the merge as partial loss of a residual limit.",
+    "The problem_decomposition field has no counterpart field in the original and uses directive phrasing ('Account for', 'Compare runs'). Its content is traceable to the original, but whether the directive framing counts as added operational content is a judgment call.",
+    "Generic terms such as 'input', 'output', 'sampling interval' and 'disturbance' remain. They are treated as ordinary language, but they overlap with the vocabulary of the apparent source discipline.",
+    "The original's 'adds response-to-designed-change evidence ... it does not replace them' is reworded as comparisons that 'remain part of the assessment'. The non-replacement content is kept, but the explicit statement that the procedure contributes a distinct kind of evidence is no longer stated, consistent with the verdict-language constraint.",
+    "The source discipline is not named in the packet, so the imagery check rests on inferring the source vocabulary from the original's terms."
+  ]
+}

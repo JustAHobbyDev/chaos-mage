@@ -1,0 +1,145 @@
+{
+  "case_id": "E018",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Dechallenge: withdraw one component, holding the rest fixed",
+        "Rechallenge: restore that component and observe again",
+        "Use fresh participants or cohorts for each phase",
+        "withdraw each singly, withdraw both, restore each singly, restore both",
+        "patch only the navigation and record the patch as a concurrent change"
+      ],
+      "neutral_evidence": [
+        "Withdraw one component while holding the rest fixed",
+        "Restore the component and observe again",
+        "Use fresh participants or cohorts for each phase because prior onboarding exposure cannot be undone",
+        "withdraw each singly, withdraw both, restore each singly, and restore both",
+        "change navigation alone to make the flow traversable and record that patch as a concurrent change"
+      ],
+      "rationale": "All six original steps appear in the paraphrase in the same order and with the same content: baseline recording, single-component withdrawal with the same list of held-fixed items, restoration, repeat cycle where feasible, fresh participants per phase, the pairwise cycle, and the traversability check with navigation-only patch recorded as a concurrent change. The acted-on object (full redesign as prototype or staged variant with every component present) and the three assumptions are kept in the procedure field. Differences are wording only."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "completion returns to about the baseline level after restoration, each change timed to the perturbation",
+        "withdrawing A alone or B alone changes nothing but withdrawing both produces a drop (substitutes)",
+        "restoring A does not restore completion unless B is also present (dependency)",
+        "Non-signal: no change on withdrawal, a drop that does not reverse on restoration, or a change that does not repeat on a second cycle"
+      ],
+      "neutral_evidence": [
+        "completion returning to approximately its initial full-design level after restoration",
+        "withdrawing A alone or B alone produces no change, but withdrawing both produces a drop",
+        "restoring A does not restore completion unless B is also present",
+        "Specified non-signals are no change on withdrawal, a drop that does not reverse on restoration, or a change that does not repeat during a second cycle"
+      ],
+      "rationale": "The single-component signal (fall or concentrated failures after withdrawal, return to roughly baseline after restoration, timing tied to each change), all three interaction patterns and all three non-signals are retained. The parenthetical labels are dropped from the observables field, but substitution and dependency are named in problem_decomposition, and the non-additive pattern is described there without its label. 'About the baseline level' becomes 'approximately its initial full-design level', which keeps the approximation."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "increases support for a causal contribution by that component to activation, for the tested configuration, user segment and task",
+        "A drop without recovery on restoration gives weaker support and points to a concurrent or persistent cause",
+        "No change on withdrawal warrants only 'not shown to be needed in this configuration', since another component may be compensating",
+        "with ranking limited to components whose response did not vary across the tested combinations"
+      ],
+      "neutral_evidence": [
+        "increases support for the component's causal contribution to activation in the tested configuration, user segment and task",
+        "A drop without recovery after restoration provides weaker support and points to a concurrent or persistent cause",
+        "No change after withdrawal supports the statement that the component has not been shown to be needed in this configuration, because another component may compensate",
+        "Limit ranking to components whose responses did not vary across tested combinations"
+      ],
+      "rationale": "The graded, conditional inference is kept: 'increases support' rather than proof, scope limited to tested configuration, segment and task, necessity stated conditionally on the other components present, weaker support for a non-reversing drop, and the conclusion that a one-dimensional ranking would misstate contributions, with conditional-set reporting and restricted ranking. The word 'only' is dropped from the no-change inference, but the retained claim is itself the restricted one ('has not been shown to be needed in this configuration') and the compensation reason is kept, so the negative inference limit survives."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "so a temporal match may be coincidental",
+        "fresh cohorts introduce between-group differences",
+        "untested subsets and higher-order interactions remain unknown, so no claim of a globally minimal set follows",
+        "Small usability samples and prototype completion do not establish population-wide or live-product necessity",
+        "Temporal response alone does not exclude alternative causes"
+      ],
+      "neutral_evidence": [
+        "so temporal alignment may be coincidental",
+        "fresh cohorts introduce between-group differences",
+        "untested subsets and higher-order interactions remain unknown, and no globally minimal set follows",
+        "Small usability samples and prototype completion do not establish population-wide or live-product necessity",
+        "Temporal response alone does not exclude alternative causes"
+      ],
+      "rationale": "Every original limit appears: unperturbed variation in activation, concurrent changes including navigation patches, delayed or persistent effects, the non-clean return of reused users and between-group differences from fresh cohorts, unassessable components, flow disruption beyond the component's absence, restriction to tested combinations, no globally minimal set, sample and prototype generalisation limits, and temporal response not excluding alternatives. The untestable-component listing and the no-visible-drop condition from the original state field are also carried into the limits field."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "set a floor for activation completion and a list of user harms (for example lost data or an unrecoverable account state) before starting",
+        "end a live withdrawal and restore the component as soon as either is reached",
+        "Perform withdrawal of high-risk components in prototype sessions only, or not at all",
+        "there is no occurring effect to withdraw against and the procedure does not start"
+      ],
+      "neutral_evidence": [
+        "Before starting, set an activation-completion floor and a list of user harms, such as lost data or an unrecoverable account state",
+        "End a live withdrawal and restore the component as soon as either the floor or a listed harm is reached",
+        "Withdraw high-risk components in prototype sessions only, or do not withdraw them",
+        "there is no occurring outcome against which to assess withdrawal, and the procedure does not start"
+      ],
+      "rationale": "The pre-set completion floor and harm list, the immediate end-and-restore rule, the high-risk restriction to prototype sessions or no withdrawal, and the do-not-start condition are all present with the same triggers and timing. They sit in the limits field rather than the action field, which is a relocation and not a change in content."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "where withdrawal produces no change, do not drop the component on that basis; retest it with its suspected partner component also withdrawn"
+      ],
+      "neutral_evidence": [
+        "When withdrawal produces no change, do not remove the component from the redesign on that basis",
+        "Retest it with its suspected partner component also withdrawn"
+      ],
+      "rationale": "The follow-up has the same trigger (no change on withdrawal), the same prohibition and the same retest with the suspected partner also withdrawn. 'Drop the component' is rendered as 'remove the component from the redesign', which makes the object explicit without changing the instruction."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "Each separable component (for example a step, prompt, default or guidance element) is a suspected factor",
+        "For components linked by the dependency map or by observed errors, repeat the cycle for the pair",
+        "since another component may be compensating"
+      ],
+      "neutral_evidence": [
+        "Withdraw and restore separable components, and selected pairs, to examine their contributions and interactions",
+        "The dependency map and observed errors identify component pairs for joint testing",
+        "substitution, where either component can compensate for the other's absence"
+      ],
+      "rationale": "The paraphrase adds a problem_decomposition field and a summary sentence in the procedure field, but both restate material already in the original: the component decomposition, pair selection by dependency map or observed errors, and the three interaction patterns. The gloss on substitution matches the original's compensation reasoning. No new steps, thresholds, measurements, controls or decision rules were found."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Dechallenge: withdraw one component",
+        "Rechallenge: restore that component",
+        "same-user rechallenge is not a clean return",
+        "each change timed to the perturbation"
+      ],
+      "neutral_evidence": [
+        "Withdraw one component while holding the rest fixed",
+        "Restore the component and observe again",
+        "Reusing users therefore does not return them to their initial state",
+        "with each change timed to the corresponding withdrawal or restoration"
+      ],
+      "rationale": "The source-discipline terms 'Dechallenge' and 'Rechallenge' are replaced by plain descriptions of withdrawing and restoring, and 'perturbation' is replaced by the specific actions. No source discipline is named and no metaphor is carried over. Target entities (onboarding redesign, components, activation completion, users, cohorts) are kept. Retained words such as 'withdraw', 'suspected factor' and 'concurrent change' are generic and also appear in the original's target-level description."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Evidence lists are empty because the feature is absent. The paraphrase contains no statement that the procedure is ordinary, native, novel, unorthodox, a formalization, creative, a departure, or that it adds or lacks a warrant. It describes actions, observations, inferences and limits only. Phrases such as 'provides weaker support' grade the evidence within the procedure, mirroring the original, and are not judgments about the procedure."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The paraphrase drops 'only' from 'warrants only not shown to be needed in this configuration'. Judged as wording because the retained claim is itself the restricted one and the compensation reason is kept, but a stricter reading could treat this as slight weakening of a negative inference limit.",
+    "The label 'non-additive contribution' is not reproduced; the pattern is described without it. The labels for substitution and dependency move from the observables field to problem_decomposition. Judged as preserved content.",
+    "The observables field says 'the change caused by withdrawing A' where the original says 'the change from withdrawing A'. This is marginally more causal phrasing inside a signal description; judged immaterial because the inference field keeps the 'increases support' hedging.",
+    "'Do not drop the component' is rendered as 'do not remove the component from the redesign'. The original could also be read as dropping it from further consideration; the paraphrase picks one reading.",
+    "'Only tested combinations are informative' becomes 'Findings inform tested combinations', which loses the explicit 'only'; the exclusivity is carried by the following clause that untested subsets and higher-order interactions remain unknown.",
+    "Stopping conditions, the do-not-start condition and the untestable-component listing are relocated into the limits field. Assessed as preserved because the audit concerns semantic content, not field placement."
+  ]
+}

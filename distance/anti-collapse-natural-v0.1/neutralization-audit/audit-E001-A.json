@@ -1,0 +1,118 @@
+{
+  "case_id": "E001",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Inspect a reference near the middle of the remaining ordered interval using a fixed rule for feature presence.",
+        "Discard the incompatible half only under the single-transition assumption."
+      ],
+      "neutral_evidence": [
+        "Inspect a reference near the middle of the remaining ordered interval, applying a fixed rule for deciding feature presence.",
+        "doing so solely under the single-transition assumption"
+      ],
+      "rationale": "The reference selection, endpoint updates, conditional elimination, handling of unusable references and comparable-document inspection are preserved."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Each usable reference yields an absent or present classification, together with its date constraint and the supporting visible evidence.",
+        "Undated documents yield feature classifications, not dates directly."
+      ],
+      "neutral_evidence": [
+        "For each usable reference: a classification of absent or present, its date constraint with stated precision, and the visible evidence supporting the classification.",
+        "the inspection does not yield a date directly"
+      ],
+      "rationale": "The reference signals and undated-document classifications retain their meanings. Uncertainty and contradiction remain distinct from forced binary classifications."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "With reliable endpoints and a single persistent transition",
+        "If independent evidence supports contemporaneous, exclusive use of the two feature states",
+        "Neither group is thereby confined to the transition interval."
+      ],
+      "neutral_evidence": [
+        "If the endpoints are reliable and the feature underwent a single persistent transition",
+        "conditional on independent support for contemporaneous, exclusive use of the feature states",
+        "Neither group is thereby confined to the transition interval."
+      ],
+      "rationale": "The conditional reference boundary, between-group ordering, correctly directed one-sided bounds and compatible combination with independent clues are preserved, including open intervals and negative inference limits."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "neither that assumption nor the existence of suitable references is established by the packet",
+        "Sparse midpoint tests cannot establish persistence.",
+        "A feature boundary can correlate with a historical change without proving its cause."
+      ],
+      "neutral_evidence": [
+        "the packet establishes neither this assumption nor the existence of suitable references",
+        "Inspecting a sparse set of intermediate references cannot establish that the feature persisted after its change.",
+        "A feature boundary can correlate with a historical change without proving the cause of that change."
+      ],
+      "rationale": "The stated uncertainties, invalidating conditions, writing-date requirements, comparability restrictions and limits on historical interpretation are retained."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Repeat until the opposite classifications belong to adjacent references",
+        "stop narrowing when no usable intermediate remains",
+        "suspend the affected elimination, restore excluded possibilities",
+        "If a reliable ordered series and opposite endpoints cannot be established, do not perform bisection"
+      ],
+      "neutral_evidence": [
+        "stop narrowing when the opposite classifications belong to adjacent references",
+        "stop narrowing when no usable intermediate reference remains",
+        "suspend the affected elimination and restore the possibilities that had been excluded",
+        "if a reliable ordered series and opposite endpoints cannot be established, do not carry out the interval-halving procedure"
+      ],
+      "rationale": "Adjacency, exhaustion, contradiction-triggered suspension and prerequisites for beginning elimination are preserved, together with unresolved alternatives and conditional reporting."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "try another intermediate reference",
+        "check the conflicting classifications, dates and comparability",
+        "Seek independent anchors or additional comparable documents"
+      ],
+      "neutral_evidence": [
+        "inspect another intermediate reference",
+        "check the conflicting classifications, the dates and the comparability of the items involved",
+        "Seek independent dating anchors or additional comparable documents."
+      ],
+      "rationale": "The specified follow-up inquiries and their triggers remain intact."
+    },
+    "no_added_operational_content": {
+      "status": "fail",
+      "original_evidence": [
+        "Each usable reference yields an absent or present classification, together with its date constraint and the supporting visible evidence.",
+        "Undated documents yield feature classifications, not dates directly."
+      ],
+      "neutral_evidence": [
+        "Record for each inspected item its classification, date constraint and the visible evidence supporting the classification."
+      ],
+      "rationale": "Action 7 expands the three-part recording requirement from usable references to every inspected item, including undated documents and unusable references. The original provides conditional bounds for undated letters but does not require this record for every inspected item. This adds operational scope even though the observables section preserves the original distinction."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "do not perform bisection"
+      ],
+      "neutral_evidence": [
+        "do not carry out the interval-halving procedure"
+      ],
+      "rationale": "The paraphrase uses a literal description of interval reduction without source-discipline names or metaphors. Correspondence, letterhead, dates and other target entities remain."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [],
+      "neutral_evidence": [],
+      "rationale": "Neither text makes the prohibited evaluative claims. The inferential_warrant field describes conditional inference rather than claiming a new or absent warrant."
+    }
+  },
+  "overall": "exclude",
+  "uncertainty": [
+    "Action 7 does not specify how unavailable classifications or date constraints should be recorded. Its universal recording scope is nevertheless broader than the original."
+  ]
+}

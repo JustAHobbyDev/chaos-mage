@@ -1,0 +1,147 @@
+{
+  "case_id": "E010",
+  "checks": {
+    "operation_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Check that the timestamps mean what they are taken to mean, which tests candidate (j) first.",
+        "Build the differential before looking at discriminating evidence.",
+        "Gather evidence in order of discriminating power and cost.",
+        "Keep (h) and (i) on the list until specifically contradicted, even if ranked low"
+      ],
+      "neutral_evidence": [
+        "check whether timestamps represent the events they are assumed to represent, testing measurement artifact first",
+        "Before examining evidence that distinguishes among mechanisms, list candidates for each handoff",
+        "Gather evidence according to its ability to distinguish candidates and its cost",
+        "Retain single-approver dependence and required holds or sequential review until specifically contradicted, even at low rank"
+      ],
+      "rationale": "All eight original steps are carried over. Steps 1-7 appear in the action field in the same order with the same content: scoping, candidate listing with rough priors and provenance, pre-stated predictions with all nine discriminating checks, evidence ordering, matrix updating, retention of costly-if-missed candidates, and per-handoff stopping. Step 8 appears in next_inquiry, and the stopping condition list appears in the limits field. Lettered candidate references are replaced by the mechanism names they stand for, which is a wording change only."
+    },
+    "signal_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "which candidates it supports, which it contradicts, and which it leaves undifferentiated",
+        "A check that every candidate predicts equally is recorded as non-discriminating, not as support.",
+        "whether delay reappears at an adjacent handoff"
+      ],
+      "neutral_evidence": [
+        "which candidates it supports, contradicts or leaves undifferentiated",
+        "Record a check whose result is predicted equally by every candidate as non-discriminating, rather than supporting the candidates.",
+        "whether delay reappears at an adjacent handoff"
+      ],
+      "rationale": "The core observable (the pattern across the handoff-by-candidate matrix), all nine listed concrete observables, the non-discriminating rule, and both pilot signals are present. The paraphrase lists three extra observables (release clustering by clock time or weekday, gap changes after reminders, concentration in mandated-review case types), but each is taken from the original operation step 3, so nothing in the signal is lost or altered."
+    },
+    "inference_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "The result is a narrowed, ranked set, not a single asserted cause.",
+        "A candidate is eliminated only on a contradicting observation from a check capable of detecting it.",
+        "Absence of support from a weak check leaves the candidate retained at lower rank.",
+        "Coexisting mechanisms are an allowed conclusion."
+      ],
+      "neutral_evidence": [
+        "The result is a narrowed, ranked set, without asserting a single cause.",
+        "Eliminate a candidate only when a check capable of detecting it produces a contradicting observation.",
+        "Lack of support from a weak check leaves the candidate retained at lower rank.",
+        "Coexisting mechanisms are an allowed conclusion."
+      ],
+      "rationale": "Every inferential claim and its conditionality is retained: re-rank/eliminate/retain, the form of the answer to both parts of the target question, the elimination rule, the weak-check rule, the association-and-location scope for timestamp and queue patterns, the restricted role of interviews, and the pilot response and non-response consequences. The negative inference limit (no single asserted cause) is kept."
+    },
+    "limit_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "A mechanism never generated cannot be ranked, and the residual category only flags that possibility.",
+        "agreement between logs and interviews may not be independent corroboration",
+        "A positive response does not prove the mechanism, and relieving one handoff can shift delay to another.",
+        "It does not quantify hidden stage contributions or estimate system dynamics.",
+        "generalising requires rechecking under comparable demand and staffing"
+      ],
+      "neutral_evidence": [
+        "A mechanism never generated cannot be ranked; the residual category flags that possibility without identifying it.",
+        "agreement between logs and interviews may not provide independent corroboration",
+        "A response in the expected direction does not prove the mechanism, and relieving one handoff can shift delay to another.",
+        "it does not quantify hidden stage contributions or estimate system dynamics",
+        "Generalising beyond the scoped workflow, case types and window requires rechecking under comparable demand and staffing."
+      ],
+      "rationale": "All eight limit categories survive: coverage, evidence quality and independence, unknown check characteristics, the four bias types (described behaviourally rather than by label), confounding, pilot limits, scope, and the non-validated status of the procedure in this setting. The generalisation caveat sits in next_inquiry rather than limits, and the interaction of mechanisms through shared staff and queues appears in both limits and problem_decomposition; this is relocation, not loss. The statement that biases are reduced but not removed is retained."
+    },
+    "stopping_condition_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "the remaining candidates all call for the same bounded change",
+        "the remaining available checks do not discriminate among the retained candidates",
+        "all but one or two candidates have been contradicted by at least two sources that do not share an origin",
+        "If none holds, keep several candidates open and continue. Do not declare a single cause to close the analysis."
+      ],
+      "neutral_evidence": [
+        "all remaining candidates call for the same bounded change",
+        "the remaining available checks do not distinguish among retained candidates",
+        "all but one or two candidates have been contradicted by at least two sources that do not share an origin",
+        "If none holds, keep several candidates open and continue. Do not declare a single cause to close the analysis."
+      ],
+      "rationale": "All three disjunctive stopping conditions, the per-handoff scope, the 'any of these' logic, and the fallback instruction are present with equivalent meaning. They are placed at the top of the limits field and referenced from action step 7 ('Apply the stopping conditions separately to each handoff'), which keeps them operative."
+    },
+    "next_inquiry_preserved": {
+      "status": "pass",
+      "original_evidence": [
+        "Pilot one bounded change matched to the leading candidate at a handoff.",
+        "Declare the expected response in advance and compare turnaround under comparable demand and staffing.",
+        "reopen the differential for that handoff instead of escalating the same change"
+      ],
+      "neutral_evidence": [
+        "Pilot one bounded change matched to the leading candidate at a handoff.",
+        "Declare the expected response before the pilot and compare turnaround under comparable demand and staffing.",
+        "reopen consideration of candidate mechanisms for that handoff instead of escalating the same change"
+      ],
+      "rationale": "The follow-up pilot, all four example changes with their matched mechanisms, the advance declaration, the comparability condition, and the reopen-rather-than-escalate rule are retained. The adjacent-handoff check and the generalisation recheck included here both come from the original signal and limit fields."
+    },
+    "no_added_operational_content": {
+      "status": "pass",
+      "original_evidence": [
+        "taken handoff by handoff",
+        "A long gap from arrival to first open that shortens after reminders points to (e).",
+        "Delay confined to case types with a mandated review points to (i).",
+        "the residual category only flags that possibility"
+      ],
+      "neutral_evidence": [
+        "Use handoffs within the scoped workflow as the units of analysis",
+        "changes in arrival-to-first-open gaps after reminders",
+        "concentration of delay in case types with mandated review",
+        "the residual category flags that possibility without identifying it"
+      ],
+      "rationale": "Each statement in the paraphrase that does not appear in the corresponding original field traces to another original field. The summary sentence in the procedure field restates steps 2-5. No new steps, thresholds, checks, data sources or interventions are introduced. 'Without identifying it' is a restatement of 'only flags'."
+    },
+    "no_source_imagery": {
+      "status": "pass",
+      "original_evidence": [
+        "Build the differential before looking at discriminating evidence.",
+        "unlike validated clinical tests",
+        "an organisation is not a patient",
+        "the clinical structure is borrowed as a reasoning discipline"
+      ],
+      "neutral_evidence": [
+        "The checks have no measured sensitivity or specificity in this setting.",
+        "This reasoning procedure is not a validated protocol for the approval-workflow setting.",
+        "reopen consideration of candidate mechanisms for that handoff"
+      ],
+      "rationale": "The source discipline references are removed: 'differential', 'clinical tests', 'patient', 'clinical structure', and the bias labels 'anchoring' and 'premature closure' do not appear. Target entities (handoffs, approvers, tickets, staffing schedules, queues) are kept. 'Sensitivity or specificity' remains; it is read here as general statistical vocabulary for check characteristics rather than a discipline name or metaphor, and the explicit clinical comparison attached to it in the original is gone. This reading is flagged under uncertainty."
+    },
+    "no_verdict_language": {
+      "status": "pass",
+      "original_evidence": [
+        "the clinical structure is borrowed as a reasoning discipline, not as a validated protocol for this domain"
+      ],
+      "neutral_evidence": [
+        "This reasoning procedure is not a validated protocol for the approval-workflow setting."
+      ],
+      "rationale": "The paraphrase contains no claim that the procedure is ordinary, native, novel, unorthodox, mere formalization, creative, a material departure, or that it adds or lacks a warrant. The one statement about the procedure's status concerns validation and carries over a limit stated in the original; it describes a constraint on reliance, not an evaluative classification of the procedure."
+    }
+  },
+  "overall": "pass",
+  "uncertainty": [
+    "The phrase 'sensitivity or specificity' is retained in the paraphrase. It is judged general statistical vocabulary, but it is strongly associated with diagnostic testing, so a stricter reading of no_source_imagery could treat it as residual source vocabulary.",
+    "'This reasoning procedure is not a validated protocol for the approval-workflow setting' implies the procedure originated elsewhere without naming the source. It is judged a preserved limit rather than source imagery or verdict language, but the boundary is not sharp.",
+    "Several items sit in different fields than in the original (stopping conditions in limits, generalisation caveat in next_inquiry, mechanism interaction in problem_decomposition). The checks were assessed on semantic content across the whole paraphrase; a field-by-field reading would be stricter.",
+    "'Not supplied target facts' is rendered as 'not established facts'. These are treated as equivalent, though the original more specifically indicates the list was not provided by the target setting."
+  ]
+}
