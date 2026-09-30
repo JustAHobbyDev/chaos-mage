@@ -1,0 +1,35 @@
+{
+  "starting_sha": "cee19ee0c4c110df65de7c4380f0c271b298f30a",
+  "providers": {
+    "gemini": {
+      "requested_model": "gemini-3.1-pro-preview",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+      "route": "models/gemini-3.1-pro-preview:generateContent",
+      "credential_source": "environment",
+      "credential_environment_variable": "GEMINI_API_KEY",
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": 1.0,
+      "top_p": "provider default; unset",
+      "top_k": "provider default; unset",
+      "seed": "provider default; unset",
+      "client": "Python standard-library urllib.request",
+      "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+      "tools": [],
+      "history_messages": 0,
+      "service_tier": "standard"
+    }
+  },
+  "timeout_seconds": 900,
+  "max_concurrent_processes": 1,
+  "harness_retries": 0,
+  "fallback_allowed": false,
+  "jsonschema_version": "4.23.0",
+  "preflight_budget": {
+    "gemini": 2
+  },
+  "primary_budget": {
+    "gemini": 12
+  },
+  "cost_ceiling_usd": "2.00"
+}
