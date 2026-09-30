@@ -2,6 +2,115 @@ Use this as the Codex handoff.
 
 # Codex Handoff — Experiment F: Prospective Transfer Validity v0.1
 
+# Authoritative amendment — 2026-09-30
+
+This amendment supersedes every conflicting dual-family, agreement, counterfactual,
+lexical-ban, and checkpoint instruction in the original design retained below.
+The authorized experiment is **Experiment F v0.1, Astra-only prospective transfer
+validity**. Starting HEAD and fetched origin/main were both verified at
+`da8cb8d91505d68e65ea8f2d3910f4ca34a03c3b`; the checkout was clean.
+
+- Use only `gpt-6-astra`, explicitly high reasoning, via pinned `codex-cli 0.157.1`
+  and its executable hash. Astra is the historically accepted research judge;
+  this is not a claim that it passed candidate qualification. Within-model
+  stability and cross-model robustness remain unmeasured. No comparison-model
+  calls, duplicate samples, or separate model-written review are authorized.
+- Mechanically inventory all explicit unresolved-condition lists: expected 139
+  parent statements (52 Astra, 87 Fable). Preserve separately sourced overlapping
+  items, verbatim parent/child spans, shared qualifying context, resolution text,
+  rationale, source JSON fields, source commits/hashes, case, family, status and
+  parent-child provenance. Record absent explicit criterion attribution as absent.
+  Split independent clauses without categorizing or inventing requirements.
+- Freeze complete inventory, atomic count, taxonomy definitions, canonical and
+  provider wire schemas, packets, configuration and randomized sequential order
+  before taxonomy calls. Use opaque condition identifiers. Packets contain only
+  unchanged instrument/mapping/target, condition, necessary source excerpts and
+  taxonomy definitions. Historical family/status/admission, generator identity,
+  operator expectations and other classifications stay outside packets.
+- Run one artificial taxonomy schema probe; commit success before one fresh Astra
+  classification per atomic condition. Freeze all classifications before reviewing
+  every classification. Record mixed/uncertain findings and execution-versus-
+  mechanism/warrant/target boundaries. Operator disagreements are annotations;
+  model responses are never replaced.
+- **Resolved decision:** frozen taxonomy results may inform documented general
+  classifier clarifications. No case-specific answer key, diagnostic identifier,
+  historical finding, taxonomy classification or threshold change may enter the
+  prospective classifier or packets. Freeze the classifier after taxonomy review
+  and before its one artificial preflight.
+- Preserve all supplied prospective interfaces and enforce final-status derivation,
+  readiness/precondition consistency, and execution conditions' `none` validity
+  effect. Reject contradictions. Anti-warrant-laundering test: assume every stated
+  execution prerequisite is satisfied and the stated signal occurs; then ask
+  whether the inference follows. An unsupported bridge remains unsupported unless
+  the mapping supplies a specific unresolved empirical relation that could establish
+  it. Do not invent discriminating measurements or repair mappings.
+- **Resolved decision:** exclude anti-collapse criteria and annotations semantically,
+  not through a blanket word ban. Preserve exact domain wording in frozen mappings,
+  including E029's “novelty effects.” No source field is rewritten for this purpose.
+- Reuse established CLI isolation and event audits without changing historical
+  runners. Every call is a fresh process/ephemeral session, empty working directory,
+  stdin packet, ignored user configuration/rules, disabled project instructions,
+  tools/browsing/plugins, and no inherited provider overrides or parent context.
+  Preserve existing subscription authentication without exposing credentials.
+- Record commands/configuration, CLI version/hash, schema/packet hashes, process and
+  session provenance, raw events, response, usage and exposed returned identifiers.
+  Missing served IDs stay explicitly unavailable. Observed substitution stops work.
+  Use sequential calls, 900-second timeout, independently frozen randomized orders,
+  exclusive prelaunch reservations and zero harness retries. Audit visible provider
+  internal retries separately. A reservation forbids duplicate execution.
+- Authorized workload: frozen atomic-condition count + 30 measurements + two
+  artificial probes. Any provider, timeout, schema, malformed-output, substitution,
+  isolation or harness failure stops scheduling: preserve the attempt, freeze partial
+  evidence, publish an incomplete result. No retry, repair, replacement or fallback.
+- Historical results necessarily inform extraction; do not claim operator blinding.
+  No old/new comparison during prospective collection, and no historical material
+  in prospective packets. Commit all 30 results before review. First save each
+  mapping/classifier-only assessment, then make historical comparisons.
+- Compute Astra old→new transitions; review all changes and every more-permissive
+  transition. Audit E006 hypothesis-survival, E030 continuity/circularity, and E022
+  delay-localization warrants regardless of status. E022 cannot independently decide
+  success. Audit causal gaps, non-identifiability, circularity, target mismatch and
+  missing evidential bridges laundered into readiness. Fable is descriptive context,
+  never ground truth. Reviews are implementation-agent/operator annotations, not
+  independent human or separate model observations.
+- Report categories, mixed/uncertain cases, statuses, readiness, condition categories,
+  audit findings, generator-origin and instrument descriptions. Compute **single-model
+  prospective eligible cohort** = prospective Astra Valid ∩ frozen fidelity-pass set;
+  report size and whether it reaches 18. This neither satisfies nor alters E's
+  original dual-family admission rule. Do not report new Valid/Valid counts or
+  cross-family agreement: those are unmeasured. Admission growth alone is not success.
+- Publish `distance/review/prospective-validity-v0.1.md` with provenance, failures,
+  qualitative conceptual assessment, limitations and recommendation. E remains
+  stopped. Preserve all historical and qualification artifacts.
+
+Required commit order (later steps are unperformed if a stop occurs):
+
+1. This authoritative amended handoff, before preparation.
+2. Taxonomy specification, inventory, schemas, packets, configuration and order.
+3. Successful artificial taxonomy preflight.
+4. Complete taxonomy judgments, followed by documented operator audit.
+5. Prospective classifier, schemas, exact 30 inputs, configuration and order.
+6. Successful artificial prospective preflight.
+7. All 30 prospective judgments and complete result freeze.
+8. Final review, metrics and verification evidence.
+
+Record a new dated Problem Frames entry distinguishing historical-text transformation,
+isolated model measurement and post-freeze review. Verify imports/provenance, parent
+and atomic coverage, hidden metadata, packet isolation, semantic exclusion and E029
+wording, model/high configuration, forbidden tools/fallbacks, attempts/probe limits,
+schema invariants, immutable ordering and reconstructed metrics. Artificial offline
+fixtures cover unsupported warrants, valid unexecuted procedures, conditional empirical
+relations and contradictions; no E006/E022/E030 expected measurement outcomes.
+Run relevant historical/new tests and read-only verifiers; verify historical hashes,
+scan publication artifacts for secrets, and run `git diff --check`. Commit and push
+normally to origin/main; verify matching local/remote SHAs. Stop on push failure.
+Stop after publication; no anti-collapse, E resumption, generation, other-model
+qualification, grounding, diversity filtering or production integration.
+
+---
+
+# Original design (subordinate to the authoritative amendment above)
+
 ## Assignment
 
 Continue:
@@ -13,7 +122,7 @@ JustAHobbyDev/chaos-mage
 Start from current `origin/main`, expected to contain:
 
 ```text
-f2fb4ba80a6f35061f10d6a24149fe304d8bde7f
+da8cb8d91505d68e65ea8f2d3910f4ca34a03c3b
 ```
 
 Experiment E stopped correctly for insufficient coverage:
@@ -1277,7 +1386,7 @@ git log --oneline -10
 Expected start:
 
 ```text
-f2fb4ba80a6f35061f10d6a24149fe304d8bde7f
+da8cb8d91505d68e65ea8f2d3910f4ca34a03c3b
 ```
 
 Suggested checkpoints:
