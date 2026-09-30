@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+  },
+  "mapping": {
+    "state": "The inquiry has two failure-reproduction panels: A concerns request-path changes; B concerns background-path changes. The focal and comparison deployments use the same deployment-manifest template. Each panel tests configurations from its assigned deployment, with reproducible latency failure and individually removable changes.\nPanel A is assigned to a comparison checkout deployment maintained by another team.\nPanel B is assigned to a comparison checkout deployment maintained by another team.",
+    "operation": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction.\nUse the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment.\nUse the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment.\nPreserve a run ledger. Record the replay identifier for each trial. Save each tested subset. Record complement tests separately. Keep the removal order. Retain unresolved-outcome logs. Archive the final configurations.",
+    "signal": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear. Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear. Repeated replays give the same outcomes without unresolved tests.",
+    "inference": "For a comparison checkout deployment maintained by another team, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay.\nFor a comparison checkout deployment maintained by another team, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay.\nUse of the same deployment-manifest template makes the panel-A and B reproduction conclusions for the comparison deployment applicable to the focal deployment.",
+    "limit": "The replay and environmental controls stated above are satisfied. Minimality is relative to single removals and this test, not a unique cause, globally smallest subset or automatic production remedy. Manifest-template identity is the only stated cross-deployment connection; code, component semantics and failure mechanisms are not stipulated equal."
+  }
+}

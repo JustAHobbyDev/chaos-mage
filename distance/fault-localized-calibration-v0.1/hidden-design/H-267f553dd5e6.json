@@ -1,0 +1,94 @@
+{
+  "mechanism": "Differential diagnosis",
+  "matched_triple": null,
+  "intended_structural_position": "local",
+  "is_control": true,
+  "control_number": 3,
+  "unsupported_claims": [
+    {
+      "id": "D1",
+      "exact_text": "Use of the same approval-case form establishes a catastrophic breach of the archive display-color standard for both processes.",
+      "source_field": "mapping.inference"
+    }
+  ],
+  "supported_by": [
+    "signal.panel_A",
+    "signal.panel_B",
+    "state.template_identity"
+  ],
+  "dependents": {
+    "claims": [],
+    "actions": [],
+    "target_contributions": []
+  },
+  "expected_surviving_contributions": [
+    "intake-delay differential",
+    "approval-delay differential"
+  ],
+  "expected_artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+  "warrant_plausibility_audit": "Template identity does not establish the asserted administrative property or transfer event-specific conclusions across distinct objects. The statement is unconditional, not a supplied unresolved empirical condition. The two panel conclusions are independently bounded to their assigned objects.",
+  "survivor_audit": "For core designs both supported panel conclusions concern the comparison object. The focal-target directives are explicitly conditional on applying those conclusions to the focal object. There is no independent focal-target measurement or result. A reviewer may nevertheless find a material next-inquiry contribution; report that rather than forcing agreement.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "signal.panel_A",
+        "text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity. In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue. The observation definitions and reliability checks are satisfied."
+      },
+      {
+        "id": "signal.panel_B",
+        "text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity. In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue. The observation definitions and reliability checks are satisfied."
+      },
+      {
+        "id": "claim.panel_A",
+        "text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+      },
+      {
+        "id": "claim.panel_B",
+        "text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+      },
+      {
+        "id": "operation.action_1",
+        "text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+      },
+      {
+        "id": "operation.action_2",
+        "text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+      },
+      {
+        "id": "state.template_identity",
+        "text": "The inquiry has two diagnostic panels: A addresses intake delay; B addresses approval-stage delay. The focal and comparison processes use the same approval-case form. Each panel contains observations from its assigned process and a maintained list of rival explanations rather than a preselected single cause."
+      },
+      {
+        "id": "D1",
+        "text": "Use of the same approval-case form establishes a catastrophic breach of the archive display-color standard for both processes."
+      }
+    ],
+    "edges": [
+      [
+        "signal.panel_A",
+        "claim.panel_A"
+      ],
+      [
+        "signal.panel_B",
+        "claim.panel_B"
+      ],
+      [
+        "claim.panel_A",
+        "operation.action_1"
+      ],
+      [
+        "claim.panel_B",
+        "operation.action_2"
+      ],
+      [
+        "state.template_identity",
+        "D1"
+      ]
+    ]
+  },
+  "authoring_check": {
+    "intended_defect_plausibly_unsupported": true,
+    "operator_only": true,
+    "control_number": 3
+  }
+}
