@@ -1,0 +1,68 @@
+{
+  "case_id": "E022",
+  "mechanism_fidelity": {
+    "status": "conditional",
+    "rationale": "The proposed step, transient recording, reversal and repetition instantiate step-response probing if the actual workflow input changes abruptly by the known amount and remains held. The mapping explicitly leaves this unresolved and identifies phasing and anticipation as possible departures from the required input structure."
+  },
+  "warrant_validity": {
+    "status": "unsupported",
+    "rationale": "The trajectories support bounded descriptions of response dynamics, but several stated interpretations exceed that evidence. Long dead time followed by prompt response does not establish fixed waiting while excluding capacity shortage. Downstream transient overshoot does not establish that delay is relocated rather than ultimately reduced. The longest response delay or settling time also does not independently locate where requests spend the most time waiting. Calling these constraints on candidate explanations does not justify the explicit exclusion or localization claims. The mapping supplies no specific unresolved discriminating relation that would establish those bridges. Reversal and repetition strengthen the bounded remedy test but do not establish diagnostic specificity."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "Stage-level waiting and queue accumulation, together with repeated tests of bounded changes and end-to-end turnaround, provide a direct bounded contribution to both parts of the target. This relevance does not validate the unsupported diagnostic interpretations."
+  },
+  "conditions": [
+    {
+      "condition": "The actual chosen input undergoes a known abrupt change and remains constant, rather than phasing in or being altered by anticipation.",
+      "category": "mechanism_condition",
+      "rationale": "This determines whether the intervention has the defining step structure, rather than merely whether an authorized change can be scheduled.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "Stage timestamps reflect actual workflow movement rather than logging time.",
+      "category": "warrant_condition",
+      "rationale": "The mapping explicitly supplies this unresolved correspondence. If established, timestamp differences can represent actual waiting and response timing; availability of records alone cannot establish that meaning.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "The claimed diagnostic exclusions and delay localization require specificity that the mapped temporal features do not establish.",
+      "category": "warrant_condition",
+      "rationale": "Response timing, settling and transient overshoot describe dynamics but do not independently establish the stated fixed-waiting explanation, exclude capacity shortage, or establish relocation instead of reduction. No supplied unresolved empirical relation closes these gaps.",
+      "effect_on_validity": "invalidating"
+    },
+    {
+      "condition": "Stage-level records and the specified baseline, repeated sampling and disturbance logging can be obtained.",
+      "category": "execution_precondition",
+      "rationale": "These are acquisition requirements for running the specified procedure. Their availability is separate from whether timestamps represent actual events.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Accountable workflow owners authorize the intervention, its size and abort thresholds.",
+      "category": "execution_precondition",
+      "rationale": "Authorization enables execution without supplying evidence for the mechanism or diagnostic interpretations.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Stage-level records and the specified baseline, repeated sampling and disturbance logging can be obtained.",
+        "how_to_establish": "Confirm access to the required records and arrange the baseline and ongoing recording specified by the mapping.",
+        "why_execution_only": "This supplies the observations needed to execute the procedure; their substantive correspondence to actual workflow movement is assessed separately."
+      },
+      {
+        "condition": "Accountable workflow owners authorize the intervention, its size and abort thresholds.",
+        "how_to_establish": "Obtain the workflow-owner authorization required by the mapping.",
+        "why_execution_only": "Permission enables the run but does not change what its signal warrants."
+      }
+    ],
+    "rationale": "The packet explicitly leaves record availability and authorization unestablished. Satisfying them would enable execution without repairing the warrant failures."
+  },
+  "final_status": "Invalid",
+  "uncertainty": [
+    "Actual step fidelity and timestamp correspondence remain unresolved.",
+    "No observed outcome is required for this prospective judgment; the invalidity concerns the stated signal-to-inference relationships."
+  ]
+}

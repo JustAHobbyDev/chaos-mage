@@ -1,0 +1,62 @@
+{
+  "case_id": "E025",
+  "mechanism_fidelity": {
+    "status": "conditional",
+    "rationale": "The mapping implements intermediate probes, binary classification and repeated interval halving. Its elimination mechanism depends on checkpoints retaining the behind-allowance classification after the first crossing. The mapping explicitly allows downstream recovery but does not establish this required structure; recovery can cause a discarded interval to contain the first crossing."
+  },
+  "warrant_validity": {
+    "status": "unsupported",
+    "rationale": "The first-crossing inference depends on the unresolved monotonicity condition. Independently, favorable classifications after the pilot under comparable demand and staffing do not adequately establish the claimed material contribution or remedy effectiveness. The mapping supplies no evidential relationship that distinguishes the change's effect from other differences between cohorts. Calling the conclusion supportive rather than conclusive does not supply that causal bridge."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "Locating an allowance crossing as a candidate for investigation and assessing a change confined to that handoff directly concern the retained question. The stated restriction to the examined case type and period preserves the target scope. The substantive defects concern the operation and its warrant rather than a mismatch with the target."
+  },
+  "conditions": [
+    {
+      "condition": "The checkpoint classifications have a single within-to-behind transition, without subsequent recovery to within allowance.",
+      "category": "mixed",
+      "rationale": "The mapping explicitly identifies downstream recovery as possible. Absence of such recovery makes discarded portions incompatible with containing the first crossing, supporting both the source's elimination mechanism and the claimed first-point inference. Rechecking the final boundary on another cohort does not establish this structure across discarded checkpoints.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "The pilot's favorable classifications warrant material handoff contribution and effectiveness of the confined change.",
+      "category": "warrant_condition",
+      "rationale": "Comparable demand and staffing and improvement at two checkpoints leave the pilot observational. The mapping supplies neither an adequate causal bridge nor a specific unresolved empirical relation that would establish the stated attribution. This is an unsupported inference, not an outstanding execution task.",
+      "effect_on_validity": "invalidating"
+    },
+    {
+      "condition": "Per-checkpoint cumulative allowances are available or agreed before examining the data.",
+      "category": "execution_precondition",
+      "rationale": "The mapping explicitly leaves their availability unresolved. They parameterize the stated allowance-relative property; the mapping acknowledges that changing them can move the crossing and does not claim an allowance-independent boundary.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Checkpoint timestamps can be recovered, reconstructed or captured sufficiently to run the probes and endpoint checks.",
+      "category": "execution_precondition",
+      "rationale": "The mapping explicitly leaves timestamp availability unresolved. Obtaining these records enables the specified measurements. Missing internal timestamps are already accommodated through skipped checkpoints and wider reported intervals.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Per-checkpoint cumulative allowances are available or agreed before examining the data.",
+        "how_to_establish": "Obtain existing allowances or agree them in advance, as specified in the mapping.",
+        "why_execution_only": "This supplies the parameters for the expressly allowance-relative classification."
+      },
+      {
+        "condition": "Checkpoint timestamps can be recovered, reconstructed or captured sufficiently to run the probes and endpoint checks.",
+        "how_to_establish": "Determine which ticket-history timestamps are recoverable and use the proposed reconstruction or temporary logging where feasible, recording skipped checkpoints.",
+        "why_execution_only": "This supplies the observations required to execute the proposed procedure within its stated partial-result and halt rules."
+      }
+    ],
+    "rationale": "Allowances and timestamp acquisition are explicitly unresolved resources. Satisfying them does not establish monotonicity or repair the pilot's causal warrant."
+  },
+  "final_status": "Invalid",
+  "uncertainty": [
+    "The packet does not establish whether checkpoint classifications are monotonic.",
+    "The packet does not establish the availability of checkpoint allowances or recoverable timestamps."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "case_id": "E018",
+  "mechanism_fidelity": {
+    "status": "preserved",
+    "rationale": "Withdrawal, restoration and repeated observation preserve the dechallenge–rechallenge mechanism. Fresh cohorts and navigation patches introduce acknowledged interpretive limitations but do not replace the defining perturbation-and-response chain."
+  },
+  "warrant_validity": {
+    "status": "unsupported",
+    "rationale": "Repeated reversible changes can increase support for a component's causal contribution, as the source allows. However, a decrease in completion does not establish that the component is necessary, even given the other components present. Similarly, a drop only when both components are absent does not establish that at least one is required for completion. Restricting these claims to tested configurations does not bridge contribution to necessity. The mapping supplies no specific unresolved empirical relation that could justify that step. Its cautions about alternative causes appropriately bound causal support but do not repair the necessity inference."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "Evidence about component contributions and how withdrawal responses vary across tested combinations provides a bounded contribution to the question about onboarding components and feature ranking. Prototype, configuration and user-segment limits are explicit. The unsupported necessity claim is a warrant defect rather than a change of target."
+  },
+  "conditions": [
+    {
+      "condition": "A prototype or staged variant must permit the specified withdrawal and restoration of testable components.",
+      "category": "execution_precondition",
+      "rationale": "This supplies the configuration needed to perform the specified perturbations. Components that cannot be withdrawn are explicitly left unassessed.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "A single activation definition and observation window must be fixed before withdrawal.",
+      "category": "execution_precondition",
+      "rationale": "These specify the outcome and timing needed to run the procedure. Fixing them does not establish necessity or population-wide conclusions.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "The full design must exhibit enough activation completion for a drop to be observable.",
+      "category": "execution_precondition",
+      "rationale": "This establishes the starting state against which withdrawal can operate. The mapping explicitly does not start when that state is absent; it need not guarantee a subsequent positive response.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "The inference promotes evidence of contribution into conditional necessity and required component sets.",
+      "category": "warrant_condition",
+      "rationale": "Completion can decrease without the withdrawn component being required for completion. The same distinction applies to a joint-withdrawal decrease. The mapping provides no bridge that makes these necessity conclusions follow from its stated signals.",
+      "effect_on_validity": "invalidating"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "A prototype or staged variant must permit the specified withdrawal and restoration of testable components.",
+        "how_to_establish": "Provide the described variant with permitted component switches, recording components that cannot be tested.",
+        "why_execution_only": "This enables the already specified operations without changing their inferential meaning."
+      },
+      {
+        "condition": "A single activation definition and observation window must be fixed before withdrawal.",
+        "how_to_establish": "Specify and record the activation criterion and observation window before beginning withdrawals.",
+        "why_execution_only": "This operationalizes the stated outcome without supplying the missing necessity warrant."
+      },
+      {
+        "condition": "The full design must exhibit enough activation completion for a drop to be observable.",
+        "how_to_establish": "Record baseline completion in the full design and apply the mapping's stated start condition.",
+        "why_execution_only": "This determines whether the procedure can start in its required state, rather than whether its signals justify necessity."
+      }
+    ],
+    "rationale": "The mapping explicitly identifies these as assumptions rather than supplied facts. Their satisfaction would enable execution but would not repair the warrant defect."
+  },
+  "final_status": "Invalid",
+  "uncertainty": [
+    "The packet does not establish whether the execution assumptions hold.",
+    "The mapping acknowledges unresolved alternative causes, cohort differences and concurrent changes; repeated temporal agreement does not eliminate them."
+  ]
+}

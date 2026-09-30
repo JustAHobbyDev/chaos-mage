@@ -1,0 +1,73 @@
+{
+  "case_id": "E029",
+  "mechanism_fidelity": {
+    "status": "conditional",
+    "rationale": "The mapping preserves repeated measurement, ordered temporal patterns, and comparison against a predefined variation rule. Its explicit unresolved assumption that successive cohorts represent comparable observations of the same population process determines whether those sequences instantiate serial monitoring as intended."
+  },
+  "warrant_validity": {
+    "status": "unsupported",
+    "rationale": "Even if the stated patterns occur, the mapping does not adequately establish their attribution to component withholding. A stable concurrent reference and reversal can strengthen evidence, but the mapping supplies no relation establishing comparability between configuration arms or separating sequential interventions from calendar-linked changes. Logging other changes does not establish that separation. Consequently, the patterns do not warrant the stated necessity and causal interaction interpretations. Likewise, a temporal trend does not by itself show that a component's contribution changes over time. The acknowledged limitations identify these gaps without supplying a specific unresolved relation that would close them."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "The stated inferences directly concern component necessity and dependence between components in the monitored population and tested configurations. Those bounds retain the target's subject and permit a partial answer without claiming a globally minimal component set. The evidential defect lies in the signal-to-inference link."
+  },
+  "conditions": [
+    {
+      "condition": "An agreed activation definition and corresponding instrumentation must be available.",
+      "category": "execution_precondition",
+      "rationale": "This enables collection of the specified activation and funnel observations; it does not establish their causal interpretation.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "The redesign components must be separately deployable and withholdable.",
+      "category": "execution_precondition",
+      "rationale": "This is the implementation capability needed to run the specified configurations.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "A specified configuration must be operationally maintainable across successive signup cohorts.",
+      "category": "execution_precondition",
+      "rationale": "This enables execution of the prescribed fixed-configuration series.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Successive cohorts must be sufficiently comparable to constitute repeated observations of the same population process.",
+      "category": "mechanism_condition",
+      "rationale": "The mapping explicitly leaves this assumption unresolved. It determines whether the sequence represents serial observation of the intended process across time.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "The observed configuration differences must support attribution to component withholding at the claimed necessity and interaction resolution.",
+      "category": "warrant_condition",
+      "rationale": "The mapping does not establish this relationship. Temporal persistence, reference stability, restoration, and event annotations leave alternative sources of configuration differences unresolved. This is a missing evidential bridge, rather than an execution prerequisite.",
+      "effect_on_validity": "invalidating"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "An agreed activation definition and corresponding instrumentation must be available.",
+        "how_to_establish": "Agree the activation event and establish the activation and step-level instrumentation specified in step 1.",
+        "why_execution_only": "This makes the proposed measurements executable without resolving causal attribution."
+      },
+      {
+        "condition": "The redesign components must be separately deployable and withholdable.",
+        "how_to_establish": "Establish that the component list can be implemented in the proposed present-or-withheld configurations.",
+        "why_execution_only": "This supplies the configuration controls already prescribed by the procedure."
+      },
+      {
+        "condition": "A specified configuration must be operationally maintainable across successive signup cohorts.",
+        "how_to_establish": "Establish the ability to keep each monitored configuration fixed for its prescribed series.",
+        "why_execution_only": "This supplies the operational capacity to execute the stated sequence; it does not establish cohort comparability or the inference."
+      }
+    ],
+    "rationale": "The packet explicitly identifies these implementation prerequisites as not yet established. Satisfying them would permit execution but would not repair the warrant."
+  },
+  "final_status": "Invalid",
+  "uncertainty": [
+    "Cohort comparability is explicitly unresolved.",
+    "No results are supplied, but their absence is not the warrant defect; the defect remains when the stated signals are assumed to occur."
+  ]
+}

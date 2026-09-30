@@ -1,0 +1,67 @@
+{
+  "case_id": "E002",
+  "mechanism_fidelity": {
+    "status": "preserved",
+    "rationale": "The mapping preserves multipath measurement, forward prediction, structured residuals, and iterative inversion into internal delay cells. Coverage inspection, synthetic recovery tests, regularisation sensitivity, and explicit non-unique outcomes preserve the source instrument's resolution limits."
+  },
+  "warrant_validity": {
+    "status": "conditional",
+    "rationale": "The mapping specifies discriminating path/load comparisons and reserves bounded causal contribution for removal and reintroduction that removes and restores the residual. However, it explicitly leaves pre-/post-regression instrumentation comparability unresolved. That relation is necessary for residuals and the estimated fraction of the regression to represent changes in system delay rather than changes in measurement. Synthetic recovery and fit stability alone do not establish it."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "The inference directly contributes to identifying deployed-change candidates and distinguishing their bounded causal contribution from load variation. It retains the covered-path and load scope, permits unresolved candidate sets, and requires intervention before claiming causal contribution."
+  },
+  "conditions": [
+    {
+      "condition": "Pre- and post-regression instrumentation must produce comparable latency measurements.",
+      "category": "warrant_condition",
+      "rationale": "The mapping explicitly requires this unresolved relation. Its truth determines whether baseline-relative residuals measure added delay and support the reported regression fraction.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "Request-level latency, path/version/configuration identities, and load records must be obtainable.",
+      "category": "execution_precondition",
+      "rationale": "These records enable the specified coverage analysis and inversion; obtaining them does not itself establish attribution.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "A pre-regression measurement window must be available.",
+      "category": "execution_precondition",
+      "rationale": "Historical records are needed to fit the reference model. Their availability is separate from their substantive comparability.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "An applicable deployment control or replay environment must be accessible if the causal-contribution branch is pursued.",
+      "category": "execution_precondition",
+      "rationale": "Access enables the specified intervention. Whether its observed effect supports attribution is governed by the mapping's held-load, reversal, and scope requirements.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Request-level latency, path/version/configuration identities, and load records must be obtainable.",
+        "how_to_establish": "Obtain the traces or joinable logs and load measurements specified by the mapping.",
+        "why_execution_only": "This supplies inputs for the proposed operations without changing their evidential meaning."
+      },
+      {
+        "condition": "A pre-regression measurement window must be available.",
+        "how_to_establish": "Locate and obtain the historical measurement records.",
+        "why_execution_only": "Record availability enables reference fitting; instrumentation comparability is assessed separately."
+      },
+      {
+        "condition": "An applicable deployment control or replay environment must be accessible if the causal-contribution branch is pursued.",
+        "how_to_establish": "Secure access to an applicable intervention route already specified in the mapping.",
+        "why_execution_only": "Access permits execution but does not establish the intervention's effect or production relevance."
+      }
+    ],
+    "rationale": "The packet does not establish availability of the required records or intervention resources."
+  },
+  "final_status": "Conditional",
+  "uncertainty": [
+    "Instrumentation comparability is explicitly unestablished.",
+    "No observations establish a particular culprit or effect size. Failed coverage or recovery tests are permitted bounded outcomes, not additional validity defects."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "case_id": "E028",
+  "mechanism_fidelity": {
+    "status": "conditional",
+    "rationale": "The partition, subset/complement testing, retention and refinement steps preserve delta debugging's mechanism. Its applicability depends on explicit condition (c): the baseline must pass and the full-delta configuration must reproducibly fail under fixed replay. This establishes the failure-inducing starting state; obtaining resources alone cannot establish it. If it fails, the mapping explicitly does not start reduction. Reaching a singleton or obtaining conclusive outcomes for every candidate is not required."
+  },
+  "warrant_validity": {
+    "status": "supported",
+    "rationale": "Under the stated conditions, repeated configuration interventions at identical replay load, with interleaved controls, support test-relative sufficiency and, when single-removal tests establish 1-minimality, necessity within the retained set. Multiple retained changes establish joint dependence of the defined threshold outcome, without identifying a latency mechanism. Fixed-load contrasts distinguish the tested change effect from differences in request rate and mix. The controlled production revert and reintroduction, if performed, supplies the separately scoped evidence for production contribution. Neither test-relative results nor that follow-up establish unique causation or exclude a contribution from production load."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "Identifying a deployed change or group that reproduces the regression under controlled load provides a justified bounded contribution to diagnosis. The mapping distinguishes that test result from production attribution, supplies a production follow-up, and leaves load contributions and causes outside the enumerated deltas open."
+  },
+  "conditions": [
+    {
+      "condition": "Under fixed replay, the baseline passes and the full-delta configuration reproducibly fails, as required by condition (c).",
+      "category": "mechanism_condition",
+      "rationale": "This determines whether there is a reproducible failure-inducing configuration for delta debugging to reduce. The specified fallback does not instantiate that reduction mechanism.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "Fix the latency metric, failure margin, unresolved band, repeat counts and run budget before reduction.",
+      "category": "execution_precondition",
+      "rationale": "These settings make the specified test executable and define its expressly limited scope; the mapping claims no independent statistical bound from their selection.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Provide and operate the controlled replay environment, configuration build/deployment facilities and latency recording needed for candidate and control runs.",
+      "category": "execution_precondition",
+      "rationale": "These are resources for executing the specified interventions and observations. Individual configurations may remain undeployable and be reported as unresolved, as the mapping allows.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "If the production follow-up is undertaken, obtain the stated safety approval and access to operate the intervention and concurrent comparison slices.",
+      "category": "execution_precondition",
+      "rationale": "This enables the optional production experiment. Without that experiment, the mapping retains its test-relative contribution and makes no corresponding observed production claim.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Fix the latency metric, failure margin, unresolved band, repeat counts and run budget before reduction.",
+        "how_to_establish": "Specify these parameters before classifying candidate runs.",
+        "why_execution_only": "This instantiates the proposed test without changing its mechanism or expanding its inference."
+      },
+      {
+        "condition": "Provide and operate the controlled replay environment, configuration build/deployment facilities and latency recording needed for candidate and control runs.",
+        "how_to_establish": "Prepare the replay, deployment and measurement facilities described in the mapping, recording infeasible configurations as unresolved.",
+        "why_execution_only": "These facilities enable the procedure; their availability does not establish the separately assessed reproduction condition."
+      },
+      {
+        "condition": "If the production follow-up is undertaken, obtain the stated safety approval and access to operate the intervention and concurrent comparison slices.",
+        "how_to_establish": "Secure the approval and operational access specified for the limited production experiment.",
+        "why_execution_only": "These prerequisites enable an already specified optional experiment and do not themselves supply causal evidence."
+      }
+    ],
+    "rationale": "The packet proposes the setup and experiments but does not establish operational readiness. Readiness is separate from whether fixed replay reproduces the initial regression."
+  },
+  "final_status": "Conditional",
+  "uncertainty": [
+    "Condition (c) has not been established; fixed replay may not reproduce the regression.",
+    "No retained set, minimization outcome or production follow-up result is supplied. These absent results do not independently undermine the prospective evidential procedure."
+  ]
+}

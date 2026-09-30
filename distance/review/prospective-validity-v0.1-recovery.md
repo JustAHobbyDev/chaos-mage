@@ -63,6 +63,22 @@ new recovery tests include evidence tampering, frozen-order continuation, duplic
 prevention, terminal-state protection and raw-response-preserving bookkeeping
 recovery. Seven artificial accounting/chronology tests cover post-freeze reporting boundaries and prechecks-before-launch ordering.
 
+### Additional recoverable checkpoint incident
+
+The single artificial prospective probe succeeded, then a Git staging command in a
+mixed shell invocation hit the sandbox's read-only Git-index boundary. Scheduling
+was paused before any primary prospective reservation. Retrying only the staging
+operation through the approved Git mutation route produced the probe checkpoint;
+the model probe was not rerun. The pending primary-stage command exited at its pause
+guard without a provider launch.
+
+A [separate committed recovery record](../prospective-validity-v0.1/recovery/incidents/git-checkpoint-recovery.json)
+binds the pause, every prior measurement artifact, unchanged scientific inputs,
+zero affected primary requests, remediation and authority. Its classification is
+`recoverable_integrity_violation`. Raw-response, input and historical checks passed
+before clearing the pause. This incident demonstrates the policy's distinction
+between a local checkpoint failure and a failed scientific observation.
+
 ## Measurement and interpretation
 
 ### Frozen taxonomy and operator audit

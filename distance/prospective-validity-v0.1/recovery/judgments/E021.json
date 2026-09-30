@@ -1,0 +1,57 @@
+{
+  "case_id": "E021",
+  "mechanism_fidelity": {
+    "status": "preserved",
+    "rationale": "The mapping preserves measurement across overlapping paths, forward prediction from internal contributions, structured residual analysis, and iterative inverse adjustment. Its treatment of regularization, prediction checks and non-unique allocations also preserves the source's operational limits."
+  },
+  "warrant_validity": {
+    "status": "conditional",
+    "rationale": "Interpreting fitted contributions as handoff waiting depends on explicitly proposed but unestablished relations: comparable event meanings and an adequate decomposition of path duration into handoff waits and separately represented delays. Prediction and sensitivity checks alone cannot establish these meanings. The pilot supplies a prospective comparison, but its support for retaining the change depends on that comparison accounting for alternative explanations. The mapping appropriately permits combined regions, withheld localization and inconclusive pilots."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "Constraining candidate delay regions and evaluating a bounded change directly contributes to locating accumulated delay and identifying changes worth retaining. The inference preserves the limits of regional localization and tested operating conditions."
+  },
+  "conditions": [
+    {
+      "condition": "Obtain workflow records and operational access needed for route reconstruction, interviews, observations and the bounded pilot.",
+      "category": "execution_precondition",
+      "rationale": "The packet does not establish that the required records or access exist. Obtaining them enables execution without establishing their interpretive adequacy.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Timestamped events must represent comparable workflow boundaries across the paths being compared.",
+      "category": "warrant_condition",
+      "rationale": "This explicitly stated assumption determines whether duration differences compare equivalent intervals. Available timestamps with different event meanings could produce structured discrepancies unrelated to handoff waiting.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "Within the scoped operating conditions, path durations must be adequately approximated by accumulated handoff waits plus separately represented processing and other delays.",
+      "category": "warrant_condition",
+      "rationale": "This supplied empirical relation connects path measurements to the intended internal quantities. If adequate, residual patterns constrain combinations of waiting contributions; if violated by parallel work, congestion or omitted delays, stable fitted allocations may lack that interpretation.",
+      "effect_on_validity": "conditional"
+    },
+    {
+      "condition": "The pilot comparison must account for alternative explanations for the observed improvement within the tested case family and operating conditions.",
+      "category": "warrant_condition",
+      "rationale": "The mapping supplies a control or staged comparison under comparable demand and staffing. Its adequacy determines whether improvement supports retaining the intervention as beneficial; merely meeting a numerical improvement threshold does not establish that relationship.",
+      "effect_on_validity": "conditional"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Obtain workflow records and operational access needed for route reconstruction, interviews, observations and the bounded pilot.",
+        "how_to_establish": "Confirm record availability and arrange the workflow access needed to perform the specified observations, interviews and pilot.",
+        "why_execution_only": "These resources enable the procedure. Their availability does not establish event comparability, the duration decomposition or the adequacy of the pilot comparison."
+      }
+    ],
+    "rationale": "The packet explicitly leaves record availability unestablished and reports a proposed procedure rather than an executable arrangement."
+  },
+  "final_status": "Conditional",
+  "uncertainty": [
+    "The packet does not establish event comparability, adequacy of the duration model or comparability of pilot conditions.",
+    "Route coverage may support only a combined delay region. This does not independently defeat validity because the mapping explicitly permits that bounded outcome and withholding localization."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "case_id": "E003",
+  "mechanism_fidelity": {
+    "status": "preserved",
+    "rationale": "The procedure removes a suspected factor, observes latency after settling, and conditionally restores the same factor to test recurrence. Optional rechallenge, safety stops, and bundle-level attribution preserve the source mechanism and its limits."
+  },
+  "warrant_validity": {
+    "status": "supported",
+    "rationale": "Reproducible removal/restoration responses under comparable workloads, beyond changes in an unchanged contemporaneous control, support the stated bounded causal contribution and make load variation alone less adequate. The mapping specifies when comparison fails and limits removal-only, bundle, negative, and staging results accordingly. It does not claim exclusive causation or eliminate all alternatives."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "The inference supplies bounded causal evidence about a candidate deployed change and explicitly distinguishes its response from load variation. Bundle results retain bundle-level scope, and staging results retain their setting boundary; neither is promoted to identification of an actual production culprit."
+  },
+  "conditions": [
+    {
+      "condition": "Access to deployment/configuration history, request traces, and the specified latency, traffic, error, and resource measurements.",
+      "category": "execution_precondition",
+      "rationale": "These resources enable candidate selection and execution of the specified observations. Their availability does not itself establish causation.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "Availability of an environment in which the specified perturbation and comparison can be operated within the safety thresholds.",
+      "category": "execution_precondition",
+      "rationale": "Running the procedure requires operational capability for bounded production cohorts or the specified staging replay fallback. The mapping already defines comparison requirements, stopping rules, and attribution boundaries.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Access to deployment/configuration history, request traces, and the specified latency, traffic, error, and resource measurements.",
+        "how_to_establish": "Confirm access to the histories, traces, and measurement facilities specified in the mapping.",
+        "why_execution_only": "Access enables the planned procedure without changing its mechanism or evidential claim."
+      },
+      {
+        "condition": "Availability of an environment in which the specified perturbation and comparison can be operated within the safety thresholds.",
+        "how_to_establish": "Establish operational capability for the specified cohort intervention or staging replay and its safety monitoring before perturbation.",
+        "why_execution_only": "This concerns the ability to run the defined experiment. Whether an observed comparison supports attribution remains governed by the mapping's substantive comparison and stopping rules."
+      }
+    ],
+    "rationale": "The packet specifies a coherent prospective procedure but does not establish availability of its execution resources."
+  },
+  "final_status": "Valid",
+  "uncertainty": [
+    "No observations establish an actual culprit.",
+    "Whether production comparison or safe rechallenge will be feasible remains unknown; the mapping explicitly permits bounded or inconclusive outcomes."
+  ]
+}

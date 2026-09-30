@@ -1,0 +1,50 @@
+{
+  "case_id": "E026",
+  "mechanism_fidelity": {
+    "status": "preserved",
+    "rationale": "The mapping explicitly compares competing hypotheses against every evidence item, emphasizes diagnostic contradictions, and tests sensitivity to unreliable evidence, dependence and assumptions. Controlled tests supply additional evidence to that same comparison."
+  },
+  "warrant_validity": {
+    "status": "supported",
+    "rationale": "The proposed controlled contrasts specify how to distinguish candidate effects from load effects. Causal attribution is explicitly restricted to isolated contrasts with differences exceeding assessed variability and adequate comparability. Matrix survival alone supports retaining alternatives, not proving causation. Ambiguous or noncomparable results lead to narrower claims or unresolved alternatives."
+  },
+  "target_fidelity": {
+    "status": "addressed",
+    "rationale": "The procedure directly investigates deployed changes versus load variation and their interactions. Its possible conclusions provide bounded causal evidence within tested workloads and configurations, candidate associations, or an explicitly unresolved set. Staging effects are not automatically promoted to an explanation of the entire production regression."
+  },
+  "conditions": [
+    {
+      "condition": "Recover the deployment identities, version/configuration history, traffic strata, traces and latency measurements required for the proposed comparison.",
+      "category": "execution_precondition",
+      "rationale": "These inputs must be acquired to populate the matrix and run comparisons. Acquisition itself does not establish their reliability or diagnostic meaning; those are handled by the specified assessment and attribution restrictions.",
+      "effect_on_validity": "none"
+    },
+    {
+      "condition": "For experimental branches undertaken, obtain the ability to replay workloads and manipulate candidate revisions or configurations; production experiments additionally require the specified safe rollback, abort and recovery capabilities.",
+      "category": "execution_precondition",
+      "rationale": "These capabilities enable the proposed interventions. The mapping permits retaining unresolved alternatives when a safe, feasible discriminating experiment is unavailable.",
+      "effect_on_validity": "none"
+    }
+  ],
+  "execution_readiness": {
+    "status": "requires_preconditions",
+    "preconditions": [
+      {
+        "condition": "Recover the deployment identities, version/configuration history, traffic strata, traces and latency measurements required for the proposed comparison.",
+        "how_to_establish": "Recover the specified history and telemetry, recording missing information as the mapping directs.",
+        "why_execution_only": "This supplies inputs without establishing their evidential reliability or changing the comparison and inference rules."
+      },
+      {
+        "condition": "For experimental branches undertaken, obtain the ability to replay workloads and manipulate candidate revisions or configurations; production experiments additionally require the specified safe rollback, abort and recovery capabilities.",
+        "how_to_establish": "Establish the staging replay and revision/configuration controls, and the prescribed safety capabilities before any production experiment.",
+        "why_execution_only": "These capabilities permit execution; they do not establish isolation, comparability or production representativeness."
+      }
+    ],
+    "rationale": "Data recovery and experimental capabilities are assumed or proposed rather than demonstrated. Experimental branches remain optional where unsafe or infeasible."
+  },
+  "final_status": "Valid",
+  "uncertainty": [
+    "No observations are supplied, so no deployed change or load explanation is established.",
+    "Actual discrimination, comparability and staging representativeness remain unobserved. The mapping bounds or withholds attribution when these limitations prevent the stated inference."
+  ]
+}
