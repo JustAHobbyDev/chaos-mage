@@ -54,6 +54,10 @@ The `instruments/` directory will appear when the first actual extraction is com
 
 ## Research discipline
 
+The [model-agnosticism principle](docs/MODEL-AGNOSTICISM.md) defines research-model
+eligibility and the project-wide model provenance rule. Agreement is diagnostic;
+eligibility depends on reasoning and protocol competence, not interchangeability.
+
 A candidate is not admitted merely because it supplies an evocative metaphor. It must expose an operational chain:
 
 ```text
