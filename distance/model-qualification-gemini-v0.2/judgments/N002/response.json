@@ -1,0 +1,50 @@
+{
+  "case_id": "N002",
+  "anti_collapse": {
+    "status": "SUFFICIENT_DEPARTURE",
+    "departures": {
+      "action": {
+        "status": "present",
+        "rationale": "Replaces the native discretionary, prominence-based record selection with a formal worst-case discrimination counting rule (minimax) to choose the next record request."
+      },
+      "observable": {
+        "status": "absent",
+        "rationale": "Relies on ordinary authenticated record responses, their consistency, and source dependence checks without introducing a novel type of observable."
+      },
+      "inferential_warrant": {
+        "status": "absent",
+        "rationale": "Applies ordinary bounded corroboration and disconfirmation logic, treating unresolved responses conventionally."
+      },
+      "problem_decomposition": {
+        "status": "absent",
+        "rationale": "Retains the ordinary claims, competing accounts, and historical reconstruction units."
+      },
+      "next_inquiry": {
+        "status": "present",
+        "rationale": "The formal rule strictly forces the selection of record R3 for the single allowed request, overriding the native baseline's preference for R1."
+      }
+    },
+    "materiality": {
+      "status": "material",
+      "rationale": "The procedural change structurally alters how data collection is prioritized, directly leading to a different real-world action (requesting R3 instead of R1)."
+    },
+    "native_reduction": {
+      "collapses_without_loss": "no",
+      "closest_native_equivalent": "Discretionary record selection driven by the prominence of the allegation (requesting R1) or a general heuristic to seek disconfirming evidence.",
+      "lost_if_reduced": [
+        "The explicit worst-case hypothesis survivor counting rule (minimax optimization)",
+        "The operational guarantee of selecting the objectively optimal record for hypothesis discrimination (R3)"
+      ],
+      "rationale": "Reverting to ordinary investigative practice removes the mathematically constrained selection rule, shifting the investigation back to R1 and losing the optimized discrimination guarantee."
+    },
+    "formalization": {
+      "merely_makes_native_reasoning_explicit": "no",
+      "new_epistemic_constraint": "Record selection must minimize the maximum number of surviving accounts across all possible predicted responses.",
+      "rationale": "While journalists naturally seek evidence that disconfirms competing accounts, strict optimization via a minimax function over a predefined response dictionary is a new, rigid constraint that overrides ordinary subjective discretion."
+    },
+    "decisive_reason": "The procedure replaces discretionary record selection based on allegation prominence with a formal worst-case discrimination optimization rule, compelling the selection of a different record (R3 instead of R1).",
+    "uncertainty": [
+      "The baseline notes it is a scoped authored hypothesis rather than verified practitioner consensus, meaning individual newsrooms might employ unstated, varied heuristics for evidence prioritization that resemble formal discrimination logic."
+    ]
+  }
+}

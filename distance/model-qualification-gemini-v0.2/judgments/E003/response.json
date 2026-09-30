@@ -1,0 +1,27 @@
+{
+  "case_id": "E003",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping perfectly retains the state-operation-signal-inference chain of the source (dechallenge and rechallenge) by translating it into software deployment rollback and rollforward procedures. It also successfully preserves all source limits, adapting them to the realities of distributed systems, such as caches, concurrent deployments, and safety thresholds."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference explicitly answers the target question by providing bounded causal evidence that attributes a checkout latency regression to a specific deployed change, while deliberately distinguishing this effect from load variation through cohort and strata comparisons."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "The operational steps are highly concrete and intelligible. Rolling back a specific change, observing the latency metrics within matched load strata alongside an unchanged control cohort, and optionally re-deploying the change provides a strictly defined, actionable sequence that logically produces the required causal signal."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping translates the clinical dechallenge/rechallenge methodology to software deployment flawlessly. It preserves the mechanism and its limits, directly addresses the target question, and operationalizes the procedure with specific, coherent metrics and safety boundaries. No unresolved conditions remain."
+  },
+  "uncertainty": []
+}

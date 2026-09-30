@@ -1,0 +1,1313 @@
+{
+  "at": "2026-09-30T04:39:53.116164+00:00",
+  "complete": true,
+  "prepared_sha256": "8cae7d53c66a77ef3bf42edb120142147f6eaf0e3fc07d5dc950aa7254654238",
+  "runs": [
+    {
+      "case_id": "N009",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:31:43.084656+00:00",
+        "metadata": {
+          "session_id": "433bcb76-df51-4037-89aa-4bd09c6a97d5",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "nZC8avn3EoK739IP-5-O-A0",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1753,
+            "candidatesTokenCount": 681,
+            "totalTokenCount": 3894,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1753
+              }
+            ],
+            "thoughtsTokenCount": 1460,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:31:00.842402+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N009",
+        "session_id": "433bcb76-df51-4037-89aa-4bd09c6a97d5",
+        "process_id": 2696653,
+        "packet_sha256": "63c5af8a9b8335a0d03154e67a56f4d186952f9b86fd78b2e0239eaaa7fddfa8",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-2mxp2l3p",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 17052,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.42732"
+        },
+        "cumulative_before_usd": "0.022470"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N009/cost.json": "68ab24081347a27153136e88e1ecdfb2fe831cfb77a4ea5e52196439b8a6fc26",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/http-body.json": "544c6c4812868e9273ed9fe742912ad89416a0f8732089e98334b09681284dc4",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/http-metadata.json": "3795797ad425ce9a704922ef1672ed8e6ca194fd5a41eb52a4798d19557caa42",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/prompt.txt": "63c5af8a9b8335a0d03154e67a56f4d186952f9b86fd78b2e0239eaaa7fddfa8",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/request-sent.json": "8a2a0dffb07af557d62546bc485b92876afbfe35f0370934042e597a48ec1d97",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/request.json": "1951c17c2807b80481d28f37bfe52e8774062668cb45650161b41f7fe66af040",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/reservation.json": "f6c3428a5893ab7f0570878a603745ce89f26cac72a3b6ec7725c625c8f00b90",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/response.json": "4417351d08254df2c675eba9b2f85c853c5c31712f2e79690b71bc16bc0f92ea",
+        "distance/model-qualification-gemini-v0.2/judgments/N009/validation.json": "7b915f17179250de1b2b55f20f73a0151a962c5f865388a5fbc240066c106f86"
+      }
+    },
+    {
+      "case_id": "E014",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:32:25.901687+00:00",
+        "metadata": {
+          "session_id": "ff20b951-7469-4b31-a1f4-7a455c4c20a9",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "yZC8atu4BOurjrEP7YOt4AU",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1634,
+            "candidatesTokenCount": 331,
+            "totalTokenCount": 3584,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1634
+              }
+            ],
+            "thoughtsTokenCount": 1619,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:31:44.622098+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E014",
+        "session_id": "ff20b951-7469-4b31-a1f4-7a455c4c20a9",
+        "process_id": 2697077,
+        "packet_sha256": "b29ef4643df718bf701493904d2bfd898a3813bb31bfc7cae711722262109e15",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-tf3r__ds",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 15597,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.42441"
+        },
+        "cumulative_before_usd": "0.051668"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E014/cost.json": "18eabb9a32904a2fd969a4befe76f1ee85c48d43a823b70f4c1db51dcb9ba2ce",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/http-body.json": "1bd270997add0df53a8c0278b08432229592c240be045bef729b16c397add1f4",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/http-metadata.json": "6fe68e67e3c59c83c35c8a730aedaabf9189c3fd9b0c418934046faa7dfb9b1f",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/prompt.txt": "b29ef4643df718bf701493904d2bfd898a3813bb31bfc7cae711722262109e15",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/request-sent.json": "1acaf6df1ed610bce869e1d442b0c859c7c7d7897d335b0466f223f6c05dea0c",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/request.json": "2f6338361ab584a0beb668700d1b6660b1dabeacfd7e4b72c7965e06cd624643",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/reservation.json": "0af9178cf66b31cd48585522468ba3b95d30b6951b0ce8d4068531cf604534ce",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/response.json": "85ff0433146f097225628a7705f5b834775f62fe9258550ee3bd14b301fc8015",
+        "distance/model-qualification-gemini-v0.2/judgments/E014/validation.json": "4ec192316dcfa385149c072c79bca7fb1186fde47b5d2c40c1205a61a6015c3d"
+      }
+    },
+    {
+      "case_id": "N002",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:33:06.451861+00:00",
+        "metadata": {
+          "session_id": "60684e80-68ce-4f56-ac51-0ef3c95c8dc5",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "8JC8aoenN6ig_PUPttS6uQk",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1873,
+            "candidatesTokenCount": 687,
+            "totalTokenCount": 4027,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1873
+              }
+            ],
+            "thoughtsTokenCount": 1467,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:32:27.542779+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N002",
+        "session_id": "60684e80-68ce-4f56-ac51-0ef3c95c8dc5",
+        "process_id": 2697524,
+        "packet_sha256": "9205f239ac8dec34ec0bcba8bdb4f5f73f2238b2cb7cf6f941b0257437283d46",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-nkkbky7w",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 17703,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.428622"
+        },
+        "cumulative_before_usd": "0.078336"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N002/cost.json": "e7b79c956241a1a2fcc2e91b1131e1cde03469b581c2e2504616318a7251827a",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/http-body.json": "1d3e6a61ba762d2880281a0f4a9eb27210f63c11dac16601dfddf500d3f8d4a1",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/http-metadata.json": "42c35f4f79cac47d1e1e89f139ce0090ecfe3649739bee420a3cdf536cddc19b",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/prompt.txt": "9205f239ac8dec34ec0bcba8bdb4f5f73f2238b2cb7cf6f941b0257437283d46",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/request-sent.json": "a10ecade1b786e495a63c5b8f7077b1f4dcaec5597015a60448e6aa8ad09c2e3",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/request.json": "a8330f4b5423e04398310a5d36fae078fa77748671b7897e3f0c6e8f5e2e7cee",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/reservation.json": "84d3f391af9265d94848ee02ff6401584f2ff8701aeee2700d43b245178067c2",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/response.json": "07032b7062d3ad3c5158fee8b6cf576aa0ea7b55a9d76738537f9c17fb36a8ea",
+        "distance/model-qualification-gemini-v0.2/judgments/N002/validation.json": "82ab336f067845846a7175a5333c5d978ceea087d9b5e4ba8312f8f5f112d951"
+      }
+    },
+    {
+      "case_id": "E003",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:33:40.737593+00:00",
+        "metadata": {
+          "session_id": "04b2e47f-b275-464d-97e2-91b1f4bc7437",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "GZG8arjgIKL8jrEP09OAqA4",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1702,
+            "candidatesTokenCount": 385,
+            "totalTokenCount": 2960,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1702
+              }
+            ],
+            "thoughtsTokenCount": 873,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:33:07.956801+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E003",
+        "session_id": "04b2e47f-b275-464d-97e2-91b1f4bc7437",
+        "process_id": 2697935,
+        "packet_sha256": "befdfadfd0e984257e8df1b035169dc1a5a542c34f1571bf5087ab1c95afbfc5",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-i_wnw47u",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 15820,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.424856"
+        },
+        "cumulative_before_usd": "0.107930"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E003/cost.json": "aad201ad007605754d37581468368547b1fd3ae18f41389caeeeca2a042e2e42",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/http-body.json": "b7e1944211acfaefbf0d14cdc26e1a2de2a60ba46930a874d09c47ae642c0fe4",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/http-metadata.json": "ef9174dad92f6718492bb79aee97b82084d4e56b4c9bf01383cc03870d9db049",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/prompt.txt": "befdfadfd0e984257e8df1b035169dc1a5a542c34f1571bf5087ab1c95afbfc5",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/request-sent.json": "1c09bcca68bdc0b5eb00ef4b5988d4dfc9c52a5104d6544eb8a3c2c271847274",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/request.json": "388b9cf7faf1cef2b1507ea85d779cfdd5031a9640598e565f84c521ad62fbf0",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/reservation.json": "88a2006f940db4633c070b5ada8d2b22c6e69b8bd34e0431ac7c2eef42c67aa6",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/response.json": "8b05a968497f7ea4fc998d6d137c2730f0098839260f82836d3a52729fd6e69e",
+        "distance/model-qualification-gemini-v0.2/judgments/E003/validation.json": "0cd307177b29b86df9bca2015f6c70b836b24359600ac731340d49ea1e87294e"
+      }
+    },
+    {
+      "case_id": "N001",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:34:20.418636+00:00",
+        "metadata": {
+          "session_id": "52b7b9d6-4afe-4ef8-bbe8-0b0ed455adff",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "PpG8aunMJsTV_uMPrqn9mAQ",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1687,
+            "candidatesTokenCount": 558,
+            "totalTokenCount": 3445,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1687
+              }
+            ],
+            "thoughtsTokenCount": 1200,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:33:42.272662+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N001",
+        "session_id": "52b7b9d6-4afe-4ef8-bbe8-0b0ed455adff",
+        "process_id": 2698273,
+        "packet_sha256": "180e00d2fe19d86ce3d0025f55752a0c54047a82e4747780a7270a6a3ab97d5a",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-55l1t5cu",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 16563,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.426342"
+        },
+        "cumulative_before_usd": "0.126430"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N001/cost.json": "408dfa7a5af7be51c0f20f1f3e5e4a4188389bf0b34f4786f6478c8b7724788f",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/http-body.json": "9d4e2c56b13ee3f773b78b81adc8164a957eac7844781f732ac769e3e4064073",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/http-metadata.json": "81cc56a0ba479cd12515d2172c00cb42b240c0925f1e92c1dd54c24ec7aba90e",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/prompt.txt": "180e00d2fe19d86ce3d0025f55752a0c54047a82e4747780a7270a6a3ab97d5a",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/request-sent.json": "740fd6952517d1c57293ac63c388788cef7ca71649b567b4d2efc86567b74fd3",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/request.json": "ed779cfd01f80413e76209b986c3a0c10bc549b23644418deeba46438adec550",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/reservation.json": "2d71172aab24d7cddfbfa8728e5f216ad1b82a24e33fa776ec155690901de5d0",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/response.json": "35e8c0657d31d9a534f24ed30843316b1dcf1449646dc614812d521848ca8c27",
+        "distance/model-qualification-gemini-v0.2/judgments/N001/validation.json": "73c3205b05e5f870f9e369e3f1896a3e80dc52864f37d4fbb283edcd0c78d450"
+      }
+    },
+    {
+      "case_id": "E006",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:35:02.558233+00:00",
+        "metadata": {
+          "session_id": "6829295f-4d76-4f30-bfa5-c508356c4b0f",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "Z5G8apCqH7Kc-8YPr6SkqAU",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 2643,
+            "candidatesTokenCount": 376,
+            "totalTokenCount": 4371,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2643
+              }
+            ],
+            "thoughtsTokenCount": 1352,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:34:22.037142+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E006",
+        "session_id": "6829295f-4d76-4f30-bfa5-c508356c4b0f",
+        "process_id": 2698836,
+        "packet_sha256": "19c70caa2701e2268a091746a56d2ea200b7a059becd92ef9a0d9540503e9a89",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-6p5arzgc",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 20056,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.433328"
+        },
+        "cumulative_before_usd": "0.150900"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E006/cost.json": "8fd18a9f8a867a8248bdb3c53e8192c46184cec4be2f1c5713eada43663bc54c",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/http-body.json": "516916401188d38746da32bb0e0a9dd44db18e4084cff0694c9e3ee13fde9b6b",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/http-metadata.json": "6f97fd9984d676d99886210521bee5b6f7a3e4004ac4430d113463fe1ac58731",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/prompt.txt": "19c70caa2701e2268a091746a56d2ea200b7a059becd92ef9a0d9540503e9a89",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/request-sent.json": "a9256cdc21c930859d65cc2cffcb351b27eccd256005f25ac41b43d894841b31",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/request.json": "5b05fb2ed09ff220a9841008c299c5e7724ca71af6231e5e88bd68cf321a1c1c",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/reservation.json": "3c2c8eccb2cba1e207ef1e84bd2bc9eb92846af0906532593c5e2a5a5698683b",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/response.json": "deba66a876ff766500184642fbb12898400bb53be545ecfcb06a9fe640a9bc3c",
+        "distance/model-qualification-gemini-v0.2/judgments/E006/validation.json": "8e9305ebfeeb061b61596dfa2e514f61f32aa3a9d02feca3ddaa8dfd72e5aae0"
+      }
+    },
+    {
+      "case_id": "N004",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:35:48.233734+00:00",
+        "metadata": {
+          "session_id": "d196d5ef-5c8e-4f8f-943e-2557d593175d",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "kJG8at20J4O6sOIP0vDfmAM",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1763,
+            "candidatesTokenCount": 543,
+            "totalTokenCount": 4327,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1763
+              }
+            ],
+            "thoughtsTokenCount": 2021,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:35:04.227657+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N004",
+        "session_id": "d196d5ef-5c8e-4f8f-943e-2557d593175d",
+        "process_id": 2699256,
+        "packet_sha256": "0e6ac2f7d472ea31499bddac880b40874931a7a6c7cd351b410e10aab0006313",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-5irquunt",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 16945,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.427106"
+        },
+        "cumulative_before_usd": "0.176922"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N004/cost.json": "b3fde7aab891fb0496f5429de8b4cd5fea364b21cbee3ddebf36a33f85011c0a",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/http-body.json": "7d15f77c33c702a820ce342efb373f0f19f1ecad5015d0204d4d81842f2ed105",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/http-metadata.json": "f170c556aff70febfd0f5b92607bf5348572801ee893a603b07551d51ef6418b",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/prompt.txt": "0e6ac2f7d472ea31499bddac880b40874931a7a6c7cd351b410e10aab0006313",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/request-sent.json": "bb8b56c8daa174f22aa48757609c2d2acb81a60da54d8a9d9b09972131d63530",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/request.json": "498394963dd653dc2ab5ca14c16d258e05e8ab26f86948beb606036d3a56f601",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/reservation.json": "94cb65d4e917685dc3b88e6106334620eb21dacdf54535239891bf668d1f178c",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/response.json": "b384b63721d882e3a04305ce56e79b15f8ebd27d0734535e34f5e792fefe132a",
+        "distance/model-qualification-gemini-v0.2/judgments/N004/validation.json": "94c7462c64a47e49ee5cbc586b6965ba1613dabcd0bc3ea3890709fd74ad0693"
+      }
+    },
+    {
+      "case_id": "E030",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:36:44.993357+00:00",
+        "metadata": {
+          "session_id": "651011c4-bbde-40b9-b0e2-426d3aedb409",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "vpG8apPcD-mZ-8YPyNyyuAc",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 2260,
+            "candidatesTokenCount": 262,
+            "totalTokenCount": 6021,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2260
+              }
+            ],
+            "thoughtsTokenCount": 3499,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:35:49.906437+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E030",
+        "session_id": "651011c4-bbde-40b9-b0e2-426d3aedb409",
+        "process_id": 2699697,
+        "packet_sha256": "74a4466ed5bfe3b8266fcb913265f3fab153c4082fae3a4780cd2fec5ee9bab2",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-p74rj7mb",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 18179,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.429574"
+        },
+        "cumulative_before_usd": "0.211216"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E030/cost.json": "3a6cb95fcc339ac532c91b04d8539499a7e35cef485feb55018bbf4f097550d4",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/http-body.json": "e2b33ded3dba04ff61680b21ceeef4d8c51166d7e08170f9e77abb4aaab34580",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/http-metadata.json": "58733057421034d2251113665cadba1e6ec55f47902940811e83ad4ce3853f90",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/prompt.txt": "74a4466ed5bfe3b8266fcb913265f3fab153c4082fae3a4780cd2fec5ee9bab2",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/request-sent.json": "34f5a258dd8f80f43e18caac1206262600222a3606b0216fae6e07d00e24934d",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/request.json": "cdc4bedb397d970f70cbcb8defd63792068ed645bc6999dc6ffd55b07a3b582d",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/reservation.json": "bb70288b0ee73e64e783e019d60b090c6ad0b24b84b60be42932752acff4bf24",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/response.json": "dd3e3e79cbae2aa6f578ebe0b0603ea9757a25a4f5aa3c6463cc30a61bf9c8d0",
+        "distance/model-qualification-gemini-v0.2/judgments/E030/validation.json": "0ffe445898c86e4b8674e75aa63690bbcace2e50cda765b6cfc854b89676adbb"
+      }
+    },
+    {
+      "case_id": "N006",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:37:22.186883+00:00",
+        "metadata": {
+          "session_id": "aff312eb-b37b-42bd-83b1-ff082654a18f",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "9pG8atDLH6Oc_uMP3cbg-Qs",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1756,
+            "candidatesTokenCount": 524,
+            "totalTokenCount": 3001,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1756
+              }
+            ],
+            "thoughtsTokenCount": 721,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:36:46.792829+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N006",
+        "session_id": "aff312eb-b37b-42bd-83b1-ff082654a18f",
+        "process_id": 2700203,
+        "packet_sha256": "f459b6e000d843f88d0f80dfc7f5df3ed2d56ce48091e05577e51d261741624c",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-7m1oul3k",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 17023,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.427262"
+        },
+        "cumulative_before_usd": "0.260868"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N006/cost.json": "45f6b3a747f90fae18fccb4faf2f82908180239a36c896a34f06448a81051c67",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/http-body.json": "8a351ec955b69fd8334c168948c09b6f87f933d153653cd898891ab163233894",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/http-metadata.json": "bb839eba779c70b3d4d6422849dc8085565149da1f5f4d65ec3a4b33e779442c",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/prompt.txt": "f459b6e000d843f88d0f80dfc7f5df3ed2d56ce48091e05577e51d261741624c",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/request-sent.json": "85f7ec0455c2b0ed09c288a95beb380178a66a501051a8fdd42b8e3e3a5c2421",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/request.json": "797e231b50955c441fd300286f09844af9710f71c75c788ea9d3f8215975b80d",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/reservation.json": "2c2226047dd5c4066ca57d1116c517c43bea39a5bf1a13d7c0fb1ee1eba8a203",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/response.json": "a2bd648716bc5062f4d62ab732fe4ce1b43cd68c10ec440ee229b8f4e35d07d0",
+        "distance/model-qualification-gemini-v0.2/judgments/N006/validation.json": "fc7fb63c2cf33b018a43ddf2acdb8d7a281df31e4e6e7dbc8e32104355ed63a4"
+      }
+    },
+    {
+      "case_id": "E022",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:38:19.005963+00:00",
+        "metadata": {
+          "session_id": "f58e712b-f256-45fb-954a-dfcc9b0b7a31",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "HJK8auK_LPXsjrEP1KXniA8",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 2681,
+            "candidatesTokenCount": 635,
+            "totalTokenCount": 6431,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2681
+              }
+            ],
+            "thoughtsTokenCount": 3115,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:37:23.902815+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E022",
+        "session_id": "f58e712b-f256-45fb-954a-dfcc9b0b7a31",
+        "process_id": 2700624,
+        "packet_sha256": "148c8fe60a7b711d8333dd333baccea67c4bc3ea34ed420ec06e7de2cef26082",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-ub16o3ce",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 19838,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.432892"
+        },
+        "cumulative_before_usd": "0.279320"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E022/cost.json": "cb8dbaea88c286282c20b00316f0ea3cf801f2609998c968a54889b8737ceee1",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/http-body.json": "0261c6c688d8e5cd635236bd6e8f210adafd791e4d86f665f0869dc81593c9a3",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/http-metadata.json": "f2f7c5845a6102e739f952a5ed10c96a1a7e8eaf25ba57154ee2e390b4f487cc",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/prompt.txt": "148c8fe60a7b711d8333dd333baccea67c4bc3ea34ed420ec06e7de2cef26082",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/request-sent.json": "abf6ec01154ee683cb4e9db71d8cb642d0412bb7c8b4b173c0c8f1c5f8e95777",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/request.json": "f12bea8383bc11ac22f5266284d2a9c6893fea1d397f923d2617eeda038b07fe",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/reservation.json": "135847c975c4425a0f01db3756fae58dca8bf598a3ca96840973fbaff88fdf39",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/response.json": "3079f80ee8f16e070d2493f00131a1cdd575ab2b0218f5e9a8a0e2b321929860",
+        "distance/model-qualification-gemini-v0.2/judgments/E022/validation.json": "7de28d61654d8d591faf0d2505b3fc569449985c732cf466e5f526f78c644346"
+      }
+    },
+    {
+      "case_id": "N010",
+      "stage": "anti-collapse",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:38:54.348815+00:00",
+        "metadata": {
+          "session_id": "3d019f57-d43a-4cd8-97da-b4373bbae8e2",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "U5K8arXYA76-_PUP_ZiAqAw",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 1771,
+            "candidatesTokenCount": 629,
+            "totalTokenCount": 3177,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1771
+              }
+            ],
+            "thoughtsTokenCount": 777,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:38:20.654312+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "anti-collapse",
+        "case_id": "N010",
+        "session_id": "3d019f57-d43a-4cd8-97da-b4373bbae8e2",
+        "process_id": 2701080,
+        "packet_sha256": "cc341a68c5f2aa8ea7faec8e3090926af2d3b7ab6a7c90da7adbc544acffafcb",
+        "canonical_schema_sha256": "47bb3a2f3b435bf44a1e5493ce5a2f0c646ad2144aeef46b1575f2770965fdf6",
+        "wire_schema_sha256": "bf664574b48dd04462f509f1c38e920bbb161a15407dc005b396d25ad2e4406b",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-_0dwgelf",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 16998,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.427212"
+        },
+        "cumulative_before_usd": "0.329682"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/N010/cost.json": "c2e78ab14f0c4ca0220f5dd57afc72711051e13e81761bd5ace0a93c962291cf",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/http-body.json": "a5c83c5f34252dad4329c556b45e716c7d520b5fa0af986bc1c7eb59c19a9bbe",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/http-metadata.json": "caf3ba27a201d351c8f9413f69c2a0864bc1828b87b57c083b3043d2427aeb91",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/prompt.txt": "cc341a68c5f2aa8ea7faec8e3090926af2d3b7ab6a7c90da7adbc544acffafcb",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/request-sent.json": "4aa210b9f7918b5e60c7b8875c3be03d0052aa498b9ed7df55ce5c6130147d9b",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/request.json": "27553e9f1e0a8705091d2d6e6bbf25592e10d04fc100fe076ab7194b7f500494",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/reservation.json": "5ca8c8453062998bde42ab62727c023287aa903f1bc7e123ba021be571847bc3",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/response.json": "00667783ed5d4d193af3d2fe40f9cff5bb30638d70a329655ba935fbfe3fbacb",
+        "distance/model-qualification-gemini-v0.2/judgments/N010/validation.json": "5e0087d51b104a5ab6830ad076eaea6382b6df6e4a02f8a0b41c250aa3c8e5d2"
+      }
+    },
+    {
+      "case_id": "E010",
+      "stage": "validity",
+      "provider": "gemini",
+      "validation": {
+        "status": "valid",
+        "at": "2026-09-30T04:39:43.992305+00:00",
+        "metadata": {
+          "session_id": "e6e17bff-6257-4062-83ba-7beae9184582",
+          "requested_model": "gemini-3.1-pro-preview",
+          "returned_model_identifiers": [
+            "gemini-3.1-pro-preview"
+          ],
+          "response_id": "eJK8aqiEIrHJ-8YPgq-d-A4",
+          "model_metadata_provenance": [
+            {
+              "value": "gemini-3.1-pro-preview",
+              "source": "HTTP response.modelVersion"
+            }
+          ],
+          "verified_served_snapshot": null,
+          "snapshot_limitation": "Preview identifier does not establish immutable served weights",
+          "usage": {
+            "promptTokenCount": 2777,
+            "candidatesTokenCount": 306,
+            "totalTokenCount": 5656,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2777
+              }
+            ],
+            "thoughtsTokenCount": 2573,
+            "serviceTier": "standard"
+          },
+          "harness_retries": 0,
+          "internal_retry_observability": "No internal retry events exposed; hidden retries unobservable"
+        },
+        "error": null
+      },
+      "reservation": {
+        "at": "2026-09-30T04:38:56.028981+00:00",
+        "input_commit": "e28e62f92e61f451d4f2cfd776741693556725d2",
+        "provider": "gemini",
+        "stage": "validity",
+        "case_id": "E010",
+        "session_id": "e6e17bff-6257-4062-83ba-7beae9184582",
+        "process_id": 2701402,
+        "packet_sha256": "78e654a7692ab68caba0df853fc11fa4908aad951c19d775805a99dce1d5be43",
+        "canonical_schema_sha256": "7bd5161d5f9ad48d3c650c74e083846aa6ba312a92372fb3c25a3f4e44cf4405",
+        "wire_schema_sha256": "524201f40bc886103ecd145f9d7f77cbdff075417cc566350b2732fe572f73ee",
+        "configuration": {
+          "requested_model": "gemini-3.1-pro-preview",
+          "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+          "route": "models/gemini-3.1-pro-preview:generateContent",
+          "credential_source": "environment",
+          "credential_environment_variable": "GEMINI_API_KEY",
+          "thinking_level": "high",
+          "max_output_tokens": 32768,
+          "temperature": 1.0,
+          "top_p": "provider default; unset",
+          "top_k": "provider default; unset",
+          "seed": "provider default; unset",
+          "client": "Python standard-library urllib.request",
+          "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+          "tools": [],
+          "history_messages": 0,
+          "service_tier": "standard"
+        },
+        "python_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+        "api_version": "v1beta",
+        "fresh_process": true,
+        "history_messages": 0,
+        "tools": [],
+        "credential_source": "environment",
+        "harness_retries": 0,
+        "working_directory": "/tmp/gemini-qualification-4nkpvv32",
+        "working_directory_initially_empty": true,
+        "cost_reservation": {
+          "input_token_upper_estimate": 20426,
+          "output_token_cap": 32768,
+          "reserved_usd": "0.434068"
+        },
+        "cumulative_before_usd": "0.350096"
+      },
+      "files": {
+        "distance/model-qualification-gemini-v0.2/judgments/E010/cost.json": "3895b90b7dcaf76d94329bf925923ff12d85e26ab49081fbe7bd778936e552e7",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/http-body.json": "a9b8ed2664de1a3e073f197c6020d91e8497a4481402a1b86bbb14a8d94d3eab",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/http-metadata.json": "c6d19a2b761222ff042d07f807a118f260e310ef17a22be74f21abd73e1b1fae",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/prompt.txt": "78e654a7692ab68caba0df853fc11fa4908aad951c19d775805a99dce1d5be43",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/request-sent.json": "e1e02dded91897e789f2154ef14cfec5ff2280bf78b8016a451d98d27fc23d98",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/request.json": "601b87e4796345cc5d7ee0d7aff50e8a440e21bb0cfa0d678a3d703c4eb1ea77",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/reservation.json": "69aa7607e96d9c70b3020560c7ccf79605a6393a2bbb5ffa3ffb215ca678c2b2",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/response.json": "59cc6c57e14454597f47fa2ac4793d7b8522bd42b37e5c5a6e2c98bede90787a",
+        "distance/model-qualification-gemini-v0.2/judgments/E010/validation.json": "e2ec5c437e7b24fbe699e2f375228e3e13e6da45d54ed8daafd2346f3d91931a"
+      }
+    }
+  ],
+  "evidence": {
+    "distance/model-qualification-gemini-v0.2/judgments/E003/cost.json": "aad201ad007605754d37581468368547b1fd3ae18f41389caeeeca2a042e2e42",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/http-body.json": "b7e1944211acfaefbf0d14cdc26e1a2de2a60ba46930a874d09c47ae642c0fe4",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/http-metadata.json": "ef9174dad92f6718492bb79aee97b82084d4e56b4c9bf01383cc03870d9db049",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/prompt.txt": "befdfadfd0e984257e8df1b035169dc1a5a542c34f1571bf5087ab1c95afbfc5",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/request-sent.json": "1c09bcca68bdc0b5eb00ef4b5988d4dfc9c52a5104d6544eb8a3c2c271847274",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/request.json": "388b9cf7faf1cef2b1507ea85d779cfdd5031a9640598e565f84c521ad62fbf0",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/reservation.json": "88a2006f940db4633c070b5ada8d2b22c6e69b8bd34e0431ac7c2eef42c67aa6",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/response.json": "8b05a968497f7ea4fc998d6d137c2730f0098839260f82836d3a52729fd6e69e",
+    "distance/model-qualification-gemini-v0.2/judgments/E003/validation.json": "0cd307177b29b86df9bca2015f6c70b836b24359600ac731340d49ea1e87294e",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/cost.json": "8fd18a9f8a867a8248bdb3c53e8192c46184cec4be2f1c5713eada43663bc54c",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/http-body.json": "516916401188d38746da32bb0e0a9dd44db18e4084cff0694c9e3ee13fde9b6b",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/http-metadata.json": "6f97fd9984d676d99886210521bee5b6f7a3e4004ac4430d113463fe1ac58731",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/prompt.txt": "19c70caa2701e2268a091746a56d2ea200b7a059becd92ef9a0d9540503e9a89",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/request-sent.json": "a9256cdc21c930859d65cc2cffcb351b27eccd256005f25ac41b43d894841b31",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/request.json": "5b05fb2ed09ff220a9841008c299c5e7724ca71af6231e5e88bd68cf321a1c1c",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/reservation.json": "3c2c8eccb2cba1e207ef1e84bd2bc9eb92846af0906532593c5e2a5a5698683b",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/response.json": "deba66a876ff766500184642fbb12898400bb53be545ecfcb06a9fe640a9bc3c",
+    "distance/model-qualification-gemini-v0.2/judgments/E006/validation.json": "8e9305ebfeeb061b61596dfa2e514f61f32aa3a9d02feca3ddaa8dfd72e5aae0",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/cost.json": "3895b90b7dcaf76d94329bf925923ff12d85e26ab49081fbe7bd778936e552e7",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/http-body.json": "a9b8ed2664de1a3e073f197c6020d91e8497a4481402a1b86bbb14a8d94d3eab",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/http-metadata.json": "c6d19a2b761222ff042d07f807a118f260e310ef17a22be74f21abd73e1b1fae",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/prompt.txt": "78e654a7692ab68caba0df853fc11fa4908aad951c19d775805a99dce1d5be43",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/request-sent.json": "e1e02dded91897e789f2154ef14cfec5ff2280bf78b8016a451d98d27fc23d98",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/request.json": "601b87e4796345cc5d7ee0d7aff50e8a440e21bb0cfa0d678a3d703c4eb1ea77",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/reservation.json": "69aa7607e96d9c70b3020560c7ccf79605a6393a2bbb5ffa3ffb215ca678c2b2",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/response.json": "59cc6c57e14454597f47fa2ac4793d7b8522bd42b37e5c5a6e2c98bede90787a",
+    "distance/model-qualification-gemini-v0.2/judgments/E010/validation.json": "e2ec5c437e7b24fbe699e2f375228e3e13e6da45d54ed8daafd2346f3d91931a",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/cost.json": "18eabb9a32904a2fd969a4befe76f1ee85c48d43a823b70f4c1db51dcb9ba2ce",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/http-body.json": "1bd270997add0df53a8c0278b08432229592c240be045bef729b16c397add1f4",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/http-metadata.json": "6fe68e67e3c59c83c35c8a730aedaabf9189c3fd9b0c418934046faa7dfb9b1f",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/prompt.txt": "b29ef4643df718bf701493904d2bfd898a3813bb31bfc7cae711722262109e15",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/request-sent.json": "1acaf6df1ed610bce869e1d442b0c859c7c7d7897d335b0466f223f6c05dea0c",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/request.json": "2f6338361ab584a0beb668700d1b6660b1dabeacfd7e4b72c7965e06cd624643",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/reservation.json": "0af9178cf66b31cd48585522468ba3b95d30b6951b0ce8d4068531cf604534ce",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/response.json": "85ff0433146f097225628a7705f5b834775f62fe9258550ee3bd14b301fc8015",
+    "distance/model-qualification-gemini-v0.2/judgments/E014/validation.json": "4ec192316dcfa385149c072c79bca7fb1186fde47b5d2c40c1205a61a6015c3d",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/cost.json": "cb8dbaea88c286282c20b00316f0ea3cf801f2609998c968a54889b8737ceee1",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/http-body.json": "0261c6c688d8e5cd635236bd6e8f210adafd791e4d86f665f0869dc81593c9a3",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/http-metadata.json": "f2f7c5845a6102e739f952a5ed10c96a1a7e8eaf25ba57154ee2e390b4f487cc",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/prompt.txt": "148c8fe60a7b711d8333dd333baccea67c4bc3ea34ed420ec06e7de2cef26082",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/request-sent.json": "abf6ec01154ee683cb4e9db71d8cb642d0412bb7c8b4b173c0c8f1c5f8e95777",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/request.json": "f12bea8383bc11ac22f5266284d2a9c6893fea1d397f923d2617eeda038b07fe",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/reservation.json": "135847c975c4425a0f01db3756fae58dca8bf598a3ca96840973fbaff88fdf39",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/response.json": "3079f80ee8f16e070d2493f00131a1cdd575ab2b0218f5e9a8a0e2b321929860",
+    "distance/model-qualification-gemini-v0.2/judgments/E022/validation.json": "7de28d61654d8d591faf0d2505b3fc569449985c732cf466e5f526f78c644346",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/cost.json": "3a6cb95fcc339ac532c91b04d8539499a7e35cef485feb55018bbf4f097550d4",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/http-body.json": "e2b33ded3dba04ff61680b21ceeef4d8c51166d7e08170f9e77abb4aaab34580",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/http-metadata.json": "58733057421034d2251113665cadba1e6ec55f47902940811e83ad4ce3853f90",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/prompt.txt": "74a4466ed5bfe3b8266fcb913265f3fab153c4082fae3a4780cd2fec5ee9bab2",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/request-sent.json": "34f5a258dd8f80f43e18caac1206262600222a3606b0216fae6e07d00e24934d",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/request.json": "cdc4bedb397d970f70cbcb8defd63792068ed645bc6999dc6ffd55b07a3b582d",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/reservation.json": "bb70288b0ee73e64e783e019d60b090c6ad0b24b84b60be42932752acff4bf24",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/response.json": "dd3e3e79cbae2aa6f578ebe0b0603ea9757a25a4f5aa3c6463cc30a61bf9c8d0",
+    "distance/model-qualification-gemini-v0.2/judgments/E030/validation.json": "0ffe445898c86e4b8674e75aa63690bbcace2e50cda765b6cfc854b89676adbb",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/cost.json": "408dfa7a5af7be51c0f20f1f3e5e4a4188389bf0b34f4786f6478c8b7724788f",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/http-body.json": "9d4e2c56b13ee3f773b78b81adc8164a957eac7844781f732ac769e3e4064073",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/http-metadata.json": "81cc56a0ba479cd12515d2172c00cb42b240c0925f1e92c1dd54c24ec7aba90e",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/prompt.txt": "180e00d2fe19d86ce3d0025f55752a0c54047a82e4747780a7270a6a3ab97d5a",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/request-sent.json": "740fd6952517d1c57293ac63c388788cef7ca71649b567b4d2efc86567b74fd3",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/request.json": "ed779cfd01f80413e76209b986c3a0c10bc549b23644418deeba46438adec550",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/reservation.json": "2d71172aab24d7cddfbfa8728e5f216ad1b82a24e33fa776ec155690901de5d0",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/response.json": "35e8c0657d31d9a534f24ed30843316b1dcf1449646dc614812d521848ca8c27",
+    "distance/model-qualification-gemini-v0.2/judgments/N001/validation.json": "73c3205b05e5f870f9e369e3f1896a3e80dc52864f37d4fbb283edcd0c78d450",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/cost.json": "e7b79c956241a1a2fcc2e91b1131e1cde03469b581c2e2504616318a7251827a",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/http-body.json": "1d3e6a61ba762d2880281a0f4a9eb27210f63c11dac16601dfddf500d3f8d4a1",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/http-metadata.json": "42c35f4f79cac47d1e1e89f139ce0090ecfe3649739bee420a3cdf536cddc19b",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/prompt.txt": "9205f239ac8dec34ec0bcba8bdb4f5f73f2238b2cb7cf6f941b0257437283d46",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/request-sent.json": "a10ecade1b786e495a63c5b8f7077b1f4dcaec5597015a60448e6aa8ad09c2e3",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/request.json": "a8330f4b5423e04398310a5d36fae078fa77748671b7897e3f0c6e8f5e2e7cee",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/reservation.json": "84d3f391af9265d94848ee02ff6401584f2ff8701aeee2700d43b245178067c2",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/response.json": "07032b7062d3ad3c5158fee8b6cf576aa0ea7b55a9d76738537f9c17fb36a8ea",
+    "distance/model-qualification-gemini-v0.2/judgments/N002/validation.json": "82ab336f067845846a7175a5333c5d978ceea087d9b5e4ba8312f8f5f112d951",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/cost.json": "b3fde7aab891fb0496f5429de8b4cd5fea364b21cbee3ddebf36a33f85011c0a",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/http-body.json": "7d15f77c33c702a820ce342efb373f0f19f1ecad5015d0204d4d81842f2ed105",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/http-metadata.json": "f170c556aff70febfd0f5b92607bf5348572801ee893a603b07551d51ef6418b",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/prompt.txt": "0e6ac2f7d472ea31499bddac880b40874931a7a6c7cd351b410e10aab0006313",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/request-sent.json": "bb8b56c8daa174f22aa48757609c2d2acb81a60da54d8a9d9b09972131d63530",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/request.json": "498394963dd653dc2ab5ca14c16d258e05e8ab26f86948beb606036d3a56f601",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/reservation.json": "94cb65d4e917685dc3b88e6106334620eb21dacdf54535239891bf668d1f178c",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/response.json": "b384b63721d882e3a04305ce56e79b15f8ebd27d0734535e34f5e792fefe132a",
+    "distance/model-qualification-gemini-v0.2/judgments/N004/validation.json": "94c7462c64a47e49ee5cbc586b6965ba1613dabcd0bc3ea3890709fd74ad0693",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/cost.json": "45f6b3a747f90fae18fccb4faf2f82908180239a36c896a34f06448a81051c67",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/http-body.json": "8a351ec955b69fd8334c168948c09b6f87f933d153653cd898891ab163233894",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/http-metadata.json": "bb839eba779c70b3d4d6422849dc8085565149da1f5f4d65ec3a4b33e779442c",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/prompt.txt": "f459b6e000d843f88d0f80dfc7f5df3ed2d56ce48091e05577e51d261741624c",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/request-sent.json": "85f7ec0455c2b0ed09c288a95beb380178a66a501051a8fdd42b8e3e3a5c2421",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/request.json": "797e231b50955c441fd300286f09844af9710f71c75c788ea9d3f8215975b80d",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/reservation.json": "2c2226047dd5c4066ca57d1116c517c43bea39a5bf1a13d7c0fb1ee1eba8a203",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/response.json": "a2bd648716bc5062f4d62ab732fe4ce1b43cd68c10ec440ee229b8f4e35d07d0",
+    "distance/model-qualification-gemini-v0.2/judgments/N006/validation.json": "fc7fb63c2cf33b018a43ddf2acdb8d7a281df31e4e6e7dbc8e32104355ed63a4",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/cost.json": "68ab24081347a27153136e88e1ecdfb2fe831cfb77a4ea5e52196439b8a6fc26",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/http-body.json": "544c6c4812868e9273ed9fe742912ad89416a0f8732089e98334b09681284dc4",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/http-metadata.json": "3795797ad425ce9a704922ef1672ed8e6ca194fd5a41eb52a4798d19557caa42",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/prompt.txt": "63c5af8a9b8335a0d03154e67a56f4d186952f9b86fd78b2e0239eaaa7fddfa8",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/request-sent.json": "8a2a0dffb07af557d62546bc485b92876afbfe35f0370934042e597a48ec1d97",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/request.json": "1951c17c2807b80481d28f37bfe52e8774062668cb45650161b41f7fe66af040",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/reservation.json": "f6c3428a5893ab7f0570878a603745ce89f26cac72a3b6ec7725c625c8f00b90",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/response.json": "4417351d08254df2c675eba9b2f85c853c5c31712f2e79690b71bc16bc0f92ea",
+    "distance/model-qualification-gemini-v0.2/judgments/N009/validation.json": "7b915f17179250de1b2b55f20f73a0151a962c5f865388a5fbc240066c106f86",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/cost.json": "c2e78ab14f0c4ca0220f5dd57afc72711051e13e81761bd5ace0a93c962291cf",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/http-body.json": "a5c83c5f34252dad4329c556b45e716c7d520b5fa0af986bc1c7eb59c19a9bbe",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/http-metadata.json": "caf3ba27a201d351c8f9413f69c2a0864bc1828b87b57c083b3043d2427aeb91",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/prompt.txt": "cc341a68c5f2aa8ea7faec8e3090926af2d3b7ab6a7c90da7adbc544acffafcb",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/request-sent.json": "4aa210b9f7918b5e60c7b8875c3be03d0052aa498b9ed7df55ce5c6130147d9b",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/request.json": "27553e9f1e0a8705091d2d6e6bbf25592e10d04fc100fe076ab7194b7f500494",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/reservation.json": "5ca8c8453062998bde42ab62727c023287aa903f1bc7e123ba021be571847bc3",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/response.json": "00667783ed5d4d193af3d2fe40f9cff5bb30638d70a329655ba935fbfe3fbacb",
+    "distance/model-qualification-gemini-v0.2/judgments/N010/validation.json": "5e0087d51b104a5ab6830ad076eaea6382b6df6e4a02f8a0b41c250aa3c8e5d2",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/cost.json": "ee0b47ff5e89c2fb76a1004ad6e00bf7fbb85ee3d9200b4374a4862802dd5836",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/http-body.json": "f9bbb0ef1b406321d3e9dfc40c6abc1393391a62378fdbf31f92ec0633ee0094",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/http-metadata.json": "28b623caaef30b0e40df3f42c0ad4df90ae2edda66197b34dbbd36aaaaf60c6e",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/prompt.txt": "8c624740e39e06583a36bb9095a1e69d212536feb6bf602e354ff8058db982b3",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/request-sent.json": "125f146be90c70c747883bcaf4b6bd04aa171ce9c701b68aea2e069f1caad21b",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/request.json": "174ac106243558f437007dbf29b5ced18e8bc272c6b0ea4ebd67a27a4e311fcf",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/reservation.json": "4d8cad1379c1fa40f5ffc3ecea4e15570f26c45e247dbe4a6125f6b9e2d817dd",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/response.json": "2ccb7015342c4aa904be703c98fd998e99841d833776b1b7bee86f4cd9d8995d",
+    "distance/model-qualification-gemini-v0.2/preflight/anti-collapse/validation.json": "1bfe4400e1dc9a2fec276d50872ecae26bec9132ea21e5bce543674a1f86453d",
+    "distance/model-qualification-gemini-v0.2/preflight/fixture-anti-collapse.json": "6a5b2b72a5742f520218ab3c58a5a650774365c9cf7162c9852a0a7d4287c759",
+    "distance/model-qualification-gemini-v0.2/preflight/fixture-validity.json": "4328ccf69abaae6b78412a3467d0e78408ca62699c544068adcbeeea619e3531",
+    "distance/model-qualification-gemini-v0.2/preflight/freeze.json": "ebed96e68db5a62dc0951afaeb6fa1297b811564b02f4b70a9a97a9ac7a5a297",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/cost.json": "517d7aa9b89bb1239da6530571a6d6377475de302cf12fb0470af06c3ce4d25e",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/http-body.json": "44660b589ec97d1eaa6ee3f3d009e115c081f03b012676435163d177b5488666",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/http-metadata.json": "e9be35a7e213b568ef8b6e95ede1882cccc480e808c08c59fc34dcc7f57fe1f0",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/prompt.txt": "062271933288c630107dda7d3ae2a0deb55f300246b386eb5024e851f08b7585",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/request-sent.json": "f518a36257f56b919040b949cbd3bab4da3304683fdb4f032b0aa7f1dc605d14",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/request.json": "e88c20b665c6edec6f101972963845cb2137054e7f6ed466b08e094eb441fbeb",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/reservation.json": "379ff796d6982273f22ce8a6744e8c354e100258daf9ff4228526c8e521228d1",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/response.json": "7048295b1e7eec8e67e0f7ea010a0037f7cb6f6cd49a1aa9ef4aba9f561169c3",
+    "distance/model-qualification-gemini-v0.2/preflight/validity/validation.json": "6cd85d14855382720e220546beebbe4fb384375e94e6ed1bf5488850fbf6d8be"
+  },
+  "runtime_reservations": {
+    "preflight-reservation.json": {
+      "at": "2026-09-30T04:29:12.125185+00:00",
+      "commit": "12aeab0fe7c62bcf35c9d1d1dd6f28dc11f63739"
+    },
+    "measurement-reservation.json": {
+      "at": "2026-09-30T04:30:59.390110+00:00",
+      "commit": "e28e62f92e61f451d4f2cfd776741693556725d2"
+    }
+  },
+  "stop": null
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "E022",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping meticulously translates the complete step-response mechanism, including the state, operation, signal, inference chain, and limits. However, preservation relies on unverified organizational conditions, specifically whether a clean step change can be applied and whether system timestamps accurately reflect actual state transitions."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The derived inferences directly answer the retained target question by using temporal response features (e.g., dead time, non-settling queues) to identify delay accumulation points and to evaluate bounded changes as remedies."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The operational procedure is highly detailed and logically constructs the required signal. Yet, its coherence in practice depends on establishing specific empirical measurements, namely accurate tracking of actual work movement and the ability to isolate the transient response from unlogged organizational disturbances."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Verification that stage-level timestamps reflect actual work movement rather than delayed administrative logging, established by auditing system logs against real-world handoff events.",
+      "Establishment that a workflow input or process setting can be changed abruptly, by a known amount, and held constant, verified by executing a controlled intervention and monitoring for strict compliance and lack of anticipation effects.",
+      "Establishment of a known starting state, achieved by recording a comprehensive pre-change baseline of queues, in-flight items, staffing, and demand before acting.",
+      "Verification that the step signal is not masked by environmental noise, established by maintaining a disturbance log and confirming no major confounding events overlap the measurement window."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The mapping provides a rigorous, sophisticated translation of control theory diagnostics to organizational workflows, fully addressing the target question without reframing it. However, because organizational environments do not natively guarantee the clean inputs and precise telemetry of engineered systems, the validity of the transfer is strictly conditional on establishing the specified operational measurements and baseline controls."
+  },
+  "uncertainty": [
+    "Whether the minimum step size required to generate a signal visible above baseline noise will violate service-level targets or staff capacity.",
+    "Whether human actors will alter their behavior non-linearly (e.g., Hawthorne effects or anticipation) upon observing the change, violating the assumption of a stable underlying system.",
+    "Whether workflow case volumes are sufficiently high to treat per-interval queue counts and waiting times as continuous trajectories rather than coarse, discrete events."
+  ]
+}
