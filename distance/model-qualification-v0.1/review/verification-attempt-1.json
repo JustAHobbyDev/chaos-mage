@@ -1,0 +1,33 @@
+{
+  "at": "2026-09-30T03:27:46.991505+00:00",
+  "results_freeze_commit": "746c550e61af163a0be5391c4e8629ccb23e6a5a",
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s distance -p test_harness.py",
+      "exit_code": 0,
+      "reported_tests": 6,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.401s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/boundary-v0.2 -p 'test_*.py'",
+      "exit_code": 0,
+      "reported_tests": 16,
+      "output": ".............primary-001-A: failed\n...\n----------------------------------------------------------------------\nRan 16 tests in 1.774s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts -p 'test_*.py'",
+      "exit_code": 0,
+      "reported_tests": 8,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.047s\n\nOK\n"
+    },
+    {
+      "command": "python -B -m unittest discover -s distance/v0.3/tests -p 'test_*.py'",
+      "exit_code": 1,
+      "reported_tests": 33,
+      "output": ".............E...................\n======================================================================\nERROR: test_freeze_and_preparation_inventory (test_contracts.ContractTests.test_freeze_and_preparation_inventory)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/tests/test_contracts.py\", line 239, in test_freeze_and_preparation_inventory\n    prep.verify_freeze(); prep.verify_inventory()\n                          ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 163, in verify_inventory\n    require(sha(ROOT / name) == expected, f'Prepared artifact changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Prepared artifact changed: README.md\n\n----------------------------------------------------------------------\nRan 33 tests in 15.091s\n\nFAILED (errors=1)\n"
+    }
+  ],
+  "total_tests": 63,
+  "new_provider_calls": 0,
+  "passed": false
+}
