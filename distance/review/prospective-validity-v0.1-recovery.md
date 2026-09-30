@@ -61,14 +61,68 @@ Before the resumed stage, all 36 historical checks and 37 original F tests passe
 followed by committed local-input and continuation-state verification. Thirty-two
 new recovery tests include evidence tampering, frozen-order continuation, duplicate
 prevention, terminal-state protection and raw-response-preserving bookkeeping
-recovery. Six artificial accounting tests cover post-freeze reporting boundaries.
+recovery. Seven artificial accounting/chronology tests cover post-freeze reporting boundaries and prechecks-before-launch ordering.
 
 ## Measurement and interpretation
 
-Collection is ongoing. Complete taxonomy distribution, prospective classifier,
-prospective outcomes/readiness, old-to-new transitions, warrant audits and eligible
-cohort are not yet reported. They must be filled only after their required freezes
-and reviews. No conceptual success conclusion follows from the recovery itself.
+### Frozen taxonomy and operator audit
+
+All **196 taxonomy judgments** are frozen: **4 retained + 192 new**. The original
+probe was retained; no taxonomy observation was rerun. The distribution is:
+
+| Category | Count |
+|---|---:|
+| Execution precondition | 59 |
+| Mechanism condition | 19 |
+| Warrant condition | 110 |
+| Target-fidelity condition | 7 |
+| Mixed | 1 |
+| Uncertain label | 0 |
+
+The execution-versus-substantive split is **59 execution / 136 mechanism, warrant
+or target / 1 mixed**. Eight responses contain uncertainty text despite no response
+using the uncertain category. These are atoms selected from historical unresolved
+conditions, with separately sourced overlaps; the counts are not independent votes
+or population-level rates.
+
+The [post-freeze audit](../prospective-validity-v0.1/recovery/review/taxonomy-audit.json)
+records every condition and rationale. It contains 96 condition-level consistent
+annotations, 94 boundary annotations, one mixed review, three qualifications, and
+two explicit disagreements with an execution-only reading. These are operator
+annotations, not independent human evidence or additional model samples.
+
+Q0081 and Q0168 bundle availability with independent dating/comparability or source
+independence/overlap. Treating their entire content as execution-only risks hiding
+substantive requirements. Endpoint verification receives both execution and mechanism
+labels (Q0010/Q0040/Q0088/Q0177); ordinary measurement setup versus inferential
+reliability also has unsettled boundaries. Q0115/Q0160 distinguish component fidelity
+from practical switchability imperfectly. The sole mixed item, Q0047, joins shared
+ordered overlap with discriminating correspondences. All labels remain unchanged.
+
+The separation is useful for identifying practical prerequisites, but category names
+alone are not a reliable mechanical admission rule. Classify functional role and
+respect the mapping's stated claim. Lack of an already observed successful result
+must not become a prospective validity defect; conversely, calling an input qualified
+must not move an independent evidential bridge into readiness.
+
+### Prospective classifier
+
+The [frozen classifier](../prospective-validity-v0.1/recovery/CLASSIFIER.md) retains
+mechanism fidelity, warrant validity, target fidelity, descriptive execution readiness,
+strict final-status derivation, and the anti-warrant-laundering rule. It asks whether
+the inference follows after execution prerequisites are satisfied and the stated
+signal occurs. Unsupported bridges stay unsupported unless the mapping itself
+supplies a specific unresolved empirical relation that could establish the warrant.
+
+Only general clarifications from the taxonomy audit enter the classifier. No case key,
+historical verdict, taxonomy label, generator identity or expected outcome enters it.
+Thirty prospective packets preserve the original mapping/source/target fields and
+E029's domain wording, including “novelty effects.” The original canonical contract
+is reused and an independent order is frozen with seed 20260930073.
+
+Prospective preflight/collection and post-freeze review remain pending. Prospective
+outcomes/readiness, transitions, warrant audits and eligible cohort must be filled
+only after the required freezes. Recovery itself does not establish conceptual success.
 
 Experiment E remains historically stopped. No anti-collapse, second-model,
 replacement mapping, neutralization or extra sample is authorized by this recovery.
