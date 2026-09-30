@@ -1,0 +1,96 @@
+{
+  "mechanism": "Step-response probing",
+  "matched_triple": "step",
+  "intended_structural_position": "local",
+  "is_control": false,
+  "control_number": null,
+  "unsupported_claims": [
+    {
+      "id": "D1",
+      "exact_text": "Use of the same approval-workflow template establishes that the two processes have the same internal training-budget code.",
+      "source_field": "mapping.inference"
+    }
+  ],
+  "supported_by": [
+    "signal.panel_A",
+    "signal.panel_B",
+    "state.template_identity"
+  ],
+  "dependents": {
+    "claims": [],
+    "actions": [],
+    "target_contributions": []
+  },
+  "expected_surviving_contributions": [
+    "intake-priority intervention",
+    "approval-batch intervention"
+  ],
+  "expected_artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+  "warrant_plausibility_audit": "Template identity does not establish the asserted administrative property or transfer event-specific conclusions across distinct objects. The statement is unconditional, not a supplied unresolved empirical condition. The two panel conclusions are independently bounded to their assigned objects.",
+  "survivor_audit": "For core designs both supported panel conclusions concern the comparison object. The focal-target directives are explicitly conditional on applying those conclusions to the focal object. There is no independent focal-target measurement or result. A reviewer may nevertheless find a material next-inquiry contribution; report that rather than forcing agreement.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "signal.panel_A",
+        "text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+      },
+      {
+        "id": "signal.panel_B",
+        "text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory. In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory. Both responses settle within the observation window without an abort."
+      },
+      {
+        "id": "claim.panel_A",
+        "text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+      },
+      {
+        "id": "claim.panel_B",
+        "text": "For the approval process under investigation, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+      },
+      {
+        "id": "operation.action_1",
+        "text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+      },
+      {
+        "id": "operation.action_2",
+        "text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+      },
+      {
+        "id": "state.template_identity",
+        "text": "The inquiry uses two intervention panels: A tests an intake-priority setting; B tests an approval-batch setting. The focal and comparison processes use the same approval-workflow template. Each panel concerns its assigned process at a fixed operating point; the two processes are not asserted to share their response dynamics."
+      },
+      {
+        "id": "D1",
+        "text": "Use of the same approval-workflow template establishes that the two processes have the same internal training-budget code."
+      }
+    ],
+    "edges": [
+      [
+        "signal.panel_A",
+        "claim.panel_A"
+      ],
+      [
+        "signal.panel_B",
+        "claim.panel_B"
+      ],
+      [
+        "claim.panel_A",
+        "operation.action_1"
+      ],
+      [
+        "claim.panel_B",
+        "operation.action_2"
+      ],
+      [
+        "state.template_identity",
+        "D1"
+      ]
+    ]
+  },
+  "authoring_check": {
+    "intended_defect_plausibly_unsupported": true,
+    "two_supported_panel_inferences_bounded_to_assigned_object": true,
+    "unconditional_defect_not_execution_prerequisite": true,
+    "no_additional_expected_unsupported_claims": true,
+    "operator_only": true
+  }
+}

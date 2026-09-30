@@ -1,0 +1,107 @@
+{
+  "mechanism": "Chain-of-custody verification",
+  "matched_triple": "custody",
+  "intended_structural_position": "core",
+  "is_control": false,
+  "control_number": null,
+  "unsupported_claims": [
+    {
+      "id": "D1",
+      "exact_text": "Use of the same archive handling-ledger template makes the panel-A and B sequence conclusions for the comparison draft applicable to the focal draft.",
+      "source_field": "mapping.inference"
+    }
+  ],
+  "supported_by": [
+    "signal.panel_A",
+    "signal.panel_B",
+    "state.template_identity"
+  ],
+  "dependents": {
+    "claims": [],
+    "actions": [
+      "operation.action_1",
+      "operation.action_2"
+    ],
+    "target_contributions": [
+      "opening-section assembly constraint",
+      "closing-section assembly constraint"
+    ]
+  },
+  "expected_surviving_contributions": [],
+  "expected_artifact_status": "CORE_INVALID",
+  "warrant_plausibility_audit": "Template identity does not establish the asserted administrative property or transfer event-specific conclusions across distinct objects. The statement is unconditional, not a supplied unresolved empirical condition. The two panel conclusions are independently bounded to their assigned objects.",
+  "survivor_audit": "For core designs both supported panel conclusions concern the comparison object. The focal-target directives are explicitly conditional on applying those conclusions to the focal object. There is no independent focal-target measurement or result. A reviewer may nevertheless find a material next-inquiry contribution; report that rather than forcing agreement.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "signal.panel_A",
+        "text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event. Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review. Neither chain contains an unexplained transition in the interval examined."
+      },
+      {
+        "id": "signal.panel_B",
+        "text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event. Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review. Neither chain contains an unexplained transition in the interval examined."
+      },
+      {
+        "id": "claim.panel_A",
+        "text": "For a separate comparison draft held by the same archive, panel A supports the bounded sequence that its identified opening-section assembly preceded its recorded binding event."
+      },
+      {
+        "id": "claim.panel_B",
+        "text": "For a separate comparison draft held by the same archive, panel B supports the bounded sequence that its identified closing-section replacement followed its recorded editorial review."
+      },
+      {
+        "id": "operation.action_1",
+        "text": "Constrain the focal draft reconstruction by the opening-section assembly-before-binding sequence only if the panel-A sequence inference applies to that draft."
+      },
+      {
+        "id": "operation.action_2",
+        "text": "Constrain the focal draft reconstruction by the closing-section replacement-after-review sequence only if the panel-B sequence inference applies to that draft."
+      },
+      {
+        "id": "state.template_identity",
+        "text": "The inquiry uses two provenance panels: A tracks an opening-section packet; B tracks a closing-section packet. The focal and comparison drafts use the same archive handling-ledger template. Each panel tracks identified leaves of its assigned draft; a matching ledger form does not stipulate that two drafts contain the same events."
+      },
+      {
+        "id": "D1",
+        "text": "Use of the same archive handling-ledger template makes the panel-A and B sequence conclusions for the comparison draft applicable to the focal draft."
+      }
+    ],
+    "edges": [
+      [
+        "signal.panel_A",
+        "claim.panel_A"
+      ],
+      [
+        "signal.panel_B",
+        "claim.panel_B"
+      ],
+      [
+        "claim.panel_A",
+        "operation.action_1"
+      ],
+      [
+        "claim.panel_B",
+        "operation.action_2"
+      ],
+      [
+        "D1",
+        "operation.action_2"
+      ],
+      [
+        "D1",
+        "operation.action_1"
+      ],
+      [
+        "state.template_identity",
+        "D1"
+      ]
+    ]
+  },
+  "authoring_check": {
+    "intended_defect_plausibly_unsupported": true,
+    "two_supported_panel_inferences_bounded_to_assigned_object": true,
+    "unconditional_defect_not_execution_prerequisite": true,
+    "no_additional_expected_unsupported_claims": true,
+    "operator_only": true
+  }
+}

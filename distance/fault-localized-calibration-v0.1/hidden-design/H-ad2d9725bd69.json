@@ -1,0 +1,103 @@
+{
+  "mechanism": "Dendrochronological crossdating",
+  "matched_triple": "crossdate",
+  "intended_structural_position": "scope",
+  "is_control": false,
+  "control_number": null,
+  "unsupported_claims": [
+    {
+      "id": "D1",
+      "exact_text": "Use of the same correspondence-register template makes the panel-B dating conclusion for the comparison bundle applicable to the focal bundle.",
+      "source_field": "mapping.inference"
+    }
+  ],
+  "supported_by": [
+    "signal.panel_A",
+    "signal.panel_B",
+    "state.template_identity"
+  ],
+  "dependents": {
+    "claims": [],
+    "actions": [
+      "operation.action_2"
+    ],
+    "target_contributions": [
+      "later-run chronology"
+    ]
+  },
+  "expected_surviving_contributions": [
+    "earlier-run chronology"
+  ],
+  "expected_artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+  "warrant_plausibility_audit": "Template identity does not establish the asserted administrative property or transfer event-specific conclusions across distinct objects. The statement is unconditional, not a supplied unresolved empirical condition. The two panel conclusions are independently bounded to their assigned objects.",
+  "survivor_audit": "For core designs both supported panel conclusions concern the comparison object. The focal-target directives are explicitly conditional on applying those conclusions to the focal object. There is no independent focal-target measurement or result. A reviewer may nevertheless find a material next-inquiry contribution; report that rather than forcing agreement.",
+  "graph": {
+    "nodes": [
+      {
+        "id": "signal.panel_A",
+        "text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment. Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment. Competing shifts fail these stated checks."
+      },
+      {
+        "id": "signal.panel_B",
+        "text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment. Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment. Competing shifts fail these stated checks."
+      },
+      {
+        "id": "claim.panel_A",
+        "text": "For the undated correspondence bundle under investigation, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+      },
+      {
+        "id": "claim.panel_B",
+        "text": "For a separate comparison correspondence bundle from the same collection, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for."
+      },
+      {
+        "id": "operation.action_1",
+        "text": "Use the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle."
+      },
+      {
+        "id": "operation.action_2",
+        "text": "Use the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle."
+      },
+      {
+        "id": "state.template_identity",
+        "text": "The inquiry uses two sequence panels: A is an earlier run of correspondence entries; B is a later run. The focal and comparison bundles use the same correspondence-register template. Each panel contains ordered observations from its assigned bundle and independently dated overlapping reference sequences recording the same external annual cycle."
+      },
+      {
+        "id": "D1",
+        "text": "Use of the same correspondence-register template makes the panel-B dating conclusion for the comparison bundle applicable to the focal bundle."
+      }
+    ],
+    "edges": [
+      [
+        "signal.panel_A",
+        "claim.panel_A"
+      ],
+      [
+        "signal.panel_B",
+        "claim.panel_B"
+      ],
+      [
+        "claim.panel_A",
+        "operation.action_1"
+      ],
+      [
+        "claim.panel_B",
+        "operation.action_2"
+      ],
+      [
+        "D1",
+        "operation.action_2"
+      ],
+      [
+        "state.template_identity",
+        "D1"
+      ]
+    ]
+  },
+  "authoring_check": {
+    "intended_defect_plausibly_unsupported": true,
+    "two_supported_panel_inferences_bounded_to_assigned_object": true,
+    "unconditional_defect_not_execution_prerequisite": true,
+    "no_additional_expected_unsupported_claims": true,
+    "operator_only": true
+  }
+}

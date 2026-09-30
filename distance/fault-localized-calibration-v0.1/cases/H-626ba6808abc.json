@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?"
+  },
+  "mapping": {
+    "state": "The inquiry has two diagnostic panels: A addresses intake delay; B addresses approval-stage delay. The focal and comparison processes use the same approval-case form. Each panel contains observations from its assigned process and a maintained list of rival explanations rather than a preselected single cause.\nPanel A is assigned to a comparison approval process in another unit.\nPanel B is assigned to a comparison approval process in another unit.",
+    "operation": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate.\nPrioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there.\nPrioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there.",
+    "signal": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity. In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue. The observation definitions and reliability checks are satisfied.",
+    "inference": "For a comparison approval process in another unit, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential.\nFor a comparison approval process in another unit, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential.\nUse of the same approval-case form makes the panel-A and B differential conclusions for the comparison process applicable to the focal process.",
+    "limit": "The supplied comparisons warrant relative priorities, not exclusion of all unlisted or co-occurring causes. Evidence quality and hypothesis coverage still bound the differential. Form identity is the only stated cross-process connection; staffing, scheduling and rework mechanisms are not stipulated equal."
+  }
+}
