@@ -1,0 +1,36 @@
+{
+  "providers": {
+    "muse": {
+      "requested_model": "muse-spark-1.3-contributor",
+      "endpoint": "https://api.meta.ai/v1",
+      "route": "chat/completions",
+      "tier": "Contributor",
+      "credential_source": "environment",
+      "reasoning_effort": "high",
+      "client": "Python standard-library urllib.request",
+      "client_version": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+      "tools": [],
+      "history_messages": 0,
+      "strict_schema": true,
+      "credential_environment_variable": "META_API_KEY"
+    }
+  },
+  "timeout_seconds": 900,
+  "max_concurrent_processes": 1,
+  "temperature": "provider default; unset",
+  "seed": "provider default; unset",
+  "harness_retries": 0,
+  "fallback_allowed": false,
+  "jsonschema_version": "4.23.0",
+  "preflight_budget": {
+    "muse": 2
+  },
+  "primary_budget": {
+    "muse": 12
+  },
+  "data_use": {
+    "tier": "Contributor",
+    "training_eligible": true,
+    "corpus": "public/synthetic project material only"
+  }
+}
