@@ -1,0 +1,509 @@
+{
+  "at": "2026-09-30T21:08:46.745987+00:00",
+  "input_commit": "98367f9aee84bff79da08b4eb6492c9a097cc589",
+  "prepared_sha256": "11d346249b002d118781532fa48eb6cc59e7a6df8a07f18034e000d1f5ed340b",
+  "cli_version": "codex-cli 0.157.1",
+  "provider_calls": 0,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance",
+        "-p",
+        "test_harness.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.421s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/boundary-v0.2",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............primary-001-A: failed\n...\n----------------------------------------------------------------------\nRan 16 tests in 1.832s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.052s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/v0.3/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 15.259s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/validity-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "..........validity-017-B: failed\n.....\n----------------------------------------------------------------------\nRan 15 tests in 6.312s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................validity-019-A: failed\n.....\n----------------------------------------------------------------------\nRan 21 tests in 2.995s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......................validity-M004-B: failed\n.....\n----------------------------------------------------------------------\nRan 27 tests in 4.144s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.347s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "20 frozen cases verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/review/verify_review.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified: 38 judgments; 19 reviewed pairs; all disagreement fields; 10 Remote/Alien reviews; metrics and retry coverage; private v0.1/v0.2 hashes\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/v0.3/verify_preparation.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"preserved_files\": 174,\n  \"prepared_cases\": 24,\n  \"retrospective_examples\": 12,\n  \"planned_judgments\": 48,\n  \"status\": \"PREPARED / UNEXECUTED\"\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/review/review_tools.py",
+        "verify",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified all 48 judgments, 24 case reviews, eight contrasts and metrics; private execution hashes checked\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 28, 'orientation_controls': 6, 'comparison_judgments': 68}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................one: failed\n.....\n----------------------------------------------------------------------\nRan 37 tests in 0.589s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.383s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{'planned_targets': 8, 'measured_targets': ['T01', 'T02', 'T03', 'T05', 'T06', 'T08'], 'planned_pairs': 16, 'primary_pairs': 10, 'orientation_controls': 4, 'admitted_mappings': 16, 'measured_unique_mappings': 14, 'repeated_mapping_ids': ['M007', 'M011', 'M014', 'M018', 'M019', 'M020'], 'same_source_pairs': 1, 'different_source_pairs': 9, 'complete_triangle_targets': ['T01', 'T03'], 'controls_targets': ['T01', 'T02', 'T03', 'T06']}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........................................first: failed\n....\n----------------------------------------------------------------------\nRan 44 tests in 0.850s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "Prepared inputs verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'targets': 6, 'designed_cases': 24, 'admitted_cases': 20, 'judgments': 40, 'sessions': 92}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'targets': 6, 'designed_cases': 24, 'admitted_cases': 20, 'judgments': 40, 'sessions': 92}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-v0.1/tests"
+      ],
+      "exit_code": 0,
+      "output": "........................first: excluded\nsecond: excluded\n...first: failed\n....................\n----------------------------------------------------------------------\nRan 47 tests in 0.618s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-recovery-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......................\n----------------------------------------------------------------------\nRan 22 tests in 2.454s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/family-b-bridge-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "..................\n----------------------------------------------------------------------\nRan 18 tests in 2.006s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 2.286s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.2/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................\n----------------------------------------------------------------------\nRan 32 tests in 4.606s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........................\n----------------------------------------------------------------------\nRan 24 tests in 4.247s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"incomplete\",\n  \"generation_outputs\": 30,\n  \"passed_generation_checks\": 27,\n  \"neutralizations\": 27,\n  \"completed_audits\": 21,\n  \"unlaunched_audits\": 33,\n  \"unique_provider_sessions\": 84,\n  \"false_positive_generation_exclusions\": 3,\n  \"validity_calls\": 0,\n  \"anti_collapse_calls\": 0,\n  \"exposed_measurement_formatter_retries\": {\n    \"A\": 0,\n    \"B\": 0\n  },\n  \"returned_identifiers\": {\n    \"A\": [],\n    \"B\": [\n      \"claude-fable-5-1\"\n    ]\n  },\n  \"historical_files_unchanged\": true,\n  \"private_hashes_checked\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-recovery-v0.1/review/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"insufficient natural-output coverage\",\n  \"generated\": 30,\n  \"primary_admitted\": 8,\n  \"targets\": 6,\n  \"sessions\": 192,\n  \"generated_mappings\": 30,\n  \"generation_failures\": 0,\n  \"neutralization_successes\": 30,\n  \"neutralization_failures\": 0,\n  \"neutralization_audit_exclusions\": 7,\n  \"validity_admitted_mappings\": 9,\n  \"validity_excluded_mappings\": 21,\n  \"primary_admitted_mappings\": 8,\n  \"unique_sessions\": 192,\n  \"original_sessions\": 84,\n  \"recovery_sessions\": 108,\n  \"returned_identifiers\": {\n    \"A\": [],\n    \"B\": [\n      \"claude-fable-5-1\"\n    ]\n  },\n  \"observed_formatter_retries\": {\n    \"A\": 0,\n    \"B\": 0\n  },\n  \"historical_artifacts_unchanged\": true,\n  \"private_event_audit\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-v0.1/review/verify_report.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"at\": \"2026-09-30T21:07:12.047646+00:00\",\n  \"qualification\": \"not_qualified\",\n  \"results_freeze_commit\": \"746c550e61af163a0be5391c4e8629ccb23e6a5a\",\n  \"disagreement_counts\": {\n    \"none\": 4,\n    \"ontology_specification_ambiguity\": 3,\n    \"model_failure\": 3,\n    \"legitimate_reasoning_variation\": 2\n  },\n  \"pre_existing_tracked_files_verified\": 1906,\n  \"root_readme_restored\": true,\n  \"historical_artifacts_unchanged\": true,\n  \"report_policy_and_review_consistent\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-gemini-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"passed\": true,\n  \"primary_calls\": 0,\n  \"artificial_probes\": 1,\n  \"provider_calls_in_audit\": 0,\n  \"qualification\": \"qualification_inconclusive\",\n  \"historical_artifacts_unchanged\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/family-b-bridge-v0.1/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"inconclusive\",\n  \"source_cases\": 12,\n  \"primary_calls\": {\n    \"fable\": 0,\n    \"muse\": 0\n  },\n  \"successful_muse_probes\": 2,\n  \"failed_fable_authentication_probes\": 1,\n  \"reviewed_pairs\": 0,\n  \"historical_artifacts_unchanged\": true,\n  \"private_evidence_checked\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/fault-localized-validity-v0.1/historical.py",
+        "legacy"
+      ],
+      "exit_code": 0,
+      "output": ".....................................\n----------------------------------------------------------------------\nRan 37 tests in 7.239s\n\nOK\n{\n  \"action\": \"legacy\",\n  \"historical_checkpoint\": \"ac79a379938ae07d5a0a5a65e14c6145b60ed08b\",\n  \"live_preserved_files\": 2934,\n  \"result\": {\n    \"status\": \"incomplete\",\n    \"historical_bytes_preserved\": true,\n    \"executed_preparation_preserved\": true,\n    \"atomic_conditions\": 196,\n    \"taxonomy_completed\": 4,\n    \"taxonomy_unmeasured\": 192,\n    \"prospective_completed\": 0,\n    \"unique_sessions\": 5,\n    \"attempts_after_stop\": 0,\n    \"metrics_reconstructed\": true,\n    \"terminal_commit\": \"f71fa0ea863679fe6657f651269dac8bc5ecc233\",\n    \"tests\": 37\n  }\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/fault-localized-validity-v0.1/historical.py",
+        "recovery-tests"
+      ],
+      "exit_code": 0,
+      "output": ".......................................\n----------------------------------------------------------------------\nRan 39 tests in 4.315s\n\nOK\n{\n  \"action\": \"recovery-tests\",\n  \"historical_checkpoint\": \"ac79a379938ae07d5a0a5a65e14c6145b60ed08b\",\n  \"live_preserved_files\": 2934,\n  \"result\": {\n    \"tests\": 39\n  }\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/fault-localized-validity-v0.1/historical.py",
+        "completion"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"action\": \"completion\",\n  \"historical_checkpoint\": \"ac79a379938ae07d5a0a5a65e14c6145b60ed08b\",\n  \"live_preserved_files\": 2934,\n  \"result\": {\n    \"status\": \"complete\",\n    \"taxonomy\": 196,\n    \"prospective\": 30,\n    \"attempts\": {\n      \"counts\": {\n        \"taxonomy/runs\": 192,\n        \"prospective/probes\": 1,\n        \"prospective/runs\": 30\n      },\n      \"unique_sessions\": 228\n    },\n    \"preservation\": {\n      \"original_tracked_files\": 2648,\n      \"original_runtime_unchanged\": true\n    },\n    \"recovery_gate\": \"pass\",\n    \"metrics_reconstructed\": true,\n    \"E_remains_stopped\": true\n  }\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/fault-localized-validity-v0.1/historical.py",
+        "recovery-history"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"action\": \"recovery-history\",\n  \"historical_checkpoint\": \"ac79a379938ae07d5a0a5a65e14c6145b60ed08b\",\n  \"live_preserved_files\": 2934,\n  \"result\": {\n    \"resumptions\": [\n      {\n        \"state_index\": 0,\n        \"record\": \"distance/prospective-validity-v0.1/recovery/recovery-record.json\",\n        \"commit\": \"54d36c2ee65b79229510204dedf43e6a55f4fa90\",\n        \"classification\": \"recoverable_integrity_violation\"\n      },\n      {\n        \"state_index\": 2,\n        \"record\": \"distance/prospective-validity-v0.1/recovery/incidents/git-checkpoint-recovery.json\",\n        \"commit\": \"cf49327012b302744d5c06018ff1304ebfa3b3d2\",\n        \"classification\": \"recoverable_integrity_violation\"\n      }\n    ],\n    \"new_provider_launches\": 223,\n    \"no_launch_during_pause\": true,\n    \"original_stop_unchanged\": true\n  }\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/fault-localized-validity-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......................\n----------------------------------------------------------------------\nRan 22 tests in 0.582s\n\nOK\n"
+    }
+  ]
+}
