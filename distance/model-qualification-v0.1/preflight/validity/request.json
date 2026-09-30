@@ -1,0 +1,204 @@
+{
+  "model": "muse-spark-1.3-contributor",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Return exactly this artificial formatting fixture; no classification, tools or external context.\n{\"case_id\": \"PREFLIGHT\", \"validity\": {\"mechanism_fidelity\": {\"status\": \"preserved\", \"rationale\": \"Formatting fixture only.\"}, \"target_fidelity\": {\"status\": \"addressed\", \"rationale\": \"Formatting fixture only.\"}, \"operational_coherence\": {\"status\": \"coherent\", \"rationale\": \"Formatting fixture only.\"}, \"target_reframe\": {\"occurred\": false, \"original_question\": null, \"reframed_question\": null, \"relationship\": null}, \"unresolved_conditions\": [], \"final_status\": \"Valid\", \"rationale\": \"Formatting fixture only.\"}, \"uncertainty\": []}"
+    }
+  ],
+  "reasoning_effort": "high",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "judgment",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "validity": {
+            "$ref": "#/$defs/validity"
+          },
+          "uncertainty": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "case_id",
+          "validity",
+          "uncertainty"
+        ],
+        "additionalProperties": false,
+        "$defs": {
+          "validity": {
+            "type": "object",
+            "properties": {
+              "mechanism_fidelity": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "preserved",
+                      "conditionally-preserved",
+                      "not-preserved"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "target_fidelity": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "addressed",
+                      "conditional",
+                      "not-addressed"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "operational_coherence": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "coherent",
+                      "conditional",
+                      "incoherent"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "target_reframe": {
+                "type": "object",
+                "properties": {
+                  "occurred": {
+                    "type": "boolean"
+                  },
+                  "original_question": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "reframed_question": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "relationship": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "occurred",
+                  "original_question",
+                  "reframed_question",
+                  "relationship"
+                ],
+                "additionalProperties": false
+              },
+              "unresolved_conditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              },
+              "final_status": {
+                "type": "string",
+                "enum": [
+                  "Valid",
+                  "Conditional",
+                  "Invalid"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "mechanism_fidelity",
+              "target_fidelity",
+              "operational_coherence",
+              "target_reframe",
+              "unresolved_conditions",
+              "final_status",
+              "rationale"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  }
+}
