@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "status",
+    "rationale",
+    "signal_basis",
+    "stated_empirical_relation",
+    "uncertainty"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "SUPPORTED",
+        "CONDITIONAL_WARRANT",
+        "UNSUPPORTED",
+        "UNCERTAIN"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "signal_basis": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "stated_empirical_relation": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  }
+}
