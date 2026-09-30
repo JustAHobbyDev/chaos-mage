@@ -18,15 +18,15 @@ SELECTION={
 'E006':{
 'inference':{0:None,1:None,3:None,4:None,6:['the process was irregular','the records held do not settle whether that was deliberate'],8:None,9:None,10:None},
 'operation':{14:None,32:None},
-'signal':{3:None,4:None,5:None,6:None,7:['A full, contemporaneous evaluation record with consistent independent scoring would be inconsistent with the scoring-manipulation form of H1','but not with specification tailoring'],8:None,10:None}},
+'signal':{3:None,4:None,5:None,6:None,7:['A full, contemporaneous evaluation record with consistent independent scoring would be inconsistent with the scoring-manipulation form of H1','but not with specification tailoring'],8:None,10:['Rows where the two raters differ','where removing one item changes the surviving set']}},
 'E022':{
-'inference':{1:['the handoff holds items in fixed waiting (scheduled review, batch release, transfer latency)','not a shortage of processing capacity'],2:['the stage is capacity-limited at the tested load','delay accumulates there'],3:['a stage that absorbs change through a large backlog','improvements there take long to appear end to end'],4:None,5:None,6:None,7:None,8:None,10:None,11:None,13:None},
+'inference':{1:['the handoff holds items in fixed waiting (scheduled review, batch release, transfer latency)','not a shortage of processing capacity'],2:['the stage is capacity-limited at the tested load','delay accumulates there'],3:['a stage that absorbs change through a large backlog','improvements there take long to appear end to end'],4:None,5:['Oscillation without such a match','with items re-entering earlier stages'],6:None,7:None,8:None,10:['Delay accumulates at the stages showing the longest dead time','non-settling queues','the slowest settling'],11:None,13:None},
 'operation':{15:['keep the record as evidence of saturation or non-settling at that operating point.']},
 'signal':{}},
 'E030':{
 'inference':{0:['the arrangement examined is the arrangement the author left','its order can be used as evidence of authorial assembly'],1:None,2:['supported by contemporaneous record','supported by reconstruction from trace','unsupported across a break'],3:["The sequence offered as best explaining the draft is the one that leaves the fewest breaks and contradictions"],4:['A break weakens only the claims that depend on that transition','at each break the competing assembly sequences are retained rather than reduced to one.'],5:None},
 'operation':{},
-'signal':{1:['stubs or gaps in numbering indicating removed leaves']}}
+'signal':{1:['stubs','gaps in numbering indicating removed leaves']}}
 }
 EXCLUSIONS={
 ('E006','inference',2):'Heading introducing output taxonomy, not a separate signal-to-claim assertion.',

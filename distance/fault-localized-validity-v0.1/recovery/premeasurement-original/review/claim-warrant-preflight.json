@@ -1,0 +1,528 @@
+{
+  "at": "2026-09-30T21:03:16.195354+00:00",
+  "input_commit": "58f1ff0692056560fc4d3cdd53d5589e9b4d0335",
+  "prepared_sha256": "8bbe50882bf2a8a47a559358ec796a4e4fda712ca92716cd5757df6712fe8ae8",
+  "cli_version": "codex-cli 0.157.1",
+  "provider_calls": 0,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance",
+        "-p",
+        "test_harness.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.408s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/boundary-v0.2",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............primary-001-A: failed\n...\n----------------------------------------------------------------------\nRan 16 tests in 1.740s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.049s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/v0.3/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 15.363s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/validity-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "..........validity-017-B: failed\n.....\n----------------------------------------------------------------------\nRan 15 tests in 6.151s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................validity-019-A: failed\n.....\n----------------------------------------------------------------------\nRan 21 tests in 2.839s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......................validity-M004-B: failed\n.....\n----------------------------------------------------------------------\nRan 27 tests in 4.156s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.327s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "20 frozen cases verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/review/verify_review.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified: 38 judgments; 19 reviewed pairs; all disagreement fields; 10 Remote/Alien reviews; metrics and retry coverage; private v0.1/v0.2 hashes\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/v0.3/verify_preparation.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"preserved_files\": 174,\n  \"prepared_cases\": 24,\n  \"retrospective_examples\": 12,\n  \"planned_judgments\": 48,\n  \"status\": \"PREPARED / UNEXECUTED\"\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/review/review_tools.py",
+        "verify",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "Verified all 48 judgments, 24 case reviews, eight contrasts and metrics; private execution hashes checked\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'validity_judgments': 52, 'displacement_judgments': 48}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 28, 'orientation_controls': 6, 'comparison_judgments': 68}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................one: failed\n.....\n----------------------------------------------------------------------\nRan 37 tests in 0.561s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.384s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{'planned_targets': 8, 'measured_targets': ['T01', 'T02', 'T03', 'T05', 'T06', 'T08'], 'planned_pairs': 16, 'primary_pairs': 10, 'orientation_controls': 4, 'admitted_mappings': 16, 'measured_unique_mappings': 14, 'repeated_mapping_ids': ['M007', 'M011', 'M014', 'M018', 'M019', 'M020'], 'same_source_pairs': 1, 'different_source_pairs': 9, 'complete_triangle_targets': ['T01', 'T03'], 'controls_targets': ['T01', 'T02', 'T03', 'T06']}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'primary_pairs': 10, 'orientation_controls': 4}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........................................first: failed\n....\n----------------------------------------------------------------------\nRan 44 tests in 0.781s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "Prepared inputs verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'targets': 6, 'designed_cases': 24, 'admitted_cases': 20, 'judgments': 40, 'sessions': 92}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{'status': 'complete', 'targets': 6, 'designed_cases': 24, 'admitted_cases': 20, 'judgments': 40, 'sessions': 92}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-v0.1/tests"
+      ],
+      "exit_code": 0,
+      "output": "........................first: excluded\nsecond: excluded\n...first: failed\n....................\n----------------------------------------------------------------------\nRan 47 tests in 0.610s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-recovery-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......................\n----------------------------------------------------------------------\nRan 22 tests in 2.280s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/family-b-bridge-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "..................\n----------------------------------------------------------------------\nRan 18 tests in 2.375s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 2.778s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.2/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................\n----------------------------------------------------------------------\nRan 32 tests in 5.133s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........................\n----------------------------------------------------------------------\nRan 24 tests in 4.820s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"incomplete\",\n  \"generation_outputs\": 30,\n  \"passed_generation_checks\": 27,\n  \"neutralizations\": 27,\n  \"completed_audits\": 21,\n  \"unlaunched_audits\": 33,\n  \"unique_provider_sessions\": 84,\n  \"false_positive_generation_exclusions\": 3,\n  \"validity_calls\": 0,\n  \"anti_collapse_calls\": 0,\n  \"exposed_measurement_formatter_retries\": {\n    \"A\": 0,\n    \"B\": 0\n  },\n  \"returned_identifiers\": {\n    \"A\": [],\n    \"B\": [\n      \"claude-fable-5-1\"\n    ]\n  },\n  \"historical_files_unchanged\": true,\n  \"private_hashes_checked\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-recovery-v0.1/review/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"insufficient natural-output coverage\",\n  \"generated\": 30,\n  \"primary_admitted\": 8,\n  \"targets\": 6,\n  \"sessions\": 192,\n  \"generated_mappings\": 30,\n  \"generation_failures\": 0,\n  \"neutralization_successes\": 30,\n  \"neutralization_failures\": 0,\n  \"neutralization_audit_exclusions\": 7,\n  \"validity_admitted_mappings\": 9,\n  \"validity_excluded_mappings\": 21,\n  \"primary_admitted_mappings\": 8,\n  \"unique_sessions\": 192,\n  \"original_sessions\": 84,\n  \"recovery_sessions\": 108,\n  \"returned_identifiers\": {\n    \"A\": [],\n    \"B\": [\n      \"claude-fable-5-1\"\n    ]\n  },\n  \"observed_formatter_retries\": {\n    \"A\": 0,\n    \"B\": 0\n  },\n  \"historical_artifacts_unchanged\": true,\n  \"private_event_audit\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-v0.1/review/verify_report.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"at\": \"2026-09-30T21:03:00.614171+00:00\",\n  \"qualification\": \"not_qualified\",\n  \"results_freeze_commit\": \"746c550e61af163a0be5391c4e8629ccb23e6a5a\",\n  \"disagreement_counts\": {\n    \"none\": 4,\n    \"ontology_specification_ambiguity\": 3,\n    \"model_failure\": 3,\n    \"legitimate_reasoning_variation\": 2\n  },\n  \"pre_existing_tracked_files_verified\": 1906,\n  \"root_readme_restored\": true,\n  \"historical_artifacts_unchanged\": true,\n  \"report_policy_and_review_consistent\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-gemini-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"passed\": true,\n  \"primary_calls\": 0,\n  \"artificial_probes\": 1,\n  \"provider_calls_in_audit\": 0,\n  \"qualification\": \"qualification_inconclusive\",\n  \"historical_artifacts_unchanged\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/family-b-bridge-v0.1/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"inconclusive\",\n  \"source_cases\": 12,\n  \"primary_calls\": {\n    \"fable\": 0,\n    \"muse\": 0\n  },\n  \"successful_muse_probes\": 2,\n  \"failed_fable_authentication_probes\": 1,\n  \"reviewed_pairs\": 0,\n  \"historical_artifacts_unchanged\": true,\n  \"private_evidence_checked\": true\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/prospective-validity-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "..............................FFEF.F.\n======================================================================\nERROR: test_complete_terminal_evidence (test_incomplete.IncompleteTests.test_complete_terminal_evidence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/tests/test_incomplete.py\", line 11, in test_complete_terminal_evidence\n    x=v.verify(); self.assertEqual(x['status'],'incomplete'); self.assertEqual(x['attempts_after_stop'],0)\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/review/verify_incomplete.py\", line 27, in verify\n    c.require(name=='docs/HANDOFF-prospective-validity.md' or name=='docs/PROBLEM_FRAMES-prospective-validity-v0.1.md' or name.startswith('distance/prospective-validity-v0.1/') or name=='distance/review/prospective-validity-v0.1.md','Historical change outside authorized new artifacts: '+name)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\n\n======================================================================\nFAIL: test_bad_freeze_binding_rejected (test_incomplete.IncompleteTests.test_bad_freeze_binding_rejected)\n----------------------------------------------------------------------\nValueError: Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/tests/test_incomplete.py\", line 40, in test_bad_freeze_binding_rejected\n    with self.assertRaisesRegex(ValueError,'Failure binding'): v.verify()\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"Failure binding\" does not match \"Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\"\n\n======================================================================\nFAIL: test_changed_order_rejected (test_incomplete.IncompleteTests.test_changed_order_rejected)\n----------------------------------------------------------------------\nValueError: Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/tests/test_incomplete.py\", line 20, in test_changed_order_rejected\n    with self.assertRaisesRegex(ValueError,'Partial order/coverage'): v.verify()\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"Partial order/coverage\" does not match \"Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\"\n\n======================================================================\nFAIL: test_metrics_are_recomputed (test_incomplete.IncompleteTests.test_metrics_are_recomputed)\n----------------------------------------------------------------------\nValueError: Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/tests/test_incomplete.py\", line 24, in test_metrics_are_recomputed\n    with self.assertRaisesRegex(ValueError,'Metrics do not reconstruct'): v.verify()\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"Metrics do not reconstruct\" does not match \"Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\"\n\n======================================================================\nFAIL: test_new_raw_artifact_rejected (test_incomplete.IncompleteTests.test_new_raw_artifact_rejected)\n----------------------------------------------------------------------\nValueError: Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/tests/test_incomplete.py\", line 16, in test_new_raw_artifact_rejected\n    with self.assertRaisesRegex(ValueError,'Execution after terminal freeze'): v.verify()\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"Execution after terminal freeze\" does not match \"Historical change outside authorized new artifacts: distance/fault-localized-validity-v0.1/.gitignore\"\n\n----------------------------------------------------------------------\nRan 37 tests in 8.165s\n\nFAILED (failures=4, errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/prospective-validity-v0.1/recovery/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "........E....E.........................\n======================================================================\nERROR: test_original_publication_and_stop_preserved (test_recovery.EvidenceTests.test_original_publication_and_stop_preserved)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/tests/test_recovery.py\", line 16, in test_original_publication_and_stop_preserved\n    self.assertTrue(e.preservation()['original_runtime_unchanged'])\n                    ~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 41, in preservation\n    c.require(name in allowed or name.startswith(old.rel(HERE) + '/'), 'Unauthorized addition: ' + name)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Unauthorized addition: distance/fault-localized-validity-v0.1/packets/claim-warrant/C-bbdad20de021.txt\n\n======================================================================\nERROR: test_ten_gate_measurement_evidence (test_recovery.EvidenceTests.test_ten_gate_measurement_evidence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/tests/test_recovery.py\", line 19, in test_ten_gate_measurement_evidence\n    result = e.audit()\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 91, in audit\n    preserved = preservation()\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 41, in preservation\n    c.require(name in allowed or name.startswith(old.rel(HERE) + '/'), 'Unauthorized addition: ' + name)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Unauthorized addition: distance/fault-localized-validity-v0.1/packets/claim-warrant/C-bbdad20de021.txt\n\n----------------------------------------------------------------------\nRan 39 tests in 1.978s\n\nFAILED (errors=2)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/prospective-validity-v0.1/runner.py",
+        "verify"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/runner.py\", line 230, in <module>\n    if __name__=='__main__': main()\n                             ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/runner.py\", line 225, in main\n    elif a.action=='verify': print(json.dumps(verify()))\n                                              ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/runner.py\", line 98, in verify\n    p=HERE/f'{s}-prepared.json'; prep=c.read(p); verify_hashes(prep['files'])\n                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/runner.py\", line 34, in verify_hashes\n    for name,h in files.items(): c.require(c.sha(ROOT/name)==h,'Frozen bytes changed: '+name)\n                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/prospective-validity-v0.1/recovery/publication.py",
+        "verify"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/publication.py\", line 164, in <module>\n    else: print(json.dumps(taxonomy_metrics() if a.action=='taxonomy-metrics' else complete_metrics() if a.action=='metrics' else verify_completion(),indent=2))\n                                                                                                                                  ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/publication.py\", line 113, in verify_completion\n    r.verify_inputs('prospective', True)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/continuation.py\", line 142, in verify_inputs\n    e.preservation(c.read(HERE / 'original-preservation.json')['files'])\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 41, in preservation\n    c.require(name in allowed or name.startswith(old.rel(HERE) + '/'), 'Unauthorized addition: ' + name)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Unauthorized addition: distance/fault-localized-validity-v0.1/packets/claim-warrant/C-a24bcac8ba3a.txt\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/prospective-validity-v0.1/recovery/verify_recovery_history.py"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/verify_recovery_history.py\", line 49, in <module>\n    if __name__=='__main__': print(json.dumps(verify(),indent=2))\n                                              ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/verify_recovery_history.py\", line 21, in verify\n    r.e.gate(record)\n    ~~~~~~~~^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 176, in gate\n    proof = audit()\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 91, in audit\n    preserved = preservation()\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/recovery/evidence.py\", line 41, in preservation\n    c.require(name in allowed or name.startswith(old.rel(HERE) + '/'), 'Unauthorized addition: ' + name)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/contracts.py\", line 12, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Unauthorized addition: distance/fault-localized-validity-v0.1/claims/E030-source.json\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/fault-localized-validity-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.323s\n\nOK\n"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import runner as r
 import contracts as c
 
 class ExperimentTests(unittest.TestCase):
- def test_full_source_coverage_and_preservation(self): self.assertEqual(r.verify()['claims'],45)
+ def test_full_source_coverage_and_preservation(self): self.assertEqual(r.verify()['claims'],50)
  def test_threshold_precedes_inventory(self):
   m=c.read(r.H/'manifest.json')
   for p in ['CORE-INVALIDITY.md','CLAIM-WARRANT.md','PROTOCOL.md']: r.committed(r.H/p,m['policy_checkpoint'])
@@ -91,9 +91,22 @@ class ExperimentTests(unittest.TestCase):
   with patch.object(r,'committed',side_effect=ValueError('not committed')),patch.object(r,'write') as write:
    with self.assertRaises(ValueError):r.prepare('ablation')
    write.assert_not_called()
+ def test_historical_adapter_checks_live_bytes(self):
+  import historical
+  self.assertGreater(historical.guard(),0)
+  original=Path.read_bytes
+  target=r.R/'docs/PROBLEM_FRAMES.md'
+  with patch.object(Path,'read_bytes',lambda p: b'corrupt' if p==target else original(p)):
+   with self.assertRaisesRegex(AssertionError,'Live historical bytes changed'):historical.guard()
+ def test_preflight_recovery_retains_original(self):
+  p=r.H/'recovery/premeasurement-original/review/claim-warrant-preflight.json'
+  self.assertEqual(c.read(p)['provider_calls'],0)
+  self.assertEqual(sum(x['exit_code']!=0 for x in c.read(p)['checks']),5)
+  original=c.read(r.H/'recovery/premeasurement-original/claims/inventory.json')
+  self.assertEqual(len(original),45)
  def test_no_provider_probes_or_subsets(self):
   self.assertEqual(r.cfg()['probe_limit_per_stage'],0)
-  self.assertEqual(r.cfg()['authorized_claim_measurements'],45)
+  self.assertEqual(r.cfg()['authorized_claim_measurements'],50)
   self.assertEqual(r.cfg()['max_concurrent_processes'],1)
   if (r.H/'ablation-manifest.json').exists():
    m=c.read(r.H/'ablation-manifest.json'); self.assertFalse(m['subsets']); self.assertEqual(len(m['case_order']),len(set(m['case_order'])))

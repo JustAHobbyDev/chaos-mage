@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """G-only scheduler: exact immutable inputs, isolated observations, deletion-only ablation."""
-import argparse, copy, importlib.util, json, os, re, signal, subprocess, tempfile
+import argparse, concurrent.futures, copy, importlib.util, json, os, re, signal, subprocess, tempfile
 from datetime import datetime,timezone
 from pathlib import Path
 import contracts as c
@@ -144,11 +144,14 @@ def transition(s,reason):
 def preflight(stage):
  verify(stage,True); version=binary_check()
  commands=c.read(H/'historical-commands.json')+[['python','-B','-m','unittest','discover','-s',rel(H/'tests'),'-p','test_*.py']]
+ def check(cmd):
+  result=subprocess.run(cmd,cwd=R,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=600)
+  return {'command':cmd,'exit_code':result.returncode,'output':result.stdout}
  results=[]
- for cmd in commands:
-  result=subprocess.run(cmd,cwd=R,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
-  results.append({'command':cmd,'exit_code':result.returncode,'output':result.stdout})
-  print('check',len(results),'/',len(commands),result.returncode,' '.join(cmd),flush=True)
+ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+  for result in pool.map(check,commands):
+   results.append(result)
+   print('check',len(results),'/',len(commands),result['exit_code'],' '.join(result['command']),flush=True)
  write(H/'review'/f'{stage}-preflight.json',{'at':now(),'input_commit':head(),'prepared_sha256':c.sha(H/f'{stage}-prepared.json'),'cli_version':version,'provider_calls':0,'checks':results})
  c.require(all(r['exit_code']==0 for r in results),'Preflight failed')
  verify(stage,True)

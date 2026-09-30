@@ -1,0 +1,200 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_viability"
+  ],
+  "properties": {
+    "artifact_viability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "unsupported_claims",
+        "mechanism_survival",
+        "target_contribution_survival",
+        "dependency_cascade",
+        "per_claim_dependencies",
+        "artifact_status",
+        "rationale"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "unsupported_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "claim_id"
+            ],
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "mechanism_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "survives",
+                "partially_survives",
+                "does_not_survive",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "target_contribution_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "surviving_contributions"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "substantially_survives",
+                "reduced_but_material",
+                "no_material_contribution",
+                "uncertain"
+              ]
+            },
+            "surviving_contributions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "dependency_cascade": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "failed_downstream_claims",
+            "failed_actions_or_inquiries",
+            "surviving_actions_or_inquiries",
+            "rationale"
+          ],
+          "properties": {
+            "failed_downstream_claims": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "failed_actions_or_inquiries": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "surviving_actions_or_inquiries": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "per_claim_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "claim_id",
+              "signal",
+              "dependent_claims",
+              "dependent_actions_or_inquiries",
+              "rationale"
+            ],
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "signal": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "dependent_claims": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "dependent_actions_or_inquiries": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "artifact_status": {
+          "type": "string",
+          "enum": [
+            "KEEP_WITH_WARRANT_FLAGS",
+            "KEEP_WITH_REDUCED_SCOPE",
+            "CORE_INVALID",
+            "UNCERTAIN_LOAD_BEARING"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    }
+  }
+}
