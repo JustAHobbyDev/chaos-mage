@@ -1,0 +1,141 @@
+# Frozen fault-localized viability scoring
+
+After the identified unsupported claims are deleted without replacement, what
+distinctive source-derived epistemic capability still survives?
+
+Treat the deletion markers as unavailable premises. Original text is supplied for
+dependency tracing only; deleted content cannot support a surviving inference.
+Delete all listed claims simultaneously. Do not add new measurements, controls,
+hypotheses, evidence, inference rules or target framing. Grammatical debris alone
+does not establish failure. Preserve surviving antecedents and explicit limits.
+
+## Dimensions
+
+mechanism_survival: SURVIVES | PARTIALLY_SURVIVES | DOES_NOT_SURVIVE | UNCERTAIN.
+Does at least one distinctive source-derived state → operation → signal →
+warranted-inference chain remain? Executable operations alone do not establish
+survival. Generic target reasoning alone does not establish survival.
+
+target_contribution_survival: SUBSTANTIALLY_SURVIVES | REDUCED_BUT_MATERIAL |
+NO_MATERIAL_CONTRIBUTION | UNCERTAIN. What material warranted contribution to the
+original target question remains? Discriminating evidence, hypothesis elimination,
+bounded causal or historical constraint, problem decomposition, intervention,
+stopping rule or next-inquiry selection can be material. Full solution is unnecessary.
+
+dependency_cascade: LOCAL | BRANCH | GLOBAL | UNCERTAIN.
+LOCAL: defect terminates locally or affects only minor descendants.
+BRANCH: a meaningful advertised branch fails while another material source-derived
+branch survives. GLOBAL: essentially every distinctive material target contribution
+depends directly or indirectly on the deleted inference. UNCERTAIN: dependency
+extent cannot be established from the packet. Inventory failed claims, failed
+actions/inquiries, surviving claims and surviving actions/inquiries with citations.
+Cascade is diagnostic; it does not independently determine artifact status.
+
+remainder_check: DISTINCTIVE_REMAINDER | GENERIC_REMAINDER | NO_REMAINDER | UNCERTAIN.
+Is surviving reasoning recognizably an operational consequence of the imported
+source mechanism? Lots of remaining text does not establish viability.
+
+strongest_surviving_target_inference requires text, source_spans, why_warranted.
+The inference must already exist in or be directly entailed by surviving mapping
+content. Never invent a repaired inference. If none can be identified, text is
+null, source_spans is empty, and why_warranted explains the absence/uncertainty.
+Failure to identify a material warranted target inference is strong core-invalidity
+evidence, not an extra automatic status rule.
+
+central_bridge requires deleted_claim_is_required_for_all_material_contributions
+(yes | no | uncertain) and rationale. Distinguish importance from load-bearing necessity.
+
+## Deterministic base status
+
+Precedence: 1. hard failure; 2. decisive-field uncertainty; 3. surviving target
+contribution; 4. dependency cascade as consistency evidence only.
+
+```python
+if mechanism_survival == "DOES_NOT_SURVIVE":
+    artifact_status = "CORE_INVALID"
+elif target_contribution_survival == "NO_MATERIAL_CONTRIBUTION":
+    artifact_status = "CORE_INVALID"
+elif mechanism_survival == "UNCERTAIN":
+    artifact_status = "UNCERTAIN_LOAD_BEARING"
+elif target_contribution_survival == "UNCERTAIN":
+    artifact_status = "UNCERTAIN_LOAD_BEARING"
+elif target_contribution_survival == "SUBSTANTIALLY_SURVIVES":
+    if mechanism_survival == "SURVIVES":
+        artifact_status = "KEEP_WITH_WARRANT_FLAGS"
+    elif mechanism_survival == "PARTIALLY_SURVIVES":
+        artifact_status = "KEEP_WITH_REDUCED_SCOPE"
+elif target_contribution_survival == "REDUCED_BUT_MATERIAL":
+    artifact_status = "KEEP_WITH_REDUCED_SCOPE"
+```
+
+SURVIVES + REDUCED_BUT_MATERIAL + cascade UNCERTAIN → KEEP_WITH_REDUCED_SCOPE.
+SURVIVES + SUBSTANTIALLY_SURVIVES + cascade UNCERTAIN → KEEP_WITH_WARRANT_FLAGS.
+
+## Structural contradiction exception
+
+If cascade positively contradicts decisive dimensions, mark structural_conflict
+present=true and explain. Examples: SUBSTANTIALLY_SURVIVES with GLOBAL, or
+NO_MATERIAL_CONTRIBUTION with LOCAL. Do not silently override either dimension.
+Set resolved=true only if the rationale reconciles the apparent contradiction;
+otherwise resolved=false and artifact_status=UNCERTAIN_LOAD_BEARING, reason
+"unresolved structural contradiction". This exception overrides the base status,
+including a hard failure. Genuine uncertainty is a valid structured answer.
+When no conflict exists, present=false and resolved=true, explaining why.
+
+## Anti-shortcut and output requirements
+
+Do not infer status from number of unsupported claims, percentage deleted, amount
+of remaining prose, technical sophistication, foreign terminology, number of
+executable operations, surviving bullets, or original apparent usefulness.
+Ten leaf defects may still be non-core. One central defect may be CORE_INVALID.
+
+Return the specified JSON schema. Citations are separate exact contiguous excerpts:
+source_spans entries use source_field (mapping.state/operation/signal/inference/limit
+or source.instrument.state/operation/signal/inference/limit) and exact_text.
+Never join separated excerpts into one quotation. Cite surviving mapping content
+for the strongest inference and surviving inventories; deleted spans may be cited
+only when identifying failed claims/dependencies. Explain entailment in prose
+outside the quotations. Include per-claim dependencies for every unsupported ID.
+
+Judge only this deletion counterfactual. Return artifact_viability in the supplied schema. Per-claim dependencies must cover every unsupported ID and use separate exact source excerpts. Distinguish textual actions retained from claims those actions no longer license. Do not invent repair.
+CASE PACKET
+{
+  "case_id": "H-636942c3c9ad",
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?"
+  },
+  "mapping": {
+    "state": "The inquiry uses two sequence panels: A is an earlier run of correspondence entries; B is a later run. The focal and comparison bundles use the same correspondence-register template. Each panel contains ordered observations from its assigned bundle and independently dated overlapping reference sequences recording the same external annual cycle.\nPanel A is assigned to the undated correspondence bundle under investigation.\nPanel B is assigned to the undated correspondence bundle under investigation.",
+    "operation": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate.\nUse the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle.\nUse the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle.",
+    "signal": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment. Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment. Competing shifts fail these stated checks.",
+    "inference": "For the undated correspondence bundle under investigation, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for.\nFor the undated correspondence bundle under investigation, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for.\nUse of the same correspondence-register template establishes that the two bundles received the same internal catalog label color.",
+    "limit": "The stated shared annual influences, ordered observations, independent references and anchors hold within each panel. Dating remains evidential support rather than infallibility. Register-template identity is the only stated cross-bundle connection; contemporaneity, correspondent identity and event synchrony between the two bundles are not stipulated."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-1d97720c887a",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "Use of the same correspondence-register template establishes that the two bundles received the same internal catalog label color.",
+      "exact_claim_span": "Use of the same correspondence-register template establishes that the two bundles received the same internal catalog label color."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "The inquiry uses two sequence panels: A is an earlier run of correspondence entries; B is a later run. The focal and comparison bundles use the same correspondence-register template. Each panel contains ordered observations from its assigned bundle and independently dated overlapping reference sequences recording the same external annual cycle.\nPanel A is assigned to the undated correspondence bundle under investigation.\nPanel B is assigned to the undated correspondence bundle under investigation.",
+    "operation": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate.\nUse the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle.\nUse the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle.",
+    "signal": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment. Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment. Competing shifts fail these stated checks.",
+    "inference": "For the undated correspondence bundle under investigation, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for.\nFor the undated correspondence bundle under investigation, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for.\n[DELETED C-1d97720c887a]",
+    "limit": "The stated shared annual influences, ordered observations, independent references and anchors hold within each panel. Dating remains evidential support rather than infallibility. Register-template identity is the only stated cross-bundle connection; contemporaneity, correspondent identity and event synchrony between the two bundles are not stipulated."
+  }
+}
