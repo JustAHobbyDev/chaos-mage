@@ -1,0 +1,10 @@
+{
+  "condition_id": "Q0103",
+  "category": "execution_precondition",
+  "rationale": "This establishes which candidate reductions can actually be run within the unchanged procedure. Treating undeployable candidates as unresolved and reporting the achieved minimization follows the mapping's existing handling of execution limits; it does not require stronger separability or change the mechanism, warrant, or target.",
+  "if_execution": {
+    "verification_or_satisfaction_method": "Build, deploy, and run candidate delta subsets. Mark inseparable configurations and build, deployment, or startup failures as unresolved, and report only the minimization achieved under the specified stopping rules."
+  },
+  "if_validity_relevant": null,
+  "uncertainty": []
+}
