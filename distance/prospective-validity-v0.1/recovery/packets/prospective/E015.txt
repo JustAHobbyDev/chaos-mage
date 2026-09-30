@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E015",
+  "source": {
+    "name": "Chromatography",
+    "practice": "Analytical chemistry",
+    "instrument": {
+      "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+      "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+      "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+      "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+      "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Target counterpart of the mixed sample: the award outcome as it first appears, a single blended result ('this bidder won') in which the separate bids and the decisions taken about each are not yet told apart. Components are the individual bidders' submissions. The two phases are (a) the stationary phase: the fixed checkpoints of the procurement, such as specification drafting, clarification questions, submission deadline, eligibility screening, technical scoring, price scoring and sign-off; and (b) the moving phase: the dated forward progression of the tender through those checkpoints. Operative conditions, all assumptions to be checked rather than supplied facts: more than one bidder took part; authenticated records (tender versions, scoring sheets, emails, public registers) exist for more than one bidder at more than one checkpoint; and bidders could in principle be handled differently at a checkpoint, so they need not move together. 'Preferred bidder' is a working hypothesis, not an established designation. If only one bidder or one checkpoint is documented, the precondition for separation is not met and the procedure should not be run as described.",
+    "operation": "Carry every bidder through the same ordered checkpoints using authenticated records, and at each checkpoint record the same fields for each: date in and date out, what was asked of the bidder, which written rule or criterion was applied, who acted, and whether the bidder was passed on, held (queried, delayed, asked to resubmit), penalised or excluded. Repeat at each checkpoint so that each bidder's interaction with the process is sampled many times rather than once. Hold conditions constant: compare bidders only under the same tender version and the same scoring criteria, and log each amendment to the tender, criteria or evaluation panel as a change of operating conditions with its date. Trace provenance of each record and note where two records derive from one another. Stopping condition: stop when every bidder has been traced through every checkpoint for which an authenticated record exists; where a record is missing, mark that checkpoint as unresolved for that bidder instead of filling it by inference.",
+    "signal": "A dated per-bidder profile across checkpoints, the counterpart of retention times and peaks: where each bidder was held, for how long, and under which rule. Observable separations would include one bidder receiving information earlier than others, a specification amendment dated after contact with one bidder and matching that bidder's attributes, a late or incomplete submission tolerated for one bidder and not another, or scores diverging between bidders on a criterion where their documented submissions are similar. The alternative observation is no separation: all bidders show indistinguishable profiles at every documented checkpoint. Either outcome is a possible result of the proposed procedure; none has been observed here.",
+    "inference": "If profiles separate, that supports a bounded claim: the process handled bidders distinguishably, and the divergence can be located at a named checkpoint and date and described relative to the other bidders under the same stated rule (for example, 'bidder A was handled differently from B and C at eligibility screening under tender version 2'). It permits ranking checkpoints by how much they contributed to the final outcome and shows where further reporting should concentrate. It characterises relative treatment; it does not by itself name the cause. If profiles do not separate, the warranted statement is only that this breakdown by checkpoint did not resolve differential treatment in the available records.",
+    "limit": "Co-elution: steering and legitimate advantage (a stronger bid, lower price, incumbency, better compliance) can produce the same profile, so a smooth passage for one bidder does not distinguish them, and an unseparated result does not establish absence of steering. Operating conditions: amendments to the tender, criteria or panel shift profiles, so comparisons across versions are not like for like. Nonspecific detector: scoring sheets and emails record outcomes and actions, not motive, and copied or derivative records are not independent readings. Gaps in records are not evidence of misconduct. Differential treatment alone does not establish steering without standards and orthogonal evidence. Follow-up: run reference standards by putting comparable tenders from the same authority, and the authority's own written rules, through the same checkpoints to learn what ordinary handling looks like; seek orthogonal evidence from independent interviews, communications bearing on intent, registers of interests and document metadata; where profiles did not separate, re-run on a different axis, such as requirement by requirement within the specification; and put the located divergence to the authority and bidders for explanation, testing each explanation against the dated record. Until such evidence exists, report the finding as documented differential treatment at a specific checkpoint, with steering as an unresolved allegation."
+  }
+}

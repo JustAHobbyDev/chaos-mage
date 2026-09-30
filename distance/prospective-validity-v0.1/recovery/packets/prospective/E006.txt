@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E006",
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: a single procurement award whose explanation is uncertain, together with whatever record set the reporter actually holds (tender versions, scoring sheets, emails, public-register entries, interview accounts), each with its authentication and source-independence information. The packet supplies no actual records, so everything below is a proposed procedure, not a finding.\n\nCondition for applying the instrument: more than one explanation of the award is live, and the evidence can be broken into separate items that may fit more than one explanation. Proposed hypothesis set (authored here as an assumption, to be revised by the reporter):\n- H1: deliberate steering by one or more officials, for example through tailored specifications, altered scoring, or selective release of information.\n- H2: a merit-based award under a process that ran as designed.\n- H3: procedural irregularity from error, haste or poor record-keeping, without intent to favour anyone.\n- H4: structural advantage, such as an incumbent or one of very few qualified suppliers fitting the requirement without any intervention.\n- H5: bidder-side conduct without official intent, for example a bidder obtaining inside information or bidders coordinating.\n- H6: the appearance of steering is produced by the evidence itself, for example selective, misdated or inauthentic material from an interested source such as a losing bidder.\n- H7: a residual row for an explanation not yet identified.\n\nIf only one explanation is live, or the material cannot be itemised, the instrument does not apply and ordinary corroboration and chronology are used alone.",
+    "operation": "1. Write H1-H7 down before rating any evidence, so the list is not shaped by the favoured story.\n2. Itemise the evidence. Each item is one dated claim or record, logged with its provenance, authentication status (authenticated, partly authenticated, unauthenticated) and an independence group. Items that trace to the same origin, such as a forwarded email chain, interviewees repeating one another, or several documents from one leak, are collapsed into one group and counted once.\n3. Place the items on the dated event sequence, so that timing relations (for example a specification change relative to a bidder contact or a submission deadline) become items in their own right.\n4. Build a matrix of items by hypotheses. Work across each row and ask of every hypothesis: if this were true, how expected is this item? Rate it consistent, inconsistent or neutral, with a one-line reason recorded.\n5. Mark diagnosticity. Items rated consistent with every hypothesis (for example, the fact that the bidder won) are flagged as non-discriminating and set aside from the comparison.\n6. Compare hypotheses by their inconsistent items, weighted by authentication and independence, not by how many consistent items each has collected.\n7. Have a second person, a colleague or editor, rate the matrix without seeing the first ratings. Record the disagreements; do not average them away.\n8. Sensitivity test. Identify the few items that drive the result and re-run the comparison with each one removed, re-dated or reinterpreted. Repeat with each shared assumption reversed, for example that document timestamps reflect real edit times, that the scoring sheets held are the final versions, or that an interviewee has no stake.\n9. Follow-up. Seek the records that would separate the surviving hypotheses, not more material that fits all of them: tender revision history, individual evaluator scores before consensus, clarification logs, conflict-of-interest declarations, specifications from comparable earlier tenders, and responses from the agency and the bidder. Their responses are added as new rows and rated like any other item.\n10. Stopping and reopening conditions.\n- Stop collecting when the remaining obtainable records would not change which hypotheses survive, and report the surviving set as it stands.\n- Reopen the matrix if a new hypothesis appears or a driving item fails authentication.\n- Do not treat a hypothesis as weakened if the inconsistency rests only on unauthenticated or single-origin material. Record it as unresolved.",
+    "signal": "The observable is the filled matrix: a comparative pattern showing which hypotheses accumulate inconsistent items, which items discriminate, and which conclusions shift under the sensitivity test. It is not any single document.\n\nIllustrations of what would discriminate if found (conditionals, not observations):\n- A specification narrowed to match one bidder's attributes, dated after a documented contact with that bidder, would be more expected under H1 or H5 than under H2. It would remain compatible with H4 if an external technical or regulatory requirement explains the change.\n- Individual scores changed after bids were opened with no recorded reason would be less expected under H2. They would not by themselves separate H1 from H3.\n- A full, contemporaneous evaluation record with consistent independent scoring would be inconsistent with the scoring-manipulation form of H1, but not with specification tailoring.\n- Material that traces to a single interested source and cannot be matched to agency-held records bears on H6.\n\nA second signal is rater disagreement and sensitivity. Rows where the two raters differ, or where removing one item changes the surviving set, mark where the comparison is fragile.",
+    "inference": "Hypotheses carrying substantial inconsistency from authenticated, independent, discriminating items are weakened or set aside. What remains is a smaller surviving set, which may hold more than one hypothesis.\n\nThe answer to the target question is what the matrix supports at each level:\n- Corroborated facts: bounded statements about what the records show, for example that a criterion changed on a given date.\n- Explanations weakened: stated as such, for example that a fully merit-based account is inconsistent with specified authenticated records.\n- Explanations still standing: named together. If H1 and H3 both survive, the defensible statement is that the process was irregular and the records held do not settle whether that was deliberate.\n- Allegations and unresolved gaps: labelled separately.\n\nSteering, which implies intent and an actor, can be described as better supported than the alternatives only if the alternatives are weakened by evidence that survives the sensitivity test and the second rating. Even then the supported wording is about survival relative to the alternatives, not proof. The surviving set also determines which records and interviews are sought next.",
+    "limit": "- A missing hypothesis: if the real explanation is not among H1-H6, the comparison can favour a wrong survivor. The residual row H7 only marks this risk; it does not remove it.\n- Dependent evidence: copied, forwarded or mutually informed sources can look like corroboration. Collapsing them depends on knowing their provenance, which may be incomplete.\n- Unreliable or unauthenticated items, and a selective record set: what a reporter holds is shaped by who leaked or released it and what was withheld. It is not a neutral sample.\n- Subjective ratings: consistency judgments are the raters' own, and a second rater who shares the newsroom's assumptions reduces this bias without eliminating it.\n- Misjudged diagnosticity: for example, treating narrow specifications or prior official-bidder contact as rare when they may be routine in that market or jurisdiction.\n- Shared assumptions about timestamps, document finality or normal procedure can tilt every row the same way.\n- Gaps in the records are not evidence of misconduct, and absence of an expected record is diagnostic only if it is established that the record should exist.\n- The matrix does not establish intent and yields no probability.\n- Surviving contradiction is not proof that the remaining explanation is true.\n- Transfer limit: the instrument is an internal reasoning aid from intelligence analysis. It does not set a publication, legal or fairness threshold; those remain separate editorial judgments."
+  }
+}

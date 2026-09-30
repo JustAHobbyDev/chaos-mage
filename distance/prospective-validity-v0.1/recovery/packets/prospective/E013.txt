@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E013",
+  "source": {
+    "name": "Provenance reconstruction",
+    "practice": "Archival and provenance research",
+    "instrument": {
+      "state": "An object's history is only partially known, but dispersed records may preserve dated traces of ownership, custody, transfer, location, or transaction.\n",
+      "operation": "Gather and cross-check records that can link the object to successive people, places, and transactions, arranging supported links into a chronology and marking unsupported intervals as gaps.\n",
+      "signal": "Independent records form compatible chronological links between successive states of ownership or custody, while contradictions and missing intervals expose uncertainty in the reconstructed sequence.\n",
+      "inference": "The compatible links support a bounded reconstruction of the object's documented history, including which transitions are established and where provenance remains unresolved.\n",
+      "limit": "Records may be lost, inaccessible, anonymous, forged, mistaken, or copied from one another; names and descriptions may be ambiguous; absence of a record does not establish absence of a transfer; and a continuous-looking chronology can still contain undocumented or misidentified transitions.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: the undated correspondence bundle, treated at two levels. (1) The bundle as a unit, whose custody history (creator, recipient, later holders, accession) is only partially known. (2) Each item in it (letter, envelope, enclosure, draft or copy), whose date of writing, posting and receipt is unknown. Counterpart of the source's 'dispersed records with dated traces': any trace, inside or outside the bundle, that may carry a date or an order relation. Candidate traces are postmarks and postage, letterhead, paper and watermark, handwriting, recipient dockets or endorsements, internal mentions of events, persons, addresses or weekday/date combinations, references from one letter to another, accession and custody records, and independent event records or calendars. Assumptions, not supplied facts: the packet does not say which of these traces exist for this bundle, whether envelopes belong to the letters they now accompany, whether the bundle is a single correspondence or a later assembly, or whether the present physical arrangement reflects original order. Each is treated as open until checked.",
+    "operation": "Proposed procedure. (1) Record the bundle as found before moving anything: give each item an identifier and note its physical position, attachments, folds and enclosures. Physical arrangement is kept as a separate record from any proposed writing order. (2) For each item, enter every candidate dating trace in a register with its type: internal reference, material feature, inter-letter reference, or custody/annotation record. (3) Classify what each trace can bound: not-before (terminus post quem), not-after (terminus ante quem), or a relative link (item A precedes item B, for example B answers or cites A). Also record which event it dates: writing, posting, receipt, docketing or accession. (4) Record the origin of each trace and whether it could derive from another trace, for example a later docket copied from an envelope, or a catalogue date copied from a docket. Dependent traces count as one. (5) Cross-check traces against independent external records such as event records, calendars for weekday/date combinations, and accession or custody records. (6) Assemble the supported relative links into a partial order and the bounds into a date interval per item. Mark as explicit gaps every item with no usable trace and every interval not covered by any supported link. (7) Where a trace fits more than one placement, keep each alternative chronology rather than choosing one. (8) On contradiction, recheck in this order: transcription, item identification, envelope-to-letter association, which event the trace dates, and independence of the records. If the conflict persists, record it as unresolved; do not average or silently discard. Stopping condition: stop when every item either has a cited interval and/or order position or is explicitly marked unplaced, and when checking the remaining accessible records no longer changes any bound or order relation, or when accessible records are exhausted. Follow-up: for each gap or conflict, name the specific independent anchor that would resolve it (a counterpart letter held elsewhere, an event record, another dated reference document) and seek it. Re-run steps 5-8 when a new record is obtained.",
+    "signal": "What can be observed once the register is assembled. (a) Compatible links: bounds from independent traces on the same item overlap, and inter-letter references yield an order with no cycles, consistent with those bounds. (b) Contradictions: non-overlapping intervals for one item, an order cycle (A before B before A), or a custody record that places the bundle somewhere incompatible with an item's bounds. (c) Missing intervals: items with no trace, items bounded on one side only, and stretches of the sequence joined by no supported link. (d) Dependence indicators: shared wording, shared errors or identical dates across records, suggesting one was copied from another. (e) Divergence between the physical arrangement and the trace-supported order. These are what the procedure would look for; the packet reports no such observations for this bundle.",
+    "inference": "Compatible independent links warrant a bounded reconstruction, reported in three tiers. Established: a relative position or date interval supported by two or more independent, mutually compatible traces. Provisional: supported by a single trace or by traces whose independence is not shown. Unresolved: conflicting or absent support. Relative chronology is justified only as a partial order: items joined by supported links are ordered, the rest are left unordered relative to one another. Absolute chronology is justified only as intervals, each stated as not-before/not-after with its supporting traces and the event it dates. It narrows to a specific date only where an independent trace fixes one and the link between that trace and the item is itself supported. A custody or accession date can bound the bundle as a whole (items present at accession were written no later than it) only under the stated assumption that the bundle's contents at accession are those now present. It does not order items within the bundle. Physical arrangement is treated as a hypothesis about order, to be tested against traces, not as evidence of writing order. Where alternatives survive, the justified result is the set of alternative chronologies with their gaps marked.",
+    "limit": "Source limits carried over with target counterparts. Records may be lost or inaccessible: counterpart letters, envelopes or accession files may not survive, so gaps may be permanent. Anonymous or ambiguous: unsigned letters, shared names, recurring events and reused addresses can attach a trace to the wrong person, event or year. Forged or mistaken: items may be backdated, misdated by the writer, or misdocketed by a recipient or later custodian. Copied from one another: dockets, catalogue entries and accession notes may repeat a single earlier guess, so agreement among them is not independent confirmation. Misassociation: an envelope may not belong to the letter it accompanies. A postmark dates posting, not writing. Paper, watermark or letterhead gives at most a not-before bound, since stock may be used long afterwards. Handwriting comparison supports only coarse placement. Absence is not evidence: no surviving reply does not establish that none was written, and no letters from an interval does not establish that correspondence stopped. A continuous-looking sequence can still contain misplaced or misidentified items or undocumented breaks. Transfer limits: provenance reconstruction follows one object through successive custody, whereas here many items are dated by creation and exchange, so custody links do not translate into writing order. The bundle may be a later assembly from several correspondences, in which case one chronology may not apply. This mapping is a scoped authored hypothesis, not verified practitioner consensus. Quantitative alignment of long measured sequences is not assumed to be customary practice and is not relied on here."
+  }
+}

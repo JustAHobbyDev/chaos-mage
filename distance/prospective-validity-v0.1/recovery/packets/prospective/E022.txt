@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E022",
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "System acted on: one approval workflow, treated as a chain of handoff stages observed through time (for example: submitted -> queued for approver -> picked up -> decided -> passed on). Stage names here are placeholders; the real stages and owners come from the workflow map, not from assumption.\n\nControllable input (one per run): either (a) the release rate of a defined class of requests into one handoff, or (b) one bounded process setting at one handoff, such as review cadence, the number of people authorized to approve, or the threshold below which a request skips a stage.\n\nObservable outputs: per-stage queue length, per-stage waiting time (queue entry to pickup), per-stage completions per interval, and end-to-end turnaround, all computed from ticket timestamps at a fixed sampling interval (for example per working day).\n\nConditions that must hold before acting. These are assumptions to verify, not facts supplied by the packet:\n1. Stage-level timestamps exist and reflect when work actually moved, not when it was logged.\n2. The chosen input can be changed abruptly at a known time, by a known amount, and then held constant.\n3. A pre-change baseline period is recorded, documenting initial queue lengths, in-flight items, staffing and demand, so the starting state is known rather than presumed steady.\n4. Those accountable for the workflow authorize the change, its size and its abort thresholds.",
+    "operation": "1. Choose one input and one handoff. Fix the step size in advance: large enough to be visible above baseline day-to-day variation, small enough to stay inside service-level targets and staff capacity.\n2. Fix in advance the sampling interval, the settling band (how close to a stable level counts as settled), the number of consecutive intervals required inside that band, the minimum observation window (several multiples of the longest stage cycle seen in baseline, including any batch or meeting cycle), and the abort thresholds.\n3. Apply the change at a recorded time, all at once, and hold it. Change nothing else deliberately during the run.\n4. At every sampling interval, record queue length, waiting time and completions for every stage from the changed handoff downstream, plus end-to-end turnaround, from baseline through the transient.\n5. In parallel, keep a disturbance log: staffing, incoming demand, case mix, calendar events, and any other process change.\n\nStopping conditions:\n- Settled: outputs stay inside the settling band for the required consecutive intervals and the minimum window has elapsed.\n- Abort: a service-level threshold is breached or a queue keeps growing past its limit. Revert the step, and keep the record as evidence of saturation or non-settling at that operating point.\n- Contaminated: a major logged disturbance overlaps the transient. Mark the run and repeat it under comparable demand and staffing.\n\nFollow-ups:\n- Reverse the step and record the return trajectory, to check symmetry.\n- Repeat with a different step size, and at a different demand or staffing level.\n- Repeat at other handoffs, one input at a time.\n- Set the results beside the ordinary timestamp comparisons, exception-case reviews and interviews.",
+    "signal": "The recorded trajectories are read for these temporal features, stage by stage:\n- Dead time: the interval between the step and the first change distinguishable from baseline variation at each stage, and the order in which stages begin to respond.\n- Rise: how quickly a stage's queue, waiting time or completion rate moves toward its new level.\n- Overshoot and peak: whether a queue or turnaround temporarily exceeds its eventual level (for example a surge arriving downstream after an upstream release), and the height and timing of that peak.\n- Oscillation: repeated build-up and drain, and its period relative to known cycles such as review meetings or batch releases.\n- Settling: the time until the output stays inside the pre-set band.\n- Steady-state change: the net difference between the baseline level and the settled level of queue, waiting time, throughput and end-to-end turnaround.\n- Non-settling: a queue that ramps without levelling, or an output that stops responding once a ceiling is reached.\n- Absence of response: no distinguishable change at a stage or in end-to-end turnaround.",
+    "inference": "What each observation would warrant, as a constraint on candidate explanations rather than a unique identification:\n- Long dead time followed by a prompt response suggests the handoff holds items in fixed waiting (scheduled review, batch release, transfer latency), not a shortage of processing capacity.\n- A queue that ramps and does not settle after an intake step suggests the stage is capacity-limited at the tested load, and delay accumulates there.\n- Slow rise and long settling suggest a stage that absorbs change through a large backlog, so improvements there take long to appear end to end.\n- Oscillation whose period matches a meeting or batch cycle suggests batching. Oscillation without such a match, or with items re-entering earlier stages, suggests a rework or escalation loop.\n- Downstream overshoot after an upstream change suggests the change relocates delay rather than removing it.\n- For a process-setting step, the steady-state change estimates how much that bounded change shifts turnaround at the tested operating point.\n- No end-to-end change despite a local improvement suggests the binding delay lies at another handoff.\n\nAnswering the target question:\n- Delay accumulates at the stages showing the longest dead time, non-settling queues or the slowest settling.\n- A bounded change is a candidate remedy if its step produced a steady-state reduction in turnaround, no sustained downstream overshoot, a consistent reverse-step response, and a similar result on repetition.\n\nEvery conclusion is conditional on the tested step size, direction, case class and the demand and staffing level in force. This adds response-to-designed-change evidence to the associations the ordinary timestamp and queue comparisons provide; it does not replace them.",
+    "limit": "Source limits, with their target counterparts:\n- Noise: low case volumes make per-interval queue counts and waiting times coarse and variable. Mixed case types blur features. Small steps may be indistinguishable from baseline variation.\n- Unknown initial state: existing backlog, in-flight items and unlogged informal queues mean the workflow may not start from a steady level, so early trajectory features can reflect prior history rather than the step.\n- Saturation: approvers already at full load, working-hour limits and service-level caps flatten the response and hide the underlying dynamics.\n- Nonlinear behavior: people reprioritize, expedite, or work differently when a change is announced or observed. Responses to a large step need not scale from a small one, and up and down steps may differ.\n- Disturbances: demand swings, absences, period-end peaks, holidays and policy changes can mimic or mask response features.\n- Interacting inputs: approvers shared across stages, concurrent initiatives and staffing adjustments made in reaction to the step confound attribution to the chosen input.\n- Insufficient observation time: stopping before slow stages or long batch cycles complete understates settling time and misstates steady-state change.\n- Operating-point dependence: results at the tested demand, staffing and case mix may not hold at peak load or for other case classes.\n\nTarget-specific limits:\n- A clean step may be infeasible, because changes phase in or are anticipated.\n- The organization may change during the run, so the system probed is not fixed.\n- Timestamps may record logging rather than actual movement.\n- Ethical and service obligations cap the step size.\n- A single run is one realization.\n\nOverall, conclusions may not generalize beyond the tested perturbation, and causal attribution of a remedy requires repetition under comparable demand and staffing."
+  }
+}

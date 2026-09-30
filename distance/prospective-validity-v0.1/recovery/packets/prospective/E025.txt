@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E025",
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: one approval route for one case type, written as an ordered list of checkpoints from submission (checkpoint 0) to final approval (checkpoint n). Each adjacent pair of checkpoints is one handoff. This list is the counterpart of the ordered revision history.\n\nTested property at a checkpoint: for a fixed cohort of cases, the cumulative elapsed time from submission to that checkpoint exceeds the cumulative allowance for reaching it. The classification rule is fixed before any data are examined (for example, 'the cohort median exceeds the allowance'). 'Behind allowance' is the counterpart of the revision having the property; 'within allowance' is the counterpart of not having it.\n\nConditions required before starting:\n1. Early endpoint known to be within allowance. This requires confirming that the recorded submission time is the real start of the request, not a later ticket-creation time.\n2. Late endpoint known to be behind allowance. The cohort's end-to-end time must exceed the total allowance under the same rule.\n3. The route is sequential for this case type. Parallel approvals and rework loops are collapsed into single checkpoints so the order is unambiguous.\n4. The cohort comes from a period of comparable demand and staffing.\n\nAssumptions not supplied by the packet: that per-checkpoint allowances exist or can be agreed in advance (the packet mentions service-level targets but not their granularity), and that checkpoint times can be recovered from ticket histories or captured by temporary logging.",
+    "operation": "1. Fix the case type, the cohort, the checkpoint list, the allowances and the classification rule. Verify both endpoints as described in the state.\n2. Pick the checkpoint nearest the middle of the unresolved interval. Obtain the cohort's elapsed time to that checkpoint, either from ticket histories or, where no timestamp exists, by reconstructing it or adding a temporary log for that checkpoint only.\n3. Classify the checkpoint as within allowance or behind allowance using the fixed rule.\n4. If it is behind, discard the later portion and treat this checkpoint as the new late endpoint. If it is within, discard the earlier portion and treat it as the new early endpoint.\n5. If the chosen checkpoint has no recoverable time (informal handoff, missing record), skip it and probe an adjacent checkpoint. Record that the final interval may be wider as a result.\n6. Repeat steps 2 to 5 on the remaining interval, using the same cohort for every probe where possible.\n\nStopping conditions:\n- Normal stop: the unresolved interval is a single handoff between two adjacent checkpoints.\n- Partial stop: the only checkpoints left are unobservable. Report the interval of several handoffs as the result.\n- Halt without a result: an endpoint fails verification, or a checkpoint's classification flips when re-checked on a second comparable cohort.\n\nFollow-up after localization:\n- Re-classify the two checkpoints bounding the localized handoff on a second comparable cohort.\n- Pilot one change confined to that handoff. Illustrative candidates, not established remedies: a named owner, a stated response window, a changed review batching schedule.\n- Re-apply the same classification at the checkpoint just after the handoff and at final approval, under comparable demand and staffing.\n- If the end-to-end classification is still behind allowance after the pilot, re-establish the endpoints and repeat the partitioning on the remaining route.",
+    "signal": "Each probe yields one binary classification for one checkpoint: the cohort is within allowance or behind allowance on reaching it. The underlying elapsed-time figures are kept alongside the classification.\n\nAcross probes, the observable is the shrinking span between the latest checkpoint classified within allowance and the earliest checkpoint classified behind allowance. With n handoffs and all checkpoints observable, roughly log2(n) probes are needed.\n\nSecondary observables to record:\n- Skipped checkpoints.\n- Classifications that sit close to the allowance.\n- Disagreement between the first and second cohort at the final boundary.\n- In the follow-up pilot: whether the classification changes at the checkpoint just after the localized handoff, and whether it changes at final approval.",
+    "inference": "What the result warrants: for this case type and cohort, the first point on the route where cumulative elapsed time moves from within allowance to behind allowance lies in the final unresolved handoff, or in the final interval if checkpoints were skipped. That handoff is the priority candidate for exception-case inspection, interviews and a bounded pilot.\n\nWhat it does not warrant on its own: that this handoff is the sole or largest source of delay, or that it causes the delay.\n\nPilot outcomes:\n- If a change confined to that handoff is followed by a within-allowance classification just after it and at final approval, under comparable demand and staffing, this supports (but does not prove) that the handoff contributed materially and that the change is a workable bounded remedy for this case type.\n- If the downstream checkpoint improves but final approval remains behind, further delay accumulates elsewhere and the search is repeated.\n\nCost condition: if ticket histories already timestamp every handoff, all checkpoints can be classified at once. The halving order then saves no effort over the analyst's ordinary stage-by-stage timestamp comparison. The halving earns its cost only where each checkpoint time must be reconstructed or newly logged.",
+    "limit": "Each source limit has a target counterpart:\n- Flaky test: high case-to-case variability or a small cohort makes a checkpoint's classification flip between cohorts. Boundaries near the allowance are unreliable.\n- Unbuildable revision: checkpoints with no recoverable time, informal handoffs and parallel approvals cannot be probed. They leave a multi-handoff interval.\n- Nonmonotonic behavior: a cohort can be behind at one checkpoint and recover downstream, and rework loops return cases to earlier stages. Discarding half the route on one probe can then discard a real contributor.\n- Multiple independent changes: if delay is spread across several handoffs, the boundary marks only where the cumulative total crosses the allowance. It moves if the allowances are set differently.\n- Interactions: waiting seen at the localized handoff may originate elsewhere, such as incomplete submissions upstream, an approver shared with other routes, or downstream batching. The boundary is correlated with the delay, not shown to be its sole cause.\n- Wrong endpoints: a clock that starts after the real request, a final timestamp that records ticket closure rather than the decision, or a cohort that is not actually late sends the search into the wrong interval.\n\nTarget-specific limits:\n- Timestamps record status changes, not work. Waiting time and working time inside a stage are not separated.\n- Prospective logging takes calendar time, so demand and staffing may shift between probes.\n- Mixing case types with different routes invalidates the ordering.\n- The procedure locates a position on the route. It does not say when the delay began.\n- Results apply to the case type and period examined. Pilot comparisons remain observational unless demand and staffing are comparable."
+  }
+}

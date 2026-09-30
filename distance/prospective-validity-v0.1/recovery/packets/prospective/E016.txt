@@ -1,0 +1,171 @@
+# Prospective transfer validity v0.1
+
+Judge only the supplied source instrument, target question, and unchanged mapping.
+The mapping proposes a procedure; it need not have been executed. Do not use tools,
+external knowledge retrieval, repository context, historical judgments, or imagined
+data. Do not repair the mapping, add an evidential bridge, invent a discriminating
+measurement, or strengthen its stated claim. Return one JSON object conforming to
+the supplied schema, with the exact case_id. All required fields must be present.
+
+Assess three validity links separately from execution readiness.
+
+## Mechanism fidelity
+
+Question: Assuming required execution resources can be obtained, does the mapped
+state → operation → signal chain preserve the source instrument's distinctive
+operational mechanism?
+
+- `preserved`: the mapped chain coherently instantiates that mechanism.
+- `conditional`: a specific unresolved mechanism condition in the mapping determines
+  whether the chain instantiates it. Name that condition and its functional role.
+- `not_preserved`: the mapped chain fails to preserve the mechanism; acquiring
+  resources or merely running the proposed steps does not fix it.
+
+Engineering ability to build a configuration, obtain access, or operate an instrument
+is ordinarily execution readiness. Whether an intervention actually changes the
+intended variable, a sequence has the required structure, or an operation implements
+the source's defining transformation can be a mechanism issue. Identify the role;
+the words “check,” “verify,” and “establish” do not decide the category. Do not require
+a favorable observed result or guarantee that every application will resolve the
+target when the procedure explicitly permits unresolved or bounded outcomes.
+
+## Warrant validity
+
+Question: If the mapped operation produces the stated signal under the mapping's
+explicit conditions, does that signal support the stated inference?
+
+**Assume all execution prerequisites are satisfied and the stated signal occurs.**
+Does the signal then warrant the inference? If not, use `unsupported` unless the
+mapping itself supplies a specific unresolved empirical relation that could
+establish the warrant. In that latter case use `conditional`, identify that relation,
+and explain why it would support this inference if established. Merely naming a gap
+or saying that evidence should be checked does not supply the missing relation.
+
+- `supported`: the stated signal justifies the stated bounded inference through the
+  mapping's specified evidential relationship. No substantive warrant gap remains.
+- `conditional`: a specific unresolved empirical warrant relation supplied by the
+  mapping could establish this signal-to-inference bridge. Explain the actual
+  dependency, without inventing a new method or adding a missing control.
+- `unsupported`: even with execution prerequisites satisfied and the stated signal
+  obtained, the mapping supplies no adequate bridge to the inference, nor a specific
+  unresolved empirical relation that could establish it.
+
+Preserve the distinction between observing a pattern and interpreting it. Causal
+contribution, chronological direction, localization, specificity, necessity and
+interaction claims each need their own evidential bridge at the claimed resolution.
+Do not treat circular support, non-identifiability, confounding, association promoted
+to causation, or a detected feature promoted to historical proof as mere execution
+preconditions. An outcome defined using the desired conclusion does not independently
+support that conclusion. Stability or repeated agreement alone does not rule out a
+shared error or an alternative explanation.
+
+Ordinary instrument setup, event logging, parameter specification and data acquisition
+can be readiness. Independence, construct meaning, comparability, feature specificity
+and resolving power can instead determine what the signal means. Calling such inputs
+“qualified,” “reliable,” or “available” does not establish a warrant. Selecting a
+window or threshold is different from establishing that it supports a claimed bound.
+Explain the functional distinction for this mapping rather than applying a word rule.
+
+A coherent prospective test need not already have yielded a positive result. Do not
+make missing observations alone a warrant defect or convert every unperformed step
+into a substantive condition. A planned, properly specified discriminating test can
+support a bounded conditional inference from its possible signal. Conversely, a
+promised future check cannot launder a missing bridge into readiness: assess whether
+the mapping actually specifies the relationship that could justify the inference.
+
+## Target fidelity
+
+Question: Does the mapped inference provide a justified answer or bounded contribution
+to the retained target question?
+
+- `addressed`: the inference has an explicit, justified relationship to the target.
+- `conditional`: a specific unresolved target-fidelity bridge supplied by the mapping
+  determines whether the bounded inference addresses the retained target.
+- `not_addressed`: the inference fails to address the retained target, even as a
+  justified bounded contribution.
+
+Do not require complete resolution of a broad question. Preserve stated scope:
+relative versus absolute chronology, test versus production behaviour, prototype
+versus actual behaviour, a candidate for investigation versus established causation,
+and tested configurations versus all possible configurations are distinct claims.
+Do not invent a stronger claim and reject the mapping for failing to establish it;
+do not silently weaken a stronger stated claim to rescue the mapping either.
+
+## Conditions and execution readiness
+
+List material unresolved conditions on which your judgment relies. For each, provide
+the condition, category, rationale, and effect_on_validity (`none`, `conditional`, or
+`invalidating`). Categories:
+
+- `execution_precondition`: ability to run an otherwise coherent procedure; satisfying
+  it does not change the mechanism, warrant, inference or target. Always effect `none`.
+- `mechanism_condition`: truth determines whether state → operation → signal preserves
+  the source mechanism.
+- `warrant_condition`: truth determines whether signal → inference is justified.
+- `target_fidelity_condition`: truth determines whether inference → target is justified.
+- `mixed`: inseparable substantive roles remain; explain which links are involved.
+- `uncertain`: supplied context cannot settle the condition's role; explain what is
+  missing. Do not use uncertainty to hide a known unsupported inference.
+
+Separate conditions with different roles where possible. A compound requirement does
+not become execution-only simply because one part is resource availability. A
+condition's method of verification does not determine its category. Do not invent
+additional requirements or redesign the source mapping.
+
+Execution readiness is descriptive and never independently changes final validity:
+
+- `ready`: no unresolved execution prerequisites are identified; preconditions is empty.
+- `requires_preconditions`: list each execution prerequisite with how_to_establish and
+  why_execution_only. The list must exactly match the execution_precondition entries
+  in conditions. These conditions have effect_on_validity `none`.
+- `unknown`: explain what cannot be determined; do not use this status when known
+  execution prerequisites have been identified. Preconditions is empty.
+
+For example, lack of access to a box can prevent a specified visible-token count from
+running without defeating the counting inference. Obtaining access cannot make that
+count establish who made the tokens. A separately specified but unestablished
+calibration relation between a measured height and volume can be a substantive
+conditional warrant; do not invent such a relation when the mapping supplies none.
+
+## Final status and consistency
+
+- `Invalid` if mechanism_fidelity is `not_preserved`, warrant_validity is `unsupported`,
+  or target_fidelity is `not_addressed`. Failure takes precedence over conditionality.
+- Otherwise `Conditional` if any of those three components is `conditional`.
+- Otherwise `Valid`: mechanism `preserved`, warrant `supported`, target `addressed`.
+
+Execution readiness may be any of its three statuses for a Valid mapping. Execution
+preconditions alone never make a mapping Conditional or Invalid. A conditional
+component requires a corresponding substantive conditional condition (or explained
+mixed condition); an invalidating condition requires an Invalid final status. Do not
+duplicate conditions or contradict component statuses in the condition list. State
+remaining uncertainty plainly. Evaluate these validity links only; do not apply
+other admission, ranking or aesthetic criteria.
+
+CASE PACKET
+{
+  "case_id": "E016",
+  "source": {
+    "name": "Chain-of-custody verification",
+    "practice": "Forensic investigation",
+    "instrument": {
+      "state": "An item or record passes through multiple handlers or locations, creating opportunities for substitution, alteration, contamination, or uncertainty about identity.\n",
+      "operation": "Record each transfer and handling event with the responsible party, time, and purpose, then inspect that history for continuity and unexplained transitions.\n",
+      "signal": "A continuous, internally consistent handling record links the examined item through its lifecycle, while gaps or contradictions identify breaks in documented custody.\n",
+      "inference": "Documentary continuity supports the claim that the item examined is the item collected and that its handling history is accounted for; gaps weaken that provenance claim.\n",
+      "limit": "Complete documentation does not itself prove that handlers recorded events truthfully or that no unrecorded alteration occurred, and missing records do not prove that alteration occurred. The strength of the inference depends on the reliability of the recording and safeguarding process.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Act on tender versions, scoring sheets, relevant emails and award records proposed as evidence of steering. Treat each document and version as a distinct item whose creation, handling, transfer, storage and acquisition by the reporter require accounting. Multiple handlers or locations could create uncertainty about identity or alteration; neither such handling nor alteration is established by the packet. Availability of records, identifiable handlers and reliable safeguards remains an assumption to test.",
+    "operation": "For each item, construct a dated handling history from creation through procurement use to the copy examined by the reporter. Record each identifiable transfer or handling event, responsible party, time, purpose and supporting evidence; mark unknown details explicitly. Link successive copies and versions using available identifiers, metadata and content comparisons, distinguishing documented revisions from unexplained differences. Inspect the history for continuity and contradictions, corroborating it with independently generated records and handler interviews where available. For gaps or conflicts, seek the missing records and accounts of the relevant handlers, and test explanations such as routine revision, copying or incomplete retention. Update the history as evidence arrives. If a material break remains unresolved, stop short of treating the affected document's identity or version sequence as established; continue with independently supported evidence and report the unresolved break. Where provenance is sufficiently supported, compare the authenticated content and dated sequence with the alleged preferential changes, testing legitimate procurement explanations and seeking disconfirming evidence.",
+    "signal": "Look for a continuous, internally consistent history linking the examined document to its origin and documented procurement use, with revisions and transfers accounted for. Alternatively, identify missing handoffs, conflicting dates or handler accounts, uncertain version identity, and unexplained content differences. Record whether corroboration is independent or derives from the same underlying source. Separately identify whether the supported content and chronology document changes to requirements or scores that could bear on preferential treatment. These are possible observations to seek, not findings supplied by the packet.",
+    "inference": "A continuous history supported by reliable records warrants increased confidence that the examined document is the identified procurement record and that its documented handling is accounted for. A material gap or contradiction weakens that provenance claim for the affected item or interval. Supported provenance makes a document usable in assessing steering; it does not establish steering itself. Any claim of preferential intervention must be bounded by what authenticated content, chronology and independent corroboration support after competing explanations are tested. Distinguish corroborated documentary facts, allegations of steering and unresolved provenance questions.",
+    "limit": "Complete documentation cannot by itself establish truthful recording or exclude unrecorded alteration. Missing documentation does not prove alteration, concealment or steering; an unexplained difference does not identify who caused it or why. The inference depends on the reliability of recording, safeguarding and corroboration, and repeated copies of one account do not supply independent confirmation. Even an authentic record may contain inaccurate statements, while a documented change benefiting a bidder does not alone establish intentional preference. Unavailable evidence may leave the steering question unresolved despite a well-supported history for the records obtained."
+  }
+}

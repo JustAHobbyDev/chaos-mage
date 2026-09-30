@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "mechanism_fidelity",
+    "warrant_validity",
+    "target_fidelity",
+    "conditions",
+    "execution_readiness",
+    "final_status",
+    "uncertainty"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "mechanism_fidelity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "preserved",
+            "conditional",
+            "not_preserved"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "warrant_validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "conditional",
+            "unsupported"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "target_fidelity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "addressed",
+            "conditional",
+            "not_addressed"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "condition",
+          "category",
+          "rationale",
+          "effect_on_validity"
+        ],
+        "properties": {
+          "condition": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "execution_precondition",
+              "mechanism_condition",
+              "warrant_condition",
+              "target_fidelity_condition",
+              "mixed",
+              "uncertain"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "effect_on_validity": {
+            "type": "string",
+            "enum": [
+              "none",
+              "conditional",
+              "invalidating"
+            ]
+          }
+        }
+      }
+    },
+    "execution_readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "preconditions",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "requires_preconditions",
+            "unknown"
+          ]
+        },
+        "preconditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "condition",
+              "how_to_establish",
+              "why_execution_only"
+            ],
+            "properties": {
+              "condition": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "how_to_establish": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "why_execution_only": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "final_status": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Conditional",
+        "Invalid"
+      ]
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "mechanism_fidelity": {
+                "properties": {
+                  "status": {
+                    "const": "not_preserved"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "warrant_validity": {
+                "properties": {
+                  "status": {
+                    "const": "unsupported"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "target_fidelity": {
+                "properties": {
+                  "status": {
+                    "const": "not_addressed"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "final_status": {
+            "const": "Invalid"
+          }
+        }
+      },
+      "else": {
+        "if": {
+          "anyOf": [
+            {
+              "properties": {
+                "mechanism_fidelity": {
+                  "properties": {
+                    "status": {
+                      "const": "conditional"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "warrant_validity": {
+                  "properties": {
+                    "status": {
+                      "const": "conditional"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "target_fidelity": {
+                  "properties": {
+                    "status": {
+                      "const": "conditional"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "then": {
+          "properties": {
+            "final_status": {
+              "const": "Conditional"
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "final_status": {
+              "const": "Valid"
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "conditions": {
+          "items": {
+            "if": {
+              "properties": {
+                "category": {
+                  "const": "execution_precondition"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "effect_on_validity": {
+                  "const": "none"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
