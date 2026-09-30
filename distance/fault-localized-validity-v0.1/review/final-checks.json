@@ -1,0 +1,39 @@
+{
+  "at": "2026-09-30T21:55:31.978954+00:00",
+  "unit_tests": {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "distance/fault-localized-validity-v0.1/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "tests": 34,
+    "status": "pass"
+  },
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/fault-localized-validity-v0.1/publication.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"complete\",\n  \"provider_calls\": 53,\n  \"unique_sessions\": 53,\n  \"recovered_response_representations\": 2,\n  \"checks\": [\n    {\n      \"stage\": \"claim-warrant\",\n      \"judgments\": 50,\n      \"unique_sessions\": 50,\n      \"retained_representation_failure\": 2,\n      \"replacement_observations\": 0\n    },\n    {\n      \"stage\": \"ablation\",\n      \"judgments\": 3,\n      \"unique_sessions\": 3,\n      \"retained_representation_failure\": 0,\n      \"replacement_observations\": 0\n    }\n  ],\n  \"historical_files_preserved\": 2934,\n  \"no_launch_during_pause\": true\n}\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}
