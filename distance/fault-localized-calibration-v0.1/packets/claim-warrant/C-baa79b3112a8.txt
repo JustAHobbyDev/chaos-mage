@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?"
+  },
+  "mapping": {
+    "state": "The inquiry uses two sequence panels: A is an earlier run of correspondence entries; B is a later run. The focal and comparison bundles use the same correspondence-register template. Each panel contains ordered observations from its assigned bundle and independently dated overlapping reference sequences recording the same external annual cycle.\nPanel A is assigned to a separate comparison correspondence bundle from the same collection.\nPanel B is assigned to a separate comparison correspondence bundle from the same collection.",
+    "operation": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate.\nUse the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle.\nUse the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle.",
+    "signal": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment. Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment. Competing shifts fail these stated checks.",
+    "inference": "For a separate comparison correspondence bundle from the same collection, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for.\nFor a separate comparison correspondence bundle from the same collection, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for.\nThe register-format match carries the two panel dating results over to the focal bundle.",
+    "limit": "The stated shared annual influences, ordered observations, independent references and anchors hold within each panel. Dating remains evidential support rather than infallibility. Register-template identity is the only stated cross-bundle connection; contemporaneity, correspondent identity and event synchrony between the two bundles are not stipulated."
+  },
+  "atomic_claim": {
+    "claim_id": "C-baa79b3112a8",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "For a separate comparison correspondence bundle from the same collection, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for.",
+    "exact_claim_span": "For a separate comparison correspondence bundle from the same collection, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+  }
+}

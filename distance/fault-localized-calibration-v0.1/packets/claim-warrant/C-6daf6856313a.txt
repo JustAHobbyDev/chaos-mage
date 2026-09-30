@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?"
+  },
+  "mapping": {
+    "state": "The inquiry uses two intervention panels: A tests an intake-priority setting; B tests an approval-batch setting. The focal and comparison processes use the same approval-workflow template. Each panel concerns its assigned process at a fixed operating point; the two processes are not asserted to share their response dynamics.\nPanel A is assigned to the approval process under investigation.\nPanel B is assigned to a completed comparison process in another unit.",
+    "operation": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions.\nTreat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there.\nTreat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there.",
+    "signal": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory. In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory. Both responses settle within the observation window without an abort.",
+    "inference": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point.\nFor a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point.\nUse of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process.",
+    "limit": "All stated intervention, disturbance-control, observation and reversal conditions are satisfied. Estimates concern only the tested settings and operating points, not unique internal causes or general optimization. Workflow-template identity is the only stated cross-process connection; staffing, dynamics and resource costs are not stipulated equal."
+  },
+  "atomic_claim": {
+    "claim_id": "C-6daf6856313a",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process.",
+    "exact_claim_span": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+  }
+}

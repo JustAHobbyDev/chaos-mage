@@ -1,0 +1,263 @@
+#!/usr/bin/env python3
+"""H-only scheduler: exact immutable inputs, isolated observations, deletion-only ablation."""
+import argparse, concurrent.futures, copy, importlib.util, json, os, re, signal, subprocess, tempfile
+from datetime import datetime,timezone
+from pathlib import Path
+import contracts as c
+H=Path(__file__).resolve().parent; R=H.parent.parent; RT=R/'.runtime/fault-localized-calibration-v0.1'
+STAGES=['claim-warrant','ablation']
+def now(): return datetime.now(timezone.utc).isoformat()
+def git(*args): return subprocess.check_output(['git',*args],cwd=R)
+def head(): return git('rev-parse','HEAD').decode().strip()
+def rel(p): return str(p.relative_to(R))
+def write(p,v):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f: json.dump(v,f,indent=2,ensure_ascii=False); f.write('\n')
+def raw(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+def inventory(paths): return {rel(p):c.sha(p) for p in sorted(paths) if p.is_file() and '__pycache__' not in p.parts}
+def hashes(files):
+ for p,h in files.items(): c.require(c.sha(R/p)==h,'Frozen bytes changed: '+p)
+def committed(p,commit='HEAD'): c.require(git('show',f'{commit}:{rel(p)}')==p.read_bytes(),'Uncommitted input '+rel(p))
+def claims(): return c.read(H/'claims/inventory.json')
+def candidate(cid): return c.read(H/'cases'/f'{cid}.json')
+def order(stage): return c.read(H/'manifest.json')['claim_order'] if stage=='claim-warrant' else c.read(H/'ablation-manifest.json')['case_order']
+def packet(stage,identity): return H/'packets'/stage/f'{identity}.txt'
+def cfg(): return c.read(H/'execution-config.json')
+def clean_env(): return {k:v for k,v in os.environ.items() if not k.startswith(('CODEX_','CLAUDE_','ANTHROPIC_','OPENAI_','AZURE_OPENAI_','GEMINI_','GOOGLE_GENAI_')) and k not in ('CLAUDECODE','MODEL_PROVIDER','MODEL','LLM_MODEL')}
+def binary_check():
+ x=cfg(); cli=x['families']['A']['cli']
+ c.require(x['families']=={'A':{'cli':cli,'requested_model':'gpt-6-astra','effort':'high'}},'Only Astra/high')
+ c.require(c.sha(cli)==x['executable_sha256']['A'],'CLI changed')
+ c.require(c.sha(x['native_executable']['path'])==x['native_executable']['sha256'],'Native CLI changed')
+ version=subprocess.check_output([cli,'--version'],text=True).strip(); c.require(version=='codex-cli 0.157.1','CLI version'); return version
+
+def command(cwd,d,stage):
+ cmd=[cfg()['families']['A']['cli'],'exec','--ignore-user-config','--ignore-rules','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--cd',str(cwd),'--model','gpt-6-astra','-c','model_reasoning_effort="high"','-c','project_doc_max_bytes=0','-c','web_search="disabled"','--output-schema',str(H/'schemas'/f'{stage}.schema.json'),'--output-last-message',str(d/'response.json')]
+ for f in cfg()['codex_disabled_features']: cmd+=['--disable',f]
+ return cmd+['-']
+
+def audit_events(events):
+ starts=[e for e in events if e.get('type')=='thread.started']
+ c.require(len(starts)==1,'Expected one fresh session')
+ c.require(sum(e.get('type')=='turn.completed' for e in events)==1,'Incomplete turn')
+ c.require(not any(e.get('type') in ('error','turn.failed') for e in events),'Provider error')
+ c.require(all(e['item'].get('type') in ('agent_message','reasoning') for e in events if 'item' in e),'Tool activity')
+ found=[]
+ def walk(v,path):
+  if isinstance(v,dict):
+   for k,x in v.items():
+    if k in ('model','model_id','model_name') and isinstance(x,str): found.append({'value':x,'source':path+'.'+k})
+    c.require(not ('fallback' in k.lower() and x),'Fallback event'); walk(x,path+'.'+k)
+  elif isinstance(v,list):
+   for i,x in enumerate(v):walk(x,f'{path}[{i}]')
+ walk(events,'events'); c.require(all(x['value']=='gpt-6-astra' for x in found),'Model substitution')
+ return {'session_id':starts[0]['thread_id'],'returned_model_identifiers':sorted({x['value'] for x in found}),'model_metadata_provenance':found,'verified_served_snapshot':None,'usage':[e.get('usage') for e in events if e.get('type')=='turn.completed'],'internal_retry_events':[e for e in events if e.get('subtype')=='api_retry'],'retry_observability':'No harness retries. Unexposed provider retries cannot be ruled out.'}
+
+def reconstructed_claim_packet(a):
+ body={**candidate(a['case_id']),'atomic_claim':{k:a[k] for k in ['claim_id','source_field','exact_parent_text','exact_claim_span']}}
+ return (H/'CLAIM-WARRANT.md').read_text()+'\nCASE PACKET\n'+json.dumps(body,indent=2,ensure_ascii=False)+'\n'
+
+def delete_claims(mapping,atoms):
+ result=dict(mapping)
+ for f in mapping:
+  rows=sorted([a for a in atoms if a['source_field']=='mapping.'+f],key=lambda a:a['span_start'],reverse=True)
+  previous=len(mapping[f])
+  for a in rows:
+   x,y=a['span_start'],a['span_end']; c.require(y<=previous and mapping[f][x:y]==a['exact_claim_span'],'Invalid/overlapping deletion')
+   result[f]=result[f][:x]+f'[DELETED {a["claim_id"]}]'+result[f][y:]; previous=x
+ return result
+
+def unsupported(cid): return [a for a in claims() if a['case_id']==cid and c.read(H/'judgments/claim-warrant'/f'{a["claim_id"]}.json')['status']=='UNSUPPORTED']
+def ablation_body(cid):
+ original=candidate(cid); atoms=unsupported(cid)
+ return {'case_id':cid,**original,'unsupported_claims':[{k:a[k] for k in ['claim_id','source_field','exact_parent_text','exact_claim_span']} for a in atoms],'ablated_mapping':delete_claims(original['mapping'],atoms)}
+def ablation_text(cid):
+ return (H/'SCORING.md').read_text()+'\nJudge only this deletion counterfactual. Return artifact_viability in the supplied schema. Per-claim dependencies must cover every unsupported ID and use separate exact source excerpts. Distinguish textual actions retained from claims those actions no longer license. Do not invent repair.\nCASE PACKET\n'+json.dumps(ablation_body(cid),indent=2,ensure_ascii=False)+'\n'
+
+def verify(stage=None,commit=False):
+ import historical
+ historical.guard()
+ m=c.read(H/'manifest.json'); cases=m['case_order']
+ c.require(len(cases)==24 and len(set(cases))==24,'Corpus size/identity')
+ for name in ['SCORING.md','CLAIM-WARRANT.md','PROTOCOL.md','contracts.py','schemas/claim-warrant.schema.json','schemas/ablation.schema.json']:
+  committed(H/name,m['policy_checkpoint'])
+ hashes(m['case_files']); hashes(m['hidden_files'])
+ for commit_id in [m['primary_checkpoint'],m['controls_checkpoint']]:
+  subprocess.check_call(['git','merge-base','--is-ancestor',m['policy_checkpoint'],commit_id],cwd=R)
+ c.require(subprocess.run(['git','cat-file','-e',m['policy_checkpoint']+':'+rel(H/'cases')],cwd=R,stderr=subprocess.DEVNULL).returncode!=0,'Cases preceded scoring freeze')
+ designs=[c.read(H/'hidden-design'/f'{cid}.json') for cid in cases]
+ primary=[d for d in designs if not d['is_control']]
+ c.require(len(primary)==18 and len(designs)-len(primary)==6,'Primary/control counts')
+ from collections import Counter
+ c.require(len({d['mechanism'] for d in primary})==6,'Mechanism count')
+ c.require(all(n==1 for n in Counter((d['mechanism'],d['intended_structural_position']) for d in primary).values()),'Matched positions')
+ c.require({d['intended_structural_position'] for d in primary}=={'local','scope','core'},'Missing position')
+ for row in c.read(H/'hidden-design/comparability.json'):
+  group=[candidate(cid) for cid in row['case_ids']]
+  for x in group[1:]:
+   c.require(x['source']==group[0]['source'] and x['target']==group[0]['target'],'Unmatched instrument/target')
+   for field in ['signal','limit']:c.require(x['mapping'][field]==group[0]['mapping'][field],'Unmatched '+field)
+  c.require(bool(row['controlled_changes']),'Missing manipulation record')
+ atoms=claims(); byid={a['claim_id']:a for a in atoms}
+ c.require(len(atoms)==len(byid) and m['claim_order']==list(byid),'Claim identity/order mismatch')
+ audit=c.read(H/'claims/extraction-audit.json'); covered=[]
+ for a in atoms:
+  text=candidate(a['case_id'])['mapping'][a['source_field'].split('.')[1]]
+  c.require(text[a['span_start']:a['span_end']]==a['exact_claim_span'],'Source span drift')
+  c.require(text[a['parent_start']:a['parent_end']]==a['exact_parent_text'],'Parent drift')
+  c.require(a['parent_start']<=a['span_start']<a['span_end']<=a['parent_end'],'Child outside parent')
+  c.require(set(a)=={'claim_id','case_id','source_field','parent_start','parent_end','exact_parent_text','span_start','span_end','exact_claim_span','local_context','downstream_references'},'Extraction labels/fields changed')
+  c.require(re.fullmatch(r'C-[0-9a-f]{12}',a['claim_id']) is not None,'Nonopaque claim ID')
+  c.require(packet('claim-warrant',a['claim_id']).read_text()==reconstructed_claim_packet(a),'Packet allowlist drift')
+ for cid in cases:c.require(re.fullmatch(r'H-[0-9a-f]{12}',cid) is not None,'Nonopaque case ID')
+ for row in audit:
+  text=candidate(row['case_id'])['mapping'][row['source_field'].split('.')[1]]
+  c.require(text[row['start']:row['end']]==row['exact_text'],'Audit source drift')
+  c.require(bool(row['claim_ids'])==(row['disposition']=='represented'),'Unaccounted unit')
+  c.require(bool(row['operator_reason']),'Unexplained extraction decision'); covered+=row['claim_ids']
+  for identity in row['claim_ids']:c.require(byid[identity]['exact_parent_text']==row['exact_text'],'Parent coverage mismatch')
+ c.require(sorted(covered)==sorted(byid),'Coverage missing/duplicated')
+ for cid in cases:
+  for field in c.FIELDS:
+   text=candidate(cid)['mapping'][field]; rows=[r for r in audit if r['case_id']==cid and r['source_field']=='mapping.'+field]
+   cursor=0
+   for row in sorted(rows,key=lambda r:r['start']):
+    c.require(not text[cursor:row['start']].strip() and row['start']>=cursor,'Audit gap/overlap');cursor=row['end']
+   c.require(not text[cursor:].strip(),'Unrepresented source text')
+ for stage_name in ([stage] if stage else STAGES):
+  p=H/f'{stage_name}-prepared.json'
+  if p.exists():
+   prep=c.read(p);hashes(prep['files'])
+   if commit:
+    committed(p)
+    for name in prep['files']:committed(R/name)
+  c.require(c.read(H/'schemas'/f'{stage_name}.schema.json')==c.schema(stage_name),'Schema drift')
+ if (H/'ablation-manifest.json').exists():
+  committed(H/'claim-warrant-freeze.json')
+  c.require(order('ablation')==[cid for cid in cases if unsupported(cid)],'Wrong ablation coverage/subsets')
+  for cid in order('ablation'):c.require(packet('ablation',cid).read_text()==ablation_text(cid),'Not exact simultaneous deletion')
+ return {'historical_files_preserved':len(c.read(H/'preservation.json')['files']),'claims':len(atoms),'cases':cases}
+
+def prepare(stage):
+ if stage=='ablation':
+  committed(H/'claim-warrant-freeze.json'); verify_results('claim-warrant',True)
+  case_order=[cid for cid in c.read(H/'manifest.json')['case_order'] if unsupported(cid)]
+  write(H/'ablation-manifest.json',{'claim_freeze_commit':git('log','-1','--format=%H','--',rel(H/'claim-warrant-freeze.json')).decode().strip(),'claim_freeze_sha256':c.sha(H/'claim-warrant-freeze.json'),'case_order':case_order,'deletions':{cid:[a['claim_id'] for a in unsupported(cid)] for cid in case_order},'subsets':False,'uncertain_included':False})
+  for cid in case_order: raw(packet(stage,cid),ablation_text(cid).encode())
+ paths=list(H.rglob('*'))+[R/'docs/EXPERIMENT-RECOVERY-POLICY.md',R/'docs/PROBLEM_FRAMES-fault-localized-calibration-v0.1.md']
+ write(H/f'{stage}-prepared.json',{'at':now(),'parent_commit':head(),'stage':stage,'files':inventory(paths),'order':order(stage)})
+ verify(stage)
+
+def state():
+ files=sorted((RT/'states').glob('*.json')); return c.read(files[-1])['state'] if files else None
+
+def transition(s,reason):
+ files=sorted((RT/'states').glob('*.json'))
+ write(RT/'states'/f'{len(files):04}.json',{'state':s,'reason':reason,'at':now(),'commit':head(),'previous_sha256':c.sha(files[-1]) if files else None})
+
+def preflight(stage):
+ verify(stage,True); version=binary_check()
+ commands=c.read(H/'historical-commands.json')+[['python','-B','-m','unittest','discover','-s',rel(H/'tests'),'-p','test_*.py']]
+ def check(cmd):
+  result=subprocess.run(cmd,cwd=R,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=600)
+  return {'command':cmd,'exit_code':result.returncode,'output':result.stdout}
+ results=[]
+ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+  for result in pool.map(check,commands):
+   results.append(result)
+   print('check',len(results),'/',len(commands),result['exit_code'],' '.join(result['command']),flush=True)
+ write(H/'review'/f'{stage}-preflight.json',{'at':now(),'input_commit':head(),'prepared_sha256':c.sha(H/f'{stage}-prepared.json'),'cli_version':version,'provider_calls':0,'checks':results})
+ c.require(all(r['exit_code']==0 for r in results),'Preflight failed')
+ verify(stage,True)
+
+def validate_response(value,stage,identity):
+ if stage=='claim-warrant':
+  a=next(a for a in claims() if a['claim_id']==identity); c.validate(value,stage,identity,candidate(a['case_id']))
+ else:c.validate(value,stage,identity,candidate(identity),unsupported=unsupported(identity))
+
+def execute(stage,identity):
+ d=RT/'runs'/stage/identity; d.mkdir(parents=True,exist_ok=False)
+ write(d/'attempt.json',{'at':now(),'stage':stage,'identity':identity,'input_commit':head(),'harness_attempt':1})
+ prompt=packet(stage,identity).read_bytes(); raw(d/'prompt.txt',prompt); launched=False; metadata=None
+ try:
+  version=binary_check()
+  with tempfile.TemporaryDirectory(prefix='h-isolated-') as cwd:
+   c.require(not list(Path(cwd).iterdir()),'Working directory not empty')
+   cmd=command(cwd,d,stage)
+   write(d/'reservation.json',{'at':now(),'input_commit':head(),'identity':identity,'stage':stage,'packet_sha256':c.digest(prompt),'schema_sha256':c.sha(H/'schemas'/f'{stage}.schema.json'),'configuration':cfg(),'cli_version':version,'command':cmd,'working_directory':cwd,'working_directory_initially_empty':True,'requested_session':'ephemeral','environment_policy':'Provider overrides and parent session markers removed; existing on-disk auth only.'})
+   with (d/'events.jsonl').open('x') as out,(d/'stderr.txt').open('x') as err:
+    process=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=out,stderr=err,cwd=cwd,env=clean_env(),start_new_session=True); launched=True
+    write(d/'process.json',{'pid':process.pid,'parent_pid':os.getpid(),'launched_at':now()})
+    try:process.communicate(prompt,timeout=900)
+    except subprocess.TimeoutExpired:os.killpg(process.pid,signal.SIGKILL); process.wait(); raise
+   write(d/'exit.json',{'returncode':process.returncode,'at':now()}); c.require(process.returncode==0,'CLI nonzero exit')
+   events=[json.loads(line,object_pairs_hook=c.unique) for line in (d/'events.jsonl').read_text().splitlines() if line.strip()]
+   metadata=audit_events(events)
+   for prev in (RT/'runs').rglob('validation.json'):
+    old=c.read(prev).get('metadata'); c.require(not old or old['session_id']!=metadata['session_id'],'Session reused')
+   finals=[e['item']['text'] for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type')=='agent_message']
+   c.require(len(finals)==1 and finals[0].strip()==(d/'response.json').read_text().strip(),'Final stream mismatch')
+   validate_response(c.read(d/'response.json'),stage,identity)
+  write(d/'validation.json',{'status':'valid','error':None,'finished_at':now(),'metadata':metadata})
+ except Exception as e:
+  write(d/'validation.json',{'status':'failed','error':type(e).__name__+': '+str(e),'finished_at':now(),'metadata':metadata})
+  transition('TERMINATED_MEASUREMENT' if launched else 'PAUSED_AMBIGUOUS',str(e)); raise
+ return d
+
+def run(stage):
+ c.require(not (H/'final-runtime-freeze.json').exists(),'Experiment already final'); c.require(state() in (None,'RUNNING','COMPLETE'),'Paused/terminated: recovery evidence required; no automatic resume')
+ c.require(not list((RT/'runs'/stage).glob('*')),'Stage has reservations; no automatic retry/rescheduling')
+ try:
+  verify(stage,True); p=H/'review'/f'{stage}-preflight.json'; committed(p); v=c.read(p)
+  c.require(v['prepared_sha256']==c.sha(H/f'{stage}-prepared.json') and all(x['exit_code']==0 for x in v['checks']),'Preflight binding')
+  c.require(not git('status','--porcelain').strip(),'Unclean continuation')
+  binary_check(); initial=head(); transition('RUNNING',stage)
+  for index,identity in enumerate(order(stage),1):
+   c.require(state()=='RUNNING' and head()==initial,'State/checkpoint changed'); verify(stage,True)
+   execute(stage,identity); print(f'{stage} {index}/{len(order(stage))} {identity}: valid',flush=True)
+  transition('COMPLETE',stage)
+ except Exception as e:
+  if state() not in ('TERMINATED_MEASUREMENT','TERMINATED_LINEAGE','PAUSED_AMBIGUOUS','PAUSED_RECOVERABLE'): transition('PAUSED_AMBIGUOUS',str(e))
+  raise
+
+def freeze(stage):
+ c.require(state()=='COMPLETE','Incomplete/paused stage'); verify(stage,True); entries=[]
+ for identity in order(stage):
+  d=RT/'runs'/stage/identity; validation=c.read(d/'validation.json'); c.require(validation['status']=='valid','Failed response')
+  validate_response(c.read(d/'response.json'),stage,identity)
+  raw(H/'judgments'/stage/f'{identity}.json',(d/'response.json').read_bytes())
+  entries.append({'identity':identity,'reservation':c.read(d/'reservation.json'),'validation':validation,'response_sha256':c.sha(d/'response.json'),'files':inventory(d.iterdir())})
+ write(H/f'{stage}-freeze.json',{'at':now(),'prepared_sha256':c.sha(H/f'{stage}-prepared.json'),'runs':entries,'states':inventory((RT/'states').glob('*.json'))})
+
+def verify_results(stage,commit=False):
+ freeze=H/f'{stage}-freeze.json'; f=c.read(freeze)
+ if commit:committed(freeze)
+ c.require([e['identity'] for e in f['runs']]==order(stage),'Frozen result coverage')
+ sessions=[]; previous=None
+ for entry in f['runs']:
+  identity=entry['identity']; hashes(entry['files']); d=RT/'runs'/stage/identity
+  response=H/'judgments'/stage/f'{identity}.json'
+  c.require(c.sha(response)==entry['response_sha256'],'Published response changed')
+  c.require(response.read_bytes()==(d/'response.json').read_bytes(),'Model answer replaced')
+  validate_response(c.read(response),stage,identity)
+  r=entry['reservation']; c.require(r['packet_sha256']==c.sha(packet(stage,identity))==c.sha(d/'prompt.txt'),'Packet lineage')
+  committed(packet(stage,identity),r['input_commit'])
+  c.require(r['command']==command(r['working_directory'],d,stage) and r['configuration']==cfg(),'Execution configuration lineage')
+  events=[json.loads(s,object_pairs_hook=c.unique) for s in (d/'events.jsonl').read_text().splitlines() if s.strip()]
+  meta=audit_events(events); c.require(meta==entry['validation']['metadata'],'Event audit drift'); sessions.append(meta['session_id'])
+  c.require(previous is None or previous<=r['at'],'Overlapping sessions'); previous=entry['validation']['finished_at']
+ c.require(len(sessions)==len(set(sessions)),'Duplicate sessions')
+ return {'stage':stage,'judgments':len(sessions),'unique_sessions':len(sessions)}
+
+def failure():
+ write(H/'failure-freeze.json',{'at':now(),'state':state(),'runtime_files':inventory(RT.rglob('*')),'policy':'Incomplete; sent observations cannot be retried or replaced.'})
+
+def main():
+ p=argparse.ArgumentParser(); p.add_argument('action',choices=['prepare','preflight','run','freeze','verify','verify-results','freeze-failure']); p.add_argument('--stage',choices=STAGES,default=STAGES[0]); a=p.parse_args()
+ if a.action=='verify': print(json.dumps(verify()))
+ elif a.action=='verify-results':print(json.dumps(verify_results(a.stage)))
+ elif a.action=='freeze-failure':failure()
+ else:globals()[a.action](a.stage)
+if __name__=='__main__': main()
