@@ -1,0 +1,39 @@
+{
+  "at": "2026-09-30T04:18:38.170111+00:00",
+  "partial_freeze_commit": "58267d7374cece69f992c832a644599dff9d680a",
+  "passed": true,
+  "total_tests": 25,
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s distance/model-qualification-gemini-v0.1/tests",
+      "exit_code": 0,
+      "reported_tests": 25,
+      "output": "Ran 25 tests; OK"
+    },
+    {
+      "command": "python -B distance/model-qualification-gemini-v0.1/review/verify_incomplete.py",
+      "exit_code": 0,
+      "reported_tests": 0,
+      "output": "passed: true; primary_calls: 0; artificial_probes: 1"
+    },
+    {
+      "command": "python -B distance/model-qualification-v0.1/runner.py verify",
+      "exit_code": 0,
+      "reported_tests": 0,
+      "output": "cases: 12; historical_artifacts_unchanged: true"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "reported_tests": 0,
+      "output": ""
+    }
+  ],
+  "historical_semantic_suites": {
+    "state": "deferred",
+    "reason": "These suites decode historical judgments; the mandatory complete twelve-result freeze does not exist. Hash/provenance verification ran instead.",
+    "scope": "Historical completion/semantic tests and verifiers from the prior verify_all command inventory, including D/E and Muse completion suites"
+  },
+  "new_provider_calls": 0,
+  "no_historical_reports_overwritten": true
+}
