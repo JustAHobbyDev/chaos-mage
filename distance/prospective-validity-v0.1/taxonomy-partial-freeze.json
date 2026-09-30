@@ -1,0 +1,667 @@
+{
+  "at": "2026-09-30T07:45:06.555919+00:00",
+  "status": "incomplete",
+  "planned": 196,
+  "completed": 4,
+  "runs": [
+    {
+      "identity": "Q0020",
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T07:43:23.035697+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0f144-7770-7290-aa97-09aaf64fbf73",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          },
+          "served_model_identifier": null,
+          "usage": [
+            {
+              "input_tokens": 11644,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 209,
+              "reasoning_output_tokens": 85
+            }
+          ]
+        }
+      },
+      "reservation": {
+        "started_at": "2026-09-30T07:43:10.984596+00:00",
+        "input_commit": "4d2594c2627f2583115ab8f478967ed74d327bb7",
+        "kind": "runs",
+        "identity": "Q0020",
+        "stage": "taxonomy",
+        "packet_sha256": "db705e6d073690e9aee3f87ebcbd959f2b860e2b308453776a96fdcb32972d4e",
+        "canonical_schema_sha256": "1ec969059e32004960d8fa393dc6e0c9afb145d26818cdc39569d43acac11fed",
+        "wire_schema_sha256": "04a417151a19de34600e91715b3bc26373b012aa0b2cc24460ce242db44880dd",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential independently frozen Experiment F order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "taxonomy",
+            "prospective"
+          ],
+          "probe_limit_per_stage": 1,
+          "authorized_measurements": 226,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/f-isolated-skejikmg",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/schemas/taxonomy-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/f-isolated-skejikmg",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent context removed; subscription authentication remains on disk."
+      },
+      "response_sha256": "3295e8ee5be980965a78e6c99da4ef5150f8003adb6d446fea798410c55fcaa4",
+      "files": {
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/attempt.json": "ea8da70385a3c4b5da63fc4bc64ae1195c426e1b42235100c7134b3eb0d1b2cd",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/events.jsonl": "be46f90420763741ca9cfda6fe3fac4b6f4ab0766b6a54b2574431244fd0d900",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/exit.json": "65cac1c2a72a51a01a5db1ab60030810583dec754f5db19fa1fcdcfd0c06b227",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/process.json": "cab10353a2fe18b866cd99d043e23d4ae82983cc11cda85e6d9895a798ba894b",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/prompt.txt": "db705e6d073690e9aee3f87ebcbd959f2b860e2b308453776a96fdcb32972d4e",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/reservation.json": "9f4723fd713ec4db12061851b4e3db92e4d1a71d4d2d36615ed3e404e9e45863",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/response.json": "3295e8ee5be980965a78e6c99da4ef5150f8003adb6d446fea798410c55fcaa4",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0020/validation.json": "a448f225df7d9d4f5e61a4b8f83678b9c6b57ea8e09fcc79c6f7d42748ac8274"
+      }
+    },
+    {
+      "identity": "Q0032",
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T07:43:34.120254+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0f144-a85f-7c32-ab1a-c5555430d4be",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          },
+          "served_model_identifier": null,
+          "usage": [
+            {
+              "input_tokens": 12276,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 159,
+              "reasoning_output_tokens": 34
+            }
+          ]
+        }
+      },
+      "reservation": {
+        "started_at": "2026-09-30T07:43:23.524476+00:00",
+        "input_commit": "4d2594c2627f2583115ab8f478967ed74d327bb7",
+        "kind": "runs",
+        "identity": "Q0032",
+        "stage": "taxonomy",
+        "packet_sha256": "a111ee92795d844d8160cca24b7d9f1c2af5c017a19c99025b627af430f44e50",
+        "canonical_schema_sha256": "1ec969059e32004960d8fa393dc6e0c9afb145d26818cdc39569d43acac11fed",
+        "wire_schema_sha256": "04a417151a19de34600e91715b3bc26373b012aa0b2cc24460ce242db44880dd",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential independently frozen Experiment F order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "taxonomy",
+            "prospective"
+          ],
+          "probe_limit_per_stage": 1,
+          "authorized_measurements": 226,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/f-isolated-q_xmvxbm",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/schemas/taxonomy-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/f-isolated-q_xmvxbm",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent context removed; subscription authentication remains on disk."
+      },
+      "response_sha256": "41e28c5ffece795b1af5c03627316fd585a0fef471ba49ceb3b0ab4854c390db",
+      "files": {
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/attempt.json": "5a36b404aa00b221ce716d567f066c71791f7d2655ea7f84d440971af8b19b5f",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/events.jsonl": "74c4b2cf6dae64ac75bad19f6d518219e818ada0b04842ddfa9fde3850417b77",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/exit.json": "880f1f9c463433b41f8828534300d4176dca977567ca061bf80f5cf97aa479a6",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/process.json": "f8ef781180e7ca1193a7e88ce589f04c018fc333d702db8c97ba58157afe165c",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/prompt.txt": "a111ee92795d844d8160cca24b7d9f1c2af5c017a19c99025b627af430f44e50",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/reservation.json": "2a69b7c56a59136a2276cdd27ec4e49625381e9b320d89b5c55f9157b4df6e66",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/response.json": "41e28c5ffece795b1af5c03627316fd585a0fef471ba49ceb3b0ab4854c390db",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0032/validation.json": "182ba79bf861bb22a39174a752b77854017098120bfd43688906063d5492c1bd"
+      }
+    },
+    {
+      "identity": "Q0185",
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T07:43:46.887431+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0f144-d3d3-7ac0-93d0-1d187f4cfe28",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          },
+          "served_model_identifier": null,
+          "usage": [
+            {
+              "input_tokens": 12064,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 172,
+              "reasoning_output_tokens": 51
+            }
+          ]
+        }
+      },
+      "reservation": {
+        "started_at": "2026-09-30T07:43:34.635188+00:00",
+        "input_commit": "4d2594c2627f2583115ab8f478967ed74d327bb7",
+        "kind": "runs",
+        "identity": "Q0185",
+        "stage": "taxonomy",
+        "packet_sha256": "7aa5e545e6468ef1103af0a8cf077a40f89b7329ab6dc687f0ad61b1a0e07719",
+        "canonical_schema_sha256": "1ec969059e32004960d8fa393dc6e0c9afb145d26818cdc39569d43acac11fed",
+        "wire_schema_sha256": "04a417151a19de34600e91715b3bc26373b012aa0b2cc24460ce242db44880dd",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential independently frozen Experiment F order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "taxonomy",
+            "prospective"
+          ],
+          "probe_limit_per_stage": 1,
+          "authorized_measurements": 226,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/f-isolated-te2mbeqs",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/schemas/taxonomy-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/f-isolated-te2mbeqs",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent context removed; subscription authentication remains on disk."
+      },
+      "response_sha256": "5336d17bbd1089783923d18bd13e9fa12a564ba047f1355a6f2b3e2429dc35bd",
+      "files": {
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/attempt.json": "0640e717b6d665edd3f203f85eefb71ebec636f4daf54f876e6965033adf8d25",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/events.jsonl": "cace206f7dda4f63d3073645c15ef3418b19da8955ef573fa0ea30ef2ffc10c9",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/exit.json": "3073d27625891f4e98d867dbd5e11f9f2f780cee2332c848fdcb6d896bfc2bca",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/process.json": "e2eaf78568857e1ffb38db6f2abf971776affbc7dfed0b3e07b1367261995eec",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/prompt.txt": "7aa5e545e6468ef1103af0a8cf077a40f89b7329ab6dc687f0ad61b1a0e07719",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/reservation.json": "75c2df3ad478a572476d93b1c5e104af58d47729f240eae9b179b0dde5e1dc0d",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/response.json": "5336d17bbd1089783923d18bd13e9fa12a564ba047f1355a6f2b3e2429dc35bd",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0185/validation.json": "39d54eb9e37d8283a5511a428489a06a3cfa0b0ddcfcd6f11fe0e4841718906a"
+      }
+    },
+    {
+      "identity": "Q0135",
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T07:44:00.538367+00:00",
+        "metadata": {
+          "runner_init": {
+            "type": "thread.started"
+          },
+          "internal_transport_retry_events": [],
+          "session_id": "01a0f145-058a-7123-8802-0f9d325a1c21",
+          "requested_model": "gpt-6-astra",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "served_snapshot_note": "Unavailable: returned identifiers, if present, are not a verified immutable serving snapshot",
+          "formatting_retries": {
+            "observed_formatting_retries": 0,
+            "observability": "No structured retry event exposed; zero observed is not proof of zero internal retries"
+          },
+          "served_model_identifier": null,
+          "usage": [
+            {
+              "input_tokens": 11443,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 222,
+              "reasoning_output_tokens": 109
+            }
+          ]
+        }
+      },
+      "reservation": {
+        "started_at": "2026-09-30T07:43:47.387417+00:00",
+        "input_commit": "4d2594c2627f2583115ab8f478967ed74d327bb7",
+        "kind": "runs",
+        "identity": "Q0135",
+        "stage": "taxonomy",
+        "packet_sha256": "41287ad6f50c6006bea47d28d4b5ea5bbc78522fac719e7d643aa8e8d329eb68",
+        "canonical_schema_sha256": "1ec969059e32004960d8fa393dc6e0c9afb145d26818cdc39569d43acac11fed",
+        "wire_schema_sha256": "04a417151a19de34600e91715b3bc26373b012aa0b2cc24460ce242db44880dd",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential independently frozen Experiment F order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "taxonomy",
+            "prospective"
+          ],
+          "probe_limit_per_stage": 1,
+          "authorized_measurements": 226,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          }
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/f-isolated-c_az93v5",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/prospective-validity-v0.1/schemas/taxonomy-wire.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/f-isolated-c_az93v5",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent context removed; subscription authentication remains on disk."
+      },
+      "response_sha256": "c6af540fd491ee4e62621f6b9adb22100fb14c4ac949413b4154e1fddef3a379",
+      "files": {
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/attempt.json": "5313b42b62720df75dd783e31ce11ce9fcf4b5d15cf60648e6bed26300215221",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/events.jsonl": "c52195def1e8ed728ae986746233b488e315b561bb93702405ca597e606552f3",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/exit.json": "2d3df385984a8f9312e4c00ca3e3e7ef687f0ca4f85d7403ee645a2fb2a76921",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/process.json": "18e07c524b167f0f75a3238a54434225949a57df94ab77c3a4dd1b058447b649",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/prompt.txt": "41287ad6f50c6006bea47d28d4b5ea5bbc78522fac719e7d643aa8e8d329eb68",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/reservation.json": "e9d487748639e30333ef955fcbd315d5f9cd2c827a5a3bb253435038ca59a4dc",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/response.json": "c6af540fd491ee4e62621f6b9adb22100fb14c4ac949413b4154e1fddef3a379",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/prospective-validity-v0.1/runs/taxonomy/Q0135/validation.json": "fdc24776382b110992578f9fc517e97cf7b1ebbb06d700be806752f6991d7267"
+      }
+    }
+  ],
+  "failure_freeze_sha256": "777201a9eef61708b258080e613bf822d8053b6f9fa547ef4412b64217a8ef2f",
+  "preparation_sha256": "beb030c78f5ae83404eaf339a373f4a8ef9a4a0088559883de5e7ed36a272c1e",
+  "reason": "Historical-preservation harness failure; remaining calls never scheduled."
+}

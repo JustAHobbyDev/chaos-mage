@@ -1,0 +1,452 @@
+{
+  "at": "2026-09-30T07:43:11.966290+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance",
+        "-p",
+        "test_harness.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.428s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/boundary-v0.2",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............primary-001-A: failed\n...\n----------------------------------------------------------------------\nRan 16 tests in 1.927s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.057s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/v0.3/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": ".............E.E.................\n======================================================================\nERROR: test_freeze_and_preparation_inventory (test_contracts.ContractTests.test_freeze_and_preparation_inventory)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/tests/test_contracts.py\", line 239, in test_freeze_and_preparation_inventory\n    prep.verify_freeze(); prep.verify_inventory()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 42, in verify_freeze\n    require(sha(ROOT / name) == expected, f'Historical frozen input changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Historical frozen input changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_historical_manifest_matches_base_git_tree (test_contracts.ContractTests.test_historical_manifest_matches_base_git_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/tests/test_contracts.py\", line 226, in test_historical_manifest_matches_base_git_tree\n    self.assertEqual(c.verify_preservation(), 174)\n                     ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 78, in verify_preservation\n    require(sha(ROOT / name) == expected, f'Historical file changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Historical file changed: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 33 tests in 16.604s\n\nFAILED (errors=2)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/validity-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": ".F........validity-017-B: failed\n.E...\n======================================================================\nERROR: test_snapshot_and_wire_projection (test_runner.RunnerTests.test_snapshot_and_wire_projection)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/test_runner.py\", line 26, in test_snapshot_and_wire_projection\n    r.validate_inputs()\n    ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/runner.py\", line 61, in validate_inputs\n    preparation.verify()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 179, in verify\n    count = verify_preservation()\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 78, in verify_preservation\n    require(sha(ROOT / name) == expected, f'Historical file changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Historical file changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nFAIL: test_commit_gate_checks_actual_file_bytes (test_runner.RunnerTests.test_commit_gate_checks_actual_file_bytes)\n----------------------------------------------------------------------\nValueError: Historical file changed: docs/PROBLEM_FRAMES.md\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/test_runner.py\", line 181, in test_commit_gate_checks_actual_file_bytes\n    with self.assertRaisesRegex(ValueError, 'Uncommitted input'): r.verify(committed=True)\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"Uncommitted input\" does not match \"Historical file changed: docs/PROBLEM_FRAMES.md\"\n\n----------------------------------------------------------------------\nRan 15 tests in 1.696s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "..........E.....validity-019-A: failed\n.....\n======================================================================\nERROR: test_inputs_and_preservation (test_runner.Tests.test_inputs_and_preservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/test_runner.py\", line 23, in test_inputs_and_preservation\n    def test_inputs_and_preservation(self):r.validate_inputs()\n                                           ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 54, in validate_inputs\n    preservation()\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 49, in preservation\n    inv=read(HERE/'preservation.json');verify_inventory(inv['files'])\n                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 47, in verify_inventory\n    for name,digest in values.items():require(c.sha(ROOT/name)==digest,f'Preservation mismatch: {name}')\n                                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Preservation mismatch: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 21 tests in 1.941s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "...........E..........validity-M004-B: failed\n.....\n======================================================================\nERROR: test_inputs_and_history (test_runner.Tests.test_inputs_and_history)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/test_runner.py\", line 27, in test_inputs_and_history\n    def test_inputs_and_history(self):r.validate_inputs()\n                                      ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 51, in validate_inputs\n    preservation();m=manifest();require(len(m)==28 and sum(x['new'] for x in m)==8,'Expected 20 old and eight new mappings')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 45, in preservation\n    inv=read(HERE/'preservation.json');verify_inventory(inv['files'])\n                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 42, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Hash changed: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/contracts.py\", line 13, in require\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Hash changed: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 27 tests in 0.240s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/comparative-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.349s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/harness.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "20 frozen cases verified\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/harness.py",
+        "verify"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 313, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 310, in main\n    value=actions[args.command]()\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 218, in verify\n    for name,digest in m['files'].items():require(sha((ROOT/name).read_bytes())==digest,f'Prepared input changed: {name}')\n                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 25, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Prepared input changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/boundary-v0.2/review/verify_review.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/review/verify_review.py\", line 52, in <module>\n    parser=argparse.ArgumentParser();parser.add_argument('--private',action='store_true');verify(parser.parse_args().private)\n                                                                                          ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/review/verify_review.py\", line 13, in verify\n    frozen=h.frozen_results();computed=h.analyze()\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 267, in frozen_results\n    verify();m=read(HERE/'results-freeze.json');require(m['prepared_sha256']==sha((HERE/'prepared.json').read_bytes()),'Preparation freeze changed');check_runs(m['runs']);return m\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 218, in verify\n    for name,digest in m['files'].items():require(sha((ROOT/name).read_bytes())==digest,f'Prepared input changed: {name}')\n                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/boundary-v0.2/harness.py\", line 25, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Prepared input changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/v0.3/verify_preparation.py"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 190, in <module>\n    print(json.dumps(verify(), indent=2))\n                     ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 179, in verify\n    count = verify_preservation()\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 78, in verify_preservation\n    require(sha(ROOT / name) == expected, f'Historical file changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Historical file changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/validity-v0.3/review/review_tools.py",
+        "verify",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/review/review_tools.py\", line 91, in <module>\n    build() if args.command == 'build' else verify(args.private)\n                                            ~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/review/review_tools.py\", line 66, in verify\n    r.verify_results(private=private)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/runner.py\", line 330, in verify_results\n    frozen_results(private=private); values = published()\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/runner.py\", line 279, in frozen_results\n    verify(); frozen = read(HERE / 'results-freeze.json')\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/runner.py\", line 210, in verify\n    validate_inputs(); manifest = read(HERE / 'prepared.json')\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/validity-v0.3/runner.py\", line 61, in validate_inputs\n    preparation.verify()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/verify_preparation.py\", line 179, in verify\n    count = verify_preservation()\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 78, in verify_preservation\n    require(sha(ROOT / name) == expected, f'Historical file changed: {name}')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Historical file changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/verify_completion.py\", line 25, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--private',action='store_true');a=p.parse_args();print(verify(a.private))\n                                                                                                       ~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/verify_completion.py\", line 7, in verify\n    result=r.verify_results(private)\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 330, in verify_results\n    verify(True)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 211, in verify\n    validate_inputs();v=read(HERE/'prepared.json');verify_inventory(v['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 54, in validate_inputs\n    preservation()\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 49, in preservation\n    inv=read(HERE/'preservation.json');verify_inventory(inv['files'])\n                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/displacement-v0.3/runner.py\", line 47, in verify_inventory\n    for name,digest in values.items():require(c.sha(ROOT/name)==digest,f'Preservation mismatch: {name}')\n                                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Preservation mismatch: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/verify_completion.py\", line 57, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--private',action='store_true');a=p.parse_args();print(verify(a.private))\n                                                                                                       ~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/verify_completion.py\", line 39, in verify\n    result=r.verify_results(private)\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 339, in verify_results\n    verify(True);preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 203, in verify\n    validate_inputs();v=read(HERE/'prepared.json');verify_inventory(v['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 51, in validate_inputs\n    preservation();m=manifest();require(len(m)==28 and sum(x['new'] for x in m)==8,'Expected 20 old and eight new mappings')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 45, in preservation\n    inv=read(HERE/'preservation.json');verify_inventory(inv['files'])\n                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/runner.py\", line 42, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Hash changed: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/comparative-displacement-v0.3/contracts.py\", line 13, in require\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Hash changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/comparative-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "verify: OK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "............E...................one: failed\n.....\n======================================================================\nERROR: test_inputs_history_world_commit (test_runner.Tests.test_inputs_history_world_commit)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/test_runner.py\", line 23, in test_inputs_history_world_commit\n    def test_inputs_history_world_commit(self):r.validate_inputs();r.preservation(True)\n                                               ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 58, in validate_inputs\n    preservation();wf=read(HERE/'worlds-freeze.json');verify_inventory(wf['files']);world_commit=check_commit('worlds-freeze.json',TITLES['worlds'])\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 50, in preservation\n    value=read(HERE/'preservation.json');verify_inventory(value['files'])\n                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 48, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/contracts.py\", line 14, in require\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 37 tests in 0.347s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/common-evidence-displacement-v0.3/review",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.419s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 376, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 375, in main\n    print(actions[a.command]() or a.command+': OK')\n          ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 374, in <lambda>\n    'admit':admit,'analyze':analyze,'verify-results':lambda:verify_results(a.private),'freeze-failure':freeze_failure}\n                                                            ~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 361, in verify_results\n    verify(True);preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 216, in verify\n    validate_inputs();value=read(HERE/'prepared.json');verify_inventory(value['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 58, in validate_inputs\n    preservation();wf=read(HERE/'worlds-freeze.json');verify_inventory(wf['files']);world_commit=check_commit('worlds-freeze.json',TITLES['worlds'])\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 50, in preservation\n    value=read(HERE/'preservation.json');verify_inventory(value['files'])\n                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 48, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/contracts.py\", line 14, in require\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/review/diagnostics.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{'planned_targets': 8, 'measured_targets': ['T01', 'T02', 'T03', 'T05', 'T06', 'T08'], 'planned_pairs': 16, 'primary_pairs': 10, 'orientation_controls': 4, 'admitted_mappings': 16, 'measured_unique_mappings': 14, 'repeated_mapping_ids': ['M007', 'M011', 'M014', 'M018', 'M019', 'M020'], 'same_source_pairs': 1, 'different_source_pairs': 9, 'complete_triangle_targets': ['T01', 'T03'], 'controls_targets': ['T01', 'T02', 'T03', 'T06']}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/common-evidence-displacement-v0.3/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/verify_completion.py\", line 65, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--private',action='store_true');a=p.parse_args();print(verify(a.private))\n                                                                                                       ~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/verify_completion.py\", line 40, in verify\n    result=r.verify_results(private);report=r.ROOT/'distance/review/common-evidence-displacement-v0.3.md';r.require(report.exists(),'Missing report')\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 361, in verify_results\n    verify(True);preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 216, in verify\n    validate_inputs();value=read(HERE/'prepared.json');verify_inventory(value['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 58, in validate_inputs\n    preservation();wf=read(HERE/'worlds-freeze.json');verify_inventory(wf['files']);world_commit=check_commit('worlds-freeze.json',TITLES['worlds'])\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 50, in preservation\n    value=read(HERE/'preservation.json');verify_inventory(value['files'])\n                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/runner.py\", line 48, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/common-evidence-displacement-v0.3/contracts.py\", line 14, in require\n    if not ok:raise ValueError(message)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": ".........................E.....E........first: failed\n....\n======================================================================\nERROR: test_all_input_audits (test_benchmark.Corpus.test_all_input_audits)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/tests/test_benchmark.py\", line 62, in test_all_input_audits\n    def test_all_input_audits(self):self.assertTrue(r.validate_inputs())\n                                                    ~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 51, in validate_inputs\n    preservation();bf=read(HERE/'baselines-freeze.json');lf=read(HERE/'ladders-freeze.json')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 33, in preservation\n    v=read(HERE/'preservation.json');verify_inventory(v['files'])\n                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 31, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_historical_files_unchanged (test_benchmark.Corpus.test_historical_files_unchanged)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/tests/test_benchmark.py\", line 106, in test_historical_files_unchanged\n    def test_historical_files_unchanged(self):r.preservation(True)\n                                              ~~~~~~~~~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 33, in preservation\n    v=read(HERE/'preservation.json');verify_inventory(v['files'])\n                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 31, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 44 tests in 0.370s\n\nFAILED (errors=2)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 396, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 387, in main\n    elif a.command=='verify':verify();print('Prepared inputs verified')\n                             ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 220, in verify\n    validate_inputs();value=read(HERE/'prepared.json');verify_inventory(value['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 51, in validate_inputs\n    preservation();bf=read(HERE/'baselines-freeze.json');lf=read(HERE/'ladders-freeze.json')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 33, in preservation\n    v=read(HERE/'preservation.json');verify_inventory(v['files'])\n                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 31, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/runner.py",
+        "verify-results",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 396, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 394, in main\n    elif a.command=='verify-results':print(verify_results(a.private))\n                                           ~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 370, in verify_results\n    verify(True);preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 220, in verify\n    validate_inputs();value=read(HERE/'prepared.json');verify_inventory(value['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 51, in validate_inputs\n    preservation();bf=read(HERE/'baselines-freeze.json');lf=read(HERE/'ladders-freeze.json')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 33, in preservation\n    v=read(HERE/'preservation.json');verify_inventory(v['files'])\n                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 31, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-v0.1/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/verify_completion.py\", line 31, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--private',action='store_true');a=p.parse_args();print(verify(a.private))\n                                                                                                       ~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/verify_completion.py\", line 8, in verify\n    result=r.verify_results(private);report=r.ROOT/'distance/review/anti-collapse-benchmark-v0.1.md';r.require(report.exists(),'Missing report')\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 370, in verify_results\n    verify(True);preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 220, in verify\n    validate_inputs();value=read(HERE/'prepared.json');verify_inventory(value['files'])\n    ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 51, in validate_inputs\n    preservation();bf=read(HERE/'baselines-freeze.json');lf=read(HERE/'ladders-freeze.json')\n    ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 33, in preservation\n    v=read(HERE/'preservation.json');verify_inventory(v['files'])\n                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-v0.1/runner.py\", line 31, in verify_inventory\n    for name,digest in files.items():require(c.sha(ROOT/name)==digest,'Changed frozen file: '+name)\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-v0.1/tests"
+      ],
+      "exit_code": 1,
+      "output": "........................first: excluded\nsecond: excluded\n...first: failed\n...............E....\n======================================================================\nERROR: test_historical_preservation (test_experiment.Preparation.test_historical_preservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/tests/test_experiment.py\", line 48, in test_historical_preservation\n    if (HERE/'preservation.json').exists(): r.preservation(True)\n                                            ~~~~~~~~~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 75, in preservation\n    verify_inventory(data['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(c.sha(ROOT / name) == digest, 'Changed frozen file: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 47 tests in 0.563s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/anti-collapse-natural-recovery-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "..........E...........\n======================================================================\nERROR: test_history_and_preparation_preserved (test_recovery.RecoveryTests.test_history_and_preparation_preserved)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/tests/test_recovery.py\", line 23, in test_history_and_preparation_preserved\n    r.verify(private=True)\n    ~~~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/runner.py\", line 131, in verify\n    e.preservation(private)\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 75, in preservation\n    verify_inventory(data['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(c.sha(ROOT / name) == digest, 'Changed frozen file: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 22 tests in 2.229s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/family-b-bridge-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "..E...........FEE.\n======================================================================\nERROR: test_exact_sources_hashes_and_historical_preservation (test_bridge.BridgeTests.test_exact_sources_hashes_and_historical_preservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/tests/test_bridge.py\", line 17, in test_exact_sources_hashes_and_historical_preservation\n    self.assertEqual(r.verify_inputs()['cases'], 12)\n                     ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 96, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(sha(ROOT / name) == digest, 'Frozen bytes changed: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_private_failure_evidence (test_incomplete.IncompleteBridgeTests.test_private_failure_evidence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/tests/test_incomplete.py\", line 16, in test_private_failure_evidence\n    self.assertEqual(v.verify(True)['primary_calls'], {'fable': 0, 'muse': 0})\n                     ~~~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/verify_incomplete.py\", line 16, in verify\n    r.verify()\n    ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 101, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 96, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(sha(ROOT / name) == digest, 'Frozen bytes changed: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_public_failure_evidence (test_incomplete.IncompleteBridgeTests.test_public_failure_evidence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/tests/test_incomplete.py\", line 13, in test_public_failure_evidence\n    self.assertEqual(v.verify()['status'], 'inconclusive')\n                     ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/verify_incomplete.py\", line 16, in verify\n    r.verify()\n    ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 101, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 96, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(sha(ROOT / name) == digest, 'Frozen bytes changed: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nFAIL: test_no_comparison_of_partial_evidence (test_incomplete.IncompleteBridgeTests.test_no_comparison_of_partial_evidence)\n----------------------------------------------------------------------\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/family-b-bridge-v0.1/tests/test_incomplete.py\", line 30, in test_no_comparison_of_partial_evidence\n    with self.assertRaisesRegex(ValueError, 'No complete freeze'): v.r.complete_results()\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"No complete freeze\" does not match \"Frozen bytes changed: docs/PROBLEM_FRAMES.md\"\n\n----------------------------------------------------------------------\nRan 18 tests in 1.649s\n\nFAILED (failures=1, errors=3)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "....E..E.............E...\n======================================================================\nERROR: test_historical_files_byte_identical (test_partial.PartialTests.test_historical_files_byte_identical)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/tests/test_partial.py\", line 43, in test_historical_files_byte_identical\n    r.verify_inventory(r.read(HERE/'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_partial_evidence (test_partial.PartialTests.test_partial_evidence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/tests/test_partial.py\", line 13, in test_partial_evidence\n    def test_partial_evidence(self): self.assertTrue(v.verify()['passed'])\n                                                     ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/review/verify_incomplete.py\", line 13, in verify\n    r.verify(); frozen = r.read(HERE/'partial-freeze.json'); r.committed(HERE/'partial-freeze.json')\n    ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 115, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_start_provenance_preservation_contract_and_exact_cases (test_qualification.QualificationTests.test_start_provenance_preservation_contract_and_exact_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/tests/test_qualification.py\", line 28, in test_start_provenance_preservation_contract_and_exact_cases\n    self.assertEqual(r.verify_inputs()['cases'], 12)\n                     ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 25 tests in 1.849s\n\nFAILED (errors=3)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-gemini-v0.2/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "E............E....E\n======================================================================\nERROR: setUpClass (test_completion.CompletionTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/tests/test_completion.py\", line 17, in setUpClass\n    cls.data=r.complete_results();cls.frozen=r.read(HERE/'results-freeze.json')\n             ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 286, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 115, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_start_provenance_preservation_contract_and_exact_cases (test_qualification.QualificationTests.test_start_provenance_preservation_contract_and_exact_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/tests/test_qualification.py\", line 28, in test_start_provenance_preservation_contract_and_exact_cases\n    self.assertEqual(r.verify_inputs()['cases'], 12)\n                     ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: setUpClass (test_report.ReportTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/tests/test_report.py\", line 21, in setUpClass\n    cls.data = r.complete_results()\n               ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 286, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 115, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 17 tests in 1.366s\n\nFAILED (errors=3)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/model-qualification-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "EE...E.....E......\n======================================================================\nERROR: setUpClass (test_completion.CompletionTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/tests/test_completion.py\", line 19, in setUpClass\n    cls.data=r.complete_results()\n             ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 258, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 109, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 104, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 60, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_actual_freeze_review_and_metrics (test_qualification.QualificationTests.test_actual_freeze_review_and_metrics)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/tests/test_qualification.py\", line 157, in test_actual_freeze_review_and_metrics\n    if (HERE/'results-freeze.json').exists():self.assertEqual(len(r.complete_results()),12)\n                                                                  ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 258, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 109, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 104, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 60, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_exact_cases_sources_hashes_and_preservation (test_qualification.QualificationTests.test_exact_cases_sources_hashes_and_preservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/tests/test_qualification.py\", line 19, in test_exact_cases_sources_hashes_and_preservation\n    self.assertEqual(r.verify_inputs()['cases'], 12)\n                     ~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 104, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 60, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n======================================================================\nERROR: test_policy_provenance_and_historical_scope (test_qualification.QualificationTests.test_policy_provenance_and_historical_scope)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/tests/test_qualification.py\", line 170, in test_policy_provenance_and_historical_scope\n    r.verify_inventory(r.read(HERE/'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 60, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n\n----------------------------------------------------------------------\nRan 17 tests in 1.437s\n\nFAILED (errors=4)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/review/verify_incomplete.py\", line 103, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--private',action='store_true');a=p.parse_args();print(json.dumps(verify(a.private),indent=2))\n                                                                                                                  ~~~~~~^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/review/verify_incomplete.py\", line 16, in verify\n    r.require(r.verify_results(private)['status']=='incomplete','Expected failed-run status')\n              ~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 497, in verify_results\n    verify(True); preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 229, in verify\n    validate_inputs(); preservation()\n                       ~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 75, in preservation\n    verify_inventory(data['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(c.sha(ROOT / name) == digest, 'Changed frozen file: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/anti-collapse-natural-recovery-v0.1/review/verify_completion.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/review/verify_completion.py\", line 135, in <module>\n    print(json.dumps(verify(args.private), indent=2))\n                     ~~~~~~^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/review/verify_completion.py\", line 20, in verify\n    result = e.verify_results(private)\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 497, in verify_results\n    verify(True); preservation(private)\n    ~~~~~~^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-recovery-v0.1/runner.py\", line 131, in verify\n    e.preservation(private)\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 75, in preservation\n    verify_inventory(data['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/anti-collapse-natural-v0.1/runner.py\", line 61, in verify_inventory\n    for name, digest in files.items(): require(c.sha(ROOT / name) == digest, 'Changed frozen file: ' + name)\n                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Changed frozen file: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-v0.1/review/verify_all.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/review/verify_all.py\", line 47, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/review/verify_all.py\", line 17, in main\n    r.complete_results()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 258, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 109, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 104, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-v0.1/runner.py\", line 60, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-gemini-v0.1/review/verify_incomplete.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/review/verify_incomplete.py\", line 60, in <module>\n    if __name__ == '__main__': print(json.dumps(verify(),indent=2))\n                                                ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/review/verify_incomplete.py\", line 13, in verify\n    r.verify(); frozen = r.read(HERE/'partial-freeze.json'); r.committed(HERE/'partial-freeze.json')\n    ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 115, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.1/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "distance/model-qualification-gemini-v0.2/review/verify_all.py",
+        "--private"
+      ],
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/review/verify_all.py\", line 50, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/review/verify_all.py\", line 17, in main\n    r.complete_results()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 286, in complete_results\n    verify(); p = HERE / 'results-freeze.json'; committed(p); frozen = read(p)\n    ~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 115, in verify\n    result = verify_inputs()\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 110, in verify_inputs\n    verify_inventory(read(HERE / 'preservation.json')['files'])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/model-qualification-gemini-v0.2/runner.py\", line 62, in verify_inventory\n    for p, digest in files.items(): require(sha(ROOT / p) == digest, 'Frozen bytes changed: ' + p)\n                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/v0.3/contracts.py\", line 18, in require\n    raise ValueError(message)\nValueError: Frozen bytes changed: docs/PROBLEM_FRAMES.md\n"
+    }
+  ],
+  "historical_bytes_preserved": true,
+  "provider_calls": 0
+}
