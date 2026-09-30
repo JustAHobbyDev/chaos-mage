@@ -1,0 +1,40 @@
+{
+  "case_id": "E021",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping keeps the source chain intact. State: handoff waiting contributions are treated as internal quantities that alter the durations of requests crossing them on many routes. Operation: path durations are measured over overlapping routes, compared with a candidate model's predictions, and nonnegative contributions are iteratively adjusted under an explicit penalty. Signal: measured-minus-predicted discrepancies structured by shared handoffs. Inference: the discrepancy pattern constrains combinations of contributions, not a unique answer. The source limits are carried over specifically: sparse or uneven coverage, timestamp error, uncertain entry events and routes, penalty (regularization) artifacts, model assumptions and non-uniqueness, including reporting only a combined region when handoffs are always traversed together. Whether the mechanism actually operates in the target depends on conditions the mapping itself marks as unestablished: that route duration is approximately an accumulation of per-handoff contributions, that those contributions are stable enough within comparable operating conditions, and that enough overlapping but different routes exist. Unlike seismic waves, requests interact with the medium (congestion, parallel work, rework), so the path-integral analogue is an empirical question rather than a given. The added pilot step goes beyond the source mechanism but does not substitute for or remove any source step."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has two parts and the mapped inference speaks to both within stated bounds. For where delay accumulates, it yields a localization to a handoff or to a combined delay region at the resolution the route coverage permits, and withholds localization if estimates are unstable or held-out discrepancies remain structured. For which bounded changes could reduce it, it proposes a single scoped pilot at the supported concentration with a predefined improvement criterion, guardrails and a comparison, and limits any conclusion to the tested case family and conditions. It explicitly disclaims establishing the delay mechanism or a causal remedy from the fit alone. This is an explicitly bounded contribution to the original question, not an answer to a different one. The choice of candidate change is not derived from the tomographic inference, which is recorded as an uncertainty rather than a fidelity failure."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The chain is intelligible: reconstructing routes and fitting an additive handoff model (X) would produce route-structured residuals and estimated contributions (Y), which, if they survive held-out and sensitivity checks, warrant prioritizing a region for inspection and a bounded pilot (Z). The inference is bounded and non-circular because it uses reserved requests, alternative route interpretations, and pre-set stopping rules, and states that convergence does not validate location. It is conditional because the packet supplies no target evidence: the existence and consistency of ticket records, sufficient route diversity for identifiability, the adequacy of the additive approximation under congestion and rework, and the availability of a comparable pilot comparison are all named measurements or empirical relations that still have to be established."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Record availability and event comparability: whether ticket histories exist for the chosen case family and period with consistent start, end and intermediate events. Establish by auditing a sample of ticket histories and using interviews to confirm event meanings and timestamp reliability.",
+      "Route diversity and identifiability: whether enough requests traverse overlapping but different routes to separate handoff contributions. Establish by building the route-by-handoff incidence structure from reconstructed routes and checking which handoffs are separable versus only resolvable as combined regions.",
+      "Additive, quasi-stable delay approximation: whether route duration is adequately approximated by accumulated handoff waits plus processing and other represented delays within comparable demand and staffing strata, despite congestion, parallel work and rework. Establish by checking prediction error and residual structure on reserved requests and by comparing estimated contributions with directly observed intermediate intervals or queue records where available.",
+      "Robustness to penalty and model form: whether the estimated delay concentration persists across plausible penalties, route interpretations and model forms. Establish through the specified sensitivity comparisons, withholding localization if estimates change substantially.",
+      "Pilot comparability: whether a comparable control or staged comparison under comparable demand and staffing can be set up for the bounded change. Establish by defining the comparison, improvement threshold and guardrails before starting and verifying comparability of conditions during the pilot; otherwise causal attribution is withheld."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The mapping preserves the tomographic state→operation→signal→inference chain and its limits, and its inference addresses the retained question as an explicitly bounded contribution. Mechanism fidelity and operational coherence are conditional because the packet contains no target evidence and the mapping itself identifies the essential conditions as unestablished: usable records, overlapping route coverage, and an adequate additive approximation. Each of these is a concrete, checkable measurement or empirical relation rather than a generic hope that the analogy works, so the transfer is Conditional rather than Valid or Invalid."
+  },
+  "uncertainty": [
+    "The target evidence list is empty, so every observation in the mapping is proposed rather than reported; no data confirm that the required records, routes or strata exist.",
+    "If intermediate ticket timestamps already record each handoff's wait directly, the indirect inversion may be largely redundant with direct measurement. The packet does not say how complete intermediate observations are.",
+    "Handoff delay may be a load-dependent, time-varying property of queues rather than a stable property of a location. Whether stratification or explicit demand and staffing terms are enough to make contributions quasi-stable is unknown.",
+    "The example pilot change (assigning a named receiving owner) is not derived from the discrepancy-based inference. The localization does not establish the delay mechanism, so the fit between the chosen change and the actual cause is unknown.",
+    "The pilot and its guardrails are an addition beyond the source mechanism. I assessed them as a bounded extension, but how much of the answer to the second half of the question is attributable to the transfer itself is a judgment call.",
+    "The choice between rating mechanism fidelity as preserved versus conditionally-preserved is close: the mapping's structure is faithful as designed, and the conditionality lies in whether the target satisfies the additive and coverage assumptions."
+  ]
+}

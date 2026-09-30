@@ -1,0 +1,41 @@
+{
+  "case_id": "E029",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The serial-monitoring chain is carried over step by step. State: activation behaviour under a configuration can drift through novelty, signup mix and seasonality, so a single snapshot cannot separate stable, transient and trending contributions. Operation: measurement definitions are fixed, a reference series estimates ordinary cohort-to-cohort variation, and a change rule is written in advance. Signal: persistence, reversal, transient excursion, trend and threshold crossing. Inference: sustained versus transient shift, with in-band series bounded to detectable effect size. Every source limit is restated in target terms (measurement error, regression to the mean, irregular sampling, changing conditions, interventions between observations, interval and threshold choice). The mapping adds a withholding and four-configuration design and states openly that the necessity warrant comes from that design combined with the series, not from the temporal pattern alone; this is an addition, not a substitution of a source step. The status is conditional because the source requires repeated comparable observations of one underlying process. Here each cohort is a different set of users, so preservation depends on the mapping's own unestablished assumptions (c) and (d): a configuration can be held fixed across cohorts, and successive cohorts are similar enough to count as repeated observations. The packet supplies no target evidence on either."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference answers both halves of the retained question without changing it. Necessity: a sustained drop on withholding, with the concurrent reference in band and reversal on restoration, supports a claim that the component is needed in the monitored population and conditions. Interactions: where the shift from withholding one component depends on whether another is present, the component has no single contribution value, findings are stated conditionally (substitutable, jointly required, needed only when the other is absent), and a one-dimensional ranking is declared unwarranted for those components. The contribution is explicitly bounded: only tested configurations and pairs are covered, no globally minimal set is certified, higher-order interactions remain unknown, and in-band results do not show zero contribution."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The chain is intelligible and non-circular: withholding components while serially measuring fixed-definition cohorts yields per-configuration sequences, and reading those against a reference band and a pre-written rule warrants bounded claims about sustained versus transient shifts and about dependence between paired components. Whether it can be performed and whether the signal would be interpretable depends on relations the packet does not establish. The target evidence is empty and the redesign is only proposed. Unestablished: a single instrumented activation event; components that can be shipped or withheld separately; configurations deployable to live cohorts with enough volume for a usable reference band; arms isolated from cross-exposure; cohort variation small enough that the proposed four-cohort reference and three-cohort rule can separate sustained from transient shifts. Each is an identifiable measurement or feasibility check, not a matter of whether the analogy works."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Cohort comparability: show that successive signup cohorts under a fixed configuration behave as repeated observations of one process, for example by measuring the reference configuration over the prespecified cohorts and checking that completion-rate variation, entry-population mix and traffic sources are stable enough to define a usable reference band.",
+      "Configuration fixity: confirm that a configuration can be held unchanged for the full series length, including instrumentation version and activation definition, by checking release plans and the annotated change log against the planned monitoring window.",
+      "Decomposability: establish that the redesign's components can be shipped or withheld separately, and in the four-configuration case jointly, without breaking the onboarding flow; verify by building and smoke-testing each withheld configuration.",
+      "Instrumentation: confirm one agreed activation event and step-level funnel events exist and are reliable, by auditing event definitions and checking for missing or duplicated events before the reference series starts.",
+      "Deployability and volume: establish that the proposed redesign is, or will be, implemented and exposed to live signup cohorts large enough per arm that the reference band is narrower than the shifts of interest; estimate from current signup volume and baseline activation variance.",
+      "Arm isolation: verify that users are assigned to a single configuration and not exposed to several, by inspecting the assignment mechanism and exposure logs."
+    ],
+    "final_status": "Conditional",
+    "rationale": "No criterion fails. The mapping keeps the serial-monitoring chain and all its limits, addresses the retained question with explicitly bounded necessity and interaction claims, and does not rest on source imagery or circular construction. Two criteria are conditional. Mechanism fidelity depends on successive cohorts being comparable repeated observations under a fixed configuration. Operational coherence depends on instrumentation, component separability, live deployability with sufficient volume, and arm isolation. The mapping itself lists several of these as assumptions to be established, and the packet provides no target evidence to resolve them. Each can be settled by an identifiable measurement or check, so the status is Conditional and not Invalid."
+  },
+  "uncertainty": [
+    "The target evidence is empty, so no facts are available on signup volume, baseline activation variance, the component list, or whether the redesign exists beyond a proposal.",
+    "The mapping treats a sustained out-of-band drop as 'needed'. Whether a statistically detectable sustained drop matches the sense of 'necessary' in the question (strict requirement versus material contribution) is not specified; a small persistent drop could be labelled necessary under the rule as written.",
+    "The proposed working values (at least four reference cohorts, three consecutive out-of-band cohorts) are the candidate's assertions, not supplied facts; their adequacy for separating sustained from transient shifts is unknown.",
+    "Much of the necessity and interaction warrant comes from the added withholding and four-configuration design, not from the temporal pattern itself. I judged this an acknowledged addition to the source mechanism, but another assessor could weigh the serial component's share of the inference differently.",
+    "It is unclear whether the repeated prototype usability sessions are comparable across stages (same participants or fresh ones, sample sizes); the mapping limits them to flow and error claims.",
+    "In a sequential withhold-then-restore design the component change is confounded with calendar time; the mapping acknowledges this, and how far restoration mitigates it in this target is unknown."
+  ]
+}

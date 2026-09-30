@@ -1,0 +1,34 @@
+{
+  "case_id": "E010",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "Each link of the source chain has a functional counterpart. State: elapsed time at a handoff that more than one mechanism could plausibly explain, with coexisting mechanisms allowed. Operation: a candidate list is built per handoff, including a residual category and rough priors; checks are chosen because candidates predict different results; candidates are re-ranked after each evidence item. Signal: a handoff-by-candidate matrix marked supports / contradicts / does not discriminate, with non-discriminating checks explicitly not counted as support. Inference: re-rank, eliminate or retain, yielding a narrowed ranked set with no forced single cause. The source limits are carried over item by item: hypothesis coverage, evidence quality and independence (shared ticketing-system errors, interviews echoing dashboards), unknown sensitivity and specificity of the checks, and the four named biases. Retaining costly-if-missed candidates and running a pilot as a further evidence item are consistent with the source operation of gathering evidence that bears differently on candidates; they do not substitute a different warrant."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "Both halves of the retained question are answered in bounded form. 'Where' is stated as the handoffs with the largest intervals, using a defined handoff interval separated from approver working time, each with its retained mechanisms and the evidence for and against. 'Which bounded changes' is stated as changes matched to retained mechanisms, prioritised where several candidates call for the same change, and tested by a pilot with a pre-declared expected response. The mapping explicitly bounds the contribution: association and location only from logs, no quantification of hidden stage contributions or system dynamics, and conclusions limited to the scoped workflow, case types and window. The location half rests mainly on descriptive interval measurement rather than on the differential itself, but it is part of the supplied mapping and answers the question asked."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Performing the operation produces the stated signal, and the signal warrants the stated inference without overreach. Discriminating checks yield differential support patterns; those patterns warrant re-ranking rather than proof. Elimination requires a contradicting observation from a check capable of detecting the candidate; weak or absent support only lowers rank. A pilot response raises rank without being claimed to prove the mechanism, and a non-response reopens the differential. The chain is not circular: the predictions are written down before the evidence is inspected, and the observables (release-time clustering, reassignment counts, absence-date overlap, and so on) are independent of the candidate labels. Where data are thin, the mapped stopping rule returns an unnarrowed set rather than an unsupported conclusion, so the inference stays bounded in the failure case too."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "The mapping transfers differential diagnosis as a reasoning discipline with the full state→operation→signal→inference chain and the source limits intact. It answers the retained question about delay location and bounded changes without altering it, and keeps every inference within what the evidence type can support. The mapping names its own unverified data assumptions (stage-level timestamps, logged return and reassignment events, alignable staffing and queue data). I treated these as execution preconditions rather than validity conditions, because the procedure tests them in its first step and degrades to a retained, unnarrowed candidate set if they fail, rather than to an unwarranted claim. This is a judgment call; a stricter reading of the empty target evidence would make operational coherence conditional and the final status Conditional."
+  },
+  "uncertainty": [
+    "Target evidence is empty. Whether the scoped workflow's ticket histories carry stage-level timestamps, log reassignment and return events, or can be aligned with staffing schedules and queue lengths is unknown. If they do not, the procedure yields little or no narrowing and the 'where' half cannot be measured as defined.",
+    "The Valid versus Conditional boundary is a judgment call here. I treated data availability as a precondition of execution that the mapping itself checks, not as an unresolved warrant of the transfer. A reading that treats the mapping's 'assumptions to be verified before use' as unresolved target conditions would return Conditional.",
+    "The discriminating power of the proposed checks in this domain is unmeasured. Some checks may not separate candidates as stated; the mapping itself acknowledges that a load-to-wait relation can arise from both capacity shortfall and priority displacement.",
+    "The candidate mechanism list and the rough priors are the candidate's proposals, not established target facts. No base rates for this kind of team and case mix are supplied, so the priors may be weakly grounded.",
+    "Identifying delay location by largest observed handoff interval may miss delay hidden inside steps or caused upstream of where it appears. The mapping acknowledges this as a scope limit but does not resolve it.",
+    "Whether pilots can be run under comparable demand and staffing in the target organization is unknown, which affects how much the bounded-change half can be supported beyond mechanism matching."
+  ]
+}

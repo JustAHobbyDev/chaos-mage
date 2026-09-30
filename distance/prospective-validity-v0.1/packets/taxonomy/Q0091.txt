@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Serial monitoring",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: the activation behaviour of users who pass through a specified configuration of the onboarding redesign, meaning a defined set of redesign components present or withheld. The underlying state is whether users under that configuration complete activation and at which step they fail. This state can change over time through novelty effects, shifts in who signs up, seasonal traffic and other product changes. A single usability round or a single funnel snapshot therefore cannot tell a stable contribution of a component from a transient fluctuation or a fading effect. Assumptions not supplied by the packet and to be established before starting: (a) activation has one agreed, instrumented event definition; (b) the redesign can be decomposed into components that can be shipped or withheld separately; (c) a configuration can be held fixed across several successive signup cohorts; (d) successive cohorts are similar enough to be treated as repeated observations of the same process.",
+    "operation": "1. Fix the measurement before collecting anything: the activation event, the step-level funnel events, the component list from the proposal decomposition, the cohort unit (for example signup week), a fixed follow-up window in which activation is counted, the entry population, and the instrumentation version. These stay unchanged for the whole series.\n2. Build a reference series: measure activation completion and step-level drop-off for the reference configuration (full redesign, or current onboarding if the redesign is not live) over several consecutive cohorts to estimate ordinary cohort-to-cohort variation. The number of cohorts is chosen in advance; at least four is a proposed working value, not a supplied fact.\n3. Write the change rule in advance: a shift counts as sustained if a configuration's completion rate sits outside the reference band in the same direction for a prespecified number of consecutive cohorts (proposed: three). An out-of-band cohort that returns to the band counts as transient.\n4. Monitor staged configurations serially: the full redesign plus configurations each withholding one component. Run them as concurrent arms where possible so they share calendar time. If only sequential change is possible, use withhold-then-restore, measuring before withholding, during withholding and after restoration.\n5. For component pairs suspected of depending on each other (from the dependency decomposition and observed user errors), serially monitor four configurations: both present, only the first, only the second, neither.\n6. At each stage repeat prototype usability sessions with the same task script and record where users fail, as a comparable qualitative observation alongside the funnel series.\n7. Log every other release, campaign, traffic-source change or instrumentation change as a dated annotation on the series.\nStopping conditions: end monitoring of a configuration when the change rule is met, or when it has stayed inside the band for the prespecified number of cohorts, or when a prespecified maximum number of cohorts passes without either, in which case it is recorded as unresolved. End a withholding arm early and restore the component if completion falls below a floor set in advance.",
+    "signal": "Observable: for each configuration, the ordered sequence of per-cohort activation completion rates and step-level drop-off, read against the reference band and the annotated event log, plus the repeated session records of where users fail.\nTemporal patterns to look for:\n- Persistence: completion falls when a component is withheld and stays outside the band across consecutive cohorts.\n- Reversal: completion returns to the band after the component is restored.\n- Transient fluctuation: one out-of-band cohort followed by return.\n- Trend: an initial lift or dip that decays or grows across cohorts, as with novelty fading.\n- Threshold crossing under the pre-written rule.\n- Relocation: the step where drop-off concentrates moves after a component is withheld.\nInteraction patterns across the four-configuration series:\n- Withholding either component alone stays in band but withholding both gives a sustained drop (the components substitute for each other).\n- Withholding either one gives about the same sustained drop as withholding both (the components work only jointly).\n- One component's withholding shifts the series only when the other is present or only when it is absent.\n- The size or direction of the shift differs between entry populations.",
+    "inference": "A sustained drop on withholding a component, with the concurrent reference series staying in band and with reversal on restoration where that was run, supports a bounded claim: that component is needed for activation completion in the monitored population under the monitored conditions. A series that stays in band for the prespecified number of cohorts supports only that the component is not needed at the effect size the series could detect; it does not show zero contribution. A transient pattern points to fluctuation or a novelty effect rather than a stable contribution. A trend indicates that the contribution itself changes with time, so an early reading would misstate it.\nWhere the shift from withholding one component depends on whether another is present, the component has no single contribution value. Findings are then stated conditionally (needed when the other is absent, needed only together, substitutable) and a one-dimensional feature ranking is not warranted for those components. Components showing no such dependence in the tested pairs can be ordered by the size of their sustained shift, with that ordering limited to the tested configurations.\nFollow-ups: an unresolved configuration gets a longer series or a revised interval and threshold, set before the new series starts. A single-component result that conflicts with the dependency decomposition triggers the four-configuration series for that pair. A relocated drop-off step is followed by sessions targeted at that step to investigate the mechanism.",
+    "limit": "- Measurement error: missing or duplicated funnel events and small cohorts produce noisy rates that can look like shifts or hide them.\n- Regression to the mean: if a component is chosen for withholding or restoration right after an unusually good or bad cohort, the next cohorts drift back regardless of the change.\n- Irregular sampling: cohorts of unequal size or length, or gaps in the series, distort persistence and trend readings.\n- Changing measurement conditions: altered activation definition, instrumentation version, traffic mix or seasonality makes later points non-comparable with earlier ones.\n- Interventions between observations: other releases and campaigns, and in a sequential design the component change itself, are confounded with calendar time. Concurrent arms and restoration reduce this but do not remove it.\n- Interval and threshold choice: a follow-up window too short misses slow activators, a series too short misses novelty decay, and a band too tight or too loose creates or conceals sustained shifts.\n- Analogy limits: clinical serial monitoring follows one patient, while here each cohort consists of different users, so the series tracks a population-level process and depends on cohort similarity. Users exposed to more than one configuration contaminate the arms.\n- Scope: the temporal pattern alone does not establish cause; necessity claims rest on the withholding design combined with the series. Only tested configurations are covered; untested combinations and interactions among three or more components remain unknown, so no globally minimal component set is certified. Prototype sessions are small samples and support claims about flows and errors, not population-wide necessity."
+  },
+  "condition_id": "Q0091",
+  "atomic_condition": "components can be independently withheld",
+  "necessary_source_excerpt": "Verify that components can be independently withheld and configurations held fixed; use configuration and exposure records to check implementation fidelity and cross-arm contamination."
+}

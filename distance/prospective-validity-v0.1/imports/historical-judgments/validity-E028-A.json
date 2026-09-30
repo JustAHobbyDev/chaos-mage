@@ -1,0 +1,36 @@
+{
+  "case_id": "E028",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping preserves reduction of removable parts, repeated failure tests, retention of failing subsets, and test-relative minimization. It also preserves interaction, nondeterminism, unresolved-outcome, environment, and strategy limits. Applicability depends on the explicitly unverified assumptions that baseline passes, all deltas fail under fixed replay, and informative reductions can be deployed and tested."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "A retained set that reproduces the checkout regression under matched load would identify candidate deployed changes and provide bounded evidence distinguishing their contribution from load differences in the test. This directly contributes to the retained question. No reproduction or reduction results exist yet, and attribution to the observed production regression remains bounded by replay fidelity and any production follow-up."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Applying subsets to the baseline and measuring latency under identical replay can intelligibly connect configuration changes to reproducible threshold exceedance. Repeated, stable controls and resolvable latency differences must establish that classifications reflect configuration effects. The inference appropriately limits necessity to the retained set, sufficiency to the test, and production evidence to the observed slice and period."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Fix the latency metric, exceedance margin, inconclusive band, and repeat count before testing; use repeated baseline and full-delta replay runs to establish baseline pass, full-delta failure, and distinguishable outcomes under identical load.",
+      "Establish which delta subsets yield deployable configurations by building and running candidates; classify inseparable or failed configurations as unresolved and report only the achieved minimization.",
+      "Verify control stability through interleaved runs and confirm that the retained configuration repeatedly reproduces the exceedance. Claim 1-minimality only when every single-member removal has a resolved nonfailing result.",
+      "Assess the replay's connection to the production regression using representative request types and the mapped fixed-load follow-ups. Keep attribution bounded to replay results unless the optional controlled production revert and reintroduction supplies evidence for production."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The proposed transfer retains delta debugging's mechanism and evidential limits and can answer the target question through a bounded causal contribution. Its required reproduction, deployability, and measurement conditions are explicitly untested; there is no established mechanism loss or substituted target question."
+  },
+  "uncertainty": [
+    "The packet supplies no observed latency distributions, control outcomes, deployability results, or retained change set.",
+    "Replay representativeness, environmental stability, and the feasibility and results of production follow-up are unknown.",
+    "Even successful reduction may identify several jointly sufficient changes, leave unresolved candidates, or miss alternative sufficient subsets and causes outside the enumerated deltas."
+  ]
+}

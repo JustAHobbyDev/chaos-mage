@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "System acted on: one approval workflow, treated as a chain of handoff stages observed through time (for example: submitted -> queued for approver -> picked up -> decided -> passed on). Stage names here are placeholders; the real stages and owners come from the workflow map, not from assumption.\n\nControllable input (one per run): either (a) the release rate of a defined class of requests into one handoff, or (b) one bounded process setting at one handoff, such as review cadence, the number of people authorized to approve, or the threshold below which a request skips a stage.\n\nObservable outputs: per-stage queue length, per-stage waiting time (queue entry to pickup), per-stage completions per interval, and end-to-end turnaround, all computed from ticket timestamps at a fixed sampling interval (for example per working day).\n\nConditions that must hold before acting. These are assumptions to verify, not facts supplied by the packet:\n1. Stage-level timestamps exist and reflect when work actually moved, not when it was logged.\n2. The chosen input can be changed abruptly at a known time, by a known amount, and then held constant.\n3. A pre-change baseline period is recorded, documenting initial queue lengths, in-flight items, staffing and demand, so the starting state is known rather than presumed steady.\n4. Those accountable for the workflow authorize the change, its size and its abort thresholds.",
+    "operation": "1. Choose one input and one handoff. Fix the step size in advance: large enough to be visible above baseline day-to-day variation, small enough to stay inside service-level targets and staff capacity.\n2. Fix in advance the sampling interval, the settling band (how close to a stable level counts as settled), the number of consecutive intervals required inside that band, the minimum observation window (several multiples of the longest stage cycle seen in baseline, including any batch or meeting cycle), and the abort thresholds.\n3. Apply the change at a recorded time, all at once, and hold it. Change nothing else deliberately during the run.\n4. At every sampling interval, record queue length, waiting time and completions for every stage from the changed handoff downstream, plus end-to-end turnaround, from baseline through the transient.\n5. In parallel, keep a disturbance log: staffing, incoming demand, case mix, calendar events, and any other process change.\n\nStopping conditions:\n- Settled: outputs stay inside the settling band for the required consecutive intervals and the minimum window has elapsed.\n- Abort: a service-level threshold is breached or a queue keeps growing past its limit. Revert the step, and keep the record as evidence of saturation or non-settling at that operating point.\n- Contaminated: a major logged disturbance overlaps the transient. Mark the run and repeat it under comparable demand and staffing.\n\nFollow-ups:\n- Reverse the step and record the return trajectory, to check symmetry.\n- Repeat with a different step size, and at a different demand or staffing level.\n- Repeat at other handoffs, one input at a time.\n- Set the results beside the ordinary timestamp comparisons, exception-case reviews and interviews.",
+    "signal": "The recorded trajectories are read for these temporal features, stage by stage:\n- Dead time: the interval between the step and the first change distinguishable from baseline variation at each stage, and the order in which stages begin to respond.\n- Rise: how quickly a stage's queue, waiting time or completion rate moves toward its new level.\n- Overshoot and peak: whether a queue or turnaround temporarily exceeds its eventual level (for example a surge arriving downstream after an upstream release), and the height and timing of that peak.\n- Oscillation: repeated build-up and drain, and its period relative to known cycles such as review meetings or batch releases.\n- Settling: the time until the output stays inside the pre-set band.\n- Steady-state change: the net difference between the baseline level and the settled level of queue, waiting time, throughput and end-to-end turnaround.\n- Non-settling: a queue that ramps without levelling, or an output that stops responding once a ceiling is reached.\n- Absence of response: no distinguishable change at a stage or in end-to-end turnaround.",
+    "inference": "What each observation would warrant, as a constraint on candidate explanations rather than a unique identification:\n- Long dead time followed by a prompt response suggests the handoff holds items in fixed waiting (scheduled review, batch release, transfer latency), not a shortage of processing capacity.\n- A queue that ramps and does not settle after an intake step suggests the stage is capacity-limited at the tested load, and delay accumulates there.\n- Slow rise and long settling suggest a stage that absorbs change through a large backlog, so improvements there take long to appear end to end.\n- Oscillation whose period matches a meeting or batch cycle suggests batching. Oscillation without such a match, or with items re-entering earlier stages, suggests a rework or escalation loop.\n- Downstream overshoot after an upstream change suggests the change relocates delay rather than removing it.\n- For a process-setting step, the steady-state change estimates how much that bounded change shifts turnaround at the tested operating point.\n- No end-to-end change despite a local improvement suggests the binding delay lies at another handoff.\n\nAnswering the target question:\n- Delay accumulates at the stages showing the longest dead time, non-settling queues or the slowest settling.\n- A bounded change is a candidate remedy if its step produced a steady-state reduction in turnaround, no sustained downstream overshoot, a consistent reverse-step response, and a similar result on repetition.\n\nEvery conclusion is conditional on the tested step size, direction, case class and the demand and staffing level in force. This adds response-to-designed-change evidence to the associations the ordinary timestamp and queue comparisons provide; it does not replace them.",
+    "limit": "Source limits, with their target counterparts:\n- Noise: low case volumes make per-interval queue counts and waiting times coarse and variable. Mixed case types blur features. Small steps may be indistinguishable from baseline variation.\n- Unknown initial state: existing backlog, in-flight items and unlogged informal queues mean the workflow may not start from a steady level, so early trajectory features can reflect prior history rather than the step.\n- Saturation: approvers already at full load, working-hour limits and service-level caps flatten the response and hide the underlying dynamics.\n- Nonlinear behavior: people reprioritize, expedite, or work differently when a change is announced or observed. Responses to a large step need not scale from a small one, and up and down steps may differ.\n- Disturbances: demand swings, absences, period-end peaks, holidays and policy changes can mimic or mask response features.\n- Interacting inputs: approvers shared across stages, concurrent initiatives and staffing adjustments made in reaction to the step confound attribution to the chosen input.\n- Insufficient observation time: stopping before slow stages or long batch cycles complete understates settling time and misstates steady-state change.\n- Operating-point dependence: results at the tested demand, staffing and case mix may not hold at peak load or for other case classes.\n\nTarget-specific limits:\n- A clean step may be infeasible, because changes phase in or are anticipated.\n- The organization may change during the run, so the system probed is not fixed.\n- Timestamps may record logging rather than actual movement.\n- Ethical and service obligations cap the step size.\n- A single run is one realization.\n\nOverall, conclusions may not generalize beyond the tested perturbation, and causal attribution of a remedy requires repetition under comparable demand and staffing."
+  },
+  "condition_id": "Q0035",
+  "atomic_condition": "Step feasibility: the chosen input (release rate, review cadence, number of authorized approvers, or skip threshold) must be changeable abruptly at a known time by a known amount and then held. Establish by confirming with the workflow owners and verifying in the records that the change took effect at the recorded time, without phase-in or anticipation.",
+  "necessary_source_excerpt": "Step feasibility: the chosen input (release rate, review cadence, number of authorized approvers, or skip threshold) must be changeable abruptly at a known time by a known amount and then held. Establish by confirming with the workflow owners and verifying in the records that the change took effect at the recorded time, without phase-in or anticipation."
+}

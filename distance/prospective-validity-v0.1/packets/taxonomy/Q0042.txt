@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "literary textual formation",
+    "question": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Assumed, not supplied by the packet: the surviving draft can be divided into several units (gatherings, notebook sections, typescript runs, inserted leaves or slips), each with an internal order of leaves that is physically secured by conjugate leaves, text running across page breaks or original foliation. Each leaf, and each revision layer on a leaf (base text, later insertions, deletions), is the counterpart of an increment. The counterpart of the shared external influence is the set of working conditions that change over composition time and mark whatever the author was writing in that period: paper stock, ruling or watermark, ink or writing instrument, typewriter characteristics, pagination scheme, forms of character and place names, and features of the hand. Some units are assumed to be anchored by dated witnesses or by correspondence that refers to identifiable passages or materials; the others float, with uncertain position in composition time. Leaves may be missing (removed, lost), extra (inserted later) or misassigned (renumbered, recopied, reordered by the author or by a later archive). Narrative position is not treated as evidence of composition position. If no anchored unit exists, only a floating relative sequence is attainable.",
+    "operation": "1. Segment the draft into units whose internal leaf order is physically secured, and record that order independently of narrative order. 2. For every leaf in every unit, record by a fixed written protocol the state of each feature class (paper, ink or instrument, pagination scheme, name forms, hand), and record overlying revision layers as separate series from the base text. Complete the recording before any alignment is attempted. 3. Build a reference sequence from the anchored units only. 4. Slide each floating unit against the reference and against the other floating units, leaf by leaf, and note every offset at which the order of feature transitions in one unit corresponds to the order in the other. 5. At each candidate offset, test whether the match holds on both sides of a point but is displaced by one or more leaves; at such points propose a missing or inserted leaf and then check separately for physical evidence (stubs, foliation gaps, broken textual continuity, offset ink, a differing stock). 6. Repeat the alignment with one feature class held out, to see whether the remaining classes give the same offset. 7. Check features that span units (a single pagination run, uniform later-ink corrections) as a separate series bearing on assembly rather than composition. Stopping condition: do not assign a position to a unit when its overlap with others contains fewer than two distinct transitions, when the pattern is uniform or repeats, or when feature classes favour different offsets; record that unit as unplaced and retain the competing sequences. Follow-up for unplaced units: collate further witnesses, re-inspect material features, and consult dated correspondence or provenance records.",
+    "signal": "A supporting observation would be one offset per unit at which several independently recorded feature classes change in the same order across two or more units and against the anchored reference, with the same offset recovered when any one feature class is held out. A further supporting observation would be that the mismatches remaining at that offset fall at specific points, and that those points coincide with separately observed physical evidence of a removed or inserted leaf. For assembly, the observation would be a unit-spanning feature (such as one continuous pagination scheme or one correcting ink) running across units whose base features align to different positions. Non-supporting observations would be: several offsets fitting equally well, different feature classes indicating different offsets, a proposed gap with no physical trace, or an anchored date that contradicts the aligned position.",
+    "inference": "A consistent alignment would support a relative composition order of units and revision layers distinct from narrative order, a position in that order for previously floating units, and the identification of specific points where a leaf is probably missing or was inserted later. Where anchored units are included, it would support a bounded date range for aligned units rather than a precise date. Unit-spanning features applied over units of differing composition position would support a later assembly stage at which those units were brought together. The result is a ranked hypothesis about sequence, to be held alongside alternatives. Claims that would remain uncertain: the placement of any unit that met the stopping condition; absolute dates where no anchor exists or the anchor is itself doubtful; the content and number of lost witnesses; whether a given leaf is a fair copy whose material features date the copying rather than the composition; and the interval of time separating adjacent positions in the sequence.",
+    "limit": "Counterparts of the source limits: local disturbance (a borrowed pen, travel, a stray sheet of old stock) can imitate or mask a transition; the shared signal is weak if the author used several inks or stocks concurrently, returned to earlier materials, or worked on several units in alternation; short units and drafts written on uniform materials give short or repetitive patterns that fit many offsets; recording of hand and ink is subject to observer error and judgement; anchors may be wrong (misdated letters, later archival dating); and overlap between units may be insufficient. Limits specific to the target: tree-ring increments are annual and environmentally forced, whereas leaves are not equal units of time and the features are few-state, discrete and under the author's control, so chance agreement is more likely and no validated statistical threshold for an acceptable match is assumed here. Paper stock gives an earliest possible date only, since paper can be used long after it was acquired. Recopying transfers old text to new material, so text and substrate can belong to different times. Archival reordering or rebinding may have altered the physical order relied on in segmentation. If unit order was originally established using the same features, the alignment is circular for those units. The packet supplies no facts about the particular draft, so every feature and anchor named is an assumption to be confirmed on the documents."
+  },
+  "condition_id": "Q0042",
+  "atomic_condition": "anchored units exist",
+  "necessary_source_excerpt": "Anchor existence and reliability: confirm that anchored units exist and that their dates are sound by verifying letter dates, provenance and whether any archival dating was itself derived from the same features. Without anchors, only a floating relative sequence is attainable."
+}

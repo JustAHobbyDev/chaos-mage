@@ -1,0 +1,43 @@
+{
+  "case_id": "E022",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the full source chain. State: one approval workflow with a single controllable input (release rate or one bounded process setting) and time-observable outputs (per-stage queue length, waiting time, completions, end-to-end turnaround). Operation: a pre-sized change applied all at once at a recorded time and held, with trajectories recorded from baseline through the transient. Signal: the same temporal features as the source (dead time, rise, overshoot/peak, oscillation, settling, steady-state change), plus non-settling and absence of response. Inference: features are read as constraints on candidate explanations (fixed waiting vs capacity limit vs batching vs rework loop), explicitly not as unique identification, which matches the source's 'constrain and distinguish candidate models'. Every source limit has a concrete target counterpart (noise, unknown initial state, saturation, nonlinearity, disturbances, interacting inputs, observation time, operating-point dependence), and the restriction to the tested perturbation is retained. No step is lost or substituted by imagery."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference speaks to both halves of the retained question. Location of delay: stages showing long dead time, non-settling queues or slow settling are named as where delay accumulates. Bounded changes: a process-setting step is a candidate remedy if it yields a steady-state turnaround reduction, no sustained downstream overshoot, a consistent reverse-step response and a similar result on repetition. The contribution is explicitly bounded: conclusions hold only for the tested step size, direction, case class and demand/staffing level, and the method is said to add to, not replace, ordinary timestamp and queue comparisons. The question is not changed."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The chain X -> Y -> Z is intelligible: an abrupt, held change to one input would produce per-stage trajectories, and their features would warrant bounded inferences about fixed waiting, capacity limits, batching and relocation of delay. But the packet supplies no target evidence, and the mapping itself lists its prerequisites as assumptions to verify. Whether X yields a readable Y depends on: timestamps reflecting actual movement, a step that can really be applied abruptly and held, a known baseline state, and a step that is visible above baseline variation while staying inside service-level caps. Whether Y warrants Z also depends on the workflow staying comparable during the run and people not changing behaviour because the change is announced. Finally, ranking stages by dead time, non-settling or slow settling as 'where delay accumulates' at the ordinary operating point is an empirical relation that needs checking against baseline per-stage waiting shares; a queue that ramps under an intake step shows a capacity limit at the tested load, not necessarily the main delay at normal load. These are identifiable measurements, not a known failure."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Timestamp validity: stage-level timestamps must exist and record when work actually moved rather than when it was logged. Establish by auditing a sample of items, comparing ticket-log times with directly observed or independently recorded handoff and pickup times.",
+      "Step feasibility: the chosen input (release rate, review cadence, number of authorized approvers, or skip threshold) must be changeable abruptly at a known time by a known amount and then held. Establish by confirming with the workflow owners and verifying in the records that the change took effect at the recorded time, without phase-in or anticipation.",
+      "Detectability within limits: a step small enough to respect service-level targets and staff capacity must still be distinguishable from baseline variation at the available case volume. Establish from the baseline period by measuring interval-to-interval variability of per-stage queue, waiting time and completions and comparing it with the expected effect of the permitted step.",
+      "Known initial state and sufficient window: baseline backlog, in-flight items, staffing and demand must be documented, and the observation window must cover several multiples of the longest stage, batch or meeting cycle. Establish from the baseline record and the workflow map.",
+      "Stability and reactivity: the workflow, staffing and shared approvers must stay comparable during the run, and behavioural reactions to the announced change must not dominate the response. Establish with the disturbance log, the reverse step, and repetition at different step sizes and under comparable demand and staffing.",
+      "Feature-to-location relation: stages flagged by long dead time, non-settling queues or slow settling must correspond to where delay accumulates at the ordinary operating point. Establish by comparing the flagged stages with baseline per-stage waiting-time shares of end-to-end turnaround and with exception-case reviews.",
+      "Authorization: those accountable for the workflow must approve the change, its size and its abort thresholds. Establish by documented sign-off before any run."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The mapping is a faithful functional transfer of step-response probing: it keeps a controlled step input, a recorded output trajectory, the same temporal features, and inference as constraint on candidate dynamics, with all source limits carried over. It addresses the retained question with bounded claims about where delay accumulates and which tested changes are candidate remedies. No criterion fails. The status is Conditional rather than Valid because the target evidence is empty and the operational warrant rests on unverified, concretely checkable conditions: valid stage timestamps, a feasible clean step, detectability within service-level caps, a known baseline, stability during the run, and agreement between response features and the actual delay location at the ordinary operating point."
+  },
+  "uncertainty": [
+    "The packet contains no target evidence, so nothing is known about the actual workflow: its stages, case volume, logging quality, or whether any listed input can be stepped.",
+    "Case volume may be too low for per-interval trajectories to show features such as overshoot or oscillation above noise; this cannot be judged from the packet.",
+    "People may react to an announced or visible change, and the organization may change during the run; how far this distorts the response is unknown.",
+    "The rule that delay accumulates at stages with the longest dead time, non-settling queues or slowest settling is a plausible heuristic, but it may diverge from the stages holding the largest share of waiting time at normal load.",
+    "A non-settling queue under an intake step shows a capacity limit at the tested load only; whether that stage is the binding delay at ordinary demand is not established.",
+    "Some candidate inputs, such as the number of authorized approvers or review cadence, may only be changeable gradually, which would weaken the step interpretation; feasibility is asserted as a condition, not shown.",
+    "The classifier instructions describe themselves as prepared and untested, so the criterion boundaries, especially between preserved mechanism and conditional operational coherence, involve judgment."
+  ]
+}

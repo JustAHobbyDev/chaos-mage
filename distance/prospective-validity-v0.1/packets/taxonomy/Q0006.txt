@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Propose an independently dated, chronologically ordered reference series of comparable correspondence from the same creator and relevant context. Do not use the bundle’s physical arrangement as writing order. Choose a reproducibly inspectable binary feature, such as a particular address printed on letterhead, with an earlier reference demonstrably lacking it and a later reference displaying it. This procedure assumes that the feature underwent one persistent transition in the applicable correspondence; neither that assumption nor the existence of suitable references is established by the packet. Reference dates must constrain writing dates, with their precision recorded; postmarks or accession dates alone do not automatically supply those dates.",
+    "operation": "Inspect a reference near the middle of the remaining ordered interval using a fixed rule for feature presence. If clearly absent, replace the earlier endpoint with that reference; if clearly present, replace the later endpoint. Discard the incompatible half only under the single-transition assumption. Repeat until the opposite classifications belong to adjacent references in the available series. If a reference cannot be classified or securely ordered, retain its uncertainty and try another intermediate reference; stop narrowing when no usable intermediate remains. Inspect undated documents using the same feature rule, restricting comparison to documents for which the creator, context and feature meaning are sufficiently comparable.",
+    "signal": "Each usable reference yields an absent or present classification, together with its date constraint and the supporting visible evidence. The retained endpoints progressively narrow the reference interval containing the hypothesized transition. Illegibility, missing portions, incompatible dates or a later absence following an earlier presence yield uncertainty or contradiction rather than a forced binary result. Undated documents yield feature classifications, not dates directly.",
+    "inference": "With reliable endpoints and a single persistent transition, the final boundary identifies the first feature-positive reference in the applicable series and brackets the transition between the last negative and first positive references, allowing for date precision. It does not identify the exact historical introduction date across an undocumented gap. If independent evidence supports contemporaneous, exclusive use of the two feature states, feature-negative undated letters precede feature-positive ones, without ordering letters within either group. A negative letter receives an upper date bound from the positive endpoint; a positive letter receives a lower date bound from the negative endpoint. Neither group is thereby confined to the transition interval. Combine these bounds with independently justified dating clues only when compatible, retaining open or uncertain intervals.",
+    "limit": "Reused stationery, parallel addresses, differing correspondents or contexts, multiple transitions, missing references, unreliable dates and inconsistent inspection can invalidate elimination or prevent unique localization. Sparse midpoint tests cannot establish persistence. If contradictory evidence appears, suspend the affected elimination, restore excluded possibilities and check the conflicting classifications, dates and comparability. Seek independent anchors or additional comparable documents; retain alternative chronologies when conflicts remain. Without support for exclusive contemporaneous feature use, report only the observed reference boundary and conditional dating hypotheses for the bundle. If a reliable ordered series and opposite endpoints cannot be established, do not perform bisection; seek independent dating anchors and preserve unresolved intervals. A feature boundary can correlate with a historical change without proving its cause."
+  },
+  "condition_id": "Q0006",
+  "atomic_condition": "Comparability of bundle documents: the undated letters must share creator, context and feature meaning with the reference series, so that the same feature rule applies. Establish by attribution and context assessment of each bundle document before classification.",
+  "necessary_source_excerpt": "Comparability of bundle documents: the undated letters must share creator, context and feature meaning with the reference series, so that the same feature rule applies. Establish by attribution and context assessment of each bundle document before classification."
+}

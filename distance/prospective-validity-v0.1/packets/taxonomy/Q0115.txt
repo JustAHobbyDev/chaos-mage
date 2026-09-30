@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dechallenge and rechallenge",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+      "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+      "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+      "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+      "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: the full proposed onboarding redesign, built as a prototype or staged variant with every proposed component present, in which activation completion is observed. Each separable component (for example a step, prompt, default or guidance element) is a suspected factor; activation completion is the effect. Assumptions, not supplied facts: (a) the proposal can be decomposed into components that can be individually switched off and back on without rebuilding the rest; (b) 'activation' has a single definition and observation window fixed before any withdrawal; (c) the full design shows enough activation completion for a drop to be visible. If (c) does not hold, there is no occurring effect to withdraw against and the procedure does not start. Components whose removal is not permissible or not possible (for example legally or structurally required steps) are listed as untestable by this procedure instead of being withdrawn.",
+    "operation": "1. Record activation completion and the failure points in the full design (baseline). 2. Dechallenge: withdraw one component, holding the rest fixed (same build, copy, task script, recruitment criteria, traffic source and observation window), and observe activation completion and where users fail. 3. Rechallenge: restore that component and observe again. Where feasible repeat the withdraw-restore cycle at least once. 4. Use fresh participants or cohorts for each phase, because a user who has already been through onboarding cannot be returned to a naive state. 5. For components linked by the dependency map or by observed errors, repeat the cycle for the pair: withdraw each singly, withdraw both, restore each singly, restore both. 6. Before each withdrawal, check that the removal leaves a traversable flow; if removal creates a dead end, patch only the navigation and record the patch as a concurrent change. Stopping conditions: set a floor for activation completion and a list of user harms (for example lost data or an unrecoverable account state) before starting; end a live withdrawal and restore the component as soon as either is reached. Perform withdrawal of high-risk components in prototype sessions only, or not at all. Follow-up: where withdrawal produces no change, do not drop the component on that basis; retest it with its suspected partner component also withdrawn.",
+    "signal": "Single component: activation completion falls, or failures concentrate at a step traceable to the missing component, after withdrawal, and completion returns to about the baseline level after restoration, each change timed to the perturbation. Interaction patterns: (i) withdrawing A alone or B alone changes nothing but withdrawing both produces a drop (substitutes); (ii) restoring A does not restore completion unless B is also present (dependency); (iii) the size or direction of the change from withdrawing A differs according to whether B is present (non-additive contribution). Non-signal: no change on withdrawal, a drop that does not reverse on restoration, or a change that does not repeat on a second cycle.",
+    "inference": "A drop on withdrawal and a recovery on restoration that repeats across cycles increases support for a causal contribution by that component to activation, for the tested configuration, user segment and task. 'Necessary' is therefore stated conditionally: necessary given the other components that were present. A drop without recovery on restoration gives weaker support and points to a concurrent or persistent cause. No change on withdrawal warrants only 'not shown to be needed in this configuration', since another component may be compensating. Where patterns (i) to (iii) appear, a component's contribution has no single value independent of the others, so a one-dimensional feature ranking would misstate it; the result is reported as conditional sets, such as 'at least one of A or B' or 'A contributes only with B present', with ranking limited to components whose response did not vary across the tested combinations.",
+    "limit": "Activation can rise or fall without any perturbation (traffic mix, seasonality, campaigns, cohort differences), so a temporal match may be coincidental. Concurrent changes (other releases, copy or pricing changes, navigation patches made to enable removal) may be responsible. Delayed or persistent effects can obscure the response: activation may complete after the observation window, and prior exposure or learning persists in users, which is why same-user rechallenge is not a clean return and why fresh cohorts introduce between-group differences. Withdrawal or restoration may be unsafe or impossible for some components, leaving them unassessed. Removing a component may disrupt the flow beyond the component's own absence. Only tested combinations are informative; untested subsets and higher-order interactions remain unknown, so no claim of a globally minimal set follows. Small usability samples and prototype completion do not establish population-wide or live-product necessity. Temporal response alone does not exclude alternative causes."
+  },
+  "condition_id": "Q0115",
+  "atomic_condition": "Component separability: it is not established that the proposed redesign decomposes into components that can each be withdrawn and restored without rebuilding or altering the rest. Establish by building the staged variant, mapping dependencies, and confirming for each component that removal leaves a traversable flow, recording any navigation patch as a concurrent change.",
+  "necessary_source_excerpt": "Component separability: it is not established that the proposed redesign decomposes into components that can each be withdrawn and restored without rebuilding or altering the rest. Establish by building the staged variant, mapping dependencies, and confirming for each component that removal leaves a traversable flow, recording any navigation patch as a concurrent change."
+}

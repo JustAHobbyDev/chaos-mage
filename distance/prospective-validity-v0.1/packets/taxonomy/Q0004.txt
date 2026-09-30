@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Treat the onboarding flow as a dynamic system: component availability is the controlled input, and users' progress toward activation over elapsed time is the output. Identify the actual proposed components and their dependencies; none are specified in the packet. Define activation observably, distinguish executable activation from prototype task completion, and specify the user group, entry checkpoint, prior experience and starting progress. Assume component availability can be changed reproducibly while preserving the other intended conditions. If a component cannot be separated from its dependencies, treat the coupled components as a bundle and bound conclusions to that bundle.",
+    "operation": "At a standardized checkpoint before users encounter the component being tested, record initial progress, abruptly change that component from available to unavailable, and hold that setting throughout observation. Randomly assign comparable users to this variant or an unchanged full-redesign control, holding other components, instructions and assistance rules fixed. Record both trajectories from the checkpoint through a prespecified observation window long enough to include plausible delayed completion. Use fresh users for subsequent variants to reduce learning carryover. Repeat selected probes with a second component present and absent, including the full, each single-removal and joint-removal configurations, to test suspected dependencies or substitution. Predefine activation criteria, meaningful effect sizes, sample size, observation duration and a participant burden limit. End individual observation at the time or burden limit; record early exits and assistance explicitly rather than treating unobserved later outcomes as established failures.",
+    "signal": "Observe timestamped progress events, errors, retries, assistance and activation. Compare cumulative activation trajectories and interval progress or activation rates between conditions. Measure delay before progress, time to a specified activation proportion when reached, early rate peaks, repeated reversals between steps, and later differences in completion. Interpret peaks or oscillations only in outputs that can exhibit them: cumulative activation cannot overshoot or decline. Describe a plateau as stability within the observed window, not proof of permanent settling. For paired components, compare the effect of removing one when the other is present versus absent, using the same prespecified outcome scale and time horizon.",
+    "inference": "A reproducible loss of activation after removal supports dependence on that component within the tested configuration, users and time window; it does not establish universal necessity. Successful unassisted activation without a component is a counterexample to its strict necessity for that tested user and path. Slower activation with comparable later completion supports a timing contribution rather than demonstrated necessity for eventual completion. Removal effects that differ by the other component's setting support interaction; joint removal causing a loss absent from either single removal is consistent with substitution or redundancy. Such responses distinguish candidate accounts of the flow, including gating, acceleration and compensation. Context-dependent effects or trajectory crossings prevent a single feature ranking from expressing all tested contributions.",
+    "limit": "Noise, unequal starting knowledge, assistance, traffic differences, instrumentation errors and implementation defects can distort trajectories. Floor or ceiling completion rates can conceal effects; nonlinear behavior and interacting components can make a large removal probe unrepresentative of smaller changes. Results depend on the tested user group, checkpoint, configuration, outcome scale and observation window. Prototype success supports claims about the simulated task unless real activation is available and measured. No observed completion does not prove impossibility, and single removals do not establish a globally minimal sufficient redesign. If manipulation fidelity or starting-state comparability fails, stop attributing differences to the named component, correct the setup and repeat. If trajectories remain changing at the time limit or uncertainty cannot distinguish the candidate accounts, report the result as unresolved and use a longer, newly specified observation window or additional comparable cohorts. Follow suspected interactions with the paired probes described above; do not extrapolate their findings to untested combinations."
+  },
+  "condition_id": "Q0004",
+  "atomic_condition": "Establish whether the study measures executable activation or only prototype completion, retaining the mapping's corresponding inference limits.",
+  "necessary_source_excerpt": "Define and validate observable activation and timestamped progress measurements. Establish whether the study measures executable activation or only prototype completion, retaining the mapping's corresponding inference limits."
+}

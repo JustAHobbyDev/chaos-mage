@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: the delay observations for one scoped approval workflow (named case types, a fixed time window), taken handoff by handoff. A handoff interval is the time from the upstream step's completion to the downstream approver's first action, kept separate from the approver's working time. The source state applies when the elapsed time at a handoff can plausibly be explained by more than one mechanism. \n\nCandidate mechanisms to hold open per handoff (a proposed starting list, not supplied target facts):\n(a) capacity shortfall: arrivals exceed staffed approver time;\n(b) batching or fixed review cadence: items wait for a scheduled review slot;\n(c) incomplete or defective submissions that are returned and re-enter the queue;\n(d) unclear ownership or misrouting: items sit unassigned or are reassigned;\n(e) notification or visibility failure: the approver does not know the item is waiting;\n(f) waiting on an external dependency or missing information;\n(g) priority displacement: approvals lose out to competing work;\n(h) single-approver dependence: absence with no delegate;\n(i) deliberate hold or sequential review required by policy or risk;\n(j) measurement artifact: logged timestamps lag the real events;\n(k) a residual 'not yet listed' category.\n\nAssumptions to be verified before use: that ticket histories carry stage-level timestamps, that reassignment and return events are logged, and that staffing schedules and queue lengths can be aligned to the same window. More than one mechanism may be present at the same handoff.",
+    "operation": "1. Scope and define. Fix the workflow, case types and window. Define the handoff interval. Check that the timestamps mean what they are taken to mean, which tests candidate (j) first.\n\n2. Build the differential before looking at discriminating evidence. For each handoff, list the candidate mechanisms including the residual category. Attach a rough prior based on how common each mechanism is for this kind of team and case mix. Record who proposed each candidate and why.\n\n3. Pre-state predictions. For each candidate, write down what pattern it predicts and what pattern would contradict it. Then choose checks on which candidates predict different results:\n- Wait time against the ratio of arrivals to staffed hours separates (a) from (b).\n- Release times clustered at particular clock times or weekdays point to (b).\n- Delay concentrated in tickets with return or reopen events points to (c).\n- Long time to first assignment, or multiple reassignments, points to (d).\n- A long gap from arrival to first open that shortens after reminders points to (e).\n- Pending-on-third-party status points to (f).\n- Delay that tracks competing workload peaks rather than approval volume points to (g).\n- Delay concentrated on specific approvers' absence dates points to (h).\n- Delay confined to case types with a mandated review points to (i).\n\n4. Gather evidence in order of discriminating power and cost. Start with existing ticket histories, then queue lengths and staffing schedules, then inspection of exception cases, then interviews. Treat interviews as a source of new candidates and mechanism detail, not as independent confirmation of what the logs already suggest.\n\n5. Update after each evidence item. Keep a matrix of handoff by candidate. Mark each entry as supports, contradicts or does not discriminate, and re-rank the candidates. Add any candidate that an exception case or interview raises.\n\n6. Retain costly-if-missed candidates. Keep (h) and (i) on the list until specifically contradicted, even if ranked low, because a change that bypasses a required hold or ignores a single-approver dependence carries high cost.\n\n7. Stopping conditions per handoff. Stop gathering when any of these holds:\n- the remaining candidates all call for the same bounded change;\n- the remaining available checks do not discriminate among the retained candidates;\n- all but one or two candidates have been contradicted by at least two sources that do not share an origin.\nIf none holds, keep several candidates open and continue. Do not declare a single cause to close the analysis.\n\n8. Follow-up. Pilot one bounded change matched to the leading candidate at a handoff. Examples: a delegate rule for (h), a submission checklist for (c), an explicit owner and alert for (d) or (e), a changed review cadence for (b). Declare the expected response in advance and compare turnaround under comparable demand and staffing. If the expected response does not appear, reopen the differential for that handoff instead of escalating the same change.",
+    "signal": "The observable is the pattern across the handoff-by-candidate matrix as each evidence item arrives: which candidates it supports, which it contradicts, and which it leaves undifferentiated.\n\nConcrete observables that would feed the matrix:\n- distribution of handoff intervals by stage and case type;\n- relation between wait time and the arrivals-to-staffing ratio;\n- clustering of approval release times;\n- share of delay carried by tickets with return, reopen or reassignment events;\n- time from arrival to first assignment and to first open;\n- overlap of long waits with approver absence dates or competing workload peaks;\n- pending-on-external status durations;\n- discrepancies between logged timestamps and other traces of the same event;\n- interview accounts and exception-case details.\n\nA check that every candidate predicts equally is recorded as non-discriminating, not as support. In the follow-up pilot, the signal is whether turnaround at the targeted handoff moves in the pre-declared direction under comparable demand and staffing, and whether delay reappears at an adjacent handoff.",
+    "inference": "The pattern warrants re-ranking, eliminating or retaining candidate mechanisms for each handoff. The result is a narrowed, ranked set, not a single asserted cause.\n\nWhere delay accumulates is stated as: the handoffs with the largest intervals, each with its retained mechanisms and the evidence for and against them. Which bounded changes could reduce it is stated as: changes matched to the retained mechanisms, prioritised where several retained candidates call for the same change.\n\nA candidate is eliminated only on a contradicting observation from a check capable of detecting it. Absence of support from a weak check leaves the candidate retained at lower rank. Timestamp and queue patterns warrant statements of association and location. Interviews warrant new candidates and mechanism detail. A pilot response in the declared direction raises the rank of the targeted mechanism for that handoff and supports a bounded change assessment. A non-response lowers its rank and returns the handoff to the differential. Coexisting mechanisms are an allowed conclusion.",
+    "limit": "- Coverage: the result can only be as good as the candidate list. A mechanism never generated cannot be ranked, and the residual category only flags that possibility.\n- Evidence quality and independence: timestamps may be incomplete or lagged. Logs from one ticketing system share its errors. Interviewees may repeat what dashboards already show, so agreement between logs and interviews may not be independent corroboration.\n- Unknown test characteristics: the checks have no measured sensitivity or specificity here, unlike validated clinical tests. Return flags can miss rework done informally outside the ticket. A load-to-wait relation can arise from both capacity shortfall and priority displacement.\n- Bias: anchoring on the first-named bottleneck or the most senior or vocal interviewee; premature closure once one handoff looks worst; base-rate neglect when a vivid exception case outweighs the common pattern; confirmation bias in choosing which tickets to inspect. Pre-stated predictions and the retained residual category reduce these biases but do not remove them.\n- Confounding: the data are observational, so case mix, staffing and demand can confound comparisons.\n- Pilot limits: a pilot can show change from regression to the mean, attention effects or concurrent changes. A positive response does not prove the mechanism, and relieving one handoff can shift delay to another.\n- Scope: the procedure narrows explanations. It does not quantify hidden stage contributions or estimate system dynamics. Conclusions hold for the scoped workflow, case types and window, and generalising requires rechecking under comparable demand and staffing.\n- Analogy: an organisation is not a patient. Mechanisms interact through shared staff and queues, and the clinical structure is borrowed as a reasoning discipline, not as a validated protocol for this domain."
+  },
+  "condition_id": "Q0118",
+  "atomic_condition": "assess pilot responses under comparable demand, staffing and case mix while checking concurrent changes and adjacent-handoff delay",
+  "necessary_source_excerpt": "Establish which proposed checks discriminate among retained mechanisms and can detect a mechanism before using contradiction to eliminate it. Inspect exception cases and corroborating evidence, retaining ambiguous results as non-discriminating; assess pilot responses under comparable demand, staffing and case mix while checking concurrent changes and adjacent-handoff delay."
+}

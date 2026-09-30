@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Regression bisection",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Where do approval handoffs accumulate delay, and which bounded changes could reduce it?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: one approval route for one case type, written as an ordered list of checkpoints from submission (checkpoint 0) to final approval (checkpoint n). Each adjacent pair of checkpoints is one handoff. This list is the counterpart of the ordered revision history.\n\nTested property at a checkpoint: for a fixed cohort of cases, the cumulative elapsed time from submission to that checkpoint exceeds the cumulative allowance for reaching it. The classification rule is fixed before any data are examined (for example, 'the cohort median exceeds the allowance'). 'Behind allowance' is the counterpart of the revision having the property; 'within allowance' is the counterpart of not having it.\n\nConditions required before starting:\n1. Early endpoint known to be within allowance. This requires confirming that the recorded submission time is the real start of the request, not a later ticket-creation time.\n2. Late endpoint known to be behind allowance. The cohort's end-to-end time must exceed the total allowance under the same rule.\n3. The route is sequential for this case type. Parallel approvals and rework loops are collapsed into single checkpoints so the order is unambiguous.\n4. The cohort comes from a period of comparable demand and staffing.\n\nAssumptions not supplied by the packet: that per-checkpoint allowances exist or can be agreed in advance (the packet mentions service-level targets but not their granularity), and that checkpoint times can be recovered from ticket histories or captured by temporary logging.",
+    "operation": "1. Fix the case type, the cohort, the checkpoint list, the allowances and the classification rule. Verify both endpoints as described in the state.\n2. Pick the checkpoint nearest the middle of the unresolved interval. Obtain the cohort's elapsed time to that checkpoint, either from ticket histories or, where no timestamp exists, by reconstructing it or adding a temporary log for that checkpoint only.\n3. Classify the checkpoint as within allowance or behind allowance using the fixed rule.\n4. If it is behind, discard the later portion and treat this checkpoint as the new late endpoint. If it is within, discard the earlier portion and treat it as the new early endpoint.\n5. If the chosen checkpoint has no recoverable time (informal handoff, missing record), skip it and probe an adjacent checkpoint. Record that the final interval may be wider as a result.\n6. Repeat steps 2 to 5 on the remaining interval, using the same cohort for every probe where possible.\n\nStopping conditions:\n- Normal stop: the unresolved interval is a single handoff between two adjacent checkpoints.\n- Partial stop: the only checkpoints left are unobservable. Report the interval of several handoffs as the result.\n- Halt without a result: an endpoint fails verification, or a checkpoint's classification flips when re-checked on a second comparable cohort.\n\nFollow-up after localization:\n- Re-classify the two checkpoints bounding the localized handoff on a second comparable cohort.\n- Pilot one change confined to that handoff. Illustrative candidates, not established remedies: a named owner, a stated response window, a changed review batching schedule.\n- Re-apply the same classification at the checkpoint just after the handoff and at final approval, under comparable demand and staffing.\n- If the end-to-end classification is still behind allowance after the pilot, re-establish the endpoints and repeat the partitioning on the remaining route.",
+    "signal": "Each probe yields one binary classification for one checkpoint: the cohort is within allowance or behind allowance on reaching it. The underlying elapsed-time figures are kept alongside the classification.\n\nAcross probes, the observable is the shrinking span between the latest checkpoint classified within allowance and the earliest checkpoint classified behind allowance. With n handoffs and all checkpoints observable, roughly log2(n) probes are needed.\n\nSecondary observables to record:\n- Skipped checkpoints.\n- Classifications that sit close to the allowance.\n- Disagreement between the first and second cohort at the final boundary.\n- In the follow-up pilot: whether the classification changes at the checkpoint just after the localized handoff, and whether it changes at final approval.",
+    "inference": "What the result warrants: for this case type and cohort, the first point on the route where cumulative elapsed time moves from within allowance to behind allowance lies in the final unresolved handoff, or in the final interval if checkpoints were skipped. That handoff is the priority candidate for exception-case inspection, interviews and a bounded pilot.\n\nWhat it does not warrant on its own: that this handoff is the sole or largest source of delay, or that it causes the delay.\n\nPilot outcomes:\n- If a change confined to that handoff is followed by a within-allowance classification just after it and at final approval, under comparable demand and staffing, this supports (but does not prove) that the handoff contributed materially and that the change is a workable bounded remedy for this case type.\n- If the downstream checkpoint improves but final approval remains behind, further delay accumulates elsewhere and the search is repeated.\n\nCost condition: if ticket histories already timestamp every handoff, all checkpoints can be classified at once. The halving order then saves no effort over the analyst's ordinary stage-by-stage timestamp comparison. The halving earns its cost only where each checkpoint time must be reconstructed or newly logged.",
+    "limit": "Each source limit has a target counterpart:\n- Flaky test: high case-to-case variability or a small cohort makes a checkpoint's classification flip between cohorts. Boundaries near the allowance are unreliable.\n- Unbuildable revision: checkpoints with no recoverable time, informal handoffs and parallel approvals cannot be probed. They leave a multi-handoff interval.\n- Nonmonotonic behavior: a cohort can be behind at one checkpoint and recover downstream, and rework loops return cases to earlier stages. Discarding half the route on one probe can then discard a real contributor.\n- Multiple independent changes: if delay is spread across several handoffs, the boundary marks only where the cumulative total crosses the allowance. It moves if the allowances are set differently.\n- Interactions: waiting seen at the localized handoff may originate elsewhere, such as incomplete submissions upstream, an approver shared with other routes, or downstream batching. The boundary is correlated with the delay, not shown to be its sole cause.\n- Wrong endpoints: a clock that starts after the real request, a final timestamp that records ticket closure rather than the decision, or a cohort that is not actually late sends the search into the wrong interval.\n\nTarget-specific limits:\n- Timestamps record status changes, not work. Waiting time and working time inside a stage are not separated.\n- Prospective logging takes calendar time, so demand and staffing may shift between probes.\n- Mixing case types with different routes invalidates the ordering.\n- The procedure locates a position on the route. It does not say when the delay began.\n- Results apply to the case type and period examined. Pilot comparisons remain observational unless demand and staffing are comparable."
+  },
+  "condition_id": "Q0181",
+  "atomic_condition": "measurements across probes are comparable",
+  "necessary_source_excerpt": "Verify that the checkpoint ordering represents the cohort's route and that measurements across probes are comparable. For any claimed pilot support, establish comparable case composition, demand, staffing and timing definitions before and after the confined change."
+}

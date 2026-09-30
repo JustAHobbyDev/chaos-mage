@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Luminol latent-trace detection",
+    "practice": "Forensic investigation",
+    "instrument": {
+      "state": "Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.\n",
+      "operation": "Apply a probe whose reaction is promoted by material associated with the suspected residue.\n",
+      "signal": "Responsive material produces an otherwise absent, localized observable reaction.\n",
+      "inference": "The reaction supports the presence and location of material capable of producing that response.\n",
+      "limit": "Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.\n"
+    }
+  },
+  "target": {
+    "domain": "literary textual formation",
+    "question": "What sequence of revision and assembly best explains the surviving novel draft, and which claims remain uncertain?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Act on the surviving draft and any available witnesses through facsimiles or faithful transcriptions. Assume provisionally that revision or assembly may have left inconspicuous remnants, such as an obsolete character name or a reference to an episode absent from its present position. Neither such remnants nor additional witnesses are established by the packet. Treat proposed revision layers and assembly sequences as hypotheses.",
+    "operation": "For a proposed transition, define a specific trace to seek from an attested variant or an explicitly hypothetical earlier arrangement: for example, a name replaced in one passage but potentially retained elsewhere. Manually search and annotate copies using a stated matching rule, recording each match, its location, surrounding text and searched scope. Apply the same rule to passages where the feature could have an ordinary alternative explanation. This targeted annotation is the probe; its visible marks are triggered by responsive textual features. If no discriminating trace can be specified, stop this probe and leave the proposed transition unresolved. Do not apply chemicals or mark originals; retain an unannotated copy.",
+    "signal": "A positive response would be a localized annotation showing that a passage satisfies the stated trace rule, making a previously inconspicuous correspondence visible. Record exact matches separately from ambiguous readings and record searched passages without matches. These are proposed observations, not reported findings. A cluster of marks identifies locations for examination; its size alone does not establish a revision layer.",
+    "inference": "A response supports only the presence and location of a feature capable of satisfying the probe. Examine positive and ambiguous locations against witness variants, deletion and insertion relationships, paper features, dated correspondence and provenance where available. Infer a relative revision order only where those sources establish a directional relationship, such as an insertion replacing a legible deleted reading. Use supported relationships to compare candidate revision and assembly sequences, distinguishing composition order from narrative order. Provisionally prefer a sequence that accommodates those relationships with fewer unsupported transitions, while identifying every conjectural link. If evidence cannot distinguish sequences, retain the alternatives and stop short of selecting a unique history.",
+    "limit": "Repetition, deliberate callbacks, copying errors or shared language may trigger the same response as a revision remnant. Missing responses cannot exclude an earlier state: revision may have removed the feature, physical damage may obscure it, or transcription and the matching rule may miss it. An obsolete-looking reference alone establishes neither its chronological priority nor a particular assembly event, author or date. Missing witnesses can leave several histories compatible with the draft. Annotation or transcription can obscure readings or introduce apparent patterns, so check consequential matches against the unannotated facsimile; suspend the affected inference if verification is impossible. Preserve originals for later analysis and label unresolved readings, unavailable evidence and hypothetical earlier states explicitly."
+  },
+  "condition_id": "Q0028",
+  "atomic_condition": "Whether at least one discriminating trace can be specified for a proposed transition in this draft. Establish by identifying an attested variant or a stated hypothetical earlier arrangement that predicts a concrete searchable feature, and by showing through the same-rule comparison passages that the feature is not equally expected from ordinary repetition, callbacks or shared language.",
+  "necessary_source_excerpt": "Whether at least one discriminating trace can be specified for a proposed transition in this draft. Establish by identifying an attested variant or a stated hypothetical earlier arrangement that predicts a concrete searchable feature, and by showing through the same-rule comparison passages that the feature is not equally expected from ordinary repetition, callbacks or shared language."
+}

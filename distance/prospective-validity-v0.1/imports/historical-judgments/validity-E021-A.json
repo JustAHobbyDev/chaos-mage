@@ -1,0 +1,36 @@
+{
+  "case_id": "E021",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "conditionally-preserved",
+      "rationale": "The mapping retains the essential inverse-model chain: hidden handoff contributions affect path durations; observations are compared with model predictions; structured residuals guide iterative adjustment; and results constrain potentially non-unique allocations. Coverage, measurement uncertainty, regularization and model assumptions remain explicit limits. Preservation depends on whether actual workflow durations admit the proposed decomposition and available observations constrain contributions at the reported resolution."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The inference directly addresses both parts of the retained question through explicitly bounded contributions: locating individual or combined delay regions for inspection, then testing a bounded change. It correctly separates localization from causal explanation and limits retention of a change to adequately compared pilot outcomes within tested conditions. No actual bottleneck or effective remedy is claimed."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "Route reconstruction, duration prediction, residual analysis and sensitivity checks form an intelligible procedure for constraining waiting contributions. However, the packet establishes neither usable records nor the empirical relation between accumulated handoff waits and observed durations. The pilot provides a separate, coherent test of improvement, whose causal interpretation depends on a comparison that adequately addresses alternative explanations."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Establish that comparable timestamps and reconstructable routes exist by auditing ticket histories and clarifying event meanings and routing uncertainties.",
+      "Establish sufficient route diversity or intermediate observations to distinguish contributions at the claimed resolution; examine which handoffs always occur together and restrict localization to combined regions where necessary.",
+      "Check whether accumulated handoff waits plus represented processing and other delays adequately predict durations under comparable operating conditions, using intermediate intervals where available, reserved-request residuals and sensitivity to plausible model forms and penalties. Withhold localization if these checks fail.",
+      "Before attributing improvement to a pilot change, establish a usable control or staged comparison under comparable demand and staffing, and assess turnaround, handoff and downstream waits, errors and workload against the predefined criteria."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The candidate preserves the source's inferential structure and limits in a directly relevant, bounded workflow investigation. Its validity remains conditional on identifiable data and empirical modeling warrants; the packet supplies proposed procedures rather than established target observations."
+  },
+  "uncertainty": [
+    "The existence, quality and coverage of workflow records are unknown.",
+    "The adequacy of the duration decomposition and the achievable localization resolution are unestablished.",
+    "No delay concentration, pilot effect or adequacy of a pilot comparison has been demonstrated."
+  ]
+}

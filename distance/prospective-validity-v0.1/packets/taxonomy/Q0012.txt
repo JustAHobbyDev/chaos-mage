@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Act on the letters and associated envelopes, provenance records, and any independently dated correspondence or event records covering potentially overlapping periods. The working assumption, to be tested, is that separate documentary sequences record some shared developments in distinguishable order. Establish provisional sequences only where reply relationships, explicit references, or other documentary evidence support them; retain uncertain orderings and distinguish physical arrangement from writing order. Neither sufficient overlap nor a usable dated reference is established by the packet. Letters are irregular observations, not annual increments.",
+    "operation": "For each provisionally ordered sequence, record successive references to identifiable developments, such as a proposal, its revision, a decision, and a reported consequence, alongside dating clues and their provenance. Compare these ordered patterns across separate sequences, shifting their proposed relative placement until several distinctive developments correspond consistently through an overlapping stretch. Compare independently dated references where available, preserving documented order and any independently supported time intervals rather than assigning equal durations to successive letters. Test competing placements and check apparent matches against handwriting, postmarks, paper, custody evidence, and event mentions, distinguishing what each clue dates. Identify copied accounts or shared sources so they are not counted as independent corroboration. Treat breaks in correspondence as candidates for missing material, duplication, misordering, mistaken event identification, or delayed reporting, and check those possibilities against the documents before revising a sequence.",
+    "signal": "The sought observation is one proposed placement yielding repeated, distinctive matches in the order of developments across independent records, with compatible date constraints and sustained agreement across the overlap. Any supported spacing between developments should also agree. Record which matches favor that placement over alternatives and which contradictions remain. A placement may expose an apparent omitted, duplicated, or misplaced item when it explains surrounding correspondences, but a pattern break alone does not establish a documentary defect. Isolated event mentions, recurring seasonal language, or agreement confined to a short stretch provide weak discrimination.",
+    "inference": "If a placement has sufficiently distinctive, independently corroborated matches and no unresolved contradiction that undermines it, propose the relative positions and ordering relations it supports, identifying relations that remain uncertain. Calendar placement requires reliable independent anchors linked to the matched sequence, with attention to whether they date writing, dispatch, receipt, or the event described. Assign an exact writing date only where evidence specifically warrants it; otherwise report bounded intervals or before-and-after relations. Extend or check chronology through overlapping sequences only as far as supported matches and anchors permit, carrying uncertainty across each connection. An unanchored match supports a relative chronology only; letter counts cannot supply elapsed time or dates.",
+    "limit": "Local topics, selective survival, delayed recollection, copied reports, repetitive events, transcription errors, mistaken reference dates, short sequences, and insufficient overlap may weaken or falsely suggest alignment. Shared developments need not be recorded simultaneously or in the same order, so discrepancies must not automatically be repaired by inserting or moving letters. Stop short of a unique placement when alternatives remain comparably supported, when documentary order is too uncertain, or when contradictions remain unresolved. Stop calendar extension where overlap or anchor linkage fails. Preserve competing chronologies and uncertain intervals; seek an independent anchor, inspect a conflicting document or envelope, or compare another independent sequence where available. If those checks cannot discriminate the alternatives, retain the unresolved result."
+  },
+  "condition_id": "Q0012",
+  "atomic_condition": "overlapping shared developments",
+  "necessary_source_excerpt": "Establish usable documentary sequences and overlapping shared developments by inspecting reply relationships, explicit references, and provenance; retain unsupported orderings as uncertain."
+}

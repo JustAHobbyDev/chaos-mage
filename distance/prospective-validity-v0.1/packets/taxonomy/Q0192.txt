@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "What is acted on: the separate record series generated during the procurement, each treated as one specimen with its own ordered increments. Candidate series, drawn from the practitioner's ordinary evidence, are successive tender/specification versions, scoring sheets and their revisions, email threads, public register entries, and interview accounts of the order of events. Increments are the individual steps inside a series: a version change, a message, a register entry, a score revision, a recalled event.\n\nThe counterpart of partly shared external influence is the set of procurement events that should leave traces in several series at once (for example publication, clarification rounds, deadline changes, bid receipt, evaluation sessions, award notice). The counterpart of uncertain calendar placement is any item whose date is absent, rests only on a face date or editable metadata, or rests on recollection. The counterpart of missing or anomalous increments is a version, message or score revision that is absent from a series, present where none is expected, or carrying a date inconsistent with its content.\n\nAssumptions, not supplied facts: that more than one series is obtainable; that the series overlap in the period they cover; that at least one series can be dated independently of the parties under scrutiny; and that the procurement contained events distinctive enough to be recognised across series. The packet does not state which records exist, so applicability is conditional. If only one series is available, or no series overlap, the procedure does not start and the ordinary next action is to seek further records.",
+    "operation": "Proposed procedure, in order:\n\n1. Inventory and independence. List each series with its provenance and authentication status. Series that derive from one another (forwarded copies, a summary compiled from the emails, an interview account refreshed from the documents) are counted as one specimen, not several.\n\n2. Internal ordering. Within each series, fix the order of increments from internal evidence only: version numbering, tracked changes, quoted text in reply chains, sequential reference numbers, content that presupposes earlier content. Face dates are recorded but not yet relied on.\n\n3. Reference chronology. Assemble the anchored series from items whose dating does not depend on the parties under scrutiny, such as public register entries, published notices, and copies held and time-stamped by third parties. Check the anchors against one another before using them as the reference.\n\n4. Marker selection. Before attempting any alignment, write down the distinctive, non-routine events expected to appear in more than one series, such as a changed eligibility threshold, a reweighted criterion, a moved deadline, or unusual wording. Routine, recurring items (boilerplate edits, regular meetings) are excluded as markers.\n\n5. Sliding alignment. Place each floating series against the reference and shift its relative position. At each candidate placement, check whether the markers correspond in order and relative spacing. Repeat against every other independent series, not only the reference.\n\n6. Anomaly test. Where a placement fits except at one point, state the specific hypothesis (a missing increment, an extra one, or a misassigned date) and test it against the other series. It is not accepted on the strength of the series in which it was noticed.\n\n7. Competing alignments. Attempt the alignment implied by the officially stated timeline and at least one alignment implied by an innocent explanation, alongside the alignment implied by the steering hypothesis. Record which placements survive.\n\nStopping conditions: stop and record an item as unplaced if more than one placement fits comparably well, if the fit rests on a single marker, if the overlap contains too few markers, or if the fit depends on a series that is not independent. Do not force a placement.\n\nFollow-up: for each unplaced item or hypothesised gap, seek the specific missing record or an independent interview account covering that interval, then rerun steps 5 to 7 with the added material.",
+    "signal": "What would be observable if the procedure succeeds: one relative placement at which several pre-selected markers line up in the same order and spacing across two or more independent series, while alternative placements fail on at least some markers.\n\nAt that placement, inconsistencies become locatable rather than diffuse. Forms this could take, stated as possibilities and not as findings:\n- a version referred to in emails that is absent from the tender file;\n- a scoring sheet whose criteria correspond to a specification version that, under the alignment, comes later than the sheet's stated date;\n- a bidder document reflecting a requirement at a position earlier than that requirement's anchored publication;\n- an interview account whose event order matches the documents only if one recalled event is moved.\n\nWhat does not count as the signal: a match on one marker only; a match between series that share a common origin; a match built on routine, repeating items; or a placement chosen after the fact because it fits the steering hypothesis. An equally observable outcome is that the officially stated timeline aligns with all independent series and exposes no anomaly.",
+    "inference": "A consistent multi-series alignment would warrant bounded chronological claims:\n\n- assigning a position in the sequence to previously undated or doubtfully dated items, relative to the anchored events;\n- checking the official timeline against independent series and extending the dated account across intervals that only some series cover;\n- stating that a specific increment is probably missing, extra or misdated, with the series that support that statement identified.\n\nThis bears on the target question through order-of-events questions that a steering account and its alternatives answer differently: whether a requirement or weighting changed before or after contact with a particular bidder; whether criteria or scores changed before or after bids were received; whether a bidder's material reflects a requirement before it was anchored as public.\n\nWhat can be established by this means is sequence and compatibility: which accounts remain chronologically possible and which are excluded. A sequence consistent with steering is not proof of steering. Purpose and knowledge are not dated by alignment and remain matters for the ordinary methods: corroborating interviews, competing explanations, and disconfirming evidence. Such explanations include legitimate clarification rounds, template reuse, incumbent familiarity, or prior market consultation.\n\nResults are to be reported in the practitioner's ordinary categories: corroborated placements as corroborated facts, anomalies as unresolved gaps, and steering as allegation unless separately corroborated. If the alignment supports the official timeline, that is reported as constraining the steering account.",
+    "limit": "Each source limit has a target counterpart:\n\n- Local growth disturbance: features peculiar to one series, such as one official's drafting habits, a system migration, clock or time-zone offsets, or a reused template. These can mimic or mask a marker.\n\n- Weak shared signal: a routine procurement with few distinctive events leaves little to match; alignment is then weakly constrained.\n\n- Short or repetitive patterns: brief email threads, a small number of versions, and recurring boilerplate or periodic meetings can fit at several positions and produce false alignments.\n\n- Measurement error: transcription and text-recognition errors, editable or reset file metadata, and memory error in interview accounts.\n\n- Incorrect reference chronology: the anchored series may itself be wrong, amended or entered late. An error there propagates to every item placed against it.\n\n- Insufficient overlap: series covering different intervals cannot be placed against each other; placement across the gap is unsupported.\n\n- Non-independence: copied or derived records give apparent replication without added support, comparable to repeated samples from one specimen.\n\nFurther bounds specific to the target. A gap is not proof of misconduct; records can be absent through retention practice or incomplete disclosure. Selecting markers or placements with the steering hypothesis in mind risks fitting the pattern to the conclusion. Alignment constrains order, not intent. Authentication is a separate precondition: alignment of unauthenticated records does not authenticate them."
+  },
+  "condition_id": "Q0192",
+  "atomic_condition": "reliable calendar anchors",
+  "necessary_source_excerpt": "Establish reliable calendar anchors and internal ordering by corroborating independently dated records and checking version, reference, and content dependencies."
+}

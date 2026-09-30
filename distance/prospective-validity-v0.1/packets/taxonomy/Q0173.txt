@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Object acted on: the delta set, meaning the enumerated deployed changes (code revisions, configuration edits, feature-flag flips, dependency or infrastructure changes) that separate the last known-good checkout deployment from the currently regressed one. Counterpart of the 'failure-inducing configuration composed of removable parts': baseline plus all deltas.\n\nConditions that must hold before the procedure starts. These are assumptions to check, not facts supplied by the packet:\n(a) A failure predicate is fixed in advance, for example checkout p95 or p99 latency exceeding the baseline by a pre-stated margin. A pre-stated inconclusive band between 'pass' and 'fail' is classified as 'unresolved'.\n(b) Load is held constant by construction: a recorded or synthetic representative checkout workload is replayed at a fixed request rate and request mix in a staging or otherwise controlled environment.\n(c) Under that replay, the baseline passes and the full-delta configuration fails, each repeated enough times to estimate run-to-run variation.\n(d) Deltas can be applied or reverted individually or in groups to yield deployable configurations. Configurations that fail to build, deploy or start are classified 'unresolved'.\n\nIf (c) fails, so the regression does not reproduce at fixed load, the instrument's precondition is not met and the reduction is not started. That outcome is compatible with load or environment dependence but does not establish it. The case then falls back to the practitioner's ordinary stratified timeline and trace comparison.",
+    "operation": "1. Partition the delta set into subsets, initially halves.\n2. For each subset, build a configuration that applies only that subset to the baseline, and one that removes only that subset from the regressed deployment (the complement).\n3. Run the identical fixed replay workload against each candidate configuration with the pre-set number of repeats, and classify it as fail, pass or unresolved using the predicate.\n4. Retain any reduced configuration that still fails and recurse on it. If no subset or complement fails, increase granularity by splitting into more, smaller subsets and repeat.\n5. Interleave baseline and full-delta control runs throughout, so that drift in the test environment is detected. If controls stop giving their expected outcomes, suspend the reduction and re-establish the test.\n6. Stop when the retained set is 1-minimal, meaning reverting any single retained change makes the regression stop reproducing. Also stop when granularity is at single changes and the remaining candidates are unresolved, or when the pre-agreed run budget is exhausted. Report the retained set as near-minimal in the latter two cases.\n\nFollow-ups after stopping:\n(i) Re-run the retained set and the baseline at more than one fixed load level, to see whether the latency gap persists, grows or vanishes with load.\n(ii) Where it is safe and approved, do a controlled revert and reintroduction of the retained change or changes on a limited slice of production traffic, compared against a concurrent slice without the change.",
+    "signal": "The observable is the pattern of fail, pass and unresolved outcomes across configurations that all received the same replayed workload, together with the per-configuration latency distributions.\n\nInformative observations:\n- Which reduced configurations preserve the threshold exceedance and which do not.\n- Whether the latency gap between a retained configuration and the baseline is larger than the run-to-run spread seen in the repeated control runs.\n- Whether interleaved controls remain stable: baseline still passing, full-delta still failing.\n- In the follow-ups, whether the gap between retained-set and baseline configurations appears at each fixed load level, and whether latency moves with revert and reintroduction in the production slice relative to the concurrent comparison slice.\n\nNo such observations have been made here. These are what the procedure would produce.",
+    "inference": "If the reduction reaches a 1-minimal retained set, that set is a test-relative minimal group of deployed changes sufficient, when applied to the baseline, to reproduce the defined latency exceedance under the replay workload. Each retained member is necessary for reproduction within that set under that test.\n\nOn which change accounts for the regression: if the retained set is a single change, it is the candidate that accounts for the regression under test. If it contains several changes, the warranted statement is that they jointly reproduce it, which is an interaction, not that any one of them does so alone.\n\nOn load variation, the evidence is bounded as follows: configurations differing only in the retained changes received the same request rate and mix, so the latency difference between them in the test cannot be attributed to a load difference. The multi-load follow-up indicates whether the effect is present across load levels or appears only above some level. The production revert and reintroduction, if performed, supports a causal contribution in production for the traffic slice and period observed.\n\nThis warrants a bounded causal contribution of the retained changes. It does not show that production load played no part in the observed regression, and it does not identify the mechanism by which the changes add latency.",
+    "limit": "- Interactions: changes may only fail in combination, or may mask each other, so halves can both pass while the whole fails. This forces finer partitions and may block strong minimization.\n- Nondeterminism: latency is a noisy distribution, not a binary outcome. Configurations near the threshold can flip classification between runs, and too few repeats can misdirect the reduction.\n- Unresolved outcomes: coupled changes, such as a schema migration with the code that depends on it, may not be separable into deployable configurations. Irreversible changes cannot be removed at all. Both leave a larger retained set than the true minimal one.\n- Environmental dependence: staging may differ from production in data volume, cache state, downstream dependency behaviour, hardware and concurrency. A regression that reproduces only in production, or only with production traffic shape, is not reachable by the replay.\n- Replay fidelity: the fixed workload may omit the request types or load levels where the regression appears.\n- Strategy dependence: the reduction returns one minimal set, which depends on partition order. Other sufficient subsets may exist and are not enumerated.\n- Scope: the procedure tests only enumerated deltas. Causes outside the delta set, such as data growth, third-party latency or traffic-mix change, are not examined and remain open competing explanations.\n- Threshold relativity: results hold for the chosen metric, margin and load levels only.\n- Inference limit: a retained minimal configuration demonstrates reproducibility under the test. It does not demonstrate the unique underlying causal mechanism, nor that the whole production regression is due to the retained changes instead of being partly due to load."
+  },
+  "condition_id": "Q0173",
+  "atomic_condition": "Verify control stability through interleaved runs",
+  "necessary_source_excerpt": "Verify control stability through interleaved runs and confirm that the retained configuration repeatedly reproduces the exceedance. Claim 1-minimality only when every single-member removal has a resolved nonfailing result."
+}

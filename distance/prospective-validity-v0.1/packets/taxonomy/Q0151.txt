@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Chromatography",
+    "practice": "Analytical chemistry",
+    "instrument": {
+      "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+      "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+      "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+      "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+      "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+    }
+  },
+  "target": {
+    "domain": "product-proposal decomposition",
+    "question": "Which parts of the proposed onboarding redesign are necessary for users to complete activation, and what interactions prevent a simple feature ranking?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Treat the proposed redesign as a mixture of candidate functions, including suspected dependencies and substitutes. The packet supplies no actual features, activation definition or observations. Before testing, specify these, the intended user scenarios and the evidence required for activation. Assume provisionally that some functions encounter different requirements at different checkpoints and can therefore be distinguished; preserve inseparable candidates as bundles rather than assuming independence.",
+    "operation": "Use advancing user task attempts as the moving phase and a fixed sequence of activation requirements as the stationary phase. In staged prototypes, track each candidate function's associated task demand at every checkpoint: record whether it is satisfied and travels onward with progress, or remains unresolved against a checkpoint requirement. Repeat this partition assessment through the flow, allowing an earlier satisfied demand to become relevant again. Keep checkpoint criteria, available assistance and scenario conditions comparable across variants; record deviations. Compare the full proposal with coherent omission variants, restoring omitted functions when investigating a failure. For suspected pairs, compare both present, each alone and neither, where all four variants remain interpretable. Set a session budget and task timeout before testing; stop an attempt at activation, withdrawal or timeout, recording unresolved demands. Stop the study at its budget and retain unresolved comparisons as uncertain.",
+    "signal": "Record the checkpoints and elapsed times at which demands resolve, recur or remain blocked, alongside activation, errors and assistance. Group function-associated traces by where and when they resolve to form an analogue of separated bands. Distinct patterns are candidate separations; overlapping patterns are possible co-elution. Observe whether omission introduces a specific blockage, restoration removes it, and a pair's joint presence or absence produces a pattern that differs from either isolated change. These are proposed observations, not reported results.",
+    "inference": "Different trace patterns support distinguishable functional demands with different dependence on the tested checkpoints. Their persistence characterizes relative retention under those conditions, not feature value. A function is supported as necessary only for the tested configuration and scenarios when a functioning full variant loses activation after its coherent omission, the blockage is linked to that omission, and restoration recovers activation under comparable conditions. Successful omission shows that the function is dispensable in that tested configuration. Pair comparisons can support complementarity, substitution or order dependence, making a single context-free feature ranking misleading. Uninterpretable or untested combinations support no necessity conclusion.",
+    "limit": "Functions may co-elute because they serve the same requirement, depend on one another or are measured too coarsely. User experience, task order, assistance, prototype fidelity and checkpoint design can shift apparent retention. Completion, delay and errors are nonspecific signals: they do not identify their cause or establish necessity alone. If traces overlap, inspect task observations and event traces and, within the declared budget, test a coherent separating variant; otherwise retain the bundle as unresolved. If an omission breaks prototype integrity or changes unrelated requirements, repair that comparison before interpreting it, or mark it uninterpretable. Use observed blockage and omission/restoration evidence to corroborate functional attribution. Small studies and limited combinations cannot establish population-wide necessity, unique feature identity or a globally minimal activation design."
+  },
+  "condition_id": "Q0151",
+  "atomic_condition": "restoration recovers activation under comparable conditions",
+  "necessary_source_excerpt": "Omission-variant coherence is unestablished. Show that the full variant reaches activation at baseline, that each omission variant remains a functioning prototype without altering unrelated checkpoint requirements, and that restoration recovers activation under comparable conditions."
+}

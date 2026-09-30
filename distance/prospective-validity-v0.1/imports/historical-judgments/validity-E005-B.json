@@ -1,0 +1,33 @@
+{
+  "case_id": "E005",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping keeps the full source chain. State: a composite configuration of removable parts (the omission set against a fixed reference prototype), a predefined pass/fail/unresolved test, and a requirement that reproducible failure and a reproducibly passing reference be established before reduction. Operation: partition the failure-inducing omission set, test subsets and complements by restoring the other omissions, retain only reductions that still meet the failure criterion, and refine to a single-restoration check. Signal: which configurations preserve failure, restore activation, or remain unresolved. Inference: a test-relative failure-inducing set, 1-minimal only when verified, sufficient to reproduce failure under the test. Treating omissions as the 'delta' and restoration as the 'reduction' is a consistent orientation of the source, not a substitution. Source limits carry over explicitly: interactions and nonmonotonicity, nondeterminism (participant variability, learning), unresolved outcomes, environmental dependence, reduction-order dependence, 1-minimal versus globally minimal, and reproducibility not identifying a unique causal mechanism. The added neither/either/both comparisons and repeated starts are compatible extensions and do not replace any source step."
+    },
+    "target_fidelity": {
+      "status": "addressed",
+      "rationale": "The retained question has two parts, and the inference gives an explicitly bounded contribution to each. For necessity: a verified singleton failing omission supports conditional necessity of that element with the reference remainder fixed, and the mapping correctly refuses to infer individual necessity from multi-element sets, where jointly removed alternative routes can block activation. For interactions: individually tolerated omissions that jointly fail, and failures that vanish after a further omission, are the interaction patterns that prevent an independent feature ranking, and the inference draws that conclusion directly. The limits state that results are relative to tested users, tasks, implementation and criteria, and that the procedure minimizes failure-inducing omissions and does not enumerate all necessary parts. The contribution is therefore bounded and not overclaimed, and the question is not swapped for another."
+    },
+    "operational_coherence": {
+      "status": "coherent",
+      "rationale": "Building omission variants and testing them against a predefined activation criterion yields a pass/fail/unresolved record per configuration. That record is exactly what warrants statements about which omission sets suffice for failure and which single restorations remove it. The logic is sound: failure with {A} omitted plus success in the reference gives conditional necessity of A; failure with {A,B} omitted plus success with either restored gives joint, not individual, necessity. The stochastic nature of user testing is handled by predefined repeatability criteria, comparable participant allocation, control of prior exposure, and an unresolved category distinct from failure. The preconditions (buildable valid variants, reproducible reference success, at least one reproducible failing omission configuration) are stated as assumptions and gated by an explicit stop rule, so no inference is drawn if they fail. The inference does not rest on source imagery or circular construction."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [],
+    "final_status": "Valid",
+    "rationale": "All three criteria pass. The mapping is a functionally faithful transfer of delta debugging: a composite failure-inducing configuration, a predefined three-valued test, iterative partition-and-retain reduction, and a test-relative 1-minimal or provisional result, with every source limit carried into the target. Its inferences are conditional in form and scoped to the tested configuration, and they bear directly on both the necessity and the interaction parts of the question without claiming population-wide or exhaustive necessity. The feasibility preconditions are the target counterpart of the source's own state requirement. The mapping presents them as assumptions to verify, with a stop rule, and does not assert them as facts, so they bound when the instrument applies rather than leaving a gap in the warrant. No criterion is conditional or failed, so the status is Valid."
+  },
+  "uncertainty": [
+    "The packet supplies no target evidence. Whether the proposal can actually be decomposed into independently removable elements, whether valid variants can be built, and whether comparable participants are available in sufficient number are unknown. The mapping treats these as assumptions and gates on them; I judged that gating to be part of the instrument's state and not an unresolved warrant, but a stricter reading could classify the case as Conditional on establishing reproducible reference activation and reproducible omission-induced failure.",
+    "Activation outcomes with human participants are stochastic and each test is a cohort-level comparison, not a deterministic run. Whether any predefined repeatability criterion can be met at practical sample sizes is unknown; if not, the procedure would mostly yield unresolved outcomes or provisional reduced sets.",
+    "A single reduction run yields one 1-minimal failing omission set and does not enumerate all necessary elements. How completely the 'which parts are necessary' portion is answered depends on how many alternative starting sets and partition orders are feasible, which the mapping leaves open ('where feasible').",
+    "I treated the restriction to test-relative, conditional necessity as a bounded scope on the original question and not as a reframe. A reader who takes 'necessary for users' to mean population-level necessity could regard this as a narrowing of the question.",
+    "Dense dependencies among onboarding elements could make many omission variants structurally invalid, limiting how far reduction can proceed. The packet gives no information on the dependency structure."
+  ]
+}

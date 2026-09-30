@@ -1,0 +1,37 @@
+{
+  "case_id": "E002",
+  "validity": {
+    "mechanism_fidelity": {
+      "status": "preserved",
+      "rationale": "The mapping preserves the source chain: hidden internal delays affect requests traversing different paths; observed latencies are compared with a forward model; structured residuals drive iterative inversion; and the result constrains possible delay locations. Coverage inspection, synthetic recovery tests, regularisation sensitivity and explicit non-uniqueness preserve the source's limits. Intervention supplies additional causal evidence without treating inversion itself as causal proof."
+    },
+    "target_fidelity": {
+      "status": "conditional",
+      "rationale": "The mapping retains both deployed-change attribution and distinction from load variation. It explicitly limits observational results to candidate localisation and reserves causal contribution for removal and reintroduction at comparable load. Whether this answers the actual regression question depends on obtaining separable candidate coverage and a credible intervention; neither is established by the packet."
+    },
+    "operational_coherence": {
+      "status": "conditional",
+      "rationale": "The proposed operations can produce residual patterns, recovery diagnostics and intervention responses that support the bounded inference. However, request and version identification, comparable baseline data, adequate coverage and a sufficiently accurate additive load-conditioned model are explicitly unverified. Parallel execution, contention or reference drift could defeat that forward model. The stated diagnostics and stopping rules acknowledge these failures but do not establish that the procedure is operationally adequate here."
+    },
+    "target_reframe": {
+      "occurred": false,
+      "original_question": null,
+      "reframed_question": null,
+      "relationship": null
+    },
+    "unresolved_conditions": [
+      "Establish usable request-path, traversal-count and version/configuration records and a comparable pre-regression window by auditing traces or joined logs and instrumentation consistency.",
+      "Establish candidate separability and overlapping load coverage by inspecting the coverage matrix and load strata, then testing synthetic-delay recovery and stability across regularisation settings. Collinear candidates support only a set-level conclusion.",
+      "Establish that the stated forward model adequately represents latency within the claimed scope by checking pre-regression and held-out residuals across paths and load strata, including effects of parallelism, contention and temporal drift.",
+      "Obtain the stated matched-load, bypass-path, old-version and deployment-onset observations to evaluate whether changed-cell increments are distinguishable from load-only explanations.",
+      "Establish bounded causal contribution through the proposed removal and controlled reintroduction at comparable load, demonstrating disappearance and restoration of the residual. If replay is used, establish its representativeness for the production paths and load strata covered by the claim."
+    ],
+    "final_status": "Conditional",
+    "rationale": "The transfer preserves the inverse-model mechanism and the original diagnostic question, with explicit limits on attribution. Its application remains conditional on identifiable data, model adequacy, candidate resolution and intervention evidence; no supplied observations establish these conditions."
+  },
+  "uncertainty": [
+    "The packet supplies no target observations or completed diagnostic results.",
+    "The availability of separable deployments, suitable load overlap and a safe, informative intervention is unknown.",
+    "Synthetic recovery establishes resolution under the tested construction; it does not independently establish the accuracy of the production model or causal attribution."
+  ]
+}

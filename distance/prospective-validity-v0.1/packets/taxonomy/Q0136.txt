@@ -1,0 +1,66 @@
+# Condition taxonomy v0.1
+
+Classify only the identified atomic condition, using the unchanged source instrument,
+target and mapping. Parent excerpts supply shared qualifications and resolution context;
+do not classify other clauses just because they occur in that context. Do not invent
+requirements, repair the mapping, judge the whole mapping, or consult external context.
+Return the exact condition_id and the structured response required by the schema.
+
+- execution_precondition: ability to instantiate or run an otherwise coherent mapped
+  procedure. Establishing it does not materially change mechanism, evidential warrant,
+  inference or target. Examples: obtain records, instrument, calibrate, gain access,
+  collect observations or run trials. This does not by itself change validity.
+- mechanism_condition: truth determines whether state→operation→signal instantiates
+  the source's distinctive operational mechanism, such as overlapping paths or genuine
+  removal/restoration of the relevant factor.
+- warrant_condition: required for signal to justify inference, such as identifiability,
+  causal discrimination, feature specificity or an independent evidential bridge.
+- target_fidelity_condition: required for the inference to address the retained target
+  question. A justified bounded contribution is sufficient; complete solution is not.
+- mixed: more than one inseparable functional requirement remains. Use only when
+  further decomposition would materially distort the condition; explain the links.
+- uncertain: available context cannot settle the category. Explain the missing context.
+
+Categories are not a scale. Test functional role: if false merely prevents running the
+procedure, it may be execution; if the source chain ceases to be instantiated, mechanism;
+if the signal would not mean what is claimed, warrant; if the inference would not address
+the question, target. Being testable or labeled a 'check' does not make a bridge execution.
+Checking ordinary instantiation requirements can itself be part of execution. Absence
+of an observed outcome alone does not invalidate a coherent prospective procedure.
+
+For execution, populate if_execution.verification_or_satisfaction_method and set
+if_validity_relevant to null. For mechanism/warrant/target, set if_execution to null
+and affected_link to state_operation_signal / signal_inference / inference_target,
+respectively. For mixed use the applicable non-null structures and explain inseparability;
+for uncertain these may be null, and uncertainty must explain what cannot be determined.
+Preserve uncertainty and disagreements rather than guessing a category.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+    "evidence": []
+  },
+  "mapping": {
+    "state": "Act on a revisable set of explanations for the reported checkout latency regression: individual deployed changes, configuration changes, load or request-mix variation, and interactions between a change and load. Include shared dependency or resource conditions where plausible. Treat the regression as reported, without assuming a responsible revision has been established. Version/configuration history, comparable latency measurements, traces, resource counters and representative replay capability are evidence requirements whose availability and reliability must be checked.",
+    "operation": "Construct a hypothesis table stating what each candidate predicts and what would contradict it. Inspect deployment and latency timelines, stratifying by version, configuration, offered load and request mix; use traces and resource counters to identify observations that distinguish candidates. Update relative plausibility after each observation, retaining explanations when evidence does not discriminate. Where representative replay is available, compare pre-change and suspect versions under matched configurations and workloads, repeating runs with counterbalanced order and controlled warm-up. Test both versions at comparable lower and higher offered loads to distinguish a version effect, a load effect and their interaction. If several changes remain bundled, bisect revisions or selectively revert changes where technically valid, then repeat the discriminating comparison. Define the latency measure, practically meaningful effect, required precision, trial budget and safety thresholds before testing. Where authorized and safe, use rollback and controlled reintroduction to check whether the predicted effect disappears and returns under comparable traffic; otherwise retain staging evidence and its scope. Stop a trial if safety thresholds are crossed. Stop narrowing when a reproducible discriminating contrast supports a bounded attribution and tested alternatives cannot explain that contrast alone, or when the trial budget or evidence access is exhausted. If inconclusive, retain the unresolved candidates and specify the next discriminating trace, workload comparison or revision test; do not force a winner.",
+    "signal": "Observe conditional patterns of support, contradiction and non-discrimination. A repeatable latency increase on the suspect version at matched offered load and request mix would support a version contribution. Similar deterioration on both versions as load increases would support load variation. A difference appearing only at higher load would support a change-by-load interaction. Traces locating added time on an altered execution path would provide mechanistic support; resource counters could support or contradict the predicted bottleneck. Disappearance on rollback and recurrence on reintroduction under comparable conditions would strengthen attribution. Deployment timing alone, an unmatched rollback during falling demand, or noisy comparisons would leave explanations insufficiently separated.",
+    "inference": "Reprioritize candidates according to their predicted and observed patterns. Eliminate a candidate only within conditions where the test could reliably detect its predicted effect; otherwise retain it. A repeatable comparison isolating a particular change, corroborated where feasible by reversal and reintroduction, supports that change's causal contribution for the tested workload, configuration and period. Matched-load contrasts distinguish that contribution from load variation alone; a load-dependent effect warrants an interaction claim. A comparison between bundled releases supports release-level attribution until individual changes are isolated. Report supported candidates, contradicted candidates, unresolved alternatives and the scope of the evidence without claiming a unique universal cause.",
+    "limit": "The candidate set may omit the actual mechanism. Missing telemetry, inaccurate version labels, unrepresentative replay, time-varying dependencies, cache or warm-up effects, and coupled changes can undermine discrimination. Correlated traces and resource counters are not independent confirmations. Null results remain limited by test sensitivity, sample size and workload coverage; apparent positive results by test specificity and uncontrolled differences. Rollback may alter several conditions together, so improvement alone does not isolate a change. Use relevant prior incident frequencies only if available, explicitly consider disconfirming evidence, and keep alternatives visible to limit anchoring, premature closure, base-rate neglect and confirmation bias. Neither access to suitable experiments nor fidelity between staging and production is established by the packet."
+  },
+  "condition_id": "Q0136",
+  "atomic_condition": "version and configuration labels",
+  "necessary_source_excerpt": "Establish usable evidence by checking version and configuration labels, latency measurement reliability, and workload and load comparability using the proposed telemetry inspection."
+}
