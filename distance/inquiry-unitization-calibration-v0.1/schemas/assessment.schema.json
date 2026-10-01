@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "semantic_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inquiry_unit": {
+            "type": "object",
+            "properties": {
+              "unit_id": {
+                "type": "string"
+              },
+              "source_spans": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "source_field": {
+                      "type": "string"
+                    },
+                    "exact_text": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "integer"
+                    },
+                    "end": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "source_field",
+                    "exact_text",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "unresolved_contrast": {
+                "type": "object",
+                "properties": {
+                  "present": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string",
+                        "enum": [
+                          "uncertain"
+                        ]
+                      }
+                    ]
+                  },
+                  "alternatives": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "present",
+                  "alternatives",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "next_operation": {
+                "type": "object",
+                "properties": {
+                  "present": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string",
+                        "enum": [
+                          "uncertain"
+                        ]
+                      }
+                    ]
+                  },
+                  "operation": {
+                    "type": "string"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "present",
+                  "operation",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "differential_outcome_relation": {
+                "type": "object",
+                "properties": {
+                  "present": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string",
+                        "enum": [
+                          "uncertain"
+                        ]
+                      }
+                    ]
+                  },
+                  "outcomes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "outcome": {
+                          "type": "string"
+                        },
+                        "consequence": {
+                          "type": "string"
+                        },
+                        "bears_on": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "outcome",
+                        "consequence",
+                        "bears_on"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "present",
+                  "outcomes",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "provenance_complete": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "INQUIRY_CONSTRAINT",
+                  "NOT_INQUIRY_CONSTRAINT",
+                  "UNCERTAIN"
+                ]
+              },
+              "counterfactual_effect": {
+                "type": "object",
+                "properties": {
+                  "next_inquiry": {
+                    "type": "string",
+                    "enum": [
+                      "changed",
+                      "unchanged",
+                      "uncertain"
+                    ]
+                  }
+                },
+                "required": [
+                  "next_inquiry"
+                ],
+                "additionalProperties": false
+              },
+              "productivity": {
+                "type": "string",
+                "enum": [
+                  "YES",
+                  "NO",
+                  "UNCERTAIN"
+                ]
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "unit_id",
+              "source_spans",
+              "unresolved_contrast",
+              "next_operation",
+              "differential_outcome_relation",
+              "provenance_complete",
+              "role",
+              "counterfactual_effect",
+              "productivity",
+              "rationale"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "inquiry_unit"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "inquiry_role_coverage": {
+      "type": "object",
+      "properties": {
+        "complete_units_found": {
+          "type": "integer"
+        },
+        "inquiry_constraints_emitted": {
+          "type": "integer"
+        },
+        "uncovered_complete_units": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "duplicate_units": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_passed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "complete_units_found",
+        "inquiry_constraints_emitted",
+        "uncovered_complete_units",
+        "duplicate_units",
+        "validation_passed"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "case_id",
+    "semantic_units",
+    "inquiry_role_coverage"
+  ],
+  "additionalProperties": false
+}
