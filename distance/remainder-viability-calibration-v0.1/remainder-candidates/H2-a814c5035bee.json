@@ -1,0 +1,95 @@
+{
+  "case_id": "H2-a814c5035bee",
+  "ablated_mapping_sha256": "785be70273ac0c867825f426f824c00a8e43892002186ee3ed33bdfbb1959963",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The tested priority step reduces settled end-to-end delay by two hours at this operating point",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-a58d31dccf22"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; it is a bounded candidate change for P-17.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; it is a bounded candidate change for P-17."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-f8c4c93ffa4a"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-5bd43a79c42b"
+      ]
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The measured output is end-to-end delay in hours.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The measured output is end-to-end delay in hours."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "No other input changes or disturbances occur during these observations.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "No other input changes or disturbances occur during these observations."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

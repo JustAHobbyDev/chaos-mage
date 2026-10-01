@@ -1,0 +1,81 @@
+{
+  "case_id": "H2-04edf722fb7e",
+  "ablated_mapping_sha256": "bf51d4774fabb28affbb1a0a60b47e935e6a305f3c4a40147a6cae1f69e8ea4d",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "Within the specified differential the response favors lock contention over isolated pool exhaustion",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Within the specified differential the response favors lock contention over isolated pool exhaustion"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-ff0d3cf22d24"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; inspect lock ownership and hold times next.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; inspect lock ownership and hold times next."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-40f32e53d703"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "The capacity step is applied successfully and response sensitivity is adequate.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The capacity step is applied successfully and response sensitivity is adequate."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

@@ -1,0 +1,194 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-53fc9c8368c3",
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What chronological placement or offset of sequence S is supported by overlap with independently dated references?"
+  },
+  "mapping": {
+    "state": "S is an ordered correspondence activity sequence whose chronological placement is in question. Two independently dated reference records and a copyist docket accompany S. The docket dates the physical transcription to 1912 and is independent of the pattern comparison.",
+    "operation": "Tabulate the sequence and reference entries. Compare their ordered high/low patterns at candidate offsets, inspect overlap and check independent anchors. Record dated documentary facts separately from inferred pattern alignment.\nTranscribe the docket date in a catalog entry. Preserve the document identifier and transcription date in separate columns. Inventory the envelopes and record visible postmarks without attributing them to an unlinked letter. Separate dates of copying from dates mentioned inside a text. Maintain a list of undated entries. Store digital images in sequence order with stable filenames. Note missing pages in the catalog. Retain alternative catalog arrangements. Record which facts come from the docket and which from a reference. Keep a change history for the catalog. Provide the reader with a legible chronological index of the dated reference documents.",
+    "signal": "The pattern table lists only separate counts of high and low entries for S and each reference; the export discarded order and position. No overlap window or shared-influence relation is recorded. The copyist docket reads 1912. The references carry dates, but no S entry is linked to one of them.",
+    "inference": "The observed correspondence fixes a unique global chronology for every position of S, aligning all its entries with the dated references without remaining alternatives.\nThe independent docket places the physical transcription of S in 1912; the reference dates and separate high/low counts can be listed alongside it.",
+    "limit": "The counts cannot reconstruct ordered patterns or positional overlap. The docket is an ordinary documentary date, not an alignment anchor for an identified S increment. No discriminating offset, overlap-derived exclusion or candidate shift is supplied."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-694f1961c2e3",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The observed correspondence fixes a unique global chronology for every position of S, aligning all its entries with the dated references without remaining alternatives.",
+      "exact_claim_span": "The observed correspondence fixes a unique global chronology for every position of S, aligning all its entries with the dated references without remaining alternatives."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "S is an ordered correspondence activity sequence whose chronological placement is in question. Two independently dated reference records and a copyist docket accompany S. The docket dates the physical transcription to 1912 and is independent of the pattern comparison.",
+    "operation": "Tabulate the sequence and reference entries. Compare their ordered high/low patterns at candidate offsets, inspect overlap and check independent anchors. Record dated documentary facts separately from inferred pattern alignment.\nTranscribe the docket date in a catalog entry. Preserve the document identifier and transcription date in separate columns. Inventory the envelopes and record visible postmarks without attributing them to an unlinked letter. Separate dates of copying from dates mentioned inside a text. Maintain a list of undated entries. Store digital images in sequence order with stable filenames. Note missing pages in the catalog. Retain alternative catalog arrangements. Record which facts come from the docket and which from a reference. Keep a change history for the catalog. Provide the reader with a legible chronological index of the dated reference documents.",
+    "signal": "The pattern table lists only separate counts of high and low entries for S and each reference; the export discarded order and position. No overlap window or shared-influence relation is recorded. The copyist docket reads 1912. The references carry dates, but no S entry is linked to one of them.",
+    "inference": "[DELETED C-694f1961c2e3]\nThe independent docket places the physical transcription of S in 1912; the reference dates and separate high/low counts can be listed alongside it.",
+    "limit": "The counts cannot reconstruct ordered patterns or positional overlap. The docket is an ordinary documentary date, not an alignment anchor for an identified S increment. No discriminating offset, overlap-derived exclusion or candidate shift is supplied."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "The independent docket places the physical transcription of S in 1912",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The independent docket places the physical transcription of S in 1912"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-90c966fe205f"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; the reference dates and separate high/low counts can be listed alongside it.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; the reference dates and separate high/low counts can be listed alongside it."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-3fc8759b0d9d"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The counts cannot reconstruct ordered patterns or positional overlap.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The counts cannot reconstruct ordered patterns or positional overlap."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-d00ee08284e6"
+      ]
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The pattern table lists only separate counts of high and low entries for S and each reference; the export discarded order and position.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The pattern table lists only separate counts of high and low entries for S and each reference; the export discarded order and position."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "No overlap window or shared-influence relation is recorded.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "No overlap window or shared-influence relation is recorded."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "The copyist docket reads 1912.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The copyist docket reads 1912."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R07",
+      "inference": "The references carry dates, but no S entry is linked to one of them.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The references carry dates, but no S entry is linked to one of them."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}

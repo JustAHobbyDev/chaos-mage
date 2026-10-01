@@ -1,0 +1,79 @@
+{
+  "case_id": "H2-25d1bd70c84a",
+  "ablated_mapping_sha256": "8da40d6bef8d1dace841263694651d6b0521cbec10b4bd4d3ab60147789f918f",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-b7700b339bc9"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "The retained output is a generic nonzero process-exit flag.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The retained output is a generic nonzero process-exit flag."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "Subset {a,b} produces that flag on every replay; {a} and {b} do not.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Subset {a,b} produces that flag on every replay; {a} and {b} do not."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The exit flag pools checkout deadline failures with configuration rejection and early harness termination.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The exit flag pools checkout deadline failures with configuration rejection and early harness termination."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "Failure-specific traces were not retained.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Failure-specific traces were not retained."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

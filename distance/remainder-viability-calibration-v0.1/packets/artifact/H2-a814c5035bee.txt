@@ -1,0 +1,182 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-a814c5035bee",
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Which bounded changes measurably reduce delay in process P-17 under the tested operating point?"
+  },
+  "mapping": {
+    "state": "Process P-17 runs at the stated operating point. The tested input is a bounded increase in its intake-priority setting. The operator can apply, hold and reverse the setting while recording a time series. All stated execution conditions are satisfied.",
+    "operation": "Apply the priority step, hold it for the observation window, reverse it and repeat. Keep staffing and arrival schedule fixed. Record the output trajectory through the transient and the later window, and retain the step and reversal timestamps.",
+    "signal": "The measured output is end-to-end delay in hours. Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal. No other input changes or disturbances occur during these observations.",
+    "inference": "The repeated response identifies intake scheduling as the unique internal cause of the measured end-to-end delay in P-17 at this operating point.\nThe tested priority step reduces settled end-to-end delay by two hours at this operating point; it is a bounded candidate change for P-17.",
+    "limit": "The delay measurement is calibrated and all trajectories settle inside the window. The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-cdf63e360ab7",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The repeated response identifies intake scheduling as the unique internal cause of the measured end-to-end delay in P-17 at this operating point.",
+      "exact_claim_span": "The repeated response identifies intake scheduling as the unique internal cause of the measured end-to-end delay in P-17 at this operating point."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Process P-17 runs at the stated operating point. The tested input is a bounded increase in its intake-priority setting. The operator can apply, hold and reverse the setting while recording a time series. All stated execution conditions are satisfied.",
+    "operation": "Apply the priority step, hold it for the observation window, reverse it and repeat. Keep staffing and arrival schedule fixed. Record the output trajectory through the transient and the later window, and retain the step and reversal timestamps.",
+    "signal": "The measured output is end-to-end delay in hours. Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal. No other input changes or disturbances occur during these observations.",
+    "inference": "[DELETED C-cdf63e360ab7]\nThe tested priority step reduces settled end-to-end delay by two hours at this operating point; it is a bounded candidate change for P-17.",
+    "limit": "The delay measurement is calibrated and all trajectories settle inside the window. The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "The tested priority step reduces settled end-to-end delay by two hours at this operating point",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-a58d31dccf22"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; it is a bounded candidate change for P-17.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; it is a bounded candidate change for P-17."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-f8c4c93ffa4a"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-5bd43a79c42b"
+      ]
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The measured output is end-to-end delay in hours.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The measured output is end-to-end delay in hours."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "No other input changes or disturbances occur during these observations.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "No other input changes or disturbances occur during these observations."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "case_id": "H2-72fb2477d1bc",
+  "ablated_mapping_sha256": "2eb19bf3b3f004889bb98e9f17ffaf821bbff75f8ef860017462c0d7a9776a0d",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The run ledger records three completed tests for F-17 and preserves their response code R together with the names of the two specified mechanisms.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The run ledger records three completed tests for F-17 and preserves their response code R together with the names of the two specified mechanisms."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-424eea28c053"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "Under the fixed replay, the supplied test produces response code R on three repetitions.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Under the fixed replay, the supplied test produces response code R on three repetitions."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The retained definition says only that R is a completed-test code.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The retained definition says only that R is a completed-test code."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "It contains neither a latency result nor a mechanism-dependent prediction, sensitivity value or diagnostic interpretation.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "It contains neither a latency result nor a mechanism-dependent prediction, sensitivity value or diagnostic interpretation."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

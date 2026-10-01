@@ -1,0 +1,174 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-89ae4468006c",
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can the current evidence establish or constrain about whether award P-17 was steered?"
+  },
+  "mapping": {
+    "state": "Award P-17 is investigated for steering. The advertised analysis covers scoring, specification drafting, contacts and intent; the supplied evidential fragment concerns one score entry only.",
+    "operation": "List score alteration and unchanged scoring as competing explanations for the examined entry. Compare the signed original and the independently retained contemporaneous duplicate. Keep other steering routes separate.",
+    "signal": "Both authenticated independent copies contain the same examined score, and neither contains an intervening alteration. No other scores, drafting records, contact records or intent evidence is supplied.",
+    "inference": "The comparison establishes that every score used for award P-17 was free of manipulation throughout the full evaluation.\nThe comparison establishes that all specifications for award P-17 were drafted without bidder-specific influence.\nThe comparison establishes that every private contact concerning award P-17 was lawful and unrelated to steering.\nThe comparison establishes that all participants in award P-17 acted with impartial intent throughout the process.\nAlteration of the one examined score is weakened.",
+    "limit": "The stated independence and authentication hold for this score entry. The fragment contains no evidence about other entries, specifications, contacts or intentions; matching copies do not certify every stage of the award."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-45bb629dd3e3",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The comparison establishes that every score used for award P-17 was free of manipulation throughout the full evaluation.",
+      "exact_claim_span": "The comparison establishes that every score used for award P-17 was free of manipulation throughout the full evaluation."
+    },
+    {
+      "claim_id": "C-0a792edc5b4f",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The comparison establishes that all specifications for award P-17 were drafted without bidder-specific influence.",
+      "exact_claim_span": "The comparison establishes that all specifications for award P-17 were drafted without bidder-specific influence."
+    },
+    {
+      "claim_id": "C-64f103dd0465",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The comparison establishes that every private contact concerning award P-17 was lawful and unrelated to steering.",
+      "exact_claim_span": "The comparison establishes that every private contact concerning award P-17 was lawful and unrelated to steering."
+    },
+    {
+      "claim_id": "C-aee93cc575e5",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The comparison establishes that all participants in award P-17 acted with impartial intent throughout the process.",
+      "exact_claim_span": "The comparison establishes that all participants in award P-17 acted with impartial intent throughout the process."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Award P-17 is investigated for steering. The advertised analysis covers scoring, specification drafting, contacts and intent; the supplied evidential fragment concerns one score entry only.",
+    "operation": "List score alteration and unchanged scoring as competing explanations for the examined entry. Compare the signed original and the independently retained contemporaneous duplicate. Keep other steering routes separate.",
+    "signal": "Both authenticated independent copies contain the same examined score, and neither contains an intervening alteration. No other scores, drafting records, contact records or intent evidence is supplied.",
+    "inference": "[DELETED C-45bb629dd3e3]\n[DELETED C-0a792edc5b4f]\n[DELETED C-64f103dd0465]\n[DELETED C-aee93cc575e5]\nAlteration of the one examined score is weakened.",
+    "limit": "The stated independence and authentication hold for this score entry. The fragment contains no evidence about other entries, specifications, contacts or intentions; matching copies do not certify every stage of the award."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "Alteration of the one examined score is weakened.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Alteration of the one examined score is weakened."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-8aa171325fe0"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "The fragment contains no evidence about other entries, specifications, contacts or intentions; matching copies do not certify every stage of the award.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The fragment contains no evidence about other entries, specifications, contacts or intentions; matching copies do not certify every stage of the award."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-a643c66c0512"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "Both authenticated independent copies contain the same examined score, and neither contains an intervening alteration.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Both authenticated independent copies contain the same examined score, and neither contains an intervening alteration."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "No other scores, drafting records, contact records or intent evidence is supplied.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "No other scores, drafting records, contact records or intent evidence is supplied."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}

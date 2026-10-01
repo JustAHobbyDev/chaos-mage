@@ -1,0 +1,168 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-04edf722fb7e",
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which of the two specified mechanisms is better supported for failure pattern F-17, and what inquiry does that justify?"
+  },
+  "mapping": {
+    "state": "Failure pattern F-17 is repeated checkout latency after deployment. The specified differential contains lock contention and connection-pool exhaustion. The same focal service, replay and two mechanisms are used throughout the inquiry.",
+    "operation": "List the two mechanisms, inspect the recorded response to a controlled test and compare the implications for each mechanism. Revise relative plausibility only from a discriminating observation. Preserve the response record and test definition.",
+    "signal": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated. The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention. The capacity step is applied successfully and response sensitivity is adequate.",
+    "inference": "The recorded response proves that lock contention is certainly the sole cause of F-17, excluding every co-occurring or unlisted mechanism without further inquiry.\nWithin the specified differential the response favors lock contention over isolated pool exhaustion; inspect lock ownership and hold times next.",
+    "limit": "The stated test predictions, execution and observations are reliable. The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-60f57d1ce06e",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The recorded response proves that lock contention is certainly the sole cause of F-17, excluding every co-occurring or unlisted mechanism without further inquiry.",
+      "exact_claim_span": "The recorded response proves that lock contention is certainly the sole cause of F-17, excluding every co-occurring or unlisted mechanism without further inquiry."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Failure pattern F-17 is repeated checkout latency after deployment. The specified differential contains lock contention and connection-pool exhaustion. The same focal service, replay and two mechanisms are used throughout the inquiry.",
+    "operation": "List the two mechanisms, inspect the recorded response to a controlled test and compare the implications for each mechanism. Revise relative plausibility only from a discriminating observation. Preserve the response record and test definition.",
+    "signal": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated. The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention. The capacity step is applied successfully and response sensitivity is adequate.",
+    "inference": "[DELETED C-60f57d1ce06e]\nWithin the specified differential the response favors lock contention over isolated pool exhaustion; inspect lock ownership and hold times next.",
+    "limit": "The stated test predictions, execution and observations are reliable. The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "Within the specified differential the response favors lock contention over isolated pool exhaustion",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Within the specified differential the response favors lock contention over isolated pool exhaustion"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-ff0d3cf22d24"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; inspect lock ownership and hold times next.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; inspect lock ownership and hold times next."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-40f32e53d703"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "The capacity step is applied successfully and response sensitivity is adequate.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The capacity step is applied successfully and response sensitivity is adequate."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}

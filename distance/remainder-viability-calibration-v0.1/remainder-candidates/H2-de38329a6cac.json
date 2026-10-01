@@ -1,0 +1,93 @@
+{
+  "case_id": "H2-de38329a6cac",
+  "ablated_mapping_sha256": "58df7854668893e09d8572e14f98cbb9568d3cd45f7ccfe7b776f79a7eebf52a",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-6b7b95dc4a99"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-a32d4021e2d8"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The oracle measures the defined checkout deadline failure F directly.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The oracle measures the defined checkout deadline failure F directly."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "Subset {a,b} produces F on every replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Subset {a,b} produces F on every replay."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "Subsets {a} and {b} do not produce F on any replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Subsets {a} and {b} do not produce F on any replay."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "The same F definition and oracle apply to the full configuration and every reduction.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The same F definition and oracle apply to the full configuration and every reduction."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

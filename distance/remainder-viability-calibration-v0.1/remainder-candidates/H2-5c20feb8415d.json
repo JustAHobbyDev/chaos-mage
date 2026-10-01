@@ -1,0 +1,107 @@
+{
+  "case_id": "H2-5c20feb8415d",
+  "ablated_mapping_sha256": "096ab51a9376df2f178de7330f907c8099a437ac522a1f86de68ad7d3b2cfbb5",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "For segment Q, the response favors lock contention over isolated pool exhaustion and supports inspecting Q lock ownership and hold times.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "For segment Q, the response favors lock contention over isolated pool exhaustion and supports inspecting Q lock ownership and hold times."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-49ab4cd5279c"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-6376a12f1550"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The observations cannot exclude co-occurrence or unlisted mechanisms.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The observations cannot exclude co-occurrence or unlisted mechanisms."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-4b4961a97318"
+      ]
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "Execution and sensitivity checks pass.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Execution and sensitivity checks pass."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R07",
+      "inference": "The trace contains no failing-request identifier linking Q to F-17.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The trace contains no failing-request identifier linking Q to F-17."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ],
+  "extraction_audit": {
+    "fields_searched": [
+      "state",
+      "operation",
+      "signal",
+      "inference",
+      "limit"
+    ],
+    "policy": "All surviving measured inferential spans and independent signal units; stated operations are executable context, not newly asserted results. Judge may add cited direct entailments.",
+    "no_viability_labels": true
+  }
+}

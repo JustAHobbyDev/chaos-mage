@@ -1,0 +1,194 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-6f44184ce89e",
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can the current evidence establish or constrain about whether award P-17 was steered?"
+  },
+  "mapping": {
+    "state": "Award P-17 is examined under three hypotheses: altered recorded scores, bidder-specific specification drafting, and an ordinary award without either practice. The dossier contains evaluation sheets, drafting records and an indexed chronology. The inquiry concerns only this award.",
+    "operation": "List the three hypotheses. Enter each dossier item in an evidence-by-hypothesis table, check independence and rate inconsistency. Recheck the comparison after removal of disputed items. Preserve the item identifiers and locations in the dossier.",
+    "signal": "Independently retained evaluation sheets agree with the announced scores, including the retained scoring history. No post-evaluation change appears in either independent copy. Dated drafting records establish that the examined specification was fixed before bidder identities were available. The comparison is stable after disputed items are removed.",
+    "inference": "The comparative record establishes that steering is the best surviving explanation of award P-17, with an ordinary unsteered award ruled out.\nRecorded-score alteration and bidder-specific authorship of the examined specification are weakened; obtain the unexamined contact log to investigate other steering routes.",
+    "limit": "Copies and dates are authenticated and independent. The evidence concerns the two named routes only; it does not record unexamined contacts or prove honest intent. The contact log is a named missing record, not assumed evidence."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-462581c19962",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The comparative record establishes that steering is the best surviving explanation of award P-17, with an ordinary unsteered award ruled out.",
+      "exact_claim_span": "The comparative record establishes that steering is the best surviving explanation of award P-17, with an ordinary unsteered award ruled out."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Award P-17 is examined under three hypotheses: altered recorded scores, bidder-specific specification drafting, and an ordinary award without either practice. The dossier contains evaluation sheets, drafting records and an indexed chronology. The inquiry concerns only this award.",
+    "operation": "List the three hypotheses. Enter each dossier item in an evidence-by-hypothesis table, check independence and rate inconsistency. Recheck the comparison after removal of disputed items. Preserve the item identifiers and locations in the dossier.",
+    "signal": "Independently retained evaluation sheets agree with the announced scores, including the retained scoring history. No post-evaluation change appears in either independent copy. Dated drafting records establish that the examined specification was fixed before bidder identities were available. The comparison is stable after disputed items are removed.",
+    "inference": "[DELETED C-462581c19962]\nRecorded-score alteration and bidder-specific authorship of the examined specification are weakened; obtain the unexamined contact log to investigate other steering routes.",
+    "limit": "Copies and dates are authenticated and independent. The evidence concerns the two named routes only; it does not record unexamined contacts or prove honest intent. The contact log is a named missing record, not assumed evidence."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "Recorded-score alteration and bidder-specific authorship of the examined specification are weakened",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Recorded-score alteration and bidder-specific authorship of the examined specification are weakened"
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-e237c627caca"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "; obtain the unexamined contact log to investigate other steering routes.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "; obtain the unexamined contact log to investigate other steering routes."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-d5ca7da126b9"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The evidence concerns the two named routes only; it does not record unexamined contacts or prove honest intent.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The evidence concerns the two named routes only; it does not record unexamined contacts or prove honest intent."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-04b519e4391c"
+      ]
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "Independently retained evaluation sheets agree with the announced scores, including the retained scoring history.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Independently retained evaluation sheets agree with the announced scores, including the retained scoring history."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "No post-evaluation change appears in either independent copy.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "No post-evaluation change appears in either independent copy."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "Dated drafting records establish that the examined specification was fixed before bidder identities were available.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Dated drafting records establish that the examined specification was fixed before bidder identities were available."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R07",
+      "inference": "The comparison is stable after disputed items are removed.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The comparison is stable after disputed items are removed."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}

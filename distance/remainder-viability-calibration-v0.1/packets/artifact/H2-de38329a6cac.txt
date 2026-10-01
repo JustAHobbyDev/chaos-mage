@@ -1,0 +1,186 @@
+# H.2 frozen remainder-viability construct
+
+CORE_INVALID means absence of a viable source-derived remainder after all measured
+UNSUPPORTED claims are deleted simultaneously. It is not a judgment about deleted
+claim centrality, count, text volume, or how many operations remain executable.
+
+For every supplied candidate, and any additional candidate discoverable in the
+surviving mapping, assess four independent properties as YES, NO, or UNCERTAIN:
+
+* warranted: surviving content licenses the inference; plausibility, weaker wording,
+  executability and potential future evidence do not supply warrant;
+* source_derived: an operational consequence of the imported reasoning instrument,
+  rather than generic/native target-domain procedure;
+* material: changes understanding, constraints, investigation, intervention or inquiry
+  in a useful way, even if its scope or textual size is small;
+* target_relevant: bears on the exact retained question or a legitimate bounded
+  subpart. A valid inference about something else does not qualify.
+
+A candidate is viable exactly when all four assessments are YES. A candidate is
+decisively unresolved exactly when none is NO and at least one is UNCERTAIN.
+An UNCERTAIN field cannot rescue a candidate already disqualified by NO.
+
+Derivation, in order:
+
+1. An explicitly unresolved structural contradiction yields UNCERTAIN_LOAD_BEARING.
+2. At least one viable candidate and substantially_intact scope yields
+   KEEP_WITH_WARRANT_FLAGS; with reduced scope, KEEP_WITH_REDUCED_SCOPE.
+3. With no viable candidate but at least one decisively unresolved candidate, use
+   UNCERTAIN_LOAD_BEARING.
+4. Otherwise use CORE_INVALID, with mechanism_death, generic_remainder,
+   target_payoff_loss, or epistemically_empty as the best explanatory reason.
+
+A viable candidate combined with none/uncertain scope is a structural contradiction;
+explain it and either reconcile the fields or mark it unresolved. Unresolved conflicts
+are the sole exception allowing UNCERTAIN_LOAD_BEARING alongside a definite viable
+candidate. Generator-facing uncertainty policy remains keep + flag.
+
+Reason none accompanies definite keep decisions; uncertain accompanies unresolved
+decisions. CORE_INVALID normally has scope none. A declared conflict may explain
+diagnostic differences; do not silently overwrite any model field.
+
+Retain mechanism_survival, target_contribution_survival, dependency_cascade,
+remainder_check, strongest_surviving_target_inference and central_bridge as diagnostic
+evidence. They do not independently derive status. Mechanism death generally aligns
+with DOES_NOT_SURVIVE; generic remainder generally aligns with GENERIC_REMAINDER.
+Require a structural_conflict explanation for departures. Unreconciled departures
+yield uncertainty. A central claim can be bypassed by another viable contribution.
+
+Assess every frozen candidate without changing its identity, text, or provenance.
+Additional judge-discovered candidates must be marked judge_added and cite surviving
+mapping text. Direct entailment is allowed; inventing a repaired, replacement or
+future-supported inference is not. Strongest inference references an assessed
+candidate and its four properties; merely source-derived or merely warranted is
+insufficient. When no candidate inference exists, its reference/text may be null.
+
+The output remainder_viability contains candidate assessments, viable IDs, scope,
+diagnostics, reason, status, structural_conflict {present,resolved,explanation}, and
+uncertainty. viable_remainder_assessment is a deterministic publication projection of
+that same output, never a second independent controlling judgment.
+
+Judge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.
+CASE PACKET
+{
+  "case_id": "H2-de38329a6cac",
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed-change subset is sufficient and minimal for reproducing failure F under the frozen replay?"
+  },
+  "mapping": {
+    "state": "Deployment D-17 introduced removable changes a, b and c. Failure F is a checkout deadline failure under a frozen replay. Each test runs the specified subset in the same environment; all listed repetitions are deterministic and no test is unresolved.",
+    "operation": "Partition the deployed changes, test subsets and complements, and reduce the configuration using the recorded outcome. Finish by separately removing each retained change. Preserve the replay, subset and output for each test.",
+    "signal": "The oracle measures the defined checkout deadline failure F directly. Subset {a,b} produces F on every replay. Subsets {a} and {b} do not produce F on any replay. The same F definition and oracle apply to the full configuration and every reduction.",
+    "inference": "The reduction establishes that a and b are the unique underlying root cause of failure F in production and excludes all alternative causal mechanisms.\nSubset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+    "limit": "The oracle distinguishes the defined F from other failures. No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-47de9f37ca45",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The reduction establishes that a and b are the unique underlying root cause of failure F in production and excludes all alternative causal mechanisms.",
+      "exact_claim_span": "The reduction establishes that a and b are the unique underlying root cause of failure F in production"
+    },
+    {
+      "claim_id": "C-13f2f1545b56",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The reduction establishes that a and b are the unique underlying root cause of failure F in production and excludes all alternative causal mechanisms.",
+      "exact_claim_span": " and excludes all alternative causal mechanisms."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Deployment D-17 introduced removable changes a, b and c. Failure F is a checkout deadline failure under a frozen replay. Each test runs the specified subset in the same environment; all listed repetitions are deterministic and no test is unresolved.",
+    "operation": "Partition the deployed changes, test subsets and complements, and reduce the configuration using the recorded outcome. Finish by separately removing each retained change. Preserve the replay, subset and output for each test.",
+    "signal": "The oracle measures the defined checkout deadline failure F directly. Subset {a,b} produces F on every replay. Subsets {a} and {b} do not produce F on any replay. The same F definition and oracle apply to the full configuration and every reduction.",
+    "inference": "[DELETED C-47de9f37ca45][DELETED C-13f2f1545b56]\nSubset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+    "limit": "The oracle distinguishes the defined F from other failures. No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-6b7b95dc4a99"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-a32d4021e2d8"
+      ]
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "The oracle measures the defined checkout deadline failure F directly.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The oracle measures the defined checkout deadline failure F directly."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "Subset {a,b} produces F on every replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Subset {a,b} produces F on every replay."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "Subsets {a} and {b} do not produce F on any replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Subsets {a} and {b} do not produce F on any replay."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    },
+    {
+      "remainder_id": "R06",
+      "inference": "The same F definition and oracle apply to the full configuration and every reduction.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The same F definition and oracle apply to the full configuration and every reduction."
+        }
+      ],
+      "provenance": "exact_observation_candidate",
+      "dependency_references": []
+    }
+  ]
+}
