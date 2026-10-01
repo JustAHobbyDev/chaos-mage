@@ -1,0 +1,124 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Whether a deployed-change subset reproduces F under the frozen replay.",
+          "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 reports nonidentification of F from the supplied channel. It excludes no subset, establishes no bound, and supplies no basis for ranking alternatives. Removing its conclusion while preserving the surviving channel facts changes none of those judgments. No stopping decision is supplied, and the existing replay operation has no supplied outcome relation that discriminates F from its absence. Inferring a new observation channel or an instruction to terminate testing would add content."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-0185f7ef5bd4",
+    "unsupported_claim_ids": [
+      "C-4321f7481c98",
+      "C-f150ca789c7d"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states the conclusion and its channel-confounding basis; the mapping grants the stated diagnostic relations."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Delta debugging retains reductions according to reproduction of the defined failure. A channel compatible with both F and its absence cannot license that retention criterion for F."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The limitation concerns sufficiency for the exact target failure under the frozen replay, which is required for the requested minimal sufficient subset."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, this negative inference establishes evidentiary insufficiency without changing target states, bounds, priorities, a stopping decision, or a specified discriminating next inquiry."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "Its warning is pertinent, but no productive contribution with a useful consequence for the retained target inquiry is supplied."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+        }
+      ],
+      "why_warranted": "The supplied channel relation directly licenses this insufficiency conclusion. It is the strongest assessed surviving inference, but it is not viable under the productivity requirement."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No candidate satisfies all five viability properties; no material inferential scope survives."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Partitioning, subset replay, fixed identities, and deterministic execution survive. The recorded channel cannot establish reproduction of F, so the reduction procedure cannot yield the requested F-specific sufficiency or minimality conclusion."
+    },
+    "remainder_check": {
+      "status": "NO_REMAINDER",
+      "rationale": "A source-specific insufficiency statement survives textually, but no viable productive remainder survives."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "The mapping neither identifies nor bounds sufficient minimal subsets and supplies no qualifying decision or discriminating inquiry."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "Ablation removes the asserted answer to the target question and the root-cause claim. The surviving procedural content and channel limitation provide no independently viable target contribution."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "The deleted subset claim carried the asserted target payoff, and no independent material contribution survives. This is a dependency diagnosis, not an endorsement of the deleted claim."
+    },
+    "no_viable_remainder_reason": "epistemically_empty",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Partial procedural survival and a warranted source-specific warning are compatible with failure of viability. Neither overrides R01's decisive productivity and materiality failures."
+    },
+    "uncertainty": []
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "TARGET_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "changed",
+          "bounds": "unchanged",
+          "alternative_priorities": "changed",
+          "stopping_decision": "changed",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": null,
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "R01 is the surviving diagnostic relation itself, not a redundant conclusion supported by a separate surviving diagnostic relation. Removing it preserves probe completion, authentication, and scope restrictions, but leaves neither candidate preferentially supported. Retaining it excludes isolated pool exhaustion under the stipulated conditions, favors lock contention comparatively, and justifies closing the isolated-pool-exhaustion branch within that scope. No specific next test is supplied; productivity rests on the target constraint and source-specific branch termination."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-8e37a4f3d05a",
+    "unsupported_claim_ids": [
+      "C-2331e2b3bf66"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The diagnostic relation survives verbatim, and the mapping explicitly grants the observations and diagnostic relations under the described conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Comparing an observation against competing diagnostic expectations operationalizes differential diagnosis through contradiction, compatibility, and comparative reprioritization."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The relation directly compares the two specified mechanisms for F-17 at the retained operating point."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed in negative_remainder_assessment for R01, the incompatibility excludes isolated pool exhaustion within scope and favors lock contention. Without this relation, completion and authentication alone leave both alternatives live without a justified preference."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The exclusion answers the comparative-support question and terminates the isolated-pool-exhaustion branch under the stipulated conditions, without establishing a unique cause across production workloads."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+        }
+      ],
+      "why_warranted": "This exact surviving relation is licensed by the granted recording assumptions and diagnostic expectations. Its consequences remain restricted to the named case and operating conditions."
+    },
+    "scope_survival": {
+      "status": "substantially_intact",
+      "rationale": "The exact retained target concerns comparative support and justified inquiry for the named case under its operating conditions. R01 supplies both comparative discrimination and a bounded branch-stopping decision; universal causal identification was outside that retained scope."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Competing hypotheses, authenticated evidence, and differential diagnostic expectations remain available to eliminate one alternative and reprioritize the other."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R01 supplies a case-specific contradiction for isolated pool exhaustion and compatibility for lock contention, rather than generic caution or evidentiary insufficiency."
+    },
+    "target_contribution_survival": {
+      "status": "SUBSTANTIALLY_SURVIVES",
+      "rationale": "The surviving relation supports the requested comparison and bounded closure of one diagnostic branch."
+    },
+    "dependency_cascade": {
+      "status": "LOCAL",
+      "rationale": "Deletion removes the terminal claim of unique causation across workloads. The supplied diagnostic relation does not depend on that claim."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R01 independently connects the recorded response to the competing mechanisms and yields a material bounded exclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The five-property assessment and structural diagnostics agree: comparative diagnosis survives, while the deleted universal causal conclusion remains unsupported."
+    },
+    "uncertainty": []
+  }
+}

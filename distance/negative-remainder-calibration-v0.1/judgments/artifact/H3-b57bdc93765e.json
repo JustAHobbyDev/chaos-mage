@@ -1,0 +1,113 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "TARGET_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "changed",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": null,
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": []
+        },
+        "productive": "YES",
+        "rationale": "R01 is the sole supplied observation that {a,b} fails to reproduce F. Removing that observation leaves the ledger, determinism and recording assumptions intact, but no independent result excludes {a,b} as sufficient. That target possibility becomes live again. The candidate supplies actual negative test evidence, rather than merely reporting insufficient support. No specific next inquiry or stopping decision is claimed."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-b57bdc93765e",
+    "unsupported_claim_ids": [
+      "C-8ec001c28807",
+      "C-473b055225b1"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly records this result. Fixed subset identities, deterministic replays and granted recording assumptions support its interpretation under the named conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Delta debugging tests which removals preserve the defined failure. This recorded non-reproducing subset is an operational result of that procedure."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The target asks which deployed-change subset is sufficient and minimal for F under this frozen replay. The result directly excludes {a,b} as sufficient under those conditions."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed in negative_remainder_assessment for R01, the observation eliminates a live candidate sufficient subset. No separate surviving observation independently supplies that exclusion."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Excluding one candidate subset usefully narrows the requested diagnosis, although it does not identify a sufficient or minimal subset."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+        }
+      ],
+      "why_warranted": "This is an explicit surviving result from the oracle measuring the exact target failure. Its force is restricted to the frozen replay conditions."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "One subset can be excluded as sufficient. No surviving result establishes a sufficient subset, minimality, global uniqueness or an internal root cause."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Subset testing and failure-relative elimination survive. A completed failure-preserving reduction and a supported minimal endpoint do not."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The remainder supplies a concrete oracle result for a named deployed-change subset and the exact target failure."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The mapping retains a useful exclusion within the requested subset diagnosis, while losing its claimed solution."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion removes the asserted minimal-subset and root-cause conclusions. The independently recorded negative replay result remains usable."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R01 constrains subset sufficiency directly through the surviving oracle observation, without either deleted conclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": false,
+      "explanation": "Partial mechanism survival and loss of the asserted endpoint are consistent with retaining one definite viable exclusion at reduced scope."
+    },
+    "uncertainty": []
+  }
+}

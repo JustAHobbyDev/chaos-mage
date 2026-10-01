@@ -1,0 +1,124 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Which deployed-change subsets reproduce F and are minimal under the frozen replay?",
+          "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 establishes that the recorded flag cannot determine reproduction of F. It excludes no deployed-change subset, supplies no bound or alternative ranking, and selects no discriminating observation. Removing it does not create a warranted flag-to-F relation or restore either deleted conclusion. The mapping supplies neither a branch-termination decision nor an outcome relation that makes the proposed replay operation discriminating. Treating the warning as an instruction to stop or obtain a different measurement would add an unsupplied inquiry decision."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-29005a76cc33",
+    "unsupported_claim_ids": [
+      "C-0da2d6f409e1",
+      "C-28055a758ec6"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The candidate exactly reproduces a surviving diagnostic relation, and the mapping grants that relation under the stated conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Delta debugging retains reductions according to reproduction of the defined failure. A result channel compatible with both F and its absence cannot establish the reproduction required by that operation."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The warning concerns whether the recorded replay result establishes F, a prerequisite for assessing subset sufficiency and minimality."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed for R01 in negative_remainder_assessment, this negative inference reports an evidentiary limitation without changing justified target states, bounds, priorities, a stopping decision, or a specific discriminating next inquiry."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "The warning has no demonstrated productive consequence for the retained inquiry. Its relevance to measurement validity does not independently establish material viability."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+        }
+      ],
+      "why_warranted": "This diagnostic limitation is explicitly preserved and granted by the mapping. It is warranted but does not satisfy productivity or materiality."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No candidate satisfies all five viability properties; no material scope survives."
+    },
+    "mechanism_survival": {
+      "status": "DOES_NOT_SURVIVE",
+      "rationale": "Partitioning and replay remain described, but the supplied result channel cannot identify failure-preserving reductions. The operative connection from replay outcomes to sufficiency and minimality is unavailable."
+    },
+    "remainder_check": {
+      "status": "NO_REMAINDER",
+      "rationale": "A specific, warranted warning survives textually, but no viable target inference or inquiry constraint survives."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "The surviving content establishes neither a sufficient or minimal subset nor a productive constraint on determining one."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "Ablation removes the asserted subset determination and causal conclusion. The remaining procedure and nondiagnostic flag provide no material answer to the retained target."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "The deleted subset assertion carried the artifact's claimed target payoff; no independently viable contribution remains. This diagnoses dependence without validating the deleted assertion."
+    },
+    "no_viable_remainder_reason": "epistemically_empty",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The structural diagnostics agree with the five-property assessment. Surviving procedural detail and a source-specific warning do not override R01's failed productivity and materiality."
+    },
+    "uncertainty": []
+  }
+}

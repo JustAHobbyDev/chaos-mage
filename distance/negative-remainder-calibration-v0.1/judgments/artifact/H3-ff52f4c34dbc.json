@@ -1,0 +1,117 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "TARGET_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "changed",
+          "bounds": "changed",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Offset +6 versus offset +7.",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "R01 is the surviving conflict finding itself, rather than a redundant conclusion supported by a separately stated conflict finding. Removing it leaves the authenticated records and comparison procedure intact, but neither independently specifies which offsets conflict. The justified candidate set therefore expands from {+6, +7} to the six entry alternatives, and its lower bound drops from +6 to +2. No preference between +6 and +7, stopping condition, or discriminating next inquiry is supplied. R2's next increment alone supplies no outcome relation."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-ff52f4c34dbc",
+    "unsupported_claim_ids": [
+      "C-1d474ee7c153"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The finding survives verbatim in mapping.signal, and mapping.limit grants the supplied observations and diagnostic relations under the named conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Rejecting alignments that conflict with ordered increments is an operational consequence of crossdating against anchored overlapping records."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The finding directly constrains the candidate offsets of S against independently dated R1."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed in negative_remainder_assessment for R01, the substantive incompatibility finding excludes four live entry alternatives and retains {+6, +7}. It asserts conflicts, rather than merely reporting failure to establish uniqueness."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Reducing six candidate offsets to two usefully answers a bounded part of the chronology question, despite leaving the final placement unresolved."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+        }
+      ],
+      "why_warranted": "The authenticated, anchored comparison expressly supplies these conflicts and compatibilities. This supports candidate elimination without establishing a unique offset."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "The mapping supports a two-offset candidate set instead of the deleted unique chronology at +6."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Ordered-pattern comparison against anchored references still eliminates incompatible alignments; unique temporal assignment does not survive."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The remainder identifies specific excluded and compatible offsets through the imported comparison mechanism."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "Four alternatives are excluded, leaving a useful bounded chronological result."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "The unique-placement branch fails, while the independently surviving alignment-filtering result remains warranted."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R01's explicit conflict finding supports material candidate elimination without the deleted uniqueness claim."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The structural diagnostics agree with the five-property assessment: unique dating fails, but a definite viable target constraint survives."
+    },
+    "uncertainty": []
+  }
+}

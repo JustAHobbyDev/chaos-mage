@@ -1,0 +1,186 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Offsets +6 versus +7.",
+          "concrete_operation": "Compare the next preserved increment with R2.",
+          "differential_outcome_relation": "+6 predicts narrow-to-wide; +7 predicts wide-to-narrow. Either observed correspondence bears against the other offset.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "Removing R01 leaves R02's explicit selection of the next comparison and its contrasting predictions intact. No offset is excluded, no bound or priority changes, and no stopping decision changes. R01 reports the current overlap's insufficiency but contributes no independent inquiry change in this mapping."
+      },
+      {
+        "remainder_id": "R02",
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "changed"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "The available overlap leaves +6 and +7 undistinguished.",
+          "concrete_operation": "Compare the next preserved increment with independently dated reference R2.",
+          "differential_outcome_relation": "A narrow-to-wide correspondence bears against +7; a wide-to-narrow correspondence bears against +6.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Reference R2 also preserves the next increment for comparison."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "R02 supplies a concrete next comparison with outcome-dependent evidence against competing offsets. Removing it leaves an unresolved contrast and an available reference, but no supplied discriminating prediction or specific next-inquiry selection. Its negative contribution is conditional discrimination; it does not presently exclude any offset."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-dbca10a933d7",
+    "unsupported_claim_ids": [
+      "C-2e2408fb02d0"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The available overlap does not distinguish offsets +6 and +7.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states this limitation, and the mapping grants the supplied observations under the described conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Failure of overlapping increment patterns to distinguish alignments is an operational limitation of crossdating."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns two expressly live offsets of sequence S against dated references."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, removing this statement changes none of the five inquiry dimensions: R02 independently retains the selected discriminating comparison."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "The statement has no independent productive consequence in the surviving mapping. Its relevant warning does not establish material viability."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping expressly supplies the operation and both predictions, confirms the increment is preserved in R2, and grants the stated diagnostic relations."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Comparing ordered increments against dated references and using mismatches to challenge candidate alignments operationalizes the imported crossdating instrument."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The comparison discriminates between +6 and +7, a legitimate bounded part of the six-offset chronology question."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed in negative_remainder_assessment for R02, it selects a specific next observation and explains how either specified outcome bears against a live alternative. This is a productive conditional negative inference."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It directs an available comparison capable of changing the evidential standing of two candidate offsets, a useful consequence even though the other four remain unresolved."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+        }
+      ],
+      "why_warranted": "The operation, available reference increment, contrasting predictions and diagnostic relation all survive ablation. They warrant the specified next inquiry, without establishing a current winning offset or excluding +2 through +5."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "A discriminating inquiry between +6 and +7 survives. Unique placement of S does not, and no surviving observation eliminates the other four initially live offsets."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Ordered-increment comparison and conditional discrimination survive, while the claimed completed assignment of a unique chronology does not."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 identifies a preserved increment, a named reference and opposite correspondence predictions for specific offsets."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The artifact retains an actionable, discriminating next inquiry, although it cannot currently answer the complete placement question."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Ablation removes the unique-dating conclusion while leaving the independently supplied comparison branch operational."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's discriminating inquiry is warranted entirely by surviving content and does not require the deleted uniqueness claim."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The diagnostics agree with the five-property derivation: R01 is insufficient by itself, but R02 is definitely viable and supports retention with reduced scope."
+    },
+    "uncertainty": []
+  }
+}

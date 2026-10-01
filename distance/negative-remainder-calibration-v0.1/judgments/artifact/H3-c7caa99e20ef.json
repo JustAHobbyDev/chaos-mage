@@ -1,0 +1,123 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Which of offsets +2, +3, +4, +5, +6 and +7 is supported?",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Sequence S has candidate offsets +2, +3, +4, +5, +6 and +7 against independently dated reference R1. All six are live at entry. Reference R2 also preserves the next increment for comparison."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Compare ordered increments across candidate alignments, check overlap and reference anchoring, and retain the correspondence record under each offset."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 reports insufficient discrimination. It excludes no offset, supplies no bound or ranking, and establishes no source-specific stopping condition. Removing this conclusion while retaining the other surviving content leaves all six offsets live and all five inquiry dimensions unchanged. R2's next increment is available, but the mapping supplies neither a selected discriminating next test nor a relation between its possible outcomes and the candidate offsets."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-c7caa99e20ef",
+    "unsupported_claim_ids": [
+      "C-b67df069e3f6"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states this limitation, and the mapping grants the supplied observations under the stated conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Failure of ordered-overlap comparison to discriminate alignments is an operational limitation of crossdating, consistent with the instrument's ambiguous-alignment limit."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The statement directly concerns whether independently dated references support a unique offset for S."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, this negative inference reports insufficiency without changing live offsets, bounds, priorities, stopping, or a specific discriminating next inquiry. Failure to establish uniqueness does not exclude any chronological placement."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "The warning is warranted, but it supplies no productive change to the retained target inquiry and therefore no material remainder under the rule."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+        }
+      ],
+      "why_warranted": "This is an explicit surviving observation. Its warrant does not make it productive or viable."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No candidate satisfies all five viability properties; no material target contribution survives."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Ordered comparison, reference anchoring and record retention survive, but they yield no offset-specific discrimination or supported chronological assignment."
+    },
+    "remainder_check": {
+      "status": "NO_REMAINDER",
+      "rationale": "The surviving source-specific limitation is evidentiary insufficiency, not a viable remainder."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "The retained content neither supports a placement nor transforms the inquiry through a constraint, stopping condition or discriminating next test."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "Deletion removes the mapping's entire asserted chronological-placement payoff, although its comparison procedure and records remain."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "The deleted claim was the sole asserted bridge from comparison to a definite placement. No independent material contribution survives; this does not validate the deleted claim."
+    },
+    "no_viable_remainder_reason": "epistemically_empty",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Partial procedural survival is compatible with loss of all material target contribution. The five-property assessment determines the artifact status."
+    },
+    "uncertainty": []
+  }
+}

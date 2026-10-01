@@ -1,0 +1,123 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award).",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Award P-17 is considered under H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award). These are live alternatives at entry; the dossier has evaluation sheets, drafting records and an item index."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Construct an evidence-by-hypothesis matrix, check authentication and independence, compare important inconsistencies, and repeat the comparison with disputed entries omitted."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 explains why the current matrix cannot settle the target question. It excludes no hypothesis, supplies no bound, and changes no justified ranking. Removing it does not make the deleted steering conclusion supported. The surviving operation supplies a general comparison procedure, but no selected next test with an outcome-to-hypothesis relation. Unavailable original values explain insufficiency; the mapping does not supply a decision terminating an inquiry branch."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-e09eb242555a",
+    "unsupported_claim_ids": [
+      "C-94445732854f"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states both the matrix's insufficiency and the loss of distinctions among its entries."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "ACH depends on comparative consistency and inconsistency. Pooling those categories with unrated entries removes the diagnostic distinctions required for that comparison."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The candidate directly addresses what the current P-17 matrix can establish about steering."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, this is a negative inference reporting insufficiency. It changes none of the five inquiry dimensions and supplies neither a discriminating next inquiry nor a stopping decision."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "The explanation of evidentiary failure has no supplied productive consequence for the target inquiry. Its cautionary value alone cannot establish materiality."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+        }
+      ],
+      "why_warranted": "This is an explicit surviving claim supported by the stated pooling of distinct ratings. It remains warranted but is not viable under the productivity requirement."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No candidate preserves a productive, material contribution to the target inquiry."
+    },
+    "mechanism_survival": {
+      "status": "DOES_NOT_SURVIVE",
+      "rationale": "The ACH procedure remains described, but the available matrix does not preserve the consistency distinctions needed to weaken, eliminate, or prioritize hypotheses."
+    },
+    "remainder_check": {
+      "status": "NO_REMAINDER",
+      "rationale": "A case-specific insufficiency statement survives, but no viable productive remainder does."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "The surviving content neither constrains steering alternatives nor establishes a specific consequential inquiry decision."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "The deletion removes the mapping's asserted substantive target conclusion. The remaining procedural description and insufficiency statement do not preserve material target payoff."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "All asserted substantive target payoff depended on the deleted conclusion; no independent material contribution survives. This dependency does not warrant restoring that conclusion."
+    },
+    "no_viable_remainder_reason": "epistemically_empty",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The surviving procedure and warranted limitation do not conflict with the viability result: neither supplies the required productive target consequence."
+    },
+    "uncertainty": []
+  }
+}

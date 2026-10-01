@@ -1,0 +1,157 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Lock contention versus isolated pool exhaustion for F-17 under the fixed replay conditions.",
+          "concrete_operation": "Measure lock-wait duration with pool occupancy next.",
+          "differential_outcome_relation": "Elevated lock waits with normal occupancy favor lock contention; ordinary lock waits with saturated occupancy favor pool exhaustion.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry. The replay environment and workload are fixed, and the response ledger identifies the completed probe."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "Removing R01 leaves both entry hypotheses live, supplies no basis for favoring either, and leaves the operating bounds unchanged. R02 independently selects the same fully specified discriminating inquiry. No stopping condition changes. Although the complete inquiry survives, its selection does not depend on R01."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-4d30014ef73c",
+    "unsupported_claim_ids": [
+      "C-b43a75d1e80f"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states this result, and the limit grants the supplied observations under the described conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Recognizing non-discrimination between competing explanations is an operational outcome of differential diagnosis."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns the comparative support for the two named mechanisms in F-17."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, removing this negative statement changes none of the five inquiry dimensions. Both mechanisms remain live without a justified preference, and R02 independently specifies the next inquiry."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "It provides no additional productive consequence under the required counterfactual, despite accurately characterizing the current result."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+          }
+        ],
+        "negative_inference": false,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly supplies the operation and both diagnostic outcome relations; the limit grants those relations under the stated conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "The paired measurement implements gathering evidence that bears differently on competing explanations and supports revising their relative plausibility."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It selects an inquiry that can distinguish the exact two mechanisms retained for F-17."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "This is an affirmative inquiry directive with conditional support relations, rather than a negative inference. The unresolved contrast survives in mapping.state ('Both mechanisms are live at entry.') and mapping.signal ('The current result does not discriminate lock contention from isolated pool exhaustion.'). Its exact cited span supplies the concrete paired measurement and explains how the two stated outcomes favor different alternatives. Removing R02 leaves only a generic comparison procedure and no selected discriminating next operation."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The inquiry gives a concrete way to advance diagnosis after the nondiscriminating probe, with explicit consequences for comparative support."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+        }
+      ],
+      "why_warranted": "The operation and differential outcome relations are explicitly supplied and granted for the named conditions. This supports selecting the inquiry without asserting that either outcome has occurred."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "A concrete diagnostic inquiry survives for F-17 under the fixed conditions. Unique causal identification and generalization across production workloads do not survive."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Competing explanations, recognition of non-discrimination, and a specified test with differential support relations remain available."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 names paired measurements and contrasting outcome patterns specific to lock contention and pool exhaustion."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The mapping cannot identify a better-supported cause from the completed probe, but it materially answers which inquiry to pursue next."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion removes the unique-cause and cross-workload conclusion while leaving the competing-hypothesis and discriminating-inquiry branch intact."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's inquiry and diagnostic outcome relations are supplied independently of the deleted causal conclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": false,
+      "explanation": "The five-property assessment establishes R02 as viable. Loss of the causal verdict is consistent with retaining a narrower, material inquiry contribution."
+    },
+    "uncertainty": []
+  }
+}

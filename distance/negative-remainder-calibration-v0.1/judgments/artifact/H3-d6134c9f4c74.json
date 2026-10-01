@@ -1,0 +1,153 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Lock contention versus isolated pool exhaustion for F-17 under the fixed replay conditions.",
+          "concrete_operation": "Check waiting together with pool fullness.",
+          "differential_outcome_relation": "Long waits with spare capacity favor lock contention; short waits with a full pool favor pool exhaustion.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "Removing R01 leaves both entry hypotheses live, supplies no basis for changing their relative priority, and leaves the specific next inquiry independently selected by R02. No bound or stopping condition changes. Although a fully specified inquiry survives, its selection does not depend on retaining R01. R01 reports the completed result's insufficiency without independently transforming the remaining inquiry."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-d6134c9f4c74",
+    "unsupported_claim_ids": [
+      "C-af0f1d0f1fa8"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal states this directly, and the surviving limit grants the supplied observations and diagnostic relations."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Recognizing non-discrimination across competing explanations is an explicit signal of the differential-diagnosis instrument."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns the comparative support supplied by the completed probe for the two mechanisms named in the F-17 question."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, its removal changes none of the five inquiry dimensions. Both hypotheses remain live and R02 independently specifies the same discriminating next inquiry."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "Its explanatory relevance does not supply an independent productive consequence under the required counterfactual."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+          }
+        ],
+        "negative_inference": false,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly supplies the operation and both diagnostic outcome relations. The surviving limit grants those relations under the described conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Checking observations that bear differently on competing mechanisms operationalizes the instrument's evidence-gathering and comparative-reprioritization procedure."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It selects the next inquiry for the exact two mechanisms and named failure, within the fixed operating conditions."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "R02 is an affirmative diagnostic instruction, not a negative inference: it specifies what to observe and how alternative outcomes favor different mechanisms. The unresolved contrast survives in mapping.state ('Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry.') and mapping.signal ('The current result does not discriminate lock contention from isolated pool exhaustion.'). Its exact cited span supplies both the concrete joint observation and the differential outcome relation. Removing R02 leaves only a generic comparison procedure and the unresolved alternatives; the specific discriminating next inquiry disappears."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The joint observation of waiting and pool fullness provides an actionable way to distinguish the live explanations, directly answering the inquiry component of the target question."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+        }
+      ],
+      "why_warranted": "The mapping explicitly supplies the discriminating inquiry and grants its diagnostic relations under the fixed conditions. This licenses inquiry selection without claiming either outcome has already been observed."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "The mapping retains a useful inquiry for F-17 under the specified conditions, but loses unique causal identification and the assertion across all production workloads. No present preference between the mechanisms is established."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Competing explanations, recognition of non-discriminating evidence, and a concrete observation with contrasting diagnostic expectations survive. These preserve the differential-diagnosis mechanism without the deleted causal conclusion."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 specifies joint waiting and capacity observations and their opposing implications for the named mechanisms; it is more specific than generic advice to gather evidence."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The artifact cannot identify a uniquely supported cause, but it materially answers what discriminating inquiry the unresolved comparison justifies."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion removes the unique-cause and cross-workload conclusion branch. The independently supplied diagnostic inquiry remains warranted."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's operation and outcome relations are supplied independently in the surviving signal and do not require the deleted conclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The five-property assessment establishes R02 as viable, consistent with the surviving diagnostic mechanism. R01's lack of independent productivity does not invalidate R02, and the deleted inference's central textual position does not override viability."
+    },
+    "uncertainty": []
+  }
+}

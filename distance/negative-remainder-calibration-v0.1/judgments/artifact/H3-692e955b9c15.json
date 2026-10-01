@@ -1,0 +1,119 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Lock contention versus isolated pool exhaustion as the mechanism of F-17.",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "State candidate mechanisms, compare probe responses against their diagnostic expectations, and update the comparative support under the fixed workload."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "Removing R01 leaves both mechanisms live and leaves only authenticated probe completion, which independently supplies no comparative support. Neither mechanism becomes excluded or preferred, and the fixed operating bounds remain independently stated. The mapping supplies no stopping decision, concrete next test, or outcome relation that would discriminate between the mechanisms. The generic comparison instruction does not supply those missing components. R01 explains evidentiary insufficiency without changing any of the five inquiry dimensions."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-692e955b9c15",
+    "unsupported_claim_ids": [
+      "C-1b792fc2b3e1"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The inference is explicitly retained in mapping.signal and is consistent with the granted recording assumptions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Recognizing a probe as non-discriminating applies the imported instrument's distinction between evidence that differentiates explanations and evidence that does not."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns whether the completed probe distinguishes the two mechanisms for F-17 under the retained conditions."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment for R01, its removal changes neither the justified alternatives or their priorities nor any bound, stopping decision, or specific next inquiry. It reports failure to determine a cause; it does not exclude a cause."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "Although informative about the ledger's limitations, it supplies no productive change with a useful consequence for the retained comparative diagnosis or inquiry selection."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger."
+        }
+      ],
+      "why_warranted": "This is an exact surviving assertion about the authenticated ledger. It is warranted but fails productivity and materiality, so its selection as strongest does not establish viability."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No candidate satisfies all five viability properties. The named case and conditions remain described, but no material target contribution survives."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Multiple hypotheses and recognition of non-discrimination remain. No supported elimination, reprioritization, or discriminating next inquiry is instantiated."
+    },
+    "remainder_check": {
+      "status": "NO_REMAINDER",
+      "rationale": "The surviving case-specific insufficiency statement is not a viable remainder, and the generic comparison procedure supplies no additional productive inference."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "The retained content neither establishes which mechanism is better supported nor selects a concrete discriminating inquiry or stopping decision."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "Deleting the causal conclusion removes the mapping's asserted target resolution, leaving no viable contribution to the retained question despite substantial descriptive text surviving."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "The deleted inference contained the only asserted resolution of the comparative causal question. No independent material contribution survives; this diagnostic does not make the deleted assertion warranted."
+    },
+    "no_viable_remainder_reason": "epistemically_empty",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Partial survival of the diagnostic procedure is compatible with failure of remainder viability. The artifact status follows from R01's failed productivity and materiality."
+    },
+    "uncertainty": []
+  }
+}

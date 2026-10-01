@@ -1,0 +1,183 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "{a,b,c} versus {a,c} as the required reproducing subset.",
+          "concrete_operation": "Replay {a,c} by removing b from {a,b,c} under the frozen F oracle.",
+          "differential_outcome_relation": "Persistence of F eliminates b from the required subset; disappearance retains b as required in that configuration.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 reports an unresolved conclusion without excluding either subset or establishing a bound or priority. Removing R01 leaves R02's explicit comparison, selected replay, and outcome relation intact. The specific inquiry is supplied independently by R02; its productivity cannot be attributed to R01."
+      },
+      {
+        "remainder_id": "R02",
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "changed"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "{a,b,c} versus {a,c}, specifically whether b is required in that configuration.",
+          "concrete_operation": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle.",
+          "differential_outcome_relation": "Persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "R02 supplies a specific discriminating next inquiry with a conditional exclusion of b. Removing it leaves the unresolved alternatives and a generic reduction procedure, but no selected next replay or supplied outcome-to-alternative relation. Its negative force is conditional: no actual replay result currently excludes a target state. There is no stopping decision."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-65c8b64e5dc2",
+    "unsupported_claim_ids": [
+      "C-bc0d5da0fae6",
+      "C-2efac2dcf151"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal states this unresolved comparison explicitly, and the surviving limit grants the supplied observations."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "The unresolved comparison concerns configurations distinguished by a removable part, an operational issue for delta debugging's reproduction tests."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Both named subsets concern reproducing the specified checkout failure F under the frozen replay."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed for R01 in negative_remainder_assessment, the statement establishes no exclusion, bound, priority, stopping condition, or independent next inquiry. R02 preserves the actionable comparison when R01 is removed."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "R01 adds no productive consequence under the required counterfactual, despite accurately describing the evidentiary gap."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly supplies the replay and both diagnostic outcomes. Deterministic replay conditions and the stated diagnostic relations are granted."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Removing b and testing whether F persists directly instantiates delta debugging's subset-removal and failure-preservation operation."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The replay distinguishes whether b is required within the named configuration, a bounded part of identifying a sufficient and minimal subset for F."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed for R02 in negative_remainder_assessment, it selects a concrete replay that discriminates the live alternatives. It is treated as a negative inference because it supplies conditional elimination of b, without asserting that elimination has already occurred."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The selected replay can resolve whether removing b preserves F, advancing the target's sufficiency and minimality inquiry without requiring the deleted global-minimum or root-cause claims."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+        }
+      ],
+      "why_warranted": "The operation and conditional outcome relation survive explicitly, supported by fixed subset identities, deterministic replay, and granted diagnostic relations. This warrants the discriminating inquiry, not a completed minimality finding."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "The mapping retains a useful next test concerning b's necessity. It no longer establishes a sufficient globally smallest subset, uniqueness, or an internal root cause."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Subset removal, replay, and conditional failure-preservation reasoning survive. A completed reduction to an established minimal reproducing subset does not."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 specifies the deployed-change subsets, removed change, frozen failure oracle, and discriminating outcomes."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "R02 advances the exact target inquiry through a concrete test, although the final sufficient-and-minimal subset remains unresolved."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Ablation removes the conclusive minimization and causal-identification branch while leaving the operational replay branch independently supported."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's selected replay and diagnostic relation rely on surviving signal content and granted conditions, not on either deleted conclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Loss of the original conclusive inference is compatible with retaining a reduced artifact: R02 independently satisfies all five viability properties. R01's insufficiency does not contribute to the keep decision."
+    },
+    "uncertainty": []
+  }
+}

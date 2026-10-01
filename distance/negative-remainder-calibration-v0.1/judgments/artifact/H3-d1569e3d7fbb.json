@@ -1,0 +1,182 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Offsets +6 and +7 remain compatible.",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Reference R2 also preserves the next increment for comparison."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "Removing R01 leaves R02's exclusions and two compatible offsets intact, so nonuniqueness remains independently supported. R01 establishes neither a stopping condition nor a specific discriminating inquiry. The available next increment has no supplied outcome relation distinguishing +6 from +7."
+      },
+      {
+        "remainder_id": "R02",
+        "role": "TARGET_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "changed",
+          "bounds": "changed",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Offsets +6 and +7 remain compatible.",
+          "concrete_operation": null,
+          "differential_outcome_relation": null,
+          "all_present_in_surviving_mapping": false,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Reference R2 also preserves the next increment for comparison."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "Removing R02 removes the only supplied pattern conflicts excluding +2 through +5. All six entry offsets would remain live, widening the candidate bounds from +6–+7 to +2–+7. The retained worksheet's existence does not independently supply its diagnostic findings. R02 gives no relative preference between +6 and +7 and selects no discriminating next inquiry."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-d1569e3d7fbb",
+    "unsupported_claim_ids": [
+      "C-b702de9d9686"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The anchored overlap is insufficient for a unique chronology",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The anchored overlap is insufficient for a unique chronology"
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "Explicit surviving content states this limitation; the two compatible offsets also support it."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Insufficient overlap preventing unique alignment is an operational limitation of crossdating."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns whether the independently anchored comparison uniquely places S."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment.R01, removing this statement changes none of the five inquiry dimensions because R02 independently preserves the unresolved alternatives."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "It supplies no distinct productive consequence under the required counterfactual."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly supplies these pattern conflicts and compatibilities, and the limit grants the diagnostic relations under the stated conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Ordered-pattern comparison against anchored references rejects inconsistent alignments, directly applying the imported crossdating operation."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It narrows the exact candidate offsets for S against independently dated R1."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "As assessed in negative_remainder_assessment.R02, its exclusions reduce six live offsets to two. This is a negative target constraint with a compatibility component."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Eliminating four candidate offsets usefully bounds S's placement even though it does not establish a unique chronology."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+        }
+      ],
+      "why_warranted": "The authenticated, anchored comparison supplies explicit conflicts for +2 through +5 and compatibility for +6 and +7. The granted diagnostic conditions license this bounded result without licensing uniqueness."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "The mapping supports a two-offset constraint on the named case, but loses its claim to a unique placement at +6."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Anchored ordered-pattern comparison still eliminates incompatible alignments; unique calendar assignment does not survive."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 retains case-specific exclusions produced by the imported alignment mechanism."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The surviving comparison narrows the live offsets from six to two."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion defeats the unique-dating branch while leaving the independently stated alignment constraints warranted."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's explicit pattern conflicts yield a material constraint without relying on the deleted uniqueness claim."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The structural diagnostics agree with the five-property result: unique dating fails, but R02 is a definite viable remainder."
+    },
+    "uncertainty": []
+  }
+}

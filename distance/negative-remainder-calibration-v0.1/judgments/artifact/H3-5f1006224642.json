@@ -1,0 +1,182 @@
+{
+  "negative_remainder_assessment": {
+    "candidates": [
+      {
+        "remainder_id": "R01",
+        "role": "INSUFFICIENCY_ONLY",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "unchanged"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "H1 versus H3.",
+          "concrete_operation": "Inspect record R, the individual scores saved before consensus.",
+          "differential_outcome_relation": "Unexplained post-opening score changes favor H1 over H3; stable contemporaneous scores bear against H1 relative to H3.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The retained comparison does not distinguish H1 from H3."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+            }
+          ]
+        },
+        "productive": "NO",
+        "rationale": "R01 reports non-discrimination without excluding either hypothesis or changing their justified relative priority. Removing it leaves both alternatives live and leaves R02's explicit next inquiry and diagnostic relations intact. The complete inquiry elsewhere in the mapping does not make this redundant insufficiency statement independently productive."
+      },
+      {
+        "remainder_id": "R02",
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "target_state_set": "unchanged",
+          "bounds": "unchanged",
+          "alternative_priorities": "unchanged",
+          "stopping_decision": "unchanged",
+          "next_inquiry": "changed"
+        },
+        "inquiry_specificity": {
+          "unresolved_contrast": "Whether H1 or H3 better explains P-17, which the retained comparison does not distinguish.",
+          "concrete_operation": "Inspect record R, the individual scores saved before consensus.",
+          "differential_outcome_relation": "Unexplained post-opening score changes favor H1 over H3; stable contemporaneous scores bear against H1 relative to H3.",
+          "all_present_in_surviving_mapping": true,
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The retained comparison does not distinguish H1 from H3."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+            }
+          ]
+        },
+        "productive": "YES",
+        "rationale": "R02 includes a conditional negative inference against H1 and selects a concrete inquiry with opposing diagnostic outcomes. Removing it leaves the unresolved contrast and general matrix procedure, but no selected record inspection or supplied outcome relation for that inspection. Its present effect is on the next inquiry; neither possible outcome has yet been observed."
+      }
+    ]
+  },
+  "remainder_viability": {
+    "case_id": "H3-5f1006224642",
+    "unsupported_claim_ids": [
+      "C-0fb543e8cb28"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The retained comparison does not distinguish H1 from H3.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The retained comparison does not distinguish H1 from H3."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly states this result, and the surviving limit grants the supplied observations and diagnostic relations."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Non-discrimination is an operational result of comparing evidence across competing hypotheses."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "H1 and H3 directly contrast score alteration with an ordinary award in the named case."
+        },
+        "productive": {
+          "status": "NO",
+          "rationale": "As assessed in negative_remainder_assessment, removing R01 changes none of the five inquiry dimensions. R02 independently retains the specific next inquiry; R01 does not exclude either alternative."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "It supplies no independent productive contribution under the required counterfactual, despite accurately describing the comparison's limitation."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+          }
+        ],
+        "negative_inference": true,
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly supplies the record, operation, and diagnostic relations; the surviving limit grants those relations under the stated conditions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Selecting evidence that differentially supports or bears against competing hypotheses implements the imported instrument's emphasis on diagnostic inconsistency."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The inspection addresses a legitimate bounded part of the target: score alteration versus an ordinary award in P-17. It does not resolve bidder-specific drafting."
+        },
+        "productive": {
+          "status": "YES",
+          "rationale": "This mixed inquiry directive and conditional negative inference supplies the specific discriminating next step. The unresolved contrast, record inspection, and opposing outcome relations all have surviving mapping provenance. Its removal changes the selected next inquiry, as recorded in negative_remainder_assessment."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifying which existing record to inspect and how its possible contents would change the H1–H3 comparison usefully advances the investigation without presuming an outcome."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R02"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R02",
+      "text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+        }
+      ],
+      "why_warranted": "The surviving mapping explicitly selects this inspection and grants its diagnostic relations. R01 supplies the unresolved contrast. No deleted claim or future observation is needed to justify selecting the inquiry."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "The artifact retains a discriminating inquiry into H1 versus H3, but establishes neither steering through H2 nor exclusion of ordinary explanations."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Comparative hypothesis assessment and selection of diagnostic evidence survive. A completed evidentiary comparison establishing or eliminating a steering explanation does not."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R02 names a particular record, a particular unresolved contrast, and opposing diagnostic outcomes. It exceeds generic advice to investigate further."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The contribution narrows from a claimed definitive answer to a useful, case-specific next inquiry."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Ablation removes the definitive H2 conclusion and universal exclusion claim, while the separately supplied H1–H3 inquiry remains warranted."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R02's complete discriminating inquiry is supported by surviving signal and limit content independently of the deleted conclusion."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Loss of the headline conclusion is consistent with retaining a narrower inquiry contribution. R02 satisfies all five viability properties; R01's insufficiency does not determine the artifact's status."
+    },
+    "uncertainty": []
+  }
+}
