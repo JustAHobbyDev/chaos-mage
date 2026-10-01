@@ -1,0 +1,19 @@
+{
+  "case_id": "H3-d6134c9f4c74",
+  "mechanism_key": "diagnosis",
+  "is_control": true,
+  "control": "terse",
+  "intended_role": "INQUIRY_CONSTRAINT",
+  "focal_texts": [
+    "The current result does not discriminate lock contention from isolated pool exhaustion.",
+    "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+  ],
+  "intended_unsupported": [
+    "The completed probe uniquely establishes lock contention as the cause of F-17 across all production workloads."
+  ],
+  "hypothesis": "Productive surviving negative consequence",
+  "confounds": [
+    "Synthetic supplied relations and observation differences, not a wording-only causal intervention.",
+    "Inquiry members contain an additional atomic assertion; no padding is used."
+  ]
+}
