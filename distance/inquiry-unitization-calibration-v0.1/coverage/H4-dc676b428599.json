@@ -1,0 +1,100 @@
+{
+  "case_id": "H4-dc676b428599",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "H1 is already established over H3.",
+            "start": 0,
+            "end": 34
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "Inspect individual evaluator scores saved before consensus next.",
+            "start": 0,
+            "end": 64
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1.",
+            "start": 0,
+            "end": 92
+          }
+        ],
+        "unresolved_contrast": {
+          "present": false,
+          "alternatives": [
+            "H1",
+            "H3"
+          ],
+          "rationale": "The contrast is explicitly resolved: H1 is already established over H3."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Inspect individual evaluator scores saved before consensus next.",
+          "rationale": "The mapping explicitly selects a concrete inspection as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Post-opening score changes",
+              "consequence": "favor H1 over H3",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            },
+            {
+              "outcome": "Stable contemporaneous scores",
+              "consequence": "favor H3 over H1",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            }
+          ],
+          "rationale": "The outcomes abstractly discriminate between H1 and H3, although the contrast is already resolved."
+        },
+        "provenance_complete": false,
+        "role": "NOT_INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "This structure lacks an unresolved contrast and therefore is incomplete. Removing the entire structure also removes the explicitly selected score inspection; no independent surviving structure selects that operation."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 0,
+    "inquiry_constraints_emitted": 0,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "model_coverage_summary": {
+    "complete_units_found": 0,
+    "inquiry_constraints_emitted": 0,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "validation": {
+    "errors": [],
+    "validation_passed": true,
+    "inquiry_role_coverage": {
+      "complete_units_found": 0,
+      "inquiry_constraints_emitted": 0,
+      "uncovered_complete_units": [],
+      "duplicate_units": [],
+      "validation_passed": true
+    },
+    "downstream_allowed": true
+  },
+  "judgment_sha256": "639fe427df8bab98524d0c7d8c862132461e31e9922e8792655b6d160994805e",
+  "note": "Model units are unchanged; summary and errors are independently derived, never a repaired judgment."
+}

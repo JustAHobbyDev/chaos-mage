@@ -1,0 +1,88 @@
+{
+  "case_id": "H4-289159bec29d",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Inspect individual evaluator scores saved before consensus next. Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1. H1 and H3 remain live under the current evidence.",
+            "start": 0,
+            "end": 207
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "H1",
+            "H3"
+          ],
+          "rationale": "The text explicitly states that H1 and H3 remain live under the current evidence."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Inspect individual evaluator scores saved before consensus next",
+          "rationale": "The text selects a concrete next inspection of saved individual evaluator scores."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Post-opening score changes",
+              "consequence": "favor H1 over H3",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            },
+            {
+              "outcome": "Stable contemporaneous scores",
+              "consequence": "favor H3 over H1",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            }
+          ],
+          "rationale": "Score changes and stable scores favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "All components are explicit in the cited passage. Removing the entire unit leaves no surviving selection or justification for this inspection, so the next inquiry changes. The false negative_inference flag does not affect qualification."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "model_coverage_summary": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "validation": {
+    "errors": [],
+    "validation_passed": true,
+    "inquiry_role_coverage": {
+      "complete_units_found": 1,
+      "inquiry_constraints_emitted": 1,
+      "uncovered_complete_units": [],
+      "duplicate_units": [],
+      "validation_passed": true
+    },
+    "downstream_allowed": true
+  },
+  "judgment_sha256": "7c983a2bb9732055daf05b3c74bc9809c7d64918ed1393156580267c1f4f9cd5",
+  "note": "Model units are unchanged; summary and errors are independently derived, never a repaired judgment."
+}

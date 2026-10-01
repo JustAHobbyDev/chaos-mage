@@ -1,0 +1,100 @@
+{
+  "case_id": "H4-c28733e05bb9",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "lock contention and isolated pool exhaustion remain live under the current evidence.",
+            "start": 0,
+            "end": 84
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "The selected next operation is to measure lock-wait duration together with pool occupancy.",
+            "start": 0,
+            "end": 90
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Elevated lock waits with normal occupancy favor lock contention over isolated pool exhaustion. Ordinary lock waits with saturated occupancy favor isolated pool exhaustion over lock contention.",
+            "start": 0,
+            "end": 192
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "lock contention",
+            "isolated pool exhaustion"
+          ],
+          "rationale": "Both alternatives explicitly remain live under the current evidence."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "measure lock-wait duration together with pool occupancy",
+          "rationale": "The mapping explicitly selects this concrete joint measurement as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Elevated lock waits with normal occupancy",
+              "consequence": "favor lock contention over isolated pool exhaustion",
+              "bears_on": [
+                "lock contention",
+                "isolated pool exhaustion"
+              ]
+            },
+            {
+              "outcome": "Ordinary lock waits with saturated occupancy",
+              "consequence": "favor isolated pool exhaustion over lock contention",
+              "bears_on": [
+                "lock contention",
+                "isolated pool exhaustion"
+              ]
+            }
+          ],
+          "rationale": "The two measurement patterns favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited clauses jointly supply one complete inquiry unit, regardless of negative_inference=false. Removing the entire unit removes the selected measurement and its discriminating justification; no independent inquiry survives."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "model_coverage_summary": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  },
+  "validation": {
+    "errors": [],
+    "validation_passed": true,
+    "inquiry_role_coverage": {
+      "complete_units_found": 1,
+      "inquiry_constraints_emitted": 1,
+      "uncovered_complete_units": [],
+      "duplicate_units": [],
+      "validation_passed": true
+    },
+    "downstream_allowed": true
+  },
+  "judgment_sha256": "bb66cba632e6186308eb5084fbe7ae8e9d0a25473b523e86427645cf2dcdc6e4",
+  "note": "Model units are unchanged; summary and errors are independently derived, never a repaired judgment."
+}

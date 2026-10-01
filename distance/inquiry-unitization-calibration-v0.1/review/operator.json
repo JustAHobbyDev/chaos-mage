@@ -1,0 +1,192 @@
+{
+  "judgment_freeze_sha256": "4e81ef5f248c80c8c1309373de23cef6ba5118c4ac7fba2447e140bdd9ea6758",
+  "at": "2026-10-01T18:23:58.972830+00:00",
+  "reviewer": "Codex experiment operator; not an independent rater",
+  "summary": "The intended semantic role boundary is respected in all 18 raw judgments: 13 inquiry roles, five non-inquiry roles, no polarity or deduplication failure. Full validation passes 16 cases. The duplicate control has incorrect byte offsets despite correct quoted text. The generic control exposes a punctuation-sensitive canonicalization defect despite a correct rejection. These two findings prevent declaring the entire annotation instrument ready. Coverage counts alone do not establish valid provenance. No judgment, source citation, frozen packet or validator was repaired.",
+  "findings": [
+    {
+      "case_id": "H4-f070ba17a9b7",
+      "interpretation": "Correctly rejects the generic evidence request as incomplete with NOT_INQUIRY_CONSTRAINT. The exact copied operation is \"Collect more evidence.\"; the extractor canonicalizes it as \"Collect more evidence\". The frozen normalizer leaves this terminal punctuation unmatched for a generic operation, causing IQ_COMPONENT_MISMATCH. This is an overstrict representation check in the instrument, not a conceptual judge false positive. The failure remains uncorrected; changing the measured normalizer is not authorized recovery.",
+      "model_operation": "Collect more evidence.",
+      "deterministic_operation": "Collect more evidence"
+    },
+    {
+      "case_id": "H4-86f4954813b3",
+      "interpretation": "Correct semantic deduplication and inquiry role, but both whole-field citations end two bytes early (205 instead of 207; 209 instead of 211). IQ_UNCITED_SPAN is the root annotation error. Four IQ_INVENTED_COMPONENT occurrences are downstream missing-valid-provenance diagnostics, not evidence that the semantic contrast, action or outcomes were invented. Complete-unit productivity from this case is excluded from accepted counts.",
+      "diagnostics": [
+        {
+          "source_field": "mapping.state",
+          "supplied_start": 0,
+          "supplied_end": 205,
+          "field_byte_length": 207,
+          "quote_equals_entire_field": true,
+          "exact_quote_first_occurrence": 0,
+          "exact_quote_byte_length": 207,
+          "observation": "Diagnostic only; original citation and judgment unchanged."
+        },
+        {
+          "source_field": "mapping.limit",
+          "supplied_start": 0,
+          "supplied_end": 209,
+          "field_byte_length": 211,
+          "quote_equals_entire_field": true,
+          "exact_quote_first_occurrence": 0,
+          "exact_quote_byte_length": 211,
+          "observation": "Diagnostic only; original citation and judgment unchanged."
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "H4-38f9f7ba7473",
+      "judgment_sha256": "82774761c6cac0e72b5aae1250fa708878a79afe4575195ac101ea84f05a94cb",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-289159bec29d",
+      "judgment_sha256": "7c983a2bb9732055daf05b3c74bc9809c7d64918ed1393156580267c1f4f9cd5",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-3a0c6da65d58",
+      "judgment_sha256": "c49f4790f98d25dd3d6c8660c09e9c464a78c2cdba8dffbf03a3889e22cd6507",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-850fb18146b9",
+      "judgment_sha256": "597625e360102993f7e1254e6d4cce89699511e5eca3a4903a6f4147b99128ad",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-1265065df754",
+      "judgment_sha256": "c05e830d3da17677b7fee508e2ec7a52ebe2a8ef3684e557e3ba33f744f9dd8a",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-0b63cfc8b069",
+      "judgment_sha256": "4994d2311a8ca6cab0a5cd6251aa6815a4ae365979326be142710ce620778517",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-30c5ce7f3a71",
+      "judgment_sha256": "b3f1ad5577de47669de308dbe622fa41184bc5a58d4e8920f736605ad3bc11c5",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-b4b42be0c2d3",
+      "judgment_sha256": "59bb788217dd4d13d014798790ce7444fc37a98f870d981bd489db3bf65770e0",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-e4b01303ecd8",
+      "judgment_sha256": "4f972128fb17ea246c5388935331a4e1117ed3858521ec93b34c602d7810bd4d",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-f9c70c724ec5",
+      "judgment_sha256": "5e2feca3c6591e60e51bb262b925dcaef76477bf1d703964cfab8db5092f00bc",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-92b93353dbc9",
+      "judgment_sha256": "e009966d45a4c5d8a06117a991255ab418d2c5094295c874537183c28c048800",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-c28733e05bb9",
+      "judgment_sha256": "bb66cba632e6186308eb5084fbe7ae8e9d0a25473b523e86427645cf2dcdc6e4",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-f070ba17a9b7",
+      "judgment_sha256": "17e03588eeae11ba74481a3705f93499a266d6d43860919facc9128056bc2c7e",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": false,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-4c0495aa839d",
+      "judgment_sha256": "889ca1498f633f4ff6bab49f26e21d040a3b42b4215e8db50105be806240fa66",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-6ad954a30ef5",
+      "judgment_sha256": "09849d2627a0bc1844f423576849d2c25e3cd17e4f6a0c6dbcbfca355696435d",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-ea0f90adf577",
+      "judgment_sha256": "68652656df90f9e729cd48c81a2c84c8efa09896ffb4bdaf3a27793769925e6a",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-dc676b428599",
+      "judgment_sha256": "639fe427df8bab98524d0c7d8c862132461e31e9922e8792655b6d160994805e",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": true,
+      "invalid_span_diagnostics": []
+    },
+    {
+      "case_id": "H4-86f4954813b3",
+      "judgment_sha256": "c9912fd7d6f5a77232c9ed1ff40ac510b842d5c09ffae00949f69d4c1788ba4d",
+      "role_membership_matches_authored_boundary": true,
+      "full_validation_passed": false,
+      "invalid_span_diagnostics": [
+        {
+          "source_field": "mapping.state",
+          "supplied_start": 0,
+          "supplied_end": 205,
+          "field_byte_length": 207,
+          "quote_equals_entire_field": true,
+          "exact_quote_first_occurrence": 0,
+          "exact_quote_byte_length": 207,
+          "observation": "Diagnostic only; original citation and judgment unchanged."
+        },
+        {
+          "source_field": "mapping.limit",
+          "supplied_start": 0,
+          "supplied_end": 209,
+          "field_byte_length": 211,
+          "quote_equals_entire_field": true,
+          "exact_quote_first_occurrence": 0,
+          "exact_quote_byte_length": 211,
+          "observation": "Diagnostic only; original citation and judgment unchanged."
+        }
+      ]
+    }
+  ],
+  "interpretation_changes_observations": false,
+  "recovery_performed": false,
+  "recommended_next_step": "Separately freeze a narrow span/serialization follow-up: ensure exact citation offsets and explicit punctuation normalization conventions. Keep H.4 observations unchanged; do not run viability, natural outputs or production integration now."
+}
