@@ -72,9 +72,9 @@ def delete_claims(mapping,atoms):
 def unsupported(cid): return [a for a in claims() if a['case_id']==cid and c.read(H/'judgments/claim-warrant'/f'{a["claim_id"]}.json')['status']=='UNSUPPORTED']
 def ablation_body(cid):
  original=candidate(cid); atoms=unsupported(cid)
- return {'case_id':cid,**original,'unsupported_claims':[{k:a[k] for k in ['claim_id','source_field','exact_parent_text','exact_claim_span']} for a in atoms],'ablated_mapping':delete_claims(original['mapping'],atoms),'candidate_remainders':c.read(H/'remainder-candidates'/f'{cid}.json')['candidates']}
+ return {'case_id':cid,**original,'unsupported_claims':[{k:a[k] for k in ['claim_id','source_field','exact_parent_text','exact_claim_span']} for a in atoms],'ablated_mapping':delete_claims(original['mapping'],atoms),'candidate_remainders':c.read(H/'negative-remainders'/f'{cid}.json')['candidates']}
 def ablation_text(cid):
- return (H/'VIABILITY.md').read_text()+'\nJudge this deletion counterfactual using only the supplied mapping and source. Return remainder_viability in the supplied schema. Copy each frozen candidate inference and source_spans exactly, mark origin frozen, and assess all four properties. Separately marked judge_added candidates must cite exact surviving mapping excerpts. Candidate inventory text is not a viability judgment. Citations use original mapping field names and separate exact contiguous excerpts, excluding deleted spans. Audit negative constraints and useful next inquiries, but do not invent repaired or replacement inferences. A valid source result about something other than the exact target is insufficient. Strongest inference text/spans must copy one assessed candidate, or be null if none exists. Empty deletion sets are valid: assess original scope. Diagnostic disagreements require structural_conflict explanation; unresolved contradictions mean uncertainty. Absent conflicts have present=false,resolved=true.\nCASE PACKET\n'+json.dumps(ablation_body(cid),indent=2,ensure_ascii=False)+'\n'
+ return (H/'PRODUCTIVITY.md').read_text()+'\nAssess the ablated mapping, not the removed claims. Copy every frozen candidate and citation exactly. Assess all five viability properties in the prescribed order. Mark whether each candidate is a negative inference and provide negative_remainder_assessment for every negative candidate. All frozen candidates here are plausible negative inferences; if you judge otherwise, explain that in its productivity rationale. Additional candidates must be marked judge_added and cite surviving mapping excerpts. For inquiries, cite surviving mapping spans for the contrast, operation and outcome relation. Citation source_field names refer to original mapping fields, but deleted spans are unavailable as evidence. Do not infer an intended answer from inventory membership. Empty deletion sets are valid. Derive status from the five-property rule; structural diagnostics cannot override a definite viable remainder.\nCASE PACKET\n'+json.dumps(ablation_body(cid),indent=2,ensure_ascii=False)+'\n'
 def verify(stage=None,commit=False):
  import pipeline
  return pipeline.verify(stage,commit)
@@ -106,7 +106,7 @@ def preflight(stage):
 def validate_response(value,stage,identity):
  if stage=='claim-warrant':
   a=next(a for a in claims() if a['claim_id']==identity); c.validate(value,stage,identity,candidate(a['case_id']))
- else:c.validate(value,stage,identity,candidate(identity),unsupported=unsupported(identity),frozen_candidates=c.read(H/'remainder-candidates'/f'{identity}.json')['candidates'])
+ else:c.validate(value,stage,identity,candidate(identity),unsupported=unsupported(identity),frozen_candidates=c.read(H/'negative-remainders'/f'{identity}.json')['candidates'])
 
 def execute(stage,identity):
  d=RT/'runs'/stage/identity; d.mkdir(parents=True,exist_ok=False)
@@ -146,7 +146,7 @@ def run(stage):
   c.require(not git('status','--porcelain').strip(),'Unclean continuation')
   binary_check(); initial=head(); transition('RUNNING',stage)
   for index,identity in enumerate(order(stage),1):
-   c.require(state()=='RUNNING' and head()==initial,'State/checkpoint changed'); verify(stage,True)
+   c.require(state()=='RUNNING' and head()==initial,'State/checkpoint changed'); c.require(not git('status','--porcelain').strip(),'Unclean call boundary'); verify(stage,True)
    execute(stage,identity); print(f'{stage} {index}/{len(order(stage))} {identity}: valid',flush=True)
   transition('COMPLETE',stage)
  except Exception as e:

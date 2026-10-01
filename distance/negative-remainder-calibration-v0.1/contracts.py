@@ -4,7 +4,9 @@ from claim_contracts import (require, unique, read, digest, sha, obj, arr, enum,
                             MECHANISM, TARGET, CASCADE, REMAINDER, cited_spans, jsonschema)
 import claim_contracts as old
 
-DIMENSIONS=['warranted','source_derived','material','target_relevant']
+DIMENSIONS=['warranted','source_derived','target_relevant','productive','material']
+ROLES=['TARGET_CONSTRAINT','INQUIRY_CONSTRAINT','INSUFFICIENCY_ONLY','UNCERTAIN']
+EFFECTS=['target_state_set','bounds','alternative_priorities','stopping_decision','next_inquiry']
 YESNO=['YES','NO','UNCERTAIN']
 REASONS=['mechanism_death','generic_remainder','target_payoff_loss','epistemically_empty','none','uncertain']
 SCOPE=['substantially_intact','reduced','none','uncertain']
@@ -14,9 +16,15 @@ def schema(stage):
     if stage=='claim-warrant': return old.schema(stage)
     require(stage=='artifact','Unknown stage')
     candidate=obj({'remainder_id':T,'origin':enum(['frozen','judge_added']),
-        'inference':T,'source_spans':SPANS,
+        'inference':T,'source_spans':SPANS,'negative_inference':BOOL,
         **{d:component(YESNO) for d in DIMENSIONS}})
-    return obj({'remainder_viability':obj({
+    negative=obj({'remainder_id':T,'role':enum(ROLES),
+        'counterfactual_effect':obj({k:enum(['changed','unchanged','uncertain']) for k in EFFECTS}),
+        'inquiry_specificity':obj({'unresolved_contrast':NULL_TEXT,'concrete_operation':NULL_TEXT,
+            'differential_outcome_relation':NULL_TEXT,
+            'all_present_in_surviving_mapping':{'anyOf':[BOOL,enum(['uncertain'])]},'source_spans':SPANS}),
+        'productive':enum(YESNO),'rationale':T})
+    return obj({'negative_remainder_assessment':obj({'candidates':arr(negative)}),'remainder_viability':obj({
         'case_id':T,'unsupported_claim_ids':arr(T),'candidate_remainders':arr(candidate),
         'viable_remainders':arr(T),
         'strongest_surviving_target_inference':obj({'remainder_id':NULL_TEXT,'text':NULL_TEXT,'source_spans':SPANS,'why_warranted':T}),
@@ -36,10 +44,8 @@ def unresolved(candidate):
 
 def derive(candidates,scope,conflict=None):
     require(scope in SCOPE,'Invalid scope')
-    if conflict and conflict['present'] and not conflict['resolved']:
-        return 'UNCERTAIN_LOAD_BEARING'
     if any(viable(r) for r in candidates):
-        require(scope in ['substantially_intact','reduced'],'Viable remainder with inconsistent scope requires unresolved conflict')
+        require(scope in ['substantially_intact','reduced'],'Viable remainder requires intact or reduced scope')
         return 'KEEP_WITH_WARRANT_FLAGS' if scope=='substantially_intact' else 'KEEP_WITH_REDUCED_SCOPE'
     if any(unresolved(r) for r in candidates):return 'UNCERTAIN_LOAD_BEARING'
     return 'CORE_INVALID'
@@ -67,6 +73,7 @@ def validate(value,stage,identity,candidate,unsupported=(),frozen_candidates=())
         else: require(r['remainder_id'] not in supplied,'Addition reused frozen ID')
         require(bool(r['source_spans']),'Unanchored candidate')
         cited_spans(r['source_spans'],candidate,unsupported,surviving=True,mapping_only=True)
+    validate_negative(value,rows,candidate,unsupported)
     expected=[r['remainder_id'] for r in rows if viable(r)]
     require(len(a['viable_remainders'])==len(set(a['viable_remainders'])) and set(a['viable_remainders'])==set(expected),'Incorrect viable IDs')
     conflict=a['structural_conflict']
@@ -96,3 +103,26 @@ def validate(value,stage,identity,candidate,unsupported=(),frozen_candidates=())
         require(strongest['text']==row['inference'] and strongest['source_spans']==row['source_spans'],'Strongest differs from assessed candidate')
     else:require(not strongest['source_spans'],'Null strongest has citations')
     require(not expected or strongest['remainder_id'] is not None,'Viable artifact lacks strongest inference')
+
+
+def validate_negative(value,rows,case,unsupported):
+    assessments=value['negative_remainder_assessment']['candidates']
+    ids=[x['remainder_id'] for x in assessments]
+    require(len(ids)==len(set(ids)),'Duplicate negative assessment')
+    byid={r['remainder_id']:r for r in rows}
+    require(set(ids)=={r['remainder_id'] for r in rows if r['negative_inference']},'Negative assessment coverage')
+    for a in assessments:
+        r=byid[a['remainder_id']];e=a['counterfactual_effect'];q=a['inquiry_specificity']
+        require(a['productive']==r['productive']['status'],'Productivity fields disagree')
+        target=any(e[k]=='changed' for k in EFFECTS[:3])
+        inquiry=any(e[k]=='changed' for k in EFFECTS[3:])
+        if target or inquiry:
+            require(a['productive']=='YES','Changed consequence requires productivity')
+            require(a['role'] in (['TARGET_CONSTRAINT','INQUIRY_CONSTRAINT'] if target and inquiry else ['TARGET_CONSTRAINT'] if target else ['INQUIRY_CONSTRAINT']),'Role/effect disagreement')
+        elif all(e[k]=='unchanged' for k in EFFECTS):
+            require(a['productive']=='NO' and a['role']=='INSUFFICIENCY_ONLY','Unchanged inquiry requires insufficiency')
+        else:require(a['productive']=='UNCERTAIN' and a['role']=='UNCERTAIN','Unresolved decisive effect')
+        cited_spans(q['source_spans'],case,unsupported,surviving=True,mapping_only=True)
+        if e['next_inquiry']=='changed':
+            require(q['all_present_in_surviving_mapping'] is True,'Inquiry provenance absent')
+            require(all(q[k] for k in ['unresolved_contrast','concrete_operation','differential_outcome_relation']) and q['source_spans'],'Missing inquiry components')

@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Dendrochronological crossdating",
+    "practice": "Dendrochronology and paleoclimate",
+    "instrument": {
+      "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+      "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+      "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+      "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+      "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+    }
+  },
+  "target": {
+    "domain": "archival chronology",
+    "question": "What chronological placement or offset of sequence S is supported by independently dated references?"
+  },
+  "mapping": {
+    "state": "Sequence S has candidate offsets +2, +3, +4, +5, +6 and +7 against independently dated reference R1. All six are live at entry. Reference R2 also preserves the next increment for comparison.",
+    "operation": "Compare ordered increments across candidate alignments, check overlap and reference anchoring, and retain the correspondence record under each offset.",
+    "signal": "The ordered-overlap worksheet and reference identifiers are retained. The reference dates, sequence transcription and recording conditions are authenticated.\nThe anchored overlap is insufficient for a unique chronology, but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+    "inference": "The comparison uniquely dates S at offset +6 and establishes that this is its only possible chronology.",
+    "limit": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+  },
+  "atomic_claim": {
+    "claim_id": "C-96eef59c93a4",
+    "source_field": "mapping.signal",
+    "exact_parent_text": "The anchored overlap is insufficient for a unique chronology, but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+    "exact_claim_span": "The anchored overlap is insufficient for a unique chronology, but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+  }
+}
