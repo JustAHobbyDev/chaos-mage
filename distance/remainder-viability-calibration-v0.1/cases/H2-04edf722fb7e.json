@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which of the two specified mechanisms is better supported for failure pattern F-17, and what inquiry does that justify?"
+  },
+  "mapping": {
+    "state": "Failure pattern F-17 is repeated checkout latency after deployment. The specified differential contains lock contention and connection-pool exhaustion. The same focal service, replay and two mechanisms are used throughout the inquiry.",
+    "operation": "List the two mechanisms, inspect the recorded response to a controlled test and compare the implications for each mechanism. Revise relative plausibility only from a discriminating observation. Preserve the response record and test definition.",
+    "signal": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated. The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention. The capacity step is applied successfully and response sensitivity is adequate.",
+    "inference": "The recorded response proves that lock contention is certainly the sole cause of F-17, excluding every co-occurring or unlisted mechanism without further inquiry.\nWithin the specified differential the response favors lock contention over isolated pool exhaustion; inspect lock ownership and hold times next.",
+    "limit": "The stated test predictions, execution and observations are reliable. The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+  }
+}
