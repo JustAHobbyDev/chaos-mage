@@ -1,0 +1,213 @@
+[
+  {
+    "mechanism_key": "ach",
+    "source": {
+      "name": "Analysis of Competing Hypotheses",
+      "practice": "Intelligence analysis",
+      "instrument": {
+        "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+        "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+        "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+        "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+        "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+      }
+    },
+    "source_input_path": "distance/anti-collapse-natural-recovery-v0.1/generation-inputs/E006.json",
+    "source_input_sha256": "f0648c39cfe9993ab2f8cf45ccf9866308c88f47d5b8d7c46d5bbca15ea4b855",
+    "benchmark_target": {
+      "domain": "investigative reporting",
+      "question": "What can be established about whether the procurement award was steered toward a preferred bidder?"
+    },
+    "native_baseline": {
+      "target_domain": "investigative reporting",
+      "target_task": "What can be established about whether the procurement award was steered toward a preferred bidder?",
+      "reference_practitioner": "Investigative reporter specializing in municipal procurement and documentary accountability.",
+      "ordinary_methods": [
+        "Trace document provenance and corroborate claims across independent records and interviews.",
+        "Construct a dated event sequence; compare competing explanations and seek disconfirming evidence.",
+        "Distinguish allegations, corroborated facts and unresolved gaps."
+      ],
+      "ordinary_evidence": [
+        "Tender versions, scoring sheets, emails, public registers and interview accounts.",
+        "Authentication and source-independence information."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Newsrooms vary in formal evidence matrices; basic corroboration and chronology are assumed ordinary."
+      ],
+      "ordinary_inference_patterns": [
+        "Independent authenticated records can corroborate a bounded claim; copying between sources weakens independence.",
+        "Chronological compatibility and disconfirming evidence constrain competing accounts; gaps are not proof of misconduct."
+      ],
+      "ordinary_next_actions": [
+        "Seek missing records or independent interviews, investigate contradictions and test alternative explanations.",
+        "Update the dated account and distinguish corroboration from unresolved allegation."
+      ]
+    },
+    "target": {
+      "domain": "investigative reporting",
+      "question": "What can the current evidence establish or constrain about whether award P-17 was steered?"
+    },
+    "focal_object": "P-17",
+    "narrowing_rationale": "Exact H.3 target; excludes broader positive identification requirements; productive exclusion and discriminating inquiry count.",
+    "potential_confound": "Bounded synthetic questions and supplied observations do not establish natural-output prevalence."
+  },
+  {
+    "mechanism_key": "crossdate",
+    "source": {
+      "name": "Dendrochronological crossdating",
+      "practice": "Dendrochronology and paleoclimate",
+      "instrument": {
+        "state": "Multiple sequential records were formed over overlapping periods under partly shared external influences, but one or more records have uncertain calendar placement or may contain missing or anomalous increments.\n",
+        "operation": "Compare the ordered pattern of increments across independently dated or overlapping records and shift their relative alignment until distinctive multi-year patterns correspond consistently across specimens.\n",
+        "signal": "A particular alignment produces repeated matching temporal patterns across records and exposes otherwise inconsistent missing, extra, or misassigned increments.\n",
+        "inference": "The matching alignment supports assigning specific temporal positions to previously uncertain increments and extending or checking the chronology across overlapping records.\n",
+        "limit": "Local growth disturbances, weak shared environmental signal, short or repetitive patterns, measurement error, incorrect reference chronologies, and insufficient overlap can produce ambiguous or false alignments.\n"
+      }
+    },
+    "source_input_path": "distance/anti-collapse-natural-recovery-v0.1/generation-inputs/E008.json",
+    "source_input_sha256": "89e9886268539191abdfaf0574f3142b771925ac2b0fbe8c677100fadd03952c",
+    "benchmark_target": {
+      "domain": "archival chronology",
+      "question": "What relative and absolute chronology can be justified for the undated correspondence bundle?"
+    },
+    "native_baseline": {
+      "target_domain": "archival chronology",
+      "target_task": "What relative and absolute chronology can be justified for the undated correspondence bundle?",
+      "reference_practitioner": "Archivist specializing in documentary provenance and historical correspondence, without dendrochronology or signal-processing specialization.",
+      "ordinary_methods": [
+        "Trace custody and creators; compare dated references, handwriting, postmarks, paper and event mentions.",
+        "Cross-check independent dating clues and preserve uncertain intervals.",
+        "Separate physical arrangement from original order."
+      ],
+      "ordinary_evidence": [
+        "Letters, envelopes, accession records, dated calendars, material clues and independent event records."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Pattern comparison is ordinary, but quantitative alignment of long measured sequences is not assumed customary."
+      ],
+      "ordinary_inference_patterns": [
+        "Converging independent date clues constrain an interval; custody, event dates and physical arrangement do not automatically establish writing order.",
+        "Pattern comparison can support a relative sequence while ambiguous matches remain unresolved."
+      ],
+      "ordinary_next_actions": [
+        "Seek independent anchors, check conflicting clues and compare another document or reference.",
+        "Preserve alternative chronologies and uncertain intervals."
+      ]
+    },
+    "target": {
+      "domain": "archival chronology",
+      "question": "What chronological placement or offset of sequence S is supported by independently dated references?"
+    },
+    "focal_object": "S",
+    "narrowing_rationale": "Exact H.3 target; excludes broader positive identification requirements; productive exclusion and discriminating inquiry count.",
+    "potential_confound": "Bounded synthetic questions and supplied observations do not establish natural-output prevalence."
+  },
+  {
+    "mechanism_key": "diagnosis",
+    "source": {
+      "name": "Differential diagnosis",
+      "practice": "Clinical diagnosis",
+      "instrument": {
+        "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+        "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+        "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+        "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+        "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+      }
+    },
+    "source_input_path": "distance/anti-collapse-natural-recovery-v0.1/generation-inputs/E023.json",
+    "source_input_sha256": "fddc8e0017fe198a3c7ebb965f5eab5f26679341196368ac023befb85b09a362",
+    "benchmark_target": {
+      "domain": "production-regression diagnosis",
+      "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+    },
+    "native_baseline": {
+      "target_domain": "production-regression diagnosis",
+      "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+      "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+      "ordinary_methods": [
+        "Compare deployment and latency timelines, stratifying traffic and configuration.",
+        "Replay representative workloads, bisect revisions and test competing causes in staging.",
+        "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+      ],
+      "ordinary_evidence": [
+        "Version and configuration history; request traces; latency distributions; resource counters.",
+        "Controlled replay and rollback observations."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+      ],
+      "ordinary_inference_patterns": [
+        "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+        "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+      ],
+      "ordinary_next_actions": [
+        "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+        "Check whether an apparent fix reproduces under representative workloads."
+      ]
+    },
+    "target": {
+      "domain": "production-regression diagnosis",
+      "question": "Which of lock contention and pool exhaustion is better supported for F-17, and what inquiry does that justify?"
+    },
+    "focal_object": "F-17",
+    "narrowing_rationale": "Exact H.3 target; excludes broader positive identification requirements; productive exclusion and discriminating inquiry count.",
+    "potential_confound": "Bounded synthetic questions and supplied observations do not establish natural-output prevalence."
+  },
+  {
+    "mechanism_key": "delta",
+    "source": {
+      "name": "Delta debugging",
+      "practice": "Software debugging and testing",
+      "instrument": {
+        "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+        "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+        "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+        "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+        "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+      }
+    },
+    "source_input_path": "distance/anti-collapse-natural-recovery-v0.1/generation-inputs/E028.json",
+    "source_input_sha256": "1fc02f3db0e526a7e168d090a501d1d219a075109437c45f419259f73b78a2aa",
+    "benchmark_target": {
+      "domain": "production-regression diagnosis",
+      "question": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?"
+    },
+    "native_baseline": {
+      "target_domain": "production-regression diagnosis",
+      "target_task": "Which deployed change accounts for the new checkout latency regression, and what bounded causal evidence distinguishes it from load variation?",
+      "reference_practitioner": "Production reliability engineer specializing in web-service incident diagnosis.",
+      "ordinary_methods": [
+        "Compare deployment and latency timelines, stratifying traffic and configuration.",
+        "Replay representative workloads, bisect revisions and test competing causes in staging.",
+        "Use rollback and controlled reintroduction when safe; inspect traces and resource metrics."
+      ],
+      "ordinary_evidence": [
+        "Version and configuration history; request traces; latency distributions; resource counters.",
+        "Controlled replay and rollback observations."
+      ],
+      "uncertainty": [
+        "Scoped authored hypothesis, not verified practitioner consensus.",
+        "Teams differ in experimental maturity; this scope includes ordinary staging experiments but no formal inverse-problem specialty."
+      ],
+      "ordinary_inference_patterns": [
+        "Temporal association suggests candidates, not unique causation; controlled replay and rollback/reintroduction support bounded causal contribution.",
+        "Compare competing causes using traces, load/configuration stratification and disconfirming tests; uncertainty remains when causes are confounded."
+      ],
+      "ordinary_next_actions": [
+        "Inspect discriminating traces, test an alternative cause, bisect revisions or safely revert/reintroduce a suspected change.",
+        "Check whether an apparent fix reproduces under representative workloads."
+      ]
+    },
+    "target": {
+      "domain": "production-regression diagnosis",
+      "question": "Which deployed-change subset is sufficient and minimal for reproducing target failure F under the frozen replay?"
+    },
+    "focal_object": "D-17 / F",
+    "narrowing_rationale": "Exact H.3 target; excludes broader positive identification requirements; productive exclusion and discriminating inquiry count.",
+    "potential_confound": "Bounded synthetic questions and supplied observations do not establish natural-output prevalence."
+  }
+]
