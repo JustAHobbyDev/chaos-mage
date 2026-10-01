@@ -1,0 +1,3012 @@
+{
+  "H-ca093848fecf": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the checkout deployment under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the checkout deployment under investigation, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the checkout deployment under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the checkout deployment under investigation, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same deployment-manifest template establishes that the two deployments use the same internal incident-ticket prefix."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-a2f1260be8de": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-case form establishes that the two processes use the same internal case-file label color."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-626ba6808abc": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a comparison approval process in another unit."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison approval process in another unit, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a comparison approval process in another unit."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison approval process in another unit, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-case form makes the panel-A and B differential conclusions for the comparison process applicable to the focal process."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-79c5f7d657b9": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the novel draft under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the novel draft under investigation, panel A supports the bounded sequence that its identified opening-section assembly preceded its recorded binding event."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the opening-section assembly-before-binding sequence only if the panel-A sequence inference applies to that draft."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the novel draft under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the novel draft under investigation, panel B supports the bounded sequence that its identified closing-section replacement followed its recorded editorial review."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the closing-section replacement-after-review sequence only if the panel-B sequence inference applies to that draft."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template establishes that the two drafts received the same internal shelf-label color."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Assign stable identifiers to leaves, record each witnessed handling or assembly event with responsible party, time and purpose, and audit the chain for unexplained transitions. Separate witnessed assembly from inferred composition and retain the event-specific evidence tags. Audit the two panels independently."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-564a4829e97d": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison process in another unit."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+      },
+      {
+        "id": "focal_batch_briefing",
+        "source_field": "mapping.operation",
+        "exact_text": "Prepare the focal-process batch-change briefing only if the panel-B inference applies there."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_batch_briefing",
+        "role": "required applicability"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": [
+      "The hidden authoring graph omitted the explicitly conditional focal batch-briefing action added for this control. The model correctly identified its failure. This is a metadata-only case-design problem, not a surviving branch or an artifact-status error; preserve the original graph and record the additional node here."
+    ]
+  },
+  "H-d351f51a2f2d": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a comparison approval process in another unit."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison approval process in another unit, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-case form makes the panel-B differential conclusion for the comparison process applicable to the focal process."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-eb700d571111": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a comparison checkout deployment maintained by another team."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison checkout deployment maintained by another team, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a comparison checkout deployment maintained by another team."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison checkout deployment maintained by another team, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same deployment-manifest template makes the panel-A and B reproduction conclusions for the comparison deployment applicable to the focal deployment."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-3339b0c7025e": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the novel draft under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the novel draft under investigation, panel A supports the bounded sequence that its identified opening-section assembly preceded its recorded binding event."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the opening-section assembly-before-binding sequence only if the panel-A sequence inference applies to that draft."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a separate comparison draft held by the same archive."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison draft held by the same archive, panel B supports the bounded sequence that its identified closing-section replacement followed its recorded editorial review."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the closing-section replacement-after-review sequence only if the panel-B sequence inference applies to that draft."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template makes the panel-B sequence conclusion for the comparison draft applicable to the focal draft."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Assign stable identifiers to leaves, record each witnessed handling or assembly event with responsible party, time and purpose, and audit the chain for unexplained transitions. Separate witnessed assembly from inferred composition and retain the event-specific evidence tags. Audit the two panels independently."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-636942c3c9ad": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the undated correspondence bundle under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the undated correspondence bundle under investigation, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the undated correspondence bundle under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the undated correspondence bundle under investigation, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same correspondence-register template establishes that the two bundles received the same internal catalog label color."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-8128cf683d7f": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the procurement award under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the procurement award under investigation, panel A weakens post-evaluation alteration of the recorded scores as an explanation of that award."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, de-prioritize the recorded-score alteration allegation only if the panel-A inference applies to that award."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the procurement award under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the procurement award under investigation, panel B weakens bidder-specific authorship of the examined requirement as an explanation of that award."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, distinguish the examined requirement from other unexamined tailoring allegations only if the panel-B inference applies to that award."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same tender-document template establishes that the two awards were assigned the same internal records-retention code."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list the competing explanations before scoring evidence. Construct an evidence-by-hypothesis inconsistency matrix; weight documentary independence and diagnosticity rather than counting supporting items. Have a second analyst rerate the matrix and repeat after removal of each disputed item. Keep the scoring-manipulation and specification-tailoring questions separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, independently retained evaluation sheets agree with the announced scoring, and the stable matrix pattern conflicts with post-evaluation alteration of recorded scores."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, dated drafting records show a common requirement carried over before bidder identities were available; the stable matrix pattern conflicts with bidder-specific authorship of that requirement."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-2b108ed2763b": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a separate comparison correspondence bundle from the same collection."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison correspondence bundle from the same collection, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a separate comparison correspondence bundle from the same collection."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison correspondence bundle from the same collection, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same correspondence-register template makes the panel-A and B dating conclusions for the comparison bundle applicable to the focal bundle."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-ad2d9725bd69": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the undated correspondence bundle under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the undated correspondence bundle under investigation, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a separate comparison correspondence bundle from the same collection."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison correspondence bundle from the same collection, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same correspondence-register template makes the panel-B dating conclusion for the comparison bundle applicable to the focal bundle."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-02c415af8fcc": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the novel draft under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the novel draft under investigation, panel A supports the bounded sequence that its identified opening-section assembly preceded its recorded binding event."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the opening-section assembly-before-binding sequence only if the panel-A sequence inference applies to that draft."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the novel draft under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the novel draft under investigation, panel B supports the bounded sequence that its identified closing-section replacement followed its recorded editorial review."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the closing-section replacement-after-review sequence only if the panel-B sequence inference applies to that draft."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template establishes that the two drafts received the same internal shelf-label color."
+      },
+      {
+        "id": "deleted_leaf_2",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template establishes that the two drafts were entered using the same inventory-workstation model."
+      },
+      {
+        "id": "deleted_leaf_3",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template establishes that the two drafts received the same internal transport-slip border."
+      },
+      {
+        "id": "deleted_leaf_4",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template establishes that the two drafts received the same internal box-label font."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Assign stable identifiers to leaves, record each witnessed handling or assembly event with responsible party, time and purpose, and audit the chain for unexplained transitions. Separate witnessed assembly from inferred composition and retain the event-specific evidence tags. Audit the two panels independently."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-267f553dd5e6": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-case form establishes a catastrophic breach of the archive display-color standard for both processes."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-7c840810a469": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison process in another unit."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-5bc799a1417a": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a completed comparison process in another unit."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison process in another unit, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison process in another unit."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-workflow template makes the panel-A and B response conclusions for the comparison process applicable to the focal process."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-1e61b00c1af6": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a separate comparison draft held by the same archive."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison draft held by the same archive, panel A supports the bounded sequence that its identified opening-section assembly preceded its recorded binding event."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the opening-section assembly-before-binding sequence only if the panel-A sequence inference applies to that draft."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a separate comparison draft held by the same archive."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison draft held by the same archive, panel B supports the bounded sequence that its identified closing-section replacement followed its recorded editorial review."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Constrain the focal draft reconstruction by the closing-section replacement-after-review sequence only if the panel-B sequence inference applies to that draft."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same archive handling-ledger template makes the panel-A and B sequence conclusions for the comparison draft applicable to the focal draft."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Assign stable identifiers to leaves, record each witnessed handling or assembly event with responsible party, time and purpose, and audit the chain for unexplained transitions. Separate witnessed assembly from inferred composition and retain the event-specific evidence tags. Audit the two panels independently."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has a continuous reliable ledger and witnessed attachments placing its identified opening-section assembly before its dated binding event."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has a continuous reliable ledger and witnessed attachments placing its identified closing-section replacement after its dated editorial review."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-eed6d2b21f12": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to the approval process under investigation."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the approval process under investigation, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+      },
+      {
+        "id": "deleted_leaf_1",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same approval-workflow template establishes that the two processes have the same internal training-budget code."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A",
+      "B"
+    ],
+    "failed_focal_panels": [],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-082e294865bf": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a completed comparison award from the same agency."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison award from the same agency, panel A weakens post-evaluation alteration of the recorded scores as an explanation of that award."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, de-prioritize the recorded-score alteration allegation only if the panel-A inference applies to that award."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison award from the same agency."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison award from the same agency, panel B weakens bidder-specific authorship of the examined requirement as an explanation of that award."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, distinguish the examined requirement from other unexamined tailoring allegations only if the panel-B inference applies to that award."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same tender-document template makes the panel-A and B evidential conclusions for the comparison award applicable to the focal award."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list the competing explanations before scoring evidence. Construct an evidence-by-hypothesis inconsistency matrix; weight documentary independence and diagnosticity rather than counting supporting items. Have a second analyst rerate the matrix and repeat after removal of each disputed item. Keep the scoring-manipulation and specification-tailoring questions separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, independently retained evaluation sheets agree with the announced scoring, and the stable matrix pattern conflicts with post-evaluation alteration of recorded scores."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, dated drafting records show a common requirement carried over before bidder identities were available; the stable matrix pattern conflicts with bidder-specific authorship of that requirement."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-06b3e9300b1f": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a comparison checkout deployment maintained by another team."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison checkout deployment maintained by another team, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a comparison checkout deployment maintained by another team."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison checkout deployment maintained by another team, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same deployment-manifest template makes the panel-A and B reproduction conclusions for the comparison deployment applicable to the focal deployment."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-cd1e054967ea": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the checkout deployment under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the checkout deployment under investigation, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a comparison checkout deployment maintained by another team."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a comparison checkout deployment maintained by another team, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same deployment-manifest template makes the panel-B reproduction conclusion for the comparison deployment applicable to the focal deployment."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-d5ebaff98be7": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a separate comparison correspondence bundle from the same collection."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison correspondence bundle from the same collection, panel A supports assigning its earlier-run entries to the reference-aligned calendar positions with the identified missing increment accounted for."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the earlier-run alignment to constrain the focal bundle chronology only if the panel-A dating inference applies to that bundle."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a separate comparison correspondence bundle from the same collection."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a separate comparison correspondence bundle from the same collection, panel B supports assigning its later-run entries to the reference-aligned calendar positions with the identified duplicated increment accounted for."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "Use the later-run alignment to constrain the focal bundle chronology only if the panel-B dating inference applies to that bundle."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "The register-format match carries the two panel dating results over to the focal bundle."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "Compare distinctive ordered patterns of high and low annual activity across the panel and its independently dated references. Shift candidate alignments, check missing and duplicate increments against independent anchors, and retain the alignment consistently supported across the overlapping records. Keep the two panels separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel A has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a missing increment."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "Panel B has one repeatedly supported multi-year alignment across three independent overlapping records, agreeing with two independent calendar anchors and exposing a duplicated increment."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-25a0b865ec69": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to a completed comparison award from the same agency."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison award from the same agency, panel A weakens post-evaluation alteration of the recorded scores as an explanation of that award."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, de-prioritize the recorded-score alteration allegation only if the panel-A inference applies to that award."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison award from the same agency."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison award from the same agency, panel B weakens bidder-specific authorship of the examined requirement as an explanation of that award."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, distinguish the examined requirement from other unexamined tailoring allegations only if the panel-B inference applies to that award."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same tender-document template makes the panel-A and B evidential conclusions for the comparison award applicable to the focal award."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list the competing explanations before scoring evidence. Construct an evidence-by-hypothesis inconsistency matrix; weight documentary independence and diagnosticity rather than counting supporting items. Have a second analyst rerate the matrix and repeat after removal of each disputed item. Keep the scoring-manipulation and specification-tailoring questions separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, independently retained evaluation sheets agree with the announced scoring, and the stable matrix pattern conflicts with post-evaluation alteration of recorded scores."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, dated drafting records show a common requirement carried over before bidder identities were available; the stable matrix pattern conflicts with bidder-specific authorship of that requirement."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [],
+    "failed_focal_panels": [
+      "A",
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  },
+  "H-6b7622e02b45": {
+    "method": "Post-freeze operator reconstruction from visible assignments, bounded inferences and explicit only-if conditions; edges into focal actions are conjunctive prerequisites.",
+    "nodes": [
+      {
+        "id": "panel_A_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel A is assigned to the procurement award under investigation."
+      },
+      {
+        "id": "panel_A_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For the procurement award under investigation, panel A weakens post-evaluation alteration of the recorded scores as an explanation of that award."
+      },
+      {
+        "id": "focal_action_A",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, de-prioritize the recorded-score alteration allegation only if the panel-A inference applies to that award."
+      },
+      {
+        "id": "panel_B_assignment",
+        "source_field": "mapping.state",
+        "exact_text": "Panel B is assigned to a completed comparison award from the same agency."
+      },
+      {
+        "id": "panel_B_inference",
+        "source_field": "mapping.inference",
+        "exact_text": "For a completed comparison award from the same agency, panel B weakens bidder-specific authorship of the examined requirement as an explanation of that award."
+      },
+      {
+        "id": "focal_action_B",
+        "source_field": "mapping.operation",
+        "exact_text": "In the focal-award account, distinguish the examined requirement from other unexamined tailoring allegations only if the panel-B inference applies to that award."
+      },
+      {
+        "id": "deleted_transfer",
+        "source_field": "mapping.inference",
+        "exact_text": "Use of the same tender-document template makes the panel-B evidential conclusion for the comparison award applicable to the focal award."
+      },
+      {
+        "id": "source_operation",
+        "source_field": "mapping.operation",
+        "exact_text": "For each panel, list the competing explanations before scoring evidence. Construct an evidence-by-hypothesis inconsistency matrix; weight documentary independence and diagnosticity rather than counting supporting items. Have a second analyst rerate the matrix and repeat after removal of each disputed item. Keep the scoring-manipulation and specification-tailoring questions separate."
+      },
+      {
+        "id": "panel_A_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel A, independently retained evaluation sheets agree with the announced scoring, and the stable matrix pattern conflicts with post-evaluation alteration of recorded scores."
+      },
+      {
+        "id": "panel_B_signal",
+        "source_field": "mapping.signal",
+        "exact_text": "In panel B, dated drafting records show a common requirement carried over before bidder identities were available; the stable matrix pattern conflicts with bidder-specific authorship of that requirement."
+      }
+    ],
+    "edges": [
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_A_inference",
+        "to": "focal_action_A",
+        "role": "required evidential result"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "focal_action_A",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_inference",
+        "role": "scope of observations and inference"
+      },
+      {
+        "from": "panel_B_inference",
+        "to": "focal_action_B",
+        "role": "required evidential result"
+      },
+      {
+        "from": "deleted_transfer",
+        "to": "focal_action_B",
+        "role": "required focal applicability; conjunctive with evidential result"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_A_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_A_assignment",
+        "to": "panel_A_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_A_signal",
+        "to": "panel_A_inference",
+        "role": "bounded evidential support"
+      },
+      {
+        "from": "source_operation",
+        "to": "panel_B_signal",
+        "role": "specified operation produces stated signal"
+      },
+      {
+        "from": "panel_B_assignment",
+        "to": "panel_B_signal",
+        "role": "observation ownership"
+      },
+      {
+        "from": "panel_B_signal",
+        "to": "panel_B_inference",
+        "role": "bounded evidential support"
+      }
+    ],
+    "surviving_focal_panels": [
+      "A"
+    ],
+    "failed_focal_panels": [
+      "B"
+    ],
+    "comparison_panel_inferences_survive": true,
+    "additional_hidden_graph_omissions": []
+  }
+}
