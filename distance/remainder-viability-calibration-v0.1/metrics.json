@@ -1,0 +1,1074 @@
+{
+  "status": "COMPLETE",
+  "base_sha": "5d22364465c8183581452cc720b21f9bd0cc38b4",
+  "branch": "experiment-h2-remainder",
+  "checkpoints": {
+    "construct_checkpoint": "0874cb6554065e19d2cee00611d157ea525f6548",
+    "target_checkpoint": "928984a86f1afcef5b4e79293563e51024fbac5f",
+    "primary_checkpoint": "fb0626000adc885262b0e44c0eb022cd9159d196",
+    "controls_checkpoint": "a77b3cf465a4a490918f0a5c8ee57cf4deb8fa01",
+    "claim_inventory_checkpoint": "74264e1d62964ae20ef8b63f1974be531bb39c86",
+    "claim_preflight_checkpoint": "18ff89fab68bc5fc01256c040cf6bb997623e764",
+    "host_launch_recovery_checkpoint": "5d94b830b465ba8662c618c0f824040aea589a53",
+    "claim_freeze_checkpoint": "5bd802b6b03d403096f50d589efc9d55c3be01cf",
+    "candidate_freeze_checkpoint": "b706b53c5a0296af2c607036ef6d5d4256f05eca",
+    "artifact_preflight_checkpoint": "7a94f09d0a96a2397cdd5e0b41f084220c92c605",
+    "artifact_freeze_checkpoint": "8a46800bbd956bccc28d10f5497fc94e21fa36c6",
+    "operator_review_checkpoint": "5f9620ae02a3fc4affb30db842b87f82fe8310bc"
+  },
+  "completion_sha_resolution": "git log -1 --format=%H -- distance/remainder-viability-calibration-v0.1/publication-manifest.json",
+  "primary_pair_count": 6,
+  "primary_case_count": 12,
+  "control_count": 4,
+  "claim_judgment_count": 57,
+  "artifact_judgment_count": 16,
+  "provider_calls": 73,
+  "unique_sessions": 73,
+  "claim_status_counts": {
+    "SUPPORTED": 32,
+    "CONDITIONAL_WARRANT": 0,
+    "UNSUPPORTED": 25,
+    "UNCERTAIN": 0
+  },
+  "artifact_status_counts": {
+    "KEEP_WITH_WARRANT_FLAGS": 3,
+    "KEEP_WITH_REDUCED_SCOPE": 11,
+    "CORE_INVALID": 1,
+    "UNCERTAIN_LOAD_BEARING": 1
+  },
+  "no_viable_remainder_reason_counts": {
+    "mechanism_death": 1,
+    "generic_remainder": 0,
+    "target_payoff_loss": 0,
+    "epistemically_empty": 0,
+    "none": 14,
+    "uncertain": 1
+  },
+  "diagnostic_distributions": {
+    "mechanism_survival": {
+      "SURVIVES": 9,
+      "PARTIALLY_SURVIVES": 6,
+      "DOES_NOT_SURVIVE": 1
+    },
+    "remainder_check": {
+      "DISTINCTIVE_REMAINDER": 15,
+      "GENERIC_REMAINDER": 1
+    },
+    "target_contribution_survival": {
+      "SUBSTANTIALLY_SURVIVES": 3,
+      "REDUCED_BUT_MATERIAL": 11,
+      "UNCERTAIN": 1,
+      "NO_MATERIAL_CONTRIBUTION": 1
+    },
+    "dependency_cascade": {
+      "LOCAL": 4,
+      "BRANCH": 11,
+      "GLOBAL": 1
+    },
+    "scope_survival": {
+      "substantially_intact": 3,
+      "reduced": 11,
+      "uncertain": 1,
+      "none": 1
+    }
+  },
+  "frozen_candidate_count": 88,
+  "judge_added_candidate_count": 12,
+  "assessed_candidate_count": 100,
+  "viability_field_distributions": {
+    "warranted": {
+      "YES": 100,
+      "NO": 0,
+      "UNCERTAIN": 0
+    },
+    "source_derived": {
+      "YES": 51,
+      "NO": 49,
+      "UNCERTAIN": 0
+    },
+    "material": {
+      "YES": 87,
+      "NO": 13,
+      "UNCERTAIN": 0
+    },
+    "target_relevant": {
+      "YES": 76,
+      "NO": 19,
+      "UNCERTAIN": 5
+    }
+  },
+  "viable_candidate_count": 38,
+  "decisively_unresolved_candidate_count": 3,
+  "empty_deletion_cases": [],
+  "case_design_problems": 7,
+  "judge_remainder_errors": 0,
+  "operator_category_counts": {
+    "PLAUSIBLE_ALTERNATIVE": 3,
+    "STRUCTURALLY_CONCORDANT": 5,
+    "CASE_DESIGN_PROBLEM": 7,
+    "AMBIGUOUS": 1
+  },
+  "operator_review_is_independent_rater_evidence": false,
+  "historical_preservation": {
+    "tracked": 3553,
+    "runtime": 9259
+  },
+  "pairs": [
+    {
+      "mechanism_key": "ach",
+      "reduced": "H2-6f44184ce89e",
+      "core": "H2-af1fe1a18f36",
+      "reduced_status": "KEEP_WITH_REDUCED_SCOPE",
+      "core_status": "KEEP_WITH_REDUCED_SCOPE",
+      "measured_deleted_chars": [
+        141,
+        149
+      ],
+      "measured_max_min_ratio": 1.0567375886524824,
+      "viable_vs_nonviable_separated": false,
+      "intended_reduced_core_labels_observed": false
+    },
+    {
+      "mechanism_key": "step",
+      "reduced": "H2-a814c5035bee",
+      "core": "H2-622904b211e7",
+      "reduced_status": "KEEP_WITH_WARRANT_FLAGS",
+      "core_status": "CORE_INVALID",
+      "measured_deleted_chars": [
+        145,
+        146
+      ],
+      "measured_max_min_ratio": 1.006896551724138,
+      "viable_vs_nonviable_separated": true,
+      "intended_reduced_core_labels_observed": false
+    },
+    {
+      "mechanism_key": "custody",
+      "reduced": "H2-16df75b43727",
+      "core": "H2-eb081c18a2e8",
+      "reduced_status": "KEEP_WITH_REDUCED_SCOPE",
+      "core_status": "KEEP_WITH_REDUCED_SCOPE",
+      "measured_deleted_chars": [
+        160,
+        160
+      ],
+      "measured_max_min_ratio": 1.0,
+      "viable_vs_nonviable_separated": false,
+      "intended_reduced_core_labels_observed": false
+    },
+    {
+      "mechanism_key": "delta",
+      "reduced": "H2-de38329a6cac",
+      "core": "H2-25d1bd70c84a",
+      "reduced_status": "KEEP_WITH_WARRANT_FLAGS",
+      "core_status": "KEEP_WITH_REDUCED_SCOPE",
+      "measured_deleted_chars": [
+        150,
+        192
+      ],
+      "measured_max_min_ratio": 1.28,
+      "viable_vs_nonviable_separated": false,
+      "intended_reduced_core_labels_observed": false
+    },
+    {
+      "mechanism_key": "crossdate",
+      "reduced": "H2-545059f94c7b",
+      "core": "H2-c5ce20f5d61c",
+      "reduced_status": "KEEP_WITH_REDUCED_SCOPE",
+      "core_status": "KEEP_WITH_REDUCED_SCOPE",
+      "measured_deleted_chars": [
+        169,
+        168
+      ],
+      "measured_max_min_ratio": 1.005952380952381,
+      "viable_vs_nonviable_separated": false,
+      "intended_reduced_core_labels_observed": false
+    },
+    {
+      "mechanism_key": "diagnosis",
+      "reduced": "H2-04edf722fb7e",
+      "core": "H2-72fb2477d1bc",
+      "reduced_status": "KEEP_WITH_WARRANT_FLAGS",
+      "core_status": "KEEP_WITH_REDUCED_SCOPE",
+      "measured_deleted_chars": [
+        162,
+        157
+      ],
+      "measured_max_min_ratio": 1.0318471337579618,
+      "viable_vs_nonviable_separated": false,
+      "intended_reduced_core_labels_observed": false
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "H2-04edf722fb7e",
+      "mechanism_key": "diagnosis",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+      "reason": "none",
+      "scope_survival": "substantially_intact",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "SUBSTANTIALLY_SURVIVES",
+      "dependency_cascade": "LOCAL",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "Neither relative prioritization nor the justified lock investigation requires certainty that lock contention is the sole cause."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "Within the specified differential the response favors lock contention over isolated pool exhaustion",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Within the specified differential the response favors lock contention over isolated pool exhaustion"
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: the reliable discriminating response warrants relative support for lock contention; the comparison applies differential diagnosis; it materially prioritizes a mechanism; and it directly answers the retained F-17 question. It does not depend on the deleted sole-cause assertion."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R06"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 5,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-60f57d1ce06e"
+      ],
+      "deleted_chars": 162,
+      "mapping_chars": 1313,
+      "deleted_fraction": 0.12338156892612338,
+      "operator_category": "PLAUSIBLE_ALTERNATIVE",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-16df75b43727",
+      "mechanism_key": "custody",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "Neither unchanged authorial arrangement nor complete revision order is needed to establish the witnessed attachment-before-binding relation."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The witnessed opening-section attachment precedes the witnessed binding of the same D-17 packet",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The witnessed opening-section attachment precedes the witnessed binding of the same D-17 packet"
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: reliable dated events establish precedence; custody continuity supports packet identity; the resulting partial order is useful; and it directly concerns D-17's focal assembly."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 5,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-21371384e61c",
+        "C-07cab0b63a85"
+      ],
+      "deleted_chars": 160,
+      "mapping_chars": 1255,
+      "deleted_fraction": 0.12749003984063745,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-25d1bd70c84a",
+      "mechanism_key": "delta",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The deleted bridge is required to transfer the flag reduction to a positive F diagnosis. R06 instead follows from the surviving test-relative result and explicit evidence limitations."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R06",
+        "text": "The recorded reduction establishes single-removal minimality only for the nonzero-exit flag. It does not establish that {a,b} reproduces F or that removing either change eliminates F, so it cannot establish {a,b} as sufficient and minimal for F under the frozen replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "A checkout deadline failure can return a handled response with zero process exit; a nonzero exit can occur before checkout runs."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No target-F trace or result is recorded for any reduced subset; the flag is not a timing bound."
+          }
+        ],
+        "why_warranted": "R06 satisfies all four properties. It applies the instrument's test-relative inference boundary to the exact retained question using explicit surviving evidence. Its contribution is a concrete negative constraint on the proposed F diagnosis, not a positive result about F or a repaired testing procedure."
+      },
+      "viable_remainders": [
+        "R06"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 5,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-0f5b1d8238f2",
+        "C-c506f9362942",
+        "C-b7a235da45b3"
+      ],
+      "deleted_chars": 192,
+      "mapping_chars": 1306,
+      "deleted_fraction": 0.14701378254211334,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-53fc9c8368c3",
+      "mechanism_key": "crossdate",
+      "is_control": true,
+      "pair_role": null,
+      "control": "B",
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The viable insufficiency diagnosis follows from surviving observations and limits without relying on the deleted unique-chronology claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R08",
+        "text": "The supplied comparison does not support a specific chronological placement or offset of S: the retained counts cannot establish ordered-pattern alignment or positional overlap, and the docket does not anchor an identified S increment.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The pattern table lists only separate counts of high and low entries for S and each reference; the export discarded order and position."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "No overlap window or shared-influence relation is recorded."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The counts cannot reconstruct ordered patterns or positional overlap."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The docket is an ordinary documentary date, not an alignment anchor for an identified S increment."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No discriminating offset, overlap-derived exclusion or candidate shift is supplied."
+          }
+        ],
+        "why_warranted": "R08 satisfies all four properties. Surviving text directly licenses a material, source-derived constraint on support for S's placement, without providing a replacement chronology or relying on future evidence."
+      },
+      "viable_remainders": [
+        "R03",
+        "R08"
+      ],
+      "candidate_count": 8,
+      "frozen_candidate_count": 7,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-694f1961c2e3"
+      ],
+      "deleted_chars": 168,
+      "mapping_chars": 2019,
+      "deleted_fraction": 0.08320950965824665,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-545059f94c7b",
+      "mechanism_key": "crossdate",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "LOCAL",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The surviving local placement follows directly from overlapping patterns and confirmed endpoints without relying on the deleted global claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The independent overlapping pattern supports placing S positions 4 through 11 at 1901 through 1908",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The independent overlapping pattern supports placing S positions 4 through 11 at 1901 through 1908"
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: the distinctive matches and anchors warrant bounded dating, the inference follows crossdating's alignment mechanism, it assigns useful calendar positions, and it answers the retained question for the observed segment."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R04",
+        "R06"
+      ],
+      "candidate_count": 7,
+      "frozen_candidate_count": 6,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-176180efed9e"
+      ],
+      "deleted_chars": 169,
+      "mapping_chars": 1363,
+      "deleted_fraction": 0.123991195891416,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-5c20feb8415d",
+      "mechanism_key": "diagnosis",
+      "is_control": true,
+      "pair_role": null,
+      "control": "D",
+      "hidden_hypothesis": "UNCERTAIN_LOAD_BEARING",
+      "artifact_status": "UNCERTAIN_LOAD_BEARING",
+      "reason": "uncertain",
+      "scope_survival": "uncertain",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "UNCERTAIN",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The deleted universal claim is not a premise of the surviving Q comparison or applicability inquiry. The obstacle to a definite source-derived target contribution is the unresolved Q-to-F-17 association, not dependence on the deleted claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": null,
+        "text": null,
+        "source_spans": [],
+        "why_warranted": "No candidate has all four properties assessed YES. R01 is the strongest substantive diagnostic result, but its target relevance remains uncertain; it cannot be presented as an established surviving inference about F-17."
+      },
+      "viable_remainders": [],
+      "candidate_count": 8,
+      "frozen_candidate_count": 7,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 3,
+      "deleted_claim_ids": [
+        "C-a45c19ea3002"
+      ],
+      "deleted_chars": 158,
+      "mapping_chars": 1464,
+      "deleted_fraction": 0.10792349726775956,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-622904b211e7",
+      "mechanism_key": "step",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "CORE_INVALID",
+      "reason": "mechanism_death",
+      "scope_survival": "none",
+      "mechanism_survival": "DOES_NOT_SURVIVE",
+      "remainder_check": "GENERIC_REMAINDER",
+      "target_contribution_survival": "NO_MATERIAL_CONTRIBUTION",
+      "dependency_cascade": "GLOBAL",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "yes",
+        "rationale": "Every asserted source-derived contribution to the delay-reduction answer depended on the deleted conversion from register behavior to process delay. No viable alternative bypasses it."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": null,
+        "text": null,
+        "source_spans": [],
+        "why_warranted": "No candidate satisfies all four properties. The warranted target-facing constraints are generic measurement limitations; the source-derived temporal observation concerns the recorder."
+      },
+      "viable_remainders": [],
+      "candidate_count": 5,
+      "frozen_candidate_count": 4,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-64e99df1b2ff"
+      ],
+      "deleted_chars": 146,
+      "mapping_chars": 1397,
+      "deleted_fraction": 0.10450966356478167,
+      "operator_category": "AMBIGUOUS",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-6f44184ce89e",
+      "mechanism_key": "ach",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The material route-specific constraints follow from the surviving evidence and comparison without assuming that steering is the best explanation or that an ordinary award is ruled out."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "Recorded-score alteration and bidder-specific authorship of the examined specification are weakened",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Recorded-score alteration and bidder-specific authorship of the examined specification are weakened"
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: authenticated independent records support inconsistencies with the two named routes; weakening explanations follows the imported instrument; that narrowing materially guides investigation; and both routes concern P-17. It does not depend on the deleted claim that steering was established."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R03",
+        "R07"
+      ],
+      "candidate_count": 7,
+      "frozen_candidate_count": 7,
+      "judge_added_count": 0,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-462581c19962"
+      ],
+      "deleted_chars": 141,
+      "mapping_chars": 1421,
+      "deleted_fraction": 0.0992258972554539,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-72fb2477d1bc",
+      "mechanism_key": "diagnosis",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "R04 and R05 rely on surviving diagnostic limitations, independently of the deleted exclusive-identification claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R05",
+        "text": "The supplied response R does not warrant ranking lock contention against connection-pool exhaustion, and it does not establish equal support. Before this test can justify revising their relative plausibility, inquiry must establish what it measures and how its observations discriminate between the two mechanisms.",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "The specified differential contains lock contention and connection-pool exhaustion."
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "Revise relative plausibility only from a discriminating observation."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Completion certifies execution, not a diagnostic outcome."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No supplied relation assigns R different or equal likelihoods under the two mechanisms."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The retained test definition specifies neither the measured quantity nor the predictions for either mechanism."
+          }
+        ],
+        "why_warranted": "R05 passes all four properties: it follows directly from surviving constraints, applies the source's discriminating-evidence requirement, materially constrains conclusions and inquiry, and concerns the exact retained differential."
+      },
+      "viable_remainders": [
+        "R04",
+        "R05"
+      ],
+      "candidate_count": 5,
+      "frozen_candidate_count": 4,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-2b576fdaf594"
+      ],
+      "deleted_chars": 157,
+      "mapping_chars": 1319,
+      "deleted_fraction": 0.11902956785443518,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-89ae4468006c",
+      "mechanism_key": "ach",
+      "is_control": true,
+      "pair_role": null,
+      "control": "A",
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "Neither the local weakening of alteration nor the limits on extrapolation depends on any deleted claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "Alteration of the one examined score is weakened.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Alteration of the one examined score is weakened."
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: the stipulated independent authenticated copies support a comparative weakening of alteration, applying the source instrument to a material and target-relevant score-entry question."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02"
+      ],
+      "candidate_count": 4,
+      "frozen_candidate_count": 4,
+      "judge_added_count": 0,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-45bb629dd3e3",
+        "C-0a792edc5b4f",
+        "C-64f103dd0465",
+        "C-aee93cc575e5"
+      ],
+      "deleted_chars": 460,
+      "mapping_chars": 1344,
+      "deleted_fraction": 0.34226190476190477,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-945fda3cecc8",
+      "mechanism_key": "custody",
+      "is_control": true,
+      "pair_role": null,
+      "control": "C",
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "R04 and R06 depend on surviving descriptions of documentary coverage and the competing histories, not on either deleted assertion."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R06",
+        "text": "The recorded post-assembly transfers do not distinguish the competing pre-accession internal assembly orders; documented packet continuity therefore supplies no assembly-order constraint selecting among those histories.",
+        "source_spans": [
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "Separate recorded assembly events from unobserved authorial decisions."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "No entry describes internal leaf position, revision, attachment or binding, and all entries postdate assembly."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Packet identity is already fixed in the target question and is not disputed by the competing assembly histories."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No opening, alteration or assembly event is observed during this interval."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The histories differ only in pre-accession internal order, not later handling."
+          }
+        ],
+        "why_warranted": "R06 satisfies all four properties. The surviving audit establishes that the documented features are shared by the competing histories and omit their only difference. This licenses a material, source-derived exclusion of the ledger as discriminating assembly-order evidence."
+      },
+      "viable_remainders": [
+        "R04",
+        "R06"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 5,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-238ab7437d51",
+        "C-4cec9201de5a"
+      ],
+      "deleted_chars": 160,
+      "mapping_chars": 1477,
+      "deleted_fraction": 0.1083276912660799,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-a814c5035bee",
+      "mechanism_key": "step",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+      "reason": "none",
+      "scope_survival": "substantially_intact",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "SUBSTANTIALLY_SURVIVES",
+      "dependency_cascade": "LOCAL",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "Empirical intervention efficacy follows from the controlled response without identifying a unique internal cause."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point"
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: controlled, repeated and reversible settled responses warrant the two-hour reduction; that inference uses the imported instrument, identifies a useful intervention effect, and directly answers the bounded target question."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R03",
+        "R05"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 6,
+      "judge_added_count": 0,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-cdf63e360ab7"
+      ],
+      "deleted_chars": 145,
+      "mapping_chars": 1258,
+      "deleted_fraction": 0.11526232114467408,
+      "operator_category": "PLAUSIBLE_ALTERNATIVE",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-af1fe1a18f36",
+      "mechanism_key": "ach",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "R07 depends on the retained description of lost diagnostic information and the source's inference rule, not on the deleted assertion."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R07",
+        "text": "The surviving exported comparison cannot rank the three P-17 hypotheses or rule out an ordinary unsteered award: X erases the distinctions between consistency, inconsistency and unrated entries, and no hypothesis-specific conflict or sensitivity result is supplied.",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "Award P-17 is examined under three hypotheses: altered recorded scores, bidder-specific specification drafting, and an ordinary award without either practice."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "In the exported table X replaces every rating, including consistency, inconsistency and unrated entries."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The source ratings and their item contents were not retained."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "X has no diagnostic ordering or recoverable original value."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No sensitivity result, hypothesis-specific conflict or specific discriminating missing record is supplied."
+          }
+        ],
+        "why_warranted": "R07 satisfies all four properties. The source's inconsistency-based elimination rule, applied to the explicit loss of every diagnostic rating distinction, yields a warranted and material limit on conclusions about P-17. It neither restores the deleted conclusion nor invents evidential contents."
+      },
+      "viable_remainders": [
+        "R07"
+      ],
+      "candidate_count": 7,
+      "frozen_candidate_count": 6,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-e1ff1ad780a6"
+      ],
+      "deleted_chars": 149,
+      "mapping_chars": 1415,
+      "deleted_fraction": 0.10530035335689046,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-c5ce20f5d61c",
+      "mechanism_key": "crossdate",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "R03 and R08 depend on surviving observations, limitations, and the source operation, without requiring the deleted unique-chronology claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R08",
+        "text": "The supplied pattern table and reference dates do not warrant an overlap-based chronological placement or offset of S.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The counts cannot reconstruct ordered patterns or positional overlap."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "No overlap window or shared-influence relation is recorded."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The references carry dates, but no S entry is linked to one of them."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The docket is an ordinary documentary date, not an alignment anchor for an identified S increment."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No discriminating offset, overlap-derived exclusion or candidate shift is supplied."
+          }
+        ],
+        "why_warranted": "R08 has all four properties assessed YES. It directly applies crossdating's evidential requirements to documented information loss and missing linkage. It asserts insufficient support from the supplied material, without inventing an offset, an exclusion, or future evidence."
+      },
+      "viable_remainders": [
+        "R03",
+        "R08"
+      ],
+      "candidate_count": 8,
+      "frozen_candidate_count": 7,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-142e6b89e8f3"
+      ],
+      "deleted_chars": 168,
+      "mapping_chars": 1363,
+      "deleted_fraction": 0.12325752017608217,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-de38329a6cac",
+      "mechanism_key": "delta",
+      "is_control": false,
+      "pair_role": "reduced",
+      "control": null,
+      "hidden_hypothesis": "KEEP_WITH_REDUCED_SCOPE",
+      "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+      "reason": "none",
+      "scope_survival": "substantially_intact",
+      "mechanism_survival": "SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "SUBSTANTIALLY_SURVIVES",
+      "dependency_cascade": "LOCAL",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "R01, R02, R04 and R05 are independently supported by surviving reduction evidence and instrument limits."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure."
+          }
+        ],
+        "why_warranted": "R01 satisfies all four properties: the recorded outcomes establish sufficiency and single-removal minimality, instantiate delta debugging's inference, identify a useful reproducer, and directly address the frozen-replay target."
+      },
+      "viable_remainders": [
+        "R01",
+        "R02",
+        "R04",
+        "R05"
+      ],
+      "candidate_count": 6,
+      "frozen_candidate_count": 6,
+      "judge_added_count": 0,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-47de9f37ca45",
+        "C-13f2f1545b56"
+      ],
+      "deleted_chars": 150,
+      "mapping_chars": 1213,
+      "deleted_fraction": 0.1236603462489695,
+      "operator_category": "PLAUSIBLE_ALTERNATIVE",
+      "case_design_problem": false,
+      "judge_remainder_error": false
+    },
+    {
+      "case_id": "H2-eb081c18a2e8",
+      "mechanism_key": "custody",
+      "is_control": false,
+      "pair_role": "core",
+      "control": null,
+      "hidden_hypothesis": "CORE_INVALID",
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "reason": "none",
+      "scope_survival": "reduced",
+      "mechanism_survival": "PARTIALLY_SURVIVES",
+      "remainder_check": "DISTINCTIVE_REMAINDER",
+      "target_contribution_survival": "REDUCED_BUT_MATERIAL",
+      "dependency_cascade": "BRANCH",
+      "central_bridge": {
+        "deleted_claim_is_required_for_all_material_contributions": "no",
+        "rationale": "The negative evidentiary conclusion follows from surviving operation, signal, and limit text without either deleted claim."
+      },
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R05",
+        "text": "The surviving post-assembly custody record supports no constraint that distinguishes the competing pre-accession internal assembly orders of D-17.",
+        "source_spans": [
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "Separate recorded assembly events from unobserved authorial decisions."
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "No entry describes internal leaf position, revision, attachment or binding, and all entries postdate assembly."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Packet identity is already fixed in the target question and is not disputed by the competing assembly histories."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No opening, alteration or assembly event is observed during this interval. The histories differ only in pre-accession internal order, not later handling."
+          }
+        ],
+        "why_warranted": "R05 satisfies all four properties. It directly applies the documented-event boundary to the exact competing assembly histories, establishing a useful negative evidentiary result without asserting an actual order, an alteration, or the availability of future evidence."
+      },
+      "viable_remainders": [
+        "R04",
+        "R05"
+      ],
+      "candidate_count": 5,
+      "frozen_candidate_count": 4,
+      "judge_added_count": 1,
+      "decisively_unresolved_count": 0,
+      "deleted_claim_ids": [
+        "C-07d2cd98255b",
+        "C-47d8608fda71"
+      ],
+      "deleted_chars": 160,
+      "mapping_chars": 1332,
+      "deleted_fraction": 0.12012012012012012,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_remainder_error": false
+    }
+  ],
+  "provider_limitations": {
+    "verified_served_snapshots": [
+      null
+    ],
+    "harness_retries": 0,
+    "exposed_internal_retry_events": 0,
+    "sampling": "one fresh Astra/high context per claim and artifact; no independent-rater or repeat-sample estimate"
+  },
+  "interpretation": {
+    "summary": "H.2 completed 57 claim and 16 artifact observations, but did not establish a robust reduced-scope/CORE_INVALID calibration boundary. Most intended core constructions remained viable through source-specific negative evidentiary constraints that the authoring gate missed.",
+    "boundary_operational": "Not yet demonstrated robustly. Outputs obey the four-part derivation, but zero of six pairs realize the intended reduced/core labels; only the step pair separates viable from nonviable, and its core source-specificity decision is ambiguous.",
+    "absence_vs_centrality": "The measured CORE_INVALID is explicitly justified by absence of a four-YES remainder, not claim centrality. This is better aligned with the revised construct, but one ambiguous core observation cannot establish improved calibration or broad superiority over graph-based explanations.",
+    "natural_output_readiness": "Not ready for a fresh natural-output admission experiment. First settle when a source-specific evidentiary-insufficiency result is itself a material remainder, and distinguish it operationally from generic lack-of-evidence commentary."
+  },
+  "recommended_next_step": "Revise the authoring audit to require explicit negative-evidentiary candidates and useful stopping/inquiry rules for every proposed core. Clarify the source-specificity boundary for missing prerequisites using the step/diagnosis/crossdating contrasts, then author a small genuinely no-viable-remainder calibration before any new provider measurement. Do not impose a blanket ban on negative remainders. This recommendation is not executed."
+}

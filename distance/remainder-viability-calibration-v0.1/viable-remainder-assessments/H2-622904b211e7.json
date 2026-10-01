@@ -1,0 +1,115 @@
+{
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The recorded timestamps and register values permit a plot of the submitted priority trajectory through the step and reversal windows of P-17.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The recorded timestamps and register values permit a plot of the submitted priority trajectory through the step and reversal windows of P-17."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "NO",
+      "material": "NO",
+      "target_relevant": "NO",
+      "rationale": {
+        "warranted": "The surviving mapping supplies the timestamps and register values needed for this plot.",
+        "source_derived": "Plotting recorded input values is generic data presentation. It draws no operational conclusion from a measured process response.",
+        "material": "Execution is already granted, and plotting the submitted command adds no useful constraint on delay reduction or its investigation.",
+        "target_relevant": "The plot concerns submitted priority, with no supplied connection to application to work items or process delay."
+      }
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "The archived trajectory is the smoothed submitted-priority register in command units.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The archived trajectory is the smoothed submitted-priority register in command units."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "NO",
+      "material": "YES",
+      "target_relevant": "YES",
+      "rationale": {
+        "warranted": "This is an explicit surviving description of the recorded channel.",
+        "source_derived": "Channel identity and units are supplied measurement metadata, rather than consequences of applying step-response reasoning.",
+        "material": "Identifying what was measured usefully constrains interpretation of the archived trajectory.",
+        "target_relevant": "The measurement's identity bears on whether it can support the claimed delay reduction."
+      }
+    },
+    {
+      "remainder_id": "R03",
+      "inference": "In each of three repetitions it settles two units below its initial value after the step and returns after reversal.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In each of three repetitions it settles two units below its initial value after the step and returns after reversal."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "material": "YES",
+      "target_relevant": "NO",
+      "rationale": {
+        "warranted": "The surviving signal explicitly reports this repeated behavior of the register.",
+        "source_derived": "Settling, steady-state change and return following controlled perturbations are temporal response features identified by the imported instrument.",
+        "material": "The observation characterizes reproducible behavior of the recorded command channel, although that contribution concerns the recorder.",
+        "target_relevant": "The filter produces this response before the scheduler acts. Its settling and reversal establish no delay response of P-17, and execution is already granted."
+      }
+    },
+    {
+      "remainder_id": "R04",
+      "inference": "The acquisition filter generates the transient from the submitted command before the work-item scheduler acts.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The acquisition filter generates the transient from the submitted command before the work-item scheduler acts."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "NO",
+      "material": "YES",
+      "target_relevant": "YES",
+      "rationale": {
+        "warranted": "The surviving mapping explicitly supplies this causal provenance.",
+        "source_derived": "The filter's location and causal role are stipulated facts about acquisition, not conclusions obtained from response features.",
+        "material": "This fact prevents attributing the observed transient to P-17 processing.",
+        "target_relevant": "It directly constrains the admissibility of the recorded transient as evidence for process-delay improvement."
+      }
+    },
+    {
+      "remainder_id": "R05",
+      "inference": "The supplied trajectory cannot establish which bounded changes measurably reduce delay in P-17 at the tested operating point.",
+      "source_spans": [
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The register records submitted input, not queue state, completion times or application to work items."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "No process-output channel or conversion from command units to delay is supplied."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "Execution of the stated input operation is already granted; the filter is part of the recorder, not P-17 processing."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "NO",
+      "material": "YES",
+      "target_relevant": "YES",
+      "rationale": {
+        "warranted": "The explicit channel and conversion limitations entail this evidentiary constraint.",
+        "source_derived": "This follows from the explicit absence of relevant outcome measurements and unit conversion, independently of step-response reasoning. No response feature of P-17 supplies an operational inference.",
+        "material": "It usefully constrains what the existing record can establish and identifies the evidentiary gap for further inquiry.",
+        "target_relevant": "It addresses whether the supplied evidence can answer the exact retained delay-reduction question."
+      }
+    }
+  ],
+  "viable_remainders": [],
+  "scope_survival": "none",
+  "no_viable_remainder_reason": "mechanism_death"
+}
