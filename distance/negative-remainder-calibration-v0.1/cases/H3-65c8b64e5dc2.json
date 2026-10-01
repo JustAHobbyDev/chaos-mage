@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed-change subset is sufficient and minimal for reproducing target failure F under the frozen replay?"
+  },
+  "mapping": {
+    "state": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed.",
+    "operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition.",
+    "signal": "The subset ledger preserves test identities and the described result channel. Replays are deterministic under the fixed workload and environment.\nThe current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset.\nReplay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+    "inference": "The reduction establishes {a,c} as the unique globally smallest sufficient subset for F and its unique internal root cause.",
+    "limit": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "case_id": "H3-4d30014ef73c",
+  "mechanism_key": "diagnosis",
+  "is_control": false,
+  "control": null,
+  "intended_role": "INQUIRY_CONSTRAINT",
+  "focal_texts": [
+    "The current result does not discriminate lock contention from isolated pool exhaustion.",
+    "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+  ],
+  "intended_unsupported": [
+    "The completed probe uniquely establishes lock contention as the cause of F-17 across all production workloads."
+  ],
+  "hypothesis": "Productive surviving negative consequence",
+  "confounds": [
+    "Synthetic supplied relations and observation differences, not a wording-only causal intervention.",
+    "Inquiry members contain an additional atomic assertion; no padding is used."
+  ]
+}

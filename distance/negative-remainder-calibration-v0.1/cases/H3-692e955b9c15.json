@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which of lock contention and pool exhaustion is better supported for F-17, and what inquiry does that justify?"
+  },
+  "mapping": {
+    "state": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry. The replay environment and workload are fixed, and the response ledger identifies the completed probe.",
+    "operation": "State candidate mechanisms, compare probe responses against their diagnostic expectations, and update the comparative support under the fixed workload.",
+    "signal": "The probe completed under the stated replay conditions. Its response ledger and instrument identities are authenticated.\nThe current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+    "inference": "The completed probe uniquely establishes lock contention as the cause of F-17 across all production workloads.",
+    "limit": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+  }
+}
