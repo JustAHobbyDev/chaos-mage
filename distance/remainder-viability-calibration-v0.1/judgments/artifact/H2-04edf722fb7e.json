@@ -1,0 +1,220 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-04edf722fb7e",
+    "unsupported_claim_ids": [
+      "C-60f57d1ce06e"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "Within the specified differential the response favors lock contention over isolated pool exhaustion",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Within the specified differential the response favors lock contention over isolated pool exhaustion"
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The reliable, successfully executed and adequately sensitive test produces unchanged latency, matching the stated lock-contention prediction and contradicting the isolated pool-exhaustion prediction."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Reprioritizing competing explanations using discriminating evidence directly applies the differential-diagnosis instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It establishes which specified mechanism has better evidential support."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It directly answers the mechanism-comparison part of the F-17 question."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "; inspect lock ownership and hold times next.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "; inspect lock ownership and hold times next."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The supported relative preference for lock contention and elevated lock-wait traces justify investigating lock ownership and hold times without establishing a sole cause."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "In context, this inquiry follows the differential's evidence-based reprioritization and continues investigation of the favored explanation."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies concrete next evidence to inspect."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It directly answers what inquiry the F-17 comparison justifies."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly supplies this observation and stipulates its reliability."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "The observation is a target-domain evidence input. Standing alone, it does not express a consequence of comparing explanations through the imported instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The response provides useful evidence for evaluating the specified mechanisms."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It concerns the same F-17 service, replay and mechanisms."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly supplies these validated predictions and states that they are reliable."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "These mechanism-specific predictions are supplied premises for differential reasoning. The imported instrument uses them but does not itself establish the predicted latency responses."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The contrasting predictions establish how the recorded response can discriminate between the two mechanisms."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The predictions concern exactly the specified differential and test."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "frozen",
+        "inference": "The capacity step is applied successfully and response sensitivity is adequate.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The capacity step is applied successfully and response sensitivity is adequate."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Successful execution and adequate sensitivity are explicit surviving stipulations."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "These are supplied test-quality facts, rather than conclusions produced by the differential-diagnosis instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "They support interpreting unchanged latency as informative rather than as a failed intervention or insensitive measurement."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "They bear directly on the evidential value of the F-17 test."
+        }
+      },
+      {
+        "remainder_id": "R06",
+        "origin": "judge_added",
+        "inference": "The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The supplied predictions compare isolated mechanisms, and the surviving content provides no exclusion of co-occurring or unlisted mechanisms."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This applies the source instrument's dependence on the generated hypothesis set and its constraint against premature closure."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It limits the causal conclusion and prevents treating a relative preference as a completed, exclusive diagnosis."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It bounds what the comparison and subsequent inquiry can establish about F-17."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01",
+      "R02",
+      "R06"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "Within the specified differential the response favors lock contention over isolated pool exhaustion",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Within the specified differential the response favors lock contention over isolated pool exhaustion"
+        }
+      ],
+      "why_warranted": "R01 satisfies all four properties: the reliable discriminating response warrants relative support for lock contention; the comparison applies differential diagnosis; it materially prioritizes a mechanism; and it directly answers the retained F-17 question. It does not depend on the deleted sole-cause assertion."
+    },
+    "scope_survival": {
+      "status": "substantially_intact",
+      "rationale": "The exact target asks for relative support between two mechanisms and a justified next inquiry. Both survive through R01 and R02, with R06 preserving the appropriate limits."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Competing explanations, contrasting test predictions, reliable observations and evidence-based reprioritization all remain."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving comparison and directed inquiry follow from a specific discriminating response within the supplied differential."
+    },
+    "target_contribution_survival": {
+      "status": "SUBSTANTIALLY_SURVIVES",
+      "rationale": "The remainder answers both parts of the exact target question while retaining the limitation on exclusive causal attribution."
+    },
+    "dependency_cascade": {
+      "status": "LOCAL",
+      "rationale": "Deletion removes the unwarranted certainty and exhaustive exclusion. The bounded comparison and next inquiry retain independent support from the surviving test evidence."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "Neither relative prioritization nor the justified lock investigation requires certainty that lock contention is the sole cause."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The viable candidates, substantially intact target scope and surviving mechanism agree. Rejecting supplied evidence inputs as standalone source-derived consequences does not conflict with their support for viable differential inferences."
+    },
+    "uncertainty": []
+  }
+}

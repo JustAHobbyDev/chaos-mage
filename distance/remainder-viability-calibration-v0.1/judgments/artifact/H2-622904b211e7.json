@@ -1,0 +1,192 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-622904b211e7",
+    "unsupported_claim_ids": [
+      "C-64e99df1b2ff"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The recorded timestamps and register values permit a plot of the submitted priority trajectory through the step and reversal windows of P-17.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The recorded timestamps and register values permit a plot of the submitted priority trajectory through the step and reversal windows of P-17."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping supplies the timestamps and register values needed for this plot."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "Plotting recorded input values is generic data presentation. It draws no operational conclusion from a measured process response."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "Execution is already granted, and plotting the submitted command adds no useful constraint on delay reduction or its investigation."
+        },
+        "target_relevant": {
+          "status": "NO",
+          "rationale": "The plot concerns submitted priority, with no supplied connection to application to work items or process delay."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "The archived trajectory is the smoothed submitted-priority register in command units.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The archived trajectory is the smoothed submitted-priority register in command units."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "This is an explicit surviving description of the recorded channel."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "Channel identity and units are supplied measurement metadata, rather than consequences of applying step-response reasoning."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifying what was measured usefully constrains interpretation of the archived trajectory."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The measurement's identity bears on whether it can support the claimed delay reduction."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "In each of three repetitions it settles two units below its initial value after the step and returns after reversal.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "In each of three repetitions it settles two units below its initial value after the step and returns after reversal."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly reports this repeated behavior of the register."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Settling, steady-state change and return following controlled perturbations are temporal response features identified by the imported instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The observation characterizes reproducible behavior of the recorded command channel, although that contribution concerns the recorder."
+        },
+        "target_relevant": {
+          "status": "NO",
+          "rationale": "The filter produces this response before the scheduler acts. Its settling and reversal establish no delay response of P-17, and execution is already granted."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "The acquisition filter generates the transient from the submitted command before the work-item scheduler acts.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The acquisition filter generates the transient from the submitted command before the work-item scheduler acts."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly supplies this causal provenance."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "The filter's location and causal role are stipulated facts about acquisition, not conclusions obtained from response features."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "This fact prevents attributing the observed transient to P-17 processing."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It directly constrains the admissibility of the recorded transient as evidence for process-delay improvement."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "judge_added",
+        "inference": "The supplied trajectory cannot establish which bounded changes measurably reduce delay in P-17 at the tested operating point.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The register records submitted input, not queue state, completion times or application to work items."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No process-output channel or conversion from command units to delay is supplied."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Execution of the stated input operation is already granted; the filter is part of the recorder, not P-17 processing."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The explicit channel and conversion limitations entail this evidentiary constraint."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This follows from the explicit absence of relevant outcome measurements and unit conversion, independently of step-response reasoning. No response feature of P-17 supplies an operational inference."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It usefully constrains what the existing record can establish and identifies the evidentiary gap for further inquiry."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It addresses whether the supplied evidence can answer the exact retained delay-reduction question."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": null,
+      "text": null,
+      "source_spans": [],
+      "why_warranted": "No candidate satisfies all four properties. The warranted target-facing constraints are generic measurement limitations; the source-derived temporal observation concerns the recorder."
+    },
+    "scope_survival": {
+      "status": "none",
+      "rationale": "No source-derived contribution survives for identifying delay-reducing changes, including a bounded subpart of that question."
+    },
+    "mechanism_survival": {
+      "status": "DOES_NOT_SURVIVE",
+      "rationale": "For P-17, the instrument lacks an observed process output. Executable input steps and recorder-generated transients cannot instantiate the required link from perturbation to process-response features."
+    },
+    "remainder_check": {
+      "status": "GENERIC_REMAINDER",
+      "rationale": "The target-facing remainder consists of plotting, channel provenance and generic evidentiary limitations. The remaining temporal characterization belongs to a different system."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "No material source-derived target contribution survives. The useful generic limitations do not meet the source-derived requirement."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "Deletion removes the sole asserted bridge to delay reduction. Remaining operations and observations do not independently support a source-derived answer to the retained question."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "Every asserted source-derived contribution to the delay-reduction answer depended on the deleted conversion from register behavior to process delay. No viable alternative bypasses it."
+    },
+    "no_viable_remainder_reason": "mechanism_death",
+    "artifact_status": "CORE_INVALID",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The diagnostics are consistent: the target mechanism fails, generic evidentiary constraints remain, and a source-derived recorder observation fails target relevance. None supplies a viable remainder."
+    },
+    "uncertainty": []
+  }
+}

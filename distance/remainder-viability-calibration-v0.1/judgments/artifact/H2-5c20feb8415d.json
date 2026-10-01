@@ -1,0 +1,282 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-5c20feb8415d",
+    "unsupported_claim_ids": [
+      "C-a45c19ea3002"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "For segment Q, the response favors lock contention over isolated pool exhaustion and supports inspecting Q lock ownership and hold times.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "For segment Q, the response favors lock contention over isolated pool exhaustion and supports inspecting Q lock ownership and hold times."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The observed response matches the validated lock-contention prediction and contradicts the isolated-pool-exhaustion prediction; execution and sensitivity checks pass. The ranking and inquiry are warranted within Q."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This applies differential diagnosis: discriminating evidence reprioritizes competing explanations and directs further investigation."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It supplies a mechanism preference and a concrete investigation of lock ownership and hold times."
+        },
+        "target_relevant": {
+          "status": "UNCERTAIN",
+          "rationale": "Its relevance to F-17 depends on Q belonging to the failing-request path. The supplied mapping explicitly leaves that association unresolved."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The mapping explicitly establishes this conditional applicability boundary. Its truth does not require resolving which branch holds."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "As stated, this is a general evidence-to-target association condition. It does not itself perform the imported instrument's discrimination or reprioritization; those remain in R01."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies the missing association that controls whether Q's diagnostic priority can inform F-17."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The conditional explicitly constrains applying the supplied evidence to the exact target."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "The observations cannot exclude co-occurrence or unlisted mechanisms.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The observations cannot exclude co-occurrence or unlisted mechanisms."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The validated predictions distinguish isolated mechanisms. Neither those predictions nor the observed response excludes mixtures or mechanisms outside the supplied differential."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This expresses the instrument's limits from hypothesis coverage and premature closure: comparative support does not establish an exhaustive or exclusive diagnosis."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It limits causal conclusions from the Q test and preserves investigation beyond an exclusive single-mechanism explanation."
+        },
+        "target_relevant": {
+          "status": "UNCERTAIN",
+          "rationale": "Its substantive diagnostic constraint concerns the Q observations. Whether that constraint bears on the F-17 differential depends on the unresolved path association. Reading it merely as lack of evidence about F-17 would supply only a generic evidentiary limitation."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "This observation is explicitly supplied and survives deletion."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "The statement records a target-domain measurement. Its differential-diagnostic interpretation requires the prediction comparison expressed elsewhere."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The response supplies consequential evidence for interpreting the controlled Q test."
+        },
+        "target_relevant": {
+          "status": "UNCERTAIN",
+          "rationale": "No supplied identifier or routing fact connects the measured segment activity to F-17."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "frozen",
+        "inference": "The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The mapping explicitly supplies these validated predictions for interpreting the Q test."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "The contrasting predictions operationalize the imported requirement for evidence that bears differently on competing explanations."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "They establish why the capacity intervention discriminates between the two isolated mechanisms."
+        },
+        "target_relevant": {
+          "status": "UNCERTAIN",
+          "rationale": "Their validated application is within Q. The mapping does not establish that this test addresses the activity producing F-17."
+        }
+      },
+      {
+        "remainder_id": "R06",
+        "origin": "frozen",
+        "inference": "Execution and sensitivity checks pass.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Execution and sensitivity checks pass."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping expressly reports successful checks."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is a test-validation fact, not itself an operational inference from comparing competing explanations."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It supports interpreting the unchanged Q latency rather than dismissing it as an execution or sensitivity failure."
+        },
+        "target_relevant": {
+          "status": "UNCERTAIN",
+          "rationale": "The checks validate the Q test but do not establish its association with F-17."
+        }
+      },
+      {
+        "remainder_id": "R07",
+        "origin": "frozen",
+        "inference": "The trace contains no failing-request identifier linking Q to F-17.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The trace contains no failing-request identifier linking Q to F-17."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "This absence is explicitly stated in the supplied trace description."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is a native trace-association fact. Establishing which request a trace describes is a general provenance requirement rather than a consequence distinctive to differential diagnosis."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies why the Q result cannot presently be applied confidently to F-17."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It directly concerns the missing connection between the supplied evidence and the exact failure pattern."
+        }
+      },
+      {
+        "remainder_id": "R08",
+        "origin": "judge_added",
+        "inference": "Applying Q's diagnostic priority to F-17 requires establishing whether Q is on the F-17 request path; resolving that association is a justified next inquiry.",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "The segment-to-failing-request association is absent from the supplied routing record."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Test interpretation within Q is established; only Q membership in the F-17 request path is unspecified."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No routing fact resolves that single boundary."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The explicitly unresolved applicability condition directly licenses investigating the association. This inference neither assumes a positive association nor supplies a repaired mechanism ranking for F-17."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "The inquiry checks evidence-to-request association, a generic applicability requirement. Its usefulness does not make it an operational consequence of the imported mechanism-comparison instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies a concrete information gap whose resolution would determine whether the existing Q diagnosis can inform F-17."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It addresses whether the supplied test can answer the retained F-17 question."
+        }
+      }
+    ],
+    "viable_remainders": [],
+    "strongest_surviving_target_inference": {
+      "remainder_id": null,
+      "text": null,
+      "source_spans": [],
+      "why_warranted": "No candidate has all four properties assessed YES. R01 is the strongest substantive diagnostic result, but its target relevance remains uncertain; it cannot be presented as an established surviving inference about F-17."
+    },
+    "scope_survival": {
+      "status": "uncertain",
+      "rationale": "A bounded diagnostic result survives within Q, but the mapping does not establish whether that bounded scope intersects the retained F-17 question."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "The comparison of validated predictions with an observed intervention response still supports reprioritizing mechanisms and directing lock investigation within Q. Deletion does not destroy that reasoning mechanism."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R01 retains a specific differential-diagnostic result, and R05 retains its discriminating prediction structure. Their existence does not settle their relevance to F-17."
+    },
+    "target_contribution_survival": {
+      "status": "UNCERTAIN",
+      "rationale": "The distinctive diagnostic contribution bears on F-17 only if Q belongs to its request path. Definite applicability constraints and a routing inquiry survive, but these are generic rather than source-derived contributions."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion removes the service-wide exclusive-cause conclusion. The Q-specific comparative diagnosis remains independently warranted; uncertainty about its target application comes from a separate missing association."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "The deleted universal claim is not a premise of the surviving Q comparison or applicability inquiry. The obstacle to a definite source-derived target contribution is the unresolved Q-to-F-17 association, not dependence on the deleted claim."
+    },
+    "no_viable_remainder_reason": "uncertain",
+    "artifact_status": "UNCERTAIN_LOAD_BEARING",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The diagnostics distinguish survival of a distinctive reasoning mechanism within Q from its unresolved target relevance. No viable candidate is asserted alongside uncertain scope, and mechanism survival does not independently determine artifact status."
+    },
+    "uncertainty": [
+      "Whether Q lies on the F-17 failing-request path is explicitly unresolved.",
+      "R01, R03, and R05 have no NO assessments and have UNCERTAIN target relevance, making them decisively unresolved.",
+      "R02, R04, R06, R07, and R08 are disqualified by source_derived=NO; uncertainty in other fields cannot rescue them.",
+      "Resolving the association could establish or defeat the target relevance of the Q-specific diagnostic result. No outcome of that future inquiry is assumed."
+    ]
+  }
+}

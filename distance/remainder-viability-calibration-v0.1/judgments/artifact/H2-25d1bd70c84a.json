@@ -1,0 +1,238 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-25d1bd70c84a",
+    "unsupported_claim_ids": [
+      "C-0f5b1d8238f2",
+      "C-c506f9362942",
+      "C-b7a235da45b3"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The deterministic outcomes support the stated single-removal minimality for the recorded flag."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This is delta debugging's test-relative reduction result."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies a reproducible, locally irreducible configuration for the observed process-exit behavior."
+        },
+        "target_relevant": {
+          "status": "NO",
+          "rationale": "Flag minimality does not establish reproduction or minimality for checkout deadline failure F. The retained evidence does not connect the reduced subsets' flag outcomes to their F outcomes."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "The retained output is a generic nonzero process-exit flag.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The retained output is a generic nonzero process-exit flag."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly identifies the recorded output."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This describes target instrumentation; it is not an operational consequence of delta debugging."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifying the actual measured output helps constrain interpretation of the recorded tests."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The identity of the measured outcome bears on whether these tests answer the question about F."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "Subset {a,b} produces that flag on every replay; {a} and {b} do not.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Subset {a,b} produces that flag on every replay; {a} and {b} do not."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "These outcomes are explicitly recorded, with deterministic repetitions."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "The subset comparisons instantiate the imported instrument's signal: which removals preserve the tested outcome."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "They distinguish configurations that reproduce the recorded exit behavior from configurations that eliminate it."
+        },
+        "target_relevant": {
+          "status": "NO",
+          "rationale": "These comparisons concern the flag. They do not distinguish configurations that reproduce F from configurations that eliminate F."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "The exit flag pools checkout deadline failures with configuration rejection and early harness termination.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The exit flag pools checkout deadline failures with configuration rejection and early harness termination."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly states this ambiguity."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is a fact about the target's output encoding, independently of the reduction instrument."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies a concrete ambiguity that limits interpretation of positive flag outcomes."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It bears directly on whether a positive flag establishes reproduction of F."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "frozen",
+        "inference": "Failure-specific traces were not retained.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Failure-specific traces were not retained."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly records this absence."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is an evidence-retention fact, not a consequence of delta debugging."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It identifies a concrete limitation on retrospective interpretation of the tests."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Failure-specific evidence bears on whether the reduced configurations actually reproduced F."
+        }
+      },
+      {
+        "remainder_id": "R06",
+        "origin": "judge_added",
+        "inference": "The recorded reduction establishes single-removal minimality only for the nonzero-exit flag. It does not establish that {a,b} reproduces F or that removing either change eliminates F, so it cannot establish {a,b} as sufficient and minimal for F under the frozen replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "A checkout deadline failure can return a handled response with zero process exit; a nonzero exit can occur before checkout runs."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No target-F trace or result is recorded for any reduced subset; the flag is not a timing bound."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving evidence establishes flag outcomes while explicitly withholding F outcomes and allowing both false-positive and false-negative interpretations of the flag. The inference concerns what the evidence establishes; it does not assert the deleted claim that all flag/F combinations actually occur."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Delta debugging licenses sufficiency and minimality relative to the tested failure predicate. Applying that restriction to the surviving reduction prevents transferring flag preservation and elimination to F preservation and elimination."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It blocks a concrete unsupported diagnosis: treating {a,b} as an established sufficient and minimal F reproducer or treating either single removal as eliminating F. It identifies the missing outcome distinction without predicting future test results."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It directly constrains the sufficiency and minimality conclusions requested for F under this replay, although it does not identify the requested subset."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R06"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R06",
+      "text": "The recorded reduction establishes single-removal minimality only for the nonzero-exit flag. It does not establish that {a,b} reproduces F or that removing either change eliminates F, so it cannot establish {a,b} as sufficient and minimal for F under the frozen replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Subset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "A checkout deadline failure can return a handled response with zero process exit; a nonzero exit can occur before checkout runs."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "No target-F trace or result is recorded for any reduced subset; the flag is not a timing bound."
+        }
+      ],
+      "why_warranted": "R06 satisfies all four properties. It applies the instrument's test-relative inference boundary to the exact retained question using explicit surviving evidence. Its contribution is a concrete negative constraint on the proposed F diagnosis, not a positive result about F or a repaired testing procedure."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "No sufficient and minimal F-inducing subset is established. A bounded contribution survives: explaining why the observed reduction cannot establish the proposed subset's sufficiency or minimality for F."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Subset reduction and single-removal comparison survive for the flag, as does the source instrument's restriction to the tested predicate. The mechanism no longer supports positive reproduction or minimality claims about F."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "R06 specifically connects delta debugging's test-relative minimality to the mismatch between recorded flag outcomes and the required F outcomes. It constrains the exact subset diagnosis beyond a generic warning about inadequate evidence."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The requested subset identification is lost, but the surviving inference usefully rules out treating the recorded reduction as establishing that identification."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deleting the flag-to-F bridge removes the positive F sufficiency, minimality and root-cause conclusions. Flag-relative reduction and the target-specific limitation remain independently supported."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "The deleted bridge is required to transfer the flag reduction to a positive F diagnosis. R06 instead follows from the surviving test-relative result and explicit evidence limitations."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "The viable negative constraint supports reduced scope and partial mechanism survival. The proxy result alone is not counted as a target-relevant contribution; no diagnostic conflicts with the derived status."
+    },
+    "uncertainty": [
+      "The surviving record does not determine which deployed-change subsets reproduce F or which are minimal for F. This uncertainty about F outcomes does not make the evidentiary limitation in R06 uncertain."
+    ]
+  }
+}

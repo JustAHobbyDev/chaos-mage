@@ -1,0 +1,227 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-72fb2477d1bc",
+    "unsupported_claim_ids": [
+      "C-2b576fdaf594"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The run ledger records three completed tests for F-17 and preserves their response code R together with the names of the two specified mechanisms.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The run ledger records three completed tests for F-17 and preserves their response code R together with the names of the two specified mechanisms."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly states this ledger content."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "Preserving execution records and mechanism names is generic recordkeeping, without an operational consequence of differential diagnosis."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "This inventory alone supplies no diagnostic constraint, comparative support or justified direction for inquiry."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The records concern the exact F-17 tests and specified mechanisms, although their inventory does not answer the comparison."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "Under the fixed replay, the supplied test produces response code R on three repetitions.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Under the fixed replay, the supplied test produces response code R on three repetitions."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly reports the repetitions and response."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "A repeated observation without its implications for competing mechanisms is an input to the instrument, not an operational consequence of it."
+        },
+        "material": {
+          "status": "NO",
+          "rationale": "Repetition of a completion code supplies no useful comparative diagnostic information by itself."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "This is the recorded response being evaluated for the exact F-17 differential."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "The retained definition says only that R is a completed-test code.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The retained definition says only that R is a completed-test code."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The retained definition expressly supplies this limited meaning."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "The code's stipulated meaning is test metadata; the candidate does not itself apply comparative diagnostic reasoning."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It usefully constrains interpretation of the response to completion, preventing its definition from being treated as a causal identification."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The meaning of R bears directly on whether the supplied response can support the requested mechanism comparison."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "It contains neither a latency result nor a mechanism-dependent prediction, sensitivity value or diagnostic interpretation.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "It contains neither a latency result nor a mechanism-dependent prediction, sensitivity value or diagnostic interpretation."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly identifies these omissions from the retained definition."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This identifies missing diagnostic content using the instrument's requirements for evidence bearing differently on explanations and its sensitivity-related limits."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "The omissions identify a concrete evidential limitation on interpreting the completed tests and locate what the inquiry lacks."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "These are limitations of the exact test offered to distinguish the two specified F-17 mechanisms."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "judge_added",
+        "inference": "The supplied response R does not warrant ranking lock contention against connection-pool exhaustion, and it does not establish equal support. Before this test can justify revising their relative plausibility, inquiry must establish what it measures and how its observations discriminate between the two mechanisms.",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "The specified differential contains lock contention and connection-pool exhaustion."
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "Revise relative plausibility only from a discriminating observation."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "Completion certifies execution, not a diagnostic outcome."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No supplied relation assigns R different or equal likelihoods under the two mechanisms."
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The retained test definition specifies neither the measured quantity nor the predictions for either mechanism."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The explicit restriction on updates and the missing measurement and mechanism-dependent relations entail this evidential boundary and necessary inquiry. This asserts neither equal likelihoods nor that a future test will discriminate."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "It applies differential diagnosis's requirement that evidence bear differently on competing explanations before their relative plausibility is revised."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "It blocks an unwarranted ranking and directs inquiry toward the precise missing basis for a diagnostic comparison."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "It addresses what can be concluded about the exact two F-17 mechanisms and what inquiry that evidential situation justifies."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R04",
+      "R05"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R05",
+      "text": "The supplied response R does not warrant ranking lock contention against connection-pool exhaustion, and it does not establish equal support. Before this test can justify revising their relative plausibility, inquiry must establish what it measures and how its observations discriminate between the two mechanisms.",
+      "source_spans": [
+        {
+          "source_field": "mapping.state",
+          "exact_text": "The specified differential contains lock contention and connection-pool exhaustion."
+        },
+        {
+          "source_field": "mapping.operation",
+          "exact_text": "Revise relative plausibility only from a discriminating observation."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "Completion certifies execution, not a diagnostic outcome."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "No supplied relation assigns R different or equal likelihoods under the two mechanisms."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The retained test definition specifies neither the measured quantity nor the predictions for either mechanism."
+        }
+      ],
+      "why_warranted": "R05 passes all four properties: it follows directly from surviving constraints, applies the source's discriminating-evidence requirement, materially constrains conclusions and inquiry, and concerns the exact retained differential."
+    },
+    "scope_survival": {
+      "status": "reduced",
+      "rationale": "No positive mechanism ranking survives. A material bounded contribution remains: diagnosing the supplied evidence's inadequacy and identifying prerequisites for a justified comparison."
+    },
+    "mechanism_survival": {
+      "status": "PARTIALLY_SURVIVES",
+      "rationale": "Comparative updating cannot proceed from R, but the instrument's evidential adequacy check and restriction against unsupported updating remain operative."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving contribution links the exact response's missing diagnostic relations to the differential's requirement for discriminating evidence."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "The mapping cannot identify a better-supported mechanism, but it establishes why R cannot justify that judgment and what the inquiry must establish."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "Deletion removes the sole-cause attribution branch. The independent evidence limitations and comparative-update constraint continue to support a bounded target contribution."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R04 and R05 rely on surviving diagnostic limitations, independently of the deleted exclusive-identification claim."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Viable candidates, reduced scope and partial mechanism survival are consistent. Inability to perform a justified ranking does not eliminate the warranted diagnostic constraint and inquiry contribution."
+    },
+    "uncertainty": [
+      "The supplied material establishes neither different nor equal likelihoods for R under the mechanisms; their actual relative support remains undetermined.",
+      "The necessary inquiry is warranted, but whether further specification or evidence would enable discrimination is unknown."
+    ]
+  }
+}

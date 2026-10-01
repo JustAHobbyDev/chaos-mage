@@ -1,0 +1,221 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-a814c5035bee",
+    "unsupported_claim_ids": [
+      "C-cdf63e360ab7"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "The tested priority step reduces settled end-to-end delay by two hours at this operating point",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point"
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Three controlled repetitions show calibrated, settled delay falling from five to three hours and returning after reversal, without disturbances."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "The inference uses the steady-state change following a controlled step to characterize the system's response."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifies an intervention and quantifies its observed delay reduction."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Directly answers which bounded change reduces P-17 delay at the tested operating point."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "; it is a bounded candidate change for P-17.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "; it is a bounded candidate change for P-17."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving antecedent identifies the tested priority step; the state establishes its boundedness and the observations establish its measured benefit."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Its qualification as a candidate follows from the measured step response, independently of unique internal causation."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifies a supported candidate intervention for P-17."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "The candidate is the bounded priority change tested at the operating point specified by the question."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The observations identify neither internal stages nor behavior at other operating points; they do not establish a unique cause or zero remaining delay."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Only aggregate delay at one operating point is observed. No internal-stage discrimination is supplied, and settled delay remains three hours."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Expresses the identification and generalization limits of the observed step response."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Constrains interpretation and application of the intervention evidence, including its residual delay and operating-point boundary."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Bounds what the measured reduction establishes for the retained intervention question."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "The measured output is end-to-end delay in hours.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The measured output is end-to-end delay in hours."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving signal explicitly specifies the measured endpoint and units."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "Endpoint and unit selection are measurement specifications, not an operational inference supplied by step-response reasoning."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Clarifies that the benefit concerns total process delay and how its magnitude is measured."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Specifies the delay outcome used to answer the target question."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "frozen",
+        "inference": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Each of three repetitions settles from five hours to three hours after the step and returns to five hours after reversal."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The surviving mapping explicitly reports this repeated trajectory and confirms calibration and adequate settling time."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Characterizes the system through repeatable settling and reversal responses to controlled input changes."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Establishes the magnitude, repeatability and reversal of the observed delay improvement."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Reports the measured response of P-17 to the bounded change under investigation."
+        }
+      },
+      {
+        "remainder_id": "R06",
+        "origin": "frozen",
+        "inference": "No other input changes or disturbances occur during these observations.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "No other input changes or disturbances occur during these observations."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Absence of other changes and disturbances is explicitly stipulated in the surviving mapping."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is a supplied experimental condition, not a consequence inferred from the response instrument. Its relevance to instrument validity does not make the condition itself source-derived."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Supports attribution of the observed reduction to the tested priority change."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Bears on whether the bounded change accounts for the measured delay reduction."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01",
+      "R02",
+      "R03",
+      "R05"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "The tested priority step reduces settled end-to-end delay by two hours at this operating point"
+        }
+      ],
+      "why_warranted": "R01 satisfies all four properties: controlled, repeated and reversible settled responses warrant the two-hour reduction; that inference uses the imported instrument, identifies a useful intervention effect, and directly answers the bounded target question."
+    },
+    "scope_survival": {
+      "status": "substantially_intact",
+      "rationale": "The target asks about bounded changes at the tested operating point. The supported priority-step result retains that scope; unique internal causation was unnecessary."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Controlled perturbation, trajectory observation, settling, repetition and reversal still support empirical response characterization."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving inference connects a specific controlled input step to a repeatable two-hour settled delay reduction."
+    },
+    "target_contribution_survival": {
+      "status": "SUBSTANTIALLY_SURVIVES",
+      "rationale": "The mapping still identifies the tested bounded change and quantifies its benefit within the exact requested operating-point boundary."
+    },
+    "dependency_cascade": {
+      "status": "LOCAL",
+      "rationale": "Deletion removes the unique-internal-cause assertion without undermining the independently observed intervention effect or its limits."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "Empirical intervention efficacy follows from the controlled response without identifying a unique internal cause."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Viable candidates, substantially intact target scope and surviving response mechanism agree. Rejecting unique internal causation is consistent with retaining a measured intervention effect."
+    },
+    "uncertainty": []
+  }
+}

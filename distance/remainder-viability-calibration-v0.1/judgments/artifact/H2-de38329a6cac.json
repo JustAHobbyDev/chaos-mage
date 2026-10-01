@@ -1,0 +1,222 @@
+{
+  "remainder_viability": {
+    "case_id": "H2-de38329a6cac",
+    "unsupported_claim_ids": [
+      "C-47de9f37ca45",
+      "C-13f2f1545b56"
+    ],
+    "candidate_remainders": [
+      {
+        "remainder_id": "R01",
+        "origin": "frozen",
+        "inference": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The deterministic frozen tests reproduce F with {a,b} and eliminate F with either singleton, establishing sufficiency and single-removal minimality."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "This is delta debugging's test-relative inference from a failure-preserving reduction and removal tests."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifies a sufficient reproducer and establishes that neither retained change can individually be removed."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Directly answers the retained question at the explicitly supported level of 1-minimality under the frozen replay."
+        }
+      },
+      {
+        "remainder_id": "R02",
+        "origin": "frozen",
+        "inference": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality.",
+        "source_spans": [
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "No claim about globally smallest cardinality, other workloads or unique internal causes follows from single-removal minimality."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "The recorded tests establish local removal results under one replay; they do not compare every alternative subset, workload or causal mechanism."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "Applies the instrument's limits on minimization, environmental generalization and causal identification."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Constrains interpretation of minimality and prevents treating the reproducer as a globally smallest or uniquely causal explanation."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Clarifies the supported meaning and scope of 'minimal' in the exact target question."
+        }
+      },
+      {
+        "remainder_id": "R03",
+        "origin": "frozen",
+        "inference": "The oracle measures the defined checkout deadline failure F directly.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The oracle measures the defined checkout deadline failure F directly."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Explicitly stipulated in the surviving signal and consistent with the surviving limit."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This is a supplied property of the target's measurement oracle, not an operational consequence of partitioning and reducing configurations."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Establishes that the recorded outcomes concern F itself, supporting interpretation of the reduction tests."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Connects the measured outcomes to the precise failure named in the question."
+        }
+      },
+      {
+        "remainder_id": "R04",
+        "origin": "frozen",
+        "inference": "Subset {a,b} produces F on every replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Subset {a,b} produces F on every replay."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Explicitly recorded, with repetitions stipulated deterministic in the frozen environment."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "A failure-preserving reduced configuration is the positive operational signal produced by delta debugging."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Identifies {a,b} as a sufficient reproducer under the specified test."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Answers the sufficiency component of the retained question."
+        }
+      },
+      {
+        "remainder_id": "R05",
+        "origin": "frozen",
+        "inference": "Subsets {a} and {b} do not produce F on any replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Subsets {a} and {b} do not produce F on any replay."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Explicitly recorded under the same deterministic replay conditions and failure oracle."
+        },
+        "source_derived": {
+          "status": "YES",
+          "rationale": "These failed reproductions are the removal-test signals establishing which reductions cannot preserve F."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Rules out both singleton reductions as sufficient reproducers and supports the stopping condition at {a,b}."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Directly bears on single-removal minimality of the candidate deployed-change subset."
+        }
+      },
+      {
+        "remainder_id": "R06",
+        "origin": "frozen",
+        "inference": "The same F definition and oracle apply to the full configuration and every reduction.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The same F definition and oracle apply to the full configuration and every reduction."
+          }
+        ],
+        "warranted": {
+          "status": "YES",
+          "rationale": "Explicitly stipulated by the surviving mapping."
+        },
+        "source_derived": {
+          "status": "NO",
+          "rationale": "This supplies a test-comparability condition; it is not a result derived through the imported reduction operation."
+        },
+        "material": {
+          "status": "YES",
+          "rationale": "Makes the positive and negative reduction outcomes comparable as tests of one defined failure."
+        },
+        "target_relevant": {
+          "status": "YES",
+          "rationale": "Supports interpreting the subset comparisons as evidence about the exact F in the question."
+        }
+      }
+    ],
+    "viable_remainders": [
+      "R01",
+      "R02",
+      "R04",
+      "R05"
+    ],
+    "strongest_surviving_target_inference": {
+      "remainder_id": "R01",
+      "text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "Subset {a,b} is sufficient and 1-minimal for reproducing F under the frozen replay: removal of either retained change eliminates that defined failure."
+        }
+      ],
+      "why_warranted": "R01 satisfies all four properties: the recorded outcomes establish sufficiency and single-removal minimality, instantiate delta debugging's inference, identify a useful reproducer, and directly address the frozen-replay target."
+    },
+    "scope_survival": {
+      "status": "substantially_intact",
+      "rationale": "The original supported scope—sufficiency and 1-minimality under the frozen replay—survives completely. Global cardinality and unique causation were already excluded by the mapping's limit."
+    },
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Failure-preserving reduction, singleton removal tests and their test-relative inference all survive simultaneous deletion."
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The remainder retains the instrument-specific connection between failure-preserving subsets, unsuccessful removals and 1-minimal reproduction."
+    },
+    "target_contribution_survival": {
+      "status": "SUBSTANTIALLY_SURVIVES",
+      "rationale": "The mapping still identifies the sufficient subset and establishes its supported minimality for the exact failure and replay."
+    },
+    "dependency_cascade": {
+      "status": "LOCAL",
+      "rationale": "Deletion removes causal overclaims without invalidating the recorded outcomes or their reproduction and minimality consequences."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "R01, R02, R04 and R05 are independently supported by surviving reduction evidence and instrument limits."
+    },
+    "no_viable_remainder_reason": "none",
+    "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "Viable candidates, substantially intact scope and the survival diagnostics agree. Distinguishing 1-minimality from globally smallest cardinality follows the explicit surviving limit."
+    },
+    "uncertainty": []
+  }
+}
