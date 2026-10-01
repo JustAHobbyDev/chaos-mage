@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-01T18:24:04.889349+00:00",
+  "checkpoint": "dcda6092e39c184048161ec60ddac1ff0417d652",
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/runner.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{\"historical_preservation\": {\"tracked\": 3822, \"runtime\": 9928}, \"claims\": 40, \"cases\": 15}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/recovery.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"COMPLETE\",\n  \"primary_case_count\": 12,\n  \"control_count\": 3,\n  \"claim_judgment_count\": 40,\n  \"artifact_judgment_count\": 15,\n  \"negative_role_counts\": {\n    \"TARGET_CONSTRAINT\": 5,\n    \"INQUIRY_CONSTRAINT\": 3,\n    \"INSUFFICIENCY_ONLY\": 11,\n    \"UNCERTAIN\": 0\n  },\n  \"negative_productive_counts\": {\n    \"YES\": 8,\n    \"NO\": 11,\n    \"UNCERTAIN\": 0\n  },\n  \"artifact_status_counts\": {\n    \"KEEP_WITH_WARRANT_FLAGS\": 1,\n    \"KEEP_WITH_REDUCED_SCOPE\": 9,\n    \"CORE_INVALID\": 5,\n    \"UNCERTAIN_LOAD_BEARING\": 0\n  },\n  \"case_design_problems\": 2,\n  \"judge_productivity_errors\": 0\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.609s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/recovery/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.052s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/inquiry-unitization-calibration-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................\n----------------------------------------------------------------------\nRan 32 tests in 1.039s\n\nOK\n"
+    }
+  ],
+  "results": {
+    "observations": 18,
+    "fresh_sessions": 18,
+    "historical_preservation": {
+      "tracked_files": 4076,
+      "historical_runtime_files": 10451,
+      "unchanged": true
+    }
+  },
+  "provider_calls_in_verification": 0
+}
