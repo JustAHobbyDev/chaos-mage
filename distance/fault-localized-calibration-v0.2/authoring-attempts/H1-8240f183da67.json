@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "What bounded delay-reduction evidence supports testing intake-priority and approval-batch changes in approval process P-17 at its measured operating point?"
+  },
+  "mapping": {
+    "state": "The focal approval process P-17 is observed at one fixed operating point. Two branches test intake priority and approval batching. Other inputs are held fixed within each test, disturbances are monitored, and settled delays are measured without changing case composition.",
+    "operation": "Apply a known bounded step to the intake-priority setting, record the delay trajectory, reverse and repeat. Repeat that procedure for the approval-batch setting with the other input fixed. Observe both stages and end-to-end delay through settling. Use a warranted intake response inference to select a bounded priority trial. Use a warranted batching response inference to select a bounded batch trial.",
+    "signal": "The priority step repeatedly reduces settled intake and end-to-end delay by two hours, with approval delay unchanged. The batch step repeatedly reduces settled approval and end-to-end delay by three hours, with intake delay unchanged. Reversal restores each baseline and all runs settle within the observation window.",
+    "inference": "The repeated reversible responses support two-hour and three-hour end-to-end delay reductions from the separate priority and batch steps at process P-17’s tested operating point.\nIf the preceding joint conclusion is warranted, the priority response supports treating the tested priority setting as a candidate bounded change for a further trial in process P-17 under the same operating conditions.\nIf the preceding joint conclusion is warranted, the batch response supports treating the tested batch setting as a candidate change with a three-hour delay benefit at every stable operating point of approval process P-17.\nThe report can distinguish the two-hour priority response from the three-hour batch response while stating that neither separate response determines their combined effect.",
+    "limit": "Execution, control and observation prerequisites hold. Effects are bounded to the tested settings and operating point; combined effects, internal mechanisms and effects at other operating points are not given. No information about analyst login credentials or case-report software is supplied."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which request-path and background-path change subsets provide bounded reproductions of deployment D-17’s checkout latency failure under its fixed replay?"
+  },
+  "mapping": {
+    "state": "The focal checkout deployment D-17 has a reproducible latency-threshold failure under fixed replay. Two branches concern request-path changes and background-path changes. Changes are individually removable, the environment is matched, and outcomes can be repeated.",
+    "operation": "Partition each change set, test subsets and complements, and retain reductions reproducing the latency failure. Record pass, fail and unresolved outcomes. At the final subset test removal of every retained change individually. Use a warranted request-path subset inference to bound the next reproduction inquiry. Use a warranted background-path subset inference to bound the next reproduction inquiry.",
+    "signal": "The request-path reduction retains two changes: the pair fails, and removing either makes that failure disappear. The background-path reduction retains three changes: the trio fails, and removing any one makes that failure disappear. Repeated matched replays yield the same results without unresolved outcomes.",
+    "inference": "The repeated reduction tests identify the request-path pair and background-path trio as the unique internal causal explanations of deployment D-17’s observed latency failure.\nIf that joint conclusion holds, the retained request-path pair provides a smaller sufficient reproduction for the next fixed-replay inquiry into deployment D-17.\nIf that joint conclusion holds, the retained background-path trio provides a smaller sufficient reproduction for the next fixed-replay inquiry into deployment D-17.\nThe report can use two separate numbered entries, one for each of the two examined branches.",
+    "limit": "All stated replay, removal and environmental controls hold. Minimality is relative to the test and single removals; no globally smallest subset, unique internal cause or automatic production remedy is stipulated. No record of the reporting analyst’s incident-tracker permissions is supplied."
+  }
+}
