@@ -1,0 +1,136 @@
+# H.3 frozen productive-negative-remainder rule
+
+A negative remainder is productive only when it changes the post-ablation target
+inquiry by excluding or bounding target states, changing the justified priority of
+live alternatives, establishing a stopping condition, or selecting a specific
+discriminating next inquiry. A statement that merely reports failure to establish a
+conclusion, without changing those states or inquiry decisions, is evidentiary
+insufficiency and does not by itself constitute a viable remainder.
+
+**Cannot conclude X is not equivalent to X is excluded.** Absence of support is not
+evidence against a hypothesis. Negative evidence can be useful without asserting a
+positive conclusion. Source terminology and warning importance do not establish
+productivity.
+
+## Counterfactual and roles
+
+For each negative candidate R, remove R while leaving every other surviving element
+unchanged. What materially changes? Inspect target state set, bounds, alternative
+priorities, stopping decision, and selected next inquiry. Do not assume that removing
+a redundant conclusion also removes separately surviving evidence for it. Source
+citations justify a candidate; they are not permission to delete other evidence.
+
+A target state becomes live again, a bound widens/disappears, or relative alternative
+priorities change: productive YES, primary role TARGET_CONSTRAINT. A stopping decision
+or specific discriminating next inquiry changes: productive YES, primary role
+INQUIRY_CONSTRAINT. Record the strongest/primary role and all secondary effects.
+If all five remain unchanged: productive NO, role INSUFFICIENCY_ONLY. If supplied
+content cannot establish the decisive effect: productive UNCERTAIN, role UNCERTAIN.
+
+An inquiry requires all four: an unresolved contrast; a concrete next operation,
+observation, record or test; an explanation of how possible outcomes discriminate
+among the live alternatives; surviving mapping provenance for every component.
+All must already be supplied. Missing components mean productive NO, unless their
+availability genuinely remains uncertain. Generic advice to collect evidence,
+investigate further or verify a result does not qualify. A stopping decision must
+terminate a branch for a cited source-specific reason. The next-operation components
+may be inapplicable to a stopping-only candidate; explain the stopping condition.
+
+## Viability and artifact derivation
+
+Assess every candidate in this order, using YES / NO / UNCERTAIN with rationales:
+1. warranted: licensed by surviving mapping content;
+2. source_derived: an operational consequence of the imported instrument;
+3. target_relevant: bears on the exact retained target or a legitimate bounded part;
+4. productive: transforms the justified target inquiry;
+5. material: that productive contribution has useful consequence, however small.
+
+Do not reason important warning -> material -> viable. A candidate is viable exactly
+when all five are YES. A candidate is decisively unresolved when no field is NO and
+at least one is UNCERTAIN. Uncertainty cannot rescue an already disqualified candidate.
+Productivity applies to nonnegative candidates too; negative-role labels apply only
+to negative inferences. Inventory membership does not prejudge any assessment.
+
+At least one definite viable remainder yields KEEP_WITH_WARRANT_FLAGS for
+substantially_intact scope, or KEEP_WITH_REDUCED_SCOPE for reduced scope. Without any
+definite viable remainder, decisive unresolved viability yields UNCERTAIN_LOAD_BEARING;
+otherwise CORE_INVALID. INSUFFICIENCY_ONLY cannot save an artifact by itself.
+Generator-facing uncertainty remains keep + flag.
+
+Mechanism survival, central bridge, dependency cascade, text volume and ownership are
+diagnostics, never substitutes for viability. Explain structural conflicts without
+overriding the five-property derivation. Reasons are none for keep, uncertain for
+unresolved, otherwise mechanism_death, generic_remainder, target_payoff_loss or
+epistemically_empty. CORE_INVALID has scope none.
+
+Assess every frozen candidate unchanged. Additional candidates require origin
+judge_added and exact surviving mapping citations. Direct entailment is allowed;
+invented repair, replacement inference and future evidence are not. Assess every
+negative candidate in negative_remainder_assessment and cross-reference its ID.
+The strongest inference copies one assessed candidate or is null. A strongest
+candidate is not automatically viable. No hidden authoring hypothesis is an answer key.
+
+Assess the ablated mapping, not the removed claims. Copy every frozen candidate and citation exactly. Assess all five viability properties in the prescribed order. Mark whether each candidate is a negative inference and provide negative_remainder_assessment for every negative candidate. All frozen candidates here are plausible negative inferences; if you judge otherwise, explain that in its productivity rationale. Additional candidates must be marked judge_added and cite surviving mapping excerpts. For inquiries, cite surviving mapping spans for the contrast, operation and outcome relation. Citation source_field names refer to original mapping fields, but deleted spans are unavailable as evidence. Do not infer an intended answer from inventory membership. Empty deletion sets are valid. Derive status from the five-property rule; structural diagnostics cannot override a definite viable remainder.
+CASE PACKET
+{
+  "case_id": "H3-29005a76cc33",
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed-change subset is sufficient and minimal for reproducing target failure F under the frozen replay?"
+  },
+  "mapping": {
+    "state": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed.",
+    "operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition.",
+    "signal": "The subset ledger preserves test identities and the described result channel. Replays are deterministic under the fixed workload and environment.\nThe observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+    "inference": "The reduction establishes {a,c} as the unique globally smallest sufficient subset for F and its unique internal root cause.",
+    "limit": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+  },
+  "unsupported_claims": [
+    {
+      "claim_id": "C-0da2d6f409e1",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The reduction establishes {a,c} as the unique globally smallest sufficient subset for F and its unique internal root cause.",
+      "exact_claim_span": "The reduction establishes {a,c} as the unique globally smallest sufficient subset for F"
+    },
+    {
+      "claim_id": "C-28055a758ec6",
+      "source_field": "mapping.inference",
+      "exact_parent_text": "The reduction establishes {a,c} as the unique globally smallest sufficient subset for F and its unique internal root cause.",
+      "exact_claim_span": " and its unique internal root cause."
+    }
+  ],
+  "ablated_mapping": {
+    "state": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed.",
+    "operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition.",
+    "signal": "The subset ledger preserves test identities and the described result channel. Replays are deterministic under the fixed workload and environment.\nThe observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+    "inference": "[DELETED C-0da2d6f409e1][DELETED C-28055a758ec6]",
+    "limit": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+  },
+  "candidate_remainders": [
+    {
+      "remainder_id": "R01",
+      "inference": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-57d60b44a198"
+      ]
+    }
+  ]
+}

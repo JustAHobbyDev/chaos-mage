@@ -1,0 +1,215 @@
+{
+  "case_id": "H3-4d30014ef73c",
+  "ablated_mapping_sha256": "75ca82f26922628c10d831ae9f3481395d6ea00d1baff52c6faf8fe452aadca7",
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-3ec4e2fb94bd"
+      ]
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+        }
+      ],
+      "provenance": "exact_surviving_claim",
+      "dependency_references": [
+        "C-c27f6ac8e967"
+      ]
+    }
+  ],
+  "extraction_audit": [
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.state",
+      "start": 0,
+      "end": 215,
+      "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry. The replay environment and workload are fixed, and the response ledger identifies the completed probe.",
+      "claim_ids": [],
+      "disposition": "supplied_context",
+      "operator_reason": "Inspected entry state, baseline procedure, recording context or granted conditions; no separate target result or selected discriminating inquiry.",
+      "candidate_ids": [],
+      "survives": true,
+      "candidate_disposition": "context_only",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.operation",
+      "start": 0,
+      "end": 151,
+      "exact_text": "State candidate mechanisms, compare probe responses against their diagnostic expectations, and update the comparative support under the fixed workload.",
+      "claim_ids": [],
+      "disposition": "supplied_context",
+      "operator_reason": "Inspected entry state, baseline procedure, recording context or granted conditions; no separate target result or selected discriminating inquiry.",
+      "candidate_ids": [],
+      "survives": true,
+      "candidate_disposition": "context_only",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.signal",
+      "start": 0,
+      "end": 120,
+      "exact_text": "The probe completed under the stated replay conditions. Its response ledger and instrument identities are authenticated.",
+      "claim_ids": [],
+      "disposition": "supplied_context",
+      "operator_reason": "Inspected entry state, baseline procedure, recording context or granted conditions; no separate target result or selected discriminating inquiry.",
+      "candidate_ids": [],
+      "survives": true,
+      "candidate_disposition": "context_only",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.signal",
+      "start": 121,
+      "end": 208,
+      "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+      "claim_ids": [
+        "C-3ec4e2fb94bd"
+      ],
+      "disposition": "atomic_target_assertion",
+      "operator_reason": "Single comparative consequence, evidence limitation, test-selection decision with outcome rationale, or target conclusion.",
+      "candidate_ids": [
+        "R01"
+      ],
+      "survives": true,
+      "candidate_disposition": "inventoried",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.signal",
+      "start": 209,
+      "end": 402,
+      "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "claim_ids": [
+        "C-c27f6ac8e967"
+      ],
+      "disposition": "atomic_target_assertion",
+      "operator_reason": "Single comparative consequence, evidence limitation, test-selection decision with outcome rationale, or target conclusion.",
+      "candidate_ids": [
+        "R02"
+      ],
+      "survives": true,
+      "candidate_disposition": "inventoried",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.inference",
+      "start": 0,
+      "end": 110,
+      "exact_text": "The completed probe uniquely establishes lock contention as the cause of F-17 across all production workloads.",
+      "claim_ids": [
+        "C-b43a75d1e80f"
+      ],
+      "disposition": "atomic_target_assertion",
+      "operator_reason": "Single comparative consequence, evidence limitation, test-selection decision with outcome rationale, or target conclusion.",
+      "candidate_ids": [],
+      "survives": false,
+      "candidate_disposition": "deleted",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "source_field": "mapping.limit",
+      "start": 0,
+      "end": 194,
+      "exact_text": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted.",
+      "claim_ids": [],
+      "disposition": "supplied_context",
+      "operator_reason": "Inspected entry state, baseline procedure, recording context or granted conditions; no separate target result or selected discriminating inquiry.",
+      "candidate_ids": [],
+      "survives": true,
+      "candidate_disposition": "context_only",
+      "search_categories": [
+        "exclusion",
+        "bound",
+        "reprioritization",
+        "stopping",
+        "next_inquiry",
+        "insufficiency",
+        "negative_evidence"
+      ],
+      "survival_review": "Surviving explicit target claim included without a role label; other complete units rechecked as entry context or generic procedure with no additional target consequence."
+    }
+  ],
+  "fields_searched": [
+    "state",
+    "operation",
+    "signal",
+    "inference",
+    "limit"
+  ],
+  "no_role_labels": true
+}
