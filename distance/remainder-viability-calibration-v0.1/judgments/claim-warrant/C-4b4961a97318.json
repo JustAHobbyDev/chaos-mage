@@ -1,0 +1,21 @@
+{
+  "claim_id": "C-4b4961a97318",
+  "status": "SUPPORTED",
+  "rationale": "The test discriminates between two isolated mechanisms. Its observed response favors lock contention within Q but supplies no exclusion test for co-occurring or unlisted mechanisms, licensing the stated limitation.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.state",
+      "exact_text": "The specified differential is lock contention versus connection-pool exhaustion."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}

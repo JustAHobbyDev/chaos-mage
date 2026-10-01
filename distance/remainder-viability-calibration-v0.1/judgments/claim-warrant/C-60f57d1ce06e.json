@@ -1,0 +1,21 @@
+{
+  "claim_id": "C-60f57d1ce06e",
+  "status": "UNSUPPORTED",
+  "rationale": "The signal favors lock contention over isolated pool exhaustion within the specified differential. It does not establish lock contention as the certain sole cause or exclude co-occurring and unlisted mechanisms; the explicit limit states that these remain unexcluded.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention."
+    },
+    {
+      "source_field": "mapping.limit",
+      "exact_text": "The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}

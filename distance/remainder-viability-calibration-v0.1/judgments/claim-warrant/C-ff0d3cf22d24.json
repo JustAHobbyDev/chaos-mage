@@ -1,0 +1,25 @@
+{
+  "claim_id": "C-ff0d3cf22d24",
+  "status": "SUPPORTED",
+  "rationale": "The unchanged latency matches the validated prediction for isolated lock contention and contradicts that for isolated pool exhaustion. This licenses the claimed relative preference within the specified differential, while leaving co-occurring and unlisted mechanisms unresolved.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Under the fixed replay, enlarging the connection pool leaves latency unchanged while lock-wait traces remain elevated."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The supplied validated test predicts a latency decrease under isolated pool exhaustion but no decrease under isolated lock contention."
+    },
+    {
+      "source_field": "mapping.limit",
+      "exact_text": "The stated test predictions, execution and observations are reliable."
+    },
+    {
+      "source_field": "mapping.limit",
+      "exact_text": "The comparison is relative to these two isolated mechanisms; co-occurrence and unlisted mechanisms have not been excluded."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}
