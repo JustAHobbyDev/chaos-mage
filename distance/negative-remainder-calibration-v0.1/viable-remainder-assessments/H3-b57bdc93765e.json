@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "YES",
+      "material": "YES",
+      "rationale": {
+        "warranted": "The surviving signal explicitly records this result. Fixed subset identities, deterministic replays and granted recording assumptions support its interpretation under the named conditions.",
+        "source_derived": "Delta debugging tests which removals preserve the defined failure. This recorded non-reproducing subset is an operational result of that procedure.",
+        "target_relevant": "The target asks which deployed-change subset is sufficient and minimal for F under this frozen replay. The result directly excludes {a,b} as sufficient under those conditions.",
+        "productive": "As assessed in negative_remainder_assessment for R01, the observation eliminates a live candidate sufficient subset. No separate surviving observation independently supplies that exclusion.",
+        "material": "Excluding one candidate subset usefully narrows the requested diagnosis, although it does not identify a sufficient or minimal subset."
+      }
+    }
+  ],
+  "viable_remainders": [
+    "R01"
+  ],
+  "scope_survival": "reduced",
+  "no_viable_remainder_reason": "none"
+}

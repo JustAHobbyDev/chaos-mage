@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "NO",
+      "material": "NO",
+      "rationale": {
+        "warranted": "The candidate exactly reproduces a surviving diagnostic relation, and the mapping grants that relation under the stated conditions.",
+        "source_derived": "Delta debugging retains reductions according to reproduction of the defined failure. A result channel compatible with both F and its absence cannot establish the reproduction required by that operation.",
+        "target_relevant": "The warning concerns whether the recorded replay result establishes F, a prerequisite for assessing subset sufficiency and minimality.",
+        "productive": "As assessed for R01 in negative_remainder_assessment, this negative inference reports an evidentiary limitation without changing justified target states, bounds, priorities, a stopping decision, or a specific discriminating next inquiry.",
+        "material": "The warning has no demonstrated productive consequence for the retained inquiry. Its relevance to measurement validity does not independently establish material viability."
+      }
+    }
+  ],
+  "viable_remainders": [],
+  "scope_survival": "none",
+  "no_viable_remainder_reason": "epistemically_empty"
+}

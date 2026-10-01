@@ -1,0 +1,53 @@
+{
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "NO",
+      "material": "NO",
+      "rationale": {
+        "warranted": "The surviving signal states this unresolved comparison explicitly, and the surviving limit grants the supplied observations.",
+        "source_derived": "The unresolved comparison concerns configurations distinguished by a removable part, an operational issue for delta debugging's reproduction tests.",
+        "target_relevant": "Both named subsets concern reproducing the specified checkout failure F under the frozen replay.",
+        "productive": "As assessed for R01 in negative_remainder_assessment, the statement establishes no exclusion, bound, priority, stopping condition, or independent next inquiry. R02 preserves the actionable comparison when R01 is removed.",
+        "material": "R01 adds no productive consequence under the required counterfactual, despite accurately describing the evidentiary gap."
+      }
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "YES",
+      "material": "YES",
+      "rationale": {
+        "warranted": "The surviving signal explicitly supplies the replay and both diagnostic outcomes. Deterministic replay conditions and the stated diagnostic relations are granted.",
+        "source_derived": "Removing b and testing whether F persists directly instantiates delta debugging's subset-removal and failure-preservation operation.",
+        "target_relevant": "The replay distinguishes whether b is required within the named configuration, a bounded part of identifying a sufficient and minimal subset for F.",
+        "productive": "As assessed for R02 in negative_remainder_assessment, it selects a concrete replay that discriminates the live alternatives. It is treated as a negative inference because it supplies conditional elimination of b, without asserting that elimination has already occurred.",
+        "material": "The selected replay can resolve whether removing b preserves F, advancing the target's sufficiency and minimality inquiry without requiring the deleted global-minimum or root-cause claims."
+      }
+    }
+  ],
+  "viable_remainders": [
+    "R02"
+  ],
+  "scope_survival": "reduced",
+  "no_viable_remainder_reason": "none"
+}

@@ -1,0 +1,53 @@
+{
+  "candidates": [
+    {
+      "remainder_id": "R01",
+      "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "NO",
+      "material": "NO",
+      "rationale": {
+        "warranted": "The surviving signal states this directly, and the surviving limit grants the supplied observations and diagnostic relations.",
+        "source_derived": "Recognizing non-discrimination across competing explanations is an explicit signal of the differential-diagnosis instrument.",
+        "target_relevant": "It concerns the comparative support supplied by the completed probe for the two mechanisms named in the F-17 question.",
+        "productive": "As assessed in negative_remainder_assessment for R01, its removal changes none of the five inquiry dimensions. Both hypotheses remain live and R02 independently specifies the same discriminating next inquiry.",
+        "material": "Its explanatory relevance does not supply an independent productive consequence under the required counterfactual."
+      }
+    },
+    {
+      "remainder_id": "R02",
+      "inference": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+        }
+      ],
+      "warranted": "YES",
+      "source_derived": "YES",
+      "target_relevant": "YES",
+      "productive": "YES",
+      "material": "YES",
+      "rationale": {
+        "warranted": "The surviving signal explicitly supplies the operation and both diagnostic outcome relations. The surviving limit grants those relations under the described conditions.",
+        "source_derived": "Checking observations that bear differently on competing mechanisms operationalizes the instrument's evidence-gathering and comparative-reprioritization procedure.",
+        "target_relevant": "It selects the next inquiry for the exact two mechanisms and named failure, within the fixed operating conditions.",
+        "productive": "R02 is an affirmative diagnostic instruction, not a negative inference: it specifies what to observe and how alternative outcomes favor different mechanisms. The unresolved contrast survives in mapping.state ('Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry.') and mapping.signal ('The current result does not discriminate lock contention from isolated pool exhaustion.'). Its exact cited span supplies both the concrete joint observation and the differential outcome relation. Removing R02 leaves only a generic comparison procedure and the unresolved alternatives; the specific discriminating next inquiry disappears.",
+        "material": "The joint observation of waiting and pool fullness provides an actionable way to distinguish the live explanations, directly answering the inquiry component of the target question."
+      }
+    }
+  ],
+  "viable_remainders": [
+    "R02"
+  ],
+  "scope_survival": "reduced",
+  "no_viable_remainder_reason": "none"
+}

@@ -1,0 +1,2016 @@
+{
+  "status": "COMPLETE",
+  "base_sha": "e35948a601fefabb648218cde728aa7fdc1651d2",
+  "branch": "experiment-h3-negative-remainders",
+  "checkpoints": {
+    "construct_checkpoint": "ebc9ea0b211a810c2585120ef6e9ed17b46824c1",
+    "target_checkpoint": "24d5aee39feaab4de81bf6721b57361626917d79",
+    "primary_checkpoint": "f4cf37ee1c930ba76ba3680f397dbba751bd442e",
+    "controls_checkpoint": "dbabb95b9a28f7ef7a1923ff80f7762eb424f240",
+    "claim_inventory_checkpoint": "0024840fde8265c1ed0330049d96b737c1e68b34",
+    "claim_preflight_checkpoint": "86f92b00e415b6cd1468dcdef4b97ba5cb613f54",
+    "claim_judgments_checkpoint": "b54093979cab1412543f854a5eff66f36bc7d74c",
+    "ablations_and_candidates_checkpoint": "56df7ca00d4f841eb14fd1f197c48d765f94bf20",
+    "artifact_preflight_checkpoint": "2c97108daae8bc27c78507a381bf937fae14cf53",
+    "artifact_judgments_checkpoint": "862dbf1d0c164be130e54ea5224000b48f8fd28d",
+    "operator_audit_checkpoint": "b24491b218b4ac50242b0c1668d970930a06eca7"
+  },
+  "completion_sha_resolution": "git log -1 --format=%H -- distance/negative-remainder-calibration-v0.1/publication-manifest.json",
+  "primary_case_count": 12,
+  "control_count": 3,
+  "claim_judgment_count": 40,
+  "artifact_judgment_count": 15,
+  "provider_calls": 55,
+  "unique_sessions": 55,
+  "claim_status_counts": {
+    "SUPPORTED": 21,
+    "CONDITIONAL_WARRANT": 0,
+    "UNSUPPORTED": 19,
+    "UNCERTAIN": 0
+  },
+  "negative_role_counts": {
+    "TARGET_CONSTRAINT": 5,
+    "INQUIRY_CONSTRAINT": 3,
+    "INSUFFICIENCY_ONLY": 11,
+    "UNCERTAIN": 0
+  },
+  "negative_productive_counts": {
+    "YES": 8,
+    "NO": 11,
+    "UNCERTAIN": 0
+  },
+  "negative_candidate_count": 19,
+  "focal_role_counts": {
+    "TARGET_CONSTRAINT": 5,
+    "INQUIRY_CONSTRAINT": 3,
+    "INSUFFICIENCY_ONLY": 5,
+    "UNCERTAIN": 0
+  },
+  "focal_productive_counts": {
+    "YES": 8,
+    "NO": 5,
+    "UNCERTAIN": 0
+  },
+  "focal_assessment_count": 13,
+  "assessed_candidate_count": 21,
+  "viability_field_distributions": {
+    "warranted": {
+      "YES": 21,
+      "NO": 0,
+      "UNCERTAIN": 0
+    },
+    "source_derived": {
+      "YES": 21,
+      "NO": 0,
+      "UNCERTAIN": 0
+    },
+    "target_relevant": {
+      "YES": 21,
+      "NO": 0,
+      "UNCERTAIN": 0
+    },
+    "productive": {
+      "YES": 10,
+      "NO": 11,
+      "UNCERTAIN": 0
+    },
+    "material": {
+      "YES": 10,
+      "NO": 11,
+      "UNCERTAIN": 0
+    }
+  },
+  "artifact_status_counts": {
+    "KEEP_WITH_WARRANT_FLAGS": 1,
+    "KEEP_WITH_REDUCED_SCOPE": 9,
+    "CORE_INVALID": 5,
+    "UNCERTAIN_LOAD_BEARING": 0
+  },
+  "empty_deletion_cases": [],
+  "unrealized_manipulations": [],
+  "operator_category_counts": {
+    "STRUCTURALLY_CONCORDANT": 12,
+    "CASE_DESIGN_PROBLEM": 2,
+    "PLAUSIBLE_ALTERNATIVE": 1
+  },
+  "case_design_problems": 2,
+  "judge_productivity_errors": 0,
+  "operator_review_is_independent_rater_evidence": false,
+  "historical_preservation": {
+    "tracked": 3822,
+    "runtime": 9928
+  },
+  "cases": [
+    {
+      "case_id": "H3-0185f7ef5bd4",
+      "mechanism_key": "delta",
+      "is_control": true,
+      "control": "jargon",
+      "intended_role": "INSUFFICIENCY_ONLY",
+      "focal_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Whether a deployed-change subset reproduces F under the frozen replay.",
+            "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports nonidentification of F from the supplied channel. It excludes no subset, establishes no bound, and supplies no basis for ranking alternatives. Removing its conclusion while preserving the surviving channel facts changes none of those judgments. No stopping decision is supplied, and the existing replay operation has no supplied outcome relation that discriminates F from its absence. Inferring a new observation channel or an instruction to terminate testing would add content.",
+          "case_id": "H3-0185f7ef5bd4",
+          "inference": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Whether a deployed-change subset reproduces F under the frozen replay.",
+            "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports nonidentification of F from the supplied channel. It excludes no subset, establishes no bound, and supplies no basis for ranking alternatives. Removing its conclusion while preserving the surviving channel facts changes none of those judgments. No stopping decision is supplied, and the existing replay operation has no supplied outcome relation that discriminates F from its absence. Inferring a new observation channel or an instruction to terminate testing would add content.",
+          "case_id": "H3-0185f7ef5bd4",
+          "inference": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "CORE_INVALID",
+      "viable_remainders": [],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The ddmin complement ledger and single-removal exit-bit vector cannot establish target-F sufficiency: the binary channel pools handled deadlines, preflight configuration rejection and harness termination, with either bit value possible both with and without F."
+          }
+        ],
+        "why_warranted": "The supplied channel relation directly licenses this insufficiency conclusion. It is the strongest assessed surviving inference, but it is not viable under the productivity requirement."
+      },
+      "scope_survival": "none",
+      "deleted_claim_ids": [
+        "C-4321f7481c98",
+        "C-f150ca789c7d"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1097,
+      "deleted_chars": 123,
+      "claim_count": 3,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-29005a76cc33",
+      "mechanism_key": "delta",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INSUFFICIENCY_ONLY",
+      "focal_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Which deployed-change subsets reproduce F and are minimal under the frozen replay?",
+            "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 establishes that the recorded flag cannot determine reproduction of F. It excludes no deployed-change subset, supplies no bound or alternative ranking, and selects no discriminating observation. Removing it does not create a warranted flag-to-F relation or restore either deleted conclusion. The mapping supplies neither a branch-termination decision nor an outcome relation that makes the proposed replay operation discriminating. Treating the warning as an instruction to stop or obtain a different measurement would add an unsupplied inquiry decision.",
+          "case_id": "H3-29005a76cc33",
+          "inference": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Which deployed-change subsets reproduce F and are minimal under the frozen replay?",
+            "concrete_operation": "Partition changes, replay subsets and complements, and evaluate single-removal tests.",
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Deployment D-17 contains removable changes a, b and c. The target failure F is the checkout deadline failure during a fixed replay. Candidate subsets are live at entry; replay conditions and subset identities are fixed."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 establishes that the recorded flag cannot determine reproduction of F. It excludes no deployed-change subset, supplies no bound or alternative ranking, and selects no discriminating observation. Removing it does not create a warranted flag-to-F relation or restore either deleted conclusion. The mapping supplies neither a branch-termination decision nor an outcome relation that makes the proposed replay operation discriminating. Treating the warning as an instruction to stop or obtain a different measurement would add an unsupplied inquiry decision.",
+          "case_id": "H3-29005a76cc33",
+          "inference": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "CORE_INVALID",
+      "viable_remainders": [],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The observed nonzero-exit flag does not establish reproduction of F: either flag value can occur with or without F because handled deadlines, configuration rejection and harness termination share that result channel."
+          }
+        ],
+        "why_warranted": "This diagnostic limitation is explicitly preserved and granted by the mapping. It is warranted but does not satisfy productivity or materiality."
+      },
+      "scope_survival": "none",
+      "deleted_claim_ids": [
+        "C-0da2d6f409e1",
+        "C-28055a758ec6"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1053,
+      "deleted_chars": 123,
+      "claim_count": 3,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-4d30014ef73c",
+      "mechanism_key": "diagnosis",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INQUIRY_CONSTRAINT",
+      "focal_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Lock contention versus isolated pool exhaustion for F-17 under the fixed replay conditions.",
+            "concrete_operation": "Measure lock-wait duration with pool occupancy next.",
+            "differential_outcome_relation": "Elevated lock waits with normal occupancy favor lock contention; ordinary lock waits with saturated occupancy favor pool exhaustion.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry. The replay environment and workload are fixed, and the response ledger identifies the completed probe."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves both entry hypotheses live, supplies no basis for favoring either, and leaves the operating bounds unchanged. R02 independently selects the same fully specified discriminating inquiry. No stopping condition changes. Although the complete inquiry survives, its selection does not depend on R01.",
+          "case_id": "H3-4d30014ef73c",
+          "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+          }
+        ],
+        "why_warranted": "The operation and differential outcome relations are explicitly supplied and granted for the named conditions. This supports selecting the inquiry without asserting that either outcome has occurred."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-b43a75d1e80f"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1072,
+      "deleted_chars": 110,
+      "claim_count": 3,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-5f1006224642",
+      "mechanism_key": "ach",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INQUIRY_CONSTRAINT",
+      "focal_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Whether H1 or H3 better explains P-17, which the retained comparison does not distinguish.",
+            "concrete_operation": "Inspect record R, the individual scores saved before consensus.",
+            "differential_outcome_relation": "Unexplained post-opening score changes favor H1 over H3; stable contemporaneous scores bear against H1 relative to H3.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The retained comparison does not distinguish H1 from H3."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 includes a conditional negative inference against H1 and selects a concrete inquiry with opposing diagnostic outcomes. Removing it leaves the unresolved contrast and general matrix procedure, but no selected record inspection or supplied outcome relation for that inspection. Its present effect is on the next inquiry; neither possible outcome has yet been observed.",
+          "case_id": "H3-5f1006224642",
+          "inference": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "H1 versus H3.",
+            "concrete_operation": "Inspect record R, the individual scores saved before consensus.",
+            "differential_outcome_relation": "Unexplained post-opening score changes favor H1 over H3; stable contemporaneous scores bear against H1 relative to H3.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The retained comparison does not distinguish H1 from H3."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports non-discrimination without excluding either hypothesis or changing their justified relative priority. Removing it leaves both alternatives live and leaves R02's explicit next inquiry and diagnostic relations intact. The complete inquiry elsewhere in the mapping does not make this redundant insufficiency statement independently productive.",
+          "case_id": "H3-5f1006224642",
+          "inference": "The retained comparison does not distinguish H1 from H3.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The retained comparison does not distinguish H1 from H3."
+            }
+          ],
+          "origin": "frozen"
+        },
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Whether H1 or H3 better explains P-17, which the retained comparison does not distinguish.",
+            "concrete_operation": "Inspect record R, the individual scores saved before consensus.",
+            "differential_outcome_relation": "Unexplained post-opening score changes favor H1 over H3; stable contemporaneous scores bear against H1 relative to H3.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The retained comparison does not distinguish H1 from H3."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 includes a conditional negative inference against H1 and selects a concrete inquiry with opposing diagnostic outcomes. Removing it leaves the unresolved contrast and general matrix procedure, but no selected record inspection or supplied outcome relation for that inspection. Its present effect is on the next inquiry; neither possible outcome has yet been observed.",
+          "case_id": "H3-5f1006224642",
+          "inference": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+          }
+        ],
+        "why_warranted": "The surviving mapping explicitly selects this inspection and grants its diagnostic relations. R01 supplies the unresolved contrast. No deleted claim or future observation is needed to justify selecting the inquiry."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-0fb543e8cb28"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1150,
+      "deleted_chars": 131,
+      "claim_count": 3,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-65c8b64e5dc2",
+      "mechanism_key": "delta",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INQUIRY_CONSTRAINT",
+      "focal_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "{a,b,c} versus {a,c}, specifically whether b is required in that configuration.",
+            "concrete_operation": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle.",
+            "differential_outcome_relation": "Persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 supplies a specific discriminating next inquiry with a conditional exclusion of b. Removing it leaves the unresolved alternatives and a generic reduction procedure, but no selected next replay or supplied outcome-to-alternative relation. Its negative force is conditional: no actual replay result currently excludes a target state. There is no stopping decision.",
+          "case_id": "H3-65c8b64e5dc2",
+          "inference": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "{a,b,c} versus {a,c} as the required reproducing subset.",
+            "concrete_operation": "Replay {a,c} by removing b from {a,b,c} under the frozen F oracle.",
+            "differential_outcome_relation": "Persistence of F eliminates b from the required subset; disappearance retains b as required in that configuration.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports an unresolved conclusion without excluding either subset or establishing a bound or priority. Removing R01 leaves R02's explicit comparison, selected replay, and outcome relation intact. The specific inquiry is supplied independently by R02; its productivity cannot be attributed to R01.",
+          "case_id": "H3-65c8b64e5dc2",
+          "inference": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+            }
+          ],
+          "origin": "frozen"
+        },
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "{a,b,c} versus {a,c}, specifically whether b is required in that configuration.",
+            "concrete_operation": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle.",
+            "differential_outcome_relation": "Persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 supplies a specific discriminating next inquiry with a conditional exclusion of b. Removing it leaves the unresolved alternatives and a generic reduction procedure, but no selected next replay or supplied outcome-to-alternative relation. Its negative force is conditional: no actual replay result currently excludes a target state. There is no stopping decision.",
+          "case_id": "H3-65c8b64e5dc2",
+          "inference": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+          }
+        ],
+        "why_warranted": "The operation and conditional outcome relation survive explicitly, supported by fixed subset identities, deterministic replay, and granted diagnostic relations. This warrants the discriminating inquiry, not a completed minimality finding."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-2efac2dcf151",
+        "C-bc0d5da0fae6"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1123,
+      "deleted_chars": 123,
+      "claim_count": 4,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-692e955b9c15",
+      "mechanism_key": "diagnosis",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INSUFFICIENCY_ONLY",
+      "focal_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Lock contention versus isolated pool exhaustion as the mechanism of F-17.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "State candidate mechanisms, compare probe responses against their diagnostic expectations, and update the comparative support under the fixed workload."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves both mechanisms live and leaves only authenticated probe completion, which independently supplies no comparative support. Neither mechanism becomes excluded or preferred, and the fixed operating bounds remain independently stated. The mapping supplies no stopping decision, concrete next test, or outcome relation that would discriminate between the mechanisms. The generic comparison instruction does not supply those missing components. R01 explains evidentiary insufficiency without changing any of the five inquiry dimensions.",
+          "case_id": "H3-692e955b9c15",
+          "inference": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Lock contention versus isolated pool exhaustion as the mechanism of F-17.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "State candidate mechanisms, compare probe responses against their diagnostic expectations, and update the comparative support under the fixed workload."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves both mechanisms live and leaves only authenticated probe completion, which independently supplies no comparative support. Neither mechanism becomes excluded or preferred, and the fixed operating bounds remain independently stated. The mapping supplies no stopping decision, concrete next test, or outcome relation that would discriminate between the mechanisms. The generic comparison instruction does not supply those missing components. R01 explains evidentiary insufficiency without changing any of the five inquiry dimensions.",
+          "case_id": "H3-692e955b9c15",
+          "inference": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "CORE_INVALID",
+      "viable_remainders": [],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current test does not determine which mechanism caused F-17: R denotes probe completion and carries no mechanism-dependent response value in the retained ledger."
+          }
+        ],
+        "why_warranted": "This is an exact surviving assertion about the authenticated ledger. It is warranted but fails productivity and materiality, so its selection as strongest does not establish viability."
+      },
+      "scope_survival": "none",
+      "deleted_claim_ids": [
+        "C-1b792fc2b3e1"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 956,
+      "deleted_chars": 110,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-8e37a4f3d05a",
+      "mechanism_key": "diagnosis",
+      "is_control": false,
+      "control": null,
+      "intended_role": "TARGET_CONSTRAINT",
+      "focal_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "unchanged",
+            "alternative_priorities": "changed",
+            "stopping_decision": "changed",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+              },
+              {
+                "source_field": "mapping.limit",
+                "exact_text": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R01 is the surviving diagnostic relation itself, not a redundant conclusion supported by a separate surviving diagnostic relation. Removing it preserves probe completion, authentication, and scope restrictions, but leaves neither candidate preferentially supported. Retaining it excludes isolated pool exhaustion under the stipulated conditions, favors lock contention comparatively, and justifies closing the isolated-pool-exhaustion branch within that scope. No specific next test is supplied; productivity rests on the target constraint and source-specific branch termination.",
+          "case_id": "H3-8e37a4f3d05a",
+          "inference": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "unchanged",
+            "alternative_priorities": "changed",
+            "stopping_decision": "changed",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+              },
+              {
+                "source_field": "mapping.limit",
+                "exact_text": "All supplied observations and stated diagnostic relations hold under the described conditions. The target scope is the named case and operating conditions; the recording assumptions are granted."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R01 is the surviving diagnostic relation itself, not a redundant conclusion supported by a separate surviving diagnostic relation. Removing it preserves probe completion, authentication, and scope restrictions, but leaves neither candidate preferentially supported. Retaining it excludes isolated pool exhaustion under the stipulated conditions, favors lock contention comparatively, and justifies closing the isolated-pool-exhaustion branch within that scope. No specific next test is supplied; productivity rests on the target constraint and source-specific branch termination.",
+          "case_id": "H3-8e37a4f3d05a",
+          "inference": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+      "viable_remainders": [
+        "R01"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The recorded R is incompatible with isolated pool exhaustion under its stipulated diagnostic expectation, while R is compatible with lock contention at the same operating point."
+          }
+        ],
+        "why_warranted": "This exact surviving relation is licensed by the granted recording assumptions and diagnostic expectations. Its consequences remain restricted to the named case and operating conditions."
+      },
+      "scope_survival": "substantially_intact",
+      "deleted_claim_ids": [
+        "C-2331e2b3bf66"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 968,
+      "deleted_chars": 110,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "PLAUSIBLE_ALTERNATIVE",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-b57bdc93765e",
+      "mechanism_key": "delta",
+      "is_control": false,
+      "control": null,
+      "intended_role": "TARGET_CONSTRAINT",
+      "focal_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": []
+          },
+          "productive": "YES",
+          "rationale": "R01 is the sole supplied observation that {a,b} fails to reproduce F. Removing that observation leaves the ledger, determinism and recording assumptions intact, but no independent result excludes {a,b} as sufficient. That target possibility becomes live again. The candidate supplies actual negative test evidence, rather than merely reporting insufficient support. No specific next inquiry or stopping decision is claimed.",
+          "case_id": "H3-b57bdc93765e",
+          "inference": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": []
+          },
+          "productive": "YES",
+          "rationale": "R01 is the sole supplied observation that {a,b} fails to reproduce F. Removing that observation leaves the ledger, determinism and recording assumptions intact, but no independent result excludes {a,b} as sufficient. That target possibility becomes live again. The candidate supplies actual negative test evidence, rather than merely reporting insufficient support. No specific next inquiry or stopping decision is claimed.",
+          "case_id": "H3-b57bdc93765e",
+          "inference": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R01"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+          }
+        ],
+        "why_warranted": "This is an explicit surviving result from the oracle measuring the exact target failure. Its force is restricted to the frozen replay conditions."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-473b055225b1",
+        "C-8ec001c28807"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 944,
+      "deleted_chars": 123,
+      "claim_count": 3,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-c7caa99e20ef",
+      "mechanism_key": "crossdate",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INSUFFICIENCY_ONLY",
+      "focal_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Which of offsets +2, +3, +4, +5, +6 and +7 is supported?",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Sequence S has candidate offsets +2, +3, +4, +5, +6 and +7 against independently dated reference R1. All six are live at entry. Reference R2 also preserves the next increment for comparison."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Compare ordered increments across candidate alignments, check overlap and reference anchoring, and retain the correspondence record under each offset."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports insufficient discrimination. It excludes no offset, supplies no bound or ranking, and establishes no source-specific stopping condition. Removing this conclusion while retaining the other surviving content leaves all six offsets live and all five inquiry dimensions unchanged. R2's next increment is available, but the mapping supplies neither a selected discriminating next test nor a relation between its possible outcomes and the candidate offsets.",
+          "case_id": "H3-c7caa99e20ef",
+          "inference": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Which of offsets +2, +3, +4, +5, +6 and +7 is supported?",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Sequence S has candidate offsets +2, +3, +4, +5, +6 and +7 against independently dated reference R1. All six are live at entry. Reference R2 also preserves the next increment for comparison."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Compare ordered increments across candidate alignments, check overlap and reference anchoring, and retain the correspondence record under each offset."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 reports insufficient discrimination. It excludes no offset, supplies no bound or ranking, and establishes no source-specific stopping condition. Removing this conclusion while retaining the other surviving content leaves all six offsets live and all five inquiry dimensions unchanged. R2's next increment is available, but the mapping supplies neither a selected discriminating next test nor a relation between its possible outcomes and the candidate offsets.",
+          "case_id": "H3-c7caa99e20ef",
+          "inference": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "CORE_INVALID",
+      "viable_remainders": [],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The available overlap does not establish a unique offset: the retained comparison gives no offset-specific mismatch or discriminating ordering among the six candidate alignments."
+          }
+        ],
+        "why_warranted": "This is an explicit surviving observation. Its warrant does not make it productive or viable."
+      },
+      "scope_survival": "none",
+      "deleted_claim_ids": [
+        "C-b67df069e3f6"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 973,
+      "deleted_chars": 103,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-d1569e3d7fbb",
+      "mechanism_key": "crossdate",
+      "is_control": true,
+      "control": "wording",
+      "intended_role": "TARGET_CONSTRAINT",
+      "focal_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R02",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "changed",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offsets +6 and +7 remain compatible.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+              },
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Reference R2 also preserves the next increment for comparison."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "Removing R02 removes the only supplied pattern conflicts excluding +2 through +5. All six entry offsets would remain live, widening the candidate bounds from +6–+7 to +2–+7. The retained worksheet's existence does not independently supply its diagnostic findings. R02 gives no relative preference between +6 and +7 and selects no discriminating next inquiry.",
+          "case_id": "H3-d1569e3d7fbb",
+          "inference": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offsets +6 and +7 remain compatible.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+              },
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Reference R2 also preserves the next increment for comparison."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves R02's exclusions and two compatible offsets intact, so nonuniqueness remains independently supported. R01 establishes neither a stopping condition nor a specific discriminating inquiry. The available next increment has no supplied outcome relation distinguishing +6 from +7.",
+          "case_id": "H3-d1569e3d7fbb",
+          "inference": "The anchored overlap is insufficient for a unique chronology",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The anchored overlap is insufficient for a unique chronology"
+            }
+          ],
+          "origin": "frozen"
+        },
+        {
+          "remainder_id": "R02",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "changed",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offsets +6 and +7 remain compatible.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+              },
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Reference R2 also preserves the next increment for comparison."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "Removing R02 removes the only supplied pattern conflicts excluding +2 through +5. All six entry offsets would remain live, widening the candidate bounds from +6–+7 to +2–+7. The retained worksheet's existence does not independently supply its diagnostic findings. R02 gives no relative preference between +6 and +7 and selects no discriminating next inquiry.",
+          "case_id": "H3-d1569e3d7fbb",
+          "inference": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": ", but offsets +2 through +5 conflict with its ordered pattern; +6 and +7 remain compatible."
+          }
+        ],
+        "why_warranted": "The authenticated, anchored comparison supplies explicit conflicts for +2 through +5 and compatibility for +6 and +7. The granted diagnostic conditions license this bounded result without licensing uniqueness."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-b702de9d9686"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 946,
+      "deleted_chars": 103,
+      "claim_count": 3,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-d6134c9f4c74",
+      "mechanism_key": "diagnosis",
+      "is_control": true,
+      "control": "terse",
+      "intended_role": "INQUIRY_CONSTRAINT",
+      "focal_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Lock contention versus isolated pool exhaustion for F-17 under the fixed replay conditions.",
+            "concrete_operation": "Check waiting together with pool fullness.",
+            "differential_outcome_relation": "Long waits with spare capacity favor lock contention; short waits with a full pool favor pool exhaustion.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Failure F-17 is evaluated under lock contention and isolated pool exhaustion. Both mechanisms are live at entry."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves both entry hypotheses live, supplies no basis for changing their relative priority, and leaves the specific next inquiry independently selected by R02. No bound or stopping condition changes. Although a fully specified inquiry survives, its selection does not depend on retaining R01. R01 reports the completed result's insufficiency without independently transforming the remaining inquiry.",
+          "case_id": "H3-d6134c9f4c74",
+          "inference": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+          }
+        ],
+        "why_warranted": "The mapping explicitly supplies the discriminating inquiry and grants its diagnostic relations under the fixed conditions. This licenses inquiry selection without claiming either outcome has already been observed."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-af0f1d0f1fa8"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1048,
+      "deleted_chars": 110,
+      "claim_count": 3,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "CASE_DESIGN_PROBLEM",
+      "case_design_problem": true,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-dbca10a933d7",
+      "mechanism_key": "crossdate",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INQUIRY_CONSTRAINT",
+      "focal_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+      "focal_candidate_ids": [
+        "R02"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "The available overlap leaves +6 and +7 undistinguished.",
+            "concrete_operation": "Compare the next preserved increment with independently dated reference R2.",
+            "differential_outcome_relation": "A narrow-to-wide correspondence bears against +7; a wide-to-narrow correspondence bears against +6.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+              },
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Reference R2 also preserves the next increment for comparison."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 supplies a concrete next comparison with outcome-dependent evidence against competing offsets. Removing it leaves an unresolved contrast and an available reference, but no supplied discriminating prediction or specific next-inquiry selection. Its negative contribution is conditional discrimination; it does not presently exclude any offset.",
+          "case_id": "H3-dbca10a933d7",
+          "inference": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offsets +6 versus +7.",
+            "concrete_operation": "Compare the next preserved increment with R2.",
+            "differential_outcome_relation": "+6 predicts narrow-to-wide; +7 predicts wide-to-narrow. Either observed correspondence bears against the other offset.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "Removing R01 leaves R02's explicit selection of the next comparison and its contrasting predictions intact. No offset is excluded, no bound or priority changes, and no stopping decision changes. R01 reports the current overlap's insufficiency but contributes no independent inquiry change in this mapping.",
+          "case_id": "H3-dbca10a933d7",
+          "inference": "The available overlap does not distinguish offsets +6 and +7.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+            }
+          ],
+          "origin": "frozen"
+        },
+        {
+          "remainder_id": "R02",
+          "role": "INQUIRY_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "changed"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "The available overlap leaves +6 and +7 undistinguished.",
+            "concrete_operation": "Compare the next preserved increment with independently dated reference R2.",
+            "differential_outcome_relation": "A narrow-to-wide correspondence bears against +7; a wide-to-narrow correspondence bears against +6.",
+            "all_present_in_surviving_mapping": true,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+              },
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Reference R2 also preserves the next increment for comparison."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R02 supplies a concrete next comparison with outcome-dependent evidence against competing offsets. Removing it leaves an unresolved contrast and an available reference, but no supplied discriminating prediction or specific next-inquiry selection. Its negative contribution is conditional discrimination; it does not presently exclude any offset.",
+          "case_id": "H3-dbca10a933d7",
+          "inference": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R02"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R02",
+        "text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+          }
+        ],
+        "why_warranted": "The operation, available reference increment, contrasting predictions and diagnostic relation all survive ablation. They warrant the specified next inquiry, without establishing a current winning offset or excluding +2 through +5."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-2e2408fb02d0"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1055,
+      "deleted_chars": 103,
+      "claim_count": 3,
+      "candidate_count": 2,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-e09eb242555a",
+      "mechanism_key": "ach",
+      "is_control": false,
+      "control": null,
+      "intended_role": "INSUFFICIENCY_ONLY",
+      "focal_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award).",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Award P-17 is considered under H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award). These are live alternatives at entry; the dossier has evaluation sheets, drafting records and an item index."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Construct an evidence-by-hypothesis matrix, check authentication and independence, compare important inconsistencies, and repeat the comparison with disputed entries omitted."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 explains why the current matrix cannot settle the target question. It excludes no hypothesis, supplies no bound, and changes no justified ranking. Removing it does not make the deleted steering conclusion supported. The surviving operation supplies a general comparison procedure, but no selected next test with an outcome-to-hypothesis relation. Unavailable original values explain insufficiency; the mapping does not supply a decision terminating an inquiry branch.",
+          "case_id": "H3-e09eb242555a",
+          "inference": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "INSUFFICIENCY_ONLY",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award).",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.state",
+                "exact_text": "Award P-17 is considered under H1 (recorded scores altered after opening), H2 (bidder-specific drafting), and H3 (ordinary award). These are live alternatives at entry; the dossier has evaluation sheets, drafting records and an item index."
+              },
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Construct an evidence-by-hypothesis matrix, check authentication and independence, compare important inconsistencies, and repeat the comparison with disputed entries omitted."
+              },
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+              }
+            ]
+          },
+          "productive": "NO",
+          "rationale": "R01 explains why the current matrix cannot settle the target question. It excludes no hypothesis, supplies no bound, and changes no justified ranking. Removing it does not make the deleted steering conclusion supported. The surviving operation supplies a general comparison procedure, but no selected next test with an outcome-to-hypothesis relation. Unavailable original values explain insufficiency; the mapping does not supply a decision terminating an inquiry branch.",
+          "case_id": "H3-e09eb242555a",
+          "inference": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "CORE_INVALID",
+      "viable_remainders": [],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The current matrix does not establish whether P-17 was steered: its retained X cells pool consistency, inconsistency and unrated entries, with the original values unavailable."
+          }
+        ],
+        "why_warranted": "This is an explicit surviving claim supported by the stated pooling of distinct ratings. It remains warranted but is not viable under the productivity requirement."
+      },
+      "scope_survival": "none",
+      "deleted_claim_ids": [
+        "C-94445732854f"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1072,
+      "deleted_chars": 131,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-ebcf45e8fdd8",
+      "mechanism_key": "ach",
+      "is_control": false,
+      "control": null,
+      "intended_role": "TARGET_CONSTRAINT",
+      "focal_text": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "changed",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": []
+          },
+          "productive": "YES",
+          "rationale": "R01 supplies the surviving comparative evidence against H1: an authenticated important inconsistency that persists when disputed entries are omitted, while E remains compatible with H2 and H3. This weakens H1 relative to those alternatives without eliminating it or distinguishing H2 from H3. Removing R01 removes the only supplied statement of that asymmetry; the remaining authentication statement and matrix procedure do not independently establish it. Thus relative priorities change. R01 is negative comparative evidence, not merely a failure to establish steering. It supplies neither a stopping condition nor a specific discriminating next inquiry.",
+          "case_id": "H3-ebcf45e8fdd8",
+          "inference": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "unchanged",
+            "bounds": "unchanged",
+            "alternative_priorities": "changed",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": null,
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": []
+          },
+          "productive": "YES",
+          "rationale": "R01 supplies the surviving comparative evidence against H1: an authenticated important inconsistency that persists when disputed entries are omitted, while E remains compatible with H2 and H3. This weakens H1 relative to those alternatives without eliminating it or distinguishing H2 from H3. Removing R01 removes the only supplied statement of that asymmetry; the remaining authentication statement and matrix procedure do not independently establish it. Thus relative priorities change. R01 is negative comparative evidence, not merely a failure to establish steering. It supplies neither a stopping condition nor a specific discriminating next inquiry.",
+          "case_id": "H3-ebcf45e8fdd8",
+          "inference": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R01"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "The authenticated comparison records an important inconsistency between E and H1, with E compatible with H2 and H3; this asymmetry persists when disputed entries are omitted."
+          }
+        ],
+        "why_warranted": "The comparison result survives deletion directly, with its authentication and stated diagnostic relations granted. It supports comparative weakening of H1, but neither establishes H2 nor excludes H3."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-be0749fd9275"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 1071,
+      "deleted_chars": 131,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    },
+    {
+      "case_id": "H3-ff52f4c34dbc",
+      "mechanism_key": "crossdate",
+      "is_control": false,
+      "control": null,
+      "intended_role": "TARGET_CONSTRAINT",
+      "focal_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+      "focal_candidate_ids": [
+        "R01"
+      ],
+      "focal_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "changed",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offset +6 versus offset +7.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R01 is the surviving conflict finding itself, rather than a redundant conclusion supported by a separately stated conflict finding. Removing it leaves the authenticated records and comparison procedure intact, but neither independently specifies which offsets conflict. The justified candidate set therefore expands from {+6, +7} to the six entry alternatives, and its lower bound drops from +6 to +2. No preference between +6 and +7, stopping condition, or discriminating next inquiry is supplied. R2's next increment alone supplies no outcome relation.",
+          "case_id": "H3-ff52f4c34dbc",
+          "inference": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "negative_assessments": [
+        {
+          "remainder_id": "R01",
+          "role": "TARGET_CONSTRAINT",
+          "counterfactual_effect": {
+            "target_state_set": "changed",
+            "bounds": "changed",
+            "alternative_priorities": "unchanged",
+            "stopping_decision": "unchanged",
+            "next_inquiry": "unchanged"
+          },
+          "inquiry_specificity": {
+            "unresolved_contrast": "Offset +6 versus offset +7.",
+            "concrete_operation": null,
+            "differential_outcome_relation": null,
+            "all_present_in_surviving_mapping": false,
+            "source_spans": [
+              {
+                "source_field": "mapping.signal",
+                "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+              }
+            ]
+          },
+          "productive": "YES",
+          "rationale": "R01 is the surviving conflict finding itself, rather than a redundant conclusion supported by a separately stated conflict finding. Removing it leaves the authenticated records and comparison procedure intact, but neither independently specifies which offsets conflict. The justified candidate set therefore expands from {+6, +7} to the six entry alternatives, and its lower bound drops from +6 to +2. No preference between +6 and +7, stopping condition, or discriminating next inquiry is supplied. R2's next increment alone supplies no outcome relation.",
+          "case_id": "H3-ff52f4c34dbc",
+          "inference": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+            }
+          ],
+          "origin": "frozen"
+        }
+      ],
+      "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+      "viable_remainders": [
+        "R01"
+      ],
+      "strongest_surviving_target_inference": {
+        "remainder_id": "R01",
+        "text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible.",
+        "source_spans": [
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "In the anchored overlap, offsets +2 through +5 conflict with the retained ordered pattern, while +6 and +7 remain compatible."
+          }
+        ],
+        "why_warranted": "The authenticated, anchored comparison expressly supplies these conflicts and compatibilities. This supports candidate elimination without establishing a unique offset."
+      },
+      "scope_survival": "reduced",
+      "deleted_claim_ids": [
+        "C-1d474ee7c153"
+      ],
+      "intended_deletion_realized": true,
+      "empty_deletion_set": false,
+      "mapping_chars": 920,
+      "deleted_chars": 103,
+      "claim_count": 2,
+      "candidate_count": 1,
+      "judge_added_count": 0,
+      "operator_category": "STRUCTURALLY_CONCORDANT",
+      "case_design_problem": false,
+      "judge_productivity_error": false
+    }
+  ],
+  "triplets": {
+    "ach": [
+      "H3-5f1006224642",
+      "H3-e09eb242555a",
+      "H3-ebcf45e8fdd8"
+    ],
+    "crossdate": [
+      "H3-c7caa99e20ef",
+      "H3-dbca10a933d7",
+      "H3-ff52f4c34dbc"
+    ],
+    "diagnosis": [
+      "H3-4d30014ef73c",
+      "H3-692e955b9c15",
+      "H3-8e37a4f3d05a"
+    ],
+    "delta": [
+      "H3-29005a76cc33",
+      "H3-65c8b64e5dc2",
+      "H3-b57bdc93765e"
+    ]
+  },
+  "provider_limitations": {
+    "verified_served_snapshots": [
+      null
+    ],
+    "harness_retries": 0,
+    "exposed_internal_retry_events": 0,
+    "sampling": "One fresh Astra/high context per claim and artifact; no repeat sample or independent rater."
+  },
+  "interpretation": {
+    "summary": "H.3 closes automatic insufficiency rescue on this synthetic corpus and preserves productive constraints: 5 CORE_INVALID, 9 KEEP_WITH_REDUCED_SCOPE, and 1 KEEP_WITH_WARRANT_FLAGS. Full three-way negative-role calibration remains incomplete: two productive diagnostic directives were classified as nonnegative and omitted from role assessment.",
+    "productivity_counts": "Across all 21 candidate remainders: YES=10, NO=11, UNCERTAIN=0. Across the 19 candidates classified as negative by the judge: YES=8, NO=11, UNCERTAIN=0. Their roles are TARGET_CONSTRAINT=5, INQUIRY_CONSTRAINT=3, INSUFFICIENCY_ONLY=11, UNCERTAIN=0. Two additional productive candidates have negative_inference=false and no role; they are not silently counted as UNCERTAIN.",
+    "all_inquiry_contributions": "All five supplied inquiries were productive. Three received INQUIRY_CONSTRAINT; the diagnostic primary and terse control received no negative role. Complete cited records: [inquiry contributions](../negative-remainder-calibration-v0.1/review/inquiry-contributions.json).\n\n| Case | Model role | Concrete next inquiry | Discriminating relation |\n|---|---|---|---|\n| `H3-4d30014ef73c/R02` | NONNEGATIVE — role absent | Measure lock-wait duration with pool occupancy next | elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion. |\n| `H3-5f1006224642/R02` | INQUIRY_CONSTRAINT | Inspect record R, the individual scores saved before consensus, next | unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3. |\n| `H3-65c8b64e5dc2/R02` | INQUIRY_CONSTRAINT | Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle | persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration. |\n| `H3-d6134c9f4c74/R02` | NONNEGATIVE — role absent | Check waiting next, together with how full the pool is | long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion. |\n| `H3-dbca10a933d7/R02` | INQUIRY_CONSTRAINT | Compare the next preserved increment with R2 next | +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset. |\n",
+    "loophole_closed": "The H.2 insufficiency-rescue loophole is closed for every authored insufficiency-only case here. This is a positive bounded result, not evidence that negative limitations are generally useless or that natural-output performance is established.",
+    "productive_negative_constraints_preserved": "All five target constraints and all three model-labeled negative inquiry constraints survive. The other two supplied inquiries also survive productively, but the negative-role claim cannot be credited to them.",
+    "absence_vs_centrality": "The five-property absence-of-viable-remainder definition yields CORE_INVALID across all four mechanisms without graph-centrality or ownership shortcuts.",
+    "scope_alternative": "The diagnostic target member receives KEEP_WITH_WARRANT_FLAGS: the judge infers source-specific branch termination from stipulated incompatibility and treats comparative support plus that stopping decision as substantially intact target scope. This is a plausible interpretation, not a measured special-purpose stopping-condition calibration.",
+    "protocol_coverage_gap": "The H.3 implementation added a negative_inference boolean to retain coverage of other possible viable contributions. Its frozen schema allowed even supplied negative candidates to be marked false and skip role assessment. This created a gap against the intended per-negative-candidate role coverage in the diagnostic primary and terse control. Their affirmation-style wording also exposed a candidate-unitization issue. This is retained as a design/instrument problem; it was not repaired after measurement.",
+    "engineering_recovery": "Artifact 3 returned a schema-valid absent conflict with resolved=false. The inherited H.2 assertion rejected that inapplicable metadata bit even though H.3 status derivation ignores it. An additive adapter preserved every scientific byte, original failed validation, session, execution commit and terminal state; it removed only that assertion, passed 49 historical checks plus both local suites, and resumed the 12 never-reserved requests. The same harmless encoding also occurs in the delta target response. Evidence checkpoint 01443a5a9d65afc13b81e7bea6eed40d07507a65; recovery preflight a6489b19668f484cc4488934d43d2eb96fcb4949. No model output was normalized, resent or replaced. Use recovery.py verify for complete publication verification.",
+    "natural_output_readiness": "Not ready for a fresh natural-output admission experiment. Productivity separation is promising, but mandatory role coverage and inquiry-unit boundaries should be resolved in a small follow-up first."
+  },
+  "recommended_next_step": "Run only a small follow-up on inquiry-remainder unitization and mandatory role coverage, using logically equivalent favor-versus-bear-against formulations and requiring a role for every supplied negative candidate. Resolve that gap before considering natural-output admission. This recommendation is not executed."
+}
