@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Step-response probing",
+    "practice": "Control and systems engineering",
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "target": {
+    "domain": "organizational handoff delays",
+    "question": "Which bounded changes measurably reduce delay in process P-17 under the tested operating point?"
+  },
+  "mapping": {
+    "state": "Process P-17 runs at the stated operating point. The tested input is a bounded increase in its intake-priority setting. The operator can apply, hold and reverse the setting while recording a time series. All stated execution conditions are satisfied.",
+    "operation": "Apply the priority step, hold it for the observation window, reverse it and repeat. Keep staffing and arrival schedule fixed. Record the output trajectory through the transient and the later window, and retain the step and reversal timestamps.",
+    "signal": "The archived trajectory is the smoothed submitted-priority register in command units. In each of three repetitions it settles two units below its initial value after the step and returns after reversal. The acquisition filter generates the transient from the submitted command before the work-item scheduler acts.",
+    "inference": "The repeated response establishes a two-hour reduction in end-to-end delay from the tested intake-priority change in P-17 at this operating point.\nThe recorded timestamps and register values permit a plot of the submitted priority trajectory through the step and reversal windows of P-17.",
+    "limit": "The register records submitted input, not queue state, completion times or application to work items. No process-output channel or conversion from command units to delay is supplied. Execution of the stated input operation is already granted; the filter is part of the recorder, not P-17 processing."
+  },
+  "atomic_claim": {
+    "claim_id": "C-64e99df1b2ff",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "The repeated response establishes a two-hour reduction in end-to-end delay from the tested intake-priority change in P-17 at this operating point.",
+    "exact_claim_span": "The repeated response establishes a two-hour reduction in end-to-end delay from the tested intake-priority change in P-17 at this operating point."
+  }
+}

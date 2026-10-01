@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Chain-of-custody verification",
+    "practice": "Forensic investigation",
+    "instrument": {
+      "state": "An item or record passes through multiple handlers or locations, creating opportunities for substitution, alteration, contamination, or uncertainty about identity.\n",
+      "operation": "Record each transfer and handling event with the responsible party, time, and purpose, then inspect that history for continuity and unexplained transitions.\n",
+      "signal": "A continuous, internally consistent handling record links the examined item through its lifecycle, while gaps or contradictions identify breaks in documented custody.\n",
+      "inference": "Documentary continuity supports the claim that the item examined is the item collected and that its handling history is accounted for; gaps weaken that provenance claim.\n",
+      "limit": "Complete documentation does not itself prove that handlers recorded events truthfully or that no unrecorded alteration occurred, and missing records do not prove that alteration occurred. The strength of the inference depends on the reliability of the recording and safeguarding process.\n"
+    }
+  },
+  "target": {
+    "domain": "literary textual formation",
+    "question": "Which assembly-order constraints for draft D-17 are supported by the surviving evidence?"
+  },
+  "mapping": {
+    "state": "Draft D-17 has identified leaves and an archive handling ledger. Its opening-section assembly is the focal textual-formation question. The records concern D-17 throughout; no second draft supplies substitute evidence.",
+    "operation": "Match identifiers at recorded transfers, inspect witnessed handling events and audit continuity between them. Separate recorded assembly events from unobserved authorial decisions. Retain the responsible handler, event time and recorded purpose.",
+    "signal": "After the completed D-17 packet entered a sealed archive box, reliable handlers record its shelf-to-reading-room and return transfers. The sealed-box identifiers match at every transfer. No entry describes internal leaf position, revision, attachment or binding, and all entries postdate assembly. Independent signatures and intact seals corroborate each transfer; the packet is the same packet throughout the three-day archive-loan interval.",
+    "inference": "The continuous handling record proves that D-17 preserves its unchanged original authorial arrangement and settles the complete order of every textual revision.\nThe documented sealed-box transfers account for the archive handling of the identified D-17 packet during the recorded post-assembly interval.",
+    "limit": "Packet identity is already fixed in the target question and is not disputed by the competing assembly histories. No opening, alteration or assembly event is observed during this interval. The histories differ only in pre-accession internal order, not later handling."
+  },
+  "atomic_claim": {
+    "claim_id": "C-4cec9201de5a",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "The continuous handling record proves that D-17 preserves its unchanged original authorial arrangement and settles the complete order of every textual revision.",
+    "exact_claim_span": " and settles the complete order of every textual revision."
+  }
+}

@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can the current evidence establish or constrain about whether award P-17 was steered?"
+  },
+  "mapping": {
+    "state": "Award P-17 is investigated for steering. The advertised analysis covers scoring, specification drafting, contacts and intent; the supplied evidential fragment concerns one score entry only.",
+    "operation": "List score alteration and unchanged scoring as competing explanations for the examined entry. Compare the signed original and the independently retained contemporaneous duplicate. Keep other steering routes separate.",
+    "signal": "Both authenticated independent copies contain the same examined score, and neither contains an intervening alteration. No other scores, drafting records, contact records or intent evidence is supplied.",
+    "inference": "The comparison establishes that every score used for award P-17 was free of manipulation throughout the full evaluation.\nThe comparison establishes that all specifications for award P-17 were drafted without bidder-specific influence.\nThe comparison establishes that every private contact concerning award P-17 was lawful and unrelated to steering.\nThe comparison establishes that all participants in award P-17 acted with impartial intent throughout the process.\nAlteration of the one examined score is weakened.",
+    "limit": "The stated independence and authentication hold for this score entry. The fragment contains no evidence about other entries, specifications, contacts or intentions; matching copies do not certify every stage of the award."
+  },
+  "atomic_claim": {
+    "claim_id": "C-8aa171325fe0",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "Alteration of the one examined score is weakened.",
+    "exact_claim_span": "Alteration of the one examined score is weakened."
+  }
+}

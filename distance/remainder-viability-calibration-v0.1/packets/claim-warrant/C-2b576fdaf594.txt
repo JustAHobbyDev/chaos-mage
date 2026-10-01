@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which of the two specified mechanisms is better supported for failure pattern F-17, and what inquiry does that justify?"
+  },
+  "mapping": {
+    "state": "Failure pattern F-17 is repeated checkout latency after deployment. The specified differential contains lock contention and connection-pool exhaustion. The same focal service, replay and two mechanisms are used throughout the inquiry.",
+    "operation": "List the two mechanisms, inspect the recorded response to a controlled test and compare the implications for each mechanism. Revise relative plausibility only from a discriminating observation. Preserve the response record and test definition.",
+    "signal": "Under the fixed replay, the supplied test produces response code R on three repetitions. The retained definition says only that R is a completed-test code. It contains neither a latency result nor a mechanism-dependent prediction, sensitivity value or diagnostic interpretation.",
+    "inference": "The recorded response proves that lock contention is certainly the sole cause of F-17, because the completed-test code exclusively identifies that mechanism.\nThe run ledger records three completed tests for F-17 and preserves their response code R together with the names of the two specified mechanisms.",
+    "limit": "Completion certifies execution, not a diagnostic outcome. No supplied relation assigns R different or equal likelihoods under the two mechanisms. The retained test definition specifies neither the measured quantity nor the predictions for either mechanism."
+  },
+  "atomic_claim": {
+    "claim_id": "C-2b576fdaf594",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "The recorded response proves that lock contention is certainly the sole cause of F-17, because the completed-test code exclusively identifies that mechanism.",
+    "exact_claim_span": "The recorded response proves that lock contention is certainly the sole cause of F-17, because the completed-test code exclusively identifies that mechanism."
+  }
+}

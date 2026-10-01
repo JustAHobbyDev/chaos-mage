@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Delta debugging",
+    "practice": "Software debugging and testing",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which deployed-change subset is sufficient and minimal for reproducing failure F under the frozen replay?"
+  },
+  "mapping": {
+    "state": "Deployment D-17 introduced removable changes a, b and c. Failure F is a checkout deadline failure under a frozen replay. Each test runs the specified subset in the same environment; all listed repetitions are deterministic and no test is unresolved.",
+    "operation": "Partition the deployed changes, test subsets and complements, and reduce the configuration using the recorded outcome. Finish by separately removing each retained change. Preserve the replay, subset and output for each test.",
+    "signal": "The retained output is a generic nonzero process-exit flag. Subset {a,b} produces that flag on every replay; {a} and {b} do not. The exit flag pools checkout deadline failures with configuration rejection and early harness termination. Failure-specific traces were not retained.",
+    "inference": "The reduction establishes that every nonzero exit is the defined failure F itself and therefore that a and b are its unique underlying root cause.\nSubset {a,b} is 1-minimal for producing the recorded nonzero-exit flag under the replay: removing either change eliminates that flag.",
+    "limit": "A checkout deadline failure can return a handled response with zero process exit; a nonzero exit can occur before checkout runs. Thus both flag values occur with or without F. No target-F trace or result is recorded for any reduced subset; the flag is not a timing bound."
+  },
+  "atomic_claim": {
+    "claim_id": "C-b7a235da45b3",
+    "source_field": "mapping.limit",
+    "exact_parent_text": "Thus both flag values occur with or without F.",
+    "exact_claim_span": "Thus both flag values occur with or without F."
+  }
+}

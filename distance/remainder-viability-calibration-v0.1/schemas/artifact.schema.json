@@ -1,0 +1,481 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "remainder_viability"
+  ],
+  "properties": {
+    "remainder_viability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "unsupported_claim_ids",
+        "candidate_remainders",
+        "viable_remainders",
+        "strongest_surviving_target_inference",
+        "scope_survival",
+        "mechanism_survival",
+        "remainder_check",
+        "target_contribution_survival",
+        "dependency_cascade",
+        "central_bridge",
+        "no_viable_remainder_reason",
+        "artifact_status",
+        "structural_conflict",
+        "uncertainty"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "unsupported_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "candidate_remainders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "remainder_id",
+              "origin",
+              "inference",
+              "source_spans",
+              "warranted",
+              "source_derived",
+              "material",
+              "target_relevant"
+            ],
+            "properties": {
+              "remainder_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "frozen",
+                  "judge_added"
+                ]
+              },
+              "inference": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "source_spans": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "source_field",
+                    "exact_text"
+                  ],
+                  "properties": {
+                    "source_field": {
+                      "type": "string",
+                      "enum": [
+                        "mapping.state",
+                        "mapping.operation",
+                        "mapping.signal",
+                        "mapping.inference",
+                        "mapping.limit",
+                        "source.instrument.state",
+                        "source.instrument.operation",
+                        "source.instrument.signal",
+                        "source.instrument.inference",
+                        "source.instrument.limit"
+                      ]
+                    },
+                    "exact_text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  }
+                }
+              },
+              "warranted": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              },
+              "source_derived": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              },
+              "material": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              },
+              "target_relevant": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "rationale"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "viable_remainders": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "strongest_surviving_target_inference": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "remainder_id",
+            "text",
+            "source_spans",
+            "why_warranted"
+          ],
+          "properties": {
+            "remainder_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "text": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_spans": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_field",
+                  "exact_text"
+                ],
+                "properties": {
+                  "source_field": {
+                    "type": "string",
+                    "enum": [
+                      "mapping.state",
+                      "mapping.operation",
+                      "mapping.signal",
+                      "mapping.inference",
+                      "mapping.limit",
+                      "source.instrument.state",
+                      "source.instrument.operation",
+                      "source.instrument.signal",
+                      "source.instrument.inference",
+                      "source.instrument.limit"
+                    ]
+                  },
+                  "exact_text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            },
+            "why_warranted": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "scope_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "substantially_intact",
+                "reduced",
+                "none",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "mechanism_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "SURVIVES",
+                "PARTIALLY_SURVIVES",
+                "DOES_NOT_SURVIVE",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "remainder_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "DISTINCTIVE_REMAINDER",
+                "GENERIC_REMAINDER",
+                "NO_REMAINDER",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "target_contribution_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "SUBSTANTIALLY_SURVIVES",
+                "REDUCED_BUT_MATERIAL",
+                "NO_MATERIAL_CONTRIBUTION",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "dependency_cascade": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "LOCAL",
+                "BRANCH",
+                "GLOBAL",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "central_bridge": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "deleted_claim_is_required_for_all_material_contributions",
+            "rationale"
+          ],
+          "properties": {
+            "deleted_claim_is_required_for_all_material_contributions": {
+              "type": "string",
+              "enum": [
+                "yes",
+                "no",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "no_viable_remainder_reason": {
+          "type": "string",
+          "enum": [
+            "mechanism_death",
+            "generic_remainder",
+            "target_payoff_loss",
+            "epistemically_empty",
+            "none",
+            "uncertain"
+          ]
+        },
+        "artifact_status": {
+          "type": "string",
+          "enum": [
+            "KEEP_WITH_WARRANT_FLAGS",
+            "KEEP_WITH_REDUCED_SCOPE",
+            "CORE_INVALID",
+            "UNCERTAIN_LOAD_BEARING"
+          ]
+        },
+        "structural_conflict": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "present",
+            "resolved",
+            "explanation"
+          ],
+          "properties": {
+            "present": {
+              "type": "boolean"
+            },
+            "resolved": {
+              "type": "boolean"
+            },
+            "explanation": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Differential diagnosis",
+    "practice": "Clinical diagnosis",
+    "instrument": {
+      "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+      "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+      "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+      "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+      "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+    }
+  },
+  "target": {
+    "domain": "production-regression diagnosis",
+    "question": "Which of the two specified mechanisms is better supported for failure pattern F-17, and what inquiry does that justify?"
+  },
+  "mapping": {
+    "state": "Failure pattern F-17 is checkout latency in the focal service. The specified differential is lock contention versus connection-pool exhaustion. A test trace from segment Q of that service is supplied. The segment-to-failing-request association is absent from the supplied routing record.",
+    "operation": "Compare the response of segment Q under the two specified mechanisms using the validated test predictions. Apply a controlled capacity increase under the fixed replay and record response and lock waits. Preserve the segment identifier.",
+    "signal": "The capacity increase leaves Q latency unchanged while Q lock waits remain elevated. The validated predictions give a decrease for isolated pool exhaustion and no decrease for isolated lock contention. Execution and sensitivity checks pass. The trace contains no failing-request identifier linking Q to F-17.",
+    "inference": "The recorded test establishes that lock contention is the sole cause of every occurrence of F-17 throughout the service, with no other contributing mechanism.\nFor segment Q, the response favors lock contention over isolated pool exhaustion and supports inspecting Q lock ownership and hold times.",
+    "limit": "Test interpretation within Q is established; only Q membership in the F-17 request path is unspecified. If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity. No routing fact resolves that single boundary. The observations cannot exclude co-occurrence or unlisted mechanisms."
+  },
+  "atomic_claim": {
+    "claim_id": "C-6376a12f1550",
+    "source_field": "mapping.limit",
+    "exact_parent_text": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity.",
+    "exact_claim_span": "If Q is on that path its diagnostic priority bears on the target; otherwise it concerns another segment activity."
+  }
+}

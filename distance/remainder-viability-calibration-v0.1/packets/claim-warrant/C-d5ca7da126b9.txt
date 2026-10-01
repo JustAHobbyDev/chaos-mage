@@ -1,0 +1,56 @@
+# Frozen atomic claim-warrant scoring
+
+Judge only the identified atomic claim in its exact parent context and original
+mapping. Assume all stated execution prerequisites are satisfied and the stated
+signal occurs. Does that signal license this claim within the supplied limits?
+
+SUPPORTED: the stated operation/signal licenses the claim within its explicit bounds.
+CONDITIONAL_WARRANT: the mapping supplies a specific unresolved empirical relation
+whose establishment would license it. Cite that relation; do not invent one or
+confuse execution readiness with warrant.
+UNSUPPORTED: even with execution prerequisites satisfied and the signal observed,
+the claim does not follow as mapped.
+UNCERTAIN: packet information is insufficient to decide; explain without forcing
+an unsupported label.
+
+Do not assess whole-artifact viability, infer intended defects, or repair claims.
+No external context, tools, browsing, other cases or historical judgments.
+Return claim_id, status, rationale, signal_basis, stated_empirical_relation, uncertainty.
+signal_basis and stated_empirical_relation are lists of separate exact contiguous
+excerpts, each {source_field, exact_text}. source_field is mapping.FIELD or
+source.instrument.FIELD, where FIELD is state/operation/signal/inference/limit.
+Never concatenate separated excerpts in one exact_text. The empirical relation
+must cite mapping content and be nonempty only for CONDITIONAL_WARRANT.
+For UNCERTAIN supply a nonempty uncertainty list. Keep explanation outside quotes.
+
+CASE PACKET
+{
+  "source": {
+    "name": "Analysis of Competing Hypotheses",
+    "practice": "Intelligence analysis",
+    "instrument": {
+      "state": "Several plausible explanations can account for an uncertain situation, and available evidence may fit more than one of them.\n",
+      "operation": "State the competing explanations explicitly, evaluate each item of evidence against all of them, emphasize evidence that is inconsistent with particular explanations, and test the sensitivity of the resulting comparison to uncertain evidence or assumptions.\n",
+      "signal": "The evidence forms a comparative pattern of consistency and inconsistency across the competing explanations, with some items discriminating among them more strongly than others.\n",
+      "inference": "Explanations with greater important inconsistency can be weakened or eliminated, leaving a smaller set of alternatives that better survives the observed evidence.\n",
+      "limit": "Missing hypotheses, dependent or unreliable evidence, subjective consistency judgments, poor assessment of diagnosticity, and shared assumptions can make the comparison misleading. Surviving contradiction is not proof that the remaining explanation is true.\n"
+    }
+  },
+  "target": {
+    "domain": "investigative reporting",
+    "question": "What can the current evidence establish or constrain about whether award P-17 was steered?"
+  },
+  "mapping": {
+    "state": "Award P-17 is examined under three hypotheses: altered recorded scores, bidder-specific specification drafting, and an ordinary award without either practice. The dossier contains evaluation sheets, drafting records and an indexed chronology. The inquiry concerns only this award.",
+    "operation": "List the three hypotheses. Enter each dossier item in an evidence-by-hypothesis table, check independence and rate inconsistency. Recheck the comparison after removal of disputed items. Preserve the item identifiers and locations in the dossier.",
+    "signal": "Independently retained evaluation sheets agree with the announced scores, including the retained scoring history. No post-evaluation change appears in either independent copy. Dated drafting records establish that the examined specification was fixed before bidder identities were available. The comparison is stable after disputed items are removed.",
+    "inference": "The comparative record establishes that steering is the best surviving explanation of award P-17, with an ordinary unsteered award ruled out.\nRecorded-score alteration and bidder-specific authorship of the examined specification are weakened; obtain the unexamined contact log to investigate other steering routes.",
+    "limit": "Copies and dates are authenticated and independent. The evidence concerns the two named routes only; it does not record unexamined contacts or prove honest intent. The contact log is a named missing record, not assumed evidence."
+  },
+  "atomic_claim": {
+    "claim_id": "C-d5ca7da126b9",
+    "source_field": "mapping.inference",
+    "exact_parent_text": "Recorded-score alteration and bidder-specific authorship of the examined specification are weakened; obtain the unexamined contact log to investigate other steering routes.",
+    "exact_claim_span": "; obtain the unexamined contact log to investigate other steering routes."
+  }
+}
