@@ -119,6 +119,7 @@ def extract_inquiry_units(mapping):
            'provenance_complete':bool(live and operations and len(outcome_rows)>=2) and not resolved,
            'role':'NOT_INQUIRY_CONSTRAINT','counterfactual_effect':{'next_inquiry':'uncertain'},'productivity':'UNCERTAIN','rationale':'Deterministic semantic structure; productivity is assessed separately.'}
         u['differential_outcome_relation']['present']=len(outcome_rows)>=2 and outcomes_are_discriminating(u)
+        u['provenance_complete']=bool(has_contrast and operations and u['differential_outcome_relation']['present'])
         if complete(u):u['role']='INQUIRY_CONSTRAINT'
         candidates.append(u)
     # Components of repeated equivalent bundles were already unioned, not emitted anew.
