@@ -1,0 +1,126 @@
+{
+  "artifact_freeze_sha256": "1e5fdd1e2a0c0ba3ac5621d0ef84fe5f4e493e3c1779ec6bf77b9b2c6e358878",
+  "contributions": [
+    {
+      "case_id": "H3-4d30014ef73c",
+      "remainder_id": "R02",
+      "mechanism_key": "diagnosis",
+      "control": null,
+      "measured_role": null,
+      "measured_negative_inference": false,
+      "productive": "YES",
+      "unresolved_contrast": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+      "concrete_operation": "Measure lock-wait duration with pool occupancy next",
+      "differential_outcome_relation": "elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+        }
+      ],
+      "all_present_in_surviving_mapping": true,
+      "operator_annotation_not_model_relabeling": true
+    },
+    {
+      "case_id": "H3-5f1006224642",
+      "remainder_id": "R02",
+      "mechanism_key": "ach",
+      "control": null,
+      "measured_role": "INQUIRY_CONSTRAINT",
+      "measured_negative_inference": true,
+      "productive": "YES",
+      "unresolved_contrast": "The retained comparison does not distinguish H1 from H3.",
+      "concrete_operation": "Inspect record R, the individual scores saved before consensus, next",
+      "differential_outcome_relation": "unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The retained comparison does not distinguish H1 from H3."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Inspect record R, the individual scores saved before consensus, next: unexplained post-opening score changes favor H1 over H3, whereas stable contemporaneous scores bear against H1 relative to H3."
+        }
+      ],
+      "all_present_in_surviving_mapping": true,
+      "operator_annotation_not_model_relabeling": true
+    },
+    {
+      "case_id": "H3-65c8b64e5dc2",
+      "remainder_id": "R02",
+      "mechanism_key": "delta",
+      "control": null,
+      "measured_role": "INQUIRY_CONSTRAINT",
+      "measured_negative_inference": true,
+      "productive": "YES",
+      "unresolved_contrast": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset.",
+      "concrete_operation": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle",
+      "differential_outcome_relation": "persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Replay {a,c} by removing b from {a,b,c} next under the frozen F oracle: persistence of F eliminates b from the required subset, while disappearance of F retains b as required in that configuration."
+        }
+      ],
+      "all_present_in_surviving_mapping": true,
+      "operator_annotation_not_model_relabeling": true
+    },
+    {
+      "case_id": "H3-d6134c9f4c74",
+      "remainder_id": "R02",
+      "mechanism_key": "diagnosis",
+      "control": "terse",
+      "measured_role": null,
+      "measured_negative_inference": false,
+      "productive": "YES",
+      "unresolved_contrast": "The current result does not discriminate lock contention from isolated pool exhaustion.",
+      "concrete_operation": "Check waiting next, together with how full the pool is",
+      "differential_outcome_relation": "long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+        }
+      ],
+      "all_present_in_surviving_mapping": true,
+      "operator_annotation_not_model_relabeling": true
+    },
+    {
+      "case_id": "H3-dbca10a933d7",
+      "remainder_id": "R02",
+      "mechanism_key": "crossdate",
+      "control": null,
+      "measured_role": "INQUIRY_CONSTRAINT",
+      "measured_negative_inference": true,
+      "productive": "YES",
+      "unresolved_contrast": "The available overlap does not distinguish offsets +6 and +7.",
+      "concrete_operation": "Compare the next preserved increment with R2 next",
+      "differential_outcome_relation": "+6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset.",
+      "source_spans": [
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The available overlap does not distinguish offsets +6 and +7."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "Compare the next preserved increment with R2 next: +6 predicts a narrow-to-wide correspondence there and +7 predicts wide-to-narrow, so either observed correspondence bears against the other offset."
+        }
+      ],
+      "all_present_in_surviving_mapping": true,
+      "operator_annotation_not_model_relabeling": true
+    }
+  ],
+  "interpretation": "Includes three model-labeled negative inquiry constraints and two productive directives explicitly labeled nonnegative by the judge. Operator descriptions do not rewrite model roles."
+}
