@@ -1,0 +1,3716 @@
+{
+  "at": "2026-10-01T00:59:11.646802+00:00",
+  "prepared_sha256": "b031c57526cb853dd3f8373506f5dc0e67887b390e4cf1e388ab1a066423d8e9",
+  "runs": [
+    {
+      "identity": "H-ca093848fecf",
+      "reservation": {
+        "at": "2026-09-30T23:26:09.913109+00:00",
+        "input_commit": "f353a719e9b418039072c39e4a79691a2744ff83",
+        "identity": "H-ca093848fecf",
+        "stage": "ablation",
+        "packet_sha256": "5f0fc166dce323db1571c6f053494abf771e25ab16ff14af658a5e3c2ce68209",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-3bpbrp9v",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-3bpbrp9v",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T23:27:30.404628+00:00",
+        "metadata": {
+          "session_id": "01a0f4a3-ce63-7d51-8b05-9cbd1e468664",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13313,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2509,
+              "reasoning_output_tokens": 136
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "5d9e83edac98ed86f78def78dd02b213488d07c34ed0c1d4ebc8bbf4a08ebadd",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/attempt.json": "3778df4584792901384e2e7e9dfc8c21c9dee32dea10862be4b4be88cf3d89fa",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/events.jsonl": "2cb76d7b58f0d9d298bdcea7eaf961dae18c5f509813ad7a9bba8cc199999ee6",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/exit.json": "f71be2bc186b6f38a04387fdbf982b8fbb2214635c109979a9c8e17e4adaddbd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/process.json": "acdc6b98dd7c6b85fcd5568d177dcea9d93a8a9b0354332c57a630cde65fe00b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/prompt.txt": "5f0fc166dce323db1571c6f053494abf771e25ab16ff14af658a5e3c2ce68209",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/reservation.json": "b0bcc940f87ac20a3e5ce508438008826eee47a6776157d96f75075c0ccc0154",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/response.json": "5d9e83edac98ed86f78def78dd02b213488d07c34ed0c1d4ebc8bbf4a08ebadd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ca093848fecf/validation.json": "2fc9a5e5563f2e131eb6cc1e9b3865931c2a1115c36028f538de5325ea18f81b"
+      }
+    },
+    {
+      "identity": "H-a2f1260be8de",
+      "reservation": {
+        "at": "2026-09-30T23:27:32.853829+00:00",
+        "input_commit": "f353a719e9b418039072c39e4a79691a2744ff83",
+        "identity": "H-a2f1260be8de",
+        "stage": "ablation",
+        "packet_sha256": "38fd4be96daaf9b962d961a2cd4c8463c08a6ce5c6124927e37afd2df4b9e789",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-x13nqfra",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-x13nqfra",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T23:28:37.981983+00:00",
+        "metadata": {
+          "session_id": "01a0f4a5-0ee6-75b0-8419-aac7502e56e8",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13230,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2003,
+              "reasoning_output_tokens": 67
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "8e3983d1a35714a52b4ed02e8b3d5f054c26f6c82ff97999194d2276c73b9ee5",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/attempt.json": "72ff3d15f63a6a189adf8bd8713ccba99eb6b8c0f8e5f57a710e873927db87d4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/events.jsonl": "faab590d361c27c8de99ad0ecb8e83bbcaff6389f77ffd72dd9d1ebef0c87528",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/exit.json": "4d54c9c10558446d159fe6020474cb24b79687b977e032b841bfb3b60b7a26ee",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/process.json": "965a5d14424a3b67964df719c40b9b33b48eb7b03480695ff5ed601c87de4e30",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/prompt.txt": "38fd4be96daaf9b962d961a2cd4c8463c08a6ce5c6124927e37afd2df4b9e789",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/reservation.json": "530c5ede93e3671011b0bf0539b3da677472e3ec8a188ee31e5a77f312f674e4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/response.json": "8e3983d1a35714a52b4ed02e8b3d5f054c26f6c82ff97999194d2276c73b9ee5",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-a2f1260be8de/validation.json": "02f65a9f758ba3dedd69164bae41b06f4efe502ac7743a159a8408e8d43004f9"
+      }
+    },
+    {
+      "identity": "H-626ba6808abc",
+      "reservation": {
+        "at": "2026-09-30T23:28:40.376097+00:00",
+        "input_commit": "f353a719e9b418039072c39e4a79691a2744ff83",
+        "identity": "H-626ba6808abc",
+        "stage": "ablation",
+        "packet_sha256": "1582fb312064b127c199faff92baba7f6f0d4b86b38f22bf891aaa845cf15007",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-y0kvmrkx",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-y0kvmrkx",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T23:29:49.794523+00:00",
+        "metadata": {
+          "session_id": "01a0f4a6-1686-72d1-b332-dee8471688f4",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13256,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2107,
+              "reasoning_output_tokens": 143
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "9ef36592015d8ea271def064b0a28cbefee60001ccc63d27c86c4a8bd4b1e0b4",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/attempt.json": "c9b0fd3ad4de2abe508d85f5e9dcc9ec8108a61943b7671791a4fb0aa00cec45",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/events.jsonl": "c220eb3a70254bc1963028a8296d6708e76287e44c9b57cb119732a843327272",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/exit.json": "16a77d335302c3e831f4021d98a44bdb76456218b4114f1b4c90e2664d068266",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/process.json": "3c8b541ab160408eb8b66bb31b515b9988699bf1666f155469a4762102435704",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/prompt.txt": "1582fb312064b127c199faff92baba7f6f0d4b86b38f22bf891aaa845cf15007",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/reservation.json": "66dc500e53db5811ef99b184a1c13b9c6eeafda93af052d9a77564ccac87e356",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/response.json": "9ef36592015d8ea271def064b0a28cbefee60001ccc63d27c86c4a8bd4b1e0b4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-626ba6808abc/validation.json": "aa602a88c7b9e2c637b0b9ad089fda80b6872c5515be70c8955cff8ba4ecea35"
+      }
+    },
+    {
+      "identity": "H-79c5f7d657b9",
+      "reservation": {
+        "at": "2026-09-30T23:29:52.319286+00:00",
+        "input_commit": "f353a719e9b418039072c39e4a79691a2744ff83",
+        "identity": "H-79c5f7d657b9",
+        "stage": "ablation",
+        "packet_sha256": "57152ff420c60bab47e676114495f10090be040212968dc2cd2ae4e333cdeadd",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-3eiuhhor",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-3eiuhhor",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-09-30T23:33:19.079430+00:00",
+        "metadata": {
+          "session_id": "01a0f4a7-332d-7a83-8173-117b86d16fb9",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13272,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2138,
+              "reasoning_output_tokens": 123
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        },
+        "recovered_bookkeeping": true,
+        "completion_evidence": "One original turn.completed, unchanged final agent message exactly matching response.json, no error or tools, original process observed gone after response completion.",
+        "exit_status": null,
+        "exit_status_limitation": "The daemon restart killed the waiting scheduler, so its exit-code record was not collected. No zero exit code is asserted."
+      },
+      "response_sha256": "61ef6a37ecf87a76e71cdb9085578a0e02e5f5957f635354661bb49ce8ee2758",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/attempt.json": "69033b1c72b8b0f9fb393c59395de988103e714d2fae03abf6b73ec1f3790e93",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/events.jsonl": "768e3c26cdc1b6c5fdb67d0fc884c73d6c95ce573e811503cd54628cb6794f19",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/process.json": "d3c0bcada7eae4c541bc843b3fa84b84ebfc22f751c579e88d9ccd79ca530893",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/prompt.txt": "57152ff420c60bab47e676114495f10090be040212968dc2cd2ae4e333cdeadd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/reservation.json": "2cb8ad7ae19d459e51857f26ceff8387c3f0ce12acf8232caec1722c67dbc92c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/response.json": "61ef6a37ecf87a76e71cdb9085578a0e02e5f5957f635354661bb49ce8ee2758",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-79c5f7d657b9/validation.json": "fb64eb655811e38b75b04fc9814db6bbd42f416c10db8bf826d4501b816c456d"
+      }
+    },
+    {
+      "identity": "H-564a4829e97d",
+      "reservation": {
+        "at": "2026-10-01T00:31:48.996064+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-564a4829e97d",
+        "stage": "ablation",
+        "packet_sha256": "46c7041bafa3b4c0bf800f3331d4c7e1929a2fbb8817b87883311955db485544",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-nlc0lih2",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-nlc0lih2",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:33:11.932668+00:00",
+        "metadata": {
+          "session_id": "01a0f4df-e9aa-7492-85c8-b958984b4687",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13433,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2582,
+              "reasoning_output_tokens": 99
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "6ff034071422852cf60eb6d0cc4c1839bd56de0f04c55d6b1e6f94aedc29e66b",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/attempt.json": "8593bdffc00454bb4a47b231be619d86b25bb26154cfe54ee7ca2b8ae186ba0e",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/events.jsonl": "32d37161d60f384b96cf12b570c6ee1f43856b6c4eae0e11c61311024d44b662",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/exit.json": "d4094a23ef8963616cd91ebca166848e4f94027483a1b7d745fb7a78b9a4f9aa",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/process.json": "53f59737fbaa1e0b2beb457a02a3e3a64cfbb349515379b3d8bfbde3d28a9b29",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/prompt.txt": "46c7041bafa3b4c0bf800f3331d4c7e1929a2fbb8817b87883311955db485544",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/reservation.json": "52f5df51c42fc405dc3412f12728773459b0d2fe1b73549066b4721b05baa60d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/response.json": "6ff034071422852cf60eb6d0cc4c1839bd56de0f04c55d6b1e6f94aedc29e66b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-564a4829e97d/validation.json": "5d99a9e8bd3aa8d0a2a1209b26e91992636ab3a5765ffe07e0b8ec3fffe06d57"
+      }
+    },
+    {
+      "identity": "H-d351f51a2f2d",
+      "reservation": {
+        "at": "2026-10-01T00:33:14.375109+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-d351f51a2f2d",
+        "stage": "ablation",
+        "packet_sha256": "46beb03390acfec1cbf44bd76f6c9ee5df8c342f8c6e4bcf1b91171518761d29",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-71mbv_gg",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-71mbv_gg",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:34:30.601242+00:00",
+        "metadata": {
+          "session_id": "01a0f4e1-336e-7c60-9bc3-36348456da97",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13245,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2318,
+              "reasoning_output_tokens": 151
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "a4dffb8682d1232c77ce0ba929629bfd7b1e972b4ca33d1a495da73494b67e3a",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/attempt.json": "6b021ecfda34dd39c77b5ba2db1d943b0b4bf364f59d9321d4f1a6976dab43ed",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/events.jsonl": "c5159b4214a79b41fa4492773b65a202982df7aeaa8809b909eb6bc109612cb9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/exit.json": "f0b2fb94fd77a72eb9cc36171b4dd6117103d375b265dec25cc52e9a13b8dc21",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/process.json": "30d0404b7fdce568bb60d4d6294569abc4ec95505e7355e8a1e68fbf2c5e607a",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/prompt.txt": "46beb03390acfec1cbf44bd76f6c9ee5df8c342f8c6e4bcf1b91171518761d29",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/reservation.json": "39c674a802bb9bd84cc818ddca44469b1f2ab16ca5a9571a011c54469e92e030",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/response.json": "a4dffb8682d1232c77ce0ba929629bfd7b1e972b4ca33d1a495da73494b67e3a",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d351f51a2f2d/validation.json": "acb6e3893071b3236f19497b0daa4a82abbaa04968ce22d94954f3c20234face"
+      }
+    },
+    {
+      "identity": "H-eb700d571111",
+      "reservation": {
+        "at": "2026-10-01T00:34:33.028252+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-eb700d571111",
+        "stage": "ablation",
+        "packet_sha256": "0d9fcd05f328ac460633fa8760c651c6f88ce4b782a5ba5ddecf4b91301474ac",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-egqenenq",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-egqenenq",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:35:47.378927+00:00",
+        "metadata": {
+          "session_id": "01a0f4e2-6a2e-7080-93f0-17cff2a995ff",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13340,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2280,
+              "reasoning_output_tokens": 201
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "f8ecb2c6277945e669db68c4d5fd6d16071d2a8fd1bd32d57b12e7f8e6ad033f",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/attempt.json": "555aee438b84daf7703fe2d2020a4ce18be5fc4311453403789b5e51602dddbd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/events.jsonl": "53de1598c170b243d19a2c16f8bcc6d0cb8507f1055dea863b9c4bc90f66886b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/exit.json": "4f708b3ad8629e370684078c8b5fbae4501a1c56119dff318ad6f28d0eb41065",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/process.json": "62737ba3c21f996ae59ed56a934eb599cefe994195e5676b14ba23f432f09c3d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/prompt.txt": "0d9fcd05f328ac460633fa8760c651c6f88ce4b782a5ba5ddecf4b91301474ac",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/reservation.json": "56c229beea5a594de6f595b98d3ed917c14a0a568dc6b098164e853358a6efb2",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/response.json": "f8ecb2c6277945e669db68c4d5fd6d16071d2a8fd1bd32d57b12e7f8e6ad033f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eb700d571111/validation.json": "1c0818f760c7e551aee67cc30c1ebda1e1a5d1f3ff4f7acfcf8cdb349dd25a2a"
+      }
+    },
+    {
+      "identity": "H-3339b0c7025e",
+      "reservation": {
+        "at": "2026-10-01T00:35:49.904667+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-3339b0c7025e",
+        "stage": "ablation",
+        "packet_sha256": "f2e81126d68d733eb65d79a9e29c1bf69b1d718620ae2be7a987bc0308e40977",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-q2lsyqq5",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-q2lsyqq5",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:36:58.548035+00:00",
+        "metadata": {
+          "session_id": "01a0f4e3-92e3-7163-a5f5-c2edbbb34325",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13296,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2129,
+              "reasoning_output_tokens": 120
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "3b9b3e4e85478a931e5b3701b90bc4297c2da50a31fa890a46122533b1225232",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/attempt.json": "5ab823e880e7727aa631bebe32daa5d4a54fda1cd57783e51a38e39d7452d616",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/events.jsonl": "8d476ed7eedc77a19079db5133165c7797d3871c2ebca1ff956cf1883cec9610",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/exit.json": "18f93653c489c55d9ce0a4d3bf24eaed10b0f76761fe391bc66b57141c7bcbcc",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/process.json": "dfed6858c08b559e8d382c106b82ab05b67f96f117f0d7b5fbd48b4c0caeb43a",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/prompt.txt": "f2e81126d68d733eb65d79a9e29c1bf69b1d718620ae2be7a987bc0308e40977",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/reservation.json": "79b7c14c8a439ab7bcb44a46e309351e68022092d88205b2f9c81fb31209111c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/response.json": "3b9b3e4e85478a931e5b3701b90bc4297c2da50a31fa890a46122533b1225232",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-3339b0c7025e/validation.json": "728f9c60ce9b77f4f6ff2d59623a769241731ed4c879414376381bb32721cf75"
+      }
+    },
+    {
+      "identity": "H-636942c3c9ad",
+      "reservation": {
+        "at": "2026-10-01T00:37:01.048331+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-636942c3c9ad",
+        "stage": "ablation",
+        "packet_sha256": "c51789fe432f5896033e61fcfcf4c7ef880a3a582f00ccb003b3ef593ab886a8",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-9gmbfwn4",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-9gmbfwn4",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:38:04.377340+00:00",
+        "metadata": {
+          "session_id": "01a0f4e4-a8e0-7dc2-8bf0-c84013f02d9a",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13286,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1940,
+              "reasoning_output_tokens": 57
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "b827117d987e97efa892d370035479a2e5f268e4d94887d9f28a663fcdaada5a",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/attempt.json": "5240af59f85847606ae53276b769e648bb6ee472b612be3171586a597e07c035",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/events.jsonl": "ffe3ca8d5f2a51f8dd219fa64cc99804bb82ed8a3f0790f2e8dc43b05140aa76",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/exit.json": "06cc06f6d50c8cff78233fbc1814f4f936ae240139b2178a6123a331d16990c9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/process.json": "b5211d96dfa5341976bf4bbbf306a6fae0c6c219fddddcb1fe3a098d5bf2472b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/prompt.txt": "c51789fe432f5896033e61fcfcf4c7ef880a3a582f00ccb003b3ef593ab886a8",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/reservation.json": "fcc841073489489352805ed6f903543be082a0c010cf1efb4c28651532b25808",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/response.json": "b827117d987e97efa892d370035479a2e5f268e4d94887d9f28a663fcdaada5a",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-636942c3c9ad/validation.json": "e64fb3ac93508bd92d3671d4a3529c4cb3e22450f9a15e7b4789b32c3fe86888"
+      }
+    },
+    {
+      "identity": "H-8128cf683d7f",
+      "reservation": {
+        "at": "2026-10-01T00:38:06.596071+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-8128cf683d7f",
+        "stage": "ablation",
+        "packet_sha256": "5713a55bce99da22e37c62a1462116f200215222e53f0bc4ddce6bfc3cdf4fbc",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-9rmk_f2s",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-9rmk_f2s",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:39:23.220207+00:00",
+        "metadata": {
+          "session_id": "01a0f4e5-acc7-7b72-a71e-fab61f4f0865",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13332,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2294,
+              "reasoning_output_tokens": 128
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "23dbced86c1a4a5411cad39f3d304d4f72253d8d5e1cb8bfb6d4fb3425bcfbfa",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/attempt.json": "9e13af709395a9456edea37977353bdb4c861bea43fde287cad115a0901e5b14",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/events.jsonl": "a2ebba3e0b3661436374b4cbf2e8555f723ad8494147e992177157632792f7be",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/exit.json": "267392dc72d5c3b650f0920e63c4bf37a82491d8d27c86a5d8d341b183adea37",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/process.json": "18da4953a23e728d2ccbed87d636f7c399da7e7ce6b18383e5b4867b9a427d97",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/prompt.txt": "5713a55bce99da22e37c62a1462116f200215222e53f0bc4ddce6bfc3cdf4fbc",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/reservation.json": "04c45aba958c136c30b0a208e78fd838a543d582c82f6948db25bca01c1e03d3",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/response.json": "23dbced86c1a4a5411cad39f3d304d4f72253d8d5e1cb8bfb6d4fb3425bcfbfa",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-8128cf683d7f/validation.json": "ba02ab9d9a81652455367f49ac999bc585a42b8c4a388d7e5050401541c95c7c"
+      }
+    },
+    {
+      "identity": "H-2b108ed2763b",
+      "reservation": {
+        "at": "2026-10-01T00:39:25.647360+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-2b108ed2763b",
+        "stage": "ablation",
+        "packet_sha256": "e254e1966fa45986a89930cca9e558572671547c8a4f0b30bb9b761b5a43eb42",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-1g1tl1a8",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-1g1tl1a8",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:40:35.467046+00:00",
+        "metadata": {
+          "session_id": "01a0f4e6-ddaf-73b2-ba87-7985aa6591c0",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13323,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2149,
+              "reasoning_output_tokens": 148
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "969b6ebbf7a7588dff27a2eea9d95cf115ad0529e5a751150b9f3c3c96ffcb5e",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/attempt.json": "ba43e113b2dac05d1851d7bd3509c8db3f227918c2baff988a22e671b5163da5",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/events.jsonl": "2f85ecffc8505deadcf9bc5131ed7cde176081de0224686356e123ae61ab102d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/exit.json": "0ec2b1783211c299ee2c6b413e659ac830af2da5d73a3ff6dbc6c29915187a4b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/process.json": "a4cbe8328367d3bd557bc1789ad30af3806d93afd156f6b5557854a348f7d42f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/prompt.txt": "e254e1966fa45986a89930cca9e558572671547c8a4f0b30bb9b761b5a43eb42",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/reservation.json": "f0629949d0139998423265eb4659f43cb800e8ee13e4408785ae17557c613111",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/response.json": "969b6ebbf7a7588dff27a2eea9d95cf115ad0529e5a751150b9f3c3c96ffcb5e",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-2b108ed2763b/validation.json": "7dc2c4cbf92fa5c8f366467645cc1b6cfd85ff0ba1fdf0aa74d351f9cf64a845"
+      }
+    },
+    {
+      "identity": "H-ad2d9725bd69",
+      "reservation": {
+        "at": "2026-10-01T00:40:37.943769+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-ad2d9725bd69",
+        "stage": "ablation",
+        "packet_sha256": "d413dca68e4ad35f2a46f5c40395c32741da40c03d061c935aaacb0311b79a2b",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-8g0enpz3",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-8g0enpz3",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:41:59.377217+00:00",
+        "metadata": {
+          "session_id": "01a0f4e7-f820-76a0-9002-fc8232eabab7",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13304,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2522,
+              "reasoning_output_tokens": 161
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "fb29923cb7bfa7f3571ecabc00a44d0d4b5ad56460609e0842d08058789398b8",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/attempt.json": "a0f4927337eaf92ac2a658d3eac4c4a32341115adc1444ca005632410a575b55",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/events.jsonl": "5edea123748ca6e92afa6da53868d929e9520a2e64fd28c72b89c1f52182e8cf",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/exit.json": "b06c4546fb990831b7266a156ded24ee266e76a420633c8d40c0a80fe8533c1e",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/process.json": "e1e824a91ab54a5595bf22c3c5de5a20c1f050bf5178532b8d1c5ffd13763789",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/prompt.txt": "d413dca68e4ad35f2a46f5c40395c32741da40c03d061c935aaacb0311b79a2b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/reservation.json": "d15e5e43fa21a138cb395f43a7cce2fecd6ef0b6fa966adbe6dd589c5ea33d48",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/response.json": "fb29923cb7bfa7f3571ecabc00a44d0d4b5ad56460609e0842d08058789398b8",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-ad2d9725bd69/validation.json": "a2464403767e4bf2c48baf46a52b1beff9bc05ac64be5ebf4309efd6fd4bf872"
+      }
+    },
+    {
+      "identity": "H-02c415af8fcc",
+      "reservation": {
+        "at": "2026-10-01T00:42:01.824743+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-02c415af8fcc",
+        "stage": "ablation",
+        "packet_sha256": "155ee5c3318e98cd4eef5127dadd5592171e9bdc0ac11bcd32f1d525042fbf2c",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-bpg021es",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-bpg021es",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:43:29.776019+00:00",
+        "metadata": {
+          "session_id": "01a0f4e9-3fc4-7182-baf3-f4172f007a0d",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13640,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2751,
+              "reasoning_output_tokens": 84
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "af0f6e7046fddd40faa6e3308efc028bd0c3dbaf6ea3979acc6d55b8e4639af3",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/attempt.json": "51b093146ad844802a55ffa5ab92ad383125b91af740e77f7a4803f2bf48f168",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/events.jsonl": "7d205f7bbbb2f66adbf5141bcbd58f1067408e0a7e3a47d6d8aa7ae7b77faac7",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/exit.json": "feaca3200c198592d715940d0d0799fd2414a06483c9364a5208cd4ac01e52e1",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/process.json": "528d22128e9ab74c84314adb231f593e1a6bbfa76b17c08c906c0fef4d0deab1",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/prompt.txt": "155ee5c3318e98cd4eef5127dadd5592171e9bdc0ac11bcd32f1d525042fbf2c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/reservation.json": "30dab2f29c89a5c82a2eccad8c0e515d467f440f576e7909a5067c0549d5cff9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/response.json": "af0f6e7046fddd40faa6e3308efc028bd0c3dbaf6ea3979acc6d55b8e4639af3",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-02c415af8fcc/validation.json": "bfd8d36a778461bb275b93541e833158d93f68c42fa5570640c4c1fbc3579649"
+      }
+    },
+    {
+      "identity": "H-267f553dd5e6",
+      "reservation": {
+        "at": "2026-10-01T00:43:32.232399+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-267f553dd5e6",
+        "stage": "ablation",
+        "packet_sha256": "9d931264bc40f5f51571e6ccf30171ac61d639d0b19fc652ec115bcf2db87200",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-eipzq_16",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-eipzq_16",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:44:40.070237+00:00",
+        "metadata": {
+          "session_id": "01a0f4ea-a402-7780-b512-0bda1ec14f4c",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13232,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2104,
+              "reasoning_output_tokens": 118
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "8c9db5b91cf35a2c28cf427ad0d15fc6661debef9011e2a67e62e411a2b5e463",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/attempt.json": "9081f113691a5415adc59dda5a249c512934fa7274ce1b3be12edcf3260a1de7",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/events.jsonl": "cafebae9c8ef19e2c94b696599478e34d51b8fbd6653faf35833cb0ddf2f2a64",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/exit.json": "bf3d00fea7e8ca4eb957940d6ab477cb4f19d874fd074212aa6186bf23d79c4f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/process.json": "2afa2d8e58cd3501359acdcd58cf81a1b1615600f0d697cc42f79185d650b309",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/prompt.txt": "9d931264bc40f5f51571e6ccf30171ac61d639d0b19fc652ec115bcf2db87200",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/reservation.json": "9862c8868fc388dc1950e8008cf8db9b40671725de3a172dd09f26bb2939c863",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/response.json": "8c9db5b91cf35a2c28cf427ad0d15fc6661debef9011e2a67e62e411a2b5e463",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-267f553dd5e6/validation.json": "e3802cbbe8b069a0f869f4071af815f54303be282087d1f2f4a008697a60d479"
+      }
+    },
+    {
+      "identity": "H-7c840810a469",
+      "reservation": {
+        "at": "2026-10-01T00:44:42.543243+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-7c840810a469",
+        "stage": "ablation",
+        "packet_sha256": "5e836f2554c95740621ad3ba1baf45d087ee141562c12155e76740577147cb3b",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-6f5nlqkr",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-6f5nlqkr",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:46:02.826685+00:00",
+        "metadata": {
+          "session_id": "01a0f4eb-b38b-71c0-a057-14fc1e397f8f",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13304,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2468,
+              "reasoning_output_tokens": 108
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "31ad3a395211c59965ca1397abe90716ea58da210c5e78f6edcc30fcee072fbb",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/attempt.json": "152c55615a97f8c19a4a2b93d5e0ef55aeeb2e66d8defcb34facf454752f1bc3",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/events.jsonl": "b4767b54c7c89d7b2a7a5a2f0828aa9743ca46a21fc9531f9d631fc37eb6af1d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/exit.json": "f01ad086cb441faf598a113869c603f7fa3bd7f64f3c8019bfb4b194bb56b9ee",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/process.json": "b1ef8aeed88a9ad8008860332a128e7a5fc24059c7a3c43868374444a0605e54",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/prompt.txt": "5e836f2554c95740621ad3ba1baf45d087ee141562c12155e76740577147cb3b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/reservation.json": "0a7cecb08965183d6931e8ecf98a11b7925af4cdce2c6d9bd36ec3bc6619c947",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/response.json": "31ad3a395211c59965ca1397abe90716ea58da210c5e78f6edcc30fcee072fbb",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-7c840810a469/validation.json": "ba1519e4b473dd3d3ff6db5d0a7576ce114cd472c0d1011a794cb9d81baa1234"
+      }
+    },
+    {
+      "identity": "H-5bc799a1417a",
+      "reservation": {
+        "at": "2026-10-01T00:46:05.154468+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-5bc799a1417a",
+        "stage": "ablation",
+        "packet_sha256": "59b0a915e1ea52704d4179adc6834c69c8597d17483b1b2ccf986fc79095a79c",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-2h3gu9a5",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-2h3gu9a5",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:47:28.527942+00:00",
+        "metadata": {
+          "session_id": "01a0f4ec-f639-7a50-8d78-5a810014f7d4",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13323,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2600,
+              "reasoning_output_tokens": 255
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "ab0c7c591ef233ff5d7f4970fceed642a3f7284ef4fa700f93c6ab526e926ea6",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/attempt.json": "fe517e59ef3d4ec5cd9282357ace3321098df20f87ea2b293136d504e2f1b7cb",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/events.jsonl": "c485aca57131ad0f384f87ce8bb3dc1f6cea786c4fce99906f75dfe5bdfb5652",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/exit.json": "83ad10c7e7ee2872cee1de079efb618eb2f25f3be554cfca23c6dec16d89ec2b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/process.json": "a9ae3d25382f613db10c308f09e28c1b7f52fd182f540477d1f98534812668b8",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/prompt.txt": "59b0a915e1ea52704d4179adc6834c69c8597d17483b1b2ccf986fc79095a79c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/reservation.json": "86992e49c81b0af57e4ed360227de53b284d5f5e4993a727d0dc660d522d7d49",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/response.json": "ab0c7c591ef233ff5d7f4970fceed642a3f7284ef4fa700f93c6ab526e926ea6",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-5bc799a1417a/validation.json": "095c80cdf0fd897001b94b2e5f1b44c1e476c0a35bed6442ee58e3a1f52c2150"
+      }
+    },
+    {
+      "identity": "H-1e61b00c1af6",
+      "reservation": {
+        "at": "2026-10-01T00:47:31.043123+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-1e61b00c1af6",
+        "stage": "ablation",
+        "packet_sha256": "74afb207239823ed940ebbd6da7aa0e1c145e8c7e3e0ebb0dac21980aed3f7d9",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-_rxep31c",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-_rxep31c",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:48:57.303663+00:00",
+        "metadata": {
+          "session_id": "01a0f4ee-4a10-7990-877e-196474e39fcb",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13317,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2658,
+              "reasoning_output_tokens": 282
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "c7147094dcfcaac050434697465b25392552af5fa01d5168561a7acdc7812aa6",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/attempt.json": "0083887062f4f8b781bedce0361cc766c927e3ef750ebbbd3a242965ad438abc",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/events.jsonl": "453337bbebc0a835b61ddbfd610e0d9337a00d345e0759aede47bc2a5c89b6b7",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/exit.json": "0e820cbd4a9dfa23c8c37935c83a47a93ebe0deec81c7f99bc73094dbb471476",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/process.json": "adcda6807957c4bc64b35dcca541daa7126579ef5b5a654a2ae2dfb14f28d186",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/prompt.txt": "74afb207239823ed940ebbd6da7aa0e1c145e8c7e3e0ebb0dac21980aed3f7d9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/reservation.json": "a73cd36604b8b88731eb13afe91ea20cc414a9b66b6fc75bd61e3c064b6eb8ab",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/response.json": "c7147094dcfcaac050434697465b25392552af5fa01d5168561a7acdc7812aa6",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-1e61b00c1af6/validation.json": "4e66e047b2f437dbf7046c017529c241ff2c80d74f2e1673479ac6000119fe8e"
+      }
+    },
+    {
+      "identity": "H-eed6d2b21f12",
+      "reservation": {
+        "at": "2026-10-01T00:48:59.712320+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-eed6d2b21f12",
+        "stage": "ablation",
+        "packet_sha256": "e4ab58165fd55c41a1e4cfd0547bd9708138fa3d978998b6f26fb54b420f5183",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-xapvm4ga",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-xapvm4ga",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:50:13.447698+00:00",
+        "metadata": {
+          "session_id": "01a0f4ef-a027-7612-bdfc-efa4390ae345",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13287,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2161,
+              "reasoning_output_tokens": 115
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "2d904a42c27e980a0773cc695711fc0831c96c389373950e95870a07b8dcb23a",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/attempt.json": "3d99af29e3b21a901ac4bbc403e1fd800201176e34e4811880119a9e079cb051",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/events.jsonl": "adbed945a780f95e40642af294c8d772a9f42e0a3a44792a0151b6f73a34d06b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/exit.json": "5d49e0cf7c2a5d6fff79ae361f1259a0392aa0ca6749df3ee901cc6cd5864057",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/process.json": "f9abadeae72fb05155a1aafbbdaa812400efa371cae6da8e2ea8e24359c42325",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/prompt.txt": "e4ab58165fd55c41a1e4cfd0547bd9708138fa3d978998b6f26fb54b420f5183",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/reservation.json": "57045eea028ca676e789da4b354dc9b0286667fa7908dd7a0a9b8a54de3abb21",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/response.json": "2d904a42c27e980a0773cc695711fc0831c96c389373950e95870a07b8dcb23a",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-eed6d2b21f12/validation.json": "8fc89c6df212df2249ab909406a93b32a6104bab57b6185ed2bb8ceb5e76ab10"
+      }
+    },
+    {
+      "identity": "H-082e294865bf",
+      "reservation": {
+        "at": "2026-10-01T00:50:16.008929+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-082e294865bf",
+        "stage": "ablation",
+        "packet_sha256": "d7eb4c50dfc99ef21137001897d4d35354a08303d9177329b3235b664e45d785",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-qx36lc69",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-qx36lc69",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:51:47.852338+00:00",
+        "metadata": {
+          "session_id": "01a0f4f0-ca27-7243-af53-f95a8248223d",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13364,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2871,
+              "reasoning_output_tokens": 134
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "0859049329db29e607abc422f76bc6b6d36681af29a5802decd9fd45ed6a3bd9",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/attempt.json": "0db8aead49b4abc59650fb43e48a7760c6f413d3ddfd1dbc06e579f1c8a619a4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/events.jsonl": "a4226c1a0b587d9cce54b50c39b3c83e10fcf3f5c465e69785ac222144a06dce",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/exit.json": "5cf80e5442a0cd56ab6b8190212adfaa189b817ce486cb434d2c6eafa4a6fecb",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/process.json": "857cf05b5db902011e06e9a037722b558c5dd625b060f3ee782d4d05362b28bd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/prompt.txt": "d7eb4c50dfc99ef21137001897d4d35354a08303d9177329b3235b664e45d785",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/reservation.json": "dd88e13d40ac976211894980cf22de43d9747c3fcc671ae4082bd42c8f630721",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/response.json": "0859049329db29e607abc422f76bc6b6d36681af29a5802decd9fd45ed6a3bd9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-082e294865bf/validation.json": "f8f844c34d8b7c591480b6f27d19dbd149a69568180accd415c14fe87a27373e"
+      }
+    },
+    {
+      "identity": "H-06b3e9300b1f",
+      "reservation": {
+        "at": "2026-10-01T00:51:50.307188+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-06b3e9300b1f",
+        "stage": "ablation",
+        "packet_sha256": "86e097f23bb0c1f202fa4c516b78368f204a51b2627ef6eedc1e284b67e18a87",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-w1u6rcnu",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-w1u6rcnu",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:53:00.815707+00:00",
+        "metadata": {
+          "session_id": "01a0f4f2-3e15-7da1-9d27-3d87c47b2370",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13435,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2170,
+              "reasoning_output_tokens": 104
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "af902e2b07b1419af65d82433495866ae10f97af88929aac5399a40c4edc6d83",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/attempt.json": "796ab4cee61d8fe7996270e1d4637b5a4bb8bb82f1527ac293c3bb1aed865f6d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/events.jsonl": "093efcc6d69a4b4a6923abd673a6e24ab5f598f11ba06b99ad09f3bc0efed57f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/exit.json": "d2c211f6f1164007532d10b8d20adaa9411512527886dd1a5c3bcd7f044bc239",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/process.json": "cd8074ef4d91ba49d133da000e36235c97fdc1b834a4196cdaa5b738b00eb539",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/prompt.txt": "86e097f23bb0c1f202fa4c516b78368f204a51b2627ef6eedc1e284b67e18a87",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/reservation.json": "6d098669f0cefebc17b1caf4fa50648a164d8567f8045fd2108a829e7b2c80a2",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/response.json": "af902e2b07b1419af65d82433495866ae10f97af88929aac5399a40c4edc6d83",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-06b3e9300b1f/validation.json": "fc218eebe8f1399457b39292de080ae5435ea747decd8a2e96cb4d688d000a9f"
+      }
+    },
+    {
+      "identity": "H-cd1e054967ea",
+      "reservation": {
+        "at": "2026-10-01T00:53:03.171640+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-cd1e054967ea",
+        "stage": "ablation",
+        "packet_sha256": "f8fd279761c1eb501cb0f1626b0b13e38f64b982884c432463d390ea87dea430",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-3m4wxzrk",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-3m4wxzrk",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:54:22.196999+00:00",
+        "metadata": {
+          "session_id": "01a0f4f3-571c-7cc1-bd0d-c42d8eac345e",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13332,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2457,
+              "reasoning_output_tokens": 168
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "d2a3cc28057023f46827613ea947c96a52832b5e31f220a8ab8469af310010fe",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/attempt.json": "95a960439724bce9ce4c96f27aee6942f888bdb3c145b403a97349b5ce41416c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/events.jsonl": "783d9bf97fc45a609d35704dd258b96cb3694f953b061d3e3d269fd795afdc07",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/exit.json": "e5baa10c6c918abe375c38c9ded09de97db0ac3fee69319cb9687dbf2297c526",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/process.json": "1347eb5e6b2a0b4075942d944cf3517ce4b5d11fb7af7f43630f4f6ec21436ad",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/prompt.txt": "f8fd279761c1eb501cb0f1626b0b13e38f64b982884c432463d390ea87dea430",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/reservation.json": "b71c4b96af775731d73a04f598e748441e6bdd603c7782f148d64386d4d5d16b",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/response.json": "d2a3cc28057023f46827613ea947c96a52832b5e31f220a8ab8469af310010fe",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-cd1e054967ea/validation.json": "a391c8db238efdc367fa86420292cff5eb54ac19a6db8f7653162728cc0b371b"
+      }
+    },
+    {
+      "identity": "H-d5ebaff98be7",
+      "reservation": {
+        "at": "2026-10-01T00:54:24.581359+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-d5ebaff98be7",
+        "stage": "ablation",
+        "packet_sha256": "e74638cf17a11fef36ba1624be3fe37ad11961c1081f7575a7185b056b8cab87",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-evwsrokb",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-evwsrokb",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:55:29.174180+00:00",
+        "metadata": {
+          "session_id": "01a0f4f4-9519-7fa3-b0a8-387b29bd428b",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13291,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1959,
+              "reasoning_output_tokens": 148
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "579832eb90700debdd439090aba4aaaede82ff85130ff1b0fa6b6158971d33f4",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/attempt.json": "0c31560c0f9163f78b623094b3a93c7240384ef36e4c3cf3d6632bc01a17a4fb",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/events.jsonl": "9bea7afcd9c1d0e4fd6287e10859dae4ad23000b5f047fc91fcd393778f7e862",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/exit.json": "c1a769cd7a2fc9528da9960e77e383c2a968539c3e1f9db1a0eb487729c74aaa",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/process.json": "886cb1a58be1a8d002495733ebd015de9fa67b592528efa2dc6353ebbd8b498e",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/prompt.txt": "e74638cf17a11fef36ba1624be3fe37ad11961c1081f7575a7185b056b8cab87",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/reservation.json": "456a934092211ffdf45b98a5e8ba15506a4d983697a55d835b47b236d942811f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/response.json": "579832eb90700debdd439090aba4aaaede82ff85130ff1b0fa6b6158971d33f4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-d5ebaff98be7/validation.json": "bd6cec5682cbc7fbf95ff00e32bb410b16b456421a9b01f713ca24519cd44801"
+      }
+    },
+    {
+      "identity": "H-25a0b865ec69",
+      "reservation": {
+        "at": "2026-10-01T00:55:31.504844+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-25a0b865ec69",
+        "stage": "ablation",
+        "packet_sha256": "43a4f5dffbfd1df33e223bfb93c89cfeee9506166bcc0de23855c964eb78338d",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-354ud98d",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-354ud98d",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:56:42.566939+00:00",
+        "metadata": {
+          "session_id": "01a0f4f5-9a7f-7cb1-98c6-aeaf22c8c9ac",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13388,
+              "cached_input_tokens": 8576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2192,
+              "reasoning_output_tokens": 139
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "138ce627f6aad46b0454fdf34f340baef106a1ccc3eb7221a3d29ea9ab4c8f3f",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/attempt.json": "72e3bb04fe7381e9d7e583852b8d7aa1bdf26ef369dbf436e21e18c087e1cad6",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/events.jsonl": "9502c6813d68457f92386ed2cabc287dd69bd1d8064e842406d48c427b0187b4",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/exit.json": "6019d47092df20a3e3e213c8eb26dd79efe02d04decbced0af1c1844ca88db0c",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/process.json": "991edc5cb3f17b03651901433c699f0c8549f499b57772d014e839a8ca6df89f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/prompt.txt": "43a4f5dffbfd1df33e223bfb93c89cfeee9506166bcc0de23855c964eb78338d",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/reservation.json": "cbaced69d06195152152a59ece6391730a67ee03ec701b330aa29477468827b9",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/response.json": "138ce627f6aad46b0454fdf34f340baef106a1ccc3eb7221a3d29ea9ab4c8f3f",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-25a0b865ec69/validation.json": "b77dbc1aa322343e86755ad8c4d8850b30dfff0736508ee96ce63f6e7db71402"
+      }
+    },
+    {
+      "identity": "H-6b7622e02b45",
+      "reservation": {
+        "at": "2026-10-01T00:56:44.968448+00:00",
+        "input_commit": "86d2689600282b85bf2580efb7eb7e89fcf9b721",
+        "identity": "H-6b7622e02b45",
+        "stage": "ablation",
+        "packet_sha256": "05e94536dd32d41990ada207c486c7ffa11a37f1e78a2f1e210dbf50ddc36dc2",
+        "schema_sha256": "e5ff49696ef9e6b2d2961914abcf8292f61ac84e35e41d457368e330c76455eb",
+        "configuration": {
+          "families": {
+            "A": {
+              "cli": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+              "requested_model": "gpt-6-astra",
+              "effort": "high"
+            }
+          },
+          "timeout_seconds": 900,
+          "max_concurrent_processes": 1,
+          "scheduler": "Sequential frozen opaque Experiment H order",
+          "codex_disabled_features": [
+            "apps",
+            "plugins",
+            "memories",
+            "multi_agent",
+            "shell_tool",
+            "unified_exec",
+            "browser_use",
+            "computer_use",
+            "image_generation",
+            "view_image",
+            "hooks",
+            "skill_search"
+          ],
+          "temperature": "provider default; unset",
+          "seed": "provider default; unset",
+          "service_tier": "provider default; unset",
+          "retries": "No harness retry or repair; preserve internal runner formatting/transport retries",
+          "effort_comparison": "Equal labels do not imply equal compute",
+          "served_model_policy": "Only returned identifiers count; unavailable remains null; aliases never promoted to verified served IDs",
+          "expected_cli_versions": {
+            "A": "codex-cli 0.157.1"
+          },
+          "executable_sha256": {
+            "A": "c47ed8e22338031f0fd72fe2f2e9d8a2cc1419ec05526920ed0af18636561b93"
+          },
+          "harness_retries": 0,
+          "allowed_stages": [
+            "claim-warrant",
+            "ablation"
+          ],
+          "probe_limit_per_stage": 0,
+          "model_status": "Historically accepted research judge; no candidate qualification claim",
+          "entrypoint_realpath": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "native_executable": {
+            "path": "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.mise/@openai+codex-linux-x64@0.157.1-linux-x64/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+            "sha256": "3e2584f3f3829a43a0495011a1cecb2facbe64a2403e2b682351fd9c2983f970"
+          },
+          "authorized_claim_measurements": 91,
+          "authorized_ablation_measurements": "one per case with UNSUPPORTED claims, maximum 24"
+        },
+        "cli_version": "codex-cli 0.157.1",
+        "command": [
+          "/var/home/d/.local/share/mise/installs/npm-openai-codex/0.157.1/node_modules/.bin/codex",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--ephemeral",
+          "--skip-git-repo-check",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "/tmp/h-isolated-1mrsgkfh",
+          "--model",
+          "gpt-6-astra",
+          "-c",
+          "model_reasoning_effort=\"high\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "web_search=\"disabled\"",
+          "--output-schema",
+          "/var/home/d/p/chaos-mage/distance/fault-localized-calibration-v0.1/schemas/ablation.schema.json",
+          "--output-last-message",
+          "/var/home/d/p/chaos-mage/.runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/response.json",
+          "--disable",
+          "apps",
+          "--disable",
+          "plugins",
+          "--disable",
+          "memories",
+          "--disable",
+          "multi_agent",
+          "--disable",
+          "shell_tool",
+          "--disable",
+          "unified_exec",
+          "--disable",
+          "browser_use",
+          "--disable",
+          "computer_use",
+          "--disable",
+          "image_generation",
+          "--disable",
+          "view_image",
+          "--disable",
+          "hooks",
+          "--disable",
+          "skill_search",
+          "-"
+        ],
+        "working_directory": "/tmp/h-isolated-1mrsgkfh",
+        "working_directory_initially_empty": true,
+        "requested_session": "ephemeral",
+        "environment_policy": "Provider overrides and parent session markers removed; existing on-disk auth only."
+      },
+      "validation": {
+        "status": "valid",
+        "error": null,
+        "finished_at": "2026-10-01T00:58:00.054681+00:00",
+        "metadata": {
+          "session_id": "01a0f4f6-bc91-7ce3-9583-c703643aec55",
+          "returned_model_identifiers": [],
+          "model_metadata_provenance": [],
+          "verified_served_snapshot": null,
+          "usage": [
+            {
+              "input_tokens": 13351,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2336,
+              "reasoning_output_tokens": 72
+            }
+          ],
+          "internal_retry_events": [],
+          "retry_observability": "No harness retries. Unexposed provider retries cannot be ruled out."
+        }
+      },
+      "response_sha256": "d96d9f6d68945cb79ef5fb8a1dbc821b1cc30c65349376042090891bf81319a5",
+      "files": {
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/attempt.json": "05043ba901ec6064885a79982b1bbffc4ebff1c6a5b41a57e6f8226367aab0f7",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/events.jsonl": "631bd95dabbf3aca26d3e34e56db19f5bd41c955fc79754ccea272bbdf185d58",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/exit.json": "5d0cef99a2589ab0b784702d64b0be8b4bc60e6a524e352bb2c5801523b91fdd",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/process.json": "44112ce1f5de2b21d83a8b8191a2c5cf69f7d453ed5fe99b86ff5dd5b842a2b3",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/prompt.txt": "05e94536dd32d41990ada207c486c7ffa11a37f1e78a2f1e210dbf50ddc36dc2",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/reservation.json": "987b0635acdb39f2ade647d9076c4fed3e8211766b0f480b3597fd4045d073b7",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/response.json": "d96d9f6d68945cb79ef5fb8a1dbc821b1cc30c65349376042090891bf81319a5",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ".runtime/fault-localized-calibration-v0.1/runs/ablation/H-6b7622e02b45/validation.json": "da02849e9ef6821f5ebc4f0403ef0a5bba1d0aeb6c738154b0a2ad22870aa5f0"
+      }
+    }
+  ],
+  "states": {
+    ".runtime/fault-localized-calibration-v0.1/states/0000.json": "7167b4966b62c01cef772dafb7689ac69a3111217ae5641bd380bcd0117dcc2d",
+    ".runtime/fault-localized-calibration-v0.1/states/0001.json": "a44a3019d568c856e6bf3d2565c099e615c7462dc466251e4c836531942c0413",
+    ".runtime/fault-localized-calibration-v0.1/states/0002.json": "1a80cd8821fc3f5f511463869cd8e41c8597ff5ad2fcd7db3bd607828465ff56",
+    ".runtime/fault-localized-calibration-v0.1/states/0003.json": "950d546646ad24f685c92b4180fd9fd47d6dc30bc9327510d4031c582c3ca9f3",
+    ".runtime/fault-localized-calibration-v0.1/states/0004.json": "0fc0c3eae48c89a416a28dc5d4f6fa94b3bc2a46e835be6e62a0057060196fb0",
+    ".runtime/fault-localized-calibration-v0.1/states/0005.json": "d2cbaee00fd414490a7128218531bcfa51aa957bba1d710ea440d74fcf20b20c",
+    ".runtime/fault-localized-calibration-v0.1/states/0006.json": "e7e19f3595e733026bb1a083a7f8fd10b6d539234d2cbaa7e17db3e854fb76a1",
+    ".runtime/fault-localized-calibration-v0.1/states/0007.json": "d945b9881bc9b9bf7a4af256c26413353953638780a60a0276b9cc917f497e12",
+    ".runtime/fault-localized-calibration-v0.1/states/0008.json": "e6979acec9ad700416bd1dc3e72d3a08ec8cc2faf0ac5d8707ba93e76edef54b"
+  }
+}

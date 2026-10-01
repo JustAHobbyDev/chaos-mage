@@ -1,0 +1,179 @@
+{
+  "artifact_viability": {
+    "case_id": "H-a2f1260be8de",
+    "unsupported_claim_ids": [
+      "C-3546e22ff18d"
+    ],
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Both panels retain the differential-diagnosis chain: competing explanations, inspection of discriminating observations, contrasting support patterns, and bounded reprioritization. Both are explicitly assigned to the process under investigation, so their applicability does not depend on the deleted label-color claim."
+    },
+    "target_contribution_survival": {
+      "status": "SUBSTANTIALLY_SURVIVES",
+      "rationale": "The mapping still supports prioritizing intake release scheduling and missing-field rework inquiries in the focal process. These materially narrow investigation of handoff delays, while retaining the original limits on causal exclusion. The deleted label-color conclusion contributes nothing necessary to either priority."
+    },
+    "dependency_cascade": {
+      "status": "LOCAL",
+      "rationale": "The deleted conclusion has no stated downstream diagnostic or inquiry dependencies. Both material diagnostic branches survive.",
+      "failed_claims": [
+        {
+          "text": "The shared approval-case form establishes identical internal case-file label color.",
+          "source_spans": [
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "Use of the same approval-case form establishes that the two processes use the same internal case-file label color."
+            }
+          ]
+        }
+      ],
+      "failed_actions_or_inquiries": [],
+      "surviving_claims": [
+        {
+          "text": "Panel A supports prioritizing scheduled intake release over continuously exhausted capacity in the process under investigation.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel A is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+            }
+          ]
+        },
+        {
+          "text": "Panel B supports prioritizing missing-field rework over a uniform approval-stage queue in the process under investigation.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel B is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+            }
+          ]
+        },
+        {
+          "text": "The diagnostic conclusions remain relative priorities bounded by evidence quality and hypothesis coverage; they neither exclude all other causes nor establish equal mechanisms across processes.",
+          "source_spans": [
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "The supplied comparisons warrant relative priorities, not exclusion of all unlisted or co-occurring causes. Evidence quality and hypothesis coverage still bound the differential."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Form identity is the only stated cross-process connection; staffing, scheduling and rework mechanisms are not stipulated equal."
+            }
+          ]
+        }
+      ],
+      "surviving_actions_or_inquiries": [
+        {
+          "text": "Continue panel-specific differential diagnosis, checking evidence limitations and retaining alternatives where evidence does not discriminate.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+            }
+          ]
+        },
+        {
+          "text": "Prioritize inquiry into intake release scheduling in the focal process; the surviving panel assignment and inference satisfy the stated applicability condition.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel A is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+            }
+          ]
+        },
+        {
+          "text": "Prioritize inquiry into missing-field rework in the focal process; the surviving panel assignment and inference satisfy the stated applicability condition.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel B is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+            }
+          ]
+        }
+      ]
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving capability is evidence-based differential reprioritization across rival delay mechanisms, coupled to selection of further inquiries. The concrete contrasting observation patterns preserve the imported mechanism beyond generic advice to investigate delays."
+    },
+    "strongest_surviving_target_inference": {
+      "text": "Within the supplied differential for the process under investigation, scheduled intake release merits priority over continuously exhausted capacity, and missing-field rework merits priority over a uniform approval-stage queue.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+        },
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "For the approval process under investigation, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The observation definitions and reliability checks are satisfied."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The supplied comparisons warrant relative priorities, not exclusion of all unlisted or co-occurring causes."
+        }
+      ],
+      "why_warranted": "Each surviving observation pattern discriminates between its stated rivals, and both panels are explicitly assigned to the focal process. The inference preserves the mapping's relative-priority scope without asserting exclusive causation or demonstrated intervention effects."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "Label-color identity is unnecessary for either panel's evidence, diagnostic comparison, focal-process assignment, or conditional inquiry priority. Neither branch requires a transfer of mechanisms from the comparison process."
+    },
+    "per_claim_dependencies": [
+      {
+        "claim_id": "C-3546e22ff18d",
+        "dependent_claims": [],
+        "dependent_actions_or_inquiries": [],
+        "rationale": "The deleted label-color assertion is a terminal conclusion. No further claim or action cites or requires it. Shared form identity remains stated, but neither diagnostic branch relies on it to establish applicability."
+      }
+    ],
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "A local terminal defect is consistent with survival of both distinctive diagnostic chains and substantially all material target contributions."
+    },
+    "artifact_status": "KEEP_WITH_WARRANT_FLAGS",
+    "rationale": "Both bounded differential inferences and their associated inquiry priorities survive. Deleting the unsupported label-color claim removes no material diagnostic capability."
+  }
+}

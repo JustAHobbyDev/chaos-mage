@@ -1,0 +1,190 @@
+{
+  "artifact_viability": {
+    "case_id": "H-06b3e9300b1f",
+    "unsupported_claim_ids": [
+      "C-9a99b040080e"
+    ],
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Both comparison-deployment panels retain complete delta-debugging chains: reproducible failures with removable changes, subset and complement testing, repeatable removal-sensitive signals, and test-relative 1-minimal reproduction conclusions. These are distinctive warranted capabilities, but their scope remains the comparison deployment."
+    },
+    "target_contribution_survival": {
+      "status": "NO_MATERIAL_CONTRIBUTION",
+      "rationale": "Neither panel tests the focal deployment. The deleted claim supplies the only asserted transfer of comparison results to that deployment. Without it, neither subset identifies or bounds the focal regression, or distinguishes its cause from focal load variation. The explicit limits provide no other cross-deployment warrant."
+    },
+    "dependency_cascade": {
+      "status": "GLOBAL",
+      "rationale": "The deletion disables both advertised routes from comparison-panel results to the focal investigation. Comparison-deployment findings and procedures survive, but every material contribution to the original focal question depended on the shared transfer claim.",
+      "failed_claims": [
+        {
+          "text": "The comparison panels' reproduction conclusions apply to the focal deployment because the deployments share a manifest template.",
+          "source_spans": [
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "Use of the same deployment-manifest template makes the panel-A and B reproduction conclusions for the comparison deployment applicable to the focal deployment."
+            }
+          ]
+        }
+      ],
+      "failed_actions_or_inquiries": [
+        {
+          "text": "Using panel A's request-path subset to bound the focal investigation is no longer licensed. The conditional instruction remains, but its applicability antecedent is unsupported.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+            }
+          ]
+        },
+        {
+          "text": "Using panel B's background-path subset to bound the focal investigation is no longer licensed. Its conditional instruction likewise remains without an established antecedent.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+            }
+          ]
+        }
+      ],
+      "surviving_claims": [
+        {
+          "text": "Panel A establishes a test-relative 1-minimal two-change request-path reproducer for the comparison deployment.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Panel A ends at a two-change request-path subset that reproduces its latency failure; removing either retained change makes that failure disappear."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For a comparison checkout deployment maintained by another team, panel A identifies a test-relative 1-minimal request-path subset sufficient to reproduce its observed latency failure under the replay."
+            }
+          ]
+        },
+        {
+          "text": "Panel B establishes a test-relative 1-minimal three-change background-path reproducer for the comparison deployment.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Panel B ends at a three-change background-path subset that reproduces its latency failure; removing any retained change makes that failure disappear."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For a comparison checkout deployment maintained by another team, panel B identifies a test-relative 1-minimal background-path subset sufficient to reproduce its observed latency failure under the replay."
+            }
+          ]
+        },
+        {
+          "text": "The panel results are repeatable under satisfied replay and environmental controls, with minimality limited to single removals under this test.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Repeated replays give the same outcomes without unresolved tests."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "The replay and environmental controls stated above are satisfied."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Minimality is relative to single removals and this test, not a unique cause, globally smallest subset or automatic production remedy."
+            }
+          ]
+        },
+        {
+          "text": "The only stated connection between deployments is manifest-template identity; equality of code, component semantics, or failure mechanisms is not established.",
+          "source_spans": [
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Manifest-template identity is the only stated cross-deployment connection; code, component semantics and failure mechanisms are not stipulated equal."
+            }
+          ]
+        }
+      ],
+      "surviving_actions_or_inquiries": [
+        {
+          "text": "Both panels retain their comparison-deployment assignments and their subset, complement, replay, and single-removal testing procedures. These support comparison-local conclusions.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel A is assigned to a comparison checkout deployment maintained by another team."
+            },
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel B is assigned to a comparison checkout deployment maintained by another team."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Within each panel, partition the changed configuration, test subsets and complements, and retain reductions reproducing its latency threshold failure. Use a fixed replay and matched environment, record pass/fail/unresolved outcomes, and finish by testing removal of each retained change separately. Do not rank components from a single untested reduction."
+            }
+          ]
+        },
+        {
+          "text": "Preserving trial records and final configurations remains executable, but does not establish applicability to the focal deployment.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Preserve a run ledger. Record the replay identifier for each trial. Save each tested subset. Record complement tests separately. Keep the removal order. Retain unresolved-outcome logs. Archive the final configurations."
+            }
+          ]
+        }
+      ]
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The remainder contains delta debugging's characteristic test-relative sufficiency and single-removal minimality findings for two comparison-panel configurations. This is a distinctive epistemic remainder, although it provides no warranted material answer about the focal deployment."
+    },
+    "strongest_surviving_target_inference": {
+      "text": null,
+      "source_spans": [],
+      "why_warranted": "The surviving reproduction inferences concern only the comparison deployment. Neither conditional focal-investigation instruction has an established applicability antecedent after deletion. No surviving mapping content identifies a focal change, constrains focal candidates, or distinguishes the focal regression from load variation."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "yes",
+      "rationale": "Both focal-investigation instructions expressly require their respective panel conclusions to apply to the focal deployment. The deleted shared-template inference was the sole stated warrant satisfying those requirements. Its necessity concerns focal contributions, not the validity of comparison-local delta debugging."
+    },
+    "per_claim_dependencies": [
+      {
+        "claim_id": "C-9a99b040080e",
+        "dependent_claims": [
+          {
+            "text": "Both comparison-panel reproduction conclusions are applicable to the focal deployment.",
+            "source_spans": [
+              {
+                "source_field": "mapping.inference",
+                "exact_text": "Use of the same deployment-manifest template makes the panel-A and B reproduction conclusions for the comparison deployment applicable to the focal deployment."
+              }
+            ]
+          }
+        ],
+        "dependent_actions_or_inquiries": [
+          {
+            "text": "Bounding the focal investigation with panel A's request-path subset.",
+            "source_spans": [
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Use the request-path subset to bound the focal deployment investigation only if the panel-A reproduction inference applies to that deployment."
+              }
+            ]
+          },
+          {
+            "text": "Bounding the focal investigation with panel B's background-path subset.",
+            "source_spans": [
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Use the background-path subset to bound the focal deployment investigation only if the panel-B reproduction inference applies to that deployment."
+              }
+            ]
+          }
+        ],
+        "rationale": "Deleting the shared transfer claim removes the warrant for both conditional focal uses simultaneously. The panel tests, recorded signals, and comparison-local minimality conclusions do not depend on this transfer and remain intact."
+      }
+    ],
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "GLOBAL describes loss of every material focal-target contribution, consistent with NO_MATERIAL_CONTRIBUTION. SURVIVES describes the intact source-derived mechanism on comparison deployments. These judgments concern different scopes and do not contradict each other."
+    },
+    "artifact_status": "CORE_INVALID",
+    "rationale": "The deterministic hard-failure rule applies because no material warranted contribution to the original target survives. Distinctive comparison-deployment reproduction findings remain, but the only bridge making them relevant to the focal diagnosis has been deleted."
+  }
+}

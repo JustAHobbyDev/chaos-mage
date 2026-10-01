@@ -1,0 +1,197 @@
+{
+  "artifact_viability": {
+    "case_id": "H-d351f51a2f2d",
+    "unsupported_claim_ids": [
+      "C-d5fee27cefb3"
+    ],
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Panel A retains a complete differential-diagnosis chain: focal-process assignment, rival explanations, inspection of discriminating observations, and a bounded relative-priority inference. Panel B also retains its differential inference for the comparison process. Deletion removes cross-process applicability, without disabling either process-specific diagnostic mechanism."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "Panel A still warrants prioritizing inquiry into scheduled intake release in the focal process. This materially narrows the original delay inquiry without establishing a successful intervention. Panel B no longer warrants prioritizing missing-field rework in the focal process."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "The focal approval-stage rework branch loses its applicability premise and its licensed inquiry priority. The focal intake-delay branch remains independently supported. Panel B's comparison-process conclusion also survives within its original scope.",
+      "failed_claims": [
+        {
+          "text": "Shared approval-case forms make the comparison-process differential applicable to the focal process.",
+          "source_spans": [
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "Use of the same approval-case form makes the panel-B differential conclusion for the comparison process applicable to the focal process."
+            }
+          ]
+        },
+        {
+          "text": "Panel B supplies a warranted missing-field-rework priority for the focal process. This downstream applicability claim loses its only stated bridge.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Form identity is the only stated cross-process connection; staffing, scheduling and rework mechanisms are not stipulated equal."
+            }
+          ]
+        }
+      ],
+      "failed_actions_or_inquiries": [
+        {
+          "text": "Activating the priority inquiry into missing-field rework in the focal process is no longer warranted. The conditional instruction remains textually present, but its applicability condition is unsupported.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+            }
+          ]
+        }
+      ],
+      "surviving_claims": [
+        {
+          "text": "Panel A belongs to the focal process, so its discriminating observations support a focal-process priority for scheduled intake release over continuously exhausted capacity.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel A is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+            }
+          ]
+        },
+        {
+          "text": "Panel B supports missing-field rework over a uniform approval-stage queue within the comparison process.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel B is assigned to a comparison approval process in another unit."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel B, the same cases repeatedly return for documented missing fields while unrelated complete cases advance; this pattern fits case rework better than a uniform approval-stage queue."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For a comparison approval process in another unit, panel B supports prioritizing missing-field rework over a uniform approval-stage queue within the supplied differential."
+            }
+          ]
+        },
+        {
+          "text": "The conclusions remain relative priorities bounded by evidence quality and hypothesis coverage; they do not exclude unlisted or co-occurring causes.",
+          "source_spans": [
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "The supplied comparisons warrant relative priorities, not exclusion of all unlisted or co-occurring causes. Evidence quality and hypothesis coverage still bound the differential."
+            }
+          ]
+        }
+      ],
+      "surviving_actions_or_inquiries": [
+        {
+          "text": "Inspect discriminating observations, revise rival explanations, check evidence limitations, and retain alternatives where evidence does not discriminate, within each panel's assigned process.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "For each panel, list plausible mechanisms, specify which observations would bear differently on them, inspect those observations and revise the relative plausibilities. Check the supplied observation definitions, independence and test limitations. Retain alternatives that the evidence does not discriminate."
+            }
+          ]
+        },
+        {
+          "text": "Prioritize inquiry into intake release scheduling in the focal process: panel A's explicit focal assignment and inference satisfy the stated condition.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+            }
+          ]
+        }
+      ]
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving focal inference operationalizes differential diagnosis: fixed release-time delay coupled with independently logged idle capacity discriminates between specified rival explanations and directs the next inquiry while retaining limits on exclusion. This is a concrete source-derived capability, not merely generic advice to investigate delays."
+    },
+    "strongest_surviving_target_inference": {
+      "text": "For the focal approval process, scheduled intake release should receive priority over continuously exhausted capacity within the supplied differential, warranting priority inquiry into intake release scheduling.",
+      "source_spans": [
+        {
+          "source_field": "mapping.state",
+          "exact_text": "Panel A is assigned to the approval process under investigation."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In panel A, delay clusters at fixed intake release times while independently logged available capacity remains idle between releases; this pattern fits scheduled release better than continuously exhausted capacity."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "The observation definitions and reliability checks are satisfied."
+        },
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "For the approval process under investigation, panel A supports prioritizing scheduled intake release over continuously exhausted capacity within the supplied differential."
+        },
+        {
+          "source_field": "mapping.operation",
+          "exact_text": "Prioritize inquiry into intake release scheduling in the focal process only if the panel-A differential inference applies there."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "The supplied comparisons warrant relative priorities, not exclusion of all unlisted or co-occurring causes."
+        }
+      ],
+      "why_warranted": "The surviving mapping explicitly assigns panel A to the focal process, supplies observations that distinguish its rivals, and states the resulting relative priority. These premises satisfy the existing inquiry condition independently of the deleted panel-B transfer. The conclusion neither excludes other causes nor establishes that a particular change will reduce delay."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "The deleted bridge is necessary for transferring panel B's conclusion to the focal process. Panel A's focal assignment, evidence, inference, and inquiry priority do not depend on that bridge."
+    },
+    "per_claim_dependencies": [
+      {
+        "claim_id": "C-d5fee27cefb3",
+        "dependent_claims": [
+          {
+            "text": "The panel-B conclusion applies to the focal process on the basis of form identity.",
+            "source_spans": [
+              {
+                "source_field": "mapping.inference",
+                "exact_text": "Use of the same approval-case form makes the panel-B differential conclusion for the comparison process applicable to the focal process."
+              }
+            ]
+          }
+        ],
+        "dependent_actions_or_inquiries": [
+          {
+            "text": "Prioritizing missing-field-rework inquiry in the focal process depends on the deleted applicability claim. The conditional instruction survives, but its activation does not.",
+            "source_spans": [
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Prioritize inquiry into missing-field rework in the focal process only if the panel-B differential inference applies there."
+              }
+            ]
+          }
+        ],
+        "rationale": "The deleted statement supplies the only asserted cross-process inference. The surviving limit expressly declines to equate staffing, scheduling, or rework mechanisms. Panel B's comparison-process conclusion and panel A's focal-process conclusion have independent local support."
+      }
+    ],
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "A branch-level loss is consistent with an intact differential mechanism and reduced but material focal contribution: the intake inquiry survives while the transferred rework priority fails."
+    },
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "rationale": "Differential diagnosis still yields a warranted focal intake-scheduling inquiry priority. Removing the unsupported transfer narrows the artifact's target scope by eliminating its focal approval-stage rework priority."
+  }
+}

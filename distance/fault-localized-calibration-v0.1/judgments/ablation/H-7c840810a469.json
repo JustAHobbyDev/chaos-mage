@@ -1,0 +1,209 @@
+{
+  "artifact_viability": {
+    "case_id": "H-7c840810a469",
+    "unsupported_claim_ids": [
+      "C-6daf6856313a"
+    ],
+    "mechanism_survival": {
+      "status": "SURVIVES",
+      "rationale": "Panel A retains a complete source-derived chain: a bounded input step at a fixed operating point, controlled trajectory recording and reversal, a reproducible settled delay reduction, and an explicitly warranted focal-process response inference. Panel B also retains its comparison-process response inference. Deletion removes cross-process applicability, not either within-process probing chain."
+    },
+    "target_contribution_survival": {
+      "status": "REDUCED_BUT_MATERIAL",
+      "rationale": "Panel A still identifies the tested priority step as a bounded candidate for a two-hour end-to-end delay reduction in the focal process at its tested operating point. The batch-step candidate loses its warrant for the focal process. The remaining contribution does not identify unique internal causes or establish general optimization."
+    },
+    "dependency_cascade": {
+      "status": "BRANCH",
+      "rationale": "The deleted bridge defeats the advertised transfer of panel B's result and the corresponding focal batch-step recommendation. Panel A's focal-process inference and candidate change remain independently warranted, while panel B's comparison-process result remains valid within its stated scope.",
+      "failed_claims": [
+        {
+          "text": "Shared workflow-template identity establishes that panel B's comparison-process response applies to the focal process.",
+          "source_spans": [
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+            }
+          ]
+        },
+        {
+          "text": "The focal process can obtain the comparison process's three-hour end-to-end reduction from the tested batch step.",
+          "source_spans": [
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+            }
+          ]
+        }
+      ],
+      "failed_actions_or_inquiries": [
+        {
+          "text": "Treating the tested batch step as a warranted bounded candidate change for the focal process fails. The conditional instruction remains in the text, but its applicability condition is no longer established.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Workflow-template identity is the only stated cross-process connection; staffing, dynamics and resource costs are not stipulated equal."
+            }
+          ]
+        }
+      ],
+      "surviving_claims": [
+        {
+          "text": "Panel A supports a two-hour end-to-end reduction for the focal process from the tested priority step at the tested operating point.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel A is assigned to the approval process under investigation."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+            }
+          ]
+        },
+        {
+          "text": "Panel B supports a three-hour end-to-end reduction in its assigned comparison process, without establishing that reduction in the focal process.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Panel B is assigned to a completed comparison process in another unit."
+            },
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "In panel B, the batch step reproducibly reduces settled approval delay by three hours without raising intake delay, and reversal restores the prior trajectory."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+            }
+          ]
+        },
+        {
+          "text": "The stated response conditions are satisfied, and the estimates remain restricted to tested settings and operating points rather than unique causes or general optimization.",
+          "source_spans": [
+            {
+              "source_field": "mapping.signal",
+              "exact_text": "Both responses settle within the observation window without an abort."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "All stated intervention, disturbance-control, observation and reversal conditions are satisfied."
+            },
+            {
+              "source_field": "mapping.limit",
+              "exact_text": "Estimates concern only the tested settings and operating points, not unique internal causes or general optimization."
+            }
+          ]
+        }
+      ],
+      "surviving_actions_or_inquiries": [
+        {
+          "text": "The specified step-response procedure remains for each panel within its assigned process. Retaining the procedure does not authorize transferring panel B's conclusion.",
+          "source_spans": [
+            {
+              "source_field": "mapping.state",
+              "exact_text": "Each panel concerns its assigned process at a fixed operating point; the two processes are not asserted to share their response dynamics."
+            },
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "For each panel, change only its named setting by a known bounded step, record stage and end-to-end delay through the transient and settled periods, then reverse and repeat. Hold other inputs fixed and monitor disturbances. Use the same observation window and abort criterion across repetitions."
+            }
+          ]
+        },
+        {
+          "text": "Treat the tested priority step as a bounded candidate change for the focal process: panel A's explicitly focal inference satisfies the retained applicability condition.",
+          "source_spans": [
+            {
+              "source_field": "mapping.operation",
+              "exact_text": "Treat the tested priority step as a bounded candidate change for the focal process only if its panel-A response inference applies there."
+            },
+            {
+              "source_field": "mapping.inference",
+              "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+            }
+          ]
+        }
+      ]
+    },
+    "remainder_check": {
+      "status": "DISTINCTIVE_REMAINDER",
+      "rationale": "The surviving focal contribution depends on controlled step perturbation, transient and settled trajectory observation, repeatability, and restoration under reversal. These source-derived operations and signals warrant an explicit bounded response estimate and candidate intervention; the remainder is more than generic advice to examine delays."
+    },
+    "strongest_surviving_target_inference": {
+      "text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point.",
+      "source_spans": [
+        {
+          "source_field": "mapping.inference",
+          "exact_text": "For the approval process under investigation, panel A supports a two-hour end-to-end delay reduction from the tested priority step at the tested operating point."
+        },
+        {
+          "source_field": "mapping.signal",
+          "exact_text": "In panel A, the priority step reproducibly reduces settled intake delay by two hours without raising downstream delay, and reversal restores the prior trajectory."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "All stated intervention, disturbance-control, observation and reversal conditions are satisfied."
+        },
+        {
+          "source_field": "mapping.limit",
+          "exact_text": "Estimates concern only the tested settings and operating points, not unique internal causes or general optimization."
+        }
+      ],
+      "why_warranted": "This inference is explicitly retained and concerns panel A's assigned focal process. Its controlled, reproducible response and reversal evidence remain available, with all stated conditions satisfied. It requires no comparison-to-focal transfer and retains the tested-operating-point restriction."
+    },
+    "central_bridge": {
+      "deleted_claim_is_required_for_all_material_contributions": "no",
+      "rationale": "The deleted claim is necessary for applying panel B's result to the focal process. It is unnecessary for panel A, which directly tests the focal process and independently supports a material bounded intervention."
+    },
+    "per_claim_dependencies": [
+      {
+        "claim_id": "C-6daf6856313a",
+        "dependent_claims": [
+          {
+            "text": "Panel B's comparison-process response conclusion applies to the focal process, carrying its three-hour batch-step reduction into the focal assessment.",
+            "source_spans": [
+              {
+                "source_field": "mapping.inference",
+                "exact_text": "Use of the same approval-workflow template makes the panel-B response conclusion for the comparison process applicable to the focal process."
+              },
+              {
+                "source_field": "mapping.inference",
+                "exact_text": "For a completed comparison process in another unit, panel B supports a three-hour end-to-end delay reduction from the tested batch step at the tested operating point."
+              }
+            ]
+          }
+        ],
+        "dependent_actions_or_inquiries": [
+          {
+            "text": "Licensing the tested batch step as a bounded focal-process candidate depends on the deleted applicability claim; the conditional instruction itself remains.",
+            "source_spans": [
+              {
+                "source_field": "mapping.operation",
+                "exact_text": "Treat the tested batch step as a bounded candidate change for the focal process only if its panel-B response inference applies there."
+              }
+            ]
+          }
+        ],
+        "rationale": "Template identity is the only stated cross-process connection, and shared dynamics are explicitly not asserted. Removing the applicability claim leaves no surviving premise satisfying the batch candidate's focal-applicability condition. Neither panel A's direct focal inference nor panel B's comparison-only inference depends on that bridge."
+      }
+    ],
+    "structural_conflict": {
+      "present": false,
+      "resolved": true,
+      "explanation": "A branch-level loss is consistent with surviving step-response mechanisms and a reduced but material focal contribution. The inventories identify both the failed transfer branch and the independent surviving focal branch."
+    },
+    "artifact_status": "KEEP_WITH_REDUCED_SCOPE",
+    "rationale": "Controlled step-response probing still warrants the focal priority-step estimate and bounded candidate change. The focal batch-step contribution loses its sole applicability bridge, so the artifact survives with reduced scope."
+  }
+}
