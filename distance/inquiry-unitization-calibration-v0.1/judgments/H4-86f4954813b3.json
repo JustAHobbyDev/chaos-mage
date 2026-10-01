@@ -1,0 +1,73 @@
+{
+  "case_id": "H4-86f4954813b3",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "H1 and H3 remain live under the current evidence. Inspect individual evaluator scores saved before consensus next. Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1.",
+            "start": 0,
+            "end": 205
+          },
+          {
+            "source_field": "mapping.limit",
+            "exact_text": "The current evidence does not distinguish H1 from H3. Inspect individual evaluator scores saved before consensus next. Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1.",
+            "start": 0,
+            "end": 209
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "H1",
+            "H3"
+          ],
+          "rationale": "The state explicitly preserves H1 and H3 as live alternatives; the limit reiterates that current evidence does not distinguish them."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Inspect individual evaluator scores saved before consensus next.",
+          "rationale": "Both fields select the same concrete inspection as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Post-opening score changes",
+              "consequence": "favor H1 over H3",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            },
+            {
+              "outcome": "Stable contemporaneous scores",
+              "consequence": "favor H3 over H1",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            }
+          ],
+          "rationale": "Score changes and stable contemporaneous scores favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The repeated inspection and outcome logic constitute one complete semantic unit. Removing all its formulations leaves no selected inquiry; the insufficiency statement alone cannot supply it. The negative_inference flag does not affect eligibility."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

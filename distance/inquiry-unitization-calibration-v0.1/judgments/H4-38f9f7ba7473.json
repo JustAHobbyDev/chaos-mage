@@ -1,0 +1,58 @@
+{
+  "case_id": "H4-38f9f7ba7473",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The current evidence does not distinguish H1 from H3. Inspect individual evaluator scores saved before consensus next. Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1.",
+            "start": 0,
+            "end": 211
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": ["H1", "H3"],
+          "rationale": "The current evidence leaves H1 and H3 unresolved."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Inspect individual evaluator scores saved before consensus next",
+          "rationale": "The text selects a concrete inspection of saved individual evaluator scores."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Post-opening score changes",
+              "consequence": "favor H1 over H3",
+              "bears_on": ["H1", "H3"]
+            },
+            {
+              "outcome": "Stable contemporaneous scores",
+              "consequence": "favor H3 over H1",
+              "bears_on": ["H1", "H3"]
+            }
+          ],
+          "rationale": "Changed and stable scores favor opposite alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited structure supplies a live contrast, selected operation, and discriminating outcomes. Removing the entire unit removes the only selection and justification of this inquiry; no independent supporting unit survives."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

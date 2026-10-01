@@ -1,0 +1,67 @@
+{
+  "case_id": "H4-850fb18146b9",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The current evidence does not distinguish b required from b not required. Replay {a,c} after removing b under the frozen F oracle next. F persists: favor b not required over b required. F disappears: favor b required over b not required.",
+            "start": 0,
+            "end": 237
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "b required",
+            "b not required"
+          ],
+          "rationale": "The current evidence explicitly leaves both alternatives unresolved."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Replay {a,c} after removing b under the frozen F oracle next",
+          "rationale": "The text selects a concrete replay with a specified removal and oracle."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "F persists",
+              "consequence": "favor b not required over b required",
+              "bears_on": [
+                "b required",
+                "b not required"
+              ]
+            },
+            {
+              "outcome": "F disappears",
+              "consequence": "favor b required over b not required",
+              "bears_on": [
+                "b required",
+                "b not required"
+              ]
+            }
+          ],
+          "rationale": "Persistence and disappearance favor opposite alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited structure supplies a live contrast, selected operation, and discriminating outcomes. Removing the entire unit leaves no surviving selection or justification for this inquiry."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

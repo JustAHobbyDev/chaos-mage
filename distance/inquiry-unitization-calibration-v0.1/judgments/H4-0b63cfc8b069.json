@@ -1,0 +1,79 @@
+{
+  "case_id": "H4-0b63cfc8b069",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "b required and b not required remain live under the current evidence.",
+            "start": 0,
+            "end": 69
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "The selected next operation is to replay {a,c} after removing b under the frozen F oracle.",
+            "start": 0,
+            "end": 90
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "F persists: favor b not required over b required. F disappears: favor b required over b not required.",
+            "start": 0,
+            "end": 101
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "b required",
+            "b not required"
+          ],
+          "rationale": "Both alternatives explicitly remain live under the current evidence."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "replay {a,c} after removing b under the frozen F oracle",
+          "rationale": "The mapping explicitly selects this concrete replay as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "F persists",
+              "consequence": "favor b not required over b required",
+              "bears_on": [
+                "b required",
+                "b not required"
+              ]
+            },
+            {
+              "outcome": "F disappears",
+              "consequence": "favor b required over b not required",
+              "bears_on": [
+                "b required",
+                "b not required"
+              ]
+            }
+          ],
+          "rationale": "Persistence and disappearance favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited fields supply one complete inquiry unit, regardless of negative_inference=false. Removing the entire unit removes the selected replay and its discriminating rationale; no independent surviving unit preserves that inquiry."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "case_id": "H4-f9c70c724ec5",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "The current evidence does not distinguish lock contention from isolated pool exhaustion. Measure lock-wait duration together with pool occupancy next. Elevated lock waits with normal occupancy favor lock contention over isolated pool exhaustion. Ordinary lock waits with saturated occupancy favor isolated pool exhaustion over lock contention.",
+            "start": 0,
+            "end": 343
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "lock contention",
+            "isolated pool exhaustion"
+          ],
+          "rationale": "The current evidence explicitly leaves both alternatives unresolved."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Measure lock-wait duration together with pool occupancy next",
+          "rationale": "The text selects a concrete joint measurement as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Elevated lock waits with normal occupancy",
+              "consequence": "favor lock contention over isolated pool exhaustion",
+              "bears_on": [
+                "lock contention",
+                "isolated pool exhaustion"
+              ]
+            },
+            {
+              "outcome": "Ordinary lock waits with saturated occupancy",
+              "consequence": "favor isolated pool exhaustion over lock contention",
+              "bears_on": [
+                "lock contention",
+                "isolated pool exhaustion"
+              ]
+            }
+          ],
+          "rationale": "The two measurement outcomes favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited text supplies one complete inquiry unit. Removing the entire unit leaves no surviving selection or justification for the joint measurement."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

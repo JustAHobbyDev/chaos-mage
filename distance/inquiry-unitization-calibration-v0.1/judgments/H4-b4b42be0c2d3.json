@@ -1,0 +1,67 @@
+{
+  "case_id": "H4-b4b42be0c2d3",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.inference",
+            "exact_text": "Compare the next preserved increment against R2 next. Narrow-to-wide correspondence favors offset +6 over offset +7. Wide-to-narrow correspondence favors offset +7 over offset +6. offset +6 and offset +7 remain live under the current evidence.",
+            "start": 0,
+            "end": 243
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "offset +6",
+            "offset +7"
+          ],
+          "rationale": "The text explicitly states that both offsets remain live under the current evidence."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "Compare the next preserved increment against R2 next",
+          "rationale": "The text selects a concrete comparison against R2 as the next operation."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Narrow-to-wide correspondence",
+              "consequence": "favors offset +6 over offset +7",
+              "bears_on": [
+                "offset +6",
+                "offset +7"
+              ]
+            },
+            {
+              "outcome": "Wide-to-narrow correspondence",
+              "consequence": "favors offset +7 over offset +6",
+              "bears_on": [
+                "offset +6",
+                "offset +7"
+              ]
+            }
+          ],
+          "rationale": "The two correspondence outcomes favor opposite live alternatives."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited sentences form one complete inquiry unit. Removing the entire unit removes the selected comparison and its discriminating justification; no independent surviving unit supplies that inquiry."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}

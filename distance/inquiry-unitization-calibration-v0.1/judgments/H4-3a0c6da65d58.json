@@ -1,0 +1,79 @@
+{
+  "case_id": "H4-3a0c6da65d58",
+  "semantic_units": [
+    {
+      "inquiry_unit": {
+        "unit_id": "IQ1",
+        "source_spans": [
+          {
+            "source_field": "mapping.state",
+            "exact_text": "H1 and H3 remain live under the current evidence.",
+            "start": 0,
+            "end": 49
+          },
+          {
+            "source_field": "mapping.operation",
+            "exact_text": "The selected next operation is to inspect individual evaluator scores saved before consensus.",
+            "start": 0,
+            "end": 93
+          },
+          {
+            "source_field": "mapping.signal",
+            "exact_text": "Post-opening score changes favor H1 over H3. Stable contemporaneous scores favor H3 over H1.",
+            "start": 0,
+            "end": 92
+          }
+        ],
+        "unresolved_contrast": {
+          "present": true,
+          "alternatives": [
+            "H1",
+            "H3"
+          ],
+          "rationale": "The state explicitly identifies H1 and H3 as currently live."
+        },
+        "next_operation": {
+          "present": true,
+          "operation": "inspect individual evaluator scores saved before consensus",
+          "rationale": "The operation field explicitly selects a concrete inspection of saved evaluator scores."
+        },
+        "differential_outcome_relation": {
+          "present": true,
+          "outcomes": [
+            {
+              "outcome": "Post-opening score changes",
+              "consequence": "favor H1 over H3",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            },
+            {
+              "outcome": "Stable contemporaneous scores",
+              "consequence": "favor H3 over H1",
+              "bears_on": [
+                "H1",
+                "H3"
+              ]
+            }
+          ],
+          "rationale": "Changes and stable scores favor opposite alternatives, supplying a discriminating outcome relation."
+        },
+        "provenance_complete": true,
+        "role": "INQUIRY_CONSTRAINT",
+        "counterfactual_effect": {
+          "next_inquiry": "changed"
+        },
+        "productivity": "YES",
+        "rationale": "The cited fields jointly supply one complete inquiry unit. Removing the entire unit removes the selected inspection and its justification; no independent inquiry survives. The false negative_inference flag does not affect classification."
+      }
+    }
+  ],
+  "inquiry_role_coverage": {
+    "complete_units_found": 1,
+    "inquiry_constraints_emitted": 1,
+    "uncovered_complete_units": [],
+    "duplicate_units": [],
+    "validation_passed": true
+  }
+}
