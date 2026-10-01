@@ -1,0 +1,593 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_viability"
+  ],
+  "properties": {
+    "artifact_viability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "unsupported_claim_ids",
+        "mechanism_survival",
+        "target_contribution_survival",
+        "dependency_cascade",
+        "remainder_check",
+        "strongest_surviving_target_inference",
+        "central_bridge",
+        "per_claim_dependencies",
+        "structural_conflict",
+        "artifact_status",
+        "rationale"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "unsupported_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "mechanism_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "SURVIVES",
+                "PARTIALLY_SURVIVES",
+                "DOES_NOT_SURVIVE",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "target_contribution_survival": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "SUBSTANTIALLY_SURVIVES",
+                "REDUCED_BUT_MATERIAL",
+                "NO_MATERIAL_CONTRIBUTION",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "dependency_cascade": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale",
+            "failed_claims",
+            "failed_actions_or_inquiries",
+            "surviving_claims",
+            "surviving_actions_or_inquiries"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "LOCAL",
+                "BRANCH",
+                "GLOBAL",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "failed_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "source_spans"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "source_spans": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "source_field",
+                        "exact_text"
+                      ],
+                      "properties": {
+                        "source_field": {
+                          "type": "string",
+                          "enum": [
+                            "mapping.state",
+                            "mapping.operation",
+                            "mapping.signal",
+                            "mapping.inference",
+                            "mapping.limit",
+                            "source.instrument.state",
+                            "source.instrument.operation",
+                            "source.instrument.signal",
+                            "source.instrument.inference",
+                            "source.instrument.limit"
+                          ]
+                        },
+                        "exact_text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "failed_actions_or_inquiries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "source_spans"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "source_spans": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "source_field",
+                        "exact_text"
+                      ],
+                      "properties": {
+                        "source_field": {
+                          "type": "string",
+                          "enum": [
+                            "mapping.state",
+                            "mapping.operation",
+                            "mapping.signal",
+                            "mapping.inference",
+                            "mapping.limit",
+                            "source.instrument.state",
+                            "source.instrument.operation",
+                            "source.instrument.signal",
+                            "source.instrument.inference",
+                            "source.instrument.limit"
+                          ]
+                        },
+                        "exact_text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "surviving_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "source_spans"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "source_spans": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "source_field",
+                        "exact_text"
+                      ],
+                      "properties": {
+                        "source_field": {
+                          "type": "string",
+                          "enum": [
+                            "mapping.state",
+                            "mapping.operation",
+                            "mapping.signal",
+                            "mapping.inference",
+                            "mapping.limit",
+                            "source.instrument.state",
+                            "source.instrument.operation",
+                            "source.instrument.signal",
+                            "source.instrument.inference",
+                            "source.instrument.limit"
+                          ]
+                        },
+                        "exact_text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "surviving_actions_or_inquiries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "source_spans"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "source_spans": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "source_field",
+                        "exact_text"
+                      ],
+                      "properties": {
+                        "source_field": {
+                          "type": "string",
+                          "enum": [
+                            "mapping.state",
+                            "mapping.operation",
+                            "mapping.signal",
+                            "mapping.inference",
+                            "mapping.limit",
+                            "source.instrument.state",
+                            "source.instrument.operation",
+                            "source.instrument.signal",
+                            "source.instrument.inference",
+                            "source.instrument.limit"
+                          ]
+                        },
+                        "exact_text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "remainder_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rationale"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "DISTINCTIVE_REMAINDER",
+                "GENERIC_REMAINDER",
+                "NO_REMAINDER",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "strongest_surviving_target_inference": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text",
+            "source_spans",
+            "why_warranted"
+          ],
+          "properties": {
+            "text": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_spans": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_field",
+                  "exact_text"
+                ],
+                "properties": {
+                  "source_field": {
+                    "type": "string",
+                    "enum": [
+                      "mapping.state",
+                      "mapping.operation",
+                      "mapping.signal",
+                      "mapping.inference",
+                      "mapping.limit",
+                      "source.instrument.state",
+                      "source.instrument.operation",
+                      "source.instrument.signal",
+                      "source.instrument.inference",
+                      "source.instrument.limit"
+                    ]
+                  },
+                  "exact_text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            },
+            "why_warranted": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "central_bridge": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "deleted_claim_is_required_for_all_material_contributions",
+            "rationale"
+          ],
+          "properties": {
+            "deleted_claim_is_required_for_all_material_contributions": {
+              "type": "string",
+              "enum": [
+                "yes",
+                "no",
+                "uncertain"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "per_claim_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "claim_id",
+              "dependent_claims",
+              "dependent_actions_or_inquiries",
+              "rationale"
+            ],
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "dependent_claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text",
+                    "source_spans"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "source_spans": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "source_field",
+                          "exact_text"
+                        ],
+                        "properties": {
+                          "source_field": {
+                            "type": "string",
+                            "enum": [
+                              "mapping.state",
+                              "mapping.operation",
+                              "mapping.signal",
+                              "mapping.inference",
+                              "mapping.limit",
+                              "source.instrument.state",
+                              "source.instrument.operation",
+                              "source.instrument.signal",
+                              "source.instrument.inference",
+                              "source.instrument.limit"
+                            ]
+                          },
+                          "exact_text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "dependent_actions_or_inquiries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text",
+                    "source_spans"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "source_spans": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "source_field",
+                          "exact_text"
+                        ],
+                        "properties": {
+                          "source_field": {
+                            "type": "string",
+                            "enum": [
+                              "mapping.state",
+                              "mapping.operation",
+                              "mapping.signal",
+                              "mapping.inference",
+                              "mapping.limit",
+                              "source.instrument.state",
+                              "source.instrument.operation",
+                              "source.instrument.signal",
+                              "source.instrument.inference",
+                              "source.instrument.limit"
+                            ]
+                          },
+                          "exact_text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "structural_conflict": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "present",
+            "resolved",
+            "explanation"
+          ],
+          "properties": {
+            "present": {
+              "type": "boolean"
+            },
+            "resolved": {
+              "type": "boolean"
+            },
+            "explanation": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "artifact_status": {
+          "type": "string",
+          "enum": [
+            "KEEP_WITH_WARRANT_FLAGS",
+            "KEEP_WITH_REDUCED_SCOPE",
+            "CORE_INVALID",
+            "UNCERTAIN_LOAD_BEARING"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    }
+  }
+}

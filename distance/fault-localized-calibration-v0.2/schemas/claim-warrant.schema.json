@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "status",
+    "rationale",
+    "signal_basis",
+    "stated_empirical_relation",
+    "uncertainty"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "SUPPORTED",
+        "CONDITIONAL_WARRANT",
+        "UNSUPPORTED",
+        "UNCERTAIN"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "signal_basis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_field",
+          "exact_text"
+        ],
+        "properties": {
+          "source_field": {
+            "type": "string",
+            "enum": [
+              "mapping.state",
+              "mapping.operation",
+              "mapping.signal",
+              "mapping.inference",
+              "mapping.limit",
+              "source.instrument.state",
+              "source.instrument.operation",
+              "source.instrument.signal",
+              "source.instrument.inference",
+              "source.instrument.limit"
+            ]
+          },
+          "exact_text": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "stated_empirical_relation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_field",
+          "exact_text"
+        ],
+        "properties": {
+          "source_field": {
+            "type": "string",
+            "enum": [
+              "mapping.state",
+              "mapping.operation",
+              "mapping.signal",
+              "mapping.inference",
+              "mapping.limit",
+              "source.instrument.state",
+              "source.instrument.operation",
+              "source.instrument.signal",
+              "source.instrument.inference",
+              "source.instrument.limit"
+            ]
+          },
+          "exact_text": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  }
+}
