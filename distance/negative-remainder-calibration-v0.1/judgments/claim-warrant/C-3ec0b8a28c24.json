@@ -1,0 +1,25 @@
+{
+  "claim_id": "C-3ec0b8a28c24",
+  "status": "SUPPORTED",
+  "rationale": "Under the fixed, deterministic replay and frozen F oracle, removing b directly tests whether {a,c} remains sufficient. Persistence licenses dropping b; disappearance makes b necessary in that configuration. These bounded conclusions do not require identifying a globally smallest subset or a unique root cause.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.operation",
+      "exact_text": "Partition changes, replay subsets and complements, and evaluate single-removal tests using the recorded result and the specified target failure definition."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Replays are deterministic under the fixed workload and environment."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The current tests leave {a,b,c} and {a,c} unresolved as the required reproducing subset."
+    },
+    {
+      "source_field": "mapping.state",
+      "exact_text": "The target failure F is the checkout deadline failure during a fixed replay."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}

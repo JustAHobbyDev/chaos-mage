@@ -1,0 +1,21 @@
+{
+  "claim_id": "C-b43a75d1e80f",
+  "status": "UNSUPPORTED",
+  "rationale": "The completed probe explicitly does not discriminate between the two live mechanisms, so it cannot uniquely establish lock contention. The proposed next measurement supplies diagnostic expectations for further inquiry, not a finding from the completed probe. The claim also extends across all production workloads despite the explicit restriction to the named case and operating conditions.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Measure lock-wait duration with pool occupancy next: elevated lock waits with normal occupancy favor lock contention, whereas ordinary lock waits with saturated occupancy favor pool exhaustion."
+    },
+    {
+      "source_field": "mapping.limit",
+      "exact_text": "The target scope is the named case and operating conditions; the recording assumptions are granted."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}

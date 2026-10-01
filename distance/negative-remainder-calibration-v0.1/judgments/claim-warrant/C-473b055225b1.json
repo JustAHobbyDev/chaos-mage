@@ -1,0 +1,17 @@
+{
+  "claim_id": "C-473b055225b1",
+  "status": "UNSUPPORTED",
+  "rationale": "The observed failure absence for {a,b} does not identify {a,c} as F’s unique internal root cause. Deterministic replay and a direct oracle establish test outcomes, but do not establish causal uniqueness. The source explicitly limits even minimal failure-inducing configurations to reproducibility under the test.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Under the frozen oracle that directly measures F, subset {a,b} does not reproduce F on the recorded replay."
+    },
+    {
+      "source_field": "source.instrument.limit",
+      "exact_text": "A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}

@@ -1,0 +1,21 @@
+{
+  "claim_id": "C-af0f1d0f1fa8",
+  "status": "UNSUPPORTED",
+  "rationale": "The completed probe explicitly does not discriminate between the two live mechanisms, so it cannot uniquely establish lock contention. The stated diagnostic relations guide further inquiry under the described conditions; they do not license a causal conclusion across all production workloads.",
+  "signal_basis": [
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "The current result does not discriminate lock contention from isolated pool exhaustion."
+    },
+    {
+      "source_field": "mapping.signal",
+      "exact_text": "Check waiting next, together with how full the pool is: long waits with spare capacity favor lock contention, whereas short waits with a full pool favor pool exhaustion."
+    },
+    {
+      "source_field": "mapping.limit",
+      "exact_text": "The target scope is the named case and operating conditions; the recording assumptions are granted."
+    }
+  ],
+  "stated_empirical_relation": [],
+  "uncertainty": []
+}
