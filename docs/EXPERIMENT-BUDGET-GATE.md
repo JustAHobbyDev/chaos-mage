@@ -5,6 +5,10 @@ exceeds $10 or 100 sessions, or any stage has unknown cost or session count.
 These are provisional defaults in `experiment-budget-policy.json`; thresholds
 must not be raised by an agent to get a run through. Equality is allowed.
 
+The separate [included-usage forecast](USAGE-FORECAST.md) compares expected
+percentage-point consumption with current remaining quota and reset timing. Run
+both preflights; neither dollars nor automatic reloads establish usage percentage.
+
 This controls prospective experiments. Historical H.6 inputs, runner, outputs,
 freezes and terminal status are unchanged. Installing the gate launches no model.
 

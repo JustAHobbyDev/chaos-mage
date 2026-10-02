@@ -74,3 +74,59 @@ pattern or advertised API price substitutes for this account's actual usage.
 Future scientific runners must test per-session integration and archive the shared
 ledger. Receipt-to-usage attribution remains approximate; no provider/billing
 calls were needed to implement or test this gate.
+
+## Entry #2 — 2026-10-02 — Remaining allowance and reset-aware preflight
+
+### Domains
+
+Add read-only Codex account quota telemetry, including window percentages,
+scheduled resets and earned-reset availability. Local snapshots and matched
+before/after batch calibration are new owned lexical artifacts. The researcher
+owns any decision to redeem a reset. No reset redemption or billing write crosses
+the machine boundary; this extension does not start a model thread or turn.
+
+### Frame split
+
+Information display reads current quota status. Transformation estimates required
+percentage points from matched usage batches. Existing commanded financial/session
+gating remains separate; the percentage forecast is a mandatory operator preflight
+and batch review, not a runtime interception of provider requests.
+
+### Requirements (per frame, with explicit out-of-scope)
+
+Show the expected fraction of remaining allowance, reserve, limiting windows and
+reset options before a run. Missing evidence yields UNKNOWN, not a fabricated
+conversion from receipts to percentage. Preserve privacy by keeping snapshots
+local and dropping account identity, credit balances and reset redemption IDs.
+Every returned window is checked. Never redeem resets or change billing settings.
+
+### Invariance test
+
+Current percentage/reset telemetry is directly observable. Future consumption and
+exhaustion probabilities are not fixed. Use matched historical ranges with
+rounding allowance and headroom, explicitly not statistical probabilities. Reject
+reset-crossing, saturated and unattributed batches; expire old calibration. No
+assumption that prepaid dollars equal a fraction of included allowance is sound.
+
+### Stakeholder test
+
+The user wants to schedule research around included allowance and manually
+available resets. Avoiding credit reloads is distinct from minimizing total tokens.
+Do not automatically spend resets or run extra paid probes to improve estimates.
+
+### Open questions — decided here, with reasoning
+
+- Usage reserve: 10 percentage points, explicitly confirmed by the user.
+- Fresh reads expire for forecasting after five minutes; refresh after a reset.
+- Unknown risk requires explicit user review and approval, including the first
+  normally planned batch used to calibrate; no additional probe is authorized.
+- H.6 has no quota samples. A live read establishes current capacity only and
+  cannot backfill historical percentage consumption.
+- Matched observations yield LOW/BORDERLINE/HIGH scenarios, not an unsupported
+  probability estimate. All personal account observations stay under `.runtime/`.
+
+### Carried forward
+
+Future authorized runs capture telemetry around bounded comparable batches,
+reforecast remaining work at checkpoints, and keep the full cumulative financial
+plan intact. Provider telemetry delay and unrelated account activity remain limits.

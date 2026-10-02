@@ -7,6 +7,16 @@ does not waive the separate budget gate.
 
 - Present a cumulative forecast of all stages, sessions and estimated cost before
   the first launch. Unknown cost or fan-out requires approval, not a zero estimate.
+- Also run the [included-usage preflight](docs/USAGE-FORECAST.md) using fresh account
+  percentages/reset times and matched before/after calibration. Present predicted
+  percentage points, share of remaining allowance, reserve and LOW/BORDERLINE/HIGH/
+  UNKNOWN scenarios. A nonzero usage-forecast exit requires explicit user review
+  and approval before work proceeds; financial approval alone does not waive it.
+  Refresh before each stage and at bounded batch checkpoints. Never turn dollars
+  into quota percentages without evidence, invent exhaustion probabilities, launch
+  calibration probes without authorization, or consume reset credits automatically.
+  The user confirmed a 10-percentage-point reserve; do not lower it without their
+  direction.
 - Use `scripts/experiment_budget.py` before **every model session**, either its
   `launch` command or the `Gate.reserve` API inside each runner worker immediately
   before provider launch. Never wrap a whole multi-session runner as one session.
