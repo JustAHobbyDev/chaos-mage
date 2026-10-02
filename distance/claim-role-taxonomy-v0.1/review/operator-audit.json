@@ -1,0 +1,313 @@
+{
+  "author": "operator, after both provider stages and historical-comparison freeze",
+  "comparison_commit": "bdcd3309e8c0390135631c2b1ab442ffca908573",
+  "research_questions": [
+    {
+      "number": 1,
+      "question": "Can the seven roles be assigned prospectively to natural H.6 claims?",
+      "answer": "Partly: 19/24 received one role, 4 were role-uncertain and 1 required splitting. Six roles were observed; SOURCE_FACT was not assigned. One judgment per claim provides no repeatability estimate.",
+      "evidence": [
+        "metrics.json",
+        "role-freeze.json"
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Which claims are genuinely role-ambiguous?",
+      "answer": "The provider could not resolve T01-2/C055 and T02-2/C075 between SOURCE_FACT and LIMIT; T01-3/C033 between DERIVED_INFERENCE and GOVERNANCE_RULE; or T02-1/C040 among CONDITIONAL_RELATION, OPERATION and GOVERNANCE_RULE. These are observed ambiguities under the frozen definitions, not proof no future rule could resolve them.",
+      "evidence": [
+        "role-judgments/H6-T01-2--C055.json",
+        "role-judgments/H6-T02-2--C075.json",
+        "role-judgments/H6-T01-3--C033.json",
+        "role-judgments/H6-T02-1--C040.json"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "Which frozen claims reveal atomization defects?",
+      "answer": "T02-2/C008 combines the limitation that explanations can coexist with an instruction for the comparison. It was recorded SPLIT_REQUIRED / ATOMIZATION_DEFECT, excluded from Stage B and never split or repaired.",
+      "evidence": [
+        "role-judgments/H6-T02-2--C008.json"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "Do supplied target facts route cleanly to target fidelity?",
+      "answer": "Yes in this sample: T02-2/C001, C002 and C009 were SUPPLIED_FACT / TARGET_FIDELITY / SATISFIED. Their packets contained the frozen target without diagnostic mapping requirements. This does not test a generated assertion falsely claiming supplied provenance.",
+      "evidence": [
+        "evaluation-packets/H6-T02-2--C001.json",
+        "evaluation-judgments/H6-T02-2--C001.json",
+        "evaluation-judgments/H6-T02-2--C002.json",
+        "evaluation-judgments/H6-T02-2--C009.json"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "Do source facts route cleanly to source fidelity?",
+      "answer": "Not demonstrated: both intended SOURCE_FACT cases became ROLE_UNCERTAIN against LIMIT. No SOURCE_FIDELITY judgment occurred. The content scan did not establish a third clean candidate; it does not prove absence across H.6.",
+      "evidence": [
+        "selection/audit.json",
+        "metrics.json"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "Do governance rules stop being evaluated as empirical conclusions?",
+      "answer": "Yes for T01-1/C059 and T01-2/C061: prospective threshold-setting and workload rollback rules passed coherence without requiring a diagnostic signal to establish an authored norm. This grants no empirical truth to threshold values.",
+      "evidence": [
+        "evaluation-judgments/H6-T01-1--C059.json",
+        "evaluation-judgments/H6-T01-2--C061.json",
+        "comparison/attribution.json"
+      ]
+    },
+    {
+      "number": 7,
+      "question": "Can governance rules still fail for incoherence or false empirical presentation?",
+      "answer": "A failure was observed: T04-2/C016 is VIOLATED because reliable histories with no actionable recurring problem need not contain the recording deficiency its rule presupposes. This tests trigger/action coherence and embedded empirical presupposition. No separate pure masquerading-as-discovery control was measured.",
+      "evidence": [
+        "evaluation-judgments/H6-T04-2--C016.json"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "Do fallback operations receive meaningful operational scrutiny rather than automatic acceptance?",
+      "answer": "Not established for either mandatory fallback: T01-3/C037 and T04-1/C020 were GOVERNANCE_RULE and passed coherence, leaving the mechanism and information-value objections untested. T02-2/C017 and T04-2/C007 received substantive OPERATION_LICENSE rationales and passed, but there was no assigned invalid-operation control.",
+      "evidence": [
+        "role-judgments/H6-T01-3--C037.json",
+        "role-judgments/H6-T04-1--C020.json",
+        "evaluation-judgments/H6-T02-2--C017.json",
+        "evaluation-judgments/H6-T04-2--C007.json"
+      ]
+    },
+    {
+      "number": 9,
+      "question": "Do conditional relations preserve hypothetical status?",
+      "answer": "Yes for T02-2/C020 and T04-3/C034: both are SATISFIED without asserting an outcome occurred. The latter conditions on useful publication; the packet retains P005 provisional proxy validity, which remains unestablished in real application. Of the other named cases, T02-1/C040 was ambiguous and T04-1/C044 was LIMIT / VIOLATED for an unjustified confound, not for lack of an observed effect.",
+      "evidence": [
+        "evaluation-judgments/H6-T02-2--C020.json",
+        "evaluation-packets/H6-T04-3--C034.json",
+        "evaluation-judgments/H6-T04-3--C034.json",
+        "evaluation-judgments/H6-T04-1--C044.json"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "Do genuine unsupported derived inferences remain rejectable?",
+      "answer": "The contract still permits VIOLATED, but empirical preservation of strict rejection was not demonstrated. All four assigned DERIVED_INFERENCE cases were historically SUPPORTED; three passed and one was CONDITIONAL. The two named problematic inference anchors became GOVERNANCE_RULE. Do not infer successful negative-control discrimination from this run.",
+      "evidence": [
+        "metrics.json",
+        "comparison/historical.json"
+      ]
+    },
+    {
+      "number": 11,
+      "question": "How many historical UNSUPPORTED outcomes appear attributable to contract mismatch?",
+      "answer": "Of eight selected historical UNSUPPORTED outcomes, seven now pass and one remains violated. Four are clear mismatch cases (T02-2/C001, C002; T01-1/C059; T01-2/C061). Three changes (T01-1/C026; T01-3/C037; T04-1/C020) are qualified and routing-dependent because action-choice/relevance objections were not tested under OPERATION_LICENSE. Count neither all seven as vindicated nor the sample as H.6-wide prevalence.",
+      "evidence": [
+        "comparison/attribution.json",
+        "comparison/historical.json"
+      ]
+    },
+    {
+      "number": 12,
+      "question": "Does the taxonomy create any new systematic ambiguity?",
+      "answer": "Repeated SOURCE_FACT/LIMIT overlap and governance/operation routing of conditional action choices are systematic boundary risks within this sample; inference/governance and conditional/action overlap also occur. Frequency and novelty relative to other taxonomies are unmeasured. The schema is executable but not sufficiently validated to treat the next warrant/admission recovery step as calibrated.",
+      "evidence": [
+        "role-freeze.json",
+        "comparison/attribution.json",
+        "metrics.json"
+      ]
+    }
+  ],
+  "anchor_assessments": {
+    "H6-T01-1/C026": {
+      "claim_id": "H6-T01-1/C026",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "Insufficient bookings explain why the persistence rule cannot establish a bottleneck. They do not license prioritizing the specified combined recording and handoff trial. In particular, sparse observations do not establish a handoff problem or a reason to trial a handoff change first. P014 states that prescription without supplying an unresolved empirical relation that would warrant it. This gap concerns the choice of trial, not a demand for causal proof before any trial.",
+      "old_h6_sha256": "8346c034e82752415551ba1358a15267b0bffd87dbed26a3640bddcd7bbbe46c",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "QUALIFIED_ROUTING_DEPENDENT_CHANGE",
+      "operator_rationale": "Routing to governance licenses a coherent sparse-booking fallback policy but does not establish why a combined recording/handoff trial is relevant. The historical objection concerned trial choice, so a pure contract-mismatch rescue is not established."
+    },
+    "H6-T01-1/C059": {
+      "claim_id": "H6-T01-1/C059",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "The temporal signal supports identifying a candidate stage for a trial. It does not establish the normative requirement to set acceptable service-impact thresholds before implementation. P027 states that requirement but supplies no inferential bridge from the observations, and the mapping identifies no unresolved empirical relation that would provide one.",
+      "old_h6_sha256": "cf2ad2c2649ebc05137d24b19f0060b5e5fea9ce79075c8e7b7579e1eacf8c34",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "CLEAR_CONTRACT_MISMATCH",
+      "operator_rationale": "The historical failure demanded an inferential bridge from the temporal signal to an authored threshold-setting requirement. Governance coherence tests its prospective timing and action."
+    },
+    "H6-T01-2/C061": {
+      "claim_id": "H6-T01-2/C061",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "The reduction signal supports test-relative reproduction of lateness. It does not establish the mandatory response to exceeding a trial's workload limits. P031 supplies that response as an explicit trial-management constraint, not as a conclusion warranted by the operation or signal. Even assuming workload limits are exceeded, the stopping-or-reversal requirement depends on accepting this prescribed rule.",
+      "old_h6_sha256": "8b817d05734b3e634ddfec752e0ce0b226ecb835dd7c92f227207132758ba431",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "CLEAR_CONTRACT_MISMATCH",
+      "operator_rationale": "The historical failure demanded that a reproduction signal establish a prescribed stop/reverse response. The frozen governance role tests the coherent prospective workload trigger and response."
+    },
+    "H6-T01-3/C037": {
+      "claim_id": "H6-T01-3/C037",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "Failure to corroborate any explanation establishes an evidential shortfall, but does not establish that readiness confirmation addresses the unresolved uncertainty. Readiness could already be known while uncertainty concerns another handoff. P021 specifies observations, but supplies no link showing how this particular fallback would distinguish the remaining explanations. P026 states an informational purpose without supplying a specific unresolved empirical relation that would warrant its selection. Limiting the trial and withholding a delay-reduction claim do not establish that missing link.",
+      "old_h6_sha256": "57705b2eda32f9e6a78a3d5536ff74590335004e129f70f4eaa34d882d334bba",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "QUALIFIED_ROUTING_DEPENDENT_CHANGE",
+      "operator_rationale": "The provider assigned governance, not operation. Coherence of a deadline-triggered readiness trial does not establish that readiness confirmation discriminates remaining explanations. The historical operational objection remains untested."
+    },
+    "H6-T02-1/C040": {
+      "claim_id": "H6-T02-1/C040",
+      "mandatory_anchor": true,
+      "old_h6_status": "CONDITIONAL_WARRANT",
+      "old_h6_rationale": "The localization signal alone establishes a revision association. The mapping supplies a specific additional empirical relation\u2014reproduction of the regression and its reversal under controlled comparison\u2014that would warrant the claimed bounded deployment experiment. This is an inferential confirmation condition, not merely an execution prerequisite.",
+      "old_h6_sha256": "8d079d39e98bfec0aad3b597f1ba05d3031306ef93093e6f826470bc2300d2df",
+      "assignment_status": "ROLE_UNCERTAIN",
+      "new_frozen_role": null,
+      "new_contract": null,
+      "new_verdict": null,
+      "contract_mismatch_assessment": "NOT_HISTORICALLY_UNSUPPORTED",
+      "operator_rationale": "ROLE_UNCERTAIN; no role-specific evaluation exists and no mismatch conclusion is licensed."
+    },
+    "H6-T02-2/C001": {
+      "claim_id": "H6-T02-2/C001",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "Median stability is supplied as background in P001. The operation and signal compare explanations for delays and evaluate canary outcomes; they do not establish stability of the median across time. Those signals could occur while the median changes. Faithful attribution of the background claim therefore does not provide the requested inferential warrant.",
+      "old_h6_sha256": "6fbf208fcf7ccb2c93bb86683560dde71c367ff449fdcc401a9e96e2507d41fe",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "SUPPLIED_FACT",
+      "new_contract": "TARGET_FIDELITY",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "CLEAR_CONTRACT_MISMATCH",
+      "operator_rationale": "The old rationale acknowledged supplied background but required diagnostic establishment. The new target-fidelity contract checks the explicit stable-median statement."
+    },
+    "H6-T02-2/C002": {
+      "claim_id": "H6-T02-2/C002",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "The frequency is supplied as a reported starting fact in P001. Observing the described comparative diagnostic pattern does not establish how often exports exceed an hour or independently substantiate that report. Faithful attribution therefore has sufficient provenance, but the operation and signal do not warrant this specific claim.",
+      "old_h6_sha256": "e28a0ee9312c8bf88f63d112ffac42cfe8d5300cf8b9d742c5d1ce50ba6992fc",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "SUPPLIED_FACT",
+      "new_contract": "TARGET_FIDELITY",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "CLEAR_CONTRACT_MISMATCH",
+      "operator_rationale": "The old rationale acknowledged supplied frequency/duration but required diagnostic establishment. Target fidelity now checks the reported approximate frequency at its supplied certainty."
+    },
+    "H6-T04-1/C020": {
+      "claim_id": "H6-T04-1/C020",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "Failure to distinguish an actionable constraint establishes an evidential limitation. It does not by itself license allocating the release slot to unspecified missing measurement. The mapping supplies no specific unresolved empirical relation connecting that measurement to resolving the decision-relevant uncertainty. The instruction is faithfully attributed, but its warrant is absent.",
+      "old_h6_sha256": "b925f5d55bc30684e44cfe7b8edc14b2ae9c0b12893e9bf0c62bc1a294690110",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "QUALIFIED_ROUTING_DEPENDENT_CHANGE",
+      "operator_rationale": "The provider assigned governance, not operation. Coherent allocation of a release slot to learning does not identify a useful measurement or establish its discriminating relevance. The historical operational objection remains untested."
+    },
+    "H6-T04-1/C044": {
+      "claim_id": "H6-T04-1/C044",
+      "mandatory_anchor": true,
+      "old_h6_status": "CONDITIONAL_WARRANT",
+      "old_h6_rationale": "Separated trajectories establish behavioral variation, but do not establish that team size contributes to that variation. The mapping explicitly supplies the relevant empirical relation: team size can shift apparent retention. Establishing that proposed dependence would license this narrowly scoped possibility claim; recording team size alone does not establish it.",
+      "old_h6_sha256": "a93783573400724e549e94ac6bc473a6fa0dd11bccc3f95d8bf956a9649ba3a3",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "LIMIT",
+      "new_contract": "LIMIT_WARRANT",
+      "new_verdict": "VIOLATED",
+      "contract_mismatch_assessment": "NOT_HISTORICALLY_UNSUPPORTED",
+      "operator_rationale": "The anticipated conditional case was frozen as LIMIT. Failure concerns lack of warrant for team-size dependence, not absence of an observed hypothetical outcome."
+    },
+    "H6-T04-2/C016": {
+      "claim_id": "H6-T04-2/C016",
+      "mandatory_anchor": true,
+      "old_h6_status": "UNSUPPORTED",
+      "old_h6_rationale": "Reliable histories can reveal no recurring actionable problem without any recording deficiency. That branch therefore does not license spending the release slot on a deficient recording step. The mapping supplies no specific unresolved empirical relation connecting absence of a recurring actionable problem to such a deficiency. Meeting execution prerequisites and observing the stated signal does not close this inferential gap.",
+      "old_h6_sha256": "35aea4eb36b960b515dfff471aa0ceecce1f783bfa47b14e8a4086fc421e3e22",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "GOVERNANCE_RULE",
+      "new_contract": "GOVERNANCE_COHERENCE",
+      "new_verdict": "VIOLATED",
+      "contract_mismatch_assessment": "DEFECT_SURVIVES_APPROPRIATE_CONTRACT",
+      "operator_rationale": "H6-T04-2/C016 presupposes a deficient recording step even when histories are reliable and no actionable problem recurs. Its disjunctive trigger can prescribe an action without an applicable deficiency; GOVERNANCE_COHERENCE is violated."
+    },
+    "H6-T04-3/C034": {
+      "claim_id": "H6-T04-3/C034",
+      "mandatory_anchor": true,
+      "old_h6_status": "CONDITIONAL_WARRANT",
+      "old_h6_rationale": "Random assignment licenses causal interpretation of an improvement in measured publication, but does not establish that publication represents useful activation. P005 supplies that specific unresolved empirical link. Establishing it would license the claimed deployment support within the stated bounds and adoption criteria.",
+      "old_h6_sha256": "f8ab5af99416ff9c078464e4366aadaaa770f0b69ab8e43a071ac1e7b1aef983",
+      "assignment_status": "ASSIGNED",
+      "new_frozen_role": "CONDITIONAL_RELATION",
+      "new_contract": "CONDITIONAL_LICENSE",
+      "new_verdict": "SATISFIED",
+      "contract_mismatch_assessment": "NOT_HISTORICALLY_UNSUPPORTED",
+      "operator_rationale": "Conditional license passes for the stated useful-publication antecedent. Measured publication is not thereby validated as useful activation; the historical proxy concern remains a real implementation condition."
+    }
+  },
+  "controlling_invariant_audit": {
+    "frozen_roles_changed": false,
+    "violations": [
+      {
+        "claim_id": "H6-T04-1/C044",
+        "contract": "LIMIT_WARRANT",
+        "basis": "The mapping asserts a possible retention confound without a mechanism/evidence/target link justifying team-size dependence. No observed-result demand was imposed."
+      },
+      {
+        "claim_id": "H6-T04-2/C016",
+        "contract": "GOVERNANCE_COHERENCE",
+        "basis": "One trigger branch does not supply the recording deficiency presupposed by its prescribed action."
+      }
+    ],
+    "wrong_contract_violation_detected": false,
+    "limits": "Semantic assessment is operator review, not an additional independent provider adjudication. Passing coherence does not validate operation efficacy."
+  },
+  "permissiveness_assessment": {
+    "evidence_of_risk": [
+      "Three conditional action-choice anchors were accepted as governance while mechanism/relevance remained untested.",
+      "No SOURCE_FIDELITY result; no historically unsupported assigned derived inference; no invalid assigned operation."
+    ],
+    "counterevidence": [
+      "One governance rule and one asserted limit failed their appropriate contracts.",
+      "One derived inference retained explicit unresolved conditions."
+    ],
+    "conclusion": "Partial operational success with unresolved boundary and negative-control gaps; fewer failures is not the success criterion."
+  },
+  "verification": {
+    "path": "review/final-verification.json",
+    "sha256": "69e66ac2ad990e874f65aea347d175b58d9aee2b0209a8294b816fcb8c86ba0c",
+    "script": "review/verify_completed.py",
+    "script_sha256": "86f70cbf21e6a91cad9a905a3af92cf5f4a0037678bd9c1881e295eef3077c46"
+  },
+  "incidents": {
+    "provider": 0,
+    "harness_retries": 0,
+    "substitutions_observed": 0,
+    "engineering": 1,
+    "recovery_evidence": "review/recovery/stage-b-preparation-order/evidence.json",
+    "recovery_resolution": "review/recovery/stage-b-preparation-order/resolution.json",
+    "budget": "UNKNOWN dollars and allowance forecasts explicitly approved; 43 reservations across 15 bounded batches; 48-session initial cap refined to 43; stale unapproved plan002 never launched; reserve unchanged, no reset redeemed.",
+    "calibration": "All before/after records retained privately; no clean isolated/settled sample, no quota-rate or dollar inference."
+  },
+  "recommendation": "Clarify SOURCE_FACT/LIMIT and governance/operation/inference boundaries offline, then separately preregister and authorize another bounded natural-claim calibration with genuine negative derived-inference and operation coverage. Preserve this study and H.6; do not advance admission on an assumed successful calibration.",
+  "recommendation_executed": false
+}
