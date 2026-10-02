@@ -1,0 +1,338 @@
+# One claim, one warrant observation
+
+Judge only the identified frozen atomic claim in its parent mapping. Assume stated
+execution prerequisites are satisfied and the described signal occurs. Does that
+operation/signal license this specific claim within its stated limits?
+
+SUPPORTED: licensed within explicit bounds.
+CONDITIONAL_WARRANT: the mapping itself supplies a specific unresolved empirical
+relation whose establishment would license it. Describe and cite that relation;
+do not invent it or confuse execution readiness with an inferential warrant.
+UNSUPPORTED: even with prerequisites met and signal observed, the claim does not follow.
+UNCERTAIN: genuinely insufficient information to decide warrant; explain why.
+
+Return the claim component and signal_basis with H.5 refs. stated_empirical_relation
+is a component only for CONDITIONAL_WARRANT, otherwise NOT_APPLICABLE per PROVENANCE.md.
+Separate provenance sufficiency from warrant: faithful attribution of a bad claim is
+SUFFICIENT provenance. An atomization misstatement is an annotation defect to flag;
+do not silently judge a corrected version. Do not judge other claims or whole-artifact
+viability. No repair, replacement inference, or quality/creativity ranking.
+
+# H.5 integration — unchanged semantic citation contract
+
+Mapping fields are segmented by the frozen H.5 segment.py, unchanged: field, explicit
+authored block, conservative sentence boundary, stop. No clause splitting. Pxxx IDs
+are opaque and local to the packet_id envelope. Cite only this packet's mapping spans.
+Source instrument and target are distinct named input data, not other mapping packets.
+
+Each semantic component has value, scope and provenance.refs, each ref comprising
+source_id and role SUPPORT or CONTEXT. SUPPORT contributes substance; CONTEXT only
+resolves reference, identity, scope or authored structure. CONTEXT cannot supply missing
+substantive inference. Include material qualifiers in the cited bundle. Assess whether
+only the cited bundle plus ordinary linguistic interpretation reconstructs the component:
+SUFFICIENT, INSUFFICIENT, UNCERTAIN. These statuses describe attribution to the mapping,
+not whether the attributed claim has warrant. An unsupported claim can be perfectly
+traceable. At least one SUPPORT per substantive component. An explicitly inapplicable
+component uses value NOT_APPLICABLE, empty refs, scope NOT_APPLICABLE and SUFFICIENT
+with a reason; it is excluded from provenance support counts.
+
+Never supply offsets, exact source-text reproduction or byte-identical quotes as
+semantic citation requirements. Model component values are semantic descriptions.
+Harness-only ranges and hashes preserve immutable artifact identity.
+
+Report anomalies without repairing content. Codes include PROV_UNKNOWN_SOURCE_ID,
+PROV_NO_SUPPORT, PROV_DUPLICATE_REF, PROV_ROLE_CONFLICT, PROV_WRONG_PACKET,
+PROV_MISSING_CONTEXT, PROV_UNSUPPORTED_COMPONENT, PROV_SCOPE_OVERREACH,
+PROV_UNCERTAIN_SUPPORT. A wrong citation initially is PROVENANCE_MODEL_ERROR. Report
+H5_UNREPRESENTABLE_SUPPORTED_COMPONENT, H5_UNCITED_SUBSTANTIVE_DEPENDENCE,
+H5_COARSE_CONTRADICTION_OR_QUALIFIER, H5_DISPERSED_SIMPLE_SUPPORT,
+H5_OUTSIDE_QUALIFIER, H5_CONTEXT_INFERENCE, H5_NONDETERMINISTIC_SEGMENTATION,
+H5_MARKUP_SCOPE_DAMAGE only when describing the corresponding observed weakness.
+For each anomaly identify component, evidence and whether correct support can be
+represented with the existing spans. No automatic segmentation repair.
+
+Use only this frozen packet and general knowledge. No tools, files, browsing, other packets or external context. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H6-T06-2",
+  "target": {
+    "target_id": "T06",
+    "domain": "analysis/decision",
+    "title": "Weekend library opening decision",
+    "frame": "A library network is considering moving some weekday opening hours to weekends at two branches. Door counts, program attendance, local survey responses and staff workload reports disagree about unmet demand. Nearby transport schedules and school terms vary through the year. The director must recommend a reversible three-month trial within the existing staffing budget and explain what evidence would justify keeping, changing or stopping it."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "A sample contains multiple components whose interactions with two phases differ enough that those components need not move together.\n",
+      "operation": "Carry the sample through a system containing a moving phase and a stationary phase so that components repeatedly partition between them.\n",
+      "signal": "Components migrate at different rates and emerge at different positions or times, producing separated bands or detector peaks.\n",
+      "inference": "The separation pattern supports the presence of distinguishable components with different partition behavior and permits their relative retention to be characterized.\n",
+      "limit": "Components with similar partition behavior may co-elute, operating conditions can shift retention, detector response may be nonspecific, and retention behavior alone generally does not establish chemical identity without appropriate standards or orthogonal evidence.\n"
+    }
+  },
+  "mapping": {
+    "state": "Treat the conflicting evidence at the two branches as a mixture of potentially distinguishable demand components: for example, needs that weekday access serves, needs that weekend access could serve, and needs constrained by transport, school calendars or other barriers. These are hypotheses, not established groups. The moving-phase counterpart is the recurring sequence of opening opportunities through which potential visits can proceed; the stationary-phase counterpart is the relatively persistent set of access constraints that can delay or prevent participation. Assume repeated exposure to these opportunities may produce different uptake patterns; attendance and stated unmet need need not move together.",
+    "operation": "Propose a reversible three-month trial at both branches, transferring specified weekday blocks to specified weekend blocks. Before launch, verify that coverage, pay premiums, preparation and recovery time fit the existing staffing budget; do not launch an infeasible schedule. Document the original schedule and restoration procedure. Establish comparable pre-trial measurements and, where available, unchanged opening windows as contextual comparisons. Repeatedly expose demand to the trial schedule over weekly cycles: potential visits may proceed into attendance or remain deferred or unserved, the counterpart of repeated partitioning. Keep the schedule stable within each assessment period, and log transport service, school term, programming and any schedule changes. Collect hourly door counts, program attendance, brief voluntary questions about alternative visit times and unmet needs, and staff workload reports. Measure removed weekday blocks through their baseline use and subsequent reports of lost access. Before launch, set explicit numerical criteria for meaningful access gains, tolerable weekday access loss and staff workload, plus review dates and immediate safety or coverage stopping rules; the packet supplies no values. Review weekly for operating breaches, at a preannounced midpoint for adjustments, and at three months for the final decision. Treat any adjustment as a new operating condition.",
+    "signal": "Look for recurring differences in when and under which conditions demand becomes observable: weekend uptake, concentration around transport arrivals or programs, delayed uptake across weeks, continued weekday use, and persistent reports of inability to attend. These time-and-condition profiles are the counterparts of separated bands or peaks; relative delay before uptake is the retention counterpart. Report branches, program and ordinary visits, and term and transport conditions separately where sample sizes permit. Show counts and rates per open hour alongside uncertainty and workload. Do not add program attendance to door counts when the same visits may be counted twice, or interpret an unobserved visit as directly measured unmet demand.",
+    "inference": "Repeatable differences in uptake or continued deferral would support distinguishable access-response components and characterize their relative responsiveness or delay under this schedule. Convergent voluntary reports can help distinguish newly enabled access from visits merely shifted from weekdays. Keep the trial schedule only if the precommitted access-gain criterion is met, weekday losses and workload remain within limits, and the budget remains feasible. Change particular blocks if a reproducible profile suggests a better allocation; state the hypothesis and measure again under the revised conditions. Stop or restore the original schedule on an immediate stopping-rule breach, or at the final review if gains fail the agreed criterion or harms exceed limits. If evidence remains inconclusive, report that uncertainty and restore the original schedule unless a further bounded trial is explicitly authorized.",
+    "limit": "Different needs can produce the same attendance profile, analogous to co-elution; one person can also contribute to several profiles. Transport changes, school terms, programming, weather and adjustment time can shift apparent retention. Door counts, program attendance, survey responses and workload reports are nonspecific and differently selected signals. Attendance timing alone cannot identify a demand group's needs, prove previously unmet demand or establish that the schedule caused a change. Seek corroboration through direct accounts of access barriers, transport information and comparable observation periods; unchanged windows offer context but may themselves receive displaced visits. Sparse or contradictory evidence warrants unresolved components, not invented separation. A three-month result supports decisions only for the conditions observed; retaining the schedule should include a review when materially different seasonal conditions arrive."
+  },
+  "span_table": {
+    "packet_id": "H6-T06-2",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Treat the conflicting evidence at the two branches as a mixture of potentially distinguishable demand components: for example, needs that weekday access serves, needs that weekend access could serve, and needs constrained by transport, school calendars or other barriers."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "These are hypotheses, not established groups."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "The moving-phase counterpart is the recurring sequence of opening opportunities through which potential visits can proceed; the stationary-phase counterpart is the relatively persistent set of access constraints that can delay or prevent participation."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Assume repeated exposure to these opportunities may produce different uptake patterns; attendance and stated unmet need need not move together."
+      },
+      "P005": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Propose a reversible three-month trial at both branches, transferring specified weekday blocks to specified weekend blocks."
+      },
+      "P006": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Before launch, verify that coverage, pay premiums, preparation and recovery time fit the existing staffing budget; do not launch an infeasible schedule."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Document the original schedule and restoration procedure."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Establish comparable pre-trial measurements and, where available, unchanged opening windows as contextual comparisons."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Repeatedly expose demand to the trial schedule over weekly cycles: potential visits may proceed into attendance or remain deferred or unserved, the counterpart of repeated partitioning."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Keep the schedule stable within each assessment period, and log transport service, school term, programming and any schedule changes."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Collect hourly door counts, program attendance, brief voluntary questions about alternative visit times and unmet needs, and staff workload reports."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Measure removed weekday blocks through their baseline use and subsequent reports of lost access."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Before launch, set explicit numerical criteria for meaningful access gains, tolerable weekday access loss and staff workload, plus review dates and immediate safety or coverage stopping rules; the packet supplies no values."
+      },
+      "P014": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 9,
+        "kind": "paragraph",
+        "text": "Review weekly for operating breaches, at a preannounced midpoint for adjustments, and at three months for the final decision."
+      },
+      "P015": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 10,
+        "kind": "paragraph",
+        "text": "Treat any adjustment as a new operating condition."
+      },
+      "P016": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Look for recurring differences in when and under which conditions demand becomes observable: weekend uptake, concentration around transport arrivals or programs, delayed uptake across weeks, continued weekday use, and persistent reports of inability to attend."
+      },
+      "P017": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "These time-and-condition profiles are the counterparts of separated bands or peaks; relative delay before uptake is the retention counterpart."
+      },
+      "P018": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Report branches, program and ordinary visits, and term and transport conditions separately where sample sizes permit."
+      },
+      "P019": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Show counts and rates per open hour alongside uncertainty and workload."
+      },
+      "P020": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Do not add program attendance to door counts when the same visits may be counted twice, or interpret an unobserved visit as directly measured unmet demand."
+      },
+      "P021": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Repeatable differences in uptake or continued deferral would support distinguishable access-response components and characterize their relative responsiveness or delay under this schedule."
+      },
+      "P022": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Convergent voluntary reports can help distinguish newly enabled access from visits merely shifted from weekdays."
+      },
+      "P023": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Keep the trial schedule only if the precommitted access-gain criterion is met, weekday losses and workload remain within limits, and the budget remains feasible."
+      },
+      "P024": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Change particular blocks if a reproducible profile suggests a better allocation; state the hypothesis and measure again under the revised conditions."
+      },
+      "P025": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Stop or restore the original schedule on an immediate stopping-rule breach, or at the final review if gains fail the agreed criterion or harms exceed limits."
+      },
+      "P026": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If evidence remains inconclusive, report that uncertainty and restore the original schedule unless a further bounded trial is explicitly authorized."
+      },
+      "P027": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Different needs can produce the same attendance profile, analogous to co-elution; one person can also contribute to several profiles."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Transport changes, school terms, programming, weather and adjustment time can shift apparent retention."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Door counts, program attendance, survey responses and workload reports are nonspecific and differently selected signals."
+      },
+      "P030": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Attendance timing alone cannot identify a demand group's needs, prove previously unmet demand or establish that the schedule caused a change."
+      },
+      "P031": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Seek corroboration through direct accounts of access barriers, transport information and comparable observation periods; unchanged windows offer context but may themselves receive displaced visits."
+      },
+      "P032": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Sparse or contradictory evidence warrants unresolved components, not invented separation."
+      },
+      "P033": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "A three-month result supports decisions only for the conditions observed; retaining the schedule should include a review when materially different seasonal conditions arrive."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C030",
+    "fields": [
+      "inference"
+    ],
+    "component": {
+      "component_id": "C030.component",
+      "value": "Particular opening blocks should be changed if a reproducible profile suggests a better allocation.",
+      "scope": "A conditional adjustment rule; a suggested improvement is not asserted to be a demonstrated improvement.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P024",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The span supplies the reproducibility condition and the proposed response."
+      }
+    }
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "packet_id": "H6-T02-3",
+  "target": {
+    "target_id": "T02",
+    "domain": "technical",
+    "title": "Intermittent document export delays",
+    "frame": "A hosted document service exports customer workspaces overnight. Median export time is stable, but roughly one in twenty exports now takes more than an hour instead of ten minutes. Export traces include queue entry, worker start, object reads and archive upload; trace coverage differs across worker versions. Customers cannot be asked to rerun large exports during business hours. The engineering team must plan a safe investigation and choose the next deployment action."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+      "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+      "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+      "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+      "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+    }
+  },
+  "mapping": {
+    "state": "Treat the overnight export pipeline as a dynamic system. The proposed input is the maximum number of concurrent exports in a small worker pool; outputs are queue depth, completion rate, elapsed export times, and queue, object-read, and upload durations where observable. This assumes concurrency is adjustable and a canary pool can be bounded safely; neither capability is established by the packet. Before testing, establish worker versions, trace coverage, active work, initial queue depth, and available workload descriptors. Use only already scheduled overnight exports, with no customer-requested business-hours reruns. If a bounded experiment is unavailable, defer the perturbation and choose a deployment that supplies the necessary controls and comparable telemetry.",
+    "operation": "First verify comparable queue-entry, worker-start, and completion timestamps across the versions being compared. If these are missing, deploy narrowly scoped instrumentation and collect an overnight baseline before testing performance changes. With adequate telemetry, record a baseline at concurrency c0, then at a documented time apply one known step to a lower concurrency c1 in the canary pool and hold it constant. Select the step size and cohort size beforehand from available capacity and overnight deadline headroom; a reduction tests the hypothesis that contention contributes to delays, without assuming it does. Let active exports finish and record when actual concurrency reflects the new limit. Keep worker version and other controllable settings fixed. Where feasible, retain an unchanged comparison pool with comparable scheduled work; record shared-resource exposure and workload differences. Record the trajectory through the transition and subsequent observation window. Predeclare queue-age, backlog-growth, error-rate, resource-pressure, and completion-deadline thresholds, plus a latest rollback time that preserves recovery headroom. If a threshold is crossed or telemetry fails, restore c0 without terminating active exports, stop further experimental exposure, and monitor recovery. At the planned endpoint, restore c0 and follow exposed exports to completion where feasible; explicitly censor any still unfinished.",
+    "signal": "Measure the delay from the commanded step to actual concurrency change and then to changes in queue depth, completion rate, and phase durations. Look for the size and speed of changes, transient peaks or oscillations, and whether outputs settle into a sustained range or keep drifting. Compare export cohorts by queue-entry time and exposure to the step, retaining exports already active at the transition as a distinct group. Track the fraction exceeding one hour and time-to-completion estimates that include unfinished exports, alongside the stable-median question. Compare these trajectories with baseline and any unchanged pool. Missing spans must remain unknown, not zero-duration phases. Record arrivals, workload mix, worker version, and observed resource conditions alongside the response so that coincident changes are visible. These are proposed measurements, not observations already obtained.",
+    "inference": "If actual concurrency falls and object-read or upload durations subsequently improve relative to comparable baseline and control work, that supports a contention-sensitive explanation at the tested load. It supports a deployment decision only if total export delay, throughput, and deadline risk also remain acceptable. If service phases remain similar while queue delay increases, reduced capacity is a better explanation of that response and the lower limit should not be expanded. If improvement is sufficiently precise to meet a predeclared operational benefit criterion without violating safety criteria, choose a staged, monitored rollout of the tested concurrency setting with rollback available. If it worsens outcomes, restore the original setting and reject that change. If results are inconclusive, retain the original setting and either repeat the bounded test on later scheduled nights or deploy instrumentation for the unresolved phase. These results constrain candidate mechanisms; they do not by themselves justify blaming or rolling back a particular worker version.",
+    "limit": "The reported roughly five-percent slow-export rate makes short tests potentially uninformative. Set the observation duration and precision requirement before testing using available overnight volume and the smallest operationally meaningful improvement; if the safety window cannot supply enough evidence, report uncertainty rather than extending exposure unsafely. Unknown initial backlog, changing arrivals, heterogeneous workspace sizes, cache state, shared storage or network disturbances, version-dependent trace gaps, and interacting jobs can distort the response. A nominal concurrency step may take effect gradually while active work drains. Shared resources can contaminate a comparison pool, and nonlinear saturation can make one step behave differently from another. Apparent settling requires a sufficiently stable workload and adequate observation time; otherwise describe only the observed transient. No detectable change does not exclude contention or a version defect. Conclusions apply to the tested cohort, concurrency range, versions, and operating conditions; broader deployment requires staged confirmation."
+  },
+  "span_table": {
+    "packet_id": "H6-T02-3",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Treat the overnight export pipeline as a dynamic system."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "The proposed input is the maximum number of concurrent exports in a small worker pool; outputs are queue depth, completion rate, elapsed export times, and queue, object-read, and upload durations where observable."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "This assumes concurrency is adjustable and a canary pool can be bounded safely; neither capability is established by the packet."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Before testing, establish worker versions, trace coverage, active work, initial queue depth, and available workload descriptors."
+      },
+      "P005": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Use only already scheduled overnight exports, with no customer-requested business-hours reruns."
+      },
+      "P006": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If a bounded experiment is unavailable, defer the perturbation and choose a deployment that supplies the necessary controls and comparable telemetry."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "First verify comparable queue-entry, worker-start, and completion timestamps across the versions being compared."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "If these are missing, deploy narrowly scoped instrumentation and collect an overnight baseline before testing performance changes."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "With adequate telemetry, record a baseline at concurrency c0, then at a documented time apply one known step to a lower concurrency c1 in the canary pool and hold it constant."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Select the step size and cohort size beforehand from available capacity and overnight deadline headroom; a reduction tests the hypothesis that contention contributes to delays, without assuming it does."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Let active exports finish and record when actual concurrency reflects the new limit."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Keep worker version and other controllable settings fixed."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Where feasible, retain an unchanged comparison pool with comparable scheduled work; record shared-resource exposure and workload differences."
+      },
+      "P014": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Record the trajectory through the transition and subsequent observation window."
+      },
+      "P015": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Predeclare queue-age, backlog-growth, error-rate, resource-pressure, and completion-deadline thresholds, plus a latest rollback time that preserves recovery headroom."
+      },
+      "P016": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 9,
+        "kind": "paragraph",
+        "text": "If a threshold is crossed or telemetry fails, restore c0 without terminating active exports, stop further experimental exposure, and monitor recovery."
+      },
+      "P017": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 10,
+        "kind": "paragraph",
+        "text": "At the planned endpoint, restore c0 and follow exposed exports to completion where feasible; explicitly censor any still unfinished."
+      },
+      "P018": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Measure the delay from the commanded step to actual concurrency change and then to changes in queue depth, completion rate, and phase durations."
+      },
+      "P019": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Look for the size and speed of changes, transient peaks or oscillations, and whether outputs settle into a sustained range or keep drifting."
+      },
+      "P020": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Compare export cohorts by queue-entry time and exposure to the step, retaining exports already active at the transition as a distinct group."
+      },
+      "P021": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Track the fraction exceeding one hour and time-to-completion estimates that include unfinished exports, alongside the stable-median question."
+      },
+      "P022": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Compare these trajectories with baseline and any unchanged pool."
+      },
+      "P023": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Missing spans must remain unknown, not zero-duration phases."
+      },
+      "P024": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Record arrivals, workload mix, worker version, and observed resource conditions alongside the response so that coincident changes are visible."
+      },
+      "P025": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "These are proposed measurements, not observations already obtained."
+      },
+      "P026": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "If actual concurrency falls and object-read or upload durations subsequently improve relative to comparable baseline and control work, that supports a contention-sensitive explanation at the tested load."
+      },
+      "P027": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "It supports a deployment decision only if total export delay, throughput, and deadline risk also remain acceptable."
+      },
+      "P028": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "If service phases remain similar while queue delay increases, reduced capacity is a better explanation of that response and the lower limit should not be expanded."
+      },
+      "P029": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "If improvement is sufficiently precise to meet a predeclared operational benefit criterion without violating safety criteria, choose a staged, monitored rollout of the tested concurrency setting with rollback available."
+      },
+      "P030": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "If it worsens outcomes, restore the original setting and reject that change."
+      },
+      "P031": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If results are inconclusive, retain the original setting and either repeat the bounded test on later scheduled nights or deploy instrumentation for the unresolved phase."
+      },
+      "P032": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "These results constrain candidate mechanisms; they do not by themselves justify blaming or rolling back a particular worker version."
+      },
+      "P033": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "The reported roughly five-percent slow-export rate makes short tests potentially uninformative."
+      },
+      "P034": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Set the observation duration and precision requirement before testing using available overnight volume and the smallest operationally meaningful improvement; if the safety window cannot supply enough evidence, report uncertainty rather than extending exposure unsafely."
+      },
+      "P035": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Unknown initial backlog, changing arrivals, heterogeneous workspace sizes, cache state, shared storage or network disturbances, version-dependent trace gaps, and interacting jobs can distort the response."
+      },
+      "P036": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "A nominal concurrency step may take effect gradually while active work drains."
+      },
+      "P037": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Shared resources can contaminate a comparison pool, and nonlinear saturation can make one step behave differently from another."
+      },
+      "P038": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Apparent settling requires a sufficiently stable workload and adequate observation time; otherwise describe only the observed transient."
+      },
+      "P039": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "No detectable change does not exclude contention or a version defect."
+      },
+      "P040": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Conclusions apply to the tested cohort, concurrency range, versions, and operating conditions; broader deployment requires staged confirmation."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C033",
+    "fields": [
+      "inference"
+    ],
+    "component": {
+      "component_id": "C033.component",
+      "value": "If improvement is sufficiently precise to meet a predeclared operational benefit criterion without violating safety criteria, the tested concurrency setting should receive a staged, monitored rollout with rollback available.",
+      "scope": "Conditional rollout decision; no numerical benefit, precision, or safety criterion is supplied.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P029",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The complete decision condition and qualified rollout consequence are explicit."
+      }
+    }
+  }
+}

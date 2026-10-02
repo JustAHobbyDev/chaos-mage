@@ -1,0 +1,282 @@
+{
+  "packet_id": "H6-T01-2",
+  "target": {
+    "target_id": "T01",
+    "domain": "organizational / operational",
+    "title": "Shared equipment turnaround",
+    "frame": "A municipal maintenance depot lends specialist equipment to four crews. During the last six weeks, 19 of 74 bookings started late although the booking calendar showed the equipment available. Return times, cleaning completion and collection times are recorded in separate logs; some entries are missing. The depot manager has two weeks to choose changes that reduce late starts without buying equipment or adding staff. Work out what to investigate and how to decide which change to trial."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "mapping": {
+    "state": "Treat a reconstructed equipment turnaround as the candidate failure-inducing configuration: preceding bookings, return timing, cleaning requirements, readiness updates and collection handoffs. These are candidate components, not established causes. During days 1–3, link the 74 bookings to the separate logs by equipment and booking, retaining missing or conflicting entries as unknown. Define failure as a booking starting after its agreed start time despite the calendar showing availability; distinguish equipment unreadiness from delayed crew collection. Establish how actual starts were measured. Select a late case for which a tabletop or controlled operational replay can repeatedly reproduce that failure. Replay feasibility and fidelity must be demonstrated, not assumed.",
+    "operation": "During days 4–9, partition the selected case's candidate components into groups. Test removing a group or retaining its complement, keeping the equipment, agreed start deadline and other test conditions fixed. Give each removal an explicit operational counterpart: for example, remove an earlier booking from a replay, eliminate a redundant handoff, or replace delayed readiness communication with an immediate update. Removing an earlier booking is diagnostic and does not by itself justify reducing service. Never remove required cleaning or safety checks, and do not erase missing records to manufacture a passing test. Retain a reduced configuration only when repeated tests still reproduce the defined failure; then partition it again. If neither groups nor complements yield a reproducing reduction, test smaller removals. Use the same predeclared repetition rule for baseline and reduced configurations, and classify uncertain timing, missing prerequisites or inconsistent outcomes as unresolved. Stop when no single remaining component can be removed while preserving failure, when further reductions are unsafe or infeasible, or at the end of day 9.",
+    "signal": "For each tested configuration, record retained and removed components, return and cleaning completion, readiness communication, collection and start times, deviations from the intended test, and whether failure reproduced, did not reproduce, or remained unresolved. The informative pattern would be a smaller configuration that repeatedly remains late while specified further removals cease to reproduce lateness. Compare reconstructed on-time bookings to check whether the replay has omitted relevant operating conditions. A replay that cannot reproduce the baseline supplies no basis for reduction; investigate its missing conditions instead.",
+    "inference": "A consistently reproducing reduction would identify a test-relative sufficient combination for the selected failure. Only exhaustive single-component removal checks justify calling it locally minimal; otherwise report it as near-minimal or merely reduced. During days 10–14, translate the smallest supported combinations into feasible changes, such as an explicit readiness handoff or a turnaround allowance, only where the tests support those counterparts. Test the proposed change against the unreduced baseline scenario as well: eliminating failure in a reduced case alone is insufficient. Choose a bounded trial that addresses a supported combination, covers several reconstructed late cases, and fits existing equipment and staff. If evidence remains unresolved, choose a limited logging and readiness-verification trial to establish testability rather than assert a remedy.",
+    "limit": "Historical reconstruction and tabletop replay depend on assumptions; agreement with recorded cases does not establish field effectiveness. Interactions, variable return times, missing entries, replay artifacts and partition order can produce different minimal subsets. A retained subset is neither necessarily unique nor proof of an underlying causal mechanism, and one case need not explain all 19 late starts. Before the field trial, fix its duration, comparison bookings and success rule using existing-service deadlines; track late-start frequency and minutes alongside completed bookings, workload, safety and displaced demand. Stop or reverse the trial if required safety work is compromised or agreed service or workload limits are exceeded. Do not count relabelled availability or shifted deadlines alone as improvement. Review at the trial's end; inconsistent results require more observation or a revised test, not rollout."
+  },
+  "span_table": {
+    "packet_id": "H6-T01-2",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Treat a reconstructed equipment turnaround as the candidate failure-inducing configuration: preceding bookings, return timing, cleaning requirements, readiness updates and collection handoffs."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "These are candidate components, not established causes."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "During days 1–3, link the 74 bookings to the separate logs by equipment and booking, retaining missing or conflicting entries as unknown."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Define failure as a booking starting after its agreed start time despite the calendar showing availability; distinguish equipment unreadiness from delayed crew collection."
+      },
+      "P005": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Establish how actual starts were measured."
+      },
+      "P006": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Select a late case for which a tabletop or controlled operational replay can repeatedly reproduce that failure."
+      },
+      "P007": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Replay feasibility and fidelity must be demonstrated, not assumed."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "During days 4–9, partition the selected case's candidate components into groups."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Test removing a group or retaining its complement, keeping the equipment, agreed start deadline and other test conditions fixed."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Give each removal an explicit operational counterpart: for example, remove an earlier booking from a replay, eliminate a redundant handoff, or replace delayed readiness communication with an immediate update."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Removing an earlier booking is diagnostic and does not by itself justify reducing service."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Never remove required cleaning or safety checks, and do not erase missing records to manufacture a passing test."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Retain a reduced configuration only when repeated tests still reproduce the defined failure; then partition it again."
+      },
+      "P014": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "If neither groups nor complements yield a reproducing reduction, test smaller removals."
+      },
+      "P015": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Use the same predeclared repetition rule for baseline and reduced configurations, and classify uncertain timing, missing prerequisites or inconsistent outcomes as unresolved."
+      },
+      "P016": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Stop when no single remaining component can be removed while preserving failure, when further reductions are unsafe or infeasible, or at the end of day 9."
+      },
+      "P017": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "For each tested configuration, record retained and removed components, return and cleaning completion, readiness communication, collection and start times, deviations from the intended test, and whether failure reproduced, did not reproduce, or remained unresolved."
+      },
+      "P018": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "The informative pattern would be a smaller configuration that repeatedly remains late while specified further removals cease to reproduce lateness."
+      },
+      "P019": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Compare reconstructed on-time bookings to check whether the replay has omitted relevant operating conditions."
+      },
+      "P020": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "A replay that cannot reproduce the baseline supplies no basis for reduction; investigate its missing conditions instead."
+      },
+      "P021": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "A consistently reproducing reduction would identify a test-relative sufficient combination for the selected failure."
+      },
+      "P022": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Only exhaustive single-component removal checks justify calling it locally minimal; otherwise report it as near-minimal or merely reduced."
+      },
+      "P023": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "During days 10–14, translate the smallest supported combinations into feasible changes, such as an explicit readiness handoff or a turnaround allowance, only where the tests support those counterparts."
+      },
+      "P024": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Test the proposed change against the unreduced baseline scenario as well: eliminating failure in a reduced case alone is insufficient."
+      },
+      "P025": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Choose a bounded trial that addresses a supported combination, covers several reconstructed late cases, and fits existing equipment and staff."
+      },
+      "P026": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If evidence remains unresolved, choose a limited logging and readiness-verification trial to establish testability rather than assert a remedy."
+      },
+      "P027": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Historical reconstruction and tabletop replay depend on assumptions; agreement with recorded cases does not establish field effectiveness."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Interactions, variable return times, missing entries, replay artifacts and partition order can produce different minimal subsets."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "A retained subset is neither necessarily unique nor proof of an underlying causal mechanism, and one case need not explain all 19 late starts."
+      },
+      "P030": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Before the field trial, fix its duration, comparison bookings and success rule using existing-service deadlines; track late-start frequency and minutes alongside completed bookings, workload, safety and displaced demand."
+      },
+      "P031": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Stop or reverse the trial if required safety work is compromised or agreed service or workload limits are exceeded."
+      },
+      "P032": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Do not count relabelled availability or shifted deadlines alone as improvement."
+      },
+      "P033": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Review at the trial's end; inconsistent results require more observation or a revised test, not rollout."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C011",
+    "fields": [
+      "operation"
+    ],
+    "component": {
+      "component_id": "C011.component",
+      "value": "Removal tests must hold the equipment, agreed start deadline and other test conditions fixed.",
+      "scope": "Comparison of tested reductions within the selected case.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P009",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The span explicitly imposes these controls; the remaining test conditions are not enumerated."
+      }
+    }
+  }
+}

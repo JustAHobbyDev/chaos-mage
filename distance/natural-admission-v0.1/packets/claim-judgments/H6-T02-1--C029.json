@@ -1,0 +1,289 @@
+{
+  "packet_id": "H6-T02-1",
+  "target": {
+    "target_id": "T02",
+    "domain": "technical",
+    "title": "Intermittent document export delays",
+    "frame": "A hosted document service exports customer workspaces overnight. Median export time is stable, but roughly one in twenty exports now takes more than an hour instead of ten minutes. Export traces include queue entry, worker start, object reads and archive upload; trace coverage differs across worker versions. Customers cannot be asked to rerun large exports during business hours. The engineering team must plan a safe investigation and choose the next deployment action."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "An ordered sequence of revisions contains a transition in a reproducibly testable property, with at least one earlier state known not to have the property and one later state known to have it.\n",
+      "operation": "Test an intermediate revision, use the result to discard the incompatible portion of the remaining history, and repeat the partition-and-test process until the transition is localized.\n",
+      "signal": "Each tested revision is classified on one side or the other of the target property, progressively shrinking the interval that can contain the transition.\n",
+      "inference": "Repeated elimination constrains the first revision associated with the observed change to the final unresolved boundary or commit.\n",
+      "limit": "Flaky tests, unbuildable revisions, nonmonotonic behavior, multiple independent changes, interactions among revisions, or an incorrectly chosen good or bad endpoint can prevent unique localization or identify a boundary that is correlated with rather than solely causal of the behavior.\n"
+    }
+  },
+  "mapping": {
+    "state": "Act on the ordered deployment revisions spanning the suspected onset of unusually slow exports. The target property is an elevated probability of exceeding one hour under comparable workloads, rather than a change in median duration. The packet supplies neither a verified earlier good revision nor a reproducibly bad later revision; establishing these endpoints is a prerequisite. Before testing, define the reference workload mix, acceptable tail rate, material increase, confidence criteria and sample budget. Assume representative exports can be tested safely on isolated workers using authorized snapshots or scheduled overnight workloads; verify that assumption. Record worker revision, configuration, dependencies, workspace size, object count and concurrency so changes outside revision history are not silently attributed to code.",
+    "operation": "First repeat tests of candidate earlier and later revisions under matched conditions to establish good and bad endpoints. Use consistent queue-entry-to-upload-completion timing across revisions; validate timing comparability because trace coverage differs. Run only isolated, resource-capped tests or approved overnight trials, without requesting customer reruns during business hours. Stop tests if they threaten scheduled exports, exceed resource limits or exhaust the agreed budget. Once endpoints are established, test a midpoint revision on repeated representative exports. If confidently good, replace the good endpoint with that midpoint; if confidently bad, replace the bad endpoint. Repeat, discarding only the history incompatible with the classification under the single-transition assumption. For inconclusive results, collect additional trials within budget; never discard history from a single fast export or treat a build failure as a performance result. Stop at adjacent confidently classified revisions, or retain an unresolved interval when further classification is infeasible.",
+    "signal": "For each revision, observe the number of exports tested, the fraction exceeding one hour and its uncertainty, with workload and load recorded. Classify good only when the prespecified evidence supports the acceptable range, and bad only when it supports the defined elevated range; otherwise classify inconclusive. Choose the replication and repeated-testing rule in advance so repeated midpoint decisions do not accumulate uncontrolled error. An export still running after one hour has crossed the threshold; a test stopped earlier has an unknown threshold outcome and must not count as fast. Where comparable trace spans exist, separate queue wait, worker execution, object reads and upload time to identify where additional time accumulates. Missing spans indicate missing evidence, not zero delay. Each decisive midpoint result shrinks the candidate transition interval.",
+    "inference": "Conditional on valid endpoints, comparable trials and a persistent single transition, repeated elimination localizes the first revision associated with the defined tail-rate increase to the final boundary. It does not yet establish a sole cause. Retest both sides of that boundary on matched workloads and, if feasible, test a targeted revert or fix while holding other factors constant. If the regression and its reversal reproduce, choose a bounded overnight canary of the compatible revert or fix, with predefined tail-rate, failure and resource stop thresholds; expand only after adequate evidence, otherwise halt or roll back the canary. If endpoints or measurements cannot be established, choose a bounded deployment of consistent timing instrumentation, validate its overhead and gather evidence before attributing the delays or selecting a code rollback.",
+    "limit": "Rare delays require enough trials: absence of a slow export in a small sample cannot establish goodness. Changing workspace mix, storage or network conditions, queue pressure, configuration and dependencies can confound revision comparisons; isolated replay may omit production interactions. Unequal trace coverage can create apparent phase differences. Flakiness, unbuildable revisions, several regressions, later fixes and interactions can invalidate binary elimination or leave several candidate boundaries. If results contradict a single transition, stop discarding halves and test smaller intervals or separate suspected factors. Report gaps and inconclusive endpoints explicitly. A localized boundary supports association under tested conditions; production causality and deployment safety require confirmation and monitored rollout."
+  },
+  "span_table": {
+    "packet_id": "H6-T02-1",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Act on the ordered deployment revisions spanning the suspected onset of unusually slow exports."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "The target property is an elevated probability of exceeding one hour under comparable workloads, rather than a change in median duration."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "The packet supplies neither a verified earlier good revision nor a reproducibly bad later revision; establishing these endpoints is a prerequisite."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Before testing, define the reference workload mix, acceptable tail rate, material increase, confidence criteria and sample budget."
+      },
+      "P005": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Assume representative exports can be tested safely on isolated workers using authorized snapshots or scheduled overnight workloads; verify that assumption."
+      },
+      "P006": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Record worker revision, configuration, dependencies, workspace size, object count and concurrency so changes outside revision history are not silently attributed to code."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "First repeat tests of candidate earlier and later revisions under matched conditions to establish good and bad endpoints."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Use consistent queue-entry-to-upload-completion timing across revisions; validate timing comparability because trace coverage differs."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Run only isolated, resource-capped tests or approved overnight trials, without requesting customer reruns during business hours."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Stop tests if they threaten scheduled exports, exceed resource limits or exhaust the agreed budget."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Once endpoints are established, test a midpoint revision on repeated representative exports."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If confidently good, replace the good endpoint with that midpoint; if confidently bad, replace the bad endpoint."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Repeat, discarding only the history incompatible with the classification under the single-transition assumption."
+      },
+      "P014": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "For inconclusive results, collect additional trials within budget; never discard history from a single fast export or treat a build failure as a performance result."
+      },
+      "P015": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Stop at adjacent confidently classified revisions, or retain an unresolved interval when further classification is infeasible."
+      },
+      "P016": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "For each revision, observe the number of exports tested, the fraction exceeding one hour and its uncertainty, with workload and load recorded."
+      },
+      "P017": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Classify good only when the prespecified evidence supports the acceptable range, and bad only when it supports the defined elevated range; otherwise classify inconclusive."
+      },
+      "P018": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Choose the replication and repeated-testing rule in advance so repeated midpoint decisions do not accumulate uncontrolled error."
+      },
+      "P019": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "An export still running after one hour has crossed the threshold; a test stopped earlier has an unknown threshold outcome and must not count as fast."
+      },
+      "P020": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Where comparable trace spans exist, separate queue wait, worker execution, object reads and upload time to identify where additional time accumulates."
+      },
+      "P021": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Missing spans indicate missing evidence, not zero delay."
+      },
+      "P022": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Each decisive midpoint result shrinks the candidate transition interval."
+      },
+      "P023": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Conditional on valid endpoints, comparable trials and a persistent single transition, repeated elimination localizes the first revision associated with the defined tail-rate increase to the final boundary."
+      },
+      "P024": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "It does not yet establish a sole cause."
+      },
+      "P025": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Retest both sides of that boundary on matched workloads and, if feasible, test a targeted revert or fix while holding other factors constant."
+      },
+      "P026": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "If the regression and its reversal reproduce, choose a bounded overnight canary of the compatible revert or fix, with predefined tail-rate, failure and resource stop thresholds; expand only after adequate evidence, otherwise halt or roll back the canary."
+      },
+      "P027": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "If endpoints or measurements cannot be established, choose a bounded deployment of consistent timing instrumentation, validate its overhead and gather evidence before attributing the delays or selecting a code rollback."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Rare delays require enough trials: absence of a slow export in a small sample cannot establish goodness."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Changing workspace mix, storage or network conditions, queue pressure, configuration and dependencies can confound revision comparisons; isolated replay may omit production interactions."
+      },
+      "P030": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Unequal trace coverage can create apparent phase differences."
+      },
+      "P031": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Flakiness, unbuildable revisions, several regressions, later fixes and interactions can invalidate binary elimination or leave several candidate boundaries."
+      },
+      "P032": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "If results contradict a single transition, stop discarding halves and test smaller intervals or separate suspected factors."
+      },
+      "P033": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Report gaps and inconclusive endpoints explicitly."
+      },
+      "P034": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "A localized boundary supports association under tested conditions; production causality and deployment safety require confirmation and monitored rollout."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C029",
+    "fields": [
+      "signal"
+    ],
+    "component": {
+      "component_id": "C029",
+      "value": "When the prescribed evidence does not support either good or bad classification, the revision is classified inconclusive.",
+      "scope": "Residual classification outcome under the stated evidence rules.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P017",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The inconclusive branch is supplied alongside the two evidence conditions."
+      }
+    }
+  }
+}

@@ -1,0 +1,324 @@
+# One claim, one warrant observation
+
+Judge only the identified frozen atomic claim in its parent mapping. Assume stated
+execution prerequisites are satisfied and the described signal occurs. Does that
+operation/signal license this specific claim within its stated limits?
+
+SUPPORTED: licensed within explicit bounds.
+CONDITIONAL_WARRANT: the mapping itself supplies a specific unresolved empirical
+relation whose establishment would license it. Describe and cite that relation;
+do not invent it or confuse execution readiness with an inferential warrant.
+UNSUPPORTED: even with prerequisites met and signal observed, the claim does not follow.
+UNCERTAIN: genuinely insufficient information to decide warrant; explain why.
+
+Return the claim component and signal_basis with H.5 refs. stated_empirical_relation
+is a component only for CONDITIONAL_WARRANT, otherwise NOT_APPLICABLE per PROVENANCE.md.
+Separate provenance sufficiency from warrant: faithful attribution of a bad claim is
+SUFFICIENT provenance. An atomization misstatement is an annotation defect to flag;
+do not silently judge a corrected version. Do not judge other claims or whole-artifact
+viability. No repair, replacement inference, or quality/creativity ranking.
+
+# H.5 integration — unchanged semantic citation contract
+
+Mapping fields are segmented by the frozen H.5 segment.py, unchanged: field, explicit
+authored block, conservative sentence boundary, stop. No clause splitting. Pxxx IDs
+are opaque and local to the packet_id envelope. Cite only this packet's mapping spans.
+Source instrument and target are distinct named input data, not other mapping packets.
+
+Each semantic component has value, scope and provenance.refs, each ref comprising
+source_id and role SUPPORT or CONTEXT. SUPPORT contributes substance; CONTEXT only
+resolves reference, identity, scope or authored structure. CONTEXT cannot supply missing
+substantive inference. Include material qualifiers in the cited bundle. Assess whether
+only the cited bundle plus ordinary linguistic interpretation reconstructs the component:
+SUFFICIENT, INSUFFICIENT, UNCERTAIN. These statuses describe attribution to the mapping,
+not whether the attributed claim has warrant. An unsupported claim can be perfectly
+traceable. At least one SUPPORT per substantive component. An explicitly inapplicable
+component uses value NOT_APPLICABLE, empty refs, scope NOT_APPLICABLE and SUFFICIENT
+with a reason; it is excluded from provenance support counts.
+
+Never supply offsets, exact source-text reproduction or byte-identical quotes as
+semantic citation requirements. Model component values are semantic descriptions.
+Harness-only ranges and hashes preserve immutable artifact identity.
+
+Report anomalies without repairing content. Codes include PROV_UNKNOWN_SOURCE_ID,
+PROV_NO_SUPPORT, PROV_DUPLICATE_REF, PROV_ROLE_CONFLICT, PROV_WRONG_PACKET,
+PROV_MISSING_CONTEXT, PROV_UNSUPPORTED_COMPONENT, PROV_SCOPE_OVERREACH,
+PROV_UNCERTAIN_SUPPORT. A wrong citation initially is PROVENANCE_MODEL_ERROR. Report
+H5_UNREPRESENTABLE_SUPPORTED_COMPONENT, H5_UNCITED_SUBSTANTIVE_DEPENDENCE,
+H5_COARSE_CONTRADICTION_OR_QUALIFIER, H5_DISPERSED_SIMPLE_SUPPORT,
+H5_OUTSIDE_QUALIFIER, H5_CONTEXT_INFERENCE, H5_NONDETERMINISTIC_SEGMENTATION,
+H5_MARKUP_SCOPE_DAMAGE only when describing the corresponding observed weakness.
+For each anomaly identify component, evidence and whether correct support can be
+represented with the existing spans. No automatic segmentation repair.
+
+Use only this frozen packet and general knowledge. No tools, files, browsing, other packets or external context. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H6-T05-2",
+  "target": {
+    "target_id": "T05",
+    "domain": "project/process",
+    "title": "Archive digitization deadline",
+    "frame": "A local museum is digitizing 4,000 catalog folders before a public exhibition in ten weeks. Scanning is ahead of plan, but metadata review and rights checks have accumulated a backlog. Folders vary greatly in size and completeness, and volunteers work different days. The project lead needs to decide the next two weeks of assignments and whether to revise the promised exhibition scope, using daily counts and a limited sample of folder histories."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "Material associated with a past event may persist as a latent residue that ordinary visual inspection does not reveal.\n",
+      "operation": "Apply a probe whose reaction is promoted by material associated with the suspected residue.\n",
+      "signal": "Responsive material produces an otherwise absent, localized observable reaction.\n",
+      "inference": "The reaction supports the presence and location of material capable of producing that response.\n",
+      "limit": "Unrelated substances may produce the same response, relevant residue may fail to respond because it was removed, degraded, or is below detection, and detecting responsive material does not by itself establish the event that produced it. The probe may also alter material needed for later analysis.\n"
+    }
+  },
+  "mapping": {
+    "state": "Act on folder records and handoff histories, where unresolved metadata questions, rights requests, or failed transfers may leave traces that scanning totals do not reveal. These traces are possible diagnostic residues, not established causes of the reported backlog. Assume folders can be linked across stages by identifier; verify this before interpreting counts. Treat exhibition readiness as requiring the museum’s agreed metadata and rights evidence, which must first be specified.",
+    "operation": "Apply an evidence-reconciliation probe: for each sampled folder, compare its recorded stage with dated review decisions, outstanding questions, rights evidence, and handoff acknowledgments. Ask the relevant reviewer to resolve each discrepancy against those records; unresolved traces trigger a localized flag identifying the folder, stage, missing evidence, and next action. Propose a budget of 20 randomly selected histories, distributed across recorded stages and available size, completeness, and queue-age groups; record selection probabilities and unavailable histories. Examine up to five additional suspicious histories separately without using them to estimate prevalence. Each day, reconcile stage arrivals, completions, returns, and remaining queues, alongside actual volunteer hours. Preserve original histories and log probe-generated changes separately. Stop examining a history when its evidence is reconciled or a predefined time allowance expires; label expired or inaccessible cases inconclusive. If identifiers or stage definitions cannot be reconciled, repair that measurement problem before projecting completion.",
+    "signal": "Observe whether reconciliation produces a flag that routine totals lacked: for example, a recorded review completion without the required decision, an unanswered rights request, or a transfer without acknowledgment. These are proposed signal types, not observed findings. Record each flag’s location, supporting trace, age, and disposition; distinguish confirmed unresolved work, explained discrepancies, and inconclusive cases. Also observe daily queue changes, rework, and completion per staffed hour within comparable folder groups. A probe-triggered resolution is an intervention and must be recorded separately from evidence of the prior state.",
+    "inference": "A supported flag warrants concluding that the specified folder contains evidence of unresolved or inconsistently recorded work at that location. It does not establish why the delay occurred. Use recurring supported flags, queue growth, and measured effort to propose the next two weeks of assignments: allocate suitably trained volunteers to the demonstrated metadata or rights constraint, assign owners to external dependencies, and limit additional scanning where it only increases waiting inventory. Respect actual volunteer availability and required rights authority. Produce a range of ten-week readiness estimates using stage-specific throughput, folder mix, remaining work, and scheduled hours; use only the probability sample for prevalence estimates, with appropriate weighting and uncertainty. Reassess assignments after one week. If even the optimistic supported estimate falls below the promised scope, propose reducing or changing that scope promptly. If the estimate range crosses the promise, identify a contingent reduced scope and gather targeted evidence before the week-two decision. Count only folders meeting the agreed readiness criteria toward the exhibition.",
+    "limit": "Legitimate holds, stale status fields, duplicate records, or undocumented completed work may produce the same flags as unresolved work. Missing, overwritten, sparse, or inaccessible histories may conceal relevant traces, so no flag does not establish readiness. A limited sample may miss rare, difficult folders; aggregate counts can conceal size differences, and scanning rates cannot substitute for metadata or rights capacity. Throughput projections remain conditional on staffing, folder mix, rework, and external rights responses; widen ranges or withhold a defensible scope forecast when these inputs are inadequate. Flags do not establish negligence, the original delaying event, or legal clearance. Reconciliation may consume scarce reviewer time, prompt work, or alter records needed for later diagnosis. Retain dated snapshots, cap probe effort, and refer unresolved rights decisions to an authorized decision-maker before inclusion."
+  },
+  "span_table": {
+    "packet_id": "H6-T05-2",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Act on folder records and handoff histories, where unresolved metadata questions, rights requests, or failed transfers may leave traces that scanning totals do not reveal."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "These traces are possible diagnostic residues, not established causes of the reported backlog."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Assume folders can be linked across stages by identifier; verify this before interpreting counts."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Treat exhibition readiness as requiring the museum’s agreed metadata and rights evidence, which must first be specified."
+      },
+      "P005": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Apply an evidence-reconciliation probe: for each sampled folder, compare its recorded stage with dated review decisions, outstanding questions, rights evidence, and handoff acknowledgments."
+      },
+      "P006": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Ask the relevant reviewer to resolve each discrepancy against those records; unresolved traces trigger a localized flag identifying the folder, stage, missing evidence, and next action."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Propose a budget of 20 randomly selected histories, distributed across recorded stages and available size, completeness, and queue-age groups; record selection probabilities and unavailable histories."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Examine up to five additional suspicious histories separately without using them to estimate prevalence."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Each day, reconcile stage arrivals, completions, returns, and remaining queues, alongside actual volunteer hours."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Preserve original histories and log probe-generated changes separately."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Stop examining a history when its evidence is reconciled or a predefined time allowance expires; label expired or inaccessible cases inconclusive."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "If identifiers or stage definitions cannot be reconciled, repair that measurement problem before projecting completion."
+      },
+      "P013": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Observe whether reconciliation produces a flag that routine totals lacked: for example, a recorded review completion without the required decision, an unanswered rights request, or a transfer without acknowledgment."
+      },
+      "P014": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "These are proposed signal types, not observed findings."
+      },
+      "P015": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Record each flag’s location, supporting trace, age, and disposition; distinguish confirmed unresolved work, explained discrepancies, and inconclusive cases. Also observe daily queue changes, rework, and completion per staffed hour within comparable folder groups. A probe-triggered resolution is an intervention and must be recorded separately from evidence of the prior state."
+      },
+      "P016": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "A supported flag warrants concluding that the specified folder contains evidence of unresolved or inconsistently recorded work at that location."
+      },
+      "P017": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "It does not establish why the delay occurred."
+      },
+      "P018": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Use recurring supported flags, queue growth, and measured effort to propose the next two weeks of assignments: allocate suitably trained volunteers to the demonstrated metadata or rights constraint, assign owners to external dependencies, and limit additional scanning where it only increases waiting inventory."
+      },
+      "P019": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Respect actual volunteer availability and required rights authority."
+      },
+      "P020": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Produce a range of ten-week readiness estimates using stage-specific throughput, folder mix, remaining work, and scheduled hours; use only the probability sample for prevalence estimates, with appropriate weighting and uncertainty."
+      },
+      "P021": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Reassess assignments after one week."
+      },
+      "P022": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "If even the optimistic supported estimate falls below the promised scope, propose reducing or changing that scope promptly."
+      },
+      "P023": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "If the estimate range crosses the promise, identify a contingent reduced scope and gather targeted evidence before the week-two decision."
+      },
+      "P024": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Count only folders meeting the agreed readiness criteria toward the exhibition."
+      },
+      "P025": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Legitimate holds, stale status fields, duplicate records, or undocumented completed work may produce the same flags as unresolved work."
+      },
+      "P026": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Missing, overwritten, sparse, or inaccessible histories may conceal relevant traces, so no flag does not establish readiness."
+      },
+      "P027": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "A limited sample may miss rare, difficult folders; aggregate counts can conceal size differences, and scanning rates cannot substitute for metadata or rights capacity."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Throughput projections remain conditional on staffing, folder mix, rework, and external rights responses; widen ranges or withhold a defensible scope forecast when these inputs are inadequate."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Flags do not establish negligence, the original delaying event, or legal clearance."
+      },
+      "P030": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Reconciliation may consume scarce reviewer time, prompt work, or alter records needed for later diagnosis."
+      },
+      "P031": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Retain dated snapshots, cap probe effort, and refer unresolved rights decisions to an authorized decision-maker before inclusion."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C038",
+    "fields": [
+      "limit"
+    ],
+    "component": {
+      "component_id": "C038",
+      "value": "Duplicate records may produce the same flags as unresolved work.",
+      "scope": "A possible alternative explanation for a flag.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P025",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "P025 explicitly names duplicate records as a possible source of the same response."
+      }
+    }
+  }
+}
