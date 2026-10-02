@@ -1,0 +1,111 @@
+{
+  "fixture_id": "H3-4d30014ef73c",
+  "packet_id": "H3-4d30014ef73c",
+  "description": "Affirmative H.3 regression; one coarse span supports both operation and differential relation.",
+  "category": "h3-regressions",
+  "components": [
+    {
+      "component_id": "contrast",
+      "component_type": "unresolved_contrast",
+      "value": "Lock contention and isolated pool exhaustion remain live; the current result does not discriminate them.",
+      "scope": "Failure F-17 under the described fixed replay environment and workload; stated recording assumptions granted.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P002",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P007",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P001",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P003",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P010",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P011",
+            "role": "CONTEXT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    },
+    {
+      "component_id": "operation",
+      "component_type": "next_operation",
+      "value": "Measure lock-wait duration with pool occupancy next.",
+      "scope": "Failure F-17 under the described fixed replay environment and workload; stated recording assumptions granted.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P008",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P001",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P003",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P010",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P011",
+            "role": "CONTEXT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    },
+    {
+      "component_id": "relation",
+      "component_type": "differential_outcome_relation",
+      "value": "Elevated lock waits with normal occupancy favor lock contention; ordinary lock waits with saturated occupancy favor pool exhaustion.",
+      "scope": "Failure F-17 under the described fixed replay environment and workload; stated recording assumptions granted.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P008",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P001",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P003",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P010",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P011",
+            "role": "CONTEXT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    }
+  ],
+  "expected_mechanical_codes": [],
+  "semantic_unit_id": "IQ1",
+  "expected_complete_units": 1
+}

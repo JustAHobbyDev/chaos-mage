@@ -1,0 +1,75 @@
+{
+  "fixture_id": "H4-c28733e05bb9",
+  "packet_id": "H4-c28733e05bb9",
+  "description": "Frozen H.4 distributed components; original inquiry semantics and historical judgment retained.",
+  "category": "positive",
+  "components": [
+    {
+      "component_id": "unresolved_contrast",
+      "component_type": "unresolved_contrast",
+      "value": "Lock contention and isolated pool exhaustion remain unresolved under the current evidence.",
+      "scope": "Under the current evidence.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P001",
+            "role": "SUPPORT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    },
+    {
+      "component_id": "next_operation",
+      "component_type": "next_operation",
+      "value": "Measure lock-wait duration together with pool occupancy next.",
+      "scope": "Under the current evidence.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P002",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P001",
+            "role": "CONTEXT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    },
+    {
+      "component_id": "differential_outcome_relation",
+      "component_type": "differential_outcome_relation",
+      "value": "Elevated lock waits with normal occupancy favor lock contention over isolated pool exhaustion; ordinary lock waits with saturation favor isolated pool exhaustion over lock contention.",
+      "scope": "Under the current evidence.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P003",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P004",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "P001",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "P002",
+            "role": "CONTEXT"
+          }
+        ]
+      },
+      "expected_support_status": "SUFFICIENT",
+      "expected_codes": []
+    }
+  ],
+  "expected_mechanical_codes": [],
+  "semantic_unit_id": "IQ1",
+  "expected_complete_units": 1
+}
