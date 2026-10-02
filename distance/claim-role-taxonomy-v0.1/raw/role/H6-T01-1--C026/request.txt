@@ -1,0 +1,191 @@
+Assign the role of this one frozen proposition. Do not evaluate its truth,
+validity, warrant, or merits. Use only the provided role definitions and packet.
+No tools, files, browsing, other packets, prior sessions, or external context.
+Return exactly the schema JSON and copy claim_id unchanged.
+
+Read value with its frozen scope. Source mapping field names do not determine the
+role. Proposed or hypothetical outcomes are not observations. Decide whether the
+proposition contains a single function or needs splitting; never actually split it.
+
+ATOMIC + ASSIGNED requires exactly one of the seven primary roles and an empty
+competing_roles array. SPLIT_REQUIRED requires ATOMIZATION_DEFECT, null primary_role
+and empty competing_roles. ROLE_UNCERTAIN requires ATOMIC, null primary_role and
+at least two distinct competing roles. Uncertainty is not an eighth role. There
+is no priority among overlapping definitions: record genuine ambiguity.
+
+Cite role_provenance with source_type TARGET and its target_id,
+SOURCE_INSTRUMENT and its source_id, or MAPPING and a Pxxx span from this packet.
+Original mapping_refs distinguish SUPPORT (substance) from CONTEXT (interpretation
+of identity, scope or reference); CONTEXT cannot supply missing substance.
+Provenance tracks where text comes from, not independent truth or warrant.
+Explain the assignment or defect in rationale, without deciding whether it passes
+an epistemic evaluation. The assignment will be frozen before later evaluation.
+
+{
+  "roles": {
+    "SUPPLIED_FACT": "A proposition directly supplied by the target/problem material or a faithful non-expansive restatement thereof. It is not required to be independently established by the transferred mechanism.",
+    "SOURCE_FACT": "A proposition directly supplied by the frozen source instrument or a faithful non-expansive restatement of its mechanism, conditions, or limits. It is not required to be established from target observations.",
+    "DERIVED_INFERENCE": "A proposition asserting that evidence, observations, or transferred structure supports, weakens, excludes, bounds, ranks, explains, or establishes something about the target.",
+    "CONDITIONAL_RELATION": "A proposition asserting what a hypothetical or future outcome would imply. It does not assert that the outcome has occurred.",
+    "OPERATION": "A proposed observation, test, comparison, intervention, perturbation, or transformation to perform on the target.",
+    "GOVERNANCE_RULE": "A prospective decision rule, threshold, stopping condition, rollback rule, safety rule, or policy rule that governs what to do rather than purporting to report an empirical discovery.",
+    "LIMIT": "A proposition stating scope, ambiguity, confound, failure condition, non-identifiability, or restriction on reasoning or application."
+  }
+}
+FROZEN PACKET
+{
+  "claim": {
+    "claim_id": "H6-T01-1/C026",
+    "packet_id": "H6-T01-1",
+    "local_claim_id": "C026",
+    "value": "If bookings are too sparse to apply the persistence rule, a standardized recording and handoff trial should be chosen first.",
+    "scope": "A conditional fallback; no separate numerical sparsity threshold is supplied.",
+    "mapping_refs": [
+      {
+        "source_id": "P011",
+        "role": "CONTEXT"
+      },
+      {
+        "source_id": "P014",
+        "role": "SUPPORT"
+      }
+    ]
+  },
+  "target": {
+    "target_id": "T01",
+    "domain": "organizational / operational",
+    "title": "Shared equipment turnaround",
+    "frame": "A municipal maintenance depot lends specialist equipment to four crews. During the last six weeks, 19 of 74 bookings started late although the booking calendar showed the equipment available. Return times, cleaning completion and collection times are recorded in separate logs; some entries are missing. The depot manager has two weeks to choose changes that reduce late starts without buying equipment or adding staff. Work out what to investigate and how to decide which change to trial."
+  },
+  "source_instrument": {
+    "source_id": "CLINICAL-DIAGNOSIS-SERIAL-MONITORING-001",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "mapping": {
+    "packet_id": "H6-T01-1",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "text": "Act on the equipment turnaround process across the four crews, treating each booking as one observation in a time sequence."
+      },
+      "P002": {
+        "field": "state",
+        "text": "The reported 19 late starts among 74 bookings establish an aggregate problem, not whether it is persistent, worsening or temporary."
+      },
+      "P003": {
+        "field": "state",
+        "text": "Possible contributors include late returns, cleaning delays, inaccurate availability entries and delayed collection; these are hypotheses."
+      },
+      "P004": {
+        "field": "state",
+        "text": "Missing entries and separate logs may obscure the sequence."
+      },
+      "P005": {
+        "field": "operation",
+        "text": "During the two-week investigation, link the preceding six weeks of bookings to return, cleaning-completion and collection records by equipment and booking, retaining missing values explicitly."
+      },
+      "P006": {
+        "field": "operation",
+        "text": "Agree consistent definitions of scheduled start, ready for collection and actual start; do not equate collection with actual start unless that relationship is verified."
+      },
+      "P007": {
+        "field": "operation",
+        "text": "For every new turnaround, record these events comparably, plus expected return where available, calendar changes and exceptional circumstances."
+      },
+      "P008": {
+        "field": "operation",
+        "text": "Identify whether equipment was absent, awaiting cleaning or ready but uncollected at the scheduled start; leave ambiguous cases unresolved."
+      },
+      "P009": {
+        "field": "operation",
+        "text": "Review daily and summarize each week using late bookings divided by all bookings, delay minutes, stage-specific counts and recording completeness."
+      },
+      "P010": {
+        "field": "operation",
+        "text": "Compare comparable equipment and crew groups before pooling them."
+      },
+      "P011": {
+        "field": "operation",
+        "text": "Before inspecting the prospective sequence, adopt this provisional persistence rule: a candidate bottleneck must recur on multiple booking days in each investigation week, with the same stage accounting for the greatest documented delay burden in both weeks."
+      },
+      "P012": {
+        "field": "operation",
+        "text": "At day 14, choose a feasible change aimed at that stage: for example, revise return handoffs, reserve observed turnaround time in the calendar, or introduce a readiness-and-collection handoff."
+      },
+      "P013": {
+        "field": "operation",
+        "text": "These options remain conditional on findings and must fit existing equipment and staffing."
+      },
+      "P014": {
+        "field": "operation",
+        "text": "If missing records could reverse the ranking, or bookings are too sparse to apply the rule, choose a standardized recording and handoff trial first rather than claim a bottleneck is established."
+      },
+      "P015": {
+        "field": "signal",
+        "text": "Look for repeated stage-specific delays, consecutive elevated weekly late-start rates, increasing delay duration, reversals, or isolated spikes followed by recovery."
+      },
+      "P016": {
+        "field": "signal",
+        "text": "Show booking denominators and missing-record counts alongside each time point."
+      },
+      "P017": {
+        "field": "signal",
+        "text": "A meaningful candidate signal would be a recurring readiness delay despite calendar availability, or repeated late collection after documented readiness."
+      },
+      "P018": {
+        "field": "signal",
+        "text": "These are observations to seek, not findings already obtained."
+      },
+      "P019": {
+        "field": "signal",
+        "text": "Historical weeks provide context only where definitions and coverage are comparable."
+      },
+      "P020": {
+        "field": "inference",
+        "text": "Repeated comparable observations can support distinguishing an enduring turnaround constraint from a short-lived disruption and can narrow which operational change deserves a trial."
+      },
+      "P021": {
+        "field": "inference",
+        "text": "Persistent delay at one stage supports targeting that stage; a rise confined to one equipment type or crew supports a narrower trial."
+      },
+      "P022": {
+        "field": "inference",
+        "text": "After selection, continue the same measurements through a predefined trial period, preferably staggering introduction across comparable bookings where practical."
+      },
+      "P023": {
+        "field": "inference",
+        "text": "Sustained improvement across repeated periods would support retaining the change, while isolated improvement would warrant continued observation."
+      },
+      "P024": {
+        "field": "limit",
+        "text": "Timestamp errors, missingness, irregular booking frequency, changing job mix, workload, measurement practices and concurrent interventions can create or hide patterns."
+      },
+      "P025": {
+        "field": "limit",
+        "text": "Two weeks and small subgroup counts may be insufficient; the persistence rule is a practical selection rule, not statistical proof or causal identification."
+      },
+      "P026": {
+        "field": "limit",
+        "text": "Test whether plausible assignments of unresolved cases alter the decision."
+      },
+      "P027": {
+        "field": "limit",
+        "text": "Set trial success and acceptable service-impact thresholds before implementation."
+      },
+      "P028": {
+        "field": "limit",
+        "text": "Stop or revise a trial if it causes unsafe handoffs or unacceptable disruption; extend observation when evidence is sparse."
+      },
+      "P029": {
+        "field": "limit",
+        "text": "Check that apparent improvement does not merely shift starts later, suppress bookings or move delays to other crews."
+      }
+    }
+  }
+}

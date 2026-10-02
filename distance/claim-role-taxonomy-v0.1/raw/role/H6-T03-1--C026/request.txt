@@ -1,0 +1,195 @@
+Assign the role of this one frozen proposition. Do not evaluate its truth,
+validity, warrant, or merits. Use only the provided role definitions and packet.
+No tools, files, browsing, other packets, prior sessions, or external context.
+Return exactly the schema JSON and copy claim_id unchanged.
+
+Read value with its frozen scope. Source mapping field names do not determine the
+role. Proposed or hypothetical outcomes are not observations. Decide whether the
+proposition contains a single function or needs splitting; never actually split it.
+
+ATOMIC + ASSIGNED requires exactly one of the seven primary roles and an empty
+competing_roles array. SPLIT_REQUIRED requires ATOMIZATION_DEFECT, null primary_role
+and empty competing_roles. ROLE_UNCERTAIN requires ATOMIC, null primary_role and
+at least two distinct competing roles. Uncertainty is not an eighth role. There
+is no priority among overlapping definitions: record genuine ambiguity.
+
+Cite role_provenance with source_type TARGET and its target_id,
+SOURCE_INSTRUMENT and its source_id, or MAPPING and a Pxxx span from this packet.
+Original mapping_refs distinguish SUPPORT (substance) from CONTEXT (interpretation
+of identity, scope or reference); CONTEXT cannot supply missing substance.
+Provenance tracks where text comes from, not independent truth or warrant.
+Explain the assignment or defect in rationale, without deciding whether it passes
+an epistemic evaluation. The assignment will be frozen before later evaluation.
+
+{
+  "roles": {
+    "SUPPLIED_FACT": "A proposition directly supplied by the target/problem material or a faithful non-expansive restatement thereof. It is not required to be independently established by the transferred mechanism.",
+    "SOURCE_FACT": "A proposition directly supplied by the frozen source instrument or a faithful non-expansive restatement of its mechanism, conditions, or limits. It is not required to be established from target observations.",
+    "DERIVED_INFERENCE": "A proposition asserting that evidence, observations, or transferred structure supports, weakens, excludes, bounds, ranks, explains, or establishes something about the target.",
+    "CONDITIONAL_RELATION": "A proposition asserting what a hypothetical or future outcome would imply. It does not assert that the outcome has occurred.",
+    "OPERATION": "A proposed observation, test, comparison, intervention, perturbation, or transformation to perform on the target.",
+    "GOVERNANCE_RULE": "A prospective decision rule, threshold, stopping condition, rollback rule, safety rule, or policy rule that governs what to do rather than purporting to report an empirical discovery.",
+    "LIMIT": "A proposition stating scope, ambiguity, confound, failure condition, non-identifiability, or restriction on reasoning or application."
+  }
+}
+FROZEN PACKET
+{
+  "claim": {
+    "claim_id": "H6-T03-1/C026",
+    "packet_id": "H6-T03-1",
+    "local_claim_id": "C026",
+    "value": "Patterns of discrepancies can constrain competing accounts of departures at distinct stages: obtaining approval, documenting it, linking it to the order or attaching it to the system.",
+    "scope": "Constraint of competing process accounts, without an assertion that a unique account or a particular failure stage has been established.",
+    "mapping_refs": [
+      {
+        "source_id": "P020",
+        "role": "SUPPORT"
+      }
+    ]
+  },
+  "target": {
+    "target_id": "T03",
+    "domain": "compliance or procedural",
+    "title": "Supplier approval records",
+    "frame": "A nonprofit requires documented approval before staff place supplier orders above an internal spending threshold. A quarterly review found that 14 of 90 sampled orders lack an approval attachment in the purchasing system. Approvals may also be recorded in meeting minutes or delegated-authority forms. The operations lead must prepare a defensible account of what happened and decide which records or process changes to pursue before the board review in three weeks. The internal rule is given; no legal conclusion is requested."
+  },
+  "source_instrument": {
+    "source_id": "SEISMOLOGY-SEISMIC-TOMOGRAPHY-001",
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "mapping": {
+    "packet_id": "H6-T03-1",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "text": "Act on the sampled orders and the documentary traces linking approval decisions, order placement and purchasing-system records."
+      },
+      "P002": {
+        "field": "state",
+        "text": "The historical approval process is not directly observable; reconstruct it through multiple record paths."
+      },
+      "P003": {
+        "field": "state",
+        "text": "The packet establishes that 14 of 90 sampled orders lack purchasing-system approval attachments, but does not establish that approval was absent."
+      },
+      "P004": {
+        "field": "state",
+        "text": "Verify which orders exceeded the threshold and what the internal rule required at the time."
+      },
+      "P005": {
+        "field": "state",
+        "text": "Assume only provisionally that records can be linked and their dates interpreted reliably."
+      },
+      "P006": {
+        "field": "operation",
+        "text": "During week one, build a candidate model of how documented approval should precede an order and reach the purchasing record, including any permitted routes through meeting minutes or delegated-authority forms."
+      },
+      "P007": {
+        "field": "operation",
+        "text": "For each of the 14 flagged orders, trace paths from the purported approval through relevant records to order placement and attachment."
+      },
+      "P008": {
+        "field": "operation",
+        "text": "Use the other sampled orders to test whether these routes also explain apparently complete records."
+      },
+      "P009": {
+        "field": "operation",
+        "text": "Record order identifiers, amounts, approval content, applicable authority, event dates, record-creation dates and attachment dates, distinguishing these dates explicitly."
+      },
+      "P010": {
+        "field": "operation",
+        "text": "A delegation form may establish authority without documenting approval of a particular order."
+      },
+      "P011": {
+        "field": "operation",
+        "text": "During week two, compare observed links, timing and missing traces with each route's predictions."
+      },
+      "P012": {
+        "field": "operation",
+        "text": "Investigate discrepancies through targeted record requests and staff clarification; treat recollections as leads rather than equivalent to contemporaneous documentation."
+      },
+      "P013": {
+        "field": "operation",
+        "text": "Iteratively revise the candidate account and check its predictions against additional traces."
+      },
+      "P014": {
+        "field": "operation",
+        "text": "Track alternative explanations rather than adjusting the account merely to make every order appear compliant."
+      },
+      "P015": {
+        "field": "signal",
+        "text": "Observe whether predicted approval records can be found, linked to the relevant order and shown to precede placement, and whether their recorded authority fits the applicable rule."
+      },
+      "P016": {
+        "field": "signal",
+        "text": "The counterpart to propagation behavior is the timing and continuity of documentary traces across approval-to-order-to-system paths."
+      },
+      "P017": {
+        "field": "signal",
+        "text": "Look for structured discrepancies by approval route, responsible role, period or record location: for example, linked prior approvals without attachments, attachments without demonstrated prior approval, or repeated breaks at a particular handoff."
+      },
+      "P018": {
+        "field": "signal",
+        "text": "These are proposed observations to test, not findings."
+      },
+      "P019": {
+        "field": "signal",
+        "text": "Record searches that yield no result together with their scope and access limitations."
+      },
+      "P020": {
+        "field": "inference",
+        "text": "Use the pattern of discrepancies to constrain competing accounts of where the process departed from its predicted route: obtaining approval, documenting it, linking it to an order, or attaching it to the system."
+      },
+      "P021": {
+        "field": "inference",
+        "text": "Reliable evidence of appropriately authorized, documented approval before placement can support satisfaction of the given approval rule even when an attachment is missing, subject to the rule's actual record requirements."
+      },
+      "P022": {
+        "field": "inference",
+        "text": "An attachment alone does not establish timely approval."
+      },
+      "P023": {
+        "field": "inference",
+        "text": "An unsuccessful search supports 'approval not located within the searched sources,' not automatically 'approval never occurred.' Seek further records that distinguish competing accounts."
+      },
+      "P024": {
+        "field": "inference",
+        "text": "Before the board review in week three, prepare an order-level evidence table separating supported conclusions, unresolved cases and alternative explanations; propose record corrections or process changes tied to the supported failure points."
+      },
+      "P025": {
+        "field": "limit",
+        "text": "Record paths may be sparse, uneven, dependent on copied material or affected by missing records, ambiguous identifiers, unreliable timestamps and uncertain approval origins."
+      },
+      "P026": {
+        "field": "limit",
+        "text": "Standardizing all orders into one assumed workflow could conceal legitimate routes or manufacture apparent failures; retain exceptions and test assumptions."
+      },
+      "P027": {
+        "field": "limit",
+        "text": "Multiple historical processes may produce the same surviving records."
+      },
+      "P028": {
+        "field": "limit",
+        "text": "Do not infer a population failure rate from 14 of 90 without a defensible sampling basis, and do not make legal conclusions."
+      },
+      "P029": {
+        "field": "limit",
+        "text": "Stop an individual inquiry when sufficient reliable evidence resolves the applicable rule or when identified sources are exhausted and the remaining uncertainty is documented."
+      },
+      "P030": {
+        "field": "limit",
+        "text": "At the board deadline, report unresolved cases without forcing closure, assigning each a specific next evidence request and responsible owner."
+      },
+      "P031": {
+        "field": "limit",
+        "text": "Preserve original records when adding links or annotations; any later approval or remediation must retain its actual date and must not be presented as prior approval."
+      }
+    }
+  }
+}
