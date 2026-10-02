@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packet_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fixture_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reviewer": {
+      "enum": [
+        "Codex engineering review"
+      ]
+    },
+    "independent_rater": {
+      "enum": [
+        false
+      ]
+    },
+    "assessment_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "support_status": {
+            "enum": [
+              "SUFFICIENT",
+              "INSUFFICIENT",
+              "UNCERTAIN"
+            ]
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "PROV_MISSING_CONTEXT",
+                "PROV_UNSUPPORTED_COMPONENT",
+                "PROV_SCOPE_OVERREACH",
+                "PROV_UNCERTAIN_SUPPORT"
+              ]
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "component_id",
+          "support_status",
+          "codes",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "fixture_id",
+    "packet_id",
+    "fixture_sha256",
+    "reviewer",
+    "independent_rater",
+    "assessment_basis",
+    "components"
+  ],
+  "additionalProperties": false
+}
