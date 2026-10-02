@@ -1,0 +1,253 @@
+{
+  "scope": "All non-SUPPORTED completed judgments, diagnostic terminal review only; no rejudgment or repaired output.",
+  "claims": [
+    {
+      "packet_id": "H6-T01-1",
+      "claim_id": "C026",
+      "status": "UNSUPPORTED",
+      "claim": "If bookings are too sparse to apply the persistence rule, a standardized recording and handoff trial should be chosen first.",
+      "scope": "A conditional fallback; no separate numerical sparsity threshold is supplied.",
+      "rationale": "Insufficient bookings explain why the persistence rule cannot establish a bottleneck. They do not license prioritizing the specified combined recording and handoff trial. In particular, sparse observations do not establish a handoff problem or a reason to trial a handoff change first. P014 states that prescription without supplying an unresolved empirical relation that would warrant it. This gap concerns the choice of trial, not a demand for causal proof before any trial.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The prescribed fallback might prove useful, but its priority does not follow from the stipulated sparsity condition.",
+      "spans": {
+        "P011": "Before inspecting the prospective sequence, adopt this provisional persistence rule: a candidate bottleneck must recur on multiple booking days in each investigation week, with the same stage accounting for the greatest documented delay burden in both weeks.",
+        "P014": "If missing records could reverse the ranking, or bookings are too sparse to apply the rule, choose a standardized recording and handoff trial first rather than claim a bottleneck is established.",
+        "P025": "Two weeks and small subgroup counts may be insufficient; the persistence rule is a practical selection rule, not statistical proof or causal identification."
+      }
+    },
+    {
+      "packet_id": "H6-T01-1",
+      "claim_id": "C059",
+      "status": "UNSUPPORTED",
+      "claim": "Acceptable service-impact thresholds should be set before implementation.",
+      "scope": "The selected trial; the mapping supplies no threshold values.",
+      "rationale": "The temporal signal supports identifying a candidate stage for a trial. It does not establish the normative requirement to set acceptable service-impact thresholds before implementation. P027 states that requirement but supplies no inferential bridge from the observations, and the mapping identifies no unresolved empirical relation that would provide one.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The requirement may be sensible trial governance independently. The verdict concerns its warrant from this operation and signal, not its practical merit or the absence of numerical threshold values.",
+      "spans": {
+        "P009": "Review daily and summarize each week using late bookings divided by all bookings, delay minutes, stage-specific counts and recording completeness.",
+        "P011": "Before inspecting the prospective sequence, adopt this provisional persistence rule: a candidate bottleneck must recur on multiple booking days in each investigation week, with the same stage accounting for the greatest documented delay burden in both weeks.",
+        "P014": "If missing records could reverse the ranking, or bookings are too sparse to apply the rule, choose a standardized recording and handoff trial first rather than claim a bottleneck is established.",
+        "P025": "Two weeks and small subgroup counts may be insufficient; the persistence rule is a practical selection rule, not statistical proof or causal identification.",
+        "P027": "Set trial success and acceptable service-impact thresholds before implementation."
+      }
+    },
+    {
+      "packet_id": "H6-T01-2",
+      "claim_id": "C061",
+      "status": "UNSUPPORTED",
+      "claim": "If agreed workload limits are exceeded, the trial must be stopped or reversed.",
+      "scope": "Workload trigger for trial termination or reversal; the limits and response-selection rule are unspecified.",
+      "rationale": "The reduction signal supports test-relative reproduction of lateness. It does not establish the mandatory response to exceeding a trial's workload limits. P031 supplies that response as an explicit trial-management constraint, not as a conclusion warranted by the operation or signal. Even assuming workload limits are exceeded, the stopping-or-reversal requirement depends on accepting this prescribed rule.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "This assessment concerns inferential warrant, not whether the explicitly authored workload safeguard is a reasonable policy.",
+      "spans": {
+        "P006": "Select a late case for which a tabletop or controlled operational replay can repeatedly reproduce that failure.",
+        "P009": "Test removing a group or retaining its complement, keeping the equipment, agreed start deadline and other test conditions fixed.",
+        "P015": "Use the same predeclared repetition rule for baseline and reduced configurations, and classify uncertain timing, missing prerequisites or inconsistent outcomes as unresolved.",
+        "P018": "The informative pattern would be a smaller configuration that repeatedly remains late while specified further removals cease to reproduce lateness.",
+        "P031": "Stop or reverse the trial if required safety work is compromised or agreed service or workload limits are exceeded."
+      }
+    },
+    {
+      "packet_id": "H6-T01-3",
+      "claim_id": "C037",
+      "status": "UNSUPPORTED",
+      "claim": "If no explanation has adequate independent support by the deadline, a limited readiness-confirmation trial should be selected primarily to resolve uncertainty.",
+      "scope": "Fallback selection at the two-week deadline; adequate support and the precise uncertainty-reduction mechanism are not operationally defined.",
+      "rationale": "Failure to corroborate any explanation establishes an evidential shortfall, but does not establish that readiness confirmation addresses the unresolved uncertainty. Readiness could already be known while uncertainty concerns another handoff. P021 specifies observations, but supplies no link showing how this particular fallback would distinguish the remaining explanations. P026 states an informational purpose without supplying a specific unresolved empirical relation that would warrant its selection. Limiting the trial and withholding a delay-reduction claim do not establish that missing link.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The trial might yield useful information in particular circumstances. The mapping does not establish those circumstances from the stipulated fallback signal.",
+      "spans": {
+        "P009": "For each material claim, record who observed what, when it was recorded, whether the source had direct access, and whether it copied another record.",
+        "P010": "Seek independently grounded checks through existing crew and depot accounts or contemporaneous records where available; ask about specific events before presenting a proposed explanation.",
+        "P015": "Select one narrowly scoped, reversible trial by the two-week deadline; do not combine changes whose effects could not be distinguished.",
+        "P019": "Record contradictions, unsupported intervals and missing coverage alongside supported sequences.",
+        "P021": "For the selected trial, prospectively observe late-start frequency and delay duration, readiness and collection times, completed or displaced bookings, and any added workload or unmet cleaning requirements.",
+        "P026": "If no explanation has adequate independent support by the deadline, select a limited readiness-confirmation trial primarily to resolve uncertainty, explicitly leaving its delay-reduction benefit unestablished."
+      }
+    },
+    {
+      "packet_id": "H6-T02-1",
+      "claim_id": "C040",
+      "status": "CONDITIONAL_WARRANT",
+      "claim": "If the regression and its reversal reproduce, the proposed deployment action is a bounded overnight canary of a compatible revert or fix.",
+      "scope": "Conditional deployment recommendation; compatibility and bounds are required but not operationally specified.",
+      "rationale": "The localization signal alone establishes a revision association. The mapping supplies a specific additional empirical relation—reproduction of the regression and its reversal under controlled comparison—that would warrant the claimed bounded deployment experiment. This is an inferential confirmation condition, not merely an execution prerequisite.",
+      "empirical_relation": "Matched retesting reproduces the regression across the localized boundary, and testing a targeted revert or fix while holding other factors constant reproduces its reversal.",
+      "uncertainty": "The packet does not establish that the regression and reversal reproduce. Even if they do, the recommendation remains limited to a compatible, monitored canary and does not establish general deployment safety.",
+      "spans": {
+        "P011": "Once endpoints are established, test a midpoint revision on repeated representative exports.",
+        "P014": "For inconclusive results, collect additional trials within budget; never discard history from a single fast export or treat a build failure as a performance result.",
+        "P016": "For each revision, observe the number of exports tested, the fraction exceeding one hour and its uncertainty, with workload and load recorded.",
+        "P017": "Classify good only when the prespecified evidence supports the acceptable range, and bad only when it supports the defined elevated range; otherwise classify inconclusive.",
+        "P018": "Choose the replication and repeated-testing rule in advance so repeated midpoint decisions do not accumulate uncontrolled error.",
+        "P019": "An export still running after one hour has crossed the threshold; a test stopped earlier has an unknown threshold outcome and must not count as fast.",
+        "P022": "Each decisive midpoint result shrinks the candidate transition interval.",
+        "P023": "Conditional on valid endpoints, comparable trials and a persistent single transition, repeated elimination localizes the first revision associated with the defined tail-rate increase to the final boundary.",
+        "P025": "Retest both sides of that boundary on matched workloads and, if feasible, test a targeted revert or fix while holding other factors constant.",
+        "P026": "If the regression and its reversal reproduce, choose a bounded overnight canary of the compatible revert or fix, with predefined tail-rate, failure and resource stop thresholds; expand only after adequate evidence, otherwise halt or roll back the canary.",
+        "P034": "A localized boundary supports association under tested conditions; production causality and deployment safety require confirmation and monitored rollout."
+      }
+    },
+    {
+      "packet_id": "H6-T02-2",
+      "claim_id": "C001",
+      "status": "UNSUPPORTED",
+      "claim": "Median export duration is stable.",
+      "scope": "The median is distinguished from the reported slow tail; this does not describe every export.",
+      "rationale": "Median stability is supplied as background in P001. The operation and signal compare explanations for delays and evaluate canary outcomes; they do not establish stability of the median across time. Those signals could occur while the median changes. Faithful attribution of the background claim therefore does not provide the requested inferential warrant.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "This judgment does not dispute the supplied background fact; it concerns whether the described operation and signal establish it.",
+      "spans": {
+        "P001": "Act on existing export records and traces, distinguishing the stable median from the reported roughly one-in-twenty exports exceeding an hour.",
+        "P018": "Long queue waits with ordinary post-start durations would favor queue-related delay and weaken downstream-only explanations.",
+        "P019": "Ordinary queue waits followed by prolonged read or upload phases would discriminate in the opposite direction, provided those phases are measured comparably.",
+        "P020": "A version association that persists within comparable workloads and execution windows would support a version-related hypothesis; an association that disappears after accounting for coverage or workload would weaken it.",
+        "P021": "These are proposed observations, not results.",
+        "P022": "Record whether the ranking changes when uncertain evidence is removed and whether the canary changes the predicted phase and overall tail without increasing failures or unfinished exports.",
+        "P030": "Rare delays require enough comparable exposure to make absence informative, so a short clean canary cannot establish resolution.",
+        "P031": "Specify the observation window and required exposure before judging it; if exposure or coverage is inadequate, report the result as inconclusive and continue only within the safety bounds."
+      }
+    },
+    {
+      "packet_id": "H6-T02-2",
+      "claim_id": "C002",
+      "status": "UNSUPPORTED",
+      "claim": "Roughly one in twenty exports reportedly exceeds an hour.",
+      "scope": "An approximate reported tail frequency, distinguished from median behavior.",
+      "rationale": "The frequency is supplied as a reported starting fact in P001. Observing the described comparative diagnostic pattern does not establish how often exports exceed an hour or independently substantiate that report. Faithful attribution therefore has sufficient provenance, but the operation and signal do not warrant this specific claim.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "This judgment does not determine whether the reported frequency is accurate; it concerns only whether the described operation and signal license it.",
+      "spans": {
+        "P001": "Act on existing export records and traces, distinguishing the stable median from the reported roughly one-in-twenty exports exceeding an hour.",
+        "P005": "First examine existing slow and ordinary overnight exports without requesting customer reruns.",
+        "P008": "Build an evidence-by-hypothesis matrix, marking each item consistent, inconsistent or unknown for every explanation and recording reliability and diagnostic value.",
+        "P011": "Repeat the comparison excluding incomplete traces, varying uncertain phase boundaries, stratifying by version and workload, and considering combined causes.",
+        "P028": "Incomplete exports may be absent from completed-export samples and must be accounted for where records permit.",
+        "P030": "Rare delays require enough comparable exposure to make absence informative, so a short clean canary cannot establish resolution.",
+        "P031": "Specify the observation window and required exposure before judging it; if exposure or coverage is inadequate, report the result as inconclusive and continue only within the safety bounds."
+      }
+    },
+    {
+      "packet_id": "H6-T02-3",
+      "claim_id": "C032",
+      "status": "UNCERTAIN",
+      "claim": "If service phases remain similar while queue delay increases, the lower concurrency limit should not be expanded.",
+      "scope": "Conditional deployment restriction. Expansion could concern adoption scope, the numerical limit, or another unspecified dimension.",
+      "rationale": "The signal supports withholding broader adoption of a setting that increases queue delay without improving service phases. It does not establish that the numerical concurrency limit should not be increased. Because the frozen claim leaves that distinction unresolved, its specific deployment restriction cannot be judged conclusively without choosing an interpretation.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The mapping does not unambiguously identify what would be expanded. Satisfying execution prerequisites and observing the stipulated response does not resolve that semantic uncertainty.",
+      "spans": {
+        "P009": "With adequate telemetry, record a baseline at concurrency c0, then at a documented time apply one known step to a lower concurrency c1 in the canary pool and hold it constant.",
+        "P025": "These are proposed measurements, not observations already obtained.",
+        "P028": "If service phases remain similar while queue delay increases, reduced capacity is a better explanation of that response and the lower limit should not be expanded.",
+        "P040": "Conclusions apply to the tested cohort, concurrency range, versions, and operating conditions; broader deployment requires staged confirmation."
+      }
+    },
+    {
+      "packet_id": "H6-T04-1",
+      "claim_id": "C020",
+      "status": "UNSUPPORTED",
+      "claim": "If the evidence does not distinguish an actionable constraint, the release slot should be used for missing measurement.",
+      "scope": "A conditional alternative to implementing a retention-point intervention; the missing measurement is not specified.",
+      "rationale": "Failure to distinguish an actionable constraint establishes an evidential limitation. It does not by itself license allocating the release slot to unspecified missing measurement. The mapping supplies no specific unresolved empirical relation connecting that measurement to resolving the decision-relevant uncertainty. The instruction is faithfully attributed, but its warrant is absent.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The unspecified measurement might prove useful, but the packet does not establish that connection. This judgment concerns the stated allocation instruction, not whether additional measurement could ever be justified.",
+      "spans": {
+        "P001": "Act on a prospective cohort of newly created accounts, treating onboarding trajectories as a mixture of potentially distinguishable behaviors.",
+        "P006": "At successive milestones and a consistently timed inactivity follow-up, combine existing events with brief questions about the next required action, information availability, offline preparation and intended roster date.",
+        "P007": "Record repeated progress–waiting–return transitions, allowing multiple or unknown reasons.",
+        "P010": "Use the single small release slot for the smallest change addressing a recurrent, independently corroborated, product-addressable retention point: clearer instructions for verified comprehension problems, information collection support for verified preparation problems, or a timed return aid for verified postponement.",
+        "P011": "If evidence does not distinguish an actionable constraint, use the slot for missing measurement instead.",
+        "P014": "Look for separated concentrations of trajectories in milestone position, time spent waiting, number of returns to active work and time to first publication.",
+        "P027": "Behavioral retention alone does not identify a cause: seek corroboration through preparation reports, task observation or a controlled intervention."
+      }
+    },
+    {
+      "packet_id": "H6-T04-1",
+      "claim_id": "C023",
+      "status": "UNSUPPORTED",
+      "claim": "Exposure should stop early only under predefined harm criteria.",
+      "scope": "A necessary condition for early exposure stopping in the proposed comparison; the harm criteria are unspecified.",
+      "rationale": "Predeclared limits can protect a comparison from opportunistic stopping, and guardrail observations can justify stopping for harm. Neither establishes that predefined harm criteria are the only permissible grounds for stopping exposure early. The mapping states that exclusive rule but supplies no warrant for its necessity, even assuming successful execution and the described signals.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "The unspecified harm criteria do not determine this judgment; the unsupported element is the exclusivity of the stopping rule.",
+      "spans": {
+        "P012": "Where feasible, randomly assign eligible accounts to the selected change or the existing experience, keeping measurement identical.",
+        "P013": "Stop recruitment and analysis at predeclared sample and follow-up limits; stop exposure early only under predefined harm criteria.",
+        "P017": "In the release comparison, observe first-publication rates within a common window, time to publication, retention at the targeted checkpoint and predefined guardrails such as publication errors."
+      }
+    },
+    {
+      "packet_id": "H6-T04-1",
+      "claim_id": "C044",
+      "status": "CONDITIONAL_WARRANT",
+      "claim": "Team size can shift apparent retention.",
+      "scope": "A possible influence on observed retention; its magnitude and direction are unspecified.",
+      "rationale": "Separated trajectories establish behavioral variation, but do not establish that team size contributes to that variation. The mapping explicitly supplies the relevant empirical relation: team size can shift apparent retention. Establishing that proposed dependence would license this narrowly scoped possibility claim; recording team size alone does not establish it.",
+      "empirical_relation": "Apparent onboarding retention can depend on team size.",
+      "uncertainty": "The assumed signal does not specify whether retention varies with team size or whether team size influences it. The proposed relation therefore remains unresolved.",
+      "spans": {
+        "P001": "Act on a prospective cohort of newly created accounts, treating onboarding trajectories as a mixture of potentially distinguishable behaviors.",
+        "P004": "Use the same onboarding pathway and observation conditions across the initial cohort.",
+        "P014": "Look for separated concentrations of trajectories in milestone position, time spent waiting, number of returns to active work and time to first publication.",
+        "P026": "Roster timing, team size, acquisition mix and changes in onboarding conditions can shift apparent retention, so record these conditions and compare like observation windows."
+      }
+    },
+    {
+      "packet_id": "H6-T04-2",
+      "claim_id": "C016",
+      "status": "UNSUPPORTED",
+      "claim": "If histories remain unreliable or identify no recurring actionable problem, the release slot should be used to improve the deficient recording step.",
+      "scope": "Conditional resource allocation as authored. An identifiable recording deficiency is presupposed but not established for the branch where reliable histories reveal no recurring actionable problem.",
+      "rationale": "Reliable histories can reveal no recurring actionable problem without any recording deficiency. That branch therefore does not license spending the release slot on a deficient recording step. The mapping supplies no specific unresolved empirical relation connecting absence of a recurring actionable problem to such a deficiency. Meeting execution prerequisites and observing the stated signal does not close this inferential gap.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "Whether a recording deficiency actually exists is unestablished in the no-recurring-problem branch. This does not prevent judging the authored conditional unsupported.",
+      "spans": {
+        "P002": "For a bounded cohort of new accounts, link existing events using account and schedule identifiers, checking that drafts and publications refer to the same schedule lineage.",
+        "P005": "Inspect histories for continuity, conflicting identities or versions, and unexplained transitions; ask the relevant participant to clarify gaps without replacing the original record.",
+        "P008": "If histories remain unreliable or reveal no recurring actionable problem, stop short of selecting a presumed friction fix and use the slot to improve the deficient recording step.",
+        "P016": "These are proposed observations, not completed findings."
+      }
+    },
+    {
+      "packet_id": "H6-T04-3",
+      "claim_id": "C014",
+      "status": "UNCERTAIN",
+      "claim": "Use the release slot for one narrowly scoped change only if evidence identifies an actionable obstacle.",
+      "scope": "The obstacle-conditioned release recommendation; whether 'change' includes the diagnostic-prompt or event-improvement branch is unresolved.",
+      "rationale": "Identifying an actionable obstacle can license a narrowly scoped intervention to test. However, the frozen claim makes obstacle identification necessary for using the release slot for a 'change.' If that term includes diagnostic changes, P012 permits such use without distinguishing an actionable obstacle. If it covers only behavior-changing fixes, the branches are compatible. The frozen scope leaves this distinction unresolved, so a definite judgment would require silently choosing a reading.",
+      "empirical_relation": "NOT_APPLICABLE",
+      "uncertainty": "Execution readiness and assumed observations do not resolve which release activities the necessary condition governs.",
+      "spans": {
+        "P010": "Use the release slot for one narrowly scoped change only if evidence identifies an actionable obstacle: for example, clearer guidance for observed comprehension failures, or a preparation checklist for uncertainty about required team information.",
+        "P012": "If evidence does not distinguish explanations, use the slot for a minimal diagnostic prompt or event improvement and defer a behavior-changing fix.",
+        "P016": "Difficulty proceeding despite ready team information, especially when clarified instructions resolve the difficulty, would support confusion.",
+        "P017": "Understanding the steps but lacking necessary information, followed by progress when that information arrives, would support preparation dependency.",
+        "P020": "These are proposed observations, not established findings.",
+        "P021": "Draft saves, absent invitations or silence alone may fit several explanations."
+      }
+    },
+    {
+      "packet_id": "H6-T04-3",
+      "claim_id": "C034",
+      "status": "CONDITIONAL_WARRANT",
+      "claim": "An improvement in useful first publication under random assignment would support deploying that change for comparable accounts.",
+      "scope": "Conditional deployment support for comparable accounts; actual adoption additionally requires meeting predefined benefit, precision and guardrail criteria.",
+      "rationale": "Random assignment licenses causal interpretation of an improvement in measured publication, but does not establish that publication represents useful activation. P005 supplies that specific unresolved empirical link. Establishing it would license the claimed deployment support within the stated bounds and adoption criteria.",
+      "empirical_relation": "First publication represents useful activation; the mapping explicitly treats this relationship as provisional and calls for checking whether interviewed accounts intended to publish.",
+      "uncertainty": "The packet does not establish the provisional usefulness relationship. Publication gains and acceptable guardrails alone do not settle it.",
+      "spans": {
+        "P005": "Assume only provisionally that first publication represents useful activation, and check whether interviewed accounts actually intended to publish.",
+        "P013": "For a selected change, randomly assign eligible new accounts to change or current experience if feasible.",
+        "P014": "Before launch, specify eligibility, assignment, the primary first-publication measure, follow-up spanning an intended roster opportunity, a minimum worthwhile improvement, precision requirements and guardrails for errors, abandonment and unusable publications.",
+        "P022": "In the release test, observe the difference in first-publication rates over the specified follow-up, uncertainty around that difference, guardrails and intermediate behavior; collect brief explanations from a sample of continuing non-publishers.",
+        "P025": "A randomized improvement in useful first publication would support deploying that change for comparable accounts, while mechanism-specific observations would strengthen—but not prove—the proposed explanation.",
+        "P027": "At the predefined endpoint, adopt the change only if the estimated benefit meets the decision criteria with adequate precision and acceptable guardrails; stop early for predefined material harm.",
+        "P037": "Do not generalize beyond the observed customer types and follow-up period."
+      }
+    }
+  ]
+}

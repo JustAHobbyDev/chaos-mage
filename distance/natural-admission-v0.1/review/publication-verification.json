@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-02T06:14:46.252530+00:00",
+  "input_commit": "5bcdca315a1485ebbdbcc67c3b469a61c8249c05",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "distance/natural-admission-v0.1/partial_publication.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"historical_files\": 4313,\n  \"historical_unchanged\": true,\n  \"frozen_sessions\": 772,\n  \"completed_observations\": 772,\n  \"provider_failure_observations\": 1,\n  \"unique_started_sessions\": 773,\n  \"mechanical_or_relational_diagnostics\": 0,\n  \"downstream_calls\": 0,\n  \"partial_evidence_verified\": true\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "distance/natural-admission-v0.1/historical.py",
+        "negative-remainder-calibration-v0.1"
+      ],
+      "exit_code": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.645s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "distance/natural-admission-v0.1/historical.py",
+        "inquiry-unitization-calibration-v0.1"
+      ],
+      "exit_code": 0,
+      "output": "................................\n----------------------------------------------------------------------\nRan 32 tests in 1.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "distance/natural-admission-v0.1/historical.py",
+        "span-provenance-calibration-v0.1"
+      ],
+      "exit_code": 0,
+      "output": "..............................\n----------------------------------------------------------------------\nRan 30 tests in 0.724s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "distance/natural-admission-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "metrics_recomputed_exactly": true,
+  "pinned_binary_unchanged": true,
+  "only_authorized_paths_changed": true,
+  "provider_calls": 0,
+  "full_pipeline_incomplete": true
+}

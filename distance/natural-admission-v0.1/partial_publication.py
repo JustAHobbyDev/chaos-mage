@@ -57,6 +57,9 @@ def verify():
     d=H/'raw/claim-judgments'/failed[0];events=[json.loads(l) for l in (d/'events.jsonl').read_text().splitlines()]
     r.require(any(e.get('type')=='turn.failed' and e['error']['message']=='Selected model is at capacity. Please try a different model.' for e in events),'Provider failure mismatch')
     sessions.extend(e['thread_id'] for e in events if e.get('type')=='thread.started')
+    stopped_at=r.read(d/'failure.json')['at']
+    for process_record in (H/'raw/claim-judgments').glob('*/process.json'):
+        r.require(r.read(process_record)['launched_at']<=stopped_at,'Provider launch after observed terminal failure')
     for uid in part['reserved_but_unlaunched']:
         d=H/'raw/claim-judgments'/uid;r.require(not (d/'process.json').exists() and not (d/'events.jsonl').exists(),'Unlaunched evidence mismatch')
         r.require(r.read(d/'failure.json')['launched'] is False,'Unlaunched flag mismatch')

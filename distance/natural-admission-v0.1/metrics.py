@@ -38,7 +38,9 @@ def compute():
         cs=inventory.get('candidates',[])
         audit=H/'instrumentation'/f'{cid}.json'
         rows.append({'packet_id':cid,'generation_parsed':cid in values['generation'],'atomic_claims':len(atoms),
-                     'claim_statuses':counts([j['status'] for j in js],claim_status),'claims_deleted':sum(j['status']=='UNSUPPORTED' for j in js),
+                     'claim_statuses':counts([j['status'] for j in js],claim_status),
+                     'unsupported_claims_observed':sum(j['status']=='UNSUPPORTED' for j in js),
+                     'claims_deleted':len(read(H/'ablations'/f'{cid}.json')['deleted_claim_ids']) if (H/'ablations'/f'{cid}.json').exists() else None,
                      'remainder_candidates':len(cs),'candidate_kinds':counts([x['kind'] for x in cs],kinds),
                      'productive':counts([x['viability']['productive']['value'] for x in cs],['YES','NO','UNCERTAIN']),
                      'scientific_status':values['artifact-judgments'].get(cid,{}).get('scientific_status'),
@@ -47,7 +49,17 @@ def compute():
     collision_review=H/'review/collision-contexts.json'
     contexts=read(collision_review)['contexts'] if collision_review.exists() else []
     instrumentation=[read(p) for p in (H/'instrumentation').glob('*.json')]
-    return {'planned_generations':18,'completed_calls_by_stage':{s:len(v) for s,v in values.items()},
+    partial=read(H/'claim-judgments-partial-freeze.json') if (H/'claim-judgments-partial-freeze.json').exists() else None
+    return {'measurement_status':'TERMINATED_MEASUREMENT_INCOMPLETE' if partial else 'COMPLETE',
+            'planned_generations':18,'completed_calls_by_stage':{s:len(v) for s,v in values.items()},
+            'failed_provider_calls':len(partial['failed_provider_observations']) if partial else 0,
+            'reserved_but_unlaunched':len(partial['reserved_but_unlaunched']) if partial else 0,
+            'never_reserved_claim_judgments':len(partial['never_reserved']) if partial else 0,
+            'unmeasured_claim_judgments':1042-len(values['claim-judgments']) if partial else 0,
+            'end_to_end_mappings_complete':len(values['artifact-judgments']),
+            'unassessed_artifacts':18-len(values['artifact-judgments']),
+            'unassessed_full_pipeline_instrumentation':18-len(instrumentation),
+            'downstream_zero_count_meaning':'Not measured, not evidence of absence' if partial else 'Observed counts',
             'parsed_mappings':len(values['generation']),'atomic_claims':sum(len(v['claims']) for v in values['claims'].values()),
             'claim_statuses':counts([v['status'] for v in values['claim-judgments'].values()],claim_status),
             'remainder_candidates':len(candidates),'candidate_kinds':counts([x['kind'] for x in candidates],kinds),

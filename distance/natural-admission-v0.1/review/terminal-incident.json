@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-02T06:08:44.381773+00:00",
+  "classification": "provider_measurement_failure",
+  "status": "TERMINATED_MEASUREMENT",
+  "failed_claim": "H6-T05-1--C027",
+  "provider_message": "Selected model is at capacity. Please try a different model.",
+  "policy": "PROTOCOL.md: non-retry terminal provider failures; docs/EXPERIMENT-RECOVERY-POLICY.md. No substitution or retry.",
+  "successful_claim_judgments": 736,
+  "reserved_unlaunched": "H6-T05-1--C028",
+  "never_reserved": 304,
+  "all_inflight_observations_preserved": true,
+  "state_bookkeeping_defect": {
+    "cause": "Each worker exception appended its own state without checking terminal precedence; prelaunch cancellation followed the terminal provider error.",
+    "original_records": [
+      "execution-states/0007.json",
+      "execution-states/0008.json"
+    ],
+    "adjudication": "execution-states/0009.json",
+    "effect": "Latest display temporarily said PAUSED_AMBIGUOUS. Both states reject automatic run(); no further launch or input/response mutation occurred.",
+    "repair_scope": "Additive publication adjudication only; frozen runner remains unchanged; future harness prevention not executed."
+  },
+  "positive_integrity_evidence": {
+    "historical_files": 4313,
+    "historical_unchanged": true,
+    "frozen_sessions": 772
+  }
+}
