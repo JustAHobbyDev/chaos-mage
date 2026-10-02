@@ -1,0 +1,1111 @@
+{
+  "packet_id": "H6-T02-2",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C001",
+        "value": "Median export duration is stable.",
+        "scope": "The median is distinguished from the reported slow tail; this does not describe every export.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly characterizes the median as stable."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C002",
+        "value": "Roughly one in twenty exports reportedly exceeds an hour.",
+        "scope": "An approximate reported tail frequency, distinguished from median behavior.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the approximate frequency, duration threshold and reported status."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C003",
+        "value": "Queue congestion or worker shortages are candidate explanations for the export delays.",
+        "scope": "A proposed explanation family, not an established finding.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle names the explanation family and explicitly limits it to hypothesis status."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C004",
+        "value": "Worker-version regressions are a candidate explanation for the export delays.",
+        "scope": "A hypothesis, not an established finding.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies this candidate and its hypothetical status."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C005",
+        "value": "Slow or retried object reads are a candidate explanation for the export delays.",
+        "scope": "A proposed explanation family, not an established finding.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies the read-related candidate and its hypothetical status."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C006",
+        "value": "Slow archive uploads are a candidate explanation for the export delays.",
+        "scope": "A hypothesis, not an established finding.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies this candidate and its hypothetical status."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C007",
+        "value": "Workspace size or composition differences are a candidate explanation for the export delays.",
+        "scope": "A proposed explanation family, not an established finding.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies the workload-related candidate and its hypothetical status."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "C008",
+        "value": "The candidate explanations may coexist, so the comparison should allow combined causes.",
+        "scope": "Potential coexistence is allowed; no particular combination is asserted to occur.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}, {"source_id": "P003", "role": "SUPPORT"}, {"source_id": "P011", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The state permits coexistence, and the operation explicitly includes combined causes in the repeated comparison."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C009",
+        "value": "Trace coverage differs across worker versions.",
+        "scope": "Coverage variation is stated without identifying particular versions or its magnitude.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states version-dependent coverage."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C010",
+        "value": "The availability of comparable timestamps remains uncertain.",
+        "scope": "Uncertainty concerns availability and comparability, not an assertion that timestamps are absent.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly includes comparable timestamps among the uncertain available evidence."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C011",
+        "value": "The availability of workload metadata remains uncertain.",
+        "scope": "No availability or absence is established.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies this availability uncertainty."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C012",
+        "value": "The availability of resource metrics remains uncertain.",
+        "scope": "No availability or absence is established.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies this availability uncertainty."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "C013",
+        "value": "The initial investigation should use existing records of slow and ordinary overnight exports without requesting customer reruns.",
+        "scope": "An initial investigation constraint; no claim is made that existing records will suffice.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}, {"source_id": "P005", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies existing-record use, the comparison populations and the no-rerun constraint."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C014",
+        "value": "Where available, exports should be compared with others similar in workspace size, object count, execution window and worker version.",
+        "scope": "Conditional on comparable cases being available; the mapping supplies no matching tolerances.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the comparison dimensions and availability condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C015",
+        "value": "Unmatched exports should remain in the investigation with their limitations retained.",
+        "scope": "Retention does not make unmatched cases comparable.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires qualified retention of unmatched cases."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C016",
+        "value": "Queue wait, worker execution, object-read and upload durations should be separated only when trace semantics permit that separation.",
+        "scope": "A restriction on phase decomposition; separability and additivity are not assumed.",
+        "provenance": {
+          "refs": [{"source_id": "P007", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the phases and the explicit semantic precondition."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C017",
+        "value": "Each evidence item should be assessed against every candidate explanation as consistent, inconsistent or unknown.",
+        "scope": "The prescribed comparison includes all listed alternatives and permits unknown assessments.",
+        "provenance": {
+          "refs": [{"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly specifies the comprehensive comparison and its three assessment categories."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C018",
+        "value": "Evidence assessments should record reliability and diagnostic value.",
+        "scope": "These are attributes to assess; no particular evidence item is declared reliable or diagnostic.",
+        "provenance": {
+          "refs": [{"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires both attributes to accompany the comparison."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C019",
+        "value": "Contradictory evidence should receive priority over counts of supporting evidence items.",
+        "scope": "A comparative evaluation priority, not a numerical weighting rule or automatic elimination rule.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly contrasts contradiction with counts of supporting items."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C020",
+        "value": "Reliably short queue waits would weaken queue congestion as the direct source of an hour-long export.",
+        "scope": "A hypothetical diagnostic relation limited to queue congestion as the direct source; it does not eliminate every possible queue contribution.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the reliability condition, observation, explanatory consequence and direct-source limitation."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C021",
+        "value": "Nested trace spans should not be counted as independent evidence.",
+        "scope": "A restriction on evidential independence, not a claim that nested spans are unusable.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly prohibits this independence treatment."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C022",
+        "value": "Multiple symptoms of a single event should not be counted as independent evidence.",
+        "scope": "The restriction applies to symptoms sharing one event.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately identifies this source of evidential dependence."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C023",
+        "value": "The comparison should be repeated with incomplete traces excluded.",
+        "scope": "A sensitivity comparison, not an instruction to discard incomplete traces from every analysis.",
+        "provenance": {
+          "refs": [{"source_id": "P011", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span places exclusion within repeated comparisons."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C024",
+        "value": "The comparison should be repeated while varying uncertain phase boundaries.",
+        "scope": "Applies where phase boundaries are uncertain; no particular alternate boundary is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P011", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly prescribes this sensitivity variation."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C025",
+        "value": "The comparison should be repeated with stratification by worker version and workload.",
+        "scope": "A prescribed comparison variation, without specified strata or sample requirements.",
+        "provenance": {
+          "refs": [{"source_id": "P011", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies these stratification dimensions."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C026",
+        "value": "If existing evidence cannot discriminate among explanations, a small instrumentation canary adding missing phase timing and coverage metadata should be proposed.",
+        "scope": "Conditional proposal with bounded sampling, bounded logging overhead and no document contents; inability to discriminate is not asserted to have occurred.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the trigger, proposed instrumentation and attached constraints."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C027",
+        "value": "Sampling for the proposed instrumentation canary must be bounded.",
+        "scope": "Applies to the small canary proposed if existing evidence cannot discriminate; the numerical bound is unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly attaches bounded sampling to this conditional proposal."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C028",
+        "value": "Logging overhead for the proposed instrumentation canary must be bounded.",
+        "scope": "Applies to the small canary proposed if existing evidence cannot discriminate; the numerical bound is unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly attaches bounded logging overhead to this conditional proposal."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C029",
+        "value": "The proposed instrumentation must exclude document contents.",
+        "scope": "A content restriction on the small instrumentation canary proposed if existing evidence cannot discriminate.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly excludes document contents from the proposal."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C030",
+        "value": "The canary investigation should use normal overnight traffic.",
+        "scope": "The following controlled-test exception remains conditional on representative test data and spare capacity.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "CONTEXT"}, {"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P013 supplies the traffic prescription and exception; P012 identifies the preceding canary proposal."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C031",
+        "value": "Controlled test exports may be introduced only after representative test data and spare capacity have both been established.",
+        "scope": "Necessary conditions for introducing controlled exports; neither condition is asserted to hold.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states the joint prerequisite."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C032",
+        "value": "Before deployment, acceptable bounds for instrumentation overhead, error rate, completion rate and tail delay should be defined against comparable baseline traffic.",
+        "scope": "A prospective baseline-relative safety requirement; no numerical thresholds or baseline selection rules are supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the timing, metric dimensions and baseline qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C033",
+        "value": "If the predefined canary bounds are breached, expansion should stop and the canary should be reverted.",
+        "scope": "The bounds concern instrumentation overhead, error rate, completion rate and tail delay relative to comparable baseline traffic.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P015 supplies the conditional response; P014 supplies the substantive bounds referenced by that response."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C034",
+        "value": "If monitoring cannot enforce the predefined canary bounds, expansion should stop and the canary should be reverted.",
+        "scope": "This trigger does not require an observed breach. The mapping does not specify precisely what monitoring enforcement entails.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies the bounds and the separate monitoring-enforceability trigger."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C035",
+        "value": "A targeted mitigation should expand only when reliable discriminating evidence favors its mechanism and the canary meets the predefined bounds.",
+        "scope": "Joint necessary conditions; the bounds cover instrumentation overhead, error rate, completion rate and tail delay against comparable baseline traffic.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies both expansion conditions and the referenced bounds."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C036",
+        "value": "When the joint mitigation-expansion conditions are not met, retain the current deployment and gather the specific missing evidence.",
+        "scope": "The conditions are reliable discriminating evidence favoring the mechanism and canary compliance with the predefined bounds. The reference point of the current deployment relative to a canary or its reversion is not specified.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle reconstructs the fallback and its conditional antecedent while preserving the unresolved deployment reference."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C037",
+        "value": "The investigation should seek comparative evidence patterns rather than rely on a single suspicious trace.",
+        "scope": "A proposed evidential focus, not a report that a discriminating pattern exists.",
+        "provenance": {
+          "refs": [{"source_id": "P017", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly contrasts comparative patterns with a single suspicious trace."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C038",
+        "value": "Long queue waits accompanied by ordinary post-start durations would favor a queue-related explanation of the delay.",
+        "scope": "A proposed conditional observation, not a measured result or proof of cause.",
+        "provenance": {
+          "refs": [{"source_id": "P018", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the observation pattern, explanatory direction and prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C039",
+        "value": "Long queue waits accompanied by ordinary post-start durations would weaken explanations attributing the delay only to downstream activity.",
+        "scope": "A proposed conditional observation; the negative conclusion is limited to downstream-only explanations.",
+        "provenance": {
+          "refs": [{"source_id": "P018", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle explicitly states this separate weakening consequence and its prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C040",
+        "value": "Ordinary queue waits followed by prolonged read or upload phases would shift the comparison toward downstream explanations, provided the phases are measured comparably.",
+        "scope": "A proposed directional discrimination, not a result. The mapping does not select a particular downstream explanation or exclude combined causes.",
+        "provenance": {
+          "refs": [{"source_id": "P018", "role": "SUPPORT"}, {"source_id": "P019", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P018 supplies the comparison being reversed, P019 supplies the reverse pattern and comparability condition, and P021 supplies prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C041",
+        "value": "Ordinary queue waits followed by prolonged read or upload phases would shift the comparison away from queue-related delay, provided the phases are measured comparably.",
+        "scope": "A proposed relative discrimination. The strength and precise scope of the negative conclusion about queue contributions are unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P018", "role": "SUPPORT"}, {"source_id": "P019", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle reconstructs the negative direction of the reversed comparison without strengthening it into elimination."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C042",
+        "value": "A version association that persists within comparable workloads and execution windows would support a version-related hypothesis.",
+        "scope": "A proposed conditional association, not an observed result or established version cause.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the persistence and comparability conditions, supportive consequence and prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C043",
+        "value": "A version association that disappears after accounting for coverage or workload would weaken the version-related hypothesis.",
+        "scope": "A proposed conditional observation, not a reported disappearance or elimination of every version effect.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}, {"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle explicitly supplies the adjustment condition, weakening consequence and prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C044",
+        "value": "The investigation should record whether removing uncertain evidence changes the explanation ranking.",
+        "scope": "A proposed sensitivity signal; no ranking change or stability is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies this ranking-sensitivity observation."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C045",
+        "value": "Canary evaluation should record whether the predicted phase changes.",
+        "scope": "A proposed observation, jointly considered with overall tail behavior and no increase in failures or unfinished exports. The sentence does not specify which canary or prediction is intended.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies the phase-change observation and its accompanying evaluation conditions."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C046",
+        "value": "Canary evaluation should record whether the overall export-duration tail changes.",
+        "scope": "A proposed observation, jointly considered with the predicted phase and no increase in failures or unfinished exports; no change is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately identifies overall tail behavior as an evaluation outcome."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C047",
+        "value": "Evaluation of canary phase and tail changes should include whether failures increase.",
+        "scope": "The proposed favorable outcome requires no increase in failures; no actual failure rate is reported.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span attaches the no-increase-in-failures condition to the proposed canary outcome."
+        }
+      }
+    },
+    {
+      "claim_id": "C048",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C048",
+        "value": "Evaluation of canary phase and tail changes should include whether unfinished exports increase.",
+        "scope": "The proposed favorable outcome requires no increase in unfinished exports; no actual completion result is reported.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately attaches the no-increase-in-unfinished-exports condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C049",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C049",
+        "value": "An explanation should be weakened when it conflicts with reliable, diagnostically important observations.",
+        "scope": "Conditional on both observation reliability and diagnostic importance; conflict does not automatically justify elimination.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the weakening rule and distinguishes it from the more restricted elimination rule."
+        }
+      }
+    },
+    {
+      "claim_id": "C050",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C050",
+        "value": "Elimination of a conflicting explanation is restricted to the scope in which its necessary prediction was adequately tested.",
+        "scope": "Part of inference from reliable, diagnostically important observations; merely testing a prediction does not itself establish grounds for elimination.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The full span supplies the conflict context, necessary-prediction requirement and scope restriction."
+        }
+      }
+    },
+    {
+      "claim_id": "C051",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C051",
+        "value": "When evidence supports a specific mechanism, a bounded mitigation or rollback canary is a proposed next deployment action.",
+        "scope": "A conditional choice using surviving alternatives; the mapping does not choose between mitigation and rollback or assert that the condition holds.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly links mechanism-specific evidence to this bounded deployment option."
+        }
+      }
+    },
+    {
+      "claim_id": "C052",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C052",
+        "value": "When observability is the main obstacle, an instrumentation canary is a proposed next deployment action.",
+        "scope": "A conditional choice using surviving alternatives; observability is not asserted to be the actual main obstacle.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states this condition-to-action relation."
+        }
+      }
+    },
+    {
+      "claim_id": "C053",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C053",
+        "value": "When uncertainty remains too high, the proposed deployment choice is no behavioral change.",
+        "scope": "A conditional decision rule; the threshold for excessive uncertainty is unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies excessive remaining uncertainty as a condition for no behavioral change."
+        }
+      }
+    },
+    {
+      "claim_id": "C054",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C054",
+        "value": "When operating risk remains too high, the proposed deployment choice is no behavioral change.",
+        "scope": "A conditional decision rule; the threshold for excessive operating risk is unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately identifies excessive operating risk as a condition for no behavioral change."
+        }
+      }
+    },
+    {
+      "claim_id": "C055",
+      "fields": ["operation", "inference"],
+      "component": {
+        "component_id": "C055",
+        "value": "A successful mitigation canary would support expanding that action within the tested conditions.",
+        "scope": "Conditional action support. Expansion also requires reliable discriminating evidence favoring the mechanism and compliance with the baseline-relative canary bounds. Success is not independently defined in P025.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P016", "role": "SUPPORT"}, {"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P025 supplies the success-to-expansion relation and tested-condition limit; P014 and P016 retain the explicit expansion gates."
+        }
+      }
+    },
+    {
+      "claim_id": "C056",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C056",
+        "value": "A successful mitigation canary would leave alternative explanations for the improvement open.",
+        "scope": "Conditional on apparent mitigation success; success does not uniquely establish its explanation.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly preserves alternative explanations after success."
+        }
+      }
+    },
+    {
+      "claim_id": "C057",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C057",
+        "value": "If reliable observations contradict every listed explanation, the hypothesis set should be expanded before choosing a behavioral change.",
+        "scope": "Requires reliable contradiction of every listed alternative; this situation is not asserted to have occurred.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the trigger, required hypothesis expansion and ordering before behavioral choice."
+        }
+      }
+    },
+    {
+      "claim_id": "C058",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C058",
+        "value": "Missing trace spans constitute unknown evidence rather than proof that the corresponding phase was fast.",
+        "scope": "A distinction between missing measurement and evidence of short duration.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states both sides of this evidential distinction."
+        }
+      }
+    },
+    {
+      "claim_id": "C059",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C059",
+        "value": "Samples of completed exports may omit incomplete exports.",
+        "scope": "A possible sampling limitation, not a claim that a measured omission has been found.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies this possible omission."
+        }
+      }
+    },
+    {
+      "claim_id": "C060",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C060",
+        "value": "Incomplete exports should be accounted for wherever available records permit.",
+        "scope": "A requirement limited by record availability; no particular accounting procedure is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the requirement and its record-availability qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C061",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C061",
+        "value": "Worker version, workload and overnight load may be confounded.",
+        "scope": "A possible relation among comparison factors, not a finding that particular factors are confounded.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names these factors and the possibility of confounding."
+        }
+      }
+    },
+    {
+      "claim_id": "C062",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C062",
+        "value": "Overlapping trace spans can distort comparisons.",
+        "scope": "A potential measurement limitation; no distortion magnitude or observed occurrence is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies overlapping spans as a possible source of distortion."
+        }
+      }
+    },
+    {
+      "claim_id": "C063",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C063",
+        "value": "Inconsistent clocks can distort comparisons.",
+        "scope": "A potential measurement limitation, not an established clock fault.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies clock inconsistency as a possible source of distortion."
+        }
+      }
+    },
+    {
+      "claim_id": "C064",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C064",
+        "value": "Retries can distort comparisons.",
+        "scope": "A possible comparison limitation, distinct from treating retried reads as a candidate delay mechanism.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly includes retries among possible comparison distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C065",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C065",
+        "value": "Dependent measurements can distort comparisons.",
+        "scope": "A possible evidential limitation; no particular dependence structure is established.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies measurement dependence as a possible source of distortion."
+        }
+      }
+    },
+    {
+      "claim_id": "C066",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C066",
+        "value": "Absence of rare delays is informative only with enough comparable exposure.",
+        "scope": "A necessary exposure condition; the mapping does not quantify sufficient exposure or claim that exposure alone proves resolution.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly conditions informative absence on sufficient comparable exposure."
+        }
+      }
+    },
+    {
+      "claim_id": "C067",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C067",
+        "value": "A short canary without observed delays cannot establish that the rare-delay problem is resolved.",
+        "scope": "A limit on interpreting a short clean canary in the presence of rare delays.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly draws this consequence from the exposure requirement."
+        }
+      }
+    },
+    {
+      "claim_id": "C068",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C068",
+        "value": "The observation window and required exposure should be specified before judging the canary.",
+        "scope": "A prospective assessment requirement; no window or exposure amount is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "CONTEXT"}, {"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P031 supplies the timing requirement; P030 resolves the canary being judged."
+        }
+      }
+    },
+    {
+      "claim_id": "C069",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C069",
+        "value": "If canary exposure is inadequate, the result should be reported as inconclusive.",
+        "scope": "Conditional on exposure inadequacy; the mapping supplies no numerical adequacy threshold.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "CONTEXT"}, {"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P031 supplies the conditional reporting rule; P030 identifies the canary context."
+        }
+      }
+    },
+    {
+      "claim_id": "C070",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C070",
+        "value": "If canary coverage is inadequate, the result should be reported as inconclusive.",
+        "scope": "Conditional on coverage inadequacy; the mapping supplies no numerical adequacy threshold.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "CONTEXT"}, {"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P031 separately makes coverage inadequacy a trigger for an inconclusive result."
+        }
+      }
+    },
+    {
+      "claim_id": "C071",
+      "fields": ["operation", "limit"],
+      "component": {
+        "component_id": "C071",
+        "value": "When exposure or coverage is inadequate, continued canary observation is permitted only within the safety bounds.",
+        "scope": "The result remains inconclusive. The bounds concern instrumentation overhead, error rate, completion rate and tail delay against comparable baseline traffic; this does not authorize exceeding them to obtain more evidence.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}, {"source_id": "P030", "role": "CONTEXT"}, {"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P031 supplies the conditional continuation restriction, P014 supplies the referenced bounds, and P030 identifies the canary."
+        }
+      }
+    },
+    {
+      "claim_id": "C072",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C072",
+        "value": "Subjective consistency judgments may leave the explanation ranking wrong.",
+        "scope": "A possible failure of the comparison, not an assertion that the actual ranking is wrong.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names subjective judgments as a possible source of ranking error."
+        }
+      }
+    },
+    {
+      "claim_id": "C073",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C073",
+        "value": "Omitted causes may leave the explanation ranking wrong.",
+        "scope": "A possible limitation from an incomplete hypothesis set.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names omitted causes as a possible source of ranking error."
+        }
+      }
+    },
+    {
+      "claim_id": "C074",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C074",
+        "value": "Shared assumptions may leave the explanation ranking wrong.",
+        "scope": "A possible limitation; the shared assumptions are not identified.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names shared assumptions as a possible source of ranking error."
+        }
+      }
+    },
+    {
+      "claim_id": "C075",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C075",
+        "value": "An explanation's survival of contradiction does not prove that it is the cause.",
+        "scope": "A general limit on inference from surviving alternatives, independent of any particular canary outcome.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states this limit on causal proof."
+        }
+      }
+    },
+    {
+      "claim_id": "C076",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C076",
+        "value": "Instrumentation may change the behavior under investigation.",
+        "scope": "A possible intervention effect, not an observed instrumentation-induced change.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies instrumentation as a possible source of behavioral change."
+        }
+      }
+    },
+    {
+      "claim_id": "C077",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C077",
+        "value": "Test workloads may change the behavior under investigation.",
+        "scope": "A possible intervention effect, not an observed test-induced change.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately identifies test workloads as a possible source of behavioral change."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": ["C001", "C002", "C003", "C004", "C005", "C006", "C007", "C008", "C009", "C010", "C011", "C012", "C013"],
+      "non_warrant_content": "The opening imperative establishes the existing-record investigation setting. List punctuation organizes candidate explanation families. P003's hypothesis-versus-finding qualification is retained in the candidate claims rather than repeated as a separate proposition."
+    },
+    {
+      "field": "operation",
+      "claim_ids": ["C008", "C013", "C014", "C015", "C016", "C017", "C018", "C019", "C020", "C021", "C022", "C023", "C024", "C025", "C026", "C027", "C028", "C029", "C030", "C031", "C032", "C033", "C034", "C035", "C036", "C055", "C071"],
+      "non_warrant_content": "Sequencing words and the matrix's presentation format are procedural setup. The claims capture the matrix's comparative assessment semantics, sensitivity operations, intervention conditions and bounds without treating each metric name or routine recording step as a separate proposition."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C037", "C038", "C039", "C040", "C041", "C042", "C043", "C044", "C045", "C046", "C047", "C048"],
+      "non_warrant_content": "Observation and recording verbs organize prospective assessment. P021's proposed-observation status is included in the conditional signal claims. The directional reference in P019 is reconstructed using P018 while preserving its unspecified strength; no signal is treated as an actual result."
+    },
+    {
+      "field": "inference",
+      "claim_ids": ["C049", "C050", "C051", "C052", "C053", "C054", "C055", "C056", "C057"],
+      "non_warrant_content": "The introductory deployment-choice instruction organizes the conditional alternatives. References to surviving explanations and the next deployment establish decision context; the substantive weakening, elimination, action-selection and expansion relations are captured."
+    },
+    {
+      "field": "limit",
+      "claim_ids": ["C058", "C059", "C060", "C061", "C062", "C063", "C064", "C065", "C066", "C067", "C068", "C069", "C070", "C071", "C072", "C073", "C074", "C075", "C076", "C077"],
+      "non_warrant_content": "Connective and referential wording links limitations to the investigation and canary. No additional substantive limitation is excluded as setup; unspecified exposure amounts, observation windows and assumptions remain unspecified."
+    }
+  ],
+  "anomalies": []
+}

@@ -1,0 +1,937 @@
+{
+  "packet_id": "H6-T02-3",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C001.component",
+        "value": "The overnight export pipeline is treated as a dynamic system for the proposed investigation.",
+        "scope": "Proposed framing of the export pipeline.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies this modeling frame."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C002.component",
+        "value": "The proposed experimental input is the maximum permitted concurrency of exports in a small worker pool.",
+        "scope": "Selected control variable for the proposed experiment.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The input and its pool restriction are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C003.component",
+        "value": "The proposed outputs comprise queue depth, completion rate, elapsed export time, and queue, object-read, and upload durations where observable.",
+        "scope": "Response variables; phase-duration availability is qualified by observability.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies the output bundle and its observability qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C004.component",
+        "value": "The proposed experiment assumes that export concurrency can be adjusted.",
+        "scope": "Assumed experimental capability.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}, {"source_id": "P002", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P003 states the assumption; P002 identifies the concurrency control."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C005.component",
+        "value": "The packet does not establish that export concurrency is adjustable.",
+        "scope": "Acknowledged evidential gap concerning the proposed input.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The statement that neither capability is established includes adjustability."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C006.component",
+        "value": "The proposed experiment assumes that a canary pool can be bounded safely.",
+        "scope": "Assumed experimental containment capability.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The safe-bounding assumption is explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C007.component",
+        "value": "The packet does not establish that a canary pool can be bounded safely.",
+        "scope": "Acknowledged evidential gap concerning experimental containment.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The statement that neither capability is established includes safe bounding."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C008.component",
+        "value": "Experimental work is restricted to exports already scheduled overnight and excludes customer-requested business-hours reruns.",
+        "scope": "Workload and scheduling boundary of the investigation.",
+        "provenance": {
+          "refs": [{"source_id": "P005", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies both sides of the workload restriction."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C009.component",
+        "value": "If a bounded experiment is unavailable, the perturbation should be deferred.",
+        "scope": "Conditional decision when experimental containment is unavailable.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The condition and deferral consequence are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C010.component",
+        "value": "If a bounded experiment is unavailable, the deployment choice should supply the necessary controls and comparable telemetry.",
+        "scope": "Conditional preparatory deployment decision.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly links unavailable bounded experimentation to this deployment choice."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C011.component",
+        "value": "If comparable queue-entry, worker-start, and completion timestamps are missing across the versions being compared, narrowly scoped instrumentation should be deployed before testing performance changes.",
+        "scope": "Conditional telemetry prerequisite for performance experimentation.",
+        "provenance": {
+          "refs": [{"source_id": "P007", "role": "SUPPORT"}, {"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P007 supplies the substantive timestamp and comparability requirements; P008 supplies the conditional deployment consequence."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C012.component",
+        "value": "If those comparable timestamps are missing, an overnight baseline should be collected before testing performance changes.",
+        "scope": "Conditional baseline prerequisite concerning queue-entry, worker-start, and completion timestamps across compared versions.",
+        "provenance": {
+          "refs": [{"source_id": "P007", "role": "SUPPORT"}, {"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The cited pair reconstructs the missing-telemetry condition and required baseline."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C013.component",
+        "value": "With adequate telemetry, the proposed perturbation is a single documented decrease from baseline concurrency c0 to a lower canary concurrency c1, held constant after the change.",
+        "scope": "Conditional experimental design, not an assertion that telemetry is adequate or the step has occurred.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the telemetry condition and the controlled step design."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C014.component",
+        "value": "Step size and cohort size should be selected before testing using available capacity and overnight deadline headroom.",
+        "scope": "Capacity and deadline bounds on experimental sizing.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The sizing basis and advance-selection requirement are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C015.component",
+        "value": "Reducing concurrency tests whether contention contributes to export delays, without assuming that contention does contribute.",
+        "scope": "Rationale for the direction of the proposed perturbation.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P010 explicitly states the hypothesis-testing rationale and non-assumption; P009 identifies the reduction."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C016.component",
+        "value": "The latest rollback time should be declared in advance so that recovery headroom is preserved.",
+        "scope": "Temporal safety bound of the experiment.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span links the rollback-time requirement to recovery headroom."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C017.component",
+        "value": "Crossing a predeclared queue-age, backlog-growth, error-rate, resource-pressure, or completion-deadline threshold, or losing telemetry, should trigger restoration of c0 without terminating active exports.",
+        "scope": "Conditional safety rollback during the experiment.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}, {"source_id": "P016", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P015 supplies the trigger categories, P016 supplies the conditional restoration and active-work protection, and P009 identifies c0."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C018.component",
+        "value": "Crossing one of the predeclared safety thresholds or losing telemetry should end further experimental exposure.",
+        "scope": "Conditional cessation rule using the queue-age, backlog-growth, error-rate, resource-pressure, and completion-deadline thresholds.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}, {"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The cited bundle supplies the threshold definitions and conditional exposure limit."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C019.component",
+        "value": "The experimental concurrency setting should end at the planned endpoint by restoring c0.",
+        "scope": "Planned exposure bound independent of an early safety rollback.",
+        "provenance": {
+          "refs": [{"source_id": "P017", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P017 explicitly requires endpoint restoration; P009 identifies the original setting."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C020.component",
+        "value": "Exposed exports that remain unfinished must be explicitly censored.",
+        "scope": "Endpoint and follow-up handling; following exposed exports to completion is qualified by feasibility.",
+        "provenance": {
+          "refs": [{"source_id": "P017", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span gives the unfinished-export treatment and feasible-follow-up qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["operation", "signal"],
+      "component": {
+        "component_id": "C021.component",
+        "value": "The proposed timing analysis distinguishes the lag from the commanded step to actual concurrency change from the subsequent lag to output changes.",
+        "scope": "Proposed timing measurements for queue depth, completion rate, and phase durations; no nonzero lag is asserted to have been observed.",
+        "provenance": {
+          "refs": [{"source_id": "P011", "role": "SUPPORT"}, {"source_id": "P018", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P011 calls for identifying actual implementation of the limit; P018 explicitly separates the two timing intervals."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C022.component",
+        "value": "The proposed response characterization distinguishes change magnitude and speed, transient peaks or oscillations, sustained-range settling, and continued drift.",
+        "scope": "Candidate temporal features to examine, not reported response features.",
+        "provenance": {
+          "refs": [{"source_id": "P019", "role": "SUPPORT"}, {"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P019 supplies the temporal distinctions; P025 explicitly qualifies them as proposed measurements."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C023.component",
+        "value": "Exports already active at the transition should remain a distinct comparison group.",
+        "scope": "Cohort comparisons organized by queue-entry time and exposure to the concurrency step.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly distinguishes active-at-transition exports within the cohort comparison."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C024.component",
+        "value": "The fraction of exports exceeding one hour should be evaluated alongside the question of median stability.",
+        "scope": "Distinct tail and median aspects of the proposed outcome assessment.",
+        "provenance": {
+          "refs": [{"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly includes the one-hour exceedance fraction alongside the median question."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C025.component",
+        "value": "Time-to-completion estimates should include unfinished exports.",
+        "scope": "Proposed completion-time estimation; no estimator is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The inclusion requirement is explicit and does not establish a particular estimation method."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C026.component",
+        "value": "Missing trace spans represent unknown phase durations and must not be treated as zero-duration phases.",
+        "scope": "Interpretation of absent phase telemetry.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly supplies the unknown-versus-zero distinction."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C027.component",
+        "value": "Recording arrivals, workload mix, worker version, and observed resource conditions alongside the response makes coincident changes visible.",
+        "scope": "Rationale for accompanying response measurements with contextual observations; no causal identification is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly connects the recording proposal to visibility of coincident changes."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C028.component",
+        "value": "The signal measurements described in the mapping are proposals rather than observations already obtained.",
+        "scope": "The measurement descriptions in the signal field.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P025", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "CONTEXT"},
+            {"source_id": "P019", "role": "CONTEXT"},
+            {"source_id": "P020", "role": "CONTEXT"},
+            {"source_id": "P021", "role": "CONTEXT"},
+            {"source_id": "P022", "role": "CONTEXT"},
+            {"source_id": "P023", "role": "CONTEXT"},
+            {"source_id": "P024", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P025 explicitly states the distinction; the context spans resolve which measurements it describes."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C029.component",
+        "value": "If actual concurrency decreases and object-read or upload durations subsequently improve relative to comparable baseline and control work, the result supports a contention-sensitive explanation at the tested load.",
+        "scope": "Conditional mechanistic interpretation at the tested load; the antecedent is not asserted to have occurred.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the complete antecedent, comparison requirement, interpretation, and load restriction."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C030.component",
+        "value": "The concurrency-associated phase improvement described in C029 supports a deployment decision only if total export delay, throughput, and deadline risk also remain acceptable.",
+        "scope": "Necessary operational conditions on using the contention-sensitive result for deployment; acceptability alone is not stated to be sufficient.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}, {"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P026 supplies the substantive result being qualified; P027 adds the necessary deployment conditions."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C031.component",
+        "value": "If service-phase durations remain similar while queue delay increases during the lower-concurrency test, reduced capacity is a better explanation of that response.",
+        "scope": "Conditional interpretation of the tested response; the alternative against which the explanation is better is not explicitly named in P028.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P028 supplies the conditional comparative explanation; P009 identifies the lower-concurrency test without supplying a missing comparative alternative."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C032.component",
+        "value": "If service phases remain similar while queue delay increases, the lower concurrency limit should not be expanded.",
+        "scope": "Conditional deployment restriction. The mapping does not specify whether expansion concerns adoption scope, the numerical limit, or another dimension.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The conditional restriction is directly attributable, while its unresolved meaning is preserved rather than completed."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C033.component",
+        "value": "If improvement is sufficiently precise to meet a predeclared operational benefit criterion without violating safety criteria, the tested concurrency setting should receive a staged, monitored rollout with rollback available.",
+        "scope": "Conditional rollout decision; no numerical benefit, precision, or safety criterion is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The complete decision condition and qualified rollout consequence are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C034.component",
+        "value": "If the tested concurrency change worsens outcomes, the original setting should be restored.",
+        "scope": "Conditional response to worsening; the mapping does not specify a worsening threshold here.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P030 supplies the condition and restoration decision; P009 identifies the setting change."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C035.component",
+        "value": "If the tested concurrency change worsens outcomes, that change should be rejected.",
+        "scope": "Conditional deployment rejection, distinct from restoring the current setting.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P030 explicitly states rejection under worsening; P009 resolves which change is meant."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C036.component",
+        "value": "If experimental results are inconclusive, the original concurrency setting should be retained.",
+        "scope": "Conditional setting choice after inconclusive results.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P031 supplies the condition and retention decision; P009 identifies the original setting."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C037.component",
+        "value": "If results are inconclusive, the next investigative action should be either repeating the bounded test on later scheduled nights or deploying instrumentation for the unresolved phase.",
+        "scope": "Conditional alternative next actions; neither alternative is individually mandatory.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the condition and disjunctive next-action relation."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C038.component",
+        "value": "Results from the proposed experiment constrain candidate mechanisms.",
+        "scope": "Claimed inferential use of experimental results, without asserting that results already exist.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P032 states the inferential use; P009 identifies the experiment."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C039.component",
+        "value": "These experimental results alone do not justify attributing the problem to a particular worker version.",
+        "scope": "Limit on version-specific causal attribution from the concurrency experiment.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P032 explicitly denies standalone justification for version blame; P009 identifies the experiment."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C040.component",
+        "value": "These experimental results alone do not justify rolling back a particular worker version.",
+        "scope": "Limit on version-specific deployment action from the concurrency experiment.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P032 explicitly denies standalone justification for version rollback; P009 identifies the experiment."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C041.component",
+        "value": "The mapping reports a slow-export rate of approximately five percent.",
+        "scope": "Reported rate used in the test-duration limitation, not a newly obtained experimental estimate.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The approximate reported rate is explicitly stated in the mapping."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C042.component",
+        "value": "At the reported roughly five-percent slow-export rate, short tests may be uninformative.",
+        "scope": "Potential information limitation, not a claim that every short test fails.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly connects the approximate rate to potential short-test uninformativness."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C043.component",
+        "value": "Observation duration and the precision requirement should be set before testing using available overnight volume and the smallest operationally meaningful improvement.",
+        "scope": "Prospective basis for evidence collection and precision planning.",
+        "provenance": {
+          "refs": [{"source_id": "P034", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the planning requirement and its two substantive inputs."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C044.component",
+        "value": "If the safety window cannot supply enough evidence, uncertainty should be reported.",
+        "scope": "Conditional reporting decision under insufficient safely obtainable evidence.",
+        "provenance": {
+          "refs": [{"source_id": "P034", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The evidence condition and uncertainty-reporting consequence are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C045.component",
+        "value": "If the safety window cannot supply enough evidence, experimental exposure should not be extended unsafely to obtain more evidence.",
+        "scope": "Safety bound on responding to insufficient evidence; safe extensions are not addressed.",
+        "provenance": {
+          "refs": [{"source_id": "P034", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly rejects unsafe extension under the stated evidence condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C046.component",
+        "value": "Unknown initial backlog can distort the experimental response.",
+        "scope": "Potential distortion from initial-state uncertainty.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Unknown initial backlog is explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C047.component",
+        "value": "Changing arrivals can distort the experimental response.",
+        "scope": "Potential distortion from changes in incoming work.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Changing arrivals are explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C048",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C048.component",
+        "value": "Heterogeneous workspace sizes can distort the experimental response.",
+        "scope": "Potential distortion from workload-size heterogeneity.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Workspace-size heterogeneity is explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C049",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C049.component",
+        "value": "Cache state can distort the experimental response.",
+        "scope": "Potential cache-related distortion; no particular cache condition is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Cache state is explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C050",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C050.component",
+        "value": "Shared-storage disturbances can distort the experimental response.",
+        "scope": "Potential disturbance affecting shared storage.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span includes shared-storage disturbances as a potential distortion."
+        }
+      }
+    },
+    {
+      "claim_id": "C051",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C051.component",
+        "value": "Network disturbances can distort the experimental response.",
+        "scope": "Potential network-related disturbance.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span includes network disturbances as a potential distortion."
+        }
+      }
+    },
+    {
+      "claim_id": "C052",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C052.component",
+        "value": "Version-dependent trace gaps can distort the experimental response.",
+        "scope": "Potential distortion associated with telemetry coverage differing by worker version.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Version-dependent trace gaps are explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C053",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C053.component",
+        "value": "Interacting jobs can distort the experimental response.",
+        "scope": "Potential distortion from interactions with other jobs.",
+        "provenance": {
+          "refs": [{"source_id": "P035", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Interacting jobs are explicitly included among potential response distortions."
+        }
+      }
+    },
+    {
+      "claim_id": "C054",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C054.component",
+        "value": "A nominal concurrency step may take effect gradually while active work drains.",
+        "scope": "Possible difference between the commanded step and its realized application.",
+        "provenance": {
+          "refs": [{"source_id": "P036", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies both gradual implementation and the draining-work condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C055",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C055.component",
+        "value": "Shared resources can contaminate a comparison pool.",
+        "scope": "Potential limitation of the proposed pool comparison.",
+        "provenance": {
+          "refs": [{"source_id": "P037", "role": "SUPPORT"}, {"source_id": "P013", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P037 supplies the contamination possibility; P013 identifies the proposed comparison pool."
+        }
+      }
+    },
+    {
+      "claim_id": "C056",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C056.component",
+        "value": "Nonlinear saturation can cause different concurrency steps to produce different responses.",
+        "scope": "Potential failure of response equivalence across perturbations.",
+        "provenance": {
+          "refs": [{"source_id": "P037", "role": "SUPPORT"}, {"source_id": "P009", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P037 states the nonlinear step-dependence; P009 identifies the concurrency perturbation."
+        }
+      }
+    },
+    {
+      "claim_id": "C057",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C057.component",
+        "value": "Interpreting the response as apparently settled requires a sufficiently stable workload.",
+        "scope": "Necessary workload condition for a settling interpretation; adequate observation time is also required.",
+        "provenance": {
+          "refs": [{"source_id": "P038", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly makes workload stability one of two necessary conditions."
+        }
+      }
+    },
+    {
+      "claim_id": "C058",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C058.component",
+        "value": "Interpreting the response as apparently settled requires adequate observation time.",
+        "scope": "Necessary temporal condition for a settling interpretation; sufficient workload stability is also required.",
+        "provenance": {
+          "refs": [{"source_id": "P038", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly makes observation time one of two necessary conditions."
+        }
+      }
+    },
+    {
+      "claim_id": "C059",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C059.component",
+        "value": "If the required workload stability and observation time for apparent settling are not both present, the description should be limited to the observed transient.",
+        "scope": "Conditional reporting restriction when settling prerequisites are unmet.",
+        "provenance": {
+          "refs": [{"source_id": "P038", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the joint prerequisites and the otherwise-only-transient consequence."
+        }
+      }
+    },
+    {
+      "claim_id": "C060",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C060.component",
+        "value": "Failure to detect a change does not exclude contention.",
+        "scope": "Limit on interpreting a null experimental response.",
+        "provenance": {
+          "refs": [{"source_id": "P039", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly denies exclusion of contention from a nondetection."
+        }
+      }
+    },
+    {
+      "claim_id": "C061",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C061.component",
+        "value": "Failure to detect a change does not exclude a worker-version defect.",
+        "scope": "Limit on interpreting a null experimental response.",
+        "provenance": {
+          "refs": [{"source_id": "P039", "role": "SUPPORT"}, {"source_id": "P032", "role": "CONTEXT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P039 explicitly denies exclusion of a version defect; P032 resolves the worker-version reference."
+        }
+      }
+    },
+    {
+      "claim_id": "C062",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C062.component",
+        "value": "Experimental conclusions are restricted to the tested cohort, concurrency range, worker versions, and operating conditions.",
+        "scope": "General applicability boundary on the mapping's experimental conclusions, including its conditional mechanistic and deployment interpretations.",
+        "provenance": {
+          "refs": [{"source_id": "P040", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the multidimensional applicability restriction."
+        }
+      }
+    },
+    {
+      "claim_id": "C063",
+      "fields": ["inference", "limit"],
+      "component": {
+        "component_id": "C063.component",
+        "value": "Broader deployment requires staged confirmation.",
+        "scope": "Expansion beyond the tested cohort, concurrency range, versions, and operating conditions.",
+        "provenance": {
+          "refs": [{"source_id": "P040", "role": "SUPPORT"}, {"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "P040 states the general expansion requirement; P029 also specifies staging in its conditional rollout prescription. P040 independently supports the general claim."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": ["C001", "C002", "C003", "C004", "C005", "C006", "C007", "C008", "C009", "C010"],
+      "non_warrant_content": "P004 supplies a preparatory inventory of worker versions, trace coverage, active work, initial queue depth, and available workload descriptors. It states no separate rationale or outcome relation. The role assignments, capability assumptions and gaps, workload boundary, and conditional deployment decisions in the remaining state spans are captured as claims."
+    },
+    {
+      "field": "operation",
+      "claim_ids": ["C011", "C012", "C013", "C014", "C015", "C016", "C017", "C018", "C019", "C020", "C021"],
+      "non_warrant_content": "Routine protocol includes verifying timestamps in P007; recording the baseline and step time in P009; allowing active work to finish and recording realized concurrency in P011; holding worker version and other controllable settings fixed in P012; retaining an unchanged comparison pool with comparable scheduled work where feasible and recording resource exposure and workload differences in P013; recording the transition and observation window in P014; and monitoring recovery in P016. P015's threshold categories substantively define the extracted safety conditions. P017's completion follow-up remains qualified by feasibility. No additional causal rationale is inferred from these procedural instructions."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C021", "C022", "C023", "C024", "C025", "C026", "C027", "C028"],
+      "non_warrant_content": "The measurement commands in P018–P021 provide the operational collection procedure around the extracted temporal, cohort, tail, and unfinished-export distinctions. P020 also specifies organizing cohorts by queue-entry time and step exposure. P022 directs comparison with baseline and any unchanged pool without asserting that such a pool exists or giving a separate inferential conclusion. P024's recording rationale and P025's explicit proposed-versus-obtained distinction are extracted."
+    },
+    {
+      "field": "inference",
+      "claim_ids": ["C029", "C030", "C031", "C032", "C033", "C034", "C035", "C036", "C037", "C038", "C039", "C040", "C063"],
+      "non_warrant_content": "All material conditional interpretations, deployment consequences, and inferential restrictions in P026–P032 are represented. Pronouns and references to the tested setting provide connective context. The alternatives in P031 remain a single disjunctive next-action relation. No outcome is treated as already observed, and no numerical decision criteria are supplied."
+    },
+    {
+      "field": "limit",
+      "claim_ids": ["C041", "C042", "C043", "C044", "C045", "C046", "C047", "C048", "C049", "C050", "C051", "C052", "C053", "C054", "C055", "C056", "C057", "C058", "C059", "C060", "C061", "C062", "C063"],
+      "non_warrant_content": "All material propositions in P033–P040 are represented, including the reported rate, evidence-planning basis, safety restriction, independently stated potential distortions, realization delay, comparison contamination, nonlinear response dependence, settling prerequisites, null-result limitations, and applicability boundary. C062 records the general scope restriction on the experimental conclusions."
+    }
+  ],
+  "anomalies": [
+    {
+      "code": "MAPPING_AMBIGUITY",
+      "component_id": "C031.component",
+      "detail": "P028 calls reduced capacity a better explanation but does not explicitly identify the comparative alternative. The annotation preserves that comparative claim without supplying an unstated alternative.",
+      "correct_support_representable": "YES"
+    },
+    {
+      "code": "MAPPING_AMBIGUITY",
+      "component_id": "C032.component",
+      "detail": "P028 prohibits expansion of the lower limit under the stated response pattern, but does not specify the dimension of expansion. The existing span supports the ambiguous restriction; it does not resolve a specific numerical or deployment-scope interpretation.",
+      "correct_support_representable": "YES"
+    }
+  ]
+}

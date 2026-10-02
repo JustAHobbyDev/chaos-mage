@@ -1,0 +1,766 @@
+{
+  "packet_id": "H6-T03-1",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C001.component",
+        "value": "The historical approval process is not directly observable.",
+        "scope": "The historical process underlying the sampled supplier orders.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the observability limitation."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "C002.component",
+        "value": "Reconstruction should use multiple documentary paths, tracing each flagged order from purported approval through relevant records to placement and attachment.",
+        "scope": "A proposed reconstruction method, including all 14 orders flagged for missing purchasing-system approval attachments; purported approval is not assumed to be established.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P002", "role": "SUPPORT"},
+            {"source_id": "P007", "role": "SUPPORT"},
+            {"source_id": "P003", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support spans propose reconstruction through multiple paths and specify the tracing operation; context identifies the flagged orders."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C003.component",
+        "value": "Fourteen of the 90 sampled orders lack approval attachments in the purchasing system.",
+        "scope": "The sampled orders and purchasing-system attachments only.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the count, denominator and missing-record location."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C004.component",
+        "value": "The established absence of purchasing-system approval attachments does not establish that approval was absent.",
+        "scope": "The evidentiary meaning of the missing attachments in the sample; no finding that approval occurred is substituted.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly distinguishes missing attachments from absent approval."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C005.component",
+        "value": "Which orders exceeded the threshold and what the internal rule required at the relevant time must be verified.",
+        "scope": "Applicability and content of the historical internal rule; neither is supplied order by order.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires both applicability and contemporaneous-rule verification."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C006.component",
+        "value": "The ability to link the records is assumed only provisionally.",
+        "scope": "Record linkage used in reconstructing the sampled orders.",
+        "provenance": {
+          "refs": [{"source_id": "P005", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The provisional qualifier applies directly to record linkability."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C007.component",
+        "value": "Reliable interpretation of record dates is assumed only provisionally.",
+        "scope": "Dates used in the reconstruction, without an assertion that they are reliable.",
+        "provenance": {
+          "refs": [{"source_id": "P005", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly makes reliable date interpretation a provisional assumption."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C008.component",
+        "value": "The proposed candidate model represents how documented approval should precede order placement and reach the purchasing record.",
+        "scope": "An expected process model for investigation, not a finding about the actual sequence for any order.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span specifies the candidate model's sequence and record destination."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C009.component",
+        "value": "The candidate process model should include routes through meeting minutes or delegated-authority forms when those routes are permitted.",
+        "scope": "Conditional inclusion of alternative routes; the mapping does not establish which routes the actual rule permits.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span names the alternative routes and expressly limits their inclusion to permitted routes."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C010.component",
+        "value": "The other sampled orders should be used to test whether the candidate routes also explain apparently complete records.",
+        "scope": "Orders outside the 14 flagged cases, within the existing sample; apparent completeness is not established compliance.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P006", "role": "CONTEXT"},
+            {"source_id": "P007", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support span gives the comparative test; context identifies the routes and the contrasted flagged cases."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C011.component",
+        "value": "Event dates, record-creation dates and attachment dates must be distinguished explicitly.",
+        "scope": "The dates collected for the order-level investigation; the mapping does not assert that these dates necessarily differ.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires this temporal distinction."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C012.component",
+        "value": "A delegation form may establish authority without documenting approval of a particular order.",
+        "scope": "The possible evidentiary contribution of a delegation form; authority and order-specific approval are distinct.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the distinction and preserves its modal qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C013.component",
+        "value": "Observed record links, timing and missing traces should be compared with the predictions of each candidate route.",
+        "scope": "The proposed comparison of observations with route-specific expectations.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P011", "role": "SUPPORT"},
+            {"source_id": "P006", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support span specifies the comparison; context identifies the candidate routes."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C014.component",
+        "value": "Targeted record requests and staff clarification are proposed means of investigating discrepancies.",
+        "scope": "Investigative follow-up, without assuming that either method will resolve a discrepancy.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly links the proposed operations to discrepancy investigation."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C015.component",
+        "value": "Staff recollections should be treated as investigative leads rather than as equivalent to contemporaneous documentation.",
+        "scope": "The evidentiary treatment of recollections obtained during clarification.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states the distinction in evidentiary treatment."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C016.component",
+        "value": "The candidate account should be revised iteratively and its predictions checked against additional documentary traces.",
+        "scope": "A proposed iterative reconstruction method, without a guarantee of convergence or correctness.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies both revision and the accompanying predictive check."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C017.component",
+        "value": "Alternative explanations should be tracked instead of revising the account merely to make every order appear compliant.",
+        "scope": "A constraint on how the investigative account is revised.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly contrasts maintaining alternatives with compliance-directed fitting."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C018.component",
+        "value": "The proposed observational test examines whether predicted approval records are locatable, linked to the relevant order, demonstrably prior to placement and associated with authority fitting the applicable rule.",
+        "scope": "Proposed observation criteria, not findings that any order satisfies them. The precise reach of the later demonstrative qualifier is implicit, but the instruction itself is prospective.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P015", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The first span supplies the observational criteria; the second reinforces the prospective status of the signal observations."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C019.component",
+        "value": "Timing and continuity of documentary traces across approval-to-order-to-system paths serve as the mapped counterpart to propagation behavior.",
+        "scope": "The mapping's stated correspondence between the source instrument and documentary investigation.",
+        "provenance": {
+          "refs": [{"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names both sides of the correspondence."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C020.component",
+        "value": "The investigation should test for discrepancies structured by approval route, responsible role, period or record location.",
+        "scope": "Proposed dimensions of pattern detection; no such pattern is reported as found.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The first span identifies the proposed pattern dimensions and the second supplies the no-findings qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C021.component",
+        "value": "Linked prior approvals without purchasing-system attachments are a proposed discrepancy configuration to test.",
+        "scope": "A proposed observation, not a finding that this configuration occurs in the sample.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The example and its explicit prospective qualification jointly reconstruct the component."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["signal", "inference"],
+      "component": {
+        "component_id": "C022.component",
+        "value": "An attachment's presence alone does not establish approval before order placement.",
+        "scope": "A general evidentiary distinction, also expressed as a proposed test for attachments lacking demonstrated prior approval; that example is not a finding about sampled orders.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"},
+            {"source_id": "P022", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The inference span states the limit directly; the signal spans supply its proposed observational formulation and qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C023.component",
+        "value": "Repeated documentary breaks at a particular handoff are a proposed discrepancy pattern to test.",
+        "scope": "A candidate pattern only; repeated handoff failures are not established.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The cited bundle contains the proposed pattern and its no-findings qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["signal", "inference"],
+      "component": {
+        "component_id": "C024.component",
+        "value": "An unsuccessful search supports a conclusion of nonlocation within the searched sources, with the search's scope and access limitations recorded.",
+        "scope": "A conclusion bounded by the sources actually searched and the access available.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P019", "role": "SUPPORT"},
+            {"source_id": "P023", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "One span requires documenting search bounds; the other states the bounded conclusion a failed search supports."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C025.component",
+        "value": "An unsuccessful search does not automatically establish that approval never occurred.",
+        "scope": "The limit on inferring historical nonoccurrence from search failure.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly rejects the automatic inference."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C026.component",
+        "value": "Patterns of discrepancies can constrain competing accounts of departures at distinct stages: obtaining approval, documenting it, linking it to the order or attaching it to the system.",
+        "scope": "Constraint of competing process accounts, without an assertion that a unique account or a particular failure stage has been established.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the proposed inferential use of patterns and the distinguished departure stages."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C027.component",
+        "value": "Reliable evidence of appropriately authorized, documented approval before placement can support satisfaction of the internal approval rule despite a missing attachment, subject to the rule's actual record requirements.",
+        "scope": "A conditional evidentiary conclusion retaining reliability, authority, documentation, timing and actual record-requirement conditions; no sampled order is declared compliant.",
+        "provenance": {
+          "refs": [{"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The single span supplies the conditional outcome and all stated qualifications."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C028.component",
+        "value": "Further records should be sought for their ability to distinguish competing accounts.",
+        "scope": "The proposed purpose of additional evidence gathering.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the discriminating purpose of further record requests."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C029.component",
+        "value": "The order-level evidence table should distinguish supported conclusions, unresolved cases and alternative explanations.",
+        "scope": "The proposed board-review account; the mapping does not assign individual orders to these categories.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires the three-way evidentiary separation."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C030.component",
+        "value": "Proposed record corrections or process changes should be tied to supported failure points.",
+        "scope": "The evidentiary basis for recommendations, without proposing any particular correction or change.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the required connection between remedies and supported failures."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C031.component",
+        "value": "Available record paths may be sparse.",
+        "scope": "A possible limitation of the documentary reconstruction, not an established condition of this sample.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies possible sparsity."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C032.component",
+        "value": "Available record paths may be uneven.",
+        "scope": "A possible limitation of record-path coverage; no particular distribution is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies possible unevenness."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C033.component",
+        "value": "Record paths may depend on copied material.",
+        "scope": "A possible dependency within the surviving documentary evidence.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly names dependence on copied material."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C034.component",
+        "value": "Missing records may affect the record paths available for reconstruction.",
+        "scope": "A possible documentary limitation, without identifying which additional records are missing.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly lists missing records as a possible influence on record paths."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C035.component",
+        "value": "Ambiguous identifiers may affect record paths.",
+        "scope": "A possible limitation of the documentary reconstruction; no particular identifier is judged ambiguous.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies ambiguous identifiers as a possible limitation."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C036.component",
+        "value": "Unreliable timestamps may affect record paths.",
+        "scope": "A possible limitation of documentary timing evidence, not a finding that any timestamp is unreliable.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly names unreliable timestamps as a possible limitation."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C037.component",
+        "value": "Uncertain approval origins may affect record paths.",
+        "scope": "A possible limitation; the mapping does not specify whether approval origin concerns authorship, source records or another aspect of origin.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The component preserves the span's general wording semantically without resolving its unspecified meaning."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C038.component",
+        "value": "Forcing all orders into one assumed workflow could conceal legitimate approval routes.",
+        "scope": "A conditional risk of standardization, not a finding that legitimate routes have been concealed.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly supplies this possible outcome of imposing one workflow."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C039.component",
+        "value": "Forcing all orders into one assumed workflow could manufacture apparent failures.",
+        "scope": "A conditional risk of standardization, not a finding that any observed discrepancy is artificial.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies this distinct possible outcome of imposing one workflow."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C040.component",
+        "value": "Retaining exceptions and testing assumptions is the proposed response to the risks of imposing one workflow on all orders.",
+        "scope": "A methodological response to possible concealment of legitimate routes or creation of apparent failures; exceptions are not automatically validated.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span couples the workflow risks with the instruction to retain exceptions and test assumptions."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C041.component",
+        "value": "Multiple historical processes may produce the same surviving records.",
+        "scope": "Possible non-uniqueness of reconstruction from surviving documentary evidence.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states the many-processes-to-same-records possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C042.component",
+        "value": "A population failure rate must not be inferred from the 14-of-90 sample result without a defensible sampling basis.",
+        "scope": "A necessary condition on population extrapolation; having a sampling basis is not asserted to be sufficient, and missing attachments are not reclassified as approval failures.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P028", "role": "SUPPORT"},
+            {"source_id": "P003", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support span supplies the extrapolation bound; context identifies what the sample count actually measures."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C043.component",
+        "value": "The investigation must not make legal conclusions.",
+        "scope": "The scope of this proposed account and review.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly excludes legal conclusions."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C044.component",
+        "value": "An individual inquiry should stop when sufficient reliable evidence resolves the applicable-rule question.",
+        "scope": "One stated stopping condition. The mapping leaves ambiguous exactly what resolution of the applicable rule entails and does not provide a sufficiency test.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states this stopping branch; the component retains rather than fills its unspecified resolution criterion."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C045.component",
+        "value": "An individual inquiry should also stop when identified sources are exhausted and the remaining uncertainty is documented.",
+        "scope": "An alternative stopping condition requiring both exhaustion of identified sources and documentation of residual uncertainty; not exhaustion of every conceivable source.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states this alternative and its conjunctive conditions."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C046.component",
+        "value": "Cases still unresolved at the board deadline should be reported as unresolved without forced closure.",
+        "scope": "The treatment of residual uncertainty at the reporting deadline.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly preserves unresolved status at the deadline."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C047.component",
+        "value": "Each case unresolved at the board deadline should receive a specific next evidence request and a responsible owner.",
+        "scope": "The proposed follow-up requirement for every unresolved case.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the per-case follow-up requirement and responsibility assignment."
+        }
+      }
+    },
+    {
+      "claim_id": "C048",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C048.component",
+        "value": "Original records must be preserved when links or annotations are added.",
+        "scope": "A constraint on subsequent record additions.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the preservation requirement and its operative condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C049",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C049.component",
+        "value": "Any later approval or remediation must retain its actual date.",
+        "scope": "The temporal representation of later actions.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires actual dating of later approval or remediation."
+        }
+      }
+    },
+    {
+      "claim_id": "C050",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C050.component",
+        "value": "Later approval or remediation must not be presented as prior approval.",
+        "scope": "A constraint on the evidentiary characterization of subsequent actions.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly prohibits presenting subsequent action as earlier approval."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": ["C001", "C002", "C003", "C004", "C005", "C006", "C007"],
+      "non_warrant_content": "P001 establishes the working objects and documentary scope: sampled orders and traces connecting approval, placement and system records. Its imperative framing adds no separate conclusion about any order. The other state spans supply the reconstruction proposal, factual sample result, evidentiary distinction, applicability check and provisional assumptions captured above."
+    },
+    {
+      "field": "operation",
+      "claim_ids": ["C002", "C008", "C009", "C010", "C011", "C012", "C013", "C014", "C015", "C016", "C017"],
+      "non_warrant_content": "The week-one and week-two labels in P006 and P011 schedule the work. P009's collection list supplies routine data-entry instructions for identifiers, amounts, approval content, authority and dates; it does not establish values for those data. The substantive distinction among date types is captured separately. No individual noun in the collection list is treated as an independent proposition."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C018", "C019", "C020", "C021", "C022", "C023", "C024"],
+      "non_warrant_content": "The observation and logging imperatives organize collection rather than report results. P018 qualifies the proposed observations and is included substantively in their cited bundles; it is not treated as proof that any proposed configuration occurs. P019's logging mechanics add no separate finding beyond the bounded interpretation of unsuccessful searches."
+    },
+    {
+      "field": "inference",
+      "claim_ids": ["C022", "C024", "C025", "C026", "C027", "C028", "C029", "C030"],
+      "non_warrant_content": "P024's week-three board-review timing and instruction to prepare a table specify scheduling and presentation. The table's substantive evidentiary distinctions and the connection between recommendations and supported failures are captured. No order-level classifications or specific remedies are supplied by this field."
+    },
+    {
+      "field": "limit",
+      "claim_ids": ["C031", "C032", "C033", "C034", "C035", "C036", "C037", "C038", "C039", "C040", "C041", "C042", "C043", "C044", "C045", "C046", "C047", "C048", "C049", "C050"],
+      "non_warrant_content": "The remaining imperative form organizes stopping, reporting, follow-up and record handling. The substantive conditions and constraints are captured, including both stopping branches. No specific owner, next request, record correction or unresolved case is identified."
+    }
+  ],
+  "anomalies": []
+}

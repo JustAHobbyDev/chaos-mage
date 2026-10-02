@@ -1,0 +1,751 @@
+{
+  "packet_id": "H6-T03-2",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C001.component",
+        "value": "Each of the 14 sampled orders missing a purchasing-system approval attachment is treated as a transaction with a partially documented history.",
+        "scope": "The 14 flagged sampled orders; this framing does not establish their approval outcomes.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies both the investigative framing and its population."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C002.component",
+        "value": "The supplied review finding establishes an approval-attachment gap.",
+        "scope": "What the supplied finding establishes about the flagged orders.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The positive conclusion about the finding is explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state", "limit"],
+      "component": {
+        "component_id": "C003.component",
+        "value": "A missing approval attachment does not establish that approval was absent or never occurred.",
+        "scope": "The evidential limit of attachment absence, including the supplied finding.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P002", "role": "SUPPORT"},
+            {"source_id": "P029", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "Both spans express the same restriction on inferring approval absence from attachment absence."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C004.component",
+        "value": "Approval applicability must be established for each order; it cannot be assumed that all 14 flagged orders required approval.",
+        "scope": "Order-specific applicability under the relevant threshold and approval requirements.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P003", "role": "SUPPORT"},
+            {"source_id": "P004", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the order-specific applicability inquiry and the prohibition on assuming universal applicability."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C005.component",
+        "value": "Meeting minutes cannot be assumed to satisfy the approval rule merely because they are available as approval-related records.",
+        "scope": "Potential use of meeting minutes; neither their sufficiency nor their insufficiency is established categorically.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly withholds automatic rule satisfaction from meeting minutes."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C006.component",
+        "value": "Delegated-authority forms cannot be assumed to satisfy the approval rule merely because they are available as approval-related records.",
+        "scope": "Potential use of delegated-authority forms; their rule satisfaction remains to be established.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span separately applies the rule-satisfaction restriction to delegated-authority forms."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C007.component",
+        "value": "The proposed reconstruction cross-checks order-level attributes across collected records and arranges supported links from any delegation through approval and placement to later attachment or amendment.",
+        "scope": "A proposed reconstruction method; it does not assert that these links exist or that every order involved delegation.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P005", "role": "CONTEXT"},
+            {"source_id": "P006", "role": "SUPPORT"},
+            {"source_id": "P007", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support spans specify cross-checking and the supported sequence; the context span identifies the collected sources."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["operation", "signal"],
+      "component": {
+        "component_id": "C008.component",
+        "value": "The reported occurrence of approval must be distinguished from creation of its documentation, including whether either occurred after order placement.",
+        "scope": "A proposed temporal distinction, not a finding that either event occurred late.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P016", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the distinction, its application to placement timing, and its prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["operation", "signal", "limit"],
+      "component": {
+        "component_id": "C009.component",
+        "value": "Upload timing alone does not establish approval timing; a later upload must be distinguished from approval occurring after placement.",
+        "scope": "The timestamp alone is insufficient; no actual late upload or late approval is asserted.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P016", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"},
+            {"source_id": "P027", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The spans express the upload-versus-approval distinction and its explicit inferential limit."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C010.component",
+        "value": "An attachment merely uploaded later must be distinguished from approval documentation first created after placement.",
+        "scope": "Separate possible findings; neither is reported as observed.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P016", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle explicitly separates the two documentation events and qualifies them as possible findings."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C011.component",
+        "value": "A delegation establishes authority only within the delegation's terms.",
+        "scope": "Authority attributable to a particular delegation; unrestricted authority is not inferred.",
+        "provenance": {
+          "refs": [{"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The delegation's terms are an explicit bound on the authority it establishes."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C012.component",
+        "value": "A delegation of authority does not by itself establish approval of a particular order.",
+        "scope": "The distinction between possessing authority and exercising it to approve the identified order.",
+        "provenance": {
+          "refs": [{"source_id": "P008", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly separates delegated authority from order-specific approval."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C013.component",
+        "value": "Copied or derivative records are not to be counted as independent corroboration.",
+        "scope": "Assessment of corroborative independence, without asserting that such records are necessarily false.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the independence restriction."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C014.component",
+        "value": "A case is to be closed when both applicability and the relevant sequence are adequately supported.",
+        "scope": "Conditional procedural closure. The mapping leaves the standard for adequate support and the precise meaning of closure unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The closure condition is explicit; the annotation preserves rather than resolves its undefined evaluative terms."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C015.component",
+        "value": "If applicability and the relevant sequence remain inadequately supported at the reporting cutoff, active reconstruction is to stop and the case is to be reported as unresolved with a named follow-up owner and next step.",
+        "scope": "The cutoff alternative for a case that has not met the closure condition.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P012", "role": "CONTEXT"},
+            {"source_id": "P013", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The support span supplies the condition and outcome; the context span identifies the reporting cutoff."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C016.component",
+        "value": "If a case lacks adequate support and its identified sources are exhausted, active reconstruction is to stop and the case is to be reported as unresolved with a named follow-up owner and next step.",
+        "scope": "Exhaustion of identified sources, not a claim that every possible source has been searched. Priority among the stated stopping alternatives is not specified.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly provides source exhaustion as a stopping alternative under the unresolved-case condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C017.component",
+        "value": "If a case lacks adequate support and its identified sources are inaccessible, active reconstruction is to stop and the case is to be reported as unresolved with a named follow-up owner and next step.",
+        "scope": "The source-inaccessibility stopping alternative. The mapping does not specify how much source inaccessibility triggers this condition.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The conditional instruction is explicit, while its operational threshold remains unspecified."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C018.component",
+        "value": "The proposed positive signal is agreement among independently originating records on the same order, the approver's authority at the relevant time, approval scope, and documented approval before placement.",
+        "scope": "A composite proposed check and possible finding; no such agreement is asserted to have been observed.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P015", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle gives the complete candidate signal and its explicit prospective qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C019.component",
+        "value": "Conflicting dates, if found, signal uncertainty in the reconstruction.",
+        "scope": "A possible finding to check, not an observed conflict.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The spans state the uncertainty relation and its unobserved status."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C020.component",
+        "value": "Mismatched amounts, if found, signal uncertainty in the reconstruction.",
+        "scope": "A possible finding to check, not an observed amount mismatch.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle attributes uncertainty to amount mismatches while preserving the possible-finding qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C021.component",
+        "value": "Mismatched identities, if found, signal uncertainty in the reconstruction.",
+        "scope": "A possible finding to check, not an observed identity mismatch.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle states the identity-mismatch relation and its prospective status."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C022.component",
+        "value": "Unclear delegation terms, if found, signal uncertainty in the reconstruction.",
+        "scope": "A possible finding to check; no particular delegation is characterized as unclear.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The cited bundle supplies the condition, its uncertainty implication, and its prospective qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C023.component",
+        "value": "Unsupported retrospective statements, if found, signal uncertainty in the reconstruction.",
+        "scope": "The signal concerns retrospective statements lacking support; it is not a categorical rejection of retrospective evidence or an observed finding.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle preserves both the unsupported qualifier and the possible-finding status."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C024.component",
+        "value": "Missing links, if found, signal uncertainty in the reconstruction.",
+        "scope": "A possible finding to check, not a report that particular chronological links are already known to be missing.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P017", "role": "SUPPORT"},
+            {"source_id": "P018", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle expressly connects missing links with uncertainty and qualifies them as possible findings."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C025.component",
+        "value": "Compatible links can support a bounded account that an individual order had documented approval before placement despite a missing attachment, provided the evidence satisfies the internal rule.",
+        "scope": "A conditional, order-specific conclusion. The mapping does not specify the rule's evidentiary sufficiency criteria, and compatibility alone is not stated to satisfy them.",
+        "provenance": {
+          "refs": [{"source_id": "P019", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the conclusion, its bounded and individual scope, and the express rule-satisfaction condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C026.component",
+        "value": "Supported timing showing that an identified approval occurred only after placement can establish that this approval was late.",
+        "scope": "The identified approval only; this is conditional on supported timing and does not rule out another earlier approval.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly supplies the timing-to-lateness relation and limits it to the identified approval."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C027.component",
+        "value": "Establishing that an identified approval occurred after placement leaves open whether another approval existed earlier.",
+        "scope": "A limit on what supported lateness of one approval establishes; an earlier approval is neither established nor excluded.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The residual possibility of a distinct earlier approval is explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C028.component",
+        "value": "A verified exemption can establish that approval was not required for the particular order.",
+        "scope": "Conditional on verification of an applicable exemption; no exemption is asserted to have been found.",
+        "provenance": {
+          "refs": [{"source_id": "P021", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The verification condition and order-specific outcome are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C029.component",
+        "value": "Unsuccessful searches support reporting that qualifying prior approval was not located within the recorded search scope.",
+        "scope": "A search-bounded non-location conclusion, conditional on unsuccessful searches; it is not an assertion of approval nonexistence.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly limits the reportable conclusion to qualifying prior approval within the recorded scope."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C030.component",
+        "value": "Attachment or indexing changes are to be pursued where evidence supports a filing problem.",
+        "scope": "A proposed response conditional on evidence of a filing problem, not an unconditional recommendation or an established diagnosis.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the filing-problem condition and the corresponding proposed response."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C031.component",
+        "value": "Authority clarification is to be pursued where delegation is unclear.",
+        "scope": "A proposed response conditional on unclear delegation; no actual delegation defect is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The delegation condition and its proposed response are explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C032.component",
+        "value": "A pre-order approval check is to be proposed where the reconstructed sequence supports a timing or control problem.",
+        "scope": "Conditional on the reconstruction supporting either stated problem; the mapping does not define the full range of control problems or assert that the check will resolve them.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly supplies the evidential trigger and the proposed check without an effectiveness guarantee."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C033.component",
+        "value": "Relevant records may be missing.",
+        "scope": "A possible limitation of the record base, not a finding that particular records are missing.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Missing records are an explicit possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C034.component",
+        "value": "Relevant records may be inaccessible.",
+        "scope": "A possible access limitation, not a finding about access to particular records.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Record inaccessibility is an explicit possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C035.component",
+        "value": "Relevant records may be inaccurate.",
+        "scope": "A possible reliability limitation, not an assertion that any identified record is inaccurate.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Record inaccuracy is an explicit possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C036.component",
+        "value": "Relevant records may have been altered.",
+        "scope": "A possible record-integrity limitation; neither a particular alteration nor malicious intent is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Alteration is listed as a possibility without further characterization."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C037.component",
+        "value": "Relevant records may be ambiguous.",
+        "scope": "A possible interpretive limitation, not a finding that any particular record is ambiguous.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Record ambiguity is an explicit possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C038.component",
+        "value": "Different records may have been copied from a common source.",
+        "scope": "A possible shared origin of records; actual copying is not asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies common-source copying as a possibility."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C039.component",
+        "value": "A later account of an earlier approval does not automatically establish that contemporaneous documentation existed.",
+        "scope": "An evidential limit on retrospective accounts; it does not categorically deny either earlier approval or contemporaneous documentation.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the nonautomatic inference and its object, contemporaneous documentation."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C040.component",
+        "value": "A chronology that appears complete may incorrectly join records of different orders.",
+        "scope": "A possible identity error despite apparent chronological completeness.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly allows different orders to be joined in a complete-looking chronology."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C041.component",
+        "value": "A chronology that appears complete may conceal undocumented transitions.",
+        "scope": "A possible documentation gap despite apparent chronological completeness.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states this limitation of apparent completeness."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C042.component",
+        "value": "Unsuccessful searches do not prove that approval never occurred.",
+        "scope": "The inferential limit of search failure, distinct from the permissible report of non-location within a recorded search scope.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly denies the inference from unsuccessful searches to approval never occurring."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C043.component",
+        "value": "An attachment alone does not establish that the approval was valid.",
+        "scope": "Attachment presence by itself; the mapping does not define validity criteria in this span.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The validity restriction is explicitly included in the attachment-alone limit."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C044.component",
+        "value": "An attachment alone does not establish that the approval was timely.",
+        "scope": "Attachment presence by itself, independently of whether the approval is otherwise valid.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The timeliness restriction is explicitly included in the attachment-alone limit."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C045.component",
+        "value": "The 14-of-90 attachment finding must not be extrapolated into an organization-wide approval-failure rate without evidence about sampling and the remaining records.",
+        "scope": "A restriction on population extrapolation and on treating attachment gaps as approval failures; the stated additional evidence is not declared sufficient by itself.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span gives the sampled finding, proposed extrapolation, and express evidence condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C046.component",
+        "value": "The reporting cutoff bounds the investigation without resolving the underlying uncertainty.",
+        "scope": "The effect of an administrative reporting boundary on investigation and knowledge.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly distinguishes the investigation's limit from the persistence of uncertainty."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C047.component",
+        "value": "Later evidence should trigger a dated revision of the account.",
+        "scope": "A conditional revision instruction in the reporting-cutoff context; no later evidence is asserted to exist.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the evidence-triggered revision requirement and its dating qualifier."
+        }
+      }
+    },
+    {
+      "claim_id": "C048",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C048.component",
+        "value": "The assessment applies the internal rule and excludes legal conclusions.",
+        "scope": "The substantive boundary of the proposed assessment.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly states both the applicable rule and the excluded class of conclusions."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": ["C001", "C002", "C003", "C004", "C005", "C006"],
+      "non_warrant_content": "P003's checklist of identity, value, placement date, threshold, requirements and purported approver authority is investigative setup. Its applicability function is captured in C004; the individual checklist entries are not treated as separate conclusions."
+    },
+    {
+      "field": "operation",
+      "claim_ids": ["C007", "C008", "C009", "C011", "C012", "C013", "C014", "C015", "C016", "C017"],
+      "non_warrant_content": "P005's preservation and collection tasks and P006's individual comparison attributes implement the reconstruction method without each constituting a separate claim. P010 instructs explicit marking of unsupported intervals and conflicts. P011 specifies requests to custodians and logging of searches, responses and uncertainty. P012 schedules a cutoff before the board review in three weeks. P014 specifies linking recovered records while retaining their actual dates and the original finding. These are practical record-handling and scheduling instructions; no additional causal rationale or observed result is supplied. Follow-up ownership and next steps accompany the conditional stopping outcomes in P013."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C008", "C009", "C010", "C018", "C019", "C020", "C021", "C022", "C023", "C024"],
+      "non_warrant_content": "The directions to look, observe and record organize proposed checks. P018's material qualification that these are possible findings rather than completed observations is incorporated into the affected claims and cited bundles. The individual attributes in P015 define one composite agreement signal rather than independent observed conclusions."
+    },
+    {
+      "field": "inference",
+      "claim_ids": ["C025", "C026", "C027", "C028", "C029", "C030", "C031", "C032"],
+      "non_warrant_content": "P023 specifies the board account's presentation of case-level evidence, established transitions, contradictions and unresolved gaps. P025 assigns owners and dates to unresolved requests and proposed changes. These reporting and coordination instructions do not add independent evidential outcomes or operation rationales."
+    },
+    {
+      "field": "limit",
+      "claim_ids": ["C003", "C009", "C033", "C034", "C035", "C036", "C037", "C038", "C039", "C040", "C041", "C042", "C043", "C044", "C045", "C046", "C047", "C048"],
+      "non_warrant_content": "All substantive limitations and the conditional revision instruction are represented. Connective wording adds no separate proposition. Repeated attachment-absence and upload-timing limits are consolidated with their earlier formulations."
+    }
+  ],
+  "anomalies": []
+}

@@ -1,0 +1,735 @@
+{
+  "packet_id": "H6-T05-3",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K001",
+        "value": "The proposed historical sequence consists of ordered daily project snapshots reconstructed from daily counts and sampled folder histories.",
+        "scope": "Representation proposed for this localization exercise; successful reconstruction is not asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span specifies the proposed sequence and its reconstruction inputs."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K002",
+        "value": "The fixed property to test is whether forecast completion of all 4,000 folders, including metadata review and rights clearance, occurs after the exhibition deadline.",
+        "scope": "A model-based completion forecast for the full folder set, including the named completion requirements.",
+        "provenance": {
+          "refs": [{"source_id": "P002", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the tested property, population, completion requirements and deadline comparison."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "K003",
+        "value": "Comparisons across dates are to use fixed forecasting and estimation rules, including folder-size and completeness categories, missing-record treatment, and explicit volunteer-availability and processing-rate assumptions.",
+        "scope": "Consistency requirements for the proposed historical comparisons; freezing these choices does not assert their accuracy.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P003", "role": "SUPPORT"},
+            {"source_id": "P010", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "Together the spans specify the fixed choices and reuse of estimation rules across dates."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K004",
+        "value": "The proposed accounting must incorporate dependencies between workflow stages.",
+        "scope": "Accounting used for the project completion assessment.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly requires accounting for stage dependencies."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K005",
+        "value": "Completion accounting must avoid counting a folder as completed more than once.",
+        "scope": "Folder completion counts used by the proposed assessment.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span independently specifies the prohibition on duplicate completion counting."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K006",
+        "value": "Historical staffing, workload and clearance delays may be uncertain.",
+        "scope": "Possible uncertainty in historical reconstruction, without asserting that any particular input is known to be wrong.",
+        "provenance": {
+          "refs": [{"source_id": "P005", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly identifies these historical inputs as potentially uncertain."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "K007",
+        "value": "Localization may proceed only with verified endpoints consisting of an earlier snapshot classified within the deadline and a later snapshot classified beyond it.",
+        "scope": "Necessary endpoint condition for the proposed search.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P006", "role": "SUPPORT"},
+            {"source_id": "P007", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P006 supplies the endpoint condition and P007 explicitly requires verified endpoints."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["state"],
+      "component": {
+        "component_id": "K008",
+        "value": "The supplied backlog by itself does not establish the required earlier within-deadline and later beyond-deadline endpoints.",
+        "scope": "Evidential insufficiency of the backlog alone for establishing the search endpoints.",
+        "provenance": {
+          "refs": [{"source_id": "P006", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly distinguishes the backlog from verified endpoint evidence."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["operation", "signal"],
+      "component": {
+        "component_id": "K009",
+        "value": "If the middle snapshot is decisively classified within the deadline, the proposed search retains the later half of the interval, conditional on the single-transition assumption.",
+        "scope": "A middle snapshot tested between verified endpoints using the frozen rule.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P007", "role": "SUPPORT"},
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P017", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the tested position, conditional retention rule and single-transition qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["operation", "signal"],
+      "component": {
+        "component_id": "K010",
+        "value": "If the middle snapshot is decisively classified beyond the deadline, the proposed search retains the earlier half of the interval, conditional on the single-transition assumption.",
+        "scope": "A middle snapshot tested between verified endpoints using the frozen rule.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P007", "role": "SUPPORT"},
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P017", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle supplies the tested position, the other conditional retention rule and its qualification."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K011",
+        "value": "Unfinished-work estimation is to use counts and a sample covering folder size, completeness and workflow stage.",
+        "scope": "Proposed estimation inputs and sample coverage; sample adequacy is not established.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the estimation inputs and coverage dimensions."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K012",
+        "value": "Daily series and available histories should be inspected before interval elimination because recoveries or changes may undermine the single-transition assumption.",
+        "scope": "A proposed check before discarding intervals, without claiming that the check establishes a single transition.",
+        "provenance": {
+          "refs": [{"source_id": "P011", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span connects the proposed inspection to threats to the single-transition assumption."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K013",
+        "value": "If reconstruction fails or uncertainty prevents classification, the proposed response is to seek additional histories within the sampling allowance or test a nearby reconstructable date.",
+        "scope": "Alternative responses to an unreconstructable or unclassifiable snapshot; additional sampling remains bounded.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states both triggering conditions, the alternative responses and the sampling limit."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K014",
+        "value": "An ambiguous test result must not be used to discard an interval.",
+        "scope": "Interval elimination when classification is ambiguous.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states this restriction independently of its proposed recovery actions."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K015",
+        "value": "If the evidence allowance is exhausted, the search should stop with an unresolved interval.",
+        "scope": "Evidence-budget stopping condition; no unique boundary is asserted on exhaustion.",
+        "provenance": {
+          "refs": [{"source_id": "P013", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the budget condition and unresolved outcome."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K016",
+        "value": "If endpoint verification fails, the proposed response is to abandon a unique first-transition claim and examine separate episodes.",
+        "scope": "Failure of the endpoint verification required for localization.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly attaches this response to failed endpoint verification."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "K017",
+        "value": "If repeated crossings appear, the proposed response is to abandon a unique first-transition claim and examine separate episodes.",
+        "scope": "Observed repeated crossings of the forecast deadline property.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span independently attaches the response to repeated crossings."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "K018",
+        "value": "A tested date may be classified within the deadline only if its entire estimated completion-date range is on or before the deadline.",
+        "scope": "Range-based classification, including equality with the deadline.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P015", "role": "CONTEXT"},
+            {"source_id": "P016", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P015 identifies the range and P016 states the whole-range condition and inclusive boundary."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "K019",
+        "value": "A tested date may be classified beyond the deadline only if its entire estimated completion-date range is after the deadline.",
+        "scope": "Range-based classification requiring the full range to be strictly later than the deadline.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P015", "role": "CONTEXT"},
+            {"source_id": "P016", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle identifies the range and specifies the beyond-deadline condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "K020",
+        "value": "If the estimated completion-date range satisfies neither whole-range classification condition, the tested date is to remain unresolved.",
+        "scope": "Ranges that are neither wholly on or before the deadline nor wholly after it.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P015", "role": "CONTEXT"},
+            {"source_id": "P016", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P016 supplies the two conditions and the otherwise-unresolved rule."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "K021",
+        "value": "Each decisive classification shrinks the candidate transition interval, conditional on the single-transition assumption.",
+        "scope": "Progress of the proposed interval search under its stated transition assumption.",
+        "provenance": {
+          "refs": [{"source_id": "P017", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the conditional interval-shrinking relation."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "K022",
+        "value": "Changes in metadata-review arrivals, review throughput, rights turnaround, folder mix and available volunteer time are proposed observations to investigate at the retained boundary, rather than established findings.",
+        "scope": "Candidate boundary observations only; the mapping does not establish that any listed quantity changed.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P018", "role": "SUPPORT"},
+            {"source_id": "P019", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P018 supplies the proposed observations and P019 expressly limits their evidential interpretation."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["operation", "inference", "limit"],
+      "component": {
+        "component_id": "K023",
+        "value": "Repeating the search to adjacent classified days localizes the first daily snapshot associated with forecast deadline failure under the chosen model if the test is reproducible and the property changes only once; the result remains conditional localization of a forecast change.",
+        "scope": "Daily-snapshot resolution under the chosen forecast model, with reproducibility and a single transition required.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P002", "role": "CONTEXT"},
+            {"source_id": "P009", "role": "SUPPORT"},
+            {"source_id": "P020", "role": "SUPPORT"},
+            {"source_id": "P031", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The bundle specifies the stopping resolution, conditional localization conclusion and forecast-only interpretation; P002 identifies the property."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K024",
+        "value": "The adjacent classified dates do not identify the sole cause of the forecast deadline failure.",
+        "scope": "Causal limit of the localization result described in P020.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P020", "role": "CONTEXT"},
+            {"source_id": "P021", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P020 resolves the pronouns and P021 explicitly supplies the causal limitation."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K025",
+        "value": "Boundary histories together with current workload estimates are proposed as inputs to the next two weeks of assignment decisions.",
+        "scope": "Proposed planning use of the historical boundary and present workload; effectiveness is not asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies both planning inputs and the two-week planning horizon."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K026",
+        "value": "The proposed allocation rule directs available volunteers with appropriate skills toward the stage with the greatest estimated capacity shortfall.",
+        "scope": "Assignments for the next two weeks, constrained by volunteer availability and skills and based on estimated shortfall.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the allocation criterion and its availability, skill and estimation qualifiers."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K027",
+        "value": "Review and rights work should be paired where dependencies require pairing.",
+        "scope": "Conditional coordination within the proposed two-week assignments.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly conditions the proposed pairing on dependencies."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K028",
+        "value": "Additional scanning should be limited if it would merely enlarge the queue referenced in the assignment proposal.",
+        "scope": "Conditional scanning restriction; P022 does not unambiguously specify which stage's queue is meant.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The conditional restriction is explicit. The annotation preserves the queue-reference ambiguity rather than selecting a stage."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["inference", "limit"],
+      "component": {
+        "component_id": "K029",
+        "value": "Assignment effects should be validated through subsequent daily observations, including exhibition-ready completions and remaining workload.",
+        "scope": "Prospective validation after assignments, without assuming that the proposed allocation improves outcomes.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P023", "role": "SUPPORT"},
+            {"source_id": "P031", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P023 supplies the daily measures and P031 explicitly assigns subsequent observations a validation role."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K030",
+        "value": "If added capacity does not improve the forecast, the presumed constraint should be reconsidered.",
+        "scope": "A conditional diagnostic response to the forecast after capacity is added, not proof that the presumed constraint was wrong.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the trigger and reconsideration response without asserting a stronger causal conclusion."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K031",
+        "value": "Feasible exhibition scope should be estimated from folders expected to be fully reviewed and cleared by the deadline.",
+        "scope": "Proposed basis for estimating exhibition scope; scanned-only folders do not satisfy the stated readiness criteria.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the readiness and timing requirements for the scope estimate."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K032",
+        "value": "Revision of the exhibition promise should be recommended if even an explicitly optimistic but feasible assignment scenario fails to meet that promise.",
+        "scope": "Conditional recommendation concerning the promised exhibition scope and deadline; no scenario outcome is established.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the recommendation and its optimistic, feasible-scenario condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "K033",
+        "value": "If the forecast remains unresolved, the exhibition scope should be presented as contingent.",
+        "scope": "Scope communication under unresolved forecasting uncertainty.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the unresolved-forecast condition and contingent-scope response."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K034",
+        "value": "Daily project snapshots are coarse observations of an evolving process rather than executable revisions.",
+        "scope": "Distinction limiting the transfer from revision localization to project-history localization.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly states the representational distinction and observational coarseness."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K035",
+        "value": "Reconstruction errors can make snapshot classifications unstable.",
+        "scope": "Possible source of classification instability, not an established error in this project.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span lists reconstruction errors among the possible causes of unstable classifications."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K036",
+        "value": "Small samples can make snapshot classifications unstable.",
+        "scope": "Possible sample-size limitation; no minimum adequate sample size is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly identifies small samples as a possible source of classification instability."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K037",
+        "value": "Unrepresentative samples can make snapshot classifications unstable.",
+        "scope": "Possible sample-composition limitation, without an assertion that the available sample is unrepresentative.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span identifies unrepresentative samples as a distinct possible source of instability."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K038",
+        "value": "Variation in folder-processing effort can make snapshot classifications unstable.",
+        "scope": "Possible effect of heterogeneous folder effort.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span includes variable folder effort among the possible sources of instability."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K039",
+        "value": "Volunteer schedules can make snapshot classifications unstable.",
+        "scope": "Possible scheduling-related classification instability.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly attributes possible instability to volunteer schedules."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K040",
+        "value": "External rights delays can make snapshot classifications unstable.",
+        "scope": "Possible instability associated with external rights-clearance delays.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly includes external rights delays among the possible sources of instability."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K041",
+        "value": "Interactions among workflow stages can make snapshot classifications unstable.",
+        "scope": "Possible classification instability arising from stage interactions.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly identifies interacting stages as a possible source of instability."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K042",
+        "value": "Forecast ranges depend on assumptions.",
+        "scope": "Assumption dependence of the forecast ranges used for classification.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states this dependence."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K043",
+        "value": "Forecast ranges may omit uncertainty.",
+        "scope": "Possible incompleteness of represented uncertainty, without asserting any particular omission.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span independently states that uncertainty may be omitted."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K044",
+        "value": "Bisection can miss earlier forecast failures that were followed by recovery.",
+        "scope": "Possible failure of historical first-failure detection when recovery occurs.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly identifies the earlier-failure-and-recovery pattern that bisection can miss."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K045",
+        "value": "Sparse checks cannot establish monotonicity.",
+        "scope": "Limit on what sparse historical testing can establish about the tested property.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states this evidential limitation separately from the possibility of missing recovered failures."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K046",
+        "value": "Multiple simultaneous changes can yield a localized boundary without isolating a cause.",
+        "scope": "Possible coexistence of boundary localization and causal non-isolation when several changes occur together.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the multiple-change condition and the distinction between boundary localization and causal isolation."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "K047",
+        "value": "Whenever unique localization is unsupported, the reported result should retain an interval or multiple candidate episodes.",
+        "scope": "General reporting limit when the evidence does not support a unique localization.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the condition and the permitted unresolved forms."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": ["C001", "C002", "C003", "C004", "C005", "C006", "C007", "C008"],
+      "non_warrant_content": "P001-P004 include imperative setup for constructing the sequence, defining the test and configuring accounting. Their material representation, consistency and accounting requirements are captured above; their routine instructional form adds no separate claim."
+    },
+    {
+      "field": "operation",
+      "claim_ids": ["C003", "C007", "C009", "C010", "C011", "C012", "C013", "C014", "C015", "C016", "C017", "C023"],
+      "non_warrant_content": "P007 and P009 supply the routine midpoint-testing and repetition mechanics. Their endpoint conditions, conditional elimination rules and adjacent-day resolution are captured in the claims. No additional claim is assigned merely to executing or repeating a test."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C009", "C010", "C018", "C019", "C020", "C021", "C022"],
+      "non_warrant_content": "P015 instructs recording each tested date's range, counts, sampled histories and assumptions. This is a recordkeeping instruction and identifies the range used by P016; it does not assert that any records have been collected. P018's observation checklist and P019's proposed-versus-established distinction are captured together in C022."
+    },
+    {
+      "field": "inference",
+      "claim_ids": ["C023", "C024", "C025", "C026", "C027", "C028", "C029", "C030", "C031", "C032", "C033"],
+      "non_warrant_content": "Routine implementation language for proposing assignments, checking daily measures and presenting scope introduces no separate propositions beyond the captured planning rules, validation requirement and conditional recommendations."
+    },
+    {
+      "field": "limit",
+      "claim_ids": ["C023", "C029", "C034", "C035", "C036", "C037", "C038", "C039", "C040", "C041", "C042", "C043", "C044", "C045", "C046", "C047"],
+      "non_warrant_content": "All material distinctions, possible instability mechanisms, uncertainty limitations and conditional reporting requirements in P026-P031 are captured. The imperative wording in P031 adds no independent claim beyond those requirements."
+    }
+  ],
+  "anomalies": [
+    {
+      "code": "MAPPING_AMBIGUOUS_REFERENT",
+      "component_id": "K028",
+      "detail": "P022 conditions limiting scanning on expansion of a referenced queue after mentioning the greatest-shortfall stage and paired review and rights work. It does not uniquely identify the queue's stage. K028 preserves this ambiguity without choosing a referent.",
+      "correct_support_representable": "YES"
+    }
+  ]
+}

@@ -1,0 +1,991 @@
+{
+  "packet_id": "H6-T01-2",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C001.component",
+        "value": "A reconstructed equipment turnaround, comprising preceding bookings, return timing, cleaning requirements, readiness updates and collection handoffs, is proposed as the candidate failure-inducing configuration.",
+        "scope": "Proposed representation of an equipment turnaround for reduction testing.",
+        "provenance": {
+          "refs": [{"source_id": "P001", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the proposed configuration and its component categories."
+        }
+      }
+    },
+    {
+      "claim_id": "C002",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C002.component",
+        "value": "The listed turnaround components are candidates for investigation, not established causes.",
+        "scope": "Epistemic status of the components introduced in the state field.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P002", "role": "SUPPORT"},
+            {"source_id": "P001", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P002 states the distinction; P001 identifies the components."
+        }
+      }
+    },
+    {
+      "claim_id": "C003",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C003.component",
+        "value": "Missing log entries must remain unknown when reconstructing bookings.",
+        "scope": "Linking the 74 bookings to equipment and booking logs during days 1–3.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The reconstruction instruction explicitly preserves missing entries as unknown."
+        }
+      }
+    },
+    {
+      "claim_id": "C004",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C004.component",
+        "value": "Conflicting log entries must remain unknown when reconstructing bookings.",
+        "scope": "Linking the 74 bookings to equipment and booking logs during days 1–3.",
+        "provenance": {
+          "refs": [{"source_id": "P003", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The reconstruction instruction explicitly preserves conflicting entries as unknown."
+        }
+      }
+    },
+    {
+      "claim_id": "C005",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C005.component",
+        "value": "The defined failure is a booking starting after its agreed start time while the calendar shows equipment availability.",
+        "scope": "Failure criterion for case selection and subsequent tests.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies both the lateness criterion and the calendar-availability condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C006",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C006.component",
+        "value": "Equipment unreadiness must be distinguished from delayed crew collection.",
+        "scope": "Interpretation of late booking starts.",
+        "provenance": {
+          "refs": [{"source_id": "P004", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The distinction is explicitly required without establishing either explanation for a particular case."
+        }
+      }
+    },
+    {
+      "claim_id": "C007",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C007.component",
+        "value": "The selected late case must permit repeated reproduction of the defined failure through tabletop or controlled operational replay.",
+        "scope": "Eligibility of the case selected for reduction testing.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P006", "role": "SUPPORT"},
+            {"source_id": "P004", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P006 states the selection requirement; P004 identifies the referenced failure. Neither asserts that an eligible case has already been found."
+        }
+      }
+    },
+    {
+      "claim_id": "C008",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C008.component",
+        "value": "Replay feasibility must be demonstrated rather than assumed.",
+        "scope": "Replay proposed for the selected late case.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P007", "role": "SUPPORT"},
+            {"source_id": "P006", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P007 explicitly requires demonstration of feasibility; P006 identifies the replay."
+        }
+      }
+    },
+    {
+      "claim_id": "C009",
+      "fields": ["state"],
+      "component": {
+        "component_id": "C009.component",
+        "value": "Replay fidelity must be demonstrated rather than assumed.",
+        "scope": "Replay proposed for the selected late case; no fidelity criterion is specified.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P007", "role": "SUPPORT"},
+            {"source_id": "P006", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The requirement is explicit, although the mapping leaves its assessment criterion unspecified."
+        }
+      }
+    },
+    {
+      "claim_id": "C010",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "C010.component",
+        "value": "The proposed reduction search partitions the selected case's candidate components into groups and tests group removal or retention of the group's complement.",
+        "scope": "Reduction testing during days 4–9 for the selected replayable late case.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P008", "role": "SUPPORT"},
+            {"source_id": "P009", "role": "SUPPORT"},
+            {"source_id": "P006", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The spans state the search operation. The annotation preserves the removal/complement wording without assuming these describe distinct test configurations."
+        }
+      }
+    },
+    {
+      "claim_id": "C011",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C011.component",
+        "value": "Removal tests must hold the equipment, agreed start deadline and other test conditions fixed.",
+        "scope": "Comparison of tested reductions within the selected case.",
+        "provenance": {
+          "refs": [{"source_id": "P009", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly imposes these controls; the remaining test conditions are not enumerated."
+        }
+      }
+    },
+    {
+      "claim_id": "C012",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C012.component",
+        "value": "Every removal must have an explicit operational counterpart, with replay omission of an earlier booking, elimination of a redundant handoff and immediate readiness communication offered as examples.",
+        "scope": "Meaning of component removals in the proposed reduction tests; examples are not established remedies.",
+        "provenance": {
+          "refs": [{"source_id": "P010", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the correspondence requirement and illustrative operations without asserting their effectiveness."
+        }
+      }
+    },
+    {
+      "claim_id": "C013",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C013.component",
+        "value": "Removing an earlier booking from a replay has a diagnostic role.",
+        "scope": "Interpretation of the earlier-booking removal example.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P011", "role": "SUPPORT"},
+            {"source_id": "P010", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P011 explicitly characterizes the removal as diagnostic; P010 identifies its replay setting."
+        }
+      }
+    },
+    {
+      "claim_id": "C014",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C014.component",
+        "value": "Removing an earlier booking from a replay does not by itself justify reducing service.",
+        "scope": "Limit on translating diagnostic booking removal into an operational decision.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P011", "role": "SUPPORT"},
+            {"source_id": "P010", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly denies this standalone justification."
+        }
+      }
+    },
+    {
+      "claim_id": "C015",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C015.component",
+        "value": "Required cleaning must not be removed in reduction testing.",
+        "scope": "Admissible component removals.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The prohibition explicitly covers required cleaning."
+        }
+      }
+    },
+    {
+      "claim_id": "C016",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C016.component",
+        "value": "Required safety checks must not be removed in reduction testing.",
+        "scope": "Admissible component removals.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The prohibition explicitly covers required safety checks."
+        }
+      }
+    },
+    {
+      "claim_id": "C017",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C017.component",
+        "value": "Missing records must not be erased to manufacture a passing test.",
+        "scope": "Treatment of missing evidence in reduction testing.",
+        "provenance": {
+          "refs": [{"source_id": "P012", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states this evidence-handling prohibition; it does not specify the mechanics of erasing a missing record."
+        }
+      }
+    },
+    {
+      "claim_id": "C018",
+      "fields": ["state", "operation"],
+      "component": {
+        "component_id": "C018.component",
+        "value": "A reduced configuration may be retained for further partitioning only when repeated tests continue to reproduce the defined failure.",
+        "scope": "Acceptance and continuation rule for the iterative reduction search.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P013", "role": "SUPPORT"},
+            {"source_id": "P004", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P013 provides the conditional retention and continuation rule; P004 identifies the failure."
+        }
+      }
+    },
+    {
+      "claim_id": "C019",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C019.component",
+        "value": "If neither groups nor complements produce a failure-reproducing reduction, smaller removals should be tested.",
+        "scope": "Conditional next step in the reduction search, without a guarantee that smaller removals will succeed.",
+        "provenance": {
+          "refs": [{"source_id": "P014", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the condition and proposed next operation."
+        }
+      }
+    },
+    {
+      "claim_id": "C020",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C020.component",
+        "value": "Baseline and reduced configurations must use the same repetition rule, declared in advance.",
+        "scope": "Repeated-test comparability; no particular repetition threshold is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies both common application and predeclaration of the rule."
+        }
+      }
+    },
+    {
+      "claim_id": "C021",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C021.component",
+        "value": "Uncertain timing requires an unresolved test classification.",
+        "scope": "Classification of baseline and reduced-configuration tests.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Uncertain timing is an explicit trigger for the unresolved category."
+        }
+      }
+    },
+    {
+      "claim_id": "C022",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C022.component",
+        "value": "Missing prerequisites require an unresolved test classification.",
+        "scope": "Classification of baseline and reduced-configuration tests; prerequisites are not enumerated.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Missing prerequisites are an explicit trigger for the unresolved category."
+        }
+      }
+    },
+    {
+      "claim_id": "C023",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C023.component",
+        "value": "Inconsistent test outcomes require an unresolved classification.",
+        "scope": "Classification during baseline and reduced-configuration testing.",
+        "provenance": {
+          "refs": [{"source_id": "P015", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly assigns inconsistent outcomes to the unresolved category."
+        }
+      }
+    },
+    {
+      "claim_id": "C024",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C024.component",
+        "value": "Reduction should stop when no single remaining component can be removed while preserving failure.",
+        "scope": "Component-removal stopping criterion, distinct from safety, feasibility and time cutoffs.",
+        "provenance": {
+          "refs": [{"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states this stopping condition without asserting that it will be reached."
+        }
+      }
+    },
+    {
+      "claim_id": "C025",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C025.component",
+        "value": "Reduction should stop when further reductions are unsafe.",
+        "scope": "Safety bound on the reduction search.",
+        "provenance": {
+          "refs": [{"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Unsafe further reduction is an explicit stopping trigger."
+        }
+      }
+    },
+    {
+      "claim_id": "C026",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C026.component",
+        "value": "Reduction should stop when further reductions are infeasible.",
+        "scope": "Feasibility bound on the reduction search.",
+        "provenance": {
+          "refs": [{"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Infeasible further reduction is an explicit stopping trigger."
+        }
+      }
+    },
+    {
+      "claim_id": "C027",
+      "fields": ["operation"],
+      "component": {
+        "component_id": "C027.component",
+        "value": "Reduction must stop at the end of day 9 even if another stopping condition has not been reached.",
+        "scope": "Time bound on the proposed reduction search.",
+        "provenance": {
+          "refs": [{"source_id": "P016", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The deadline is stated as an alternative stopping condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C028",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C028.component",
+        "value": "Each tested configuration's outcome must distinguish reproduced failure, non-reproduced failure and an unresolved result.",
+        "scope": "Recorded test signal; unresolved results remain a separate category.",
+        "provenance": {
+          "refs": [{"source_id": "P017", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly supplies the three outcome categories."
+        }
+      }
+    },
+    {
+      "claim_id": "C029",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C029.component",
+        "value": "An informative reduction pattern would be a smaller configuration that repeatedly remains late while specified further removals cease to reproduce lateness.",
+        "scope": "Conditional interpretation of a possible test pattern, not a report of observed results or exhaustive minimality.",
+        "provenance": {
+          "refs": [{"source_id": "P018", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the contrastive pattern and limits it to specified further removals."
+        }
+      }
+    },
+    {
+      "claim_id": "C030",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C030.component",
+        "value": "Comparing reconstructed on-time bookings is proposed as a check for relevant operating conditions omitted from the replay.",
+        "scope": "Diagnostic purpose of the comparison; no omission or successful detection is asserted.",
+        "provenance": {
+          "refs": [{"source_id": "P019", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly connects the comparison operation to its checking purpose."
+        }
+      }
+    },
+    {
+      "claim_id": "C031",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C031.component",
+        "value": "A replay that cannot reproduce the baseline supplies no basis for reduction.",
+        "scope": "Limit on using an unsuccessful baseline replay for reduction inference.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The conditional limitation is explicit."
+        }
+      }
+    },
+    {
+      "claim_id": "C032",
+      "fields": ["signal"],
+      "component": {
+        "component_id": "C032.component",
+        "value": "If replay cannot reproduce the baseline, its missing conditions should be investigated.",
+        "scope": "Proposed response to baseline replay failure; the mapping does not identify the missing conditions.",
+        "provenance": {
+          "refs": [{"source_id": "P020", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The second clause prescribes this investigation under the first clause's condition; it does not establish a particular explanation."
+        }
+      }
+    },
+    {
+      "claim_id": "C033",
+      "fields": ["state", "inference"],
+      "component": {
+        "component_id": "C033.component",
+        "value": "A consistently failure-reproducing reduction would identify a combination sufficient for the selected failure under the test.",
+        "scope": "Conditional, test-relative sufficiency for the selected late-start failure.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P021", "role": "SUPPORT"},
+            {"source_id": "P004", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P021 supplies the conditional inference and its test-relative scope; P004 identifies the failure."
+        }
+      }
+    },
+    {
+      "claim_id": "C034",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C034.component",
+        "value": "Calling a reduction locally minimal requires exhaustive single-component removal checks.",
+        "scope": "Necessary checking requirement for the local-minimality label; performing checks alone is not stated to guarantee the label.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P022", "role": "SUPPORT"},
+            {"source_id": "P021", "role": "CONTEXT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "The restrictive wording establishes a necessary requirement; P021 identifies the reduction under discussion."
+        }
+      }
+    },
+    {
+      "claim_id": "C035",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C035.component",
+        "value": "Without exhaustive single-component removal checks, the reduction should be reported as near-minimal or merely reduced.",
+        "scope": "Fallback reporting rule; the mapping does not specify how to choose between these two labels.",
+        "provenance": {
+          "refs": [{"source_id": "P022", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The fallback and its condition are explicit. The unresolved distinction between the permitted labels is preserved."
+        }
+      }
+    },
+    {
+      "claim_id": "C036",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C036.component",
+        "value": "The smallest supported combinations should be translated into feasible changes only where tests support the operational counterparts; an explicit readiness handoff and a turnaround allowance are examples.",
+        "scope": "Proposed translation during days 10–14, conditional on test support rather than an assertion that either example works.",
+        "provenance": {
+          "refs": [{"source_id": "P023", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the translation rule, feasibility and support conditions, timing and examples."
+        }
+      }
+    },
+    {
+      "claim_id": "C037",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C037.component",
+        "value": "A proposed change must also be tested against the unreduced baseline scenario.",
+        "scope": "Testing required when moving from reduced configurations to a proposed change.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires the additional baseline test."
+        }
+      }
+    },
+    {
+      "claim_id": "C038",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C038.component",
+        "value": "Eliminating failure in a reduced case alone is insufficient to support the proposed change.",
+        "scope": "Evidential limit motivating testing against the unreduced baseline; no complete sufficiency criterion is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P024", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The second clause supplies the insufficiency rationale for the first clause's testing requirement."
+        }
+      }
+    },
+    {
+      "claim_id": "C039",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C039.component",
+        "value": "The selected trial must be bounded.",
+        "scope": "Trial chosen after translating the reduction findings; this span does not specify the bounds.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Boundedness is an explicit trial-selection requirement."
+        }
+      }
+    },
+    {
+      "claim_id": "C040",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C040.component",
+        "value": "The selected trial must address a supported combination.",
+        "scope": "Evidential connection required between reduction findings and the trial.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires this connection."
+        }
+      }
+    },
+    {
+      "claim_id": "C041",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C041.component",
+        "value": "The selected trial must cover several reconstructed late cases.",
+        "scope": "Case-coverage requirement for trial selection; neither an exact count nor demonstrated generalization is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states the several-case coverage requirement."
+        }
+      }
+    },
+    {
+      "claim_id": "C042",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C042.component",
+        "value": "The selected trial must fit the existing equipment.",
+        "scope": "Equipment-resource bound on trial selection.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The equipment constraint is explicitly stated."
+        }
+      }
+    },
+    {
+      "claim_id": "C043",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C043.component",
+        "value": "The selected trial must fit the existing staff.",
+        "scope": "Staffing-resource bound on trial selection.",
+        "provenance": {
+          "refs": [{"source_id": "P025", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The staffing constraint is explicitly stated."
+        }
+      }
+    },
+    {
+      "claim_id": "C044",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C044.component",
+        "value": "If evidence remains unresolved, a limited logging and readiness-verification trial should be chosen with the purpose of establishing testability.",
+        "scope": "Conditional fallback trial; achieving testability is a purpose, not a guaranteed outcome.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the unresolved-evidence condition, proposed operation and its purpose."
+        }
+      }
+    },
+    {
+      "claim_id": "C045",
+      "fields": ["inference"],
+      "component": {
+        "component_id": "C045.component",
+        "value": "When evidence remains unresolved, a remedy should not be asserted.",
+        "scope": "Limit on conclusions accompanying the fallback trial.",
+        "provenance": {
+          "refs": [{"source_id": "P026", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly contrasts establishing testability with asserting a remedy under unresolved evidence."
+        }
+      }
+    },
+    {
+      "claim_id": "C046",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C046.component",
+        "value": "Historical reconstruction depends on assumptions.",
+        "scope": "Limitation of historical reconstruction; the assumptions are not enumerated.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The assumption dependence is expressly attributed to historical reconstruction."
+        }
+      }
+    },
+    {
+      "claim_id": "C047",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C047.component",
+        "value": "Tabletop replay depends on assumptions.",
+        "scope": "Limitation of tabletop replay; the assumptions are not enumerated.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The assumption dependence is expressly attributed to tabletop replay."
+        }
+      }
+    },
+    {
+      "claim_id": "C048",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C048.component",
+        "value": "Agreement with recorded cases does not establish field effectiveness.",
+        "scope": "Limit on conclusions from historical reconstruction and tabletop replay.",
+        "provenance": {
+          "refs": [{"source_id": "P027", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly denies this evidential implication."
+        }
+      }
+    },
+    {
+      "claim_id": "C049",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C049.component",
+        "value": "Interactions can contribute to obtaining different minimal subsets.",
+        "scope": "Possible variability in reduction results; no particular interaction or independent effect is established.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Interactions are named among possible sources of differing subsets. The annotation does not turn the list into a claim of independent sufficiency."
+        }
+      }
+    },
+    {
+      "claim_id": "C050",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C050.component",
+        "value": "Variable return times can contribute to obtaining different minimal subsets.",
+        "scope": "Possible variability in reduction results, not an observed effect in these cases.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Variable return times are expressly included among possible sources of differing subsets."
+        }
+      }
+    },
+    {
+      "claim_id": "C051",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C051.component",
+        "value": "Missing entries can contribute to obtaining different minimal subsets.",
+        "scope": "Possible effect of incomplete records on reduction results.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Missing entries are expressly included among possible sources of differing subsets."
+        }
+      }
+    },
+    {
+      "claim_id": "C052",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C052.component",
+        "value": "Replay artifacts can contribute to obtaining different minimal subsets.",
+        "scope": "Possible effect of replay artifacts on reduction results; particular artifacts are unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Replay artifacts are expressly included among possible sources of differing subsets."
+        }
+      }
+    },
+    {
+      "claim_id": "C053",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C053.component",
+        "value": "Partition order can contribute to obtaining different minimal subsets.",
+        "scope": "Possible dependence of reduction results on search order.",
+        "provenance": {
+          "refs": [{"source_id": "P028", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Partition order is expressly included among possible sources of differing subsets."
+        }
+      }
+    },
+    {
+      "claim_id": "C054",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C054.component",
+        "value": "A retained subset is not necessarily unique.",
+        "scope": "Limit on uniqueness claims about reduction results.",
+        "provenance": {
+          "refs": [
+            {"source_id": "P029", "role": "SUPPORT"},
+            {"source_id": "P028", "role": "SUPPORT"}
+          ],
+          "support_status": "SUFFICIENT",
+          "rationale": "P029 states the non-uniqueness limitation directly; P028 also allows differing minimal subsets."
+        }
+      }
+    },
+    {
+      "claim_id": "C055",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C055.component",
+        "value": "A retained subset does not prove an underlying causal mechanism.",
+        "scope": "Causal interpretation of a reduction result, distinct from test-relative reproduction.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly denies that the retained subset proves a causal mechanism."
+        }
+      }
+    },
+    {
+      "claim_id": "C056",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C056.component",
+        "value": "One case need not explain all 19 late starts.",
+        "scope": "Limit on generalizing from the selected case to the full set of late starts.",
+        "provenance": {
+          "refs": [{"source_id": "P029", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span directly states the case-generalization limit and the relevant count."
+        }
+      }
+    },
+    {
+      "claim_id": "C057",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C057.component",
+        "value": "The field trial's duration, comparison bookings and success rule must be fixed before the trial, using existing-service deadlines.",
+        "scope": "Predeclared trial design and evaluation basis; no concrete duration, comparison set or success threshold is supplied.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the pretrial design requirement and deadline basis without specifying their values."
+        }
+      }
+    },
+    {
+      "claim_id": "C058",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C058.component",
+        "value": "Trial monitoring must track late-start frequency and minutes together with completed bookings, workload, safety and displaced demand.",
+        "scope": "Joint outcome-monitoring requirement; no weighting or tradeoff rule among these measures is specified.",
+        "provenance": {
+          "refs": [{"source_id": "P030", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly requires the lateness measures alongside the listed service and operational measures."
+        }
+      }
+    },
+    {
+      "claim_id": "C059",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C059.component",
+        "value": "If required safety work is compromised, the trial must be stopped or reversed.",
+        "scope": "Safety trigger for trial termination or reversal; the choice between those responses is unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span states this trigger and permits either stopping or reversal."
+        }
+      }
+    },
+    {
+      "claim_id": "C060",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C060.component",
+        "value": "If agreed service limits are exceeded, the trial must be stopped or reversed.",
+        "scope": "Service trigger for trial termination or reversal; the limits and response-selection rule are unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Exceeding agreed service limits is explicitly a stopping-or-reversal condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C061",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C061.component",
+        "value": "If agreed workload limits are exceeded, the trial must be stopped or reversed.",
+        "scope": "Workload trigger for trial termination or reversal; the limits and response-selection rule are unspecified.",
+        "provenance": {
+          "refs": [{"source_id": "P031", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "Exceeding agreed workload limits is explicitly a stopping-or-reversal condition."
+        }
+      }
+    },
+    {
+      "claim_id": "C062",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C062.component",
+        "value": "Relabelling availability alone must not count as improvement.",
+        "scope": "Validity of improvement claims; the limitation concerns relabelling by itself.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly excludes availability relabelling alone."
+        }
+      }
+    },
+    {
+      "claim_id": "C063",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C063.component",
+        "value": "Shifting deadlines alone must not count as improvement.",
+        "scope": "Validity of improvement claims; the limitation concerns deadline shifts by themselves.",
+        "provenance": {
+          "refs": [{"source_id": "P032", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span expressly excludes deadline shifts alone."
+        }
+      }
+    },
+    {
+      "claim_id": "C064",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C064.component",
+        "value": "If results are inconsistent at the trial's end, more observation or a revised test is required.",
+        "scope": "Conditional response at final trial review; the mapping does not select between the two responses.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span supplies the review context, inconsistent-results condition and permitted next steps."
+        }
+      }
+    },
+    {
+      "claim_id": "C065",
+      "fields": ["limit"],
+      "component": {
+        "component_id": "C065.component",
+        "value": "Inconsistent results at the trial's end do not justify rollout.",
+        "scope": "Conditional limit on deployment following trial review.",
+        "provenance": {
+          "refs": [{"source_id": "P033", "role": "SUPPORT"}],
+          "support_status": "SUFFICIENT",
+          "rationale": "The span explicitly excludes rollout as the response to inconsistent results."
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "field": "state",
+      "claim_ids": [
+        "C001", "C002", "C003", "C004", "C005", "C006", "C007",
+        "C008", "C009", "C010", "C018", "C033"
+      ],
+      "non_warrant_content": "P003 also supplies reconstruction logistics: days 1–3, the 74-booking work set and linkage by equipment and booking. P005 instructs establishing how actual starts were measured, without stating a measurement method or asserting its reliability. These routine setup instructions are not separate claims. State references in C010, C018 and C033 resolve case or failure identity."
+    },
+    {
+      "field": "operation",
+      "claim_ids": [
+        "C010", "C011", "C012", "C013", "C014", "C015", "C016",
+        "C017", "C018", "C019", "C020", "C021", "C022", "C023",
+        "C024", "C025", "C026", "C027"
+      ],
+      "non_warrant_content": "The days 4–9 work allocation is scheduling context for the search; the day-9 stopping bound is separately captured. P010's examples illustrate operational counterparts and are retained within C012 rather than treated as proven interventions. Repartitioning is retained within the conditional continuation rule, without making each routine search step a separate proposition."
+    },
+    {
+      "field": "signal",
+      "claim_ids": ["C028", "C029", "C030", "C031", "C032"],
+      "non_warrant_content": "P017 supplies the per-configuration recording checklist: retained and removed components, return and cleaning completion, readiness communication, collection and start times, and deviations from the intended test. These are recording instructions rather than claims that particular timings, deviations or outcomes occurred. Its substantive three-way outcome distinction is captured in C028."
+    },
+    {
+      "field": "inference",
+      "claim_ids": [
+        "C033", "C034", "C035", "C036", "C037", "C038", "C039",
+        "C040", "C041", "C042", "C043", "C044", "C045"
+      ],
+      "non_warrant_content": "Days 10–14 provide scheduling context for translating findings. The readiness-handoff and turnaround-allowance examples remain illustrative parts of C036, without claims of established effectiveness. The mapping supplies no actual reduction results, selected intervention or successful trial. The unspecified choice between near-minimal and merely reduced is preserved in C035."
+    },
+    {
+      "field": "limit",
+      "claim_ids": [
+        "C046", "C047", "C048", "C049", "C050", "C051", "C052",
+        "C053", "C054", "C055", "C056", "C057", "C058", "C059",
+        "C060", "C061", "C062", "C063", "C064", "C065"
+      ],
+      "non_warrant_content": "The instruction to review at the trial's end supplies the timing context for C064 and C065. The monitoring measures are preserved as one joint evaluation requirement rather than separate claims about every recorded quantity. No concrete trial duration, comparison set, success threshold, service limit or workload limit is supplied."
+    }
+  ],
+  "anomalies": []
+}
