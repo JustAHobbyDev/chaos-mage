@@ -1,0 +1,448 @@
+{
+  "schema_version": "h5-neutral-v1",
+  "packet_id": "H6-T02-3",
+  "mapping_sha256": "1db36b9f4d153b38c220c96c456b2be5e38a3386543ae35e0c33f77b398a034f",
+  "spans": {
+    "P001": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Treat the overnight export pipeline as a dynamic system.",
+      "source_range": [
+        0,
+        56
+      ]
+    },
+    "P002": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "The proposed input is the maximum number of concurrent exports in a small worker pool; outputs are queue depth, completion rate, elapsed export times, and queue, object-read, and upload durations where observable.",
+      "source_range": [
+        57,
+        270
+      ]
+    },
+    "P003": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "This assumes concurrency is adjustable and a canary pool can be bounded safely; neither capability is established by the packet.",
+      "source_range": [
+        271,
+        399
+      ]
+    },
+    "P004": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Before testing, establish worker versions, trace coverage, active work, initial queue depth, and available workload descriptors.",
+      "source_range": [
+        400,
+        528
+      ]
+    },
+    "P005": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Use only already scheduled overnight exports, with no customer-requested business-hours reruns.",
+      "source_range": [
+        529,
+        624
+      ]
+    },
+    "P006": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "If a bounded experiment is unavailable, defer the perturbation and choose a deployment that supplies the necessary controls and comparable telemetry.",
+      "source_range": [
+        625,
+        774
+      ]
+    },
+    "P007": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "First verify comparable queue-entry, worker-start, and completion timestamps across the versions being compared.",
+      "source_range": [
+        0,
+        112
+      ]
+    },
+    "P008": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "If these are missing, deploy narrowly scoped instrumentation and collect an overnight baseline before testing performance changes.",
+      "source_range": [
+        113,
+        243
+      ]
+    },
+    "P009": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "With adequate telemetry, record a baseline at concurrency c0, then at a documented time apply one known step to a lower concurrency c1 in the canary pool and hold it constant.",
+      "source_range": [
+        244,
+        419
+      ]
+    },
+    "P010": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Select the step size and cohort size beforehand from available capacity and overnight deadline headroom; a reduction tests the hypothesis that contention contributes to delays, without assuming it does.",
+      "source_range": [
+        420,
+        622
+      ]
+    },
+    "P011": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Let active exports finish and record when actual concurrency reflects the new limit.",
+      "source_range": [
+        623,
+        707
+      ]
+    },
+    "P012": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Keep worker version and other controllable settings fixed.",
+      "source_range": [
+        708,
+        766
+      ]
+    },
+    "P013": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Where feasible, retain an unchanged comparison pool with comparable scheduled work; record shared-resource exposure and workload differences.",
+      "source_range": [
+        767,
+        908
+      ]
+    },
+    "P014": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "Record the trajectory through the transition and subsequent observation window.",
+      "source_range": [
+        909,
+        988
+      ]
+    },
+    "P015": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 8,
+      "kind": "paragraph",
+      "text": "Predeclare queue-age, backlog-growth, error-rate, resource-pressure, and completion-deadline thresholds, plus a latest rollback time that preserves recovery headroom.",
+      "source_range": [
+        989,
+        1155
+      ]
+    },
+    "P016": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 9,
+      "kind": "paragraph",
+      "text": "If a threshold is crossed or telemetry fails, restore c0 without terminating active exports, stop further experimental exposure, and monitor recovery.",
+      "source_range": [
+        1156,
+        1306
+      ]
+    },
+    "P017": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 10,
+      "kind": "paragraph",
+      "text": "At the planned endpoint, restore c0 and follow exposed exports to completion where feasible; explicitly censor any still unfinished.",
+      "source_range": [
+        1307,
+        1439
+      ]
+    },
+    "P018": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Measure the delay from the commanded step to actual concurrency change and then to changes in queue depth, completion rate, and phase durations.",
+      "source_range": [
+        0,
+        144
+      ]
+    },
+    "P019": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Look for the size and speed of changes, transient peaks or oscillations, and whether outputs settle into a sustained range or keep drifting.",
+      "source_range": [
+        145,
+        285
+      ]
+    },
+    "P020": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Compare export cohorts by queue-entry time and exposure to the step, retaining exports already active at the transition as a distinct group.",
+      "source_range": [
+        286,
+        426
+      ]
+    },
+    "P021": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Track the fraction exceeding one hour and time-to-completion estimates that include unfinished exports, alongside the stable-median question.",
+      "source_range": [
+        427,
+        568
+      ]
+    },
+    "P022": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Compare these trajectories with baseline and any unchanged pool.",
+      "source_range": [
+        569,
+        633
+      ]
+    },
+    "P023": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Missing spans must remain unknown, not zero-duration phases.",
+      "source_range": [
+        634,
+        694
+      ]
+    },
+    "P024": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Record arrivals, workload mix, worker version, and observed resource conditions alongside the response so that coincident changes are visible.",
+      "source_range": [
+        695,
+        837
+      ]
+    },
+    "P025": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "These are proposed measurements, not observations already obtained.",
+      "source_range": [
+        838,
+        905
+      ]
+    },
+    "P026": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "If actual concurrency falls and object-read or upload durations subsequently improve relative to comparable baseline and control work, that supports a contention-sensitive explanation at the tested load.",
+      "source_range": [
+        0,
+        203
+      ]
+    },
+    "P027": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "It supports a deployment decision only if total export delay, throughput, and deadline risk also remain acceptable.",
+      "source_range": [
+        204,
+        319
+      ]
+    },
+    "P028": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "If service phases remain similar while queue delay increases, reduced capacity is a better explanation of that response and the lower limit should not be expanded.",
+      "source_range": [
+        320,
+        483
+      ]
+    },
+    "P029": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "If improvement is sufficiently precise to meet a predeclared operational benefit criterion without violating safety criteria, choose a staged, monitored rollout of the tested concurrency setting with rollback available.",
+      "source_range": [
+        484,
+        703
+      ]
+    },
+    "P030": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "If it worsens outcomes, restore the original setting and reject that change.",
+      "source_range": [
+        704,
+        780
+      ]
+    },
+    "P031": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "If results are inconclusive, retain the original setting and either repeat the bounded test on later scheduled nights or deploy instrumentation for the unresolved phase.",
+      "source_range": [
+        781,
+        950
+      ]
+    },
+    "P032": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "These results constrain candidate mechanisms; they do not by themselves justify blaming or rolling back a particular worker version.",
+      "source_range": [
+        951,
+        1083
+      ]
+    },
+    "P033": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "The reported roughly five-percent slow-export rate makes short tests potentially uninformative.",
+      "source_range": [
+        0,
+        95
+      ]
+    },
+    "P034": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Set the observation duration and precision requirement before testing using available overnight volume and the smallest operationally meaningful improvement; if the safety window cannot supply enough evidence, report uncertainty rather than extending exposure unsafely.",
+      "source_range": [
+        96,
+        365
+      ]
+    },
+    "P035": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Unknown initial backlog, changing arrivals, heterogeneous workspace sizes, cache state, shared storage or network disturbances, version-dependent trace gaps, and interacting jobs can distort the response.",
+      "source_range": [
+        366,
+        570
+      ]
+    },
+    "P036": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "A nominal concurrency step may take effect gradually while active work drains.",
+      "source_range": [
+        571,
+        649
+      ]
+    },
+    "P037": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Shared resources can contaminate a comparison pool, and nonlinear saturation can make one step behave differently from another.",
+      "source_range": [
+        650,
+        777
+      ]
+    },
+    "P038": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Apparent settling requires a sufficiently stable workload and adequate observation time; otherwise describe only the observed transient.",
+      "source_range": [
+        778,
+        914
+      ]
+    },
+    "P039": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "No detectable change does not exclude contention or a version defect.",
+      "source_range": [
+        915,
+        984
+      ]
+    },
+    "P040": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "Conclusions apply to the tested cohort, concurrency range, versions, and operating conditions; broader deployment requires staged confirmation.",
+      "source_range": [
+        985,
+        1128
+      ]
+    }
+  },
+  "ambiguities": []
+}

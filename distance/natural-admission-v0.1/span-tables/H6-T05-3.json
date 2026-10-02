@@ -1,0 +1,349 @@
+{
+  "schema_version": "h5-neutral-v1",
+  "packet_id": "H6-T05-3",
+  "mapping_sha256": "cb760118b9367a806ec5ba7a9c15dd53375a94cd2fe1a7c972ade2254a7fbbe7",
+  "spans": {
+    "P001": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Act on an ordered sequence of daily project snapshots reconstructed from daily counts and sampled folder histories.",
+      "source_range": [
+        0,
+        115
+      ]
+    },
+    "P002": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Define one fixed test: whether estimated completion of all 4,000 folders, including metadata review and rights clearance, falls after the exhibition deadline.",
+      "source_range": [
+        116,
+        274
+      ]
+    },
+    "P003": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Freeze the forecasting method, folder-size/completeness categories, treatment of missing records, and explicit assumptions about volunteer availability and processing rates.",
+      "source_range": [
+        275,
+        448
+      ]
+    },
+    "P004": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Account for stage dependencies and avoid counting the same folder as completed twice.",
+      "source_range": [
+        449,
+        534
+      ]
+    },
+    "P005": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Historical staffing, workload and clearance delays may be uncertain.",
+      "source_range": [
+        535,
+        603
+      ]
+    },
+    "P006": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Proceed with localization only if an earlier snapshot can be classified as within the deadline and a later snapshot as beyond it; the supplied backlog alone does not establish those endpoints.",
+      "source_range": [
+        604,
+        796
+      ]
+    },
+    "P007": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Test the middle daily snapshot between the verified endpoints using the frozen rule.",
+      "source_range": [
+        0,
+        84
+      ]
+    },
+    "P008": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "If it is within the deadline, retain the later half; if beyond, retain the earlier half.",
+      "source_range": [
+        85,
+        173
+      ]
+    },
+    "P009": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Repeat until the endpoints are adjacent days.",
+      "source_range": [
+        174,
+        219
+      ]
+    },
+    "P010": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Estimate unfinished work from counts and a sample covering folder size, completeness and workflow stage; reuse the same estimation rules at every date.",
+      "source_range": [
+        220,
+        371
+      ]
+    },
+    "P011": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Before discarding intervals, inspect the daily series and available histories for recoveries or changes that undermine a single-transition assumption.",
+      "source_range": [
+        372,
+        522
+      ]
+    },
+    "P012": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "If a snapshot cannot be reconstructed or uncertainty prevents classification, seek additional histories within the sampling allowance or test a nearby reconstructable date; do not discard an interval on an ambiguous result.",
+      "source_range": [
+        523,
+        746
+      ]
+    },
+    "P013": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Stop with an unresolved interval if the evidence allowance is exhausted.",
+      "source_range": [
+        747,
+        819
+      ]
+    },
+    "P014": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "If endpoints fail verification or repeated crossings appear, abandon a unique first-transition claim and examine separate episodes.",
+      "source_range": [
+        820,
+        951
+      ]
+    },
+    "P015": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "For each tested date, record the estimated completion-date range, its supporting counts and sampled histories, and the assumptions used.",
+      "source_range": [
+        0,
+        136
+      ]
+    },
+    "P016": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Classify the date as within the deadline only if the entire range is on or before it, and beyond only if the entire range is after it; otherwise mark it unresolved.",
+      "source_range": [
+        137,
+        301
+      ]
+    },
+    "P017": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Each decisive classification shrinks the candidate transition interval, conditional on the single-transition assumption.",
+      "source_range": [
+        302,
+        422
+      ]
+    },
+    "P018": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "At the retained boundary, inspect whether arrivals into metadata review, review throughput, rights turnaround, folder mix or available volunteer time changed.",
+      "source_range": [
+        423,
+        581
+      ]
+    },
+    "P019": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "These are proposed observations to collect, not established findings.",
+      "source_range": [
+        582,
+        651
+      ]
+    },
+    "P020": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "If the test is reproducible and the property changes only once, adjacent classified dates localize the first daily snapshot associated with forecast deadline failure under the chosen model.",
+      "source_range": [
+        0,
+        189
+      ]
+    },
+    "P021": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "They do not identify its sole cause.",
+      "source_range": [
+        190,
+        226
+      ]
+    },
+    "P022": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Use the boundary histories together with current workload estimates to propose the next two weeks of assignments: direct available, appropriately skilled volunteers toward the stage with the greatest estimated capacity shortfall, pairing review and rights work where dependencies require it, and limit additional scanning if it would merely expand that queue.",
+      "source_range": [
+        227,
+        586
+      ]
+    },
+    "P023": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Check exhibition-ready completions and remaining workload daily.",
+      "source_range": [
+        587,
+        651
+      ]
+    },
+    "P024": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "If added capacity does not improve the forecast, revisit the presumed constraint.",
+      "source_range": [
+        652,
+        733
+      ]
+    },
+    "P025": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Estimate a feasible exhibition scope from fully reviewed, cleared folders expected by the deadline; recommend revising the promise if even an explicitly optimistic, feasible assignment scenario misses it, and present a contingent scope if the forecast remains unresolved.",
+      "source_range": [
+        734,
+        1005
+      ]
+    },
+    "P026": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Daily snapshots are coarse observations of a changing process, not executable revisions.",
+      "source_range": [
+        0,
+        88
+      ]
+    },
+    "P027": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Reconstruction errors, small or unrepresentative samples, variable folder effort, volunteer schedules, external rights delays and interacting stages can make classifications unstable.",
+      "source_range": [
+        89,
+        272
+      ]
+    },
+    "P028": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Forecast ranges depend on assumptions and may omit uncertainty.",
+      "source_range": [
+        273,
+        336
+      ]
+    },
+    "P029": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Bisection can miss earlier failures followed by recovery; sparse checks cannot establish monotonicity.",
+      "source_range": [
+        337,
+        439
+      ]
+    },
+    "P030": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Multiple simultaneous changes can produce a localized boundary without isolating a cause.",
+      "source_range": [
+        440,
+        529
+      ]
+    },
+    "P031": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Treat the result as conditional localization of a forecast change, validate assignment effects through subsequent daily observations, and retain an interval or multiple candidate episodes whenever unique localization is unsupported.",
+      "source_range": [
+        530,
+        762
+      ]
+    }
+  },
+  "ambiguities": []
+}

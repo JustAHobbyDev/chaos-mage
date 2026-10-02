@@ -1,0 +1,371 @@
+{
+  "schema_version": "h5-neutral-v1",
+  "packet_id": "H6-T02-2",
+  "mapping_sha256": "9e8cc1f20045a78c29e7be614b985ac8fdbb97c4536cea5b28cc440186550536",
+  "spans": {
+    "P001": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Act on existing export records and traces, distinguishing the stable median from the reported roughly one-in-twenty exports exceeding an hour.",
+      "source_range": [
+        0,
+        142
+      ]
+    },
+    "P002": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Compare explicit, potentially coexisting explanations: queue congestion or worker shortages; worker-version regressions; slow or retried object reads; slow archive uploads; and workspace size or composition differences.",
+      "source_range": [
+        143,
+        362
+      ]
+    },
+    "P003": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Treat these as hypotheses, not findings.",
+      "source_range": [
+        363,
+        403
+      ]
+    },
+    "P004": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Trace coverage varies by worker version; availability of comparable timestamps, workload metadata and resource metrics remains uncertain.",
+      "source_range": [
+        404,
+        541
+      ]
+    },
+    "P005": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "First examine existing slow and ordinary overnight exports without requesting customer reruns.",
+      "source_range": [
+        0,
+        94
+      ]
+    },
+    "P006": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Where available, compare exports with similar workspace size, object count, execution window and worker version; retain unmatched cases with their limitations.",
+      "source_range": [
+        95,
+        254
+      ]
+    },
+    "P007": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Separate queue wait, worker execution, object-read and upload durations only where trace semantics permit.",
+      "source_range": [
+        255,
+        361
+      ]
+    },
+    "P008": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Build an evidence-by-hypothesis matrix, marking each item consistent, inconsistent or unknown for every explanation and recording reliability and diagnostic value.",
+      "source_range": [
+        362,
+        525
+      ]
+    },
+    "P009": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Prioritize contradictions over counts of supporting items: for example, reliably short queue waits would weaken queue congestion as the direct source of an hour-long export.",
+      "source_range": [
+        526,
+        699
+      ]
+    },
+    "P010": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Avoid treating nested spans or multiple symptoms of one event as independent evidence.",
+      "source_range": [
+        700,
+        786
+      ]
+    },
+    "P011": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Repeat the comparison excluding incomplete traces, varying uncertain phase boundaries, stratifying by version and workload, and considering combined causes.",
+      "source_range": [
+        787,
+        943
+      ]
+    },
+    "P012": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "If existing evidence cannot discriminate, propose a small canary deployment adding missing phase timing and coverage metadata, with bounded sampling and logging overhead and no document contents.",
+      "source_range": [
+        944,
+        1139
+      ]
+    },
+    "P013": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 8,
+      "kind": "paragraph",
+      "text": "Use normal overnight traffic; introduce controlled test exports only if representative test data and spare capacity are established.",
+      "source_range": [
+        1140,
+        1272
+      ]
+    },
+    "P014": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 9,
+      "kind": "paragraph",
+      "text": "Before deployment, define acceptable instrumentation overhead, error rate, completion rate and tail-delay bounds against comparable baseline traffic.",
+      "source_range": [
+        1273,
+        1422
+      ]
+    },
+    "P015": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 10,
+      "kind": "paragraph",
+      "text": "Halt expansion and revert the canary if those bounds are breached or monitoring cannot enforce them.",
+      "source_range": [
+        1423,
+        1523
+      ]
+    },
+    "P016": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 11,
+      "kind": "paragraph",
+      "text": "Expand a targeted mitigation only when reliable discriminating evidence favors its mechanism and the canary meets those bounds; otherwise retain the current deployment and gather the specific missing evidence.",
+      "source_range": [
+        1524,
+        1733
+      ]
+    },
+    "P017": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Look for comparative patterns rather than a single suspicious trace.",
+      "source_range": [
+        0,
+        68
+      ]
+    },
+    "P018": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Long queue waits with ordinary post-start durations would favor queue-related delay and weaken downstream-only explanations.",
+      "source_range": [
+        69,
+        193
+      ]
+    },
+    "P019": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Ordinary queue waits followed by prolonged read or upload phases would discriminate in the opposite direction, provided those phases are measured comparably.",
+      "source_range": [
+        194,
+        351
+      ]
+    },
+    "P020": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "A version association that persists within comparable workloads and execution windows would support a version-related hypothesis; an association that disappears after accounting for coverage or workload would weaken it.",
+      "source_range": [
+        352,
+        571
+      ]
+    },
+    "P021": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "These are proposed observations, not results.",
+      "source_range": [
+        572,
+        617
+      ]
+    },
+    "P022": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Record whether the ranking changes when uncertain evidence is removed and whether the canary changes the predicted phase and overall tail without increasing failures or unfinished exports.",
+      "source_range": [
+        618,
+        806
+      ]
+    },
+    "P023": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Weaken explanations that conflict with reliable, diagnostically important observations; eliminate one only within the scope where its necessary prediction was adequately tested.",
+      "source_range": [
+        0,
+        177
+      ]
+    },
+    "P024": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Use the surviving alternatives to choose the next deployment: a bounded mitigation or rollback canary when evidence supports a specific mechanism, an instrumentation canary when observability is the main obstacle, or no behavioral change when uncertainty or operating risk remains too high.",
+      "source_range": [
+        178,
+        468
+      ]
+    },
+    "P025": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "A successful mitigation canary would support expanding that action within tested conditions, while leaving open alternative explanations for the improvement.",
+      "source_range": [
+        469,
+        626
+      ]
+    },
+    "P026": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "If reliable observations contradict every listed explanation, expand the hypothesis set before choosing a behavioral change.",
+      "source_range": [
+        627,
+        751
+      ]
+    },
+    "P027": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Missing spans are unknown evidence, not proof that a phase was fast.",
+      "source_range": [
+        0,
+        68
+      ]
+    },
+    "P028": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Incomplete exports may be absent from completed-export samples and must be accounted for where records permit.",
+      "source_range": [
+        69,
+        179
+      ]
+    },
+    "P029": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Version, workload and overnight load may be confounded; overlapping spans, inconsistent clocks, retries and dependent measurements can distort comparisons.",
+      "source_range": [
+        180,
+        335
+      ]
+    },
+    "P030": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Rare delays require enough comparable exposure to make absence informative, so a short clean canary cannot establish resolution.",
+      "source_range": [
+        336,
+        464
+      ]
+    },
+    "P031": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Specify the observation window and required exposure before judging it; if exposure or coverage is inadequate, report the result as inconclusive and continue only within the safety bounds.",
+      "source_range": [
+        465,
+        653
+      ]
+    },
+    "P032": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Subjective consistency judgments, omitted causes and shared assumptions may leave the ranking wrong.",
+      "source_range": [
+        654,
+        754
+      ]
+    },
+    "P033": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Surviving contradiction does not prove a cause, and instrumentation or test workloads may change the behavior being investigated.",
+      "source_range": [
+        755,
+        884
+      ]
+    }
+  },
+  "ambiguities": []
+}
