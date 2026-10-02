@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "atomicity": {
+      "type": "string",
+      "enum": [
+        "ATOMIC",
+        "SPLIT_REQUIRED"
+      ]
+    },
+    "assignment_status": {
+      "type": "string",
+      "enum": [
+        "ASSIGNED",
+        "ROLE_UNCERTAIN",
+        "ATOMIZATION_DEFECT"
+      ]
+    },
+    "primary_role": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "SUPPLIED_FACT",
+        "SOURCE_FACT",
+        "DERIVED_INFERENCE",
+        "CONDITIONAL_RELATION",
+        "OPERATION",
+        "GOVERNANCE_RULE",
+        "LIMIT",
+        null
+      ]
+    },
+    "competing_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "SUPPLIED_FACT",
+          "SOURCE_FACT",
+          "DERIVED_INFERENCE",
+          "CONDITIONAL_RELATION",
+          "OPERATION",
+          "GOVERNANCE_RULE",
+          "LIMIT"
+        ]
+      }
+    },
+    "role_provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "TARGET",
+              "SOURCE_INSTRUMENT",
+              "MAPPING"
+            ]
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_type",
+          "source_id"
+        ]
+      }
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "atomicity",
+    "assignment_status",
+    "primary_role",
+    "competing_roles",
+    "role_provenance",
+    "rationale"
+  ]
+}

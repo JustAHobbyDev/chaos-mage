@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "frozen_role": {
+      "type": "string",
+      "enum": [
+        "SUPPLIED_FACT",
+        "SOURCE_FACT",
+        "DERIVED_INFERENCE",
+        "CONDITIONAL_RELATION",
+        "OPERATION",
+        "GOVERNANCE_RULE",
+        "LIMIT"
+      ]
+    },
+    "contract_id": {
+      "type": "string",
+      "enum": [
+        "TARGET_FIDELITY",
+        "SOURCE_FIDELITY",
+        "DERIVED_WARRANT",
+        "CONDITIONAL_LICENSE",
+        "OPERATION_LICENSE",
+        "GOVERNANCE_COHERENCE",
+        "LIMIT_WARRANT"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "SATISFIED",
+        "CONDITIONAL",
+        "VIOLATED",
+        "UNCERTAIN"
+      ]
+    },
+    "evaluation_provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "TARGET",
+              "SOURCE_INSTRUMENT",
+              "MAPPING"
+            ]
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_type",
+          "source_id"
+        ]
+      }
+    },
+    "unresolved_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "frozen_role",
+    "contract_id",
+    "verdict",
+    "evaluation_provenance",
+    "unresolved_conditions",
+    "rationale"
+  ]
+}
