@@ -1,0 +1,79 @@
+{
+  "claim": {
+    "claim_id": "H6-T04-2/C031",
+    "packet_id": "H6-T04-2",
+    "local_claim_id": "C031",
+    "value": "A continuous history supports attributing the examined publication to the tracked account.",
+    "scope": "A supportive identity inference, not proof that identity linkage is correct.",
+    "mapping_refs": [
+      {
+        "source_id": "P017",
+        "role": "SUPPORT"
+      },
+      {
+        "source_id": "P021",
+        "role": "SUPPORT"
+      }
+    ]
+  },
+  "frozen_role": "DERIVED_INFERENCE",
+  "contract_id": "DERIVED_WARRANT",
+  "contract_question": "Given the cited premises, observations, and transferred mechanism, does the claimed target conclusion follow at the strength and scope stated?",
+  "target": {
+    "target_id": "T04",
+    "domain": "product/customer",
+    "title": "Customer onboarding drop-off",
+    "frame": "A business scheduling product has many new accounts but fewer first published schedules than expected. Interviews from eight customers mention confusing setup, missing team information and postponement until the next roster cycle. Event logs record account creation, invitations, draft saves and publication, but do not capture offline preparation. The product team has one small release slot this month and needs a plan for deciding what to change and how to learn whether it helps."
+  },
+  "source_instrument": {
+    "source_id": "FORENSICS-CHAIN-OF-CUSTODY-001",
+    "instrument": {
+      "state": "An item or record passes through multiple handlers or locations, creating opportunities for substitution, alteration, contamination, or uncertainty about identity.\n",
+      "operation": "Record each transfer and handling event with the responsible party, time, and purpose, then inspect that history for continuity and unexplained transitions.\n",
+      "signal": "A continuous, internally consistent handling record links the examined item through its lifecycle, while gaps or contradictions identify breaks in documented custody.\n",
+      "inference": "Documentary continuity supports the claim that the item examined is the item collected and that its handling history is accounted for; gaps weaken that provenance claim.\n",
+      "limit": "Complete documentation does not itself prove that handlers recorded events truthfully or that no unrecorded alteration occurred, and missing records do not prove that alteration occurred. The strength of the inference depends on the reliability of the recording and safeguarding process.\n"
+    }
+  },
+  "mapping": {
+    "packet_id": "H6-T04-2",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "text": "Treat each new account’s path to its first published schedule as a history requiring traceable continuity across people, preparation steps and schedule versions. Account creation, invitations, draft saves and publication are documented event types; offline preparation is unobserved. Whether responsibility actually passes between people, which team information is required and when the account intends to publish remain questions to establish, not supplied facts."
+      },
+      "P017": {
+        "field": "inference",
+        "text": "A continuous history supports the claim that the examined publication belongs to the tracked account and schedule lineage and that its documented handling is accounted for."
+      },
+      "P021": {
+        "field": "limit",
+        "text": "Complete histories do not prove truthful reporting, correct identity linkage or absence of unrecorded offline work."
+      },
+      "P022": {
+        "field": "limit",
+        "text": "Missing events do not prove abandonment, missing preparation or mishandling."
+      },
+      "P023": {
+        "field": "limit",
+        "text": "The eight interviews cannot establish how common any explanation is."
+      },
+      "P024": {
+        "field": "limit",
+        "text": "Intended roster dates may change, and accounts still awaiting their publication opportunity cannot yet establish failure to publish."
+      },
+      "P025": {
+        "field": "limit",
+        "text": "Recording changes can create apparent improvement without changing customer behavior; verify linkage and capture comparability before interpreting results."
+      },
+      "P026": {
+        "field": "limit",
+        "text": "Small cohorts, incomplete follow-up, differences between comparison groups and concurrent changes can leave the release effect uncertain."
+      },
+      "P027": {
+        "field": "limit",
+        "text": "If these checks fail or evidence is too sparse, stop causal interpretation, retain the uncertainty and continue targeted follow-up or observation before deciding on another product change."
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "claim": {
+    "claim_id": "H6-T01-1/C059",
+    "packet_id": "H6-T01-1",
+    "local_claim_id": "C059",
+    "value": "Acceptable service-impact thresholds should be set before implementation.",
+    "scope": "The selected trial; the mapping supplies no threshold values.",
+    "mapping_refs": [
+      {
+        "source_id": "P027",
+        "role": "SUPPORT"
+      }
+    ]
+  },
+  "frozen_role": "GOVERNANCE_RULE",
+  "contract_id": "GOVERNANCE_COHERENCE",
+  "contract_question": "Is this proposition genuinely presented as a prospective decision, safety, stopping, rollback, threshold, or policy rule; are its trigger and prescribed action coherent; and does it avoid falsely presenting an authored normative choice as an empirically established fact?",
+  "target": {
+    "target_id": "T01",
+    "domain": "organizational / operational",
+    "title": "Shared equipment turnaround",
+    "frame": "A municipal maintenance depot lends specialist equipment to four crews. During the last six weeks, 19 of 74 bookings started late although the booking calendar showed the equipment available. Return times, cleaning completion and collection times are recorded in separate logs; some entries are missing. The depot manager has two weeks to choose changes that reduce late starts without buying equipment or adding staff. Work out what to investigate and how to decide which change to trial."
+  },
+  "source_instrument": {
+    "source_id": "CLINICAL-DIAGNOSIS-SERIAL-MONITORING-001",
+    "instrument": {
+      "state": "The underlying process may change over time, and a single observation cannot adequately distinguish stable state, transient fluctuation, or directional change.\n",
+      "operation": "Repeat a comparable measurement or observation at multiple time points and evaluate the resulting sequence against expected variation or a defined change rule.\n",
+      "signal": "The sequence exhibits persistence, trend, reversal, threshold crossing, or another temporal pattern not available from an isolated measurement.\n",
+      "inference": "The temporal pattern constrains hypotheses about whether and how the underlying state is changing and can distinguish sustained change from some forms of transient variation.\n",
+      "limit": "Measurement error, regression to the mean, irregular sampling, changing measurement conditions, interventions between observations, and poorly chosen intervals or thresholds can create or conceal apparent trends.\n"
+    }
+  },
+  "mapping": {
+    "packet_id": "H6-T01-1",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "text": "Act on the equipment turnaround process across the four crews, treating each booking as one observation in a time sequence."
+      },
+      "P002": {
+        "field": "state",
+        "text": "The reported 19 late starts among 74 bookings establish an aggregate problem, not whether it is persistent, worsening or temporary."
+      },
+      "P003": {
+        "field": "state",
+        "text": "Possible contributors include late returns, cleaning delays, inaccurate availability entries and delayed collection; these are hypotheses."
+      },
+      "P004": {
+        "field": "state",
+        "text": "Missing entries and separate logs may obscure the sequence."
+      },
+      "P024": {
+        "field": "limit",
+        "text": "Timestamp errors, missingness, irregular booking frequency, changing job mix, workload, measurement practices and concurrent interventions can create or hide patterns."
+      },
+      "P025": {
+        "field": "limit",
+        "text": "Two weeks and small subgroup counts may be insufficient; the persistence rule is a practical selection rule, not statistical proof or causal identification."
+      },
+      "P026": {
+        "field": "limit",
+        "text": "Test whether plausible assignments of unresolved cases alter the decision."
+      },
+      "P027": {
+        "field": "limit",
+        "text": "Set trial success and acceptable service-impact thresholds before implementation."
+      },
+      "P028": {
+        "field": "limit",
+        "text": "Stop or revise a trial if it causes unsafe handoffs or unacceptable disruption; extend observation when evidence is sparse."
+      },
+      "P029": {
+        "field": "limit",
+        "text": "Check that apparent improvement does not merely shift starts later, suppress bookings or move delays to other crews."
+      }
+    }
+  }
+}

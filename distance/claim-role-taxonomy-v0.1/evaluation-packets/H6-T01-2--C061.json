@@ -1,0 +1,95 @@
+{
+  "claim": {
+    "claim_id": "H6-T01-2/C061",
+    "packet_id": "H6-T01-2",
+    "local_claim_id": "C061",
+    "value": "If agreed workload limits are exceeded, the trial must be stopped or reversed.",
+    "scope": "Workload trigger for trial termination or reversal; the limits and response-selection rule are unspecified.",
+    "mapping_refs": [
+      {
+        "source_id": "P031",
+        "role": "SUPPORT"
+      }
+    ]
+  },
+  "frozen_role": "GOVERNANCE_RULE",
+  "contract_id": "GOVERNANCE_COHERENCE",
+  "contract_question": "Is this proposition genuinely presented as a prospective decision, safety, stopping, rollback, threshold, or policy rule; are its trigger and prescribed action coherent; and does it avoid falsely presenting an authored normative choice as an empirically established fact?",
+  "target": {
+    "target_id": "T01",
+    "domain": "organizational / operational",
+    "title": "Shared equipment turnaround",
+    "frame": "A municipal maintenance depot lends specialist equipment to four crews. During the last six weeks, 19 of 74 bookings started late although the booking calendar showed the equipment available. Return times, cleaning completion and collection times are recorded in separate logs; some entries are missing. The depot manager has two weeks to choose changes that reduce late starts without buying equipment or adding staff. Work out what to investigate and how to decide which change to trial."
+  },
+  "source_instrument": {
+    "source_id": "SOFTWARE-DELTA-DEBUGGING-001",
+    "instrument": {
+      "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+      "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+      "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+      "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+      "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+    }
+  },
+  "mapping": {
+    "packet_id": "H6-T01-2",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "text": "Treat a reconstructed equipment turnaround as the candidate failure-inducing configuration: preceding bookings, return timing, cleaning requirements, readiness updates and collection handoffs."
+      },
+      "P002": {
+        "field": "state",
+        "text": "These are candidate components, not established causes."
+      },
+      "P003": {
+        "field": "state",
+        "text": "During days 1–3, link the 74 bookings to the separate logs by equipment and booking, retaining missing or conflicting entries as unknown."
+      },
+      "P004": {
+        "field": "state",
+        "text": "Define failure as a booking starting after its agreed start time despite the calendar showing availability; distinguish equipment unreadiness from delayed crew collection."
+      },
+      "P005": {
+        "field": "state",
+        "text": "Establish how actual starts were measured."
+      },
+      "P006": {
+        "field": "state",
+        "text": "Select a late case for which a tabletop or controlled operational replay can repeatedly reproduce that failure."
+      },
+      "P007": {
+        "field": "state",
+        "text": "Replay feasibility and fidelity must be demonstrated, not assumed."
+      },
+      "P027": {
+        "field": "limit",
+        "text": "Historical reconstruction and tabletop replay depend on assumptions; agreement with recorded cases does not establish field effectiveness."
+      },
+      "P028": {
+        "field": "limit",
+        "text": "Interactions, variable return times, missing entries, replay artifacts and partition order can produce different minimal subsets."
+      },
+      "P029": {
+        "field": "limit",
+        "text": "A retained subset is neither necessarily unique nor proof of an underlying causal mechanism, and one case need not explain all 19 late starts."
+      },
+      "P030": {
+        "field": "limit",
+        "text": "Before the field trial, fix its duration, comparison bookings and success rule using existing-service deadlines; track late-start frequency and minutes alongside completed bookings, workload, safety and displaced demand."
+      },
+      "P031": {
+        "field": "limit",
+        "text": "Stop or reverse the trial if required safety work is compromised or agreed service or workload limits are exceeded."
+      },
+      "P032": {
+        "field": "limit",
+        "text": "Do not count relabelled availability or shifted deadlines alone as improvement."
+      },
+      "P033": {
+        "field": "limit",
+        "text": "Review at the trial's end; inconsistent results require more observation or a revised test, not rollout."
+      }
+    }
+  }
+}
