@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C070",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C070",
+    "value": "If canary coverage is inadequate, the result should be reported as inconclusive.",
+    "scope": "Conditional on coverage inadequacy; the mapping supplies no numerical adequacy threshold.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P030",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 explicitly makes inadequate coverage a sufficient trigger for reporting an inconclusive result; P030 identifies the canary context."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C070_signal_basis",
+    "value": "Assessment of the canary finds observation coverage inadequate to judge its result.",
+    "scope": "The coverage-inadequacy branch of the canary assessment, without an invented numerical threshold.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P030",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 supplies the inadequate-coverage condition for judging the result, and P030 resolves its canary context."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C070_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its explicit condition and requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "Given coverage inadequate for judging the canary result, reporting that result as inconclusive is warranted. The claim asserts an evidential limit, without inferring success, failure or a cause from incomplete observations.",
+  "uncertainty": "The mapping leaves the adequacy threshold unspecified. This affects determining whether the condition holds, but not the warrant once coverage inadequacy is assumed.",
+  "anomalies": []
+}

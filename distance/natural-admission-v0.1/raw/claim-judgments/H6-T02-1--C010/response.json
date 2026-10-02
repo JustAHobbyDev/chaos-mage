@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C010",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C010",
+    "value": "Revision comparisons should use consistent elapsed timing from queue entry through upload completion.",
+    "scope": "Definition and consistency of the proposed end-to-end timing measurement.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span specifies consistent timing across revisions, both measurement endpoints and validation of comparability despite differing trace coverage."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C010_SIGNAL",
+    "value": "Revision trials report sample counts, fractions exceeding one hour and uncertainty, with workload and load recorded, using queue-entry-to-upload-completion timing whose comparability across revisions has been validated.",
+    "scope": "Comparable end-to-end elapsed-time observations across tested revisions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the timing definition, comparability requirement and revision-level observations."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C010_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The measurement-consistency claim is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Consistent, validated start and end points make revision comparisons concern the same elapsed-time quantity. With the stated prerequisites satisfied, this licenses the claim within its measurement-definition scope.",
+  "uncertainty": "No unresolved warrant uncertainty within the stated scope; timing comparability is assumed validated as required.",
+  "anomalies": []
+}

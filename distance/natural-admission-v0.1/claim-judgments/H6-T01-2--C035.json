@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C035",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C035.component",
+    "value": "Without exhaustive single-component removal checks, the reduction should be reported as near-minimal or merely reduced.",
+    "scope": "Fallback reporting rule; the mapping does not specify how to choose between these two labels.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly supplies the fallback labels and the condition for using them."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C035.signal_basis",
+    "value": "A smaller configuration repeatedly reproduces lateness under fixed test conditions and a common repetition rule, while specified further removals cease to reproduce it. This pattern does not itself establish exhaustive single-component removal checks.",
+    "scope": "The selected case under the replay test; unresolved outcomes remain unresolved.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the observed reduction pattern, test controls, unresolved-outcome rule, and distinction between specified removals and exhaustive checks; context identifies the selected replay case."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C035.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The reporting rule is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "The signal establishes a reproducing reduction but does not establish local minimality without exhaustive checks. Reporting it as merely reduced satisfies the stated fallback. The claim permits alternative labels without asserting that every such reduction is demonstrably near-minimal.",
+  "uncertainty": "The mapping supplies no criterion for choosing between near-minimal and merely reduced; that ambiguity is preserved in the frozen claim.",
+  "anomalies": []
+}

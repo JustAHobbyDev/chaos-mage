@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C024",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C024.component",
+    "value": "Reduction should stop when no single remaining component can be removed while preserving failure.",
+    "scope": "Component-removal stopping criterion, distinct from safety, feasibility and time cutoffs.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P016 explicitly supplies this stopping condition. The claim does not assert that it is reached."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C024.signal_basis",
+    "value": "A reduced configuration repeatedly reproduces lateness while specified further removals do not, with test conditions fixed and a common repetition rule. Exhaustive single-component removal checks establish whether the component-removal stopping condition has been reached.",
+    "scope": "The selected failure under the replay test; unresolved outcomes do not establish that a removal fails to preserve failure.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P004",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P016",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies the removal signal, controlled comparison, unresolved-outcome treatment and exhaustive-check requirement."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C024.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded stopping rule is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "When no single remaining component can be removed while preserving the tested failure, stopping is warranted for this local component-removal criterion. The claim asserts neither global minimality nor that the criterion has already been met. Failure to reproduce after only specified removals would not alone establish that all single-component checks are exhausted.",
+  "uncertainty": "Whether this stopping condition is actually reached is unspecified, but that does not undermine the conditional stopping rule.",
+  "anomalies": []
+}

@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C032",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C032",
+    "value": "Before deployment, acceptable bounds for instrumentation overhead, error rate, completion rate and tail delay should be defined against comparable baseline traffic.",
+    "scope": "A prospective baseline-relative safety requirement; no numerical thresholds or baseline selection rules are supplied.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span supplies the timing, metric dimensions and comparable-baseline qualification."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C032_signal_basis",
+    "value": "The operation establishes baseline-relative acceptance bounds before deployment, monitors canary changes in the predicted phase, overall tail, failures and unfinished exports, and requires stopping expansion and reverting when bounds are breached or cannot be enforced.",
+    "scope": "Prospective canary evaluation, with a specified observation window and required exposure; inadequate exposure or coverage makes the result inconclusive.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the acceptance criteria, monitored outcomes, enforcement rule and exposure qualification."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C032_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The judgment does not depend on an unresolved empirical relation."
+    }
+  },
+  "rationale": "Predefined acceptance bounds are warranted by the operation's requirement to evaluate canary outcomes and act on breaches. The claim is limited to establishing prospective decision criteria; it does not assert that particular thresholds ensure safety or that the mitigation works.",
+  "uncertainty": "The mapping leaves numerical thresholds and baseline selection unspecified, so their adequacy is not established. That does not undermine this procedural claim.",
+  "anomalies": []
+}

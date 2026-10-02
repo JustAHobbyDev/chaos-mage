@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C019",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C019.component",
+    "value": "If neither groups nor complements produce a failure-reproducing reduction, smaller removals should be tested.",
+    "scope": "Conditional next step in the reduction search, without a guarantee that smaller removals will succeed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span directly supplies the condition and proposed next operation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C019.signal_basis",
+    "value": "Group and complement tests yield no failure-reproducing reduction under fixed test conditions. Finer removals are then tested, using the same repetition rule and retaining unresolved outcomes as unresolved.",
+    "scope": "The selected case's reduction search, subject to the stated safety, feasibility and day-9 stopping limits.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the unsuccessful coarse tests, finer search step, outcome discipline and stopping bounds."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C019.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required to warrant this bounded search step."
+    }
+  },
+  "rationale": "Failure to find a reproducing reduction through coarse removals does not exclude reproduction after a smaller removal. Testing finer removals is therefore licensed as a next search step within the stopping limits; the claim promises neither success nor minimality.",
+  "uncertainty": "Whether any smaller removal will preserve failure remains unknown, as the claim permits.",
+  "anomalies": []
+}

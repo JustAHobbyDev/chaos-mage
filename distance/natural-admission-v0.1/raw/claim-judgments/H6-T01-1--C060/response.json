@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T01-1",
+  "claim_id": "C060",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C060.component",
+    "value": "A trial should be stopped or revised if it causes unsafe handoffs.",
+    "scope": "A conditional safety bound; the mapping does not define the unsafe-handoff test or choose between stopping and revision.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P028 explicitly supplies the safety condition and both permitted responses."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C060.signal_basis",
+    "value": "During the trial, the same measurements continue; the relevant safety trigger is the trial causing unsafe handoffs.",
+    "scope": "The safety trigger is conditional. Repeated delay patterns alone do not establish that the trial causes unsafe handoffs, and no safety test is specified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P022 supplies continued trial measurement, and P028 supplies the conditional safety trigger."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C060.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as a conditional safety bound, without requiring an unresolved empirical relation to license it."
+    }
+  },
+  "rationale": "If a trial causes unsafe handoffs, stopping or revising it is warranted as an operational safety constraint. The claim neither asserts that harm has occurred nor infers it from the temporal delay signal.",
+  "uncertainty": "Applying the bound requires determining whether handoffs are unsafe and attributable to the trial. The unspecified test limits application, not the warrant for the conditional bound.",
+  "anomalies": []
+}

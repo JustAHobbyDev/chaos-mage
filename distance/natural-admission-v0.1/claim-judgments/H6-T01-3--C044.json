@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-3",
+  "claim_id": "C044",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C044.component",
+    "value": "Separate logs may share clock errors, so their separation does not guarantee independent evidence.",
+    "scope": "A possible common-error mechanism, not a finding that clock errors occurred in these logs.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P028 explicitly identifies shared clock errors as a possible limitation on the independence of separate logs."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C044.signal_basis",
+    "value": "Compare agreement or disagreement about the same booking and handoff while assessing source access and copying; separate records may share clock errors.",
+    "scope": "Assessment of whether corroborating records provide independent evidence, without asserting that a shared error actually occurred.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the source assessment, comparison signal and explicit common-error qualification."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C044.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded possibility claim is supported without establishing an unresolved empirical relation."
+    }
+  },
+  "rationale": "Distinct logs can derive timestamps from the same faulty clock, making their errors dependent despite their separation. Agreement therefore does not guarantee independent evidence. The claim asserts only this possibility.",
+  "uncertainty": "Whether these particular logs actually share clock errors remains unknown and is outside the claim.",
+  "anomalies": []
+}

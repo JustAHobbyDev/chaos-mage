@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C052",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C052.component",
+    "value": "Version-dependent trace gaps can distort the experimental response.",
+    "scope": "Potential distortion associated with telemetry coverage differing by worker version.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly identifies version-dependent trace gaps as a potential source of response distortion."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C052.signal_basis",
+    "value": "Following a controlled reduction in concurrency, measure changes in queue depth, completion rate, and phase durations, keeping missing spans unknown and recording worker version alongside the response.",
+    "scope": "Recorded response to the canary concurrency step, with phase measurements limited by trace availability.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P023",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the perturbation, measured response, treatment of missing observations, and recording of worker version."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C052.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this supported methodological limitation."
+    }
+  },
+  "rationale": "Version-dependent missing observations can make recorded response trajectories incomplete or unevenly representative across versions. This licenses the bounded possibility of distortion even when execution prerequisites are satisfied and a response is observed.",
+  "uncertainty": "The claim establishes a possible measurement limitation; it does not establish that trace gaps actually distorted a particular experiment or specify the direction or magnitude.",
+  "anomalies": []
+}

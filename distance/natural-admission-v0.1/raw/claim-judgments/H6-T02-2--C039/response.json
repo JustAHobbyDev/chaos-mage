@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C039",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C039",
+    "value": "Long queue waits accompanied by ordinary post-start durations would weaken explanations attributing the delay only to downstream activity.",
+    "scope": "A proposed conditional observation; the negative conclusion is limited to downstream-only explanations.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans directly supply the weakening claim and its prospective status."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C039_signal_basis",
+    "value": "Export timing shows long queue waits and ordinary post-start durations, with phase separation justified by trace semantics and missing spans treated as unknown.",
+    "scope": "A proposed observation assumed to occur in the assessed exports; ordinary durations must reflect timing evidence rather than missing coverage.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the timing pattern, valid phase-separation requirement, missing-data qualification and prospective status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C039_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the claim is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Observed excess waiting before worker start, alongside ordinary downstream duration, counts against explanations locating the delay exclusively downstream. This licenses weakening those explanations without requiring their elimination or identification of the queue delay's cause.",
+  "uncertainty": "The timing pattern does not exclude downstream contributions or combined causes; the claim requires only weakening downstream-only explanations.",
+  "anomalies": []
+}

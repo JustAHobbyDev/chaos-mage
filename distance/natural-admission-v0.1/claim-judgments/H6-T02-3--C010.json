@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C010",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C010.component",
+    "value": "If a bounded experiment is unavailable, the deployment choice should supply the necessary controls and comparable telemetry.",
+    "scope": "Conditional preparatory deployment decision, with the perturbation deferred.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P006",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span directly supplies the conditional deployment recommendation and its accompanying deferral."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C010.signal_basis",
+    "value": "The proposed test requires adjustable concurrency, a safely bounded canary pool, and comparable timing measurements. When bounded experimentation is unavailable, defer the perturbation and supply the necessary controls and telemetry; missing timestamps call for instrumentation and an overnight baseline before performance testing.",
+    "scope": "Preparation for the proposed experiment. This branch requires no observed transient response and makes no claim of measured performance benefit.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P003",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the experiment's control and measurement requirements, the fallback deployment action, and the prospective status of measurements."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C010.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This bounded preparatory recommendation does not depend on establishing an unresolved empirical relation."
+    }
+  },
+  "rationale": "The recommendation is licensed as preparation for a safely controlled, interpretable experiment: supply its necessary controls and comparable measurements while deferring the perturbation. It does not assert that this deployment improves export performance or suffices to make every otherwise unavailable experiment feasible. Execution readiness is the subject of the claim, not an unresolved inferential warrant.",
+  "uncertainty": "The packet does not establish which capabilities are missing or whether supplying them would remove every obstacle. Those questions do not defeat this limited conditional recommendation.",
+  "anomalies": []
+}

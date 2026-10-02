@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C064",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C064",
+    "value": "Retries can distort comparisons.",
+    "scope": "A possible comparison limitation, distinct from treating retried reads as a candidate delay mechanism.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P029",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P002",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P029 explicitly identifies retries as a possible comparison distortion; P002 identifies retried reads as a separate candidate explanation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C064_SIGNAL",
+    "value": "Compare measured export phases and evaluate evidence across hypotheses; phase-based discrimination depends on comparable measurements, and retries may distort comparisons.",
+    "scope": "Comparative interpretation of export timing evidence where trace semantics permit phase separation.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P029",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the comparison operation, its measurement-comparability condition, and the retry-related limitation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C064_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required to warrant this bounded possibility claim."
+    }
+  },
+  "rationale": "Retries can make timing measurements reflect repeated attempts or accumulated retry time, affecting comparability and interpretation. This licenses the stated possibility of distortion without establishing that retries actually distorted these comparisons.",
+  "uncertainty": "The occurrence and magnitude of retry-related distortion in these exports remain unspecified.",
+  "anomalies": []
+}

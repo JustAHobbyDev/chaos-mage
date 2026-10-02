@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C052",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C052.component",
+    "value": "Replay artifacts can contribute to obtaining different minimal subsets.",
+    "scope": "Possible effect of replay artifacts on reduction results; particular artifacts are unspecified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The mapping explicitly identifies replay artifacts as a possible contributor to differing minimal subsets."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C052.signal_basis",
+    "value": "Reduction retains configurations that repeatedly reproduce lateness under fixed test conditions and a common repetition rule; the informative signal is continued lateness in a smaller configuration with failure no longer reproduced after specified further removals.",
+    "scope": "The selected replay and tested removals; inconsistent or uncertain outcomes remain unresolved.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the replay scope, controlled removal procedure, repetition criterion, unresolved-outcome qualification and observed reduction pattern."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C052.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The supported possibility claim requires no additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Retention depends on outcomes produced by the replay. Replay artifacts can influence those outcomes and consequently which subsets survive reduction. This licenses the stated possibility within its bounds, even when execution prerequisites are satisfied.",
+  "uncertainty": "The signal does not identify a particular artifact or establish that artifacts actually changed the subsets in this case; the claim asserts only that they can contribute.",
+  "anomalies": []
+}

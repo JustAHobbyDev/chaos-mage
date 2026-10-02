@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C003",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C003.component",
+    "value": "The proposed outputs comprise queue depth, completion rate, elapsed export time, and queue, object-read, and upload durations where observable.",
+    "scope": "Response variables; phase-duration availability is qualified by observability.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P002",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P002 directly specifies the output bundle and its observability qualification."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C003.signal_basis",
+    "value": "Following a controlled concurrency reduction, measure queue depth, completion rate, phase durations, and export completion times, including unfinished exports in completion-time estimates. Unobserved phases remain unknown.",
+    "scope": "Proposed response measurements during the bounded concurrency experiment, assuming execution prerequisites and the described signal; no assertion that measurements have already been obtained.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P023",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P002",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the perturbation and response measurements, treatment of unfinished exports and missing phases, and their proposed status. P002 identifies the named phases."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C003.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim specifies proposed response variables and requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim accurately identifies the outputs designated for observation in the operation. It makes no causal or performance inference and preserves the qualification that phase durations are available only where observable.",
+  "uncertainty": "Actual phase coverage is unspecified, but the claim explicitly accommodates that limitation.",
+  "anomalies": []
+}

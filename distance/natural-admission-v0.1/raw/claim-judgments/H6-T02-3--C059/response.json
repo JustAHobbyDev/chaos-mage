@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C059",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C059.component",
+    "value": "If the required workload stability and observation time for apparent settling are not both present, the description should be limited to the observed transient.",
+    "scope": "Conditional reporting restriction when settling prerequisites are unmet.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P038",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly supplies both prerequisites and the restriction when they are not jointly satisfied."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C059.signal_basis",
+    "value": "The trajectory following a controlled concurrency reduction exhibits temporal changes or apparent settling, but sufficient workload stability or observation time is absent.",
+    "scope": "Hypothetical observation under the proposed test, restricted to the recorded transient when settling prerequisites are unmet.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P038",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies the controlled step, temporal response features, and unmet settling conditions; P025 identifies these as proposed measurements."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C059.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed to warrant this reporting restriction."
+    }
+  },
+  "rationale": "Without adequate observation time and a sufficiently stable workload, apparent flattening cannot establish settling. Limiting the description to the observed transient is therefore warranted, even when the experiment executes successfully and temporal response features occur.",
+  "uncertainty": "The packet does not specify numerical settling thresholds, but that does not undermine the conditional reporting restriction.",
+  "anomalies": []
+}

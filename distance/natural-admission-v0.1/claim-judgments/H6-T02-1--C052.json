@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C052",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C052",
+    "value": "Flakiness, unbuildable revisions, several regressions, later fixes and interactions can invalidate binary elimination.",
+    "scope": "Possible failure of the elimination method under the listed complications.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited span expressly attributes possible invalidation to these complications."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C052_signal_basis",
+    "value": "Confident midpoint classifications determine which endpoint moves and which history is discarded under a single-transition assumption. Inconclusive results do not justify elimination, and build failures are not performance classifications; decisive results shrink the candidate interval.",
+    "scope": "Repeated revision classification and elimination, conditional on a single transition and usable performance evidence.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the classification rule, elimination assumption, treatment of inconclusive and unbuildable revisions, and interval-shrinking signal."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C052_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded methodological limitation is supported without an unresolved empirical relation."
+    }
+  },
+  "rationale": "Binary elimination requires reliable classifications and a single transition. Flakiness can undermine classification, unbuildable revisions can prevent required tests, and regressions, later fixes or interactions can defeat the single-transition assumption. Observed interval shrinkage does not ensure valid elimination when those conditions fail. The claim states a possibility, not inevitable failure or the presence of these complications.",
+  "uncertainty": "The packet does not establish whether any listed complication actually occurs; that is unnecessary for this possibility claim.",
+  "anomalies": []
+}

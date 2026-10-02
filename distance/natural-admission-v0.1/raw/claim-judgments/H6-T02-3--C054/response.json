@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C054",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C054.component",
+    "value": "A nominal concurrency step may take effect gradually while active work drains.",
+    "scope": "Possible difference between the commanded step and its realized application.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P036",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span supplies the possibility of gradual realization while active work drains."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C054.signal_basis",
+    "value": "Lower the concurrency limit, allow active exports to finish, and measure the delay between the commanded step and the actual concurrency change.",
+    "scope": "The bounded canary transition from c0 to the lower c1.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the lower commanded limit, completion of active exports, and measurement of its realized timing."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C054.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No additional unresolved empirical relation is required for this bounded possibility claim."
+    }
+  },
+  "rationale": "Changing the concurrency limit need not immediately reduce the number of active exports when existing work is allowed to finish. Actual concurrency can decline as exports complete, licensing the claim that realization may be gradual.",
+  "uncertainty": "The operation does not establish that every step will be gradual or determine the draining duration; the claim asserts only a possibility.",
+  "anomalies": []
+}

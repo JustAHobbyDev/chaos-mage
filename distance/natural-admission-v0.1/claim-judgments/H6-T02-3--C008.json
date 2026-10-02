@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C008",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C008.component",
+    "value": "Experimental work is restricted to exports already scheduled overnight and excludes customer-requested business-hours reruns.",
+    "scope": "Workload and scheduling boundary of the investigation.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P005 explicitly supplies both parts of the restriction."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C008.signal_basis",
+    "value": "The experiment lowers canary-pool concurrency from a recorded baseline and measures the subsequent response, using only already scheduled overnight exports and excluding customer-requested business-hours reruns.",
+    "scope": "The proposed experiment's workload boundary; response observations do not establish that boundary.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans specify the workload restriction, controlled concurrency step, and response measurements."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C008.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This is an explicit procedural boundary, requiring no unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim faithfully states an explicit restriction governing the experiment. With execution prerequisites assumed satisfied, it is supported as a procedural boundary rather than as an inference from the observed response.",
+  "uncertainty": "No material uncertainty about the stated boundary; the claim does not assert that execution has already occurred.",
+  "anomalies": []
+}

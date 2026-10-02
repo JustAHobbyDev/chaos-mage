@@ -1,0 +1,44 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C018",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C018.component",
+    "value": "Crossing one of the predeclared safety thresholds or losing telemetry should end further experimental exposure.",
+    "scope": "Conditional cessation rule using the queue-age, backlog-growth, error-rate, resource-pressure, and completion-deadline thresholds.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P015", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle defines the safety thresholds and explicitly requires stopping further exposure when a threshold is crossed or telemetry fails."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C018.signal_basis",
+    "value": "A predeclared safety threshold is crossed or telemetry fails during the experiment, triggering restoration of the original concurrency, cessation of further exposure, and recovery monitoring without terminating active exports.",
+    "scope": "The bounded concurrency experiment and its predeclared safety limits.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P015", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply both triggering conditions and the bounded response, including protection of active exports."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C018.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this explicit safety stopping rule."
+    }
+  },
+  "rationale": "The assumed signal either breaches a predeclared safety boundary or removes the telemetry needed to monitor the experiment. Either licenses ending further experimental exposure within the stated protocol. The claim requires no diagnosis of the delay mechanism or proof that the intervention caused the breach.",
+  "uncertainty": "The packet reports no actual threshold crossing or telemetry failure; this judgment assumes the specified trigger occurs, as instructed.",
+  "anomalies": []
+}

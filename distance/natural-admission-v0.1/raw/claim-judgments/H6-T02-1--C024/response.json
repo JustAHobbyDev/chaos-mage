@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C024",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C024",
+    "value": "The elimination procedure stops when the confidently classified endpoint revisions are adjacent.",
+    "scope": "Successful stopping condition for the good/bad endpoint procedure.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P015 supplies the successful stopping condition, and P012 identifies the maintained good and bad endpoints."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C024_SIGNAL",
+    "value": "Confident midpoint classifications update the corresponding good or bad endpoint and shrink the candidate interval. The procedure stops when those endpoints are adjacent, or retains an unresolved interval when further classification is infeasible.",
+    "scope": "Repeated elimination under the single-transition assumption, using prespecified good/bad evidence criteria.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish endpoint updates, the elimination assumption, classification criteria, interval shrinkage and both stopping outcomes."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C024_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This procedural stopping claim requires no additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Adjacent confidently classified endpoints satisfy the mapping's explicit successful stopping rule. The claim does not assert that adjacency is always reached or that it is the only reason testing can end.",
+  "uncertainty": "Further classification may become infeasible, leaving an unresolved interval; that alternative does not undermine the scoped successful stopping condition.",
+  "anomalies": []
+}

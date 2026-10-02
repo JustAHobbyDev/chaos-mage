@@ -1,0 +1,48 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C032",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C032",
+    "value": "A test stopped before the one-hour threshold has an unknown threshold outcome and must not be counted as fast.",
+    "scope": "Early termination of a test, distinct from observing a completed fast export.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span supplies the early-termination condition, unknown outcome and counting consequence."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C032_signal_basis",
+    "value": "Observation stops before one hour without observing export completion, leaving whether the export would exceed one hour unobserved.",
+    "scope": "A prematurely stopped test with no completed export outcome.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly distinguishes crossing the threshold from stopping a test before its threshold outcome is known."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C032_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim follows from the incomplete observation; no unresolved empirical relation is required."
+    }
+  },
+  "rationale": "Stopping observation before the threshold without observing completion cannot establish completion within one hour. Counting that outcome as fast would assign an unobserved result.",
+  "uncertainty": "The eventual duration is unknown; this uncertainty supports the claim within its explicit scope.",
+  "anomalies": []
+}

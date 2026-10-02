@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C020",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C020",
+    "value": "Reliably short queue waits would weaken queue congestion as the direct source of an hour-long export.",
+    "scope": "Limited to queue congestion as the direct source of the delay; does not eliminate every possible queue contribution.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span supplies the observation, reliability condition, weakening inference and direct-source limitation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C020_SIGNAL",
+    "value": "An hour-long export has a reliably measured short queue wait, with queue duration distinguished only where trace semantics permit and missing spans treated as unknown.",
+    "scope": "The export cases whose queue waits are reliably observed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the diagnostic observation and its measurement and missing-evidence qualifications."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C020_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded inference is supported without establishing an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "If queue congestion directly accounts for the prolonged export through waiting, substantial queue time should be observed. Reliably short queue waits therefore weaken that explanation within the stated direct-source scope.",
+  "uncertainty": "The observation does not exclude indirect queue effects or establish which alternative caused the delay.",
+  "anomalies": []
+}

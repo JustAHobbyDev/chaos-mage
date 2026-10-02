@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C021",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C021.component",
+    "value": "Uncertain timing requires an unresolved test classification.",
+    "scope": "Classification of baseline and reduced-configuration tests.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P015 explicitly makes uncertain timing a trigger for unresolved classification within the baseline and reduced-test protocol."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C021.signal_basis",
+    "value": "A baseline or reduced-configuration test has uncertain timing; test outcomes are recorded as reproduced, not reproduced, or unresolved.",
+    "scope": "Outcome classification under the mapping's test protocol.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P015 supplies the uncertainty trigger and test scope; P017 supplies the recorded outcome categories."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C021.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This is an explicit classification rule, with no unresolved empirical relation needed to license it."
+    }
+  },
+  "rationale": "Given uncertain timing, assigning an unresolved outcome directly applies the mapping's stated rule. The claim stays within test classification and makes no further empirical inference.",
+  "uncertainty": "The mapping does not specify a numerical timing-uncertainty threshold, but the stipulated occurrence of uncertain timing suffices for this claim.",
+  "anomalies": []
+}

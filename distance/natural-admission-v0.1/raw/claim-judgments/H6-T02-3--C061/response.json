@@ -1,0 +1,48 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C061",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C061.component",
+    "value": "Failure to detect a change does not exclude a worker-version defect.",
+    "scope": "Limit on interpreting a null experimental response.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P039", "role": "SUPPORT"},
+        {"source_id": "P032", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P039 states the non-exclusion limit; P032 identifies the relevant version as a worker version."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C061.signal_basis",
+    "value": "No detectable output change follows the controlled reduction in concurrency, with worker version and other controllable settings held fixed and response trajectories compared with baseline and any unchanged pool.",
+    "scope": "Assumed null response for the tested cohort, concurrency range, versions, and operating conditions.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P009", "role": "SUPPORT"},
+        {"source_id": "P012", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P022", "role": "SUPPORT"},
+        {"source_id": "P039", "role": "SUPPORT"},
+        {"source_id": "P040", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the concurrency intervention, fixed settings, measured outputs, comparisons, null-response case, and scope limits."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C061.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "The experiment changes concurrency while holding worker version fixed. A version defect could persist without responding detectably to that concurrency change. Thus the assumed null response cannot exclude such a defect; the claim makes only this bounded non-exclusion inference.",
+  "uncertainty": "The null response does not establish whether a worker-version defect exists.",
+  "anomalies": []
+}

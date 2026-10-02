@@ -1,0 +1,46 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C019",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C019.component",
+    "value": "The experimental concurrency setting should end at the planned endpoint by restoring c0.",
+    "scope": "Planned exposure bound independent of an early safety rollback.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P017", "role": "SUPPORT"},
+        {"source_id": "P009", "role": "CONTEXT"},
+        {"source_id": "P016", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P017 specifies endpoint restoration, P009 identifies c0 as the baseline setting, and P016 distinguishes early safety rollback."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C019.signal_basis",
+    "value": "A bounded canary experiment lowers concurrency from c0 to c1. Reaching the planned endpoint calls for restoring c0, with exposed exports followed to completion where feasible and unfinished exports explicitly censored; safety violations or telemetry failure can trigger earlier restoration.",
+    "scope": "Termination of the planned experimental exposure, regardless of whether the measured performance response is favorable.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P009", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"},
+        {"source_id": "P017", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the experimental setting, the early rollback trigger, and the separate endpoint restoration and follow-up requirements."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C019.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This procedural exposure bound does not depend on establishing an unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim is licensed as an explicit termination rule for the bounded experiment. Reaching the planned endpoint warrants restoration under that protocol; no adverse performance signal is required.",
+  "uncertainty": "No material uncertainty for this narrow procedural claim under the stipulated execution assumptions.",
+  "anomalies": []
+}

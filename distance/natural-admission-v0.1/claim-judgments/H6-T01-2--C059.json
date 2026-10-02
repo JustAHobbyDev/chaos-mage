@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C059",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C059.component",
+    "value": "If required safety work is compromised, the trial must be stopped or reversed.",
+    "scope": "Safety trigger for trial termination or reversal; the choice between those responses is unspecified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 explicitly supplies the safety trigger and the two permitted responses."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C059.signal_basis",
+    "value": "A reduced configuration repeatedly reproduces lateness while specified further removals do not. A subsequent field trial tracks safety; compromise of required safety work triggers stopping or reversing it.",
+    "scope": "The reduction signal supports diagnosis within the test; the safety trigger governs continuation of the field trial.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans state the reduction signal, safety monitoring, and the conditional trial response."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C059.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is an explicit operational safety constraint, not an inference requiring an unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim is licensed as an explicit limit on trial continuation. It neither asserts that safety has been compromised nor infers that condition from the lateness signal. Its conditional trigger and permitted responses match the mapping.",
+  "uncertainty": "The mapping leaves the choice between stopping and reversal unspecified, as the frozen claim acknowledges.",
+  "anomalies": []
+}

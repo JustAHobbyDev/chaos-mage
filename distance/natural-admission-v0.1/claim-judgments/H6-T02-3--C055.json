@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C055",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C055.component",
+    "value": "Shared resources can contaminate a comparison pool.",
+    "scope": "Potential limitation of the proposed pool comparison.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P037",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P037 states the contamination possibility; P013 identifies the proposed comparison pool."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C055.signal_basis",
+    "value": "Lower concurrency in the canary pool and compare response trajectories with baseline and, where feasible, an unchanged pool with comparable scheduled work, recording shared-resource exposure and workload differences.",
+    "scope": "Proposed concurrency experiment and pool comparison, assuming execution prerequisites are satisfied and the response is observed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the concurrency step, qualified comparison-pool design, exposure recording, and trajectory comparison."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C055.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required to warrant this bounded possibility claim."
+    }
+  },
+  "rationale": "Changing canary concurrency can alter demand on resources shared with the comparison pool, affecting its performance despite unchanged settings. This licenses the stated possibility of contamination.",
+  "uncertainty": "The packet does not establish whether contamination actually occurs or its magnitude; the claim asserts only that it can occur.",
+  "anomalies": []
+}

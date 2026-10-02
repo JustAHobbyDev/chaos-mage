@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C011",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C011.component",
+    "value": "If comparable queue-entry, worker-start, and completion timestamps are missing across the versions being compared, narrowly scoped instrumentation should be deployed before testing performance changes.",
+    "scope": "Conditional telemetry prerequisite for performance experimentation.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P007 identifies the required comparable timestamps; P008 prescribes instrumentation before performance testing when these are missing."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C011.signal_basis",
+    "value": "Verification finds that comparable queue-entry, worker-start, and completion timestamps are missing across the versions being compared.",
+    "scope": "Pretest telemetry check; the prescribed response includes narrowly scoped instrumentation and an overnight baseline before performance changes are tested.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "Together these spans specify the check, its missing-telemetry outcome, and the bounded response."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C011.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as a measurement prerequisite and requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "Missing comparable timestamps prevent reliable measurement of queue waiting and total completion times across the compared versions. Establishing that telemetry through narrowly scoped instrumentation before testing performance changes is therefore licensed. The claim neither diagnoses the delays nor asserts that instrumentation improves export performance.",
+  "uncertainty": "The instrumentation's eventual adequacy must still be verified; this does not undermine the conditional recommendation to deploy it.",
+  "anomalies": []
+}

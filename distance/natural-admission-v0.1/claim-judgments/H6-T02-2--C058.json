@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C058",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C058",
+    "value": "Missing trace spans constitute unknown evidence rather than proof that the corresponding phase was fast.",
+    "scope": "A distinction between missing measurement and evidence of short duration.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited span directly supplies the distinction and its scope."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C058_signal_basis",
+    "value": "Trace coverage varies across worker versions, and phase durations are separated only where trace semantics permit; the comparison explicitly accommodates unknown evidence, including missing spans.",
+    "scope": "Assessment of phase durations from the existing export traces.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish variable coverage, the restriction on interpreting phase durations, and the treatment of missing measurements as unknown evidence."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C058_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported without a conditional empirical relation."
+    }
+  },
+  "rationale": "An absent measurement does not establish a short duration. The mapping supplies no recording rule under which a missing span entails a fast phase, and its variable coverage makes the distinction warranted.",
+  "uncertainty": "The duration of the unmeasured phase remains unknown; that uncertainty supports the claim's limited evidential conclusion.",
+  "anomalies": []
+}

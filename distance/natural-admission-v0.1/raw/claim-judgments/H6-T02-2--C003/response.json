@@ -1,0 +1,46 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C003",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C003",
+    "value": "Queue congestion or worker shortages are candidate explanations for the export delays.",
+    "scope": "A proposed explanation family, not an established finding.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P002", "role": "SUPPORT"},
+        {"source_id": "P003", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans name this explanation family and explicitly assign hypothesis status."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C003_SIGNAL",
+    "value": "Compare queue wait with subsequent execution durations where trace semantics permit: long queue waits with ordinary post-start durations favor queue-related delay, while reliably short waits weaken queue congestion as the direct source of an hour-long export.",
+    "scope": "Proposed diagnostic observations, assumed observed for this assessment; phase separation requires interpretable traces.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P007", "role": "SUPPORT"},
+        {"source_id": "P009", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P021", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the phase-comparison operation, its contrasting diagnostic signals, and their proposed status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C003_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No conditional empirical warrant is required for this bounded candidate-explanation claim."
+    }
+  },
+  "rationale": "Queue congestion or insufficient worker availability can plausibly prolong waiting before execution. The described comparisons license considering that family as a candidate, which is all the frozen claim asserts.",
+  "uncertainty": "The observations do not establish queue congestion or worker shortages as the actual cause or distinguish between them.",
+  "anomalies": []
+}

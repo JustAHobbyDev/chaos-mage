@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C008",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C008.component",
+    "value": "Replay feasibility must be demonstrated rather than assumed.",
+    "scope": "Replay proposed for the selected late case.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P007 explicitly requires demonstrated feasibility; P006 identifies the selected case's replay."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C008.signal_basis",
+    "value": "The replay reproduces baseline failure, and a smaller configuration repeatedly remains late while specified further removals cease to reproduce lateness. Tests hold equipment, deadline and other conditions fixed, apply the same predeclared repetition rule, and classify inconsistent or uncertain outcomes as unresolved. Failure to reproduce the baseline supplies no basis for reduction.",
+    "scope": "The selected late case and its tested replay configurations.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the reproduction pattern, controlled conditions, repetition requirements and baseline-reproduction requirement."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C008.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as an execution requirement; no unresolved empirical relation is needed to license it."
+    }
+  },
+  "rationale": "The operation requires actual repeated replay tests to distinguish reproducing reductions from non-reproducing ones. Demonstrating that the selected replay can be executed and reproduce baseline failure is therefore a warranted prerequisite. Assuming prerequisites are satisfied does not undermine this requirement or turn it into a conditional empirical warrant.",
+  "uncertainty": "This judgment concerns only the feasibility requirement, not replay fidelity or field effectiveness.",
+  "anomalies": []
+}

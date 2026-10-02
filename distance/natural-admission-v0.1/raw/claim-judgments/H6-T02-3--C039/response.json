@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C039",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C039.component",
+    "value": "These experimental results alone do not justify attributing the problem to a particular worker version.",
+    "scope": "Limit on version-specific causal attribution from the concurrency experiment.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P032",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P032 explicitly states the attribution limit; P009 identifies the concurrency experiment."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C039.signal_basis",
+    "value": "A known reduction in concurrency, with worker version and other controllable settings fixed, produces observed trajectories of actual concurrency, queue depth, completion rate, and phase durations, compared with baseline and any unchanged pool.",
+    "scope": "Hypothetically observed response to the proposed concurrency experiment; the mapping does not report completed measurements.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the manipulated input, fixed worker version, measured response, comparison basis, and prospective status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C039.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "The experiment changes concurrency while holding worker version fixed. Its response can constrain mechanisms sensitive to concurrency, but does not isolate a particular version as the cause. The claimed limit on standalone version attribution is therefore warranted.",
+  "uncertainty": "A version defect may still exist; this experiment alone neither establishes nor excludes one.",
+  "anomalies": []
+}

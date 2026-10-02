@@ -1,0 +1,72 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C051",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C051",
+    "value": "When evidence supports a specific mechanism, a bounded mitigation or rollback canary is a proposed next deployment action.",
+    "scope": "A conditional choice using surviving alternatives; the mapping does not choose between mitigation and rollback or assert that the condition holds.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span expressly identifies this bounded deployment option when evidence supports a specific mechanism."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C051_SIGNAL",
+    "value": "An evidence-by-hypothesis comparison identifies reliable, discriminating observations favoring a mechanism, such as queue versus downstream phase-duration patterns or a version association persisting within comparable workloads and execution windows. Sensitivity checks examine the effects of incomplete traces, uncertain phase boundaries, workload, version and combined causes.",
+    "scope": "These are proposed observations, assumed to occur for this judgment. Phase comparisons require comparable measurements; surviving explanations are not thereby proven causes.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the comparative operation, mechanism-discriminating patterns, sensitivity checks and explicit limits on their interpretation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C051_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the verdict is SUPPORTED, not CONDITIONAL_WARRANT."
+    }
+  },
+  "rationale": "With prerequisites satisfied and discriminating evidence supporting a mechanism, proposing a bounded canary directed at that mechanism is licensed. The claim proposes an investigative deployment option; it does not assert causal identification, guaranteed improvement, or sufficient grounds for unrestricted expansion. No additional empirical bridge is needed for this limited proposal.",
+  "uncertainty": "The evidence need not determine whether mitigation or rollback is preferable, and either canary may fail to improve outcomes. Those uncertainties remain within the claim's explicit limits.",
+  "anomalies": []
+}

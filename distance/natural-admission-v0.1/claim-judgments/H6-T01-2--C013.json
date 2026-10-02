@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C013",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C013.component",
+    "value": "Removing an earlier booking from a replay has a diagnostic role.",
+    "scope": "Interpretation of the earlier-booking removal example.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P010",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P011 explicitly assigns a diagnostic role and limits its practical implications; P010 identifies the replay setting."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C013.signal_basis",
+    "value": "Earlier-booking removal is an explicit replay operation. With test conditions fixed and a common repetition rule, a smaller configuration repeatedly reproduces lateness while specified further removals cease to reproduce it.",
+    "scope": "Diagnostic comparison within the selected case's replay, with uncertain or inconsistent outcomes classified as unresolved.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P010",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P004",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the removal example, controlled comparison, repetition and uncertainty rules, and observed reduction pattern; P004 identifies the defined failure."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C013.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No conditional empirical warrant is needed for this supported diagnostic-role claim."
+    }
+  },
+  "rationale": "Testing removal of an earlier booking reveals whether that removal is compatible with reproducing the selected failure under the replay conditions. This licenses its diagnostic role within the stated bounds, including P011's limitation that the removal does not itself justify reducing service.",
+  "uncertainty": "The claim requires no finding that earlier bookings cause lateness or that removing them would improve field outcomes.",
+  "anomalies": []
+}

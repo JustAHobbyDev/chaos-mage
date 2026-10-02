@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T01-1",
+  "claim_id": "C011",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C011.component",
+    "value": "Keeping relevant events in separate logs may obscure their temporal sequence.",
+    "scope": "A possible limitation of the existing record arrangement.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P004 identifies separate logs, alongside missing entries, as potentially obscuring the sequence."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C011.signal_basis",
+    "value": "Relevant events occur in separate logs with some missing entries; the operation reconstructs their sequence by linking bookings to return, cleaning-completion and collection records by equipment and booking, preserving missing values.",
+    "scope": "Reconstruction of the preceding six weeks of records during the two-week investigation.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the record limitation and the linkage operation, including its time scope and treatment of missing values."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C011.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "Separate records require cross-log matching before the ordering of relevant events can be reconstructed. This licenses the modest possibility that the arrangement obscures the sequence; it does not require an unresolved empirical relation.",
+  "uncertainty": "The claim does not establish that separation actually obscured a particular booking or caused late starts.",
+  "anomalies": []
+}

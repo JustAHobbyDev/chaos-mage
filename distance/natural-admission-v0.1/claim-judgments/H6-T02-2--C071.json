@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C071",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C071",
+    "value": "When exposure or coverage is inadequate, continued canary observation is permitted only within the safety bounds.",
+    "scope": "The result remains inconclusive. The bounds concern instrumentation overhead, error rate, completion rate and tail delay against comparable baseline traffic; this does not authorize exceeding them to obtain more evidence.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 supplies the inconclusive result and restriction on continuation; P014 specifies the bounds, and P030 identifies the canary context."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C071_SIGNAL",
+    "value": "Canary exposure or coverage is inadequate for a conclusive judgment under the specified observation window and required exposure.",
+    "scope": "Insufficient observation leaves the result inconclusive. Continuation must respect predefined safety bounds; breached bounds or inability to enforce them require halting expansion and reverting the canary.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the inadequate-observation condition, its inconclusive interpretation, and the bounds and enforcement requirements governing continuation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C071_EMPIRICAL_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This supported procedural restriction requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim follows directly from the mapping's continuation rule. Inadequate evidence leaves the result inconclusive and does not relax the safety bounds. The claim states a necessary restriction on continuation, without asserting that satisfying those bounds alone establishes resolution or guarantees safety.",
+  "uncertainty": "Whether the canary resolves the delay remains unknown; that uncertainty does not undermine the stated restriction on continued observation.",
+  "anomalies": []
+}

@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C025",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C025.component",
+    "value": "Reduction should stop when further reductions are unsafe.",
+    "scope": "Safety bound on the reduction search.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The mapping explicitly identifies unsafe further reduction as a stopping trigger."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C025.signal_basis",
+    "value": "Removals have operational counterparts, and smaller configurations can repeatedly reproduce lateness. The search must preserve required cleaning and safety checks.",
+    "scope": "Operational reduction of the selected turnaround case.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P010",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish operational removals, the reproducing-reduction signal, and the explicit safety constraint."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C025.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is licensed as an explicit safety constraint, without an unresolved empirical relation."
+    }
+  },
+  "rationale": "Stopping when further reductions are unsafe follows from the mapping's operational safety boundary. Continued reproduction of lateness does not override that boundary, and stopping makes no claim of completed minimization.",
+  "uncertainty": "Determining whether a particular reduction is unsafe requires operational judgment; this does not undermine the stated stopping rule.",
+  "anomalies": []
+}

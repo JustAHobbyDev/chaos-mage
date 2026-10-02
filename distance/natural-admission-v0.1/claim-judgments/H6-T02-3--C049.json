@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C049",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C049.component",
+    "value": "Cache state can distort the experimental response.",
+    "scope": "Potential cache-related distortion; no particular cache condition is specified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly identifies cache state as a potential source of response distortion."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C049.signal_basis",
+    "value": "A controlled reduction in concurrency is followed by measurements of changes in queue depth, completion rate, and phase durations; cache state can influence the measured response.",
+    "scope": "The proposed experiment, assuming execution and observation as instructed; no actual cache-related distortion is established.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the concurrency perturbation, measured response, potential cache influence, and prospective status of the measurements."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C049.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded possibility claim is supported without an unresolved empirical warrant."
+    }
+  },
+  "rationale": "Cache state can affect object-read latency and downstream completion behavior, potentially altering the response attributed to the concurrency change. This licenses the stated possibility of distortion.",
+  "uncertainty": "The signal does not establish whether cache state actually distorted this experiment, or the direction or magnitude of any effect.",
+  "anomalies": []
+}

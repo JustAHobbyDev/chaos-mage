@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C025",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C025",
+    "value": "When further classification is infeasible, the result must remain an unresolved interval.",
+    "scope": "Conditional outcome when the investigation cannot continue classifying revisions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P015 explicitly specifies retaining an unresolved interval when further classification is infeasible."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C025_SIGNAL",
+    "value": "Decisive midpoint classifications shrink the candidate transition interval. Inconclusive results require additional trials within budget; when further classification is infeasible, an unresolved interval remains.",
+    "scope": "The remaining candidate interval under the mapping's single-transition assumption, with elimination limited to history incompatible with supported classifications.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the elimination rule, evidence-based classifications, budget-limited handling of inconclusive results, and unresolved stopping outcome."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C025_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No additional empirical relation is required for this supported claim."
+    }
+  },
+  "rationale": "Classification eliminates incompatible candidates. Inability to classify further supplies no evidence to eliminate the remaining candidates, so retaining the unresolved interval is warranted.",
+  "uncertainty": "The transition's location within the retained interval remains unresolved; this is the claim's stated outcome.",
+  "anomalies": []
+}

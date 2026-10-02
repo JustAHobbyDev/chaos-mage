@@ -1,0 +1,45 @@
+{
+  "packet_id": "H6-T01-3",
+  "claim_id": "C013",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C013.component",
+    "value": "Uncertainty in matching records should be preserved explicitly.",
+    "scope": "Uncertain matches encountered while assembling booking-level timelines.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P008", "role": "SUPPORT"},
+        {"source_id": "P006", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P008 directly supplies the requirement; P006 identifies the timeline-assembly context."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C013.signal_basis",
+    "value": "Record matching involves uncertainty, and reconciliation of timestamps, definitions and equipment identities must avoid forcing agreement.",
+    "scope": "Matching and reconciling records for booking-level timelines.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P008", "role": "SUPPORT"},
+        {"source_id": "P012", "role": "SUPPORT"},
+        {"source_id": "P006", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P008 identifies uncertain matches, P012 supplies the reconciliation constraint, and P006 establishes the records and task involved."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C013.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is licensed without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "An uncertain match cannot establish that records concern the same event. Preserving that uncertainty maintains the evidential limits of the assembled timeline and is warranted without establishing any cause of lateness.",
+  "uncertainty": "The correct matches may remain unresolved; this does not undermine the requirement to preserve their uncertainty.",
+  "anomalies": []
+}

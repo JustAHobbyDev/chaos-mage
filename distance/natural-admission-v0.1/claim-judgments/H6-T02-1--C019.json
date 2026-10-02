@@ -1,0 +1,47 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C019",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C019",
+    "value": "Under the single-transition assumption, a confidently bad midpoint replaces the bad endpoint.",
+    "scope": "Conditional update in the established-endpoint midpoint procedure.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P012", "role": "SUPPORT"},
+        {"source_id": "P013", "role": "SUPPORT"},
+        {"source_id": "P011", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P012 states the endpoint update, P013 supplies the single-transition assumption, and P011 identifies the established-endpoint midpoint procedure."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C019_SIGNAL",
+    "value": "Repeated representative exports at the midpoint yield evidence supporting the defined elevated tail-rate range, warranting a confident bad classification under prespecified replication and repeated-testing rules.",
+    "scope": "Midpoint classification using export counts, the fraction exceeding one hour and its uncertainty, with workload and load recorded.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P011", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"},
+        {"source_id": "P017", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply repeated representative midpoint trials, measured tail-rate evidence, the bad-classification criterion and control of repeated-testing error."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C019_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is licensed within its explicit assumptions; no additional unresolved empirical relation is required."
+    }
+  },
+  "rationale": "With established endpoints and a single persistent good-to-bad transition, a confidently bad midpoint bounds the transition between the existing good endpoint and that midpoint. Replacing the bad endpoint therefore preserves the candidate transition interval.",
+  "uncertainty": "The update inherits the stated statistical confidence and single-transition assumption; it does not assert certainty or sole causation.",
+  "anomalies": []
+}

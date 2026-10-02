@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C053",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C053.component",
+    "value": "Partition order can contribute to obtaining different minimal subsets.",
+    "scope": "Possible dependence of reduction results on search order.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly identifies partition order as a possible contributor to different minimal subsets."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C053.signal_basis",
+    "value": "The procedure partitions components and iteratively retains failure-preserving reductions. The observed pattern is a smaller configuration that repeatedly reproduces lateness while specified further removals do not; local minimality requires exhaustive single-component removal checks.",
+    "scope": "The selected case under the replay test; the procedure follows retained reductions without requiring exploration of every alternative reduction path.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish partitioning, iterative retention, the reproduction signal and the explicit condition for local minimality."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C053.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded possibility claim is supported without an unresolved empirical relation."
+    }
+  },
+  "rationale": "When multiple failure-preserving reductions are available, partition order can determine which reduction is retained and thus which components remain available for subsequent tests. Different paths can therefore reach different minimal subsets. This licenses the stated possibility without asserting that order dependence actually occurred.",
+  "uncertainty": "The signal does not establish that this selected case has multiple minimal subsets or that changing partition order would produce a different result.",
+  "anomalies": []
+}

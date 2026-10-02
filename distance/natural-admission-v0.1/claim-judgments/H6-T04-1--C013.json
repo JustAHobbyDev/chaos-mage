@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T04-1",
+  "claim_id": "C013",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C013.component",
+    "value": "Trajectories unfinished at the applicable follow-up boundary should be marked as censored.",
+    "scope": "Classification of unfinished trajectories under the stated follow-up scheme, not classification as abandonment or failure.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly supplies the follow-up boundaries and the instruction to mark unfinished trajectories as censored."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C013.signal_basis",
+    "value": "A trajectory remains unfinished when observation reaches the stated next roster opportunity plus the predeclared grace period, or the fixed maximum follow-up for an unknown roster date.",
+    "scope": "Incomplete trajectories at their applicable observation boundary, reported alongside published accounts.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans define the observation boundaries and require reporting incomplete follow-up alongside publication outcomes."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C013.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The classification is directly warranted; no unresolved empirical relation is needed."
+    }
+  },
+  "rationale": "Ending observation while a trajectory remains unfinished licenses recording it as censored: its completion time is unobserved beyond the follow-up boundary. This classification does not infer abandonment or failure and does not require establishing that censoring is statistically independent of completion.",
+  "uncertainty": "Eventual completion remains unknown. That uncertainty supports the censoring classification rather than undermining it.",
+  "anomalies": []
+}

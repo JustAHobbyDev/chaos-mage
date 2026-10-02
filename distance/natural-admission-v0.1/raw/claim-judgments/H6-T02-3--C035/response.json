@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C035",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C035.component",
+    "value": "If the tested concurrency change worsens outcomes, that change should be rejected.",
+    "scope": "Conditional deployment rejection, distinct from restoring the current setting.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P030 explicitly supplies rejection conditional on worsening; P009 identifies the tested concurrency change."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C035.signal_basis",
+    "value": "After a documented reduction from baseline concurrency c0 to c1, the tested change worsens export outcomes, assessed through total export delay, throughput, and deadline risk.",
+    "scope": "Assumed observed worsening for the tested cohort, concurrency range, versions, and operating conditions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P040",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the intervention, relevant deployment outcomes, worsening signal, and limits of applicability."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C035.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No additional unresolved empirical relation is needed to license this bounded rejection decision."
+    }
+  },
+  "rationale": "Given the stipulated prerequisites and observed worsening from the tested change, rejecting that change is warranted. This decision does not require identifying the underlying mechanism or establishing effects outside the tested conditions.",
+  "uncertainty": "The packet reports proposed measurements rather than actual results; the judgment assumes the worsening signal occurs as instructed.",
+  "anomalies": []
+}

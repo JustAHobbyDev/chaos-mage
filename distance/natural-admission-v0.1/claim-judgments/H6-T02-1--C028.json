@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C028",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C028",
+    "value": "A revision may be classified bad only when prespecified evidence supports the defined elevated range.",
+    "scope": "Necessary evidence condition for badness; the elevated range is not numerically defined.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P017 explicitly supplies the necessary evidence condition for classifying a revision as bad."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C028_signal_basis",
+    "value": "Observe each revision's export count, fraction exceeding one hour and uncertainty, recording workload and load. Apply prespecified evidence criteria to distinguish acceptable, elevated and inconclusive results, with replication and repeated-testing rules chosen in advance.",
+    "scope": "Classification of the measured export tail rate against predefined ranges, without supplying numerical thresholds.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans specify advance criteria, measured evidence, classification restrictions and control of repeated-testing error."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C028_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed to warrant this explicit classification restriction."
+    }
+  },
+  "rationale": "The claim states a necessary condition imposed by the classification rule. With execution prerequisites satisfied, that rule licenses withholding a bad classification unless the prespecified evidence supports the elevated range. It does not assert that any particular revision meets that condition.",
+  "uncertainty": "Numerical thresholds are unspecified, but this does not undermine the stated necessary condition.",
+  "anomalies": []
+}

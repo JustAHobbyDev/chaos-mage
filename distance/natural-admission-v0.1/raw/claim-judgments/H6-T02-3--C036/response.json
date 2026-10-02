@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C036",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C036.component",
+    "value": "If experimental results are inconclusive, the original concurrency setting should be retained.",
+    "scope": "Conditional setting choice after inconclusive results.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 explicitly supplies the condition and retention decision; P009 identifies the original concurrency setting."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C036.signal_basis",
+    "value": "The bounded test of reduced concurrency produces inconclusive results under the predeclared observation duration and precision requirement; insufficient evidence within the safety window is reported as uncertainty.",
+    "scope": "Assessment of the tested concurrency change within its bounded observation and safety window.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P034",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the concurrency test, its inconclusive outcome branch, and the evidence and safety limits governing that assessment."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C036.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed for this supported conditional decision."
+    }
+  },
+  "rationale": "Inconclusive evidence licenses retaining the original setting as a conservative deployment choice: the experiment has not established sufficient benefit to adopt the tested change. The claim does not assert that the original setting is optimal or that reduced concurrency cannot help.",
+  "uncertainty": "The relative performance of the settings remains unresolved; this limits performance conclusions but does not defeat the stated retention decision.",
+  "anomalies": []
+}

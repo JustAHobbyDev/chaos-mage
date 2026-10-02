@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C036",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C036",
+    "value": "When the joint mitigation-expansion conditions are not met, retain the current deployment and gather the specific missing evidence.",
+    "scope": "The conditions are reliable discriminating evidence favoring the mechanism and canary compliance with the predefined bounds. The reference point of the current deployment relative to a canary or its reversion is not specified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the fallback, both expansion conditions and the predefined bounds without specifying the deployment reference point."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C036_signal_basis",
+    "value": "Evaluation does not establish both reliable discriminating evidence favoring the mitigation mechanism and canary compliance with the predefined operating bounds.",
+    "scope": "The expansion decision uses comparable baseline traffic. Inadequate exposure or coverage makes the result inconclusive; breached bounds or unenforceable monitoring require halting expansion and reverting the canary.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the joint decision gates, their failure branch, and the safety and evidential limits governing that branch."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C036_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This bounded operational fallback requires no additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Failure to satisfy the expansion gates licenses withholding expansion and gathering the missing evidence. In the parent mapping, this fallback remains subject to mandatory canary reversion under P015; it does not license keeping a canary that breaches its bounds. It asserts neither that the existing deployment is optimal nor that a cause has been established.",
+  "uncertainty": "The deployment reference point remains unspecified. The judgment supports the fallback within the parent mapping's explicit reversion rule, without identifying a particular version to retain.",
+  "anomalies": []
+}

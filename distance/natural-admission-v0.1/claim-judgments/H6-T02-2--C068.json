@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C068",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C068",
+    "value": "The observation window and required exposure should be specified before judging the canary.",
+    "scope": "A prospective assessment requirement; no window or exposure amount is supplied.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P030",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P031 states the prospective requirement; P030 identifies the canary assessment to which it applies."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C068_signal_basis",
+    "value": "Assess whether the canary changes the predicted phase and overall tail without increasing failures or unfinished exports. Rare delays require sufficient comparable exposure; a short clean canary cannot establish resolution, and inadequate exposure or coverage makes the result inconclusive.",
+    "scope": "Assessment of the canary over a specified observation window and required exposure, within the stated safety bounds.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P022 supplies the assessed outcomes; P030 and P031 supply the exposure, coverage and assessment limits. P014 identifies the safety bounds."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C068_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "Because the informativeness of a clean canary depends on comparable exposure to rare delays, specifying the assessment window and exposure requirement before judging it is warranted. The claim requires prospective assessment criteria without asserting that any particular duration or exposure is sufficient.",
+  "uncertainty": "The packet supplies no numerical window or exposure requirement; their adequacy remains unspecified, consistent with the claim's limits.",
+  "anomalies": []
+}

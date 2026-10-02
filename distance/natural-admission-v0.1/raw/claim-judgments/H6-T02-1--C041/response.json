@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C041",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C041",
+    "value": "The canary selected after reproduction of the regression and reversal must have predefined tail-rate, failure and resource stop thresholds.",
+    "scope": "Safeguards on the conditional overnight canary; threshold values are unspecified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P026 explicitly supplies the reproduction condition, overnight canary and three required stop-threshold categories."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C041_signal_basis",
+    "value": "Retest the boundary on matched workloads and, where feasible, test a targeted revert or fix while holding other factors constant. Reproduction of the regression and reversal triggers the specified bounded overnight canary procedure, including predefined stop thresholds.",
+    "scope": "The conditional canary procedure; expansion requires adequate evidence, otherwise the canary is halted or rolled back.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the testing operation, reproduction condition and bounded rollout procedure with its safeguards."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C041_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This supported procedural safeguard requires no unresolved empirical relation to establish its applicability."
+    }
+  },
+  "rationale": "The frozen claim states an explicit requirement of the conditional canary procedure. Once that procedure applies, the three threshold categories are required by the mapping. It asserts neither that particular threshold values are adequate nor that the canary is proven safe.",
+  "uncertainty": "Threshold values are unspecified, as acknowledged in the claim's scope; this does not undermine the stated requirement.",
+  "anomalies": []
+}

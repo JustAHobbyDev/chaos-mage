@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C023",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C023",
+    "value": "A build failure must not be treated as a performance result.",
+    "scope": "Distinction between inability to build a revision and measured export performance.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P014 explicitly states this restriction."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C023_signal_basis",
+    "value": "Performance classification uses observed export counts, the fraction exceeding one hour and its uncertainty against prespecified acceptable or elevated ranges. A build failure supplies no such performance result.",
+    "scope": "Evidence used to classify a tested revision's export performance.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans specify the performance observations, classification criteria and exclusion of build failure as a performance result."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C023_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported without an unresolved empirical relation."
+    }
+  },
+  "rationale": "Failure to build a revision does not measure export duration or the probability of exceeding one hour. It therefore cannot constitute a result for the defined performance property, licensing the stated restriction.",
+  "uncertainty": "A build failure leaves that revision's export performance unknown; this does not undermine the restriction.",
+  "anomalies": []
+}

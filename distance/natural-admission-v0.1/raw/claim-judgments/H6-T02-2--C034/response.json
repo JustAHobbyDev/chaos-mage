@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C034",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C034",
+    "value": "If monitoring cannot enforce the predefined canary bounds, expansion should stop and the canary should be reverted.",
+    "scope": "This trigger does not require an observed breach. The mapping does not specify precisely what monitoring enforcement entails.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P014 defines the bounds; P015 independently makes inability to enforce them through monitoring a trigger for stopping expansion and reverting."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C034_SIGNAL",
+    "value": "Canary bounds have been defined against comparable baseline traffic, and monitoring cannot enforce those bounds.",
+    "scope": "The bounds cover instrumentation overhead, error rate, completion rate and tail delay. Monitoring inability is assumed to occur; an actual breach need not be observed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies both the predefined operating bounds and the monitoring failure condition."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C034_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This is an explicit operational stopping rule, not a warrant contingent on an unresolved empirical relation."
+    }
+  },
+  "rationale": "The assumed signal satisfies an independent stopping condition in the mapping's bounded-canary policy. It therefore licenses stopping expansion and reverting without evidence that a bound has already been breached. The claim makes no further assertion that monitoring failure proves harm or identifies a cause.",
+  "uncertainty": "Monitoring enforcement is not operationally defined, which could complicate recognizing the trigger in practice. Under the instruction to assume the signal occurs, that ambiguity does not defeat this bounded warrant.",
+  "anomalies": []
+}

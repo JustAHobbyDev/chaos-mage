@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C076",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C076",
+    "value": "Instrumentation may change the behavior under investigation.",
+    "scope": "A possible intervention effect, not an observed instrumentation-induced change.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly attributes possible behavioral changes to instrumentation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C076_signal_basis",
+    "value": "The proposed instrumentation canary adds phase timing and coverage metadata with sampling and logging overhead. The operation sets acceptable instrumentation overhead and outcome bounds, and monitors changes in phases, overall tail delays, failures and unfinished exports.",
+    "scope": "Proposed canary instrumentation and monitoring; these provisions do not establish that instrumentation actually caused a behavioral change.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the added instrumentation, its overhead constraints and the monitored outcomes."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C076_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this bounded possibility claim."
+    }
+  },
+  "rationale": "Adding measurement and logging introduces work that can affect resource use and timing. Bounding that overhead does not establish its absence. This licenses the stated possibility of an intervention effect without establishing an actual instrumentation-induced change.",
+  "uncertainty": "Whether instrumentation changes behavior in this deployment, and by how much, remains undetermined.",
+  "anomalies": []
+}

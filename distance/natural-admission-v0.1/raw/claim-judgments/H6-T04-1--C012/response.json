@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T04-1",
+  "claim_id": "C012",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C012.component",
+    "value": "Accounts whose roster dates are unknown should have a fixed maximum follow-up.",
+    "scope": "Conditional on an unknown roster date; the maximum duration is unspecified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span directly supplies the unknown-date condition and fixed maximum follow-up rule."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C012.signal_basis",
+    "value": "Observation ends at declared follow-up limits, with unfinished trajectories marked as censored and accounts with no return or incomplete follow-up reported alongside published accounts.",
+    "scope": "A fixed maximum applies when the roster date is unknown; reaching that limit does not establish abandonment or absence of benefit.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the observation boundary, censoring and reporting requirements, and limits on interpreting incomplete trajectories."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C012.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as a bounded observation rule without requiring an unresolved empirical relation."
+    }
+  },
+  "rationale": "An unknown roster date cannot anchor roster-relative follow-up. A fixed maximum supplies an executable observation boundary, while censoring preserves the distinction between observation ending and an account reaching an outcome. This licenses the stated procedural rule within its limits.",
+  "uncertainty": "The mapping does not establish an optimal maximum duration or guarantee that outcomes will be resolved by that time; neither is claimed.",
+  "anomalies": []
+}

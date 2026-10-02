@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C033",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C033",
+    "value": "If the predefined canary bounds are breached, expansion should stop and the canary should be reverted.",
+    "scope": "The bounds concern instrumentation overhead, error rate, completion rate and tail delay relative to comparable baseline traffic.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P014 defines the bounds and baseline comparison; P015 specifies stopping expansion and reverting upon breach."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C033_signal_basis",
+    "value": "Monitoring shows that the canary breaches a predefined acceptable bound for instrumentation overhead, error rate, completion rate or tail delay.",
+    "scope": "Canary performance assessed against bounds defined before deployment using comparable baseline traffic.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "Together these spans identify the monitored bounds and their breach as the trigger for the claimed response."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C033_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this bounded operational decision."
+    }
+  },
+  "rationale": "Given predefined acceptable operating bounds and an observed breach, stopping expansion and reverting implements the mapping's explicit safety rule. The claim requires neither causal attribution of the breach nor proof that rollback will resolve the original export delays.",
+  "uncertainty": "Under the stipulated prerequisites and observed breach, no material warrant uncertainty remains for this claim.",
+  "anomalies": []
+}

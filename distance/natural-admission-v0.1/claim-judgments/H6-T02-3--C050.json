@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C050",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C050.component",
+    "value": "Shared-storage disturbances can distort the experimental response.",
+    "scope": "Potential disturbance affecting shared storage.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P035 explicitly identifies shared-storage disturbances as a possible source of response distortion."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C050.signal_basis",
+    "value": "Apply a controlled reduction in canary concurrency and observe subsequent queue, completion-rate, and phase-duration changes, recording resource conditions alongside the response.",
+    "scope": "The proposed canary experiment; measurements are assumed observed for this judgment.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the concurrency perturbation, measured response, accompanying resource observations, and proposed status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C050.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed for this bounded possibility claim."
+    }
+  },
+  "rationale": "Shared-storage disturbances can change object-read timing and downstream completion behavior independently of the concurrency step. They can therefore distort the measured response. The claim asserts only a potential disturbance, which is warranted within its stated scope.",
+  "uncertainty": "The signal does not establish that a shared-storage disturbance actually occurred or quantify its effect.",
+  "anomalies": []
+}

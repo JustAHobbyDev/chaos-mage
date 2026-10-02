@@ -1,0 +1,48 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C014",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C014.component",
+    "value": "Removing an earlier booking from a replay does not by itself justify reducing service.",
+    "scope": "Limit on translating diagnostic booking removal into an operational decision.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P011", "role": "SUPPORT"},
+        {"source_id": "P010", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P011 explicitly states this limit; P010 identifies booking removal as a replay operation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C014.signal_basis",
+    "value": "Replay tests remove candidate components, potentially an earlier booking, under fixed conditions and a common repetition rule. A smaller configuration repeatedly reproduces lateness while specified further removals cease to reproduce it.",
+    "scope": "The selected replay scenario; agreement with recorded cases does not establish field effectiveness.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P006", "role": "CONTEXT"},
+        {"source_id": "P009", "role": "SUPPORT"},
+        {"source_id": "P010", "role": "SUPPORT"},
+        {"source_id": "P015", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P027", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the removal operation, test controls, repeated outcome pattern and explicit restriction on inference to field effectiveness."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C014.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as an inferential limit; no unresolved empirical relation is needed."
+    }
+  },
+  "rationale": "Removing a booking probes reproduction of lateness within a replay. Even an informative outcome does not alone establish that reducing actual service is justified. The claim correctly limits what this diagnostic operation licenses.",
+  "uncertainty": "No material uncertainty under the stipulated prerequisites and observed signal.",
+  "anomalies": []
+}

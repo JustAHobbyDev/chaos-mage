@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C014",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C014",
+    "value": "Tests must stop if they threaten scheduled exports.",
+    "scope": "Conditional operational stop rule.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P010",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P010 explicitly establishes a threat to scheduled exports as an independent stopping condition."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C014_SIGNAL",
+    "value": "Testing threatens scheduled exports, triggering the prescribed stop condition.",
+    "scope": "During isolated, resource-capped tests or approved overnight trials.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P010",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P010 supplies the trigger and required response; P009 identifies the testing context."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C014_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This explicit operational safeguard requires no unresolved empirical relation to license stopping when its condition holds."
+    }
+  },
+  "rationale": "The claim directly applies the mapping's conditional safety rule. Assuming testing threatens scheduled exports, stopping is licensed within the stated operational scope.",
+  "uncertainty": "The mapping does not specify how threats are detected, but that does not undermine the rule when its triggering condition is assumed satisfied.",
+  "anomalies": []
+}

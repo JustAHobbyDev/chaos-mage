@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C038",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C038.component",
+    "value": "Eliminating failure in a reduced case alone is insufficient to support the proposed change.",
+    "scope": "Evidential limit motivating testing against the unreduced baseline; no complete sufficiency criterion is supplied.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P024 explicitly states the insufficiency of eliminating failure only in a reduced case and requires testing the change against the unreduced baseline."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C038.signal_basis",
+    "value": "Repeated tests preserve lateness in a smaller configuration, while specified further removals cease to reproduce it. These comparisons establish outcomes for the tested configurations under fixed test conditions and a common repetition rule.",
+    "scope": "Reduction tests for the selected late case; the signal does not establish that a proposed change eliminates failure in the unreduced baseline.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the reduction signal, fixed conditions, common repetition rule and explicit limit on extending reduced-case results to the baseline; P006 identifies the selected replay case."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C038.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED, not CONDITIONAL_WARRANT."
+    }
+  },
+  "rationale": "The claim correctly limits what the reduction tests establish. Even if a change eliminates failure in a reduced configuration, that observation does not establish its effect when removed components are restored in the unreduced baseline. Satisfied replay prerequisites do not close this inferential gap. The claim requires further testing without asserting that baseline testing alone would establish complete sufficiency.",
+  "uncertainty": "No material uncertainty about this narrow evidential limit; the proposed change's actual effectiveness remains undetermined.",
+  "anomalies": []
+}

@@ -1,0 +1,48 @@
+{
+  "packet_id": "H6-T03-2",
+  "claim_id": "C009",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C009.component",
+    "value": "Upload timing alone does not establish approval timing; a later upload must be distinguished from approval occurring after placement.",
+    "scope": "The timestamp alone is insufficient; no actual late upload or late approval is asserted.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P008", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P027", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans explicitly distinguish approval, documentation creation and upload dates, state the timestamp's inferential limit, and identify the findings as prospective."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C009.signal_basis",
+    "value": "Separate the approval event from documentation creation and upload, checking whether a later timestamp describes only an upload or whether approval itself occurred after order placement.",
+    "scope": "A proposed check for an individual order; observing a late upload alone leaves approval timing unresolved.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P008", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P027", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies the distinct events to check, the prospective scope and the limitation on interpreting upload timestamps."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C009.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its explicit bounds without an unresolved empirical relation."
+    }
+  },
+  "rationale": "An upload timestamp dates the upload event. Approval can precede that event by an undetermined interval, so a post-placement upload does not establish post-placement approval. The mapping's separation of these events licenses this limited claim.",
+  "uncertainty": "Approval timing remains unresolved from an upload timestamp alone; this does not undermine the claimed insufficiency of that timestamp.",
+  "anomalies": []
+}

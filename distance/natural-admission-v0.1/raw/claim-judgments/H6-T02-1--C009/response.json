@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C009",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C009",
+    "value": "Trace coverage differs across the revisions being compared.",
+    "scope": "Measurement conditions motivating comparability validation.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The mapping explicitly identifies differing trace coverage across revisions as the reason to validate timing comparability."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C009_SIGNAL",
+    "value": "The operation requires consistent end-to-end timing and validation of comparability because trace coverage differs. Phase-level observations apply only where comparable spans exist, and missing spans remain missing evidence.",
+    "scope": "Measurement comparability across tested revisions; no inference about delay magnitude or cause from absent spans.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the stated measurement condition, the validation requirement and the limits on interpreting trace observations."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C009_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed for this explicitly supplied measurement condition."
+    }
+  },
+  "rationale": "Within its stated scope, the claim records a measurement condition explicitly supplied by the mapping. It is supported as that premise, rather than as a discovery inferred from midpoint classifications or export durations.",
+  "uncertainty": "The packet provides no independent coverage audit; the judgment accepts the mapping's stated condition and does not assert external verification.",
+  "anomalies": []
+}

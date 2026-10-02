@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C031",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C031",
+    "value": "An export still running after one hour has already crossed the duration threshold.",
+    "scope": "Threshold classification does not require completion once the hour has been exceeded.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P019 explicitly supplies the ongoing-export threshold classification."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C031_signal_basis",
+    "value": "Using queue-entry-to-upload-completion timing, an export remains running after more than one hour has elapsed.",
+    "scope": "The elapsed time exceeds one hour; an export stopped before that point has an unknown threshold outcome.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P008 supplies the timing convention; P019 supplies the observed condition and the qualification for earlier stops."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C031_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this threshold classification."
+    }
+  },
+  "rationale": "An ongoing export's elapsed duration is already greater than one hour. Completion is unnecessary to establish that it has exceeded that threshold.",
+  "uncertainty": "The eventual completion time remains unknown, but that does not affect this claim.",
+  "anomalies": []
+}

@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C027",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C027.component",
+    "value": "Reduction must stop at the end of day 9 even if another stopping condition has not been reached.",
+    "scope": "Time bound on the proposed reduction search.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P016 makes the end of day 9 an independent alternative stopping condition."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C027.signal_basis",
+    "value": "The search retains reductions that repeatedly reproduce failure and continues partitioning them, subject to stopping when no single-component removal preserves failure, further reductions are unsafe or infeasible, or day 9 ends.",
+    "scope": "Continuation and termination of the proposed reduction search; the deadline applies regardless of further reproducible reductions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the reproduction-based continuation rule and all three alternative stopping conditions."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C027.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim states an explicit procedural deadline and requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim is licensed by the operation's explicit stopping rule. Reaching the end of day 9 independently requires termination; neither minimality nor unsafe or infeasible further reduction must first be established.",
+  "uncertainty": "None material to this procedural time bound.",
+  "anomalies": []
+}

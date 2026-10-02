@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C025",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C025.component",
+    "value": "Time-to-completion estimates should include unfinished exports.",
+    "scope": "Proposed completion-time estimation; no estimator is specified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly requires including unfinished exports in time-to-completion estimates without specifying an estimator."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C025.signal_basis",
+    "value": "Follow exposed exports to completion where feasible, explicitly censor those still unfinished, and include unfinished exports when estimating time to completion.",
+    "scope": "Proposed follow-up and estimation for exports exposed to the experiment; measurements are not yet reported.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the follow-up procedure, explicit censoring, inclusion requirement, and prospective measurement status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C025.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded inclusion requirement is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Unfinished exports provide information that completion time exceeds their observed follow-up. Excluding them would preferentially omit slower exports. Including their censored observations is therefore warranted for completion-time estimation.",
+  "uncertainty": "No estimator or censoring assumptions are specified, so this does not establish unbiasedness, precision, or identification of the full completion-time distribution.",
+  "anomalies": []
+}

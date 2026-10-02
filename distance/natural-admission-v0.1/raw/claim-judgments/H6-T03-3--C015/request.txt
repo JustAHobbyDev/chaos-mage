@@ -1,0 +1,310 @@
+# One claim, one warrant observation
+
+Judge only the identified frozen atomic claim in its parent mapping. Assume stated
+execution prerequisites are satisfied and the described signal occurs. Does that
+operation/signal license this specific claim within its stated limits?
+
+SUPPORTED: licensed within explicit bounds.
+CONDITIONAL_WARRANT: the mapping itself supplies a specific unresolved empirical
+relation whose establishment would license it. Describe and cite that relation;
+do not invent it or confuse execution readiness with an inferential warrant.
+UNSUPPORTED: even with prerequisites met and signal observed, the claim does not follow.
+UNCERTAIN: genuinely insufficient information to decide warrant; explain why.
+
+Return the claim component and signal_basis with H.5 refs. stated_empirical_relation
+is a component only for CONDITIONAL_WARRANT, otherwise NOT_APPLICABLE per PROVENANCE.md.
+Separate provenance sufficiency from warrant: faithful attribution of a bad claim is
+SUFFICIENT provenance. An atomization misstatement is an annotation defect to flag;
+do not silently judge a corrected version. Do not judge other claims or whole-artifact
+viability. No repair, replacement inference, or quality/creativity ranking.
+
+# H.5 integration — unchanged semantic citation contract
+
+Mapping fields are segmented by the frozen H.5 segment.py, unchanged: field, explicit
+authored block, conservative sentence boundary, stop. No clause splitting. Pxxx IDs
+are opaque and local to the packet_id envelope. Cite only this packet's mapping spans.
+Source instrument and target are distinct named input data, not other mapping packets.
+
+Each semantic component has value, scope and provenance.refs, each ref comprising
+source_id and role SUPPORT or CONTEXT. SUPPORT contributes substance; CONTEXT only
+resolves reference, identity, scope or authored structure. CONTEXT cannot supply missing
+substantive inference. Include material qualifiers in the cited bundle. Assess whether
+only the cited bundle plus ordinary linguistic interpretation reconstructs the component:
+SUFFICIENT, INSUFFICIENT, UNCERTAIN. These statuses describe attribution to the mapping,
+not whether the attributed claim has warrant. An unsupported claim can be perfectly
+traceable. At least one SUPPORT per substantive component. An explicitly inapplicable
+component uses value NOT_APPLICABLE, empty refs, scope NOT_APPLICABLE and SUFFICIENT
+with a reason; it is excluded from provenance support counts.
+
+Never supply offsets, exact source-text reproduction or byte-identical quotes as
+semantic citation requirements. Model component values are semantic descriptions.
+Harness-only ranges and hashes preserve immutable artifact identity.
+
+Report anomalies without repairing content. Codes include PROV_UNKNOWN_SOURCE_ID,
+PROV_NO_SUPPORT, PROV_DUPLICATE_REF, PROV_ROLE_CONFLICT, PROV_WRONG_PACKET,
+PROV_MISSING_CONTEXT, PROV_UNSUPPORTED_COMPONENT, PROV_SCOPE_OVERREACH,
+PROV_UNCERTAIN_SUPPORT. A wrong citation initially is PROVENANCE_MODEL_ERROR. Report
+H5_UNREPRESENTABLE_SUPPORTED_COMPONENT, H5_UNCITED_SUBSTANTIVE_DEPENDENCE,
+H5_COARSE_CONTRADICTION_OR_QUALIFIER, H5_DISPERSED_SIMPLE_SUPPORT,
+H5_OUTSIDE_QUALIFIER, H5_CONTEXT_INFERENCE, H5_NONDETERMINISTIC_SEGMENTATION,
+H5_MARKUP_SCOPE_DAMAGE only when describing the corresponding observed weakness.
+For each anomaly identify component, evidence and whether correct support can be
+represented with the existing spans. No automatic segmentation repair.
+
+Use only this frozen packet and general knowledge. No tools, files, browsing, other packets or external context. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H6-T03-3",
+  "target": {
+    "target_id": "T03",
+    "domain": "compliance or procedural",
+    "title": "Supplier approval records",
+    "frame": "A nonprofit requires documented approval before staff place supplier orders above an internal spending threshold. A quarterly review found that 14 of 90 sampled orders lack an approval attachment in the purchasing system. Approvals may also be recorded in meeting minutes or delegated-authority forms. The operations lead must prepare a defensible account of what happened and decide which records or process changes to pursue before the board review in three weeks. The internal rule is given; no legal conclusion is requested."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "A suspected factor is present while an effect is occurring, and the factor can potentially be removed and, in some circumstances, reintroduced.\n",
+      "operation": "Remove the suspected factor and observe whether the effect changes; where justified and safe, reintroduce the factor and observe whether the effect returns.\n",
+      "signal": "The effect diminishes after removal and may recur after reintroduction in temporal association with the perturbation.\n",
+      "inference": "A reproducible relationship between removing or restoring the factor and disappearance or recurrence of the effect increases support for a causal contribution by that factor.\n",
+      "limit": "Effects may resolve or recur spontaneously, concurrent changes may be responsible, delayed or persistent effects can obscure the response, and reintroduction may be unsafe or impossible. Temporal response alone does not exclude alternative causes.\n"
+    }
+  },
+  "mapping": {
+    "state": "Act on the 14 flagged orders and, if available before the board review, new orders subject to the internal approval threshold. Missing purchasing-system attachments establish a documentation gap, not necessarily missing approval. A proposed suspected factor is unclear responsibility for attaching approvals recorded elsewhere; its presence and contribution remain unestablished. First verify which orders required approval and whether responsibility was unclear when their records were created.",
+    "operation": "For each flagged order, compare the order-placement timestamp with purchasing records, meeting minutes and delegated-authority forms; check whether the evidence establishes approval by an authorized person before placement. Preserve provenance and distinguish subsequently retrieved evidence of prior approval from approval granted afterward. If unclear attachment responsibility is present, remove that ambiguity prospectively by naming one responsible person and giving an explicit instruction to attach the approval evidence before each covered order is placed. Keep approval requirements and other workflow conditions unchanged where feasible, and log concurrent changes. Compare missing-attachment frequency before and after this change, using comparable covered orders and the same predefined inspection interval after placement. Do not delay required corrective action to preserve the comparison. Reintroduce ambiguity only in a safe simulation with fictitious orders, alternating clear and unclear responsibility across comparable tasks; do not weaken live controls. Stop a simulation if it could affect real purchases. Before the board review in three weeks, close the observation window, report incomplete follow-up explicitly, and assign owners and dates for unresolved record searches or continued monitoring.",
+    "signal": "The proposed causal signal is a reduction in missing approval attachments after responsibility becomes explicit, repeated across comparable observation periods if volume permits. Recurrence when ambiguity is restored in simulation, followed by improvement when clarity is restored again, would provide an additional, simulation-specific signal. Record eligible-order counts, missing-attachment counts, timing, workload and workflow changes. Separately classify historical cases as supported prior approval, evidenced late or absent approval, or unresolved; failure to locate evidence alone belongs in the unresolved category.",
+    "inference": "A reproducible decrease after removing responsibility ambiguity, especially with recurrence after safe simulated reintroduction, would increase support that ambiguity contributes to missing attachments. That finding would support retaining explicit ownership and monitoring its effect. It would not establish why every historical gap occurred. For each flagged order, only sufficiently specific, dated evidence of authorized approval before placement supports a conclusion that the stated approval requirement was met. The board account should distinguish established record findings, the prospective causal evidence, unresolved cases and the corresponding retrieval or process follow-up.",
+    "limit": "Historical gaps will not disappear merely because future responsibility changes; later retrieval can repair the record without changing what happened before purchase. Unlocated records do not prove approval never occurred, and later approval does not establish prior approval. Attachment rates may change through ordinary variation, staff awareness of review, workload, supplier mix, training or other concurrent changes. Delayed uploads and persistent backlogs can obscure the response, so use consistent inspection intervals and distinguish new orders from backlog repairs. Small numbers or the three-week deadline may prevent a reproducible result; report insufficiency rather than concluding the factor has no effect. If ambiguity is absent, do not claim to have removed it; investigate another evidenced candidate. Simulation cannot establish the magnitude of a live effect, and temporal association alone cannot exclude alternative causes."
+  },
+  "span_table": {
+    "packet_id": "H6-T03-3",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Act on the 14 flagged orders and, if available before the board review, new orders subject to the internal approval threshold."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Missing purchasing-system attachments establish a documentation gap, not necessarily missing approval."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "A proposed suspected factor is unclear responsibility for attaching approvals recorded elsewhere; its presence and contribution remain unestablished."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "First verify which orders required approval and whether responsibility was unclear when their records were created."
+      },
+      "P005": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "For each flagged order, compare the order-placement timestamp with purchasing records, meeting minutes and delegated-authority forms; check whether the evidence establishes approval by an authorized person before placement."
+      },
+      "P006": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Preserve provenance and distinguish subsequently retrieved evidence of prior approval from approval granted afterward."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "If unclear attachment responsibility is present, remove that ambiguity prospectively by naming one responsible person and giving an explicit instruction to attach the approval evidence before each covered order is placed."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Keep approval requirements and other workflow conditions unchanged where feasible, and log concurrent changes."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Compare missing-attachment frequency before and after this change, using comparable covered orders and the same predefined inspection interval after placement."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "Do not delay required corrective action to preserve the comparison."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Reintroduce ambiguity only in a safe simulation with fictitious orders, alternating clear and unclear responsibility across comparable tasks; do not weaken live controls."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Stop a simulation if it could affect real purchases."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Before the board review in three weeks, close the observation window, report incomplete follow-up explicitly, and assign owners and dates for unresolved record searches or continued monitoring."
+      },
+      "P014": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "The proposed causal signal is a reduction in missing approval attachments after responsibility becomes explicit, repeated across comparable observation periods if volume permits."
+      },
+      "P015": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Recurrence when ambiguity is restored in simulation, followed by improvement when clarity is restored again, would provide an additional, simulation-specific signal."
+      },
+      "P016": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Record eligible-order counts, missing-attachment counts, timing, workload and workflow changes."
+      },
+      "P017": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Separately classify historical cases as supported prior approval, evidenced late or absent approval, or unresolved; failure to locate evidence alone belongs in the unresolved category."
+      },
+      "P018": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "A reproducible decrease after removing responsibility ambiguity, especially with recurrence after safe simulated reintroduction, would increase support that ambiguity contributes to missing attachments."
+      },
+      "P019": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "That finding would support retaining explicit ownership and monitoring its effect."
+      },
+      "P020": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "It would not establish why every historical gap occurred."
+      },
+      "P021": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "For each flagged order, only sufficiently specific, dated evidence of authorized approval before placement supports a conclusion that the stated approval requirement was met."
+      },
+      "P022": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "The board account should distinguish established record findings, the prospective causal evidence, unresolved cases and the corresponding retrieval or process follow-up."
+      },
+      "P023": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Historical gaps will not disappear merely because future responsibility changes; later retrieval can repair the record without changing what happened before purchase."
+      },
+      "P024": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Unlocated records do not prove approval never occurred, and later approval does not establish prior approval."
+      },
+      "P025": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Attachment rates may change through ordinary variation, staff awareness of review, workload, supplier mix, training or other concurrent changes."
+      },
+      "P026": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Delayed uploads and persistent backlogs can obscure the response, so use consistent inspection intervals and distinguish new orders from backlog repairs."
+      },
+      "P027": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Small numbers or the three-week deadline may prevent a reproducible result; report insufficiency rather than concluding the factor has no effect."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "If ambiguity is absent, do not claim to have removed it; investigate another evidenced candidate."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Simulation cannot establish the magnitude of a live effect, and temporal association alone cannot exclude alternative causes."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C015",
+    "fields": [
+      "operation"
+    ],
+    "component": {
+      "component_id": "C015.component",
+      "value": "Reintroducing responsibility ambiguity is restricted to a safe simulation using fictitious orders and alternating clear and unclear responsibility across comparable tasks.",
+      "scope": "The proposed reversal operation; permission does not extend to live orders. Safety is not exhaustively defined in the mapping.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P011",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The span supplies the simulation-only restriction and the simulated comparison conditions."
+      }
+    }
+  }
+}

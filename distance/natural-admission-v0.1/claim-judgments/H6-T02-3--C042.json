@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C042",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C042.component",
+    "value": "At the reported roughly five-percent slow-export rate, short tests may be uninformative.",
+    "scope": "Potential information limitation, not a claim that every short test fails.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span directly attributes potential short-test uninformativeness to the reported approximate slow-export rate."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C042.signal_basis",
+    "value": "Track the fraction of exports exceeding one hour and completion-time estimates including unfinished exports. Evaluate these measurements over an observation window selected using available overnight volume and a predeclared precision requirement, with a reported slow-export frequency of roughly five percent.",
+    "scope": "Proposed measurements, assumed to occur for this judgment; informativeness depends on export volume, observation duration, and the smallest operationally meaningful improvement.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P034",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies the tail measurements, approximate event frequency, volume and precision considerations, and their proposed rather than already observed status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C042.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED rather than CONDITIONAL_WARRANT."
+    }
+  },
+  "rationale": "At a roughly five-percent event rate, a short observation window can contain too few slow exports to estimate tail behavior or a meaningful change precisely. Successful execution and observed trajectories do not guarantee sufficient statistical information. This licenses the claim's limited assertion of possible uninformativeness.",
+  "uncertainty": "No export volume or numerical precision target is supplied, so the packet does not establish that any particular short test will be uninformative. The claim does not require that stronger conclusion.",
+  "anomalies": []
+}

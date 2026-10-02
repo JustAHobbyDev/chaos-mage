@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C005",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C005",
+    "value": "Slow or retried object reads are a candidate explanation for the export delays.",
+    "scope": "A proposed explanation family, not an established finding.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P002",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P003",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle explicitly identifies slow or retried reads as a hypothesis rather than a finding."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C005_SIGNAL",
+    "value": "The operation separates export phase durations where trace semantics permit. The read-related branch of the proposed signal is ordinary queue waits followed by a prolonged, comparably measured object-read phase.",
+    "scope": "A proposed comparative observation, assumed to occur for this assessment; it does not establish why reads are prolonged or specifically demonstrate retries.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies phase separation, the read-phase signal with its comparability condition, and its status as a proposed observation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C005_EMPIRICAL_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "Object reads form part of export execution, so slow or repeated reads are a plausible candidate source of delay. Comparably measured prolonged read durations further license considering that explanation family. The frozen claim asserts only candidacy, requiring neither proof of retries nor identification of an established cause.",
+  "uncertainty": "The actual cause and whether retries occur remain unresolved; neither is asserted by this claim.",
+  "anomalies": []
+}

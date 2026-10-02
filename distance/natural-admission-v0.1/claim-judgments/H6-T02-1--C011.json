@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C011",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C011",
+    "value": "Timing comparability must be validated because trace coverage differs.",
+    "scope": "Rationale for validating the cross-revision timing measurement.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P008 supplies both the timing-comparability validation requirement and differing trace coverage as its reason."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C011_signal_basis",
+    "value": "Cross-revision comparisons use queue-entry-to-upload-completion timing despite differing trace coverage. Unequal coverage can produce apparent phase differences, and missing spans provide no evidence of zero delay.",
+    "scope": "Comparability of export timing measurements across revisions with differing trace coverage.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the timing measure, coverage differences, and the measurement limitations motivating validation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C011_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its stated methodological scope; no unresolved empirical relation is required to license the validation requirement."
+    }
+  },
+  "rationale": "Differing trace coverage creates a relevant possibility of measurement inconsistency, which licenses checking comparability before interpreting cross-revision timing differences. The claim requires validation; it does not assert that coverage differences actually biased the measurements or caused the export delays.",
+  "uncertainty": "The packet does not establish whether coverage differences affect total-duration measurements in practice. That uncertainty does not undermine the stated reason for validation.",
+  "anomalies": []
+}

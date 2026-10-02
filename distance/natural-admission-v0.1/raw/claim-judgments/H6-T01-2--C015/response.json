@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C015",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C015.component",
+    "value": "Required cleaning must not be removed in reduction testing.",
+    "scope": "Admissible component removals.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P012 explicitly prohibits removing required cleaning."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C015.signal_basis",
+    "value": "Reduction testing retains configurations that repeatedly reproduce lateness, with specified further removals ceasing to reproduce it. The operation excludes required cleaning from admissible removals.",
+    "scope": "Reduction testing of the selected late case.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P004",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans supply the reduction operation, observed pattern and explicit cleaning restriction; context identifies the selected case and defined failure."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C015.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This is an explicit procedural restriction, not a claim requiring an unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim is licensed as an explicit boundary on the reduction operation. It does not infer from reproduced lateness that cleaning causes the failure or is empirically necessary to reproduce it.",
+  "uncertainty": "None material within the stated scope of admissible removals.",
+  "anomalies": []
+}

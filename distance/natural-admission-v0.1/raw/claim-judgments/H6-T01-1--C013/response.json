@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-1",
+  "claim_id": "C013",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C013.component",
+    "value": "An ambiguous scheduled-start equipment state should remain unresolved.",
+    "scope": "Classification among equipment being absent, awaiting cleaning, or ready but uncollected.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span supplies the classification alternatives and explicitly directs that ambiguous cases remain unresolved."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C013.signal_basis",
+    "value": "After linking event records and applying consistent event definitions, the available evidence leaves the equipment's scheduled-start state ambiguous among the specified categories.",
+    "scope": "Individual scheduled-start classifications during the investigation, with missing values retained explicitly.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish record linkage, explicit missingness, consistent definitions and the possibility of unresolved classification."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C013.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed to warrant preserving an ambiguous classification."
+    }
+  },
+  "rationale": "When the evidence does not distinguish the specified states, assigning one would exceed what it establishes. Leaving that classification unresolved is licensed within the claim's narrow scope; it does not require identifying a temporal pattern or a causal bottleneck.",
+  "uncertainty": "The packet does not establish how many cases are ambiguous, but that does not affect this rule under the stipulated conditions.",
+  "anomalies": []
+}

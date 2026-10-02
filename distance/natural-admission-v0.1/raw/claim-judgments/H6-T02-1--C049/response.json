@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C049",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C049",
+    "value": "Changes in workspace mix, storage or network conditions, queue pressure, configuration and dependencies can confound revision comparisons.",
+    "scope": "Potential confounding, not an assertion that these factors caused the observed delays.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P029",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly identifies the listed factors as possible confounders of revision comparisons."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C049_signal_basis",
+    "value": "Repeated exports under matched conditions yield per-revision fractions exceeding one hour and their uncertainty, with workload and load recorded; prespecified evidence determines good, bad or inconclusive classifications.",
+    "scope": "Comparisons of the defined export tail rate across tested revisions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the matched testing operation, measured signal and classification criteria."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C049_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its stated bounds; no unresolved empirical relation is required."
+    }
+  },
+  "rationale": "The listed factors can affect export duration independently of revision identity. If they vary across revision trials, they can distort the comparison. This licenses the stated possibility of confounding, even when the prescribed matched testing successfully controls those factors.",
+  "uncertainty": "The signal does not establish that any listed factor actually confounded these trials or caused the observed delays; the claim asserts neither.",
+  "anomalies": []
+}

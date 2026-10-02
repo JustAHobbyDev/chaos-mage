@@ -1,0 +1,84 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C031",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C031.component",
+    "value": "If service-phase durations remain similar while queue delay increases during the lower-concurrency test, reduced capacity is a better explanation of that response.",
+    "scope": "Conditional interpretation of the tested response; the alternative against which the explanation is better is not explicitly named in P028. Conclusions remain confined to the tested cohort, concurrency range, versions, and operating conditions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P040",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P028 supplies the conditional explanation, P009 identifies the lower-concurrency test, and P040 supplies its generalization limits."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C031.signal_basis",
+    "value": "After a documented reduction in concurrency takes effect, service-phase durations remain similar while queue delay increases. Worker version and other controllable settings remain fixed, and response trajectories are compared with baseline and any unchanged comparison pool.",
+    "scope": "Assumed observed for this assessment, although the mapping describes proposed measurements. Interpretation remains subject to workload and resource disturbances and possible contamination of the comparison pool.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P028",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P037",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the intervention, actual exposure, controlled settings, comparison, conditional signal, and material observational limitations."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C031.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded explanation is warranted under the assumed operation and signal; no additional unresolved empirical relation is required."
+    }
+  },
+  "rationale": "Reducing simultaneous export capacity without shortening service phases provides a direct explanation for increased waiting. The stipulated response therefore supports the mapping's qualitative preference for reduced capacity as an explanation within the tested conditions. This does not establish a unique cause or superiority over every possible alternative; P028 does not name a specific comparator.",
+  "uncertainty": "Changing arrivals, workload mix, and shared-resource conditions can also increase queue delay. These acknowledged limits constrain the strength of the explanation without defeating its bounded evidential support.",
+  "anomalies": []
+}

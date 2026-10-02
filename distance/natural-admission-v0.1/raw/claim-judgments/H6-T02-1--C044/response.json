@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C044",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C044",
+    "value": "If endpoints or measurements cannot be established, the proposed deployment action is a bounded deployment of consistent timing instrumentation.",
+    "scope": "Conditional fallback deployment choice.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly links failure to establish endpoints or measurements to this bounded instrumentation deployment, with overhead validation and evidence gathering."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C044_SIGNAL",
+    "value": "Attempts to establish good and bad endpoints or comparable export timing measurements fail, activating the instrumentation fallback.",
+    "scope": "The fallback requires validating instrumentation overhead and gathering evidence before attributing delays or selecting a code rollback.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans identify the endpoint and timing checks and explicitly specify the failure-triggered fallback and its limits."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C044_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "The signal licenses the stated provisional investigation action within its bounds. The claim identifies a proposed response to inadequate evidence; it does not assert that instrumentation will establish endpoints, diagnose the cause or resolve the delays. Overhead validation remains an explicit constraint on the fallback.",
+  "uncertainty": "Whether instrumentation will yield adequate evidence remains unknown, but that outcome is outside the frozen claim.",
+  "anomalies": []
+}

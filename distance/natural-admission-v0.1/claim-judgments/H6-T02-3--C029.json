@@ -1,0 +1,76 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C029",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C029.component",
+    "value": "If actual concurrency decreases and object-read or upload durations subsequently improve relative to comparable baseline and control work, the result supports a contention-sensitive explanation at the tested load.",
+    "scope": "Conditional mechanistic interpretation at the tested load; the antecedent is not asserted to have occurred.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited span supplies the antecedent, comparison requirement, tentative mechanistic interpretation, and tested-load restriction."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C029.signal_basis",
+    "value": "Apply and hold a known lower concurrency limit, verify when actual concurrency falls, and observe subsequent improvement in object-read or upload durations relative to comparable baseline and control work, keeping worker version and other controllable settings fixed.",
+    "scope": "The tested cohort, concurrency range, versions, and operating conditions. Workload differences, disturbances, and shared-resource contamination can distort the comparison; the response constrains candidate mechanisms without identifying a worker-version cause.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P032",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P037",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P040",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the controlled perturbation, verification of actual exposure, comparative phase-duration response, and material limits on mechanistic interpretation and generalization."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C029.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The judgment is SUPPORTED; no additional unresolved empirical relation is required under the stipulated observation."
+    }
+  },
+  "rationale": "Given the stipulated actual concurrency reduction and comparative phase-duration improvement, the response provides evidence that performance is sensitive to concurrent demand, consistent with contention at the tested load. The claim asserts evidential support, not unique causal identification. Its bounded interpretation is licensed without requiring a separate empirical bridge.",
+  "uncertainty": "Workload changes and shared-resource disturbances can weaken causal attribution. They limit the strength and generality of the evidence but do not invalidate the stated tentative interpretation under its comparison requirement. No observed outcome is asserted here.",
+  "anomalies": []
+}

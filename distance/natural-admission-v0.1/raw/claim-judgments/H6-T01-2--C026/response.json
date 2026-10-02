@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C026",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C026.component",
+    "value": "Reduction should stop when further reductions are infeasible.",
+    "scope": "Feasibility bound on the reduction search.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The mapping explicitly makes infeasibility of further reductions a stopping trigger."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C026.signal_basis",
+    "value": "The search retains configurations that repeatedly reproduce failure, with further removals tested for continued reproduction; infeasibility of further reductions terminates that search.",
+    "scope": "Operational stopping boundary for the selected case's reduction search.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the retention rule, informative reproduction pattern, and feasibility stopping boundary."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C026.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This procedural feasibility bound requires no unresolved empirical relation to license the claim."
+    }
+  },
+  "rationale": "A reduction procedure requiring executable tests may stop when no further reductions are feasible. The claim licenses termination only; it does not claim that stopping establishes minimality or a causal explanation.",
+  "uncertainty": "No material warrant uncertainty under the stipulated assumptions.",
+  "anomalies": []
+}

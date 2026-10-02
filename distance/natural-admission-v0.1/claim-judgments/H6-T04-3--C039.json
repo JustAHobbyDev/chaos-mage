@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T04-3",
+  "claim_id": "C039",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C039.component",
+    "value": "Stop the test early for predefined material harm.",
+    "scope": "An early-stop rule whose material-harm threshold must be predefined; no actual harm is reported.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P027 explicitly supplies the early-stop rule and its predefined material-harm condition."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C039.signal_basis",
+    "value": "Monitoring the release test's guardrails identifies harm meeting the predefined material-harm stopping condition.",
+    "scope": "Guardrails cover errors, abandonment and unusable publications. The stopping signal is assumed to occur for this judgment; the mapping reports no actual harm.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans jointly specify advance guardrails, their observation during the release test, and the material-harm condition for early stopping."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C039.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded stopping rule requires no additional unresolved empirical relation under the stipulated prerequisites and signal."
+    }
+  },
+  "rationale": "Observed harm meeting a predefined stopping condition licenses applying that stopping rule. The claim is a bounded decision rule, requiring neither proof of a particular mechanism nor a completed efficacy estimate.",
+  "uncertainty": "The packet supplies no numerical harm threshold or observed harm. Those omissions do not defeat this rule under the instruction to assume its prerequisites are satisfied and its signal occurs.",
+  "anomalies": []
+}

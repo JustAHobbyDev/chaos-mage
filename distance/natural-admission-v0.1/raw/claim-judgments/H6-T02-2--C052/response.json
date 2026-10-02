@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C052",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C052",
+    "value": "When observability is the main obstacle, an instrumentation canary is a proposed next deployment action.",
+    "scope": "A conditional choice using surviving alternatives; observability is not asserted to be the actual main obstacle.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span directly supplies the conditional instrumentation-canary choice and its role in choosing the next deployment."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C052_SIGNAL",
+    "value": "The evidence comparison cannot discriminate among explanations, with missing phase timing or coverage information constituting the main obstacle. The proposed operation is an instrumentation canary collecting that missing information.",
+    "scope": "Conditional information gathering when observability limits the comparison; the proposed canary has bounded sampling and logging overhead and collects no document contents.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the evidence comparison, the missing-information canary with its bounds, and the condition that observability is the main obstacle."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C052_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its conditional scope; no unresolved empirical relation is required."
+    }
+  },
+  "rationale": "When missing observations prevent discrimination, a bounded deployment designed to collect those observations is licensed as a proposed next investigative action. The claim does not assert that the canary will resolve the uncertainty, identify a cause, or improve export performance.",
+  "uncertainty": "Whether observability actually is the main obstacle and whether added instrumentation will discriminate remain open; neither is asserted by this conditional claim.",
+  "anomalies": []
+}

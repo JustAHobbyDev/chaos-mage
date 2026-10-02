@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C050",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C050",
+    "value": "Isolated replay may omit interactions present in production.",
+    "scope": "Possible representativeness limitation of isolated testing.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P029",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly states the possible omission of production interactions during isolated replay."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C050_signal_basis",
+    "value": "Repeated representative exports on isolated workers yield revision-level tail-rate measurements and classifications under the tested workload and load.",
+    "scope": "The isolated-testing branch, with execution prerequisites satisfied and the prescribed classification evidence observed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish isolated representative testing, repeated exports, recorded workload and load, and evidence-based tail-rate classification."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C050_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this supported possibility claim."
+    }
+  },
+  "rationale": "Successful isolated testing can classify behavior under its tested conditions without ensuring that all production interactions are reproduced. The claim states only this possible limitation, which remains warranted even when execution prerequisites are satisfied and the signal occurs.",
+  "uncertainty": "The packet does not establish that any particular production interaction is actually omitted; the claim does not require that stronger conclusion.",
+  "anomalies": []
+}

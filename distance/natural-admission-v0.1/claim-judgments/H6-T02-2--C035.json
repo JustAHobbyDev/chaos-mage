@@ -1,0 +1,72 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C035",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C035",
+    "value": "A targeted mitigation should expand only when reliable discriminating evidence favors its mechanism and the canary meets the predefined bounds.",
+    "scope": "Joint necessary conditions; the bounds cover instrumentation overhead, error rate, completion rate and tail delay against comparable baseline traffic.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P016 supplies the joint expansion requirements; P014 specifies the referenced bounds."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C035_SIGNAL",
+    "value": "Compare explanations using evidence assessed for reliability and diagnostic value, test sensitivity to uncertain measurements and combined causes, and observe whether the canary changes the predicted phase and overall tail without increasing failures or unfinished exports. Assess compliance with predefined operating bounds using adequate exposure and coverage.",
+    "scope": "A gate for expanding the targeted mitigation against comparable baseline traffic. Inadequate exposure or coverage makes the canary inconclusive; a short clean canary cannot establish resolution.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P008",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P030",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P031",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle supplies the comparative assessment, sensitivity checks, canary observations, operating bounds and exposure qualifications."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C035_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported within its necessary-condition scope; no unresolved empirical bridge is required."
+    }
+  },
+  "rationale": "The operation and signal license requiring both evidence favoring the mitigation's mechanism and acceptable observed canary performance before expansion. The frozen claim states necessary conditions, without asserting that satisfying them proves the mechanism, establishes resolution or guarantees that expansion is justified.",
+  "uncertainty": "Residual causal uncertainty and risks outside the tested conditions remain. They do not invalidate this bounded requirement for expansion.",
+  "anomalies": []
+}

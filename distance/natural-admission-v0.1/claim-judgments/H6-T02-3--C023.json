@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C023",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C023.component",
+    "value": "Exports already active at the transition should remain a distinct comparison group.",
+    "scope": "Cohort comparisons organized by queue-entry time and exposure to the concurrency step.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P020 explicitly requires retaining exports active at the transition as a distinct group within these cohort comparisons."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C023.signal_basis",
+    "value": "The concurrency limit is lowered after a baseline, while active exports continue to completion. Actual concurrency can adjust gradually as work drains, so comparisons track queue-entry time and exposure to the step, distinguishing exports already active at the transition.",
+    "scope": "Scheduled exports in the tested canary pool across the concurrency transition.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P036",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the scheduled workload, controlled step, continuation of active work, potentially gradual adjustment, and exposure-based cohort comparison."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C023.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded comparison rule is directly warranted; no unresolved empirical relation is needed."
+    }
+  },
+  "rationale": "Exports active at the transition have pre-step operating history and potentially mixed exposure during adjustment. Keeping them distinct preserves that relevant exposure difference when comparing responses to the concurrency step.",
+  "uncertainty": "Distinct grouping does not itself ensure comparable workloads or uniform exposure within the group; neither is required by this claim.",
+  "anomalies": []
+}

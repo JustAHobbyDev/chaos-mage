@@ -1,0 +1,47 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C021",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C021.component",
+    "value": "The proposed timing analysis distinguishes the lag from the commanded step to actual concurrency change from the subsequent lag to output changes.",
+    "scope": "Proposed timing measurements for queue depth, completion rate, and phase durations; no nonzero lag is asserted to have been observed.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P011", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P025", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The spans specify recording actual concurrency change, separating the two timing intervals, and treating these measurements as proposed."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C021.signal_basis",
+    "value": "Record the commanded step time and when actual concurrency reflects the new limit, then measure the timing of subsequent changes in queue depth, completion rate, and phase durations.",
+    "scope": "Timing analysis of the proposed canary concurrency reduction; measurements are prospective.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P009", "role": "SUPPORT"},
+        {"source_id": "P011", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"},
+        {"source_id": "P025", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the documented command time, actual-change marker, output timing measurements, and prospective scope."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C021.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is needed to license this claim about the measurement design."
+    }
+  },
+  "rationale": "The operation identifies three temporal markers: the command, actual concurrency change, and output change. These license distinguishing the two successive intervals within the proposed analysis.",
+  "uncertainty": "Neither interval must be nonzero, and the claim asserts no observed timing result.",
+  "anomalies": []
+}

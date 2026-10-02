@@ -1,0 +1,97 @@
+{
+  "packet_id": "H6-T02-1",
+  "claim_id": "C040",
+  "status": "CONDITIONAL_WARRANT",
+  "claim": {
+    "component_id": "C040",
+    "value": "If the regression and its reversal reproduce, the proposed deployment action is a bounded overnight canary of a compatible revert or fix.",
+    "scope": "Conditional deployment recommendation; compatibility and bounds are required but not operationally specified.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P026 supplies the reproduction condition, compatible intervention and bounded overnight canary, including stop thresholds and restrictions on expansion. P025 identifies the boundary retesting and intervention. The scope's lack of operational specification is understood as missing concrete compatibility criteria and threshold values; the mapping does specify monitoring categories and stopping behavior."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C040.signal_basis",
+    "value": "Repeated representative midpoint trials yield tail-rate estimates with uncertainty and good, bad or inconclusive classifications. Decisive classifications shrink the candidate transition interval; inconclusive outcomes do not justify eliminating history.",
+    "scope": "Valid endpoints, comparable trials and a persistent single transition; prespecified repeated-testing controls and correct treatment of unfinished exports. Localization establishes association under tested conditions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P011",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P014",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P016",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P023",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P034",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans specify the measurements, classification safeguards, interval reduction and association-only limit."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C040.stated_empirical_relation",
+    "value": "Matched retesting reproduces the regression across the localized boundary, and testing a targeted revert or fix while holding other factors constant reproduces its reversal.",
+    "scope": "Confirmation under tested conditions licenses the compatible intervention's bounded overnight canary, with predefined tail-rate, failure and resource stop thresholds. Expansion requires adequate further evidence; otherwise the canary is halted or rolled back.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P025",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P026",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P034",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P025 specifies the controlled confirmation tests; P026 explicitly connects reproduced regression and reversal to the bounded canary recommendation. P034 preserves the need for monitored rollout."
+    }
+  },
+  "rationale": "The localization signal alone establishes a revision association. The mapping supplies a specific additional empirical relation—reproduction of the regression and its reversal under controlled comparison—that would warrant the claimed bounded deployment experiment. This is an inferential confirmation condition, not merely an execution prerequisite.",
+  "uncertainty": "The packet does not establish that the regression and reversal reproduce. Even if they do, the recommendation remains limited to a compatible, monitored canary and does not establish general deployment safety.",
+  "anomalies": []
+}

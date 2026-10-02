@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C006",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C006",
+    "value": "Slow archive uploads are a candidate explanation for the export delays.",
+    "scope": "A hypothesis, not an established finding.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P002",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P003",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited bundle explicitly identifies slow archive uploads as a possible explanation and limits its status to a hypothesis."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C006_signal_basis",
+    "value": "Separate export phase durations where trace semantics permit; ordinary queue waits followed by prolonged upload durations provide discriminating evidence for an upload-related explanation when phases are measured comparably.",
+    "scope": "A proposed comparative observation, assumed to occur for this judgment. Missing spans cannot establish that a phase was fast.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P007",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P019",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P027",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the phase comparison, its measurement conditions, its proposed status and the missing-evidence limitation."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C006_stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "Archive upload is a timed part of export execution. Comparably measured prolonged upload durations license considering slow uploads as an explanation for delay. The frozen claim asserts only candidacy, so it requires neither causal identification nor elimination of competing explanations.",
+  "uncertainty": "The signal does not establish why uploads are slow, their prevalence among delayed exports, or whether other causes coexist; none is asserted by this claim.",
+  "anomalies": []
+}

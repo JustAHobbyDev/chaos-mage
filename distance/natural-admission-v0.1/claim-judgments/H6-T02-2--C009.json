@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C009",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C009",
+    "value": "Trace coverage differs across worker versions.",
+    "scope": "Coverage variation is stated without identifying particular versions or its magnitude.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P004 directly supplies the stated coverage variation without specifying versions or magnitude."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C009_SIGNAL",
+    "value": "Version-dependent trace coverage is a starting condition. The proposed comparison checks whether a version association weakens after accounting for coverage or workload.",
+    "scope": "The comparison accommodates the supplied coverage difference; it does not independently measure or establish that difference.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P004",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P021",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish the starting condition, describe the coverage-sensitive comparison, and identify the observations as proposed."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C009_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical bridge is required for this supplied contextual fact."
+    }
+  },
+  "rationale": "The frozen target explicitly supplies differing trace coverage across worker versions, and the claim faithfully retains that condition. It is supported as an input premise, rather than a new finding derived from the comparative signal.",
+  "uncertainty": "The affected versions and magnitude remain unspecified; the claim makes no assertion about either.",
+  "anomalies": []
+}

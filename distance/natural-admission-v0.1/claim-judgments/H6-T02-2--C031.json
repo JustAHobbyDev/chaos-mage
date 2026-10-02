@@ -1,0 +1,52 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C031",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C031",
+    "value": "Controlled test exports may be introduced only after representative test data and spare capacity have both been established.",
+    "scope": "Necessary conditions for introducing controlled exports; neither condition is asserted to hold.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P013 explicitly makes both conditions prerequisites for introducing controlled test exports."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C031_SIGNAL_BASIS",
+    "value": "The operation uses normal overnight traffic and gates controlled test exports on established representative test data and spare capacity. The mapping acknowledges that test workloads may change the behavior under investigation.",
+    "scope": "An execution restriction on controlled testing, not an observed diagnostic result or a guarantee of safety or validity.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the operating restriction and the qualification concerning effects of test workloads."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C031_STATED_EMPIRICAL_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The claim is supported as a bounded procedural restriction; no unresolved empirical relation is needed."
+    }
+  },
+  "rationale": "The claim establishes a conservative testing gate: representative data addresses relevance, and spare capacity addresses added load. It claims only that both are required by this investigation procedure, without treating them as sufficient for safe testing or valid causal inference. Within those explicit limits, the operation licenses the claim.",
+  "uncertainty": "The mapping does not establish that either prerequisite actually holds. Their satisfaction is assumed for this assessment, and no test outcome is inferred.",
+  "anomalies": []
+}

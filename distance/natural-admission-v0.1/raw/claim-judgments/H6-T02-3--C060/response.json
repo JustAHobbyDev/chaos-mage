@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C060",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C060.component",
+    "value": "Failure to detect a change does not exclude contention.",
+    "scope": "Limit on interpreting a null experimental response.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P039",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The span explicitly states that nondetection does not exclude contention."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C060.signal_basis",
+    "value": "A controlled reduction in concurrency produces no detectable change in the measured response relative to baseline and any unchanged comparison pool.",
+    "scope": "The tested cohort, concurrency range, worker versions, and operating conditions.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P039",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P040",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the controlled step, measured response, comparisons, nondetection case, and limits of applicability."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C060.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this supported limitation on interpreting nondetection."
+    }
+  },
+  "rationale": "A null response to one concurrency reduction does not establish that contention is absent. The experiment need not produce a detectable response whenever contention exists. Meeting execution prerequisites does not establish that diagnostic sensitivity, so the stated non-exclusion claim is licensed.",
+  "uncertainty": "Whether contention actually contributes remains unresolved; the claim asserts only that nondetection cannot exclude it.",
+  "anomalies": []
+}

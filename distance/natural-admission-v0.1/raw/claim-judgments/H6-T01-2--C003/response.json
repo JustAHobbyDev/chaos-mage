@@ -1,0 +1,56 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C003",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C003.component",
+    "value": "Missing log entries must remain unknown when reconstructing bookings.",
+    "scope": "Linking the 74 bookings to equipment and booking logs during days 1–3.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P003",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P003 explicitly requires preserving missing entries as unknown during this reconstruction."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C003.signal_basis",
+    "value": "Bookings are reconstructed by linking separate logs while preserving missing or conflicting entries as unknown. The observed reduction pattern is repeated lateness in a smaller configuration, with specified further removals ceasing to reproduce lateness.",
+    "scope": "Reconstruction of the 74 bookings and reduction tests of the selected late case.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P003",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P003 supplies the reconstruction operation and missing-data treatment; P018 supplies the observed pattern; P006 identifies the selected replay case."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C003.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The supported procedural claim requires no unresolved empirical relation."
+    }
+  },
+  "rationale": "The claim is warranted as an uncertainty-preserving reconstruction rule. Missing records supply no observed values, and reproducing lateness in reduction tests does not recover those missing historical values.",
+  "uncertainty": "The missing values remain unknown; that uncertainty does not undermine the warrant for recording them as unknown.",
+  "anomalies": []
+}

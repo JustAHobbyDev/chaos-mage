@@ -1,0 +1,68 @@
+{
+  "packet_id": "H6-T02-2",
+  "claim_id": "C030",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C030",
+    "value": "The canary investigation should use normal overnight traffic.",
+    "scope": "The controlled-test exception remains conditional on representative test data and spare capacity.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P012",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P013 supplies the traffic prescription and its controlled-test exception; P012 identifies the canary investigation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C030_SIGNAL_BASIS",
+    "value": "The investigation compares slow and ordinary overnight exports under comparable workloads and execution windows, adding canary instrumentation when existing evidence cannot discriminate. It observes changes in predicted phases and overall tail delays alongside failures and unfinished exports, recognizing that instrumentation or test workloads can alter behavior.",
+    "scope": "Comparisons use matching information where available and retain limitations for unmatched cases. Canary instrumentation has bounded sampling and logging overhead and excludes document contents.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P005",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P006",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P012",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P022",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P033",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the overnight comparison, comparability limits, instrumentation fallback, observed outcomes and potential disturbance from instrumentation or test workloads."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C030_STATED_EMPIRICAL_RELATION",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The judgment is SUPPORTED; no unresolved empirical relation is required for this bounded traffic-selection prescription."
+    }
+  },
+  "rationale": "Normal overnight traffic supplies observations from the operating setting being investigated and supports the prescribed workload and execution-window comparisons. That licenses its use for the canary investigation, with controlled test exports subject to the stated representativeness and capacity conditions. The claim does not assert that this traffic choice guarantees diagnostic success or establishes a cause.",
+  "uncertainty": "Instrumentation may still change behavior, and normal traffic does not itself guarantee comparable cases or informative evidence. These limitations do not defeat the narrow prescription.",
+  "anomalies": []
+}

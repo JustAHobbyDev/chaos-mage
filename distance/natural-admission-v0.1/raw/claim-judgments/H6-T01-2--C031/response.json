@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T01-2",
+  "claim_id": "C031",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C031.component",
+    "value": "A replay that cannot reproduce the baseline supplies no basis for reduction.",
+    "scope": "Limit on using an unsuccessful baseline replay for reduction inference.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P020 explicitly supplies this conditional limitation."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C031.signal_basis",
+    "value": "The baseline replay does not reproduce the defined failure, whereas reduction requires retaining configurations that repeatedly preserve that failure under the same predeclared repetition rule.",
+    "scope": "Failure-preserving reduction of the selected case within the replay test; uncertain or inconsistent outcomes remain unresolved.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P020",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P013",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P015",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P004",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "P006",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans establish baseline nonreproduction, the failure-preservation requirement, and consistent treatment of repetition and unresolved outcomes; context identifies the failure and selected replay."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C031.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This supported methodological limitation requires no additional empirical relation."
+    }
+  },
+  "rationale": "Failure-preserving reduction needs a reproducing baseline against which removals can be assessed. An unsuccessful baseline replay supplies no such reference and therefore cannot support that reduction inference. The claim is limited to what this replay supplies.",
+  "uncertainty": "No material uncertainty within the stated scope; the claim does not rule out establishing a reproducing baseline through further investigation.",
+  "anomalies": []
+}

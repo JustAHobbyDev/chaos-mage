@@ -1,0 +1,60 @@
+{
+  "packet_id": "H6-T02-3",
+  "claim_id": "C047",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C047.component",
+    "value": "Changing arrivals can distort the experimental response.",
+    "scope": "Potential distortion from changes in incoming work.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P035",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The mapping explicitly identifies changing arrivals as a potential source of response distortion."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C047.signal_basis",
+    "value": "Apply a documented reduction in canary concurrency and observe subsequent changes in queue depth, completion rate, and phase durations, recording arrivals alongside the response.",
+    "scope": "Proposed experimental measurements, assumed to occur for this judgment.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P009",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P024",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P025",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans establish the concurrency intervention, measured response, accompanying arrival measurements, and proposed status."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C047.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bounded possibility claim is supported without an additional unresolved empirical relation."
+    }
+  },
+  "rationale": "Incoming work affects queue accumulation and resource demand independently of the concurrency setting. Changing arrivals can therefore alter the measured trajectory and confound interpretation of the step response, licensing the stated possibility of distortion.",
+  "uncertainty": "The claim does not establish that arrivals actually changed or quantify their effect in any particular test.",
+  "anomalies": []
+}

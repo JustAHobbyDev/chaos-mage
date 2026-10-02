@@ -1,0 +1,64 @@
+{
+  "packet_id": "H6-T03-2",
+  "claim_id": "C020",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C020.component",
+    "value": "Mismatched amounts, if found, signal uncertainty in the reconstruction.",
+    "scope": "A possible finding to check, not an observed amount mismatch.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The cited spans explicitly identify amount mismatches as an uncertainty signal and retain the possible-finding qualification."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C020.signal_basis",
+    "value": "Cross-checking amounts across records reveals a mismatch among records used to reconstruct an order's history.",
+    "scope": "Assumed finding from the proposed checks for a flagged order; no mismatch is asserted to have actually been observed.",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "P006",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P017",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P018",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "P001",
+          "role": "CONTEXT"
+        }
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "The bundle supplies the cross-record amount check, the possible mismatch, and its hypothetical status; P001 identifies the orders under reconstruction."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C020.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "This component is inapplicable because the judgment is SUPPORTED."
+    }
+  },
+  "rationale": "An amount mismatch introduces a discrepancy in the records supporting the reconstruction. That licenses the narrow conclusion that uncertainty is present, without establishing which record is wrong or whether approval failed.",
+  "uncertainty": "The mismatch's cause and significance remain unresolved; neither is required for this bounded uncertainty signal.",
+  "anomalies": []
+}

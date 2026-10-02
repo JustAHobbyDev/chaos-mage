@@ -1,0 +1,324 @@
+# One claim, one warrant observation
+
+Judge only the identified frozen atomic claim in its parent mapping. Assume stated
+execution prerequisites are satisfied and the described signal occurs. Does that
+operation/signal license this specific claim within its stated limits?
+
+SUPPORTED: licensed within explicit bounds.
+CONDITIONAL_WARRANT: the mapping itself supplies a specific unresolved empirical
+relation whose establishment would license it. Describe and cite that relation;
+do not invent it or confuse execution readiness with an inferential warrant.
+UNSUPPORTED: even with prerequisites met and signal observed, the claim does not follow.
+UNCERTAIN: genuinely insufficient information to decide warrant; explain why.
+
+Return the claim component and signal_basis with H.5 refs. stated_empirical_relation
+is a component only for CONDITIONAL_WARRANT, otherwise NOT_APPLICABLE per PROVENANCE.md.
+Separate provenance sufficiency from warrant: faithful attribution of a bad claim is
+SUFFICIENT provenance. An atomization misstatement is an annotation defect to flag;
+do not silently judge a corrected version. Do not judge other claims or whole-artifact
+viability. No repair, replacement inference, or quality/creativity ranking.
+
+# H.5 integration — unchanged semantic citation contract
+
+Mapping fields are segmented by the frozen H.5 segment.py, unchanged: field, explicit
+authored block, conservative sentence boundary, stop. No clause splitting. Pxxx IDs
+are opaque and local to the packet_id envelope. Cite only this packet's mapping spans.
+Source instrument and target are distinct named input data, not other mapping packets.
+
+Each semantic component has value, scope and provenance.refs, each ref comprising
+source_id and role SUPPORT or CONTEXT. SUPPORT contributes substance; CONTEXT only
+resolves reference, identity, scope or authored structure. CONTEXT cannot supply missing
+substantive inference. Include material qualifiers in the cited bundle. Assess whether
+only the cited bundle plus ordinary linguistic interpretation reconstructs the component:
+SUFFICIENT, INSUFFICIENT, UNCERTAIN. These statuses describe attribution to the mapping,
+not whether the attributed claim has warrant. An unsupported claim can be perfectly
+traceable. At least one SUPPORT per substantive component. An explicitly inapplicable
+component uses value NOT_APPLICABLE, empty refs, scope NOT_APPLICABLE and SUFFICIENT
+with a reason; it is excluded from provenance support counts.
+
+Never supply offsets, exact source-text reproduction or byte-identical quotes as
+semantic citation requirements. Model component values are semantic descriptions.
+Harness-only ranges and hashes preserve immutable artifact identity.
+
+Report anomalies without repairing content. Codes include PROV_UNKNOWN_SOURCE_ID,
+PROV_NO_SUPPORT, PROV_DUPLICATE_REF, PROV_ROLE_CONFLICT, PROV_WRONG_PACKET,
+PROV_MISSING_CONTEXT, PROV_UNSUPPORTED_COMPONENT, PROV_SCOPE_OVERREACH,
+PROV_UNCERTAIN_SUPPORT. A wrong citation initially is PROVENANCE_MODEL_ERROR. Report
+H5_UNREPRESENTABLE_SUPPORTED_COMPONENT, H5_UNCITED_SUBSTANTIVE_DEPENDENCE,
+H5_COARSE_CONTRADICTION_OR_QUALIFIER, H5_DISPERSED_SIMPLE_SUPPORT,
+H5_OUTSIDE_QUALIFIER, H5_CONTEXT_INFERENCE, H5_NONDETERMINISTIC_SEGMENTATION,
+H5_MARKUP_SCOPE_DAMAGE only when describing the corresponding observed weakness.
+For each anomaly identify component, evidence and whether correct support can be
+represented with the existing spans. No automatic segmentation repair.
+
+Use only this frozen packet and general knowledge. No tools, files, browsing, other packets or external context. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H6-T03-1",
+  "target": {
+    "target_id": "T03",
+    "domain": "compliance or procedural",
+    "title": "Supplier approval records",
+    "frame": "A nonprofit requires documented approval before staff place supplier orders above an internal spending threshold. A quarterly review found that 14 of 90 sampled orders lack an approval attachment in the purchasing system. Approvals may also be recorded in meeting minutes or delegated-authority forms. The operations lead must prepare a defensible account of what happened and decide which records or process changes to pursue before the board review in three weeks. The internal rule is given; no legal conclusion is requested."
+  },
+  "source_instrument": {
+    "instrument": {
+      "state": "An internal structure cannot be sampled directly, but variations within it systematically alter the propagation of signals that cross it along many paths.\n",
+      "operation": "Measure signal travel behavior across many source-to-receiver paths, compare those observations with predictions from a candidate internal model, and iteratively adjust the model to reduce the discrepancies.\n",
+      "signal": "The observed propagation times or waveforms differ from model predictions in spatially structured ways across the sampled paths.\n",
+      "inference": "The pattern of discrepancies constrains a spatial model of internal properties that could have produced the observed propagation behavior.\n",
+      "limit": "Sparse or uneven path coverage, measurement error, uncertain source locations, regularization choices, model assumptions, and non-uniqueness can create artifacts or allow multiple internal structures to fit the observations.\n"
+    }
+  },
+  "mapping": {
+    "state": "Act on the sampled orders and the documentary traces linking approval decisions, order placement and purchasing-system records. The historical approval process is not directly observable; reconstruct it through multiple record paths. The packet establishes that 14 of 90 sampled orders lack purchasing-system approval attachments, but does not establish that approval was absent. Verify which orders exceeded the threshold and what the internal rule required at the time. Assume only provisionally that records can be linked and their dates interpreted reliably.",
+    "operation": "During week one, build a candidate model of how documented approval should precede an order and reach the purchasing record, including any permitted routes through meeting minutes or delegated-authority forms. For each of the 14 flagged orders, trace paths from the purported approval through relevant records to order placement and attachment. Use the other sampled orders to test whether these routes also explain apparently complete records. Record order identifiers, amounts, approval content, applicable authority, event dates, record-creation dates and attachment dates, distinguishing these dates explicitly. A delegation form may establish authority without documenting approval of a particular order. During week two, compare observed links, timing and missing traces with each route's predictions. Investigate discrepancies through targeted record requests and staff clarification; treat recollections as leads rather than equivalent to contemporaneous documentation. Iteratively revise the candidate account and check its predictions against additional traces. Track alternative explanations rather than adjusting the account merely to make every order appear compliant.",
+    "signal": "Observe whether predicted approval records can be found, linked to the relevant order and shown to precede placement, and whether their recorded authority fits the applicable rule. The counterpart to propagation behavior is the timing and continuity of documentary traces across approval-to-order-to-system paths. Look for structured discrepancies by approval route, responsible role, period or record location: for example, linked prior approvals without attachments, attachments without demonstrated prior approval, or repeated breaks at a particular handoff. These are proposed observations to test, not findings. Record searches that yield no result together with their scope and access limitations.",
+    "inference": "Use the pattern of discrepancies to constrain competing accounts of where the process departed from its predicted route: obtaining approval, documenting it, linking it to an order, or attaching it to the system. Reliable evidence of appropriately authorized, documented approval before placement can support satisfaction of the given approval rule even when an attachment is missing, subject to the rule's actual record requirements. An attachment alone does not establish timely approval. An unsuccessful search supports 'approval not located within the searched sources,' not automatically 'approval never occurred.' Seek further records that distinguish competing accounts. Before the board review in week three, prepare an order-level evidence table separating supported conclusions, unresolved cases and alternative explanations; propose record corrections or process changes tied to the supported failure points.",
+    "limit": "Record paths may be sparse, uneven, dependent on copied material or affected by missing records, ambiguous identifiers, unreliable timestamps and uncertain approval origins. Standardizing all orders into one assumed workflow could conceal legitimate routes or manufacture apparent failures; retain exceptions and test assumptions. Multiple historical processes may produce the same surviving records. Do not infer a population failure rate from 14 of 90 without a defensible sampling basis, and do not make legal conclusions. Stop an individual inquiry when sufficient reliable evidence resolves the applicable rule or when identified sources are exhausted and the remaining uncertainty is documented. At the board deadline, report unresolved cases without forcing closure, assigning each a specific next evidence request and responsible owner. Preserve original records when adding links or annotations; any later approval or remediation must retain its actual date and must not be presented as prior approval."
+  },
+  "span_table": {
+    "packet_id": "H6-T03-1",
+    "spans": {
+      "P001": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Act on the sampled orders and the documentary traces linking approval decisions, order placement and purchasing-system records."
+      },
+      "P002": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "The historical approval process is not directly observable; reconstruct it through multiple record paths."
+      },
+      "P003": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "The packet establishes that 14 of 90 sampled orders lack purchasing-system approval attachments, but does not establish that approval was absent."
+      },
+      "P004": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Verify which orders exceeded the threshold and what the internal rule required at the time."
+      },
+      "P005": {
+        "field": "state",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Assume only provisionally that records can be linked and their dates interpreted reliably."
+      },
+      "P006": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "During week one, build a candidate model of how documented approval should precede an order and reach the purchasing record, including any permitted routes through meeting minutes or delegated-authority forms."
+      },
+      "P007": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "For each of the 14 flagged orders, trace paths from the purported approval through relevant records to order placement and attachment."
+      },
+      "P008": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Use the other sampled orders to test whether these routes also explain apparently complete records."
+      },
+      "P009": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Record order identifiers, amounts, approval content, applicable authority, event dates, record-creation dates and attachment dates, distinguishing these dates explicitly."
+      },
+      "P010": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "A delegation form may establish authority without documenting approval of a particular order."
+      },
+      "P011": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "During week two, compare observed links, timing and missing traces with each route's predictions."
+      },
+      "P012": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Investigate discrepancies through targeted record requests and staff clarification; treat recollections as leads rather than equivalent to contemporaneous documentation."
+      },
+      "P013": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 7,
+        "kind": "paragraph",
+        "text": "Iteratively revise the candidate account and check its predictions against additional traces."
+      },
+      "P014": {
+        "field": "operation",
+        "block_index": 0,
+        "sentence_index": 8,
+        "kind": "paragraph",
+        "text": "Track alternative explanations rather than adjusting the account merely to make every order appear compliant."
+      },
+      "P015": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Observe whether predicted approval records can be found, linked to the relevant order and shown to precede placement, and whether their recorded authority fits the applicable rule."
+      },
+      "P016": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "The counterpart to propagation behavior is the timing and continuity of documentary traces across approval-to-order-to-system paths."
+      },
+      "P017": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Look for structured discrepancies by approval route, responsible role, period or record location: for example, linked prior approvals without attachments, attachments without demonstrated prior approval, or repeated breaks at a particular handoff."
+      },
+      "P018": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "These are proposed observations to test, not findings."
+      },
+      "P019": {
+        "field": "signal",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Record searches that yield no result together with their scope and access limitations."
+      },
+      "P020": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Use the pattern of discrepancies to constrain competing accounts of where the process departed from its predicted route: obtaining approval, documenting it, linking it to an order, or attaching it to the system."
+      },
+      "P021": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Reliable evidence of appropriately authorized, documented approval before placement can support satisfaction of the given approval rule even when an attachment is missing, subject to the rule's actual record requirements."
+      },
+      "P022": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "An attachment alone does not establish timely approval."
+      },
+      "P023": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "An unsuccessful search supports 'approval not located within the searched sources,' not automatically 'approval never occurred.' Seek further records that distinguish competing accounts."
+      },
+      "P024": {
+        "field": "inference",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Before the board review in week three, prepare an order-level evidence table separating supported conclusions, unresolved cases and alternative explanations; propose record corrections or process changes tied to the supported failure points."
+      },
+      "P025": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 0,
+        "kind": "paragraph",
+        "text": "Record paths may be sparse, uneven, dependent on copied material or affected by missing records, ambiguous identifiers, unreliable timestamps and uncertain approval origins."
+      },
+      "P026": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 1,
+        "kind": "paragraph",
+        "text": "Standardizing all orders into one assumed workflow could conceal legitimate routes or manufacture apparent failures; retain exceptions and test assumptions."
+      },
+      "P027": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 2,
+        "kind": "paragraph",
+        "text": "Multiple historical processes may produce the same surviving records."
+      },
+      "P028": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 3,
+        "kind": "paragraph",
+        "text": "Do not infer a population failure rate from 14 of 90 without a defensible sampling basis, and do not make legal conclusions."
+      },
+      "P029": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 4,
+        "kind": "paragraph",
+        "text": "Stop an individual inquiry when sufficient reliable evidence resolves the applicable rule or when identified sources are exhausted and the remaining uncertainty is documented."
+      },
+      "P030": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 5,
+        "kind": "paragraph",
+        "text": "At the board deadline, report unresolved cases without forcing closure, assigning each a specific next evidence request and responsible owner."
+      },
+      "P031": {
+        "field": "limit",
+        "block_index": 0,
+        "sentence_index": 6,
+        "kind": "paragraph",
+        "text": "Preserve original records when adding links or annotations; any later approval or remediation must retain its actual date and must not be presented as prior approval."
+      }
+    }
+  },
+  "claim": {
+    "claim_id": "C047",
+    "fields": [
+      "limit"
+    ],
+    "component": {
+      "component_id": "C047.component",
+      "value": "Each case unresolved at the board deadline should receive a specific next evidence request and a responsible owner.",
+      "scope": "The proposed follow-up requirement for every unresolved case.",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "P030",
+            "role": "SUPPORT"
+          }
+        ],
+        "support_status": "SUFFICIENT",
+        "rationale": "The span supplies the per-case follow-up requirement and responsibility assignment."
+      }
+    }
+  }
+}

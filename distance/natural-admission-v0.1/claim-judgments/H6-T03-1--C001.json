@@ -1,0 +1,46 @@
+{
+  "packet_id": "H6-T03-1",
+  "claim_id": "C001",
+  "status": "SUPPORTED",
+  "claim": {
+    "component_id": "C001.component",
+    "value": "The historical approval process is not directly observable.",
+    "scope": "The historical process underlying the sampled supplier orders.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P002", "role": "SUPPORT"},
+        {"source_id": "P001", "role": "CONTEXT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "P002 states the observability limitation; P001 identifies the sampled orders and documentary setting."
+    }
+  },
+  "signal_basis": {
+    "component_id": "C001.signal_basis",
+    "value": "Trace records from purported approval to order placement and attachment, observing their timing, continuity, order linkage and applicable authority.",
+    "scope": "Retrospective examination of the flagged orders through documentary traces. The observations are proposed tests, assumed to occur for this assessment.",
+    "provenance": {
+      "refs": [
+        {"source_id": "P007", "role": "SUPPORT"},
+        {"source_id": "P015", "role": "SUPPORT"},
+        {"source_id": "P016", "role": "SUPPORT"},
+        {"source_id": "P018", "role": "SUPPORT"}
+      ],
+      "support_status": "SUFFICIENT",
+      "rationale": "These spans supply the tracing operation, observed documentary properties and proposed-observation qualifier."
+    }
+  },
+  "stated_empirical_relation": {
+    "component_id": "C001.stated_empirical_relation",
+    "value": "NOT_APPLICABLE",
+    "scope": "NOT_APPLICABLE",
+    "provenance": {
+      "refs": [],
+      "support_status": "SUFFICIENT",
+      "rationale": "No unresolved empirical relation is required for this bounded retrospective observability claim."
+    }
+  },
+  "rationale": "Within this retrospective review, the operation observes surviving records of past actions. The historical process itself is accessed through reconstruction from those traces. This licenses the stated limitation without implying that particular approvals cannot be established.",
+  "uncertainty": "The completeness and reliability of the reconstruction remain uncertain, but do not undermine the bounded distinction between observing records and directly observing the historical process.",
+  "anomalies": []
+}
