@@ -1,0 +1,177 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "state",
+                "operation",
+                "signal",
+                "inference",
+                "limit"
+              ]
+            }
+          },
+          "component": {
+            "type": "object",
+            "properties": {
+              "component_id": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "SUPPORT",
+                            "CONTEXT"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "role"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "support_status": {
+                    "type": "string",
+                    "enum": [
+                      "SUFFICIENT",
+                      "INSUFFICIENT",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "refs",
+                  "support_status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "component_id",
+              "value",
+              "scope",
+              "provenance"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "claim_id",
+          "fields",
+          "component"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "enum": [
+              "state",
+              "operation",
+              "signal",
+              "inference",
+              "limit"
+            ]
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "non_warrant_content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "claim_ids",
+          "non_warrant_content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "component_id": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "correct_support_representable": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCERTAIN",
+              "NOT_APPLICABLE"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "component_id",
+          "detail",
+          "correct_support_representable"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "claims",
+    "coverage",
+    "anomalies"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-02T04:22:49.398726+00:00",
+  "input_commit": "5f558b418a37de757aff42cc4fc02cfb98e8004a",
+  "provider_calls": 0,
+  "passed": false,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": "E............\n======================================================================\nERROR: test_gate_and_complete_inventory (test_experiment.CorpusTests.test_gate_and_complete_inventory)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/tests/test_experiment.py\", line 70, in test_gate_and_complete_inventory\n    self.assertEqual(gate(),{'passed':True,'cases':15});self.assertEqual(p.verify()['claims'],40)\n                                                                         ~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/pipeline.py\", line 99, in verify\n    counts=guard();author_verify();m=c.read(H/'manifest.json');ids=m['case_order']\n  File \"/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/common.py\", line 28, in guard\n    require(all(allowed(n) for n in changes),'Out-of-scope change')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/negative-remainder-calibration-v0.1/common.py\", line 14, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Out-of-scope change\n\n----------------------------------------------------------------------\nRan 13 tests in 0.556s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/inquiry-unitization-calibration-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................\n----------------------------------------------------------------------\nRan 32 tests in 1.048s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/span-provenance-calibration-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "output": ".E............................\n======================================================================\nERROR: test_historical_preservation_and_full_authoring_gate (test_provenance.FrozenCalibrationTests.test_historical_preservation_and_full_authoring_gate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/home/d/p/chaos-mage/distance/span-provenance-calibration-v0.1/tests/test_provenance.py\", line 216, in test_historical_preservation_and_full_authoring_gate\n    metrics, results = calibrate.evaluate()\n                       ~~~~~~~~~~~~~~~~~~^^\n  File \"/var/home/d/p/chaos-mage/distance/span-provenance-calibration-v0.1/calibrate.py\", line 79, in evaluate\n    historical = preservation()\n  File \"/var/home/d/p/chaos-mage/distance/span-provenance-calibration-v0.1/calibrate.py\", line 62, in preservation\n    require(git('branch', '--show-current') == BRANCH, 'INTEGRITY_BRANCH')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/home/d/p/chaos-mage/distance/span-provenance-calibration-v0.1/calibrate.py\", line 41, in require\n    raise ValueError(message)\nValueError: INTEGRITY_BRANCH\n\n----------------------------------------------------------------------\nRan 30 tests in 0.648s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/var/home/d/p/chaos-mage/distance/natural-admission-v0.1/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.011s\n\nOK\n"
+    }
+  ],
+  "historical_preservation": {
+    "historical_files": 4313,
+    "historical_unchanged": true,
+    "frozen_sessions": 0
+  },
+  "collision_test": "tests/test_h6.py: CollisionTests; synthetic engineering cases excluded from natural counts",
+  "official_cli_reference": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+  "model_reasoning_reference": "https://developers.openai.com/api/docs/guides/reasoning"
+}

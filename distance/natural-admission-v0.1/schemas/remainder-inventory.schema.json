@@ -1,0 +1,625 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "component": {
+            "type": "object",
+            "properties": {
+              "component_id": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "SUPPORT",
+                            "CONTEXT"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "role"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "support_status": {
+                    "type": "string",
+                    "enum": [
+                      "SUFFICIENT",
+                      "INSUFFICIENT",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "refs",
+                  "support_status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "component_id",
+              "value",
+              "scope",
+              "provenance"
+            ],
+            "additionalProperties": false
+          },
+          "surviving_claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "POSITIVE_INFERENCE",
+              "TARGET_CONSTRAINT",
+              "INQUIRY_CONSTRAINT",
+              "INSUFFICIENCY_ONLY",
+              "UNCERTAIN"
+            ]
+          },
+          "unit_id": {
+            "type": "string"
+          },
+          "viability": {
+            "type": "object",
+            "properties": {
+              "warranted": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "source_derived": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "target_relevant": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "productive": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              },
+              "material": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "YES",
+                      "NO",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "warranted",
+              "source_derived",
+              "target_relevant",
+              "productive",
+              "material"
+            ],
+            "additionalProperties": false
+          },
+          "counterfactual_target_change": {
+            "type": "string"
+          },
+          "counterfactual_inquiry_change": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "component",
+          "surviving_claim_ids",
+          "kind",
+          "unit_id",
+          "viability",
+          "counterfactual_target_change",
+          "counterfactual_inquiry_change"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "inquiry_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "unit_id": {
+            "type": "string"
+          },
+          "unresolved_contrast": {
+            "type": "object",
+            "properties": {
+              "component_id": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "SUPPORT",
+                            "CONTEXT"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "role"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "support_status": {
+                    "type": "string",
+                    "enum": [
+                      "SUFFICIENT",
+                      "INSUFFICIENT",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "refs",
+                  "support_status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "component_id",
+              "value",
+              "scope",
+              "provenance"
+            ],
+            "additionalProperties": false
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "component_id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "provenance": {
+                  "type": "object",
+                  "properties": {
+                    "refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "type": "string",
+                            "enum": [
+                              "SUPPORT",
+                              "CONTEXT"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "source_id",
+                          "role"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "support_status": {
+                      "type": "string",
+                      "enum": [
+                        "SUFFICIENT",
+                        "INSUFFICIENT",
+                        "UNCERTAIN"
+                      ]
+                    },
+                    "rationale": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "refs",
+                    "support_status",
+                    "rationale"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "component_id",
+                "value",
+                "scope",
+                "provenance"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "next_operation": {
+            "type": "object",
+            "properties": {
+              "component_id": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source_id": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "SUPPORT",
+                            "CONTEXT"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "role"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "support_status": {
+                    "type": "string",
+                    "enum": [
+                      "SUFFICIENT",
+                      "INSUFFICIENT",
+                      "UNCERTAIN"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "refs",
+                  "support_status",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "component_id",
+              "value",
+              "scope",
+              "provenance"
+            ],
+            "additionalProperties": false
+          },
+          "outcomes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "component_id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "provenance": {
+                  "type": "object",
+                  "properties": {
+                    "refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "type": "string",
+                            "enum": [
+                              "SUPPORT",
+                              "CONTEXT"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "source_id",
+                          "role"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "support_status": {
+                      "type": "string",
+                      "enum": [
+                        "SUFFICIENT",
+                        "INSUFFICIENT",
+                        "UNCERTAIN"
+                      ]
+                    },
+                    "rationale": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "refs",
+                    "support_status",
+                    "rationale"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "component_id",
+                "value",
+                "scope",
+                "provenance"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "outcomes_are_discriminating": {
+            "type": "boolean"
+          },
+          "provenance_complete": {
+            "type": "boolean"
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit_id",
+          "unresolved_contrast",
+          "alternatives",
+          "next_operation",
+          "outcomes",
+          "outcomes_are_discriminating",
+          "provenance_complete",
+          "complete",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "field_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "enum": [
+              "state",
+              "operation",
+              "signal",
+              "inference",
+              "limit"
+            ]
+          },
+          "candidate_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "explanation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "candidate_ids",
+          "explanation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "deleted_claims_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "component_id": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "correct_support_representable": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCERTAIN",
+              "NOT_APPLICABLE"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "component_id",
+          "detail",
+          "correct_support_representable"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "candidates",
+    "inquiry_units",
+    "field_coverage",
+    "deleted_claims_used",
+    "anomalies"
+  ],
+  "additionalProperties": false
+}

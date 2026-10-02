@@ -1,0 +1,269 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "SUPPORTED",
+        "CONDITIONAL_WARRANT",
+        "UNSUPPORTED",
+        "UNCERTAIN"
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "properties": {
+        "component_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "SUPPORT",
+                      "CONTEXT"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_id",
+                  "role"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "support_status": {
+              "type": "string",
+              "enum": [
+                "SUFFICIENT",
+                "INSUFFICIENT",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "refs",
+            "support_status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "component_id",
+        "value",
+        "scope",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "signal_basis": {
+      "type": "object",
+      "properties": {
+        "component_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "SUPPORT",
+                      "CONTEXT"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_id",
+                  "role"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "support_status": {
+              "type": "string",
+              "enum": [
+                "SUFFICIENT",
+                "INSUFFICIENT",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "refs",
+            "support_status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "component_id",
+        "value",
+        "scope",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "stated_empirical_relation": {
+      "type": "object",
+      "properties": {
+        "component_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "SUPPORT",
+                      "CONTEXT"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_id",
+                  "role"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "support_status": {
+              "type": "string",
+              "enum": [
+                "SUFFICIENT",
+                "INSUFFICIENT",
+                "UNCERTAIN"
+              ]
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "refs",
+            "support_status",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "component_id",
+        "value",
+        "scope",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "uncertainty": {
+      "type": "string"
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "component_id": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "correct_support_representable": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCERTAIN",
+              "NOT_APPLICABLE"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "component_id",
+          "detail",
+          "correct_support_representable"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "claim_id",
+    "status",
+    "claim",
+    "signal_basis",
+    "stated_empirical_relation",
+    "rationale",
+    "uncertainty",
+    "anomalies"
+  ],
+  "additionalProperties": false
+}
