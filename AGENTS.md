@@ -17,6 +17,13 @@ does not waive the separate budget gate.
   calibration probes without authorization, or consume reset credits automatically.
   The user confirmed a 10-percentage-point reserve; do not lower it without their
   direction.
+- Collect usage calibration as routine bookkeeping around each already-authorized
+  experiment batch: save before/after allowance snapshots, actual session counts,
+  usage profile and available token totals, then refresh the forecast from matched
+  observations. This collection is authorized; do not ask again merely to record
+  it. Preserve reset-crossing, saturated or confounded observations with their
+  exclusion reasons; never present them as clean calibration. Keep account data
+  under `.runtime/`. Collection does not authorize extra model calls or reopen H.6.
 - Use `scripts/experiment_budget.py` before **every model session**, either its
   `launch` command or the `Gate.reserve` API inside each runner worker immediately
   before provider launch. Never wrap a whole multi-session runner as one session.

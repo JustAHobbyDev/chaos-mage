@@ -47,6 +47,17 @@ the financial plan to reset spending or session reservations.
 
 ## Calibration without extra model calls
 
+The user authorized ongoing collection during ordinary authorized experiment
+work. Treat it as standard batch bookkeeping, without a separate permission
+question for each reading. Save a before snapshot, then an after snapshot once
+the batch finishes and telemetry has settled. Record the usage profile, actual
+session count (including potentially charged failures), available input/cache/
+output token totals, and any reset or concurrent-account-work observations.
+Keep raw observations even when they cannot support a clean calibration sample;
+record why they were excluded. Refresh the remaining-work forecast after each
+usable batch, retaining earlier observations and forecast versions for comparison.
+No background polling service or extra calibration run is implied by this policy.
+
 Start with `{"version": 1, "samples": []}`. No calibration means unknown; it does
 not mean the work consumes zero allowance. Capture before/after readings around
 an **already-authorized**, representative batch and record the number of sessions.
