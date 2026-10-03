@@ -1,0 +1,21 @@
+{
+  "classification": "recoverable_integrity_violation",
+  "stage": "offline target freeze",
+  "provider_calls": 0,
+  "symptom": "Target commit blocked by sandbox index write; selection-rule commit recorded first.",
+  "preserved_checkpoints": [
+    "187d1df",
+    "2631d7a",
+    "4d8697e"
+  ],
+  "evidence": "All target files created before selection-rule file; no selection computation or provider launch until both commits completed. Git target bytes verified against target freeze.",
+  "non_contamination": "No scientific observations, executed packets or selection output existed during failure. Selection uses IDs, not target wording.",
+  "remediation": "Record target commit and this additive evidence; retain original checkpoint order.",
+  "verification": {
+    "T01": "97925b3e2c88e417a4a0e380e0aafcd942c1b80ab507ea02d27ebbb255e9fbf4",
+    "T02": "126600c23a8618bacb9cc2823d3315d7baa4fece9dca0effb86d221ecaf815ca",
+    "T03": "f50e9d541cf92b1cb2d8fa0b85139ac7b198281eae77547029efab1858d41e69"
+  },
+  "resume_checkpoint": "4d8697e",
+  "authority": "User authorized offline H7 preparation and recovery policy."
+}
