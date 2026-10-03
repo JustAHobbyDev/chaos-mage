@@ -1,0 +1,140 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "R3K09-C2",
+    "base_obligations": [
+      {
+        "claim_id": "R3K09-C2",
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_STRUCTURE",
+        "subject": "Stop the trial when T is exceeded.",
+        "provenance_refs": [
+          {
+            "source_id": "R3K09-T",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "R3K09-S",
+            "role": "SUPPORT"
+          }
+        ],
+        "provenance_hash": "76ed77bd4ab739c1ec13580af87691efae03abd8ad94b32a047993ec7849bc43",
+        "kind": "BASE"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "R3K09-C2-D1",
+        "subject": "Above T, error incidence rises sharply.",
+        "dependency_classification": {
+          "content_origin": "MAPPING_GENERATED",
+          "epistemic_function": "INFERENCE",
+          "assertion_mode": "REFERENCED_PREMISE",
+          "origin_refs": [],
+          "rationale": "The frozen C1 classification identifies this proposition as a mapping-generated interpretation of supplied observations. C2 explicitly invokes that conclusion as its reason for selecting T; it does not independently reassert or expand C1. C2 retains its frozen MAPPING_GENERATED/GOVERNANCE_RULE classification."
+        },
+        "resolution": "CLAIM_REF",
+        "claim_ref": "R3K09-C1",
+        "provenance_refs": [
+          {
+            "source_id": "R3K09-T",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "R3K09-S",
+            "role": "SUPPORT"
+          },
+          {
+            "source_id": "R3K09-M",
+            "role": "CONTEXT"
+          }
+        ],
+        "materiality_rationale": "The mapping explicitly states that removing C1's conclusion removes the supplied reason for selecting T.",
+        "resolution_rationale": "Retain the explicit reference to the existing frozen C1, bounded to controlled trial conditions and the tested workload range, without duplicating its evaluation or unfolding its dependencies. No cycle is supplied. C1 has not yet been evaluated, so reuse of its overall result remains pending; this routing supplies no result or acceptance verdict.",
+        "obligations": []
+      },
+      {
+        "dependency_id": "R3K09-C2-D2",
+        "subject": "T is fixed at 100 requests per minute.",
+        "dependency_classification": {
+          "content_origin": "TARGET_SUPPLIED",
+          "epistemic_function": "FACT",
+          "assertion_mode": "REFERENCED_PREMISE",
+          "origin_refs": [
+            {
+              "source_id": "R3K09-T",
+              "source_type": "TARGET"
+            }
+          ],
+          "rationale": "The target explicitly fixes the value and units of T. C2 invokes that supplied definition to specify its trigger."
+        },
+        "resolution": "GROUNDING_REF",
+        "claim_ref": null,
+        "provenance_refs": [
+          {
+            "source_id": "R3K09-T",
+            "role": "SUPPORT"
+          }
+        ],
+        "materiality_rationale": "Removing or changing the definition changes which workload triggers stopping.",
+        "resolution_rationale": "The supplied threshold definition is invoked unchanged within the frozen case. It adds no assertion that harm begins precisely at 100 requests per minute.",
+        "obligations": []
+      },
+      {
+        "dependency_id": "R3K09-C2-D3",
+        "subject": "The trial uses a reliable workload meter.",
+        "dependency_classification": {
+          "content_origin": "TARGET_SUPPLIED",
+          "epistemic_function": "FACT",
+          "assertion_mode": "REFERENCED_PREMISE",
+          "origin_refs": [
+            {
+              "source_id": "R3K09-T",
+              "source_type": "TARGET"
+            }
+          ],
+          "rationale": "The target explicitly supplies meter reliability. The stopping rule invokes this existing case condition for recognizing threshold exceedance."
+        },
+        "resolution": "GROUNDING_REF",
+        "claim_ref": null,
+        "provenance_refs": [
+          {
+            "source_id": "R3K09-T",
+            "role": "SUPPORT"
+          }
+        ],
+        "materiality_rationale": "Reliable workload indication underlies applying the workload-based stop trigger in the frozen case.",
+        "resolution_rationale": "The supplied reliability premise is invoked at its original scope and certainty. No calibration procedure, new measurement operation, or quantitative accuracy claim is introduced.",
+        "obligations": []
+      },
+      {
+        "dependency_id": "R3K09-C2-D4",
+        "subject": "Stopping is safe.",
+        "dependency_classification": {
+          "content_origin": "TARGET_SUPPLIED",
+          "epistemic_function": "FACT",
+          "assertion_mode": "REFERENCED_PREMISE",
+          "origin_refs": [
+            {
+              "source_id": "R3K09-T",
+              "source_type": "TARGET"
+            }
+          ],
+          "rationale": "The target explicitly supplies the safety of stopping. C2 invokes that condition when prescribing the stop action."
+        },
+        "resolution": "GROUNDING_REF",
+        "claim_ref": null,
+        "provenance_refs": [
+          {
+            "source_id": "R3K09-T",
+            "role": "SUPPORT"
+          }
+        ],
+        "materiality_rationale": "Removing the supplied safety condition changes the basis for accepting the prescribed action under the frozen case conditions.",
+        "resolution_rationale": "Safety is invoked only for stopping this trial, without extension to other interventions or conditions. Ordinary stopping introduces no separate substantive operation.",
+        "obligations": []
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  }
+}
