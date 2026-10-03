@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "classifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "atomicity": {
+            "type": "string",
+            "enum": [
+              "ATOMIC",
+              "SPLIT_REQUIRED",
+              "UNCERTAIN"
+            ]
+          },
+          "atomicity_rationale": {
+            "type": "string"
+          },
+          "content_origin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "TARGET_SUPPLIED",
+                  "SOURCE_SUPPLIED",
+                  "BOTH_SUPPLIED",
+                  "MAPPING_GENERATED"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "origin_rationale": {
+            "type": "string"
+          },
+          "epistemic_function": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "FACT",
+                  "INFERENCE",
+                  "CONDITIONAL_RELATION",
+                  "OPERATION",
+                  "GOVERNANCE_RULE",
+                  "LIMIT"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "function_rationale": {
+            "type": "string"
+          },
+          "assertion_mode": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "REFERENCED_PREMISE",
+                  "ASSERTED_COMPONENT"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "assertion_rationale": {
+            "type": "string"
+          },
+          "evidence_used": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "claim_id",
+          "atomicity",
+          "atomicity_rationale",
+          "content_origin",
+          "origin_rationale",
+          "epistemic_function",
+          "function_rationale",
+          "assertion_mode",
+          "assertion_rationale",
+          "evidence_used"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "classifications"
+  ],
+  "additionalProperties": false
+}

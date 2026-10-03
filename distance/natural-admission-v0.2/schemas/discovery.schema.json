@@ -1,0 +1,207 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "closure": {
+            "type": "string",
+            "enum": [
+              "COMPLETE",
+              "SPLIT_REQUIRED",
+              "UNCERTAIN"
+            ]
+          },
+          "closure_rationale": {
+            "type": "string"
+          },
+          "base_evidence_used": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dependency_id": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "content_origin": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "TARGET_SUPPLIED",
+                        "SOURCE_SUPPLIED",
+                        "BOTH_SUPPLIED",
+                        "MAPPING_GENERATED"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "origin_rationale": {
+                  "type": "string"
+                },
+                "epistemic_function": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "FACT",
+                        "INFERENCE",
+                        "CONDITIONAL_RELATION",
+                        "OPERATION",
+                        "GOVERNANCE_RULE",
+                        "LIMIT"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "function_rationale": {
+                  "type": "string"
+                },
+                "assertion_mode": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "REFERENCED_PREMISE",
+                        "ASSERTED_COMPONENT"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "assertion_rationale": {
+                  "type": "string"
+                },
+                "evidence_used": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "distinct": {
+                  "type": "boolean"
+                },
+                "material": {
+                  "type": "boolean"
+                },
+                "unevaluated": {
+                  "type": "boolean"
+                },
+                "necessity_rationale": {
+                  "type": "string"
+                },
+                "resolution": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "GROUNDING_REF",
+                        "CLAIM_REF",
+                        "INLINE_OBLIGATION"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "referenced_claim_id": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "another_independent_level_required": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "dependency_id",
+                "subject",
+                "scope",
+                "content_origin",
+                "origin_rationale",
+                "epistemic_function",
+                "function_rationale",
+                "assertion_mode",
+                "assertion_rationale",
+                "evidence_used",
+                "distinct",
+                "material",
+                "unevaluated",
+                "necessity_rationale",
+                "resolution",
+                "referenced_claim_id",
+                "another_independent_level_required"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "claim_id",
+          "closure",
+          "closure_rationale",
+          "base_evidence_used",
+          "dependencies"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "claims"
+  ],
+  "additionalProperties": false
+}

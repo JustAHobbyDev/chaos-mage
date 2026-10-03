@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H7 initial stages. Offline by default; no retries or automatic recovery."""
+"""H7 generation, atomization and role stages. Offline by default; no retries or automatic recovery."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -81,10 +81,12 @@ def effective_freeze_files():
     files = {}
     for name in ('preservation.json', 'initial-freeze.json'):
         files.update(read(H / name)['files'])
-    amendment = read(H / 'usage-gate-amendment.json')
-    for name, change in amendment['changes'].items():
-        require(files.get(name) == change['original_sha256'], 'Amendment baseline mismatch: ' + name)
-        files[name] = change['updated_sha256']
+    for amendment_name in ('usage-gate-amendment.json', 'role-stage-amendment.json'):
+        amendment = read(H / amendment_name)
+        for name, change in amendment['changes'].items():
+            require(files.get(name) == change['original_sha256'], 'Amendment baseline mismatch: ' + name)
+            files[name] = change['updated_sha256']
+    files.update(read(H / 'role-stage-static-freeze.json')['files'])
     return files
 
 
@@ -103,7 +105,7 @@ def verify():
     require(sha(Path(c['native_executable']['path'])) == c['native_executable']['sha256'], 'Native drift')
     require(subprocess.check_output([c['cli'], '--version'], text=True).strip() == c['cli_version'], 'CLI version drift')
     return {'historical_files_checked': len(read(H / 'preservation.json')['files']),
-            'authorized_policy_amendment': 'usage-gate-amendment.json', 'slots': 6}
+            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json'], 'slots': 6}
 
 
 def state():
@@ -245,6 +247,9 @@ def execute(stage, cid, plan):
     Draft202012Validator(read(H / 'schemas' / f'{stage}.schema.json')).validate(value)
     if stage == 'claims':
         validate_claims(value, read(H / 'packets' / stage / f'{cid}.json'))
+    elif stage in ('classification', 'discovery'):
+        import stages
+        stages.validate(stage, value, read(H / 'packets' / stage / f'{cid}.json'))
     write(d / 'validation.json', {'metadata': metadata, 'response_sha256': sha(d / 'response.json'),
                                  'schema_valid': True})
 
@@ -262,15 +267,15 @@ def run_batch(path):
     require(review['consent_reference'].strip(), 'Actual user consent reference required')
     require(review['financial_approved'] is True, 'Financial approval missing')
     stage, ids = review['stage'], review['packet_ids']
-    require(stage in ('generation', 'claims'), 'Later stages require a separately frozen adapter')
+    require(stage in ('generation', 'claims', 'classification', 'discovery'), 'Evaluation remains gated')
     require(1 <= len(ids) <= 2 and len(set(ids)) == len(ids), 'Batch limit is two')
     remaining = [cid for cid in order() if not (RT / 'attempts' / stage / cid).exists()]
     require(ids == remaining[:len(ids)], 'Frozen order or already attempted slot')
     require(state() in (None, 'COMPLETE'), 'Pause/terminal states need committed recovery evidence')
     verify()
-    if stage == 'claims':
-        require((H / 'claims-packets-freeze.json').exists(), 'Claim packets not frozen')
-    plan = read(H / 'budgets/plan-002.json')
+    if stage != 'generation':
+        require((H / f'{stage}-packets-freeze.json').exists(), 'Stage packets not frozen')
+    plan = read(H / 'budgets/plan-003.json')
     require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')
@@ -377,12 +382,20 @@ def main():
     sub = parser.add_subparsers(dest='action', required=True)
     sub.add_parser('verify')
     p = sub.add_parser('run-batch'); p.add_argument('--review', type=Path, required=True)
-    p = sub.add_parser('freeze'); p.add_argument('stage', choices=['generation', 'claims'])
+    p = sub.add_parser('freeze'); p.add_argument('stage', choices=['generation', 'claims', 'classification', 'discovery'])
     sub.add_parser('prepare-claims')
+    sub.add_parser('freeze-obligations')
+    p = sub.add_parser('prepare-role'); p.add_argument('stage', choices=['classification', 'discovery'])
     args = parser.parse_args()
     if args.action == 'verify': print(json.dumps(verify(), indent=2))
     elif args.action == 'run-batch': run_batch(args.review)
     elif args.action == 'freeze': freeze(args.stage)
+    elif args.action == 'freeze-obligations':
+        import stages
+        stages.freeze_obligations(sys.modules[__name__])
+    elif args.action == 'prepare-role':
+        import stages
+        stages.prepare(args.stage, sys.modules[__name__])
     else: prepare_claims()
 
 
