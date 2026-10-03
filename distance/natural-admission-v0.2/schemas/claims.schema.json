@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "state",
+                "operation",
+                "signal",
+                "inference",
+                "limit"
+              ]
+            }
+          },
+          "proposition": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "evidence_used": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id",
+          "fields",
+          "proposition",
+          "scope",
+          "evidence_used",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "enum": [
+              "state",
+              "operation",
+              "signal",
+              "inference",
+              "limit"
+            ]
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unrepresented_material": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "claim_ids",
+          "unrepresented_material",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "claims",
+    "coverage"
+  ],
+  "additionalProperties": false
+}
