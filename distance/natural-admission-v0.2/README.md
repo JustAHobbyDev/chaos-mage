@@ -1,7 +1,7 @@
 # H7 — Natural-transfer admission pilot v0.2
 
-Status: **GENERATION_AND_ATOMIZATION_COMPLETE_ROLE_STAGES_READY**.
-All six generations and all six atomizations are frozen: 326 claims. No retries,
+Status: **CLASSIFICATION_COMPLETE_DISCOVERY_READY**.
+All six generations, atomizations and classifications are frozen: 326 atomic claims. No retries,
 replacements or quarantines. Scientific admission remains pending for all six.
 H6.R4 remains return-gate INCOMPLETE.
 
@@ -10,7 +10,7 @@ The usage-policy amendment requires usage approval only below 30% current remain
 allowance; stale/missing readings need refresh. The 10-point planning reserve remains.
 Original scientific inputs, observations and freezes are preserved.
 
-Current cumulative budget plan: `budgets/plan-004.json`. All 12 prior reservations
+Current cumulative budget plan: `budgets/plan-004.json`. All 18 prior reservations
 and all future stages remain included: 36 known sessions plus unknown evaluation
 fan-out. Costs remain unknown. The user's unified approval direction supersedes
 independent financial, stage and revised-plan approval requirements. Continue the

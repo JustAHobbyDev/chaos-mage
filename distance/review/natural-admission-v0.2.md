@@ -112,3 +112,22 @@ measurements. Continue classification/discovery and revise the cumulative foreca
 when exact evaluation fan-out freezes. No sample expansion, synthetic calibration
 or production integration is authorized. H7 stops after its fixed sample and report.
 Private quota readings stay under `.runtime/`.
+
+## Classification checkpoint
+
+All six isolated classification sessions completed and froze: all 326 claims ATOMIC,
+with no unresolved origin/function labels, source-ID errors or quarantines. Origins:
+305 MAPPING_GENERATED, 13 TARGET_SUPPLIED, 8 SOURCE_SUPPLIED, 0 BOTH_SUPPLIED.
+Assertion modes: 12 ASSERTED_COMPONENT, 9 REFERENCED_PREMISE, 305 generated/null.
+No validity verdicts have been made. The six completed sessions bring the cumulative
+provider count to 18; all earlier reservations remain in the ledger.
+
+A primary supplied-operation watch occurs naturally at H7-T01-1/C001: the candidate
+explanation set is classified TARGET_SUPPLIED + OPERATION + ASSERTED_COMPONENT.
+Its eventual route requires TARGET_FIDELITY plus OPERATION_LICENSE. Both judgments
+remain pending; discovery may expose further embedded watch cases. H6.R4 remains
+INCOMPLETE. No source-role echo or extra provenance precision was required.
+
+The unified gate is committed at `0cdf855`. Next: six frozen direct-obligation
+discovery sessions, then exact cumulative evaluation reforecast. Spending approval
+is required only below 30% current remaining allowance.
