@@ -1,0 +1,345 @@
+# Freeze atomic warrant-bearing claims
+
+Enumerate the mapping's warrant-bearing semantic claims across all five fields.
+Use C001 onward. Split independently contestable conclusions, distinctions, bounds,
+conditional outcome relations and proposed-operation rationales into atomic claims.
+Keep each claim's conditions and limits; an if/then relation is not an unconditional
+assertion. Do not explode every noun or routine instruction into an independent claim.
+Do not assign warrant status or artifact status. Do not improve or complete the mapping.
+No fixed claim count, pruning by importance, centrality, novelty or expected validity.
+
+A claim is a frozen semantic annotation with H.5 provenance, not a new source span.
+Several claims may cite the same coarse span. Capture every material proposition used
+by the transfer, including stated assumptions and limitations; coverage records explain
+non-warrant-bearing setup in each of the five fields. Duplicate formulations of one
+proposition are one claim with all relevant support. Each claim's fields list gives
+source locations, not ownership rights over cited spans. Record ambiguity explicitly.
+
+One primary epistemic function per proposition. Do not silently combine materially
+separable functions. Preserve ambiguity; do not increase granularity to maximize
+claim count. Cite only source IDs in evidence_used, using the allowed mapping spans.
+Do not emit SUPPORT or CONTEXT roles, offsets or exact quotation requirements.
+Record each field's coverage and any unrepresented material proposition.
+Use only this packet and general knowledge. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H7-T02-1",
+  "target_frame": {
+    "target_id": "T02",
+    "domain": "organizational / process",
+    "title": "Delayed access to a shared workshop",
+    "problem": "A community workshop has a growing queue of people waiting for permission to use its equipment. Coordinators need to decide how to change intake and training arrangements next month while retaining the existing safety requirements.",
+    "known_context": [
+      "Applicants submit a form, attend an orientation and complete an equipment-specific supervised session before independent access.",
+      "Different volunteers arrange the three steps; attendance and completion dates are stored in separate spreadsheets.",
+      "Some applicants wait several weeks, while others finish within days. The board has only monthly totals for applications and completed permissions.",
+      "Sessions are sometimes cancelled when instructors are unavailable. Some applicants stop replying, and the records do not distinguish withdrawal from a missed message.",
+      "Two evening slots may be added next month, but the same volunteers also maintain equipment."
+    ],
+    "uncertainty": "The coordinators do not know how much waiting comes from scheduling, communication, unmet prerequisites or applicants own availability, nor whether adding sessions would address the largest delays.",
+    "decision_need": "Determine what to learn from current and prospective cases and how that should guide the allocation of the two possible evening slots.",
+    "constraints": [
+      "Do not waive required instruction or equipment safety checks.",
+      "Applicants may decline further contact; only information needed to arrange access should be collected."
+    ]
+  },
+  "source_instrument": {
+    "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+    "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+    "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+    "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+    "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+  },
+  "mapping": {
+    "state": "Treat a reconstructed applicant scheduling case as the configuration: a fixed application, required orientation and supervised session, applicant availability, instructor and equipment availability, and observed administrative or scheduling conditions that might be changed. These conditions are candidate removable parts; required instruction, safety checks and necessary maintenance remain fixed. First link existing step dates using the minimum identifying information needed, and prospectively record handoffs, contact attempts, prerequisites, offered slots and cancellations. Ask only access-arrangement questions, respect declined contact, and leave unexplained nonresponse unresolved. Before testing, choose a waiting-time threshold and decision horizon. Define failure as permission remaining unavailable beyond that threshold for a fixed applicant; do not improve the result by excluding the applicant or resetting the clock. Whether sufficiently reproducible cases and feasible removable conditions exist is initially unknown.",
+    "operation": "Construct a scheduling replay for selected delayed cases, explicitly documenting assumptions about missing dates, availability and volunteer capacity. Require the unreduced replay to reproduce the documented delay; if it cannot, investigate missing information before reduction. Partition verified, changeable conditions, such as a measured handoff lag or a documented batching rule if one exists. Remove subsets or test their complements by substituting a specified feasible arrangement, while holding the applicant, required steps and other conditions fixed. Retain a reduced configuration only when repeated tests still reproduce the defined failure. Continue partitioning and testing until no single remaining condition can be removed while preserving failure, or until the decision deadline, unresolved outcomes or lack of feasible substitutions stops reduction. Record those stopping reasons. A deletion that lacks an operationally feasible counterpart is exploratory only and cannot justify changing arrangements.",
+    "signal": "For each candidate reduction, record failure reproduced, failure absent, or unresolved, alongside predicted permission date, waiting between steps and the remaining blocking conditions. Unknown applicant availability, ambiguous nonresponse or an unsupported scheduling assumption makes the relevant outcome unresolved, not successful or unsuccessful. Repeat tests across plausible uncertain inputs; retain a reduction as robust only if its failure classification remains stable. Where applicants consent and volunteers can support it, test promising arrangements prospectively and compare observed handoff and completion times with replay predictions. No such observations are presumed to have occurred.",
+    "inference": "A retained subset identifies conditions jointly sufficient to reproduce excessive waiting for that applicant under the specified replay and assumptions. If every single deletion has been tested and eliminates failure, it is minimal against those deletions, not necessarily the smallest possible subset. Compare reductions across current and prospective cases to identify recurring delays and how many applicants they affect. Then separately test feasible allocations of the two evening slots to orientation, equipment-specific supervision, or intake coordination where evidence indicates coordination is blocking progress. Test both slots together as well as individually, preserving instructor, equipment and maintenance capacity. Use predicted reductions in excessive waits, confirmed where possible by prospective results, to choose next month's allocation. A retained condition alone does not establish that adding a session will help. If evidence remains weak, make any allocation a limited monitored trial with a specified review date.",
+    "limit": "Replaying the same assumptions repeatedly establishes computational repeatability, not real-world reproducibility. Historical reconstruction alone cannot establish the effects of changed arrangements. Interactions, cancellations, changing demand, applicant availability, missing records and the order of reductions can produce different retained subsets. Separate spreadsheets and monthly totals may support only partial reconstruction; do not force a minimal result from unresolved tests. Reductions from selected cases do not establish the largest source of delay across the queue, a unique cause, or guaranteed benefits from extra sessions. If prospective outcomes contradict predictions, revise the reconstruction and retest. Stop any trial that would compromise required instruction, safety checks or necessary maintenance; stop contacting an applicant who declines, and retain their unexplained delay as unknown rather than treating it as resolved."
+  },
+  "allowed_source_ids": [
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035"
+  ],
+  "spans": {
+    "P001": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Treat a reconstructed applicant scheduling case as the configuration: a fixed application, required orientation and supervised session, applicant availability, instructor and equipment availability, and observed administrative or scheduling conditions that might be changed."
+    },
+    "P002": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "These conditions are candidate removable parts; required instruction, safety checks and necessary maintenance remain fixed."
+    },
+    "P003": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "First link existing step dates using the minimum identifying information needed, and prospectively record handoffs, contact attempts, prerequisites, offered slots and cancellations."
+    },
+    "P004": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Ask only access-arrangement questions, respect declined contact, and leave unexplained nonresponse unresolved."
+    },
+    "P005": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Before testing, choose a waiting-time threshold and decision horizon."
+    },
+    "P006": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Define failure as permission remaining unavailable beyond that threshold for a fixed applicant; do not improve the result by excluding the applicant or resetting the clock."
+    },
+    "P007": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Whether sufficiently reproducible cases and feasible removable conditions exist is initially unknown."
+    },
+    "P008": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Construct a scheduling replay for selected delayed cases, explicitly documenting assumptions about missing dates, availability and volunteer capacity."
+    },
+    "P009": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Require the unreduced replay to reproduce the documented delay; if it cannot, investigate missing information before reduction."
+    },
+    "P010": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Partition verified, changeable conditions, such as a measured handoff lag or a documented batching rule if one exists."
+    },
+    "P011": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Remove subsets or test their complements by substituting a specified feasible arrangement, while holding the applicant, required steps and other conditions fixed."
+    },
+    "P012": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Retain a reduced configuration only when repeated tests still reproduce the defined failure."
+    },
+    "P013": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Continue partitioning and testing until no single remaining condition can be removed while preserving failure, or until the decision deadline, unresolved outcomes or lack of feasible substitutions stops reduction."
+    },
+    "P014": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Record those stopping reasons."
+    },
+    "P015": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "A deletion that lacks an operationally feasible counterpart is exploratory only and cannot justify changing arrangements."
+    },
+    "P016": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "For each candidate reduction, record failure reproduced, failure absent, or unresolved, alongside predicted permission date, waiting between steps and the remaining blocking conditions."
+    },
+    "P017": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Unknown applicant availability, ambiguous nonresponse or an unsupported scheduling assumption makes the relevant outcome unresolved, not successful or unsuccessful."
+    },
+    "P018": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Repeat tests across plausible uncertain inputs; retain a reduction as robust only if its failure classification remains stable."
+    },
+    "P019": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Where applicants consent and volunteers can support it, test promising arrangements prospectively and compare observed handoff and completion times with replay predictions."
+    },
+    "P020": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "No such observations are presumed to have occurred."
+    },
+    "P021": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "A retained subset identifies conditions jointly sufficient to reproduce excessive waiting for that applicant under the specified replay and assumptions."
+    },
+    "P022": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "If every single deletion has been tested and eliminates failure, it is minimal against those deletions, not necessarily the smallest possible subset."
+    },
+    "P023": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Compare reductions across current and prospective cases to identify recurring delays and how many applicants they affect."
+    },
+    "P024": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Then separately test feasible allocations of the two evening slots to orientation, equipment-specific supervision, or intake coordination where evidence indicates coordination is blocking progress."
+    },
+    "P025": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Test both slots together as well as individually, preserving instructor, equipment and maintenance capacity."
+    },
+    "P026": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Use predicted reductions in excessive waits, confirmed where possible by prospective results, to choose next month's allocation."
+    },
+    "P027": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "A retained condition alone does not establish that adding a session will help."
+    },
+    "P028": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "If evidence remains weak, make any allocation a limited monitored trial with a specified review date."
+    },
+    "P029": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Replaying the same assumptions repeatedly establishes computational repeatability, not real-world reproducibility."
+    },
+    "P030": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Historical reconstruction alone cannot establish the effects of changed arrangements."
+    },
+    "P031": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Interactions, cancellations, changing demand, applicant availability, missing records and the order of reductions can produce different retained subsets."
+    },
+    "P032": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Separate spreadsheets and monthly totals may support only partial reconstruction; do not force a minimal result from unresolved tests."
+    },
+    "P033": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Reductions from selected cases do not establish the largest source of delay across the queue, a unique cause, or guaranteed benefits from extra sessions."
+    },
+    "P034": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "If prospective outcomes contradict predictions, revise the reconstruction and retest."
+    },
+    "P035": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Stop any trial that would compromise required instruction, safety checks or necessary maintenance; stop contacting an applicant who declines, and retain their unexplained delay as unknown rather than treating it as resolved."
+    }
+  }
+}
