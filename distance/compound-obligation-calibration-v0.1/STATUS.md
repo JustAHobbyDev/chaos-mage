@@ -1,16 +1,22 @@
 # Status
 
-PREPARED_AWAITING_BUDGET_AND_USAGE_APPROVAL.
+TERMINATED_LINEAGE — incomplete calibration; no further provider work authorized.
 
-Exactly twelve cases and thirteen claim records are frozen. All thirteen Stage A
-packets and the three-stage harness are committed. Offline verification: 55 H6.R2
-checks plus 18 financial and 18 allowance checks pass. Provider sessions: zero.
-No classification, discovery, evaluation or aggregate scientific results exist.
+Stage A: 13/13 classifications frozen. Stage B: 13/13 discovery records frozen.
+Stage C: 21/27 evaluations preserved; scientific input lineage invalidated because
+obligation-specific citation roles were omitted from evaluation packets. The P2
+judgment explicitly used the resulting SUPPORT-to-CONTEXT mismatch. Six requests
+(N7 x2, N8 x3, U1 x1) were never reserved or launched. Total provider sessions: 47.
 
-Initial financial plan: budgets/plan-001.json. Its semantic SHA-256 is
-187f84f7d645f5be839238e3f7107f9e39ef7f45abef1e7aceb3c8cc069a1eaf.
-A=13, B<=13, C unknown until discovery; all costs unknown. Both financial and
-included-usage review are required before launch. Account data remains in ignored
-.runtime/compound-obligation-calibration-v0.1/. Unknown usage does not mean zero.
-No consent or budget reservation has been recorded. See checkpoints.json and
-../review/compound-obligation-calibration-v0.1.md for the published preparation report.
+Original packets and observations are unchanged. No retry, substitution, scientific
+response repair or further evaluation occurred. The shared budget ledger contains a
+terminal experiment block. Broad completion approval does not clear this stop.
+
+U1's earlier schema-valid unresolved-metadata record was separately preserved through
+an additive verified engineering recovery with zero repeat calls. That recovery did
+not change provider-visible inputs or the scientific observation.
+
+See ../review/compound-obligation-calibration-v0.1.md, metrics.json, checkpoints.json,
+and review/incidents/provenance-projection/impact.json. Partial aggregation is explicitly
+as-run and invalidated; there is no completed Stage C or formal Stage D freeze.
+H.6 and H6.R1 remain unchanged. No natural calibration or recommendation was executed.
