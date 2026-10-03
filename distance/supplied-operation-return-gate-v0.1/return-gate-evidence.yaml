@@ -1,0 +1,86 @@
+# Current evidence summary; expected patterns are not observations.
+# Stopped before the three-case selection/classification freeze.
+# Preselection nulls denote unavailable identity, classification or exact routing.
+# R4-P and R4-G identify screening records only, not selected scientific cases.
+return_gate_evidence:
+  experiment_id: H6.R4
+  status: IN_PROGRESS
+
+  cases:
+    negative_supplied_operation:
+      case_id: null
+      source_experiment: null
+      original_claim_id: null
+      frozen_classification: null
+      expected_contracts: null
+      observed_verdicts:
+        fidelity: UNMEASURED
+        operation_license: UNMEASURED
+        overall: INCOMPLETE
+      expected_pattern:
+        fidelity: SATISFIED
+        operation_license: VIOLATED
+        overall: VIOLATED
+      passed: null
+      blocker: No clean natural candidate selected; no fidelity origin or classification frozen.
+
+    positive_supplied_operation:
+      case_id: R4-P
+      source_experiment: H.6 natural-admission-v0.1
+      original_claim_id: H6-T02-2/C017
+      frozen_classification: null
+      # Prospective shortlist routing only.
+      expected_contracts:
+        - SOURCE_FIDELITY
+        - OPERATION_LICENSE
+      observed_verdicts:
+        fidelity: UNMEASURED
+        operation_license: UNMEASURED
+        overall: INCOMPLETE
+      expected_pattern:
+        fidelity: SATISFIED
+        operation_license: SATISFIED
+        overall: SATISFIED
+      passed: null
+      blocker: Shortlisted only; complete selection, classification freeze and measurement not reached.
+
+    supplied_referenced_premise:
+      case_id: R4-G
+      source_experiment: H.6 natural-admission-v0.1
+      original_claim_id: H6-T02-2/C009
+      frozen_classification: null
+      expected_resolution: GROUNDING_REF
+      forbidden_contracts:
+        - FACT_WARRANT
+        - DERIVED_WARRANT
+        - OPERATION_LICENSE
+        - CONDITIONAL_LICENSE
+        - LIMIT_WARRANT
+      observed:
+        resolution: UNRESOLVED
+        generated_contracts: []
+        overall: INCOMPLETE
+      expected_pattern:
+        resolution: GROUNDING_REF
+        generated_contracts: []
+      passed: null
+      blocker: Grounding-only is provisional screening; no complete three-case classification freeze.
+
+  diagnostics:
+    SUPPLIED_OPERATION_LICENSE_MISSING: 0
+    SUPPLIED_OPERATION_OVERSTRICT: 0
+    SUPPLIED_PREMISE_OVERTRIGGER: 0
+    GROUNDING_REF_MISCLASSIFICATION: 0
+    INPUT_PROVENANCE_FAILURE: 0
+    RESPONSE_SOURCE_UNKNOWN: 0
+
+  final_decision:
+    status: INCOMPLETE
+    criteria:
+      negative_case_passed: null
+      positive_case_passed: null
+      referenced_premise_passed: null
+      scientifically_interpretable: null
+      remaining_admission_blocker: null
+    blocker: Selection stopped before measurement because no clean natural negative case was established; no new admission defect was measured.
+    next_scientific_work: NONE_YET

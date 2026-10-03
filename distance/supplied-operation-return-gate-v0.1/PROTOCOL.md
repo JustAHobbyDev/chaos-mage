@@ -133,10 +133,12 @@ of returning to natural-output testing. Stop evaluator refinement.** Recommend
 fresh natural-transfer admission testing next, subject to separate authorization
 and budget/usage gates; do not execute it.
 
-BLOCKED must name the concrete admission-relevant issue and minimum intervention.
-A missing natural negative case leaves the known false-retention path untested;
-it is selection failure, not a measured evaluator failure. Representation/interface
+BLOCKED requires a concrete admission-relevant defect and must name the actual
+decision-boundary problem and minimum intervention. Unfinished measurement is
+INCOMPLETE; a missing natural negative case leaves the known false-retention path
+untested but is not itself a measured evaluator defect. Representation/interface
 imperfections without scientific classification effects do not block return.
+The compact decision rule below controls the final return-gate status.
 
 Use only SUPPLIED_OPERATION_LICENSE_MISSING, SUPPLIED_OPERATION_OVERSTRICT,
 SUPPLIED_PREMISE_OVERTRIGGER, GROUNDING_REF_MISCLASSIFICATION,
@@ -189,3 +191,241 @@ exact input projection; no post-hoc case replacement; and historical preservatio
 If step 5 fails, do not build an unused provider runner or proceed to steps 6–11.
 Report the selection blocker and stop. This does not claim the premeasurement
 execution checks passed.
+
+## Return-gate evidence record
+
+Create `distance/supplied-operation-return-gate-v0.1/return-gate-evidence.yaml`
+with this compact schema (the alternatives below describe allowed values):
+
+```yaml
+return_gate_evidence:
+  experiment_id: H6.R4
+
+  status:
+    IN_PROGRESS |
+    COMPLETE
+
+  cases:
+
+    negative_supplied_operation:
+      case_id: string
+      source_experiment: string
+      original_claim_id: string | null
+
+      frozen_classification:
+        content_origin:
+          TARGET_SUPPLIED |
+          SOURCE_SUPPLIED
+        epistemic_function: OPERATION
+        assertion_mode: ASSERTED_COMPONENT
+
+      expected_contracts:
+        - TARGET_FIDELITY | SOURCE_FIDELITY
+        - OPERATION_LICENSE
+
+      observed_verdicts:
+        fidelity:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          UNMEASURED
+        operation_license:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          UNMEASURED
+        overall:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          INCOMPLETE
+
+      expected_pattern:
+        fidelity: SATISFIED
+        operation_license: VIOLATED
+        overall: VIOLATED
+
+      passed: true | false | null
+      blocker: string | null
+
+    positive_supplied_operation:
+      case_id: string
+      source_experiment: string
+      original_claim_id: string | null
+
+      frozen_classification:
+        content_origin:
+          TARGET_SUPPLIED |
+          SOURCE_SUPPLIED
+        epistemic_function: OPERATION
+        assertion_mode: ASSERTED_COMPONENT
+
+      expected_contracts:
+        - TARGET_FIDELITY | SOURCE_FIDELITY
+        - OPERATION_LICENSE
+
+      observed_verdicts:
+        fidelity:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          UNMEASURED
+        operation_license:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          UNMEASURED
+        overall:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          INCOMPLETE
+
+      expected_pattern:
+        fidelity: SATISFIED
+        operation_license: SATISFIED
+        overall: SATISFIED
+
+      passed: true | false | null
+      blocker: string | null
+
+    supplied_referenced_premise:
+      case_id: string
+      source_experiment: string
+      original_claim_id: string | null
+
+      frozen_classification:
+        content_origin:
+          TARGET_SUPPLIED |
+          SOURCE_SUPPLIED
+        epistemic_function:
+          FACT |
+          INFERENCE |
+          CONDITIONAL_RELATION |
+          OPERATION |
+          GOVERNANCE_RULE |
+          LIMIT
+        assertion_mode: REFERENCED_PREMISE
+
+      expected_resolution: GROUNDING_REF
+
+      forbidden_contracts:
+        - FACT_WARRANT
+        - DERIVED_WARRANT
+        - OPERATION_LICENSE
+        - CONDITIONAL_LICENSE
+        - LIMIT_WARRANT
+
+      observed:
+        resolution:
+          GROUNDING_REF |
+          CLAIM_REF |
+          INLINE_OBLIGATION |
+          UNRESOLVED
+        generated_contracts: []
+        overall:
+          SATISFIED |
+          CONDITIONAL |
+          VIOLATED |
+          UNCERTAIN |
+          INCOMPLETE |
+          NOT_APPLICABLE
+
+      expected_pattern:
+        resolution: GROUNDING_REF
+        generated_contracts: []
+
+      passed: true | false | null
+      blocker: string | null
+
+  diagnostics:
+    SUPPLIED_OPERATION_LICENSE_MISSING: 0
+    SUPPLIED_OPERATION_OVERSTRICT: 0
+    SUPPLIED_PREMISE_OVERTRIGGER: 0
+    GROUNDING_REF_MISCLASSIFICATION: 0
+    INPUT_PROVENANCE_FAILURE: 0
+    RESPONSE_SOURCE_UNKNOWN: 0
+
+  final_decision:
+    status:
+      PASS |
+      BLOCKED |
+      INCOMPLETE
+
+    criteria:
+      negative_case_passed: true | false | null
+      positive_case_passed: true | false | null
+      referenced_premise_passed: true | false | null
+      scientifically_interpretable: true | false | null
+      remaining_admission_blocker: true | false | null
+
+    blocker: string | null
+
+    next_scientific_work:
+      FRESH_NATURAL_TRANSFER_TEST |
+      MINIMUM_EVALUATOR_CORRECTION |
+      NONE_YET
+```
+
+Freeze the decision rule (`negative_case` and `positive_case` refer to the two
+supplied-operation records above):
+
+```text
+PASS iff:
+
+negative_case.passed = true
+AND positive_case.passed = true
+AND supplied_referenced_premise.passed = true
+AND scientifically_interpretable = true
+AND remaining_admission_blocker = false
+```
+
+Otherwise use INCOMPLETE when measurement did not finish, or BLOCKED only when
+there is a concrete admission-relevant defect. For BLOCKED, `blocker` must identify
+the actual decision-boundary problem, not incidental citation/schema/interface
+imperfections. Unmeasured cases have `passed: null`; absence of a demonstrated
+defect does not establish `remaining_admission_blocker: false`.
+
+For PASS, require:
+
+```yaml
+final_decision:
+  status: PASS
+  blocker: null
+  next_scientific_work: FRESH_NATURAL_TRANSFER_TEST
+```
+
+This record summarizes the already-frozen three-observation criterion. It adds no
+evaluation layer, provider calls, scoring system or calibration. IN_PROGRESS
+indicates incomplete scientific evidence; it is not an instruction to resume a
+stopped experiment. Expected patterns are never observations.
+
+Preselection availability: the schema above describes selected cases. When the
+experiment stops before a complete selection, use null for an unavailable case
+identity, source experiment, frozen classification or exact contract list. This
+is a record-availability exception, not a new origin/function category. Existing
+shortlist IDs may be cited as screening references, but their provisional
+classifications must not be presented as frozen. Keep pass criteria null and
+operation observations UNMEASURED/INCOMPLETE. The referenced-premise observation
+is UNRESOLVED/INCOMPLETE until its classification/routing is frozen; an empty
+contract list alone does not establish a pass. The current selection stop remains
+in effect. The original scan's BLOCKED wording is retained as checkpoint evidence
+and superseded for the current return decision by this clarification.
+
+## Final report
+
+Report base, branch and checkpoint SHAs; selected natural claims; each case's
+classification, contracts/resolution and observed verdicts; diagnostic counts;
+provider/budget incidents; response-interface and strict input-provenance status;
+and the compact return decision. Distinguish UNMEASURED/INCOMPLETE from scientific
+failure. If PASS, state that evaluator refinement stops and recommend fresh
+natural-transfer testing, subject to separate authorization. If BLOCKED, name only
+the concrete admission-relevant defect and minimum justified intervention. Do not
+execute the recommendation. The completion report also states final SHA, branch
+pushed, three-case selection status and provider session count.

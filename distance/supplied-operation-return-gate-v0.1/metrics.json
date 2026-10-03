@@ -15,9 +15,9 @@
     "GROUNDING_REF_MISCLASSIFICATION": 0,
     "INPUT_PROVENANCE_FAILURE": 0,
     "RESPONSE_SOURCE_UNKNOWN": 0,
-    "RETURN_GATE_BLOCKED": 1
+    "RETURN_GATE_BLOCKED": 0
   },
-  "diagnostic_basis": "Observed H6.R4 incidents only. RETURN_GATE_BLOCKED counts the missing negative selection once. Zero other counts with zero measured cases is not evidence of correctness. Hypotheses and rejected leads are not measurements.",
+  "diagnostic_basis": "Observed H6.R4 defects only; all counts are zero with zero measurements. The clarified compact decision rule treats selection failure as INCOMPLETE, not a demonstrated admission defect. The original BLOCKED label and count remain preserved at checkpoint 5caa32bd8fccdde331c84eca476eb0f71d707d30 and in the unchanged scan.",
   "negative_operation": {
     "case_id": null,
     "origin": null,
@@ -47,7 +47,7 @@
     "provisional_obligations": [],
     "completed_observation": false
   },
-  "return_gate": "BLOCKED",
+  "return_gate": "INCOMPLETE",
   "gates": {
     "A": null,
     "B": null,

@@ -1,5 +1,13 @@
 # Evidence-record schema
 
+The compact return decision is recorded in
+[return-gate-evidence.yaml](return-gate-evidence.yaml), using the
+[Return-gate evidence record](PROTOCOL.md#return-gate-evidence-record) section
+immediately before Final report. It separates expected patterns from observations
+and uses INCOMPLETE for unfinished measurement; BLOCKED requires a concrete
+admission-relevant defect. The per-case schema below supplies lineage and does
+not replace that compact summary.
+
 [evidence-record.schema.json](evidence-record.schema.json) describes one offline
 candidate/selected case with source lineage and separately recorded measurements.
 It is specific to the three H6.R4 observations, not a new evaluator taxonomy.

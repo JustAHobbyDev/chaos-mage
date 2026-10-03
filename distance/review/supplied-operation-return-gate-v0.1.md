@@ -1,9 +1,16 @@
-# H6.R4 — supplied-operation return gate: BLOCKED at selection
+# H6.R4 — supplied-operation return gate: INCOMPLETE at selection
 
 H6.R4 stopped at step 5 before provider measurement. The bounded offline scan did
 not establish a clean natural negative supplied-operation component with both
 faithful supplied provenance and an already inspectable operation-license defect.
 Two candidates were shortlisted; no complete three-case selection was frozen.
+
+The later explicit evidence-record clarification supersedes this report's earlier
+BLOCKED label. Missing selection/measurement is INCOMPLETE, not a newly demonstrated
+admission defect. The original report is preserved at
+`5caa32bd8fccdde331c84eca476eb0f71d707d30`; frozen selection files remain unchanged.
+See [the compact record](../supplied-operation-return-gate-v0.1/return-gate-evidence.yaml)
+and the decision rule immediately before Final report in the protocol.
 
 ## Provenance and checkpoints
 
@@ -66,11 +73,12 @@ alignment. No historical scientific verdict was revised by these screening choic
 | GROUNDING_REF_MISCLASSIFICATION | 0 |
 | INPUT_PROVENANCE_FAILURE | 0 |
 | RESPONSE_SOURCE_UNKNOWN | 0 |
-| RETURN_GATE_BLOCKED | 1 |
+| RETURN_GATE_BLOCKED | 0 |
 
 Denominators: zero measured operation cases, zero fidelity judgments and zero
 completed grounding observations. These zero failure counts are not evidence that
-the correction works. RETURN_GATE_BLOCKED records the missing negative slot once.
+the correction works. A missing selection is INCOMPLETE under the clarified rule;
+it does not increment RETURN_GATE_BLOCKED.
 No aggregate score is computed. [metrics.json](../supplied-operation-return-gate-v0.1/metrics.json)
 retains null scientific results.
 
@@ -98,13 +106,16 @@ passed. The [verification record](../supplied-operation-return-gate-v0.1/review/
 separates these checks from unperformed premeasurement dispatch tests. No
 experimental runner, general validator or additional diagnostic taxonomy was added.
 
-## Natural-output return gate: BLOCKED
+## Natural-output return gate: INCOMPLETE
 
-**Single blocker:** no clean natural negative supplied-operation observation was
-established. The admission consequence remains the known untested path:
+**Reason measurement is incomplete:** no clean natural negative supplied-operation
+observation was established. The admission concern remains the known untested path:
 supplied action → no functional scrutiny → invalid action retained → potentially
 false-retained transfer or corrupted surviving remainder. No measured result
 establishes that this path has been resolved. Gates A/B/C have not all passed.
+All three pass criteria and scientific interpretability remain null; the presence
+of a remaining admission blocker is undetermined, not asserted false.
+`next_scientific_work` is NONE_YET. No permission to resume follows from IN_PROGRESS.
 
 **Minimum missing evidence:** one existing natural negative component with
 positive supply evidence, unchanged qualifications and an inspectable functional
