@@ -1,0 +1,122 @@
+{
+  "claim": {
+    "claim_id": "R3K09-C2",
+    "value": "Stop the trial when T is exceeded.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "R3K09-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K09-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "R3K09-T",
+    "text": "The trial uses a reliable workload meter. T is fixed at 100 requests per minute. Controlled paired runs, holding software and traffic mix fixed, recorded 1 error per 1000 requests below T and 120 errors per 1000 above T across each of ten replications. Stopping is safe."
+  },
+  "source_instrument": {
+    "source_id": "R3K09-S",
+    "text": "Comparable repeated error counts can support a bounded conclusion of sharply increased error incidence across the tested threshold. A prospective policy can use that supported conclusion as its explicit reason for a stop trigger."
+  },
+  "mapping": {
+    "source_id": "R3K09-M",
+    "text": "C1 interprets the supplied controlled observations. C2 is authored specifically because of C1: the threshold choice materially relies on its error-incidence conclusion. If that conclusion were removed, this mapping supplies no independent normative reason for selecting T. C2 must retain its explicit reference to C1; neither claim has been evaluated yet."
+  },
+  "classification": {
+    "claim_id": "R3K09-C2",
+    "atomicity": "ATOMIC",
+    "content_origin": {
+      "assignment_status": "ASSIGNED",
+      "kind": "MAPPING_GENERATED",
+      "origin_refs": [],
+      "competing_origins": [],
+      "rationale": "Neither input supplies the specific prescription to stop when T is exceeded. The mapping introduces that policy using the target observations and source guidance."
+    },
+    "epistemic_function": {
+      "assignment_status": "ASSIGNED",
+      "kind": "GOVERNANCE_RULE",
+      "competing_functions": [],
+      "rationale": "The claim prescribes a prospective stopping action triggered by exceeding T. Its reliance on C1 supplies a reason without changing its primary function."
+    }
+  },
+  "frozen_claim_inventory": [
+    {
+      "claim": {
+        "claim_id": "R3K09-C1",
+        "value": "Above T, error incidence rises sharply.",
+        "scope": "Controlled trial conditions and tested workload range",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "R3K09-T",
+              "role": "SUPPORT"
+            },
+            {
+              "source_id": "R3K09-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "R3K09-C1",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "The target supplies error counts, and the source supplies a general interpretive principle. The mapping introduces the bounded conclusion of sharply increased incidence by combining them; neither input explicitly supplies that proposition."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "INFERENCE",
+          "competing_functions": [],
+          "rationale": "The packet explicitly frames C1 as interpreting the controlled observations to conclude that error incidence rises sharply above T within the tested conditions and workload range."
+        }
+      }
+    },
+    {
+      "claim": {
+        "claim_id": "R3K09-C2",
+        "value": "Stop the trial when T is exceeded.",
+        "scope": "Frozen case conditions",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "R3K09-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "R3K09-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "R3K09-C2",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "Neither input supplies the specific prescription to stop when T is exceeded. The mapping introduces that policy using the target observations and source guidance."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "GOVERNANCE_RULE",
+          "competing_functions": [],
+          "rationale": "The claim prescribes a prospective stopping action triggered by exceeding T. Its reliance on C1 supplies a reason without changing its primary function."
+        }
+      }
+    }
+  ]
+}
