@@ -1,4 +1,19 @@
-# H6.R3 corrected compound-obligation calibration v0.2 — premeasurement status
+# H6.R3 corrected compound-obligation calibration v0.2 — progress report
+
+## Current checkpoint — first authorized Stage A batch complete
+
+Three fresh isolated Astra/high sessions completed successfully: R3K01-C1 (N1), R3K02-C1 (N2), and R3K03-C1 (N3). All three classify ATOMIC + MAPPING_GENERATED + GOVERNANCE_RULE, with no validation diagnostics. These are classification observations, not governance or secondary-contract validity results. Execution commit: a85836496ec47f967499beb84b77d59a63369ab3. Original responses, events, reservations and execution lineage are preserved at checkpoint aa9d5a6c31c3bbf54409fe5c6622f0fbd7f16ce5.
+
+Stage A: 3/13 complete; Stage B and Stage C: not started. Three provider sessions total, no retries/substitution/provider incidents. No complete Stage C projection manifest yet; all scientific decomposition and boundary-leak questions remain unmeasured. H6.R2 and earlier history are unchanged.
+
+Before/after account snapshots, actual session count, profile and available token records are preserved under .runtime. Provider-reported totals: 33,274 input tokens, 7,808 cached input tokens, 837 output tokens, and 319 reasoning output tokens (separately reported; not a dollar estimate). The sample is excluded from clean quota calibration because account isolation and telemetry settling were not established. The refreshed remaining-work forecast remains UNKNOWN. The cumulative financial plan retains all completed reservations and unchanged unknown costs/future evaluation fan-out.
+
+The user approved only the first three Stage A sessions, so further provider work awaits additional consent. Recommended next step: authorize the remaining ten Stage A classifications under the displayed plan and UNKNOWN usage risk, with bounded batches and refreshed preflights. This recommendation has not been executed. Natural-claim negative-control readiness is not established.
+
+An additive offline archive adapter (freeze_stage.py) supports the eventual whole-stage freeze after these partial archives: identical archived bytes are reused; any mismatch blocks. Two focused tests pass. No frozen provider harness, prompt, schema or measurement was changed.
+
+## Preserved initial premeasurement report
+
 
 **Incomplete: awaiting separate financial and included-usage authorization. No provider sessions or reservations. This is an offline checkpoint report, not a completed calibration.**
 
