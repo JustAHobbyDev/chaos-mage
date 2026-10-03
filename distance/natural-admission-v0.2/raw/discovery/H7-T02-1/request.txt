@@ -1,0 +1,2095 @@
+Discover direct material dependencies for each frozen claim, preserving its frozen
+primary classification. Do not judge validity or select scientific contract verdicts.
+For every dependency establish content_origin, epistemic_function and assertion_mode,
+in that order, using the same definitions as classification. Then choose its resolution.
+A dependency warrants a distinct obligation only when DISTINCT, MATERIAL and UNEVALUATED.
+Material means the primary assertion cannot retain essentially the same meaning/scope
+if the dependency is false, unjustified or removed. Do not create arbitrary logical trees.
+GROUNDING_REF: an unchanged supplied premise at the same scope/strength, with positive
+origin evidence. CLAIM_REF: reuse an existing frozen claim, preferring it to inline
+ duplication; identify the claim and reject cycles. INLINE_OBLIGATION: distinct material
+asserted content not already evaluated elsewhere. Generated or expanded assertions cannot
+use GROUNDING_REF. Supplied asserted operations require fidelity plus OPERATION_LICENSE;
+merely referenced unchanged operations need grounding alone. Do not let governance hide
+substantive diagnostics, actions, factual reasons or outcome relations. Ordinary routine
+stop/pause/continue actions do not automatically create substantive operation obligations.
+One direct level only. If a further materially independent level is required, mark
+SPLIT_REQUIRED; do not extend the dependency tree or repair the primary proposition.
+For genuinely unresolved dependencies, use null resolution, preserve subject/scope and
+explain UNCERTAIN closure. A frozen non-atomic or unresolved primary claim cannot acquire
+COMPLETE closure. Record every frozen claim exactly once even when ineligible.
+Cite base_evidence_used and each dependency's evidence_used using source IDs only from
+allowed_source_ids. Roles are harness-owned. Do not invent sources, offsets or quotations.
+Use only this frozen packet and general knowledge. No tools, retrieval, other cases,
+external files or prior session context. Return only the supplied JSON schema.
+
+FROZEN PACKET
+{
+  "packet_id": "H7-T02-1",
+  "target_frame": {
+    "target_id": "T02",
+    "domain": "organizational / process",
+    "title": "Delayed access to a shared workshop",
+    "problem": "A community workshop has a growing queue of people waiting for permission to use its equipment. Coordinators need to decide how to change intake and training arrangements next month while retaining the existing safety requirements.",
+    "known_context": [
+      "Applicants submit a form, attend an orientation and complete an equipment-specific supervised session before independent access.",
+      "Different volunteers arrange the three steps; attendance and completion dates are stored in separate spreadsheets.",
+      "Some applicants wait several weeks, while others finish within days. The board has only monthly totals for applications and completed permissions.",
+      "Sessions are sometimes cancelled when instructors are unavailable. Some applicants stop replying, and the records do not distinguish withdrawal from a missed message.",
+      "Two evening slots may be added next month, but the same volunteers also maintain equipment."
+    ],
+    "uncertainty": "The coordinators do not know how much waiting comes from scheduling, communication, unmet prerequisites or applicants own availability, nor whether adding sessions would address the largest delays.",
+    "decision_need": "Determine what to learn from current and prospective cases and how that should guide the allocation of the two possible evening slots.",
+    "constraints": [
+      "Do not waive required instruction or equipment safety checks.",
+      "Applicants may decline further contact; only information needed to arrange access should be collected."
+    ]
+  },
+  "source_instrument": {
+    "state": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested.\n",
+    "operation": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure.\n",
+    "signal": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction.\n",
+    "inference": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test.\n",
+    "limit": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization. A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism.\n"
+  },
+  "mapping": {
+    "state": "Treat a reconstructed applicant scheduling case as the configuration: a fixed application, required orientation and supervised session, applicant availability, instructor and equipment availability, and observed administrative or scheduling conditions that might be changed. These conditions are candidate removable parts; required instruction, safety checks and necessary maintenance remain fixed. First link existing step dates using the minimum identifying information needed, and prospectively record handoffs, contact attempts, prerequisites, offered slots and cancellations. Ask only access-arrangement questions, respect declined contact, and leave unexplained nonresponse unresolved. Before testing, choose a waiting-time threshold and decision horizon. Define failure as permission remaining unavailable beyond that threshold for a fixed applicant; do not improve the result by excluding the applicant or resetting the clock. Whether sufficiently reproducible cases and feasible removable conditions exist is initially unknown.",
+    "operation": "Construct a scheduling replay for selected delayed cases, explicitly documenting assumptions about missing dates, availability and volunteer capacity. Require the unreduced replay to reproduce the documented delay; if it cannot, investigate missing information before reduction. Partition verified, changeable conditions, such as a measured handoff lag or a documented batching rule if one exists. Remove subsets or test their complements by substituting a specified feasible arrangement, while holding the applicant, required steps and other conditions fixed. Retain a reduced configuration only when repeated tests still reproduce the defined failure. Continue partitioning and testing until no single remaining condition can be removed while preserving failure, or until the decision deadline, unresolved outcomes or lack of feasible substitutions stops reduction. Record those stopping reasons. A deletion that lacks an operationally feasible counterpart is exploratory only and cannot justify changing arrangements.",
+    "signal": "For each candidate reduction, record failure reproduced, failure absent, or unresolved, alongside predicted permission date, waiting between steps and the remaining blocking conditions. Unknown applicant availability, ambiguous nonresponse or an unsupported scheduling assumption makes the relevant outcome unresolved, not successful or unsuccessful. Repeat tests across plausible uncertain inputs; retain a reduction as robust only if its failure classification remains stable. Where applicants consent and volunteers can support it, test promising arrangements prospectively and compare observed handoff and completion times with replay predictions. No such observations are presumed to have occurred.",
+    "inference": "A retained subset identifies conditions jointly sufficient to reproduce excessive waiting for that applicant under the specified replay and assumptions. If every single deletion has been tested and eliminates failure, it is minimal against those deletions, not necessarily the smallest possible subset. Compare reductions across current and prospective cases to identify recurring delays and how many applicants they affect. Then separately test feasible allocations of the two evening slots to orientation, equipment-specific supervision, or intake coordination where evidence indicates coordination is blocking progress. Test both slots together as well as individually, preserving instructor, equipment and maintenance capacity. Use predicted reductions in excessive waits, confirmed where possible by prospective results, to choose next month's allocation. A retained condition alone does not establish that adding a session will help. If evidence remains weak, make any allocation a limited monitored trial with a specified review date.",
+    "limit": "Replaying the same assumptions repeatedly establishes computational repeatability, not real-world reproducibility. Historical reconstruction alone cannot establish the effects of changed arrangements. Interactions, cancellations, changing demand, applicant availability, missing records and the order of reductions can produce different retained subsets. Separate spreadsheets and monthly totals may support only partial reconstruction; do not force a minimal result from unresolved tests. Reductions from selected cases do not establish the largest source of delay across the queue, a unique cause, or guaranteed benefits from extra sessions. If prospective outcomes contradict predictions, revise the reconstruction and retest. Stop any trial that would compromise required instruction, safety checks or necessary maintenance; stop contacting an applicant who declines, and retain their unexplained delay as unknown rather than treating it as resolved."
+  },
+  "allowed_source_ids": [
+    "T001",
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035"
+  ],
+  "claims": {
+    "packet_id": "H7-T02-1",
+    "claims": [
+      {
+        "claim_id": "C001",
+        "fields": [
+          "state"
+        ],
+        "proposition": "A reconstructed applicant scheduling case is treated as the configuration, comprising a fixed application, required orientation and supervised session, applicant availability, instructor and equipment availability, and observed administrative or scheduling conditions that might be changed.",
+        "scope": "The proposed unit of reconstruction and reduction.",
+        "evidence_used": [
+          {
+            "source_id": "P001"
+          }
+        ],
+        "ambiguity": "The representation of these components within a scheduling configuration is unspecified."
+      },
+      {
+        "claim_id": "C002",
+        "fields": [
+          "state",
+          "operation"
+        ],
+        "proposition": "Verified, changeable administrative or scheduling conditions are candidate removable parts to be partitioned.",
+        "scope": "Conditions eligible for reduction; a handoff lag must be measured and a batching rule must be documented if present.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          },
+          {
+            "source_id": "P010"
+          }
+        ],
+        "ambiguity": "The referent of 'these conditions' in P002 is broad; P010 restricts partitioning to verified, changeable conditions. Verification criteria are unspecified."
+      },
+      {
+        "claim_id": "C003",
+        "fields": [
+          "state",
+          "limit"
+        ],
+        "proposition": "Required instruction, safety checks and necessary maintenance must remain fixed; a trial that would compromise any of them must stop.",
+        "scope": "All proposed reductions and trials.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          },
+          {
+            "source_id": "P035"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how a threatened compromise is detected."
+      },
+      {
+        "claim_id": "C004",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Information collection is restricted to access-arrangement questions, with only the minimum identifying information needed to link existing step dates.",
+        "scope": "Reconstruction and applicant information collection.",
+        "evidence_used": [
+          {
+            "source_id": "P003"
+          },
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "The necessary identifying information and permitted questions are not enumerated."
+      },
+      {
+        "claim_id": "C005",
+        "fields": [
+          "state",
+          "limit"
+        ],
+        "proposition": "An applicant's decision to decline further contact must be respected by stopping contact.",
+        "scope": "Applicants who decline contact.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          },
+          {
+            "source_id": "P035"
+          }
+        ],
+        "ambiguity": "None identified."
+      },
+      {
+        "claim_id": "C006",
+        "fields": [
+          "state",
+          "signal",
+          "limit"
+        ],
+        "proposition": "Unknown applicant availability, ambiguous nonresponse or an unsupported scheduling assumption makes the relevant outcome unresolved; unexplained nonresponse or delay remains unknown, including after an applicant declines contact, rather than being classified as success, failure or resolution.",
+        "scope": "Outcomes affected by the specified information gaps.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          },
+          {
+            "source_id": "P017"
+          },
+          {
+            "source_id": "P035"
+          }
+        ],
+        "ambiguity": "The mapping does not specify when an uncertainty affects a particular outcome sufficiently to make it unresolved."
+      },
+      {
+        "claim_id": "C007",
+        "fields": [
+          "state"
+        ],
+        "proposition": "A waiting-time threshold and decision horizon must be chosen before testing.",
+        "scope": "Specification of the proposed test and decision process.",
+        "evidence_used": [
+          {
+            "source_id": "P005"
+          }
+        ],
+        "ambiguity": "Neither value nor a method for choosing either is supplied."
+      },
+      {
+        "claim_id": "C008",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Failure is defined as permission remaining unavailable beyond the chosen waiting-time threshold for a fixed applicant.",
+        "scope": "The outcome tested by the reduction procedure.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "The starting event for measuring waiting time is not expressly specified."
+      },
+      {
+        "claim_id": "C009",
+        "fields": [
+          "state"
+        ],
+        "proposition": "An apparent improvement obtained by excluding the applicant or resetting the waiting-time clock is not permitted.",
+        "scope": "Comparisons against the defined failure for the fixed applicant.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "None identified."
+      },
+      {
+        "claim_id": "C010",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Whether sufficiently reproducible applicant cases exist is initially unknown.",
+        "scope": "Initial applicability of the proposed reduction method.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "The required degree and sense of reproducibility are unspecified."
+      },
+      {
+        "claim_id": "C011",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Whether feasible removable conditions exist is initially unknown.",
+        "scope": "Initial feasibility of operational reductions.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "No initial inventory or feasibility criterion is provided."
+      },
+      {
+        "claim_id": "C012",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Selected delayed cases are to be tested through scheduling replays with explicit assumptions about missing dates, availability and volunteer capacity.",
+        "scope": "Construction of the proposed replay tests.",
+        "evidence_used": [
+          {
+            "source_id": "P008"
+          }
+        ],
+        "ambiguity": "Case-selection rules, replay mechanics and actual assumption values are unspecified."
+      },
+      {
+        "claim_id": "C013",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Reduction requires an unreduced replay that reproduces the documented delay; if it does not, missing information must be investigated before reduction.",
+        "scope": "The baseline prerequisite for reducing a selected case.",
+        "evidence_used": [
+          {
+            "source_id": "P009"
+          }
+        ],
+        "ambiguity": "The required agreement between replayed and documented delay is unspecified."
+      },
+      {
+        "claim_id": "C014",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Removing subsets or testing their complements is to be implemented by substituting a specified feasible arrangement.",
+        "scope": "Operational interpretation of candidate deletions.",
+        "evidence_used": [
+          {
+            "source_id": "P011"
+          }
+        ],
+        "ambiguity": "The correspondence between a removed condition and its replacement arrangement is not specified."
+      },
+      {
+        "claim_id": "C015",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Candidate substitutions must hold the applicant, required steps and other conditions fixed.",
+        "scope": "Comparisons made while removing subsets or testing complements.",
+        "evidence_used": [
+          {
+            "source_id": "P011"
+          }
+        ],
+        "ambiguity": "The mapping does not explain how to hold other conditions fixed when substitutions have interacting effects."
+      },
+      {
+        "claim_id": "C016",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "A reduced configuration may be retained only when repeated tests continue to reproduce the defined failure.",
+        "scope": "Acceptance of reductions during the procedure.",
+        "evidence_used": [
+          {
+            "source_id": "P012"
+          }
+        ],
+        "ambiguity": "The number of repetitions and treatment of variation between repetitions are unspecified here."
+      },
+      {
+        "claim_id": "C017",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Absent an earlier stopping condition, partitioning and testing continue until no single remaining condition can be removed while preserving failure.",
+        "scope": "The intended reduction endpoint.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          }
+        ],
+        "ambiguity": "The endpoint is relative to the remaining conditions and available deletion tests."
+      },
+      {
+        "claim_id": "C018",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The decision deadline, unresolved outcomes or lack of feasible substitutions can stop reduction before the single-deletion endpoint is reached.",
+        "scope": "Permitted early termination of reduction.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          }
+        ],
+        "ambiguity": "The mapping does not specify when unresolved outcomes or unavailable substitutions stop the entire procedure rather than one branch."
+      },
+      {
+        "claim_id": "C019",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "A deletion without an operationally feasible counterpart is exploratory only and cannot justify changing arrangements.",
+        "scope": "The practical inferential use of infeasible deletions.",
+        "evidence_used": [
+          {
+            "source_id": "P015"
+          }
+        ],
+        "ambiguity": "Operational feasibility is not formally defined."
+      },
+      {
+        "claim_id": "C020",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Candidate reduction outcomes distinguish failure reproduced, failure absent and unresolved.",
+        "scope": "The proposed outcome classification.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          }
+        ],
+        "ambiguity": "The mapping does not provide a complete classification rule beyond its specified uncertainty cases."
+      },
+      {
+        "claim_id": "C021",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A reduction may be retained as robust only if its failure classification remains stable across tests using plausible uncertain inputs.",
+        "scope": "Robustness relative to the uncertain inputs tested.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          }
+        ],
+        "ambiguity": "The plausible input range and whether a stable unresolved classification can qualify are unspecified."
+      },
+      {
+        "claim_id": "C022",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Where applicants consent and volunteers can support testing, promising arrangements are to be tested prospectively by comparing observed handoff and completion times with replay predictions.",
+        "scope": "Conditional prospective checking of replay predictions.",
+        "evidence_used": [
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "Criteria for promising arrangements, sufficient volunteer support and predictive agreement are unspecified."
+      },
+      {
+        "claim_id": "C023",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "The mapping does not presume that the proposed prospective observations have occurred.",
+        "scope": "The evidential status of prospective handoff and completion observations within this mapping.",
+        "evidence_used": [
+          {
+            "source_id": "P020"
+          }
+        ],
+        "ambiguity": "This does not assert that such observations are known not to exist."
+      },
+      {
+        "claim_id": "C024",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "A retained subset identifies conditions jointly sufficient to reproduce excessive waiting for the fixed applicant under the specified replay and assumptions.",
+        "scope": "Sufficiency within the particular replay and its assumptions.",
+        "evidence_used": [
+          {
+            "source_id": "P021"
+          }
+        ],
+        "ambiguity": "The claim does not specify sufficiency outside that replay or for other applicants."
+      },
+      {
+        "claim_id": "C025",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If every single deletion has been tested and eliminates failure, the retained subset is minimal against those deletions.",
+        "scope": "Minimality relative to the tested single deletions.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          }
+        ],
+        "ambiguity": "The operational deletion vocabulary bounds this minimality."
+      },
+      {
+        "claim_id": "C026",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Minimality against every tested single deletion does not establish that the retained subset is the smallest possible subset.",
+        "scope": "The limit of the single-deletion minimality conclusion.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          }
+        ],
+        "ambiguity": "The mapping does not define the full space of possible subsets."
+      },
+      {
+        "claim_id": "C027",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Comparing reductions across current and prospective cases is proposed as a way to identify recurring delays.",
+        "scope": "Recurrence among the cases compared.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "Criteria for treating delays in different cases as the same recurring delay are unspecified."
+      },
+      {
+        "claim_id": "C028",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Comparing reductions across current and prospective cases is proposed as a way to identify how many applicants recurring delays affect.",
+        "scope": "Applicants represented by the case comparisons; no queue-wide extrapolation is established.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "The intended counting population and treatment of applicants affected by multiple delays are unspecified."
+      },
+      {
+        "claim_id": "C029",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Following case comparisons, feasible allocations of the two evening slots to orientation, equipment-specific supervision or eligible intake coordination require separate tests.",
+        "scope": "Evaluation of next month's allocation options.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "The mapping does not specify the allocation search space or test design."
+      },
+      {
+        "claim_id": "C030",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Intake coordination is an allocation option to test where evidence indicates that coordination is blocking progress.",
+        "scope": "The stated condition for testing evening-slot allocation to intake coordination.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "The evidence required to establish blocking coordination is unspecified."
+      },
+      {
+        "claim_id": "C031",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "The two evening slots are to be tested together as well as individually.",
+        "scope": "Evaluation of the proposed evening-slot allocations.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          }
+        ],
+        "ambiguity": "The mapping does not specify which combinations or individual assignments must be tested."
+      },
+      {
+        "claim_id": "C032",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Evening-slot allocation tests must preserve instructor, equipment and maintenance capacity.",
+        "scope": "Feasibility constraints on individual and combined allocation tests.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          }
+        ],
+        "ambiguity": "Capacity levels and the meaning of preserving them are unspecified."
+      },
+      {
+        "claim_id": "C033",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Next month's allocation is to be chosen using predicted reductions in excessive waits, confirmed where possible by prospective results.",
+        "scope": "The proposed allocation decision rule.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          }
+        ],
+        "ambiguity": "The mapping does not specify aggregation across applicants, tradeoffs between outcomes or the required strength of confirmation."
+      },
+      {
+        "claim_id": "C034",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "A retained condition alone does not establish that adding a session will help.",
+        "scope": "Inference from retained conditions to the benefit of an added session.",
+        "evidence_used": [
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "The magnitude or form of benefit denoted by 'help' is unspecified."
+      },
+      {
+        "claim_id": "C035",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If evidence remains weak, any allocation must be a limited monitored trial with a specified review date.",
+        "scope": "Allocation decisions made under continuing evidential weakness.",
+        "evidence_used": [
+          {
+            "source_id": "P028"
+          }
+        ],
+        "ambiguity": "Weak evidence, trial limits and monitoring requirements are not defined."
+      },
+      {
+        "claim_id": "C036",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Replaying the same assumptions repeatedly establishes computational repeatability.",
+        "scope": "Repeated replay under unchanged assumptions.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ],
+        "ambiguity": "The sentence does not expressly specify an agreement criterion for repeated outputs."
+      },
+      {
+        "claim_id": "C037",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Replaying the same assumptions repeatedly does not establish real-world reproducibility.",
+        "scope": "The evidential limit of repeated computation under unchanged assumptions.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ],
+        "ambiguity": "The required real-world reproducibility criterion is unspecified."
+      },
+      {
+        "claim_id": "C038",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Historical reconstruction alone cannot establish the effects of changed arrangements.",
+        "scope": "Inference from historical reconstruction to intervention effects.",
+        "evidence_used": [
+          {
+            "source_id": "P030"
+          }
+        ],
+        "ambiguity": "The mapping does not specify a sufficient additional evidential standard."
+      },
+      {
+        "claim_id": "C039",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Interactions, cancellations, changing demand, applicant availability, missing records and reduction order can produce different retained subsets.",
+        "scope": "Sensitivity of reduction results to the listed factors.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "The mapping does not distinguish the individual contribution of each factor or specify their effects."
+      },
+      {
+        "claim_id": "C040",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Separate spreadsheets and monthly totals may support only partial reconstruction.",
+        "scope": "The reconstructive adequacy of the available records.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "Which cases or scheduling components can be reconstructed is unspecified."
+      },
+      {
+        "claim_id": "C041",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Unresolved tests do not justify forcing a minimal result.",
+        "scope": "Minimality conclusions when relevant test outcomes remain unresolved.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how unresolved tests delimit any narrower minimality conclusion."
+      },
+      {
+        "claim_id": "C042",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Reductions from selected cases do not establish the largest source of delay across the queue.",
+        "scope": "Queue-wide ranking of delay sources from selected-case reductions.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          }
+        ],
+        "ambiguity": "The measure of 'largest' is unspecified."
+      },
+      {
+        "claim_id": "C043",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Reductions from selected cases do not establish a unique cause.",
+        "scope": "Causal uniqueness inferred from selected-case reductions.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          }
+        ],
+        "ambiguity": "The sentence does not specify whether uniqueness concerns individual cases, the queue or both."
+      },
+      {
+        "claim_id": "C044",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Reductions from selected cases do not establish guaranteed benefits from extra sessions.",
+        "scope": "Benefit guarantees for extra sessions inferred from selected-case reductions.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          }
+        ],
+        "ambiguity": "The benefit measure and population covered by a guarantee are unspecified."
+      },
+      {
+        "claim_id": "C045",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "If prospective outcomes contradict predictions, the reconstruction must be revised and retested.",
+        "scope": "The prescribed response to prospective predictive contradiction.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "The threshold for contradiction and the extent of revision and retesting are unspecified."
+      }
+    ],
+    "coverage": [
+      {
+        "field": "state",
+        "claim_ids": [
+          "C001",
+          "C002",
+          "C003",
+          "C004",
+          "C005",
+          "C006",
+          "C007",
+          "C008",
+          "C009",
+          "C010",
+          "C011"
+        ],
+        "unrepresented_material": [],
+        "rationale": "P001\u2013P007 are represented through the configuration correspondence, removable-part eligibility, fixed constraints, information and contact limits, unresolved outcomes, test specification and initially unknown applicability. P003's sequence of linking dates and recording handoffs, contact attempts, prerequisites, offered slots and cancellations is procedural evidence-collection setup; its identifying-information bound is represented in C004. Individual configuration components and recording categories are not separate propositions."
+      },
+      {
+        "field": "operation",
+        "claim_ids": [
+          "C002",
+          "C012",
+          "C013",
+          "C014",
+          "C015",
+          "C016",
+          "C017",
+          "C018",
+          "C019"
+        ],
+        "unrepresented_material": [],
+        "rationale": "P008\u2013P015 are represented through replay assumptions, the baseline gate, eligible conditions, feasible substitutions, comparison controls, retention criteria, endpoints and the limit on infeasible deletions. The measured handoff lag and documented batching rule in P010 are conditional examples, not assertions that either exists. P014's instruction to record stopping reasons is routine documentation setup."
+      },
+      {
+        "field": "signal",
+        "claim_ids": [
+          "C006",
+          "C020",
+          "C021",
+          "C022",
+          "C023"
+        ],
+        "unrepresented_material": [],
+        "rationale": "P016\u2013P020 are represented through the three outcome classes, uncertainty classification, robustness criterion, conditional prospective comparison and absence of presumed observations. Recording predicted permission dates, inter-step waiting and remaining blockers in P016 specifies accompanying output data; it does not assert that those quantities are known, accurate or sufficient."
+      },
+      {
+        "field": "inference",
+        "claim_ids": [
+          "C024",
+          "C025",
+          "C026",
+          "C027",
+          "C028",
+          "C029",
+          "C030",
+          "C031",
+          "C032",
+          "C033",
+          "C034",
+          "C035"
+        ],
+        "unrepresented_material": [],
+        "rationale": "P021\u2013P028 are represented through replay-relative sufficiency, conditional single-deletion minimality and its size bound, the two case-comparison purposes, allocation testing and its coordination condition, combined and individual testing, capacity preservation, the decision rule, the added-session inference limit and the weak-evidence trial condition. Allocation destinations are alternatives within the proposed operation, not separate claims of effectiveness."
+      },
+      {
+        "field": "limit",
+        "claim_ids": [
+          "C003",
+          "C005",
+          "C006",
+          "C036",
+          "C037",
+          "C038",
+          "C039",
+          "C040",
+          "C041",
+          "C042",
+          "C043",
+          "C044",
+          "C045"
+        ],
+        "unrepresented_material": [],
+        "rationale": "P029\u2013P035 are represented through computational repeatability, the distinct real-world reproducibility limit, historical intervention limits, sensitivity of retained subsets, partial reconstruction, unresolved-test minimality limits, three separate selected-case inference bounds and conditional revision. P035 repeats and operationalizes the fixed safety and maintenance constraints, declined-contact rule and preservation of unexplained delay as unknown; these are consolidated with their earlier formulations."
+      }
+    ]
+  },
+  "classification_definitions": {
+    "origins": {
+      "TARGET_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by frozen target/problem material. Faithful non-expansive restatements qualify. Do not add causation, precision, scope, certainty or explanation. Requires positive target provenance.",
+      "SOURCE_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by the frozen source instrument. Requires positive source-instrument provenance.",
+      "BOTH_SUPPLIED": "The same proposition is independently supplied at materially the same scope and strength by BOTH target and source instrument. Target premise A and source mechanism B jointly supporting generated C does not qualify.",
+      "MAPPING_GENERATED": "The proposition itself was introduced by the mapping; neither input supplied it as such. It may be warranted. Default absent positive supply evidence, unless genuinely uncertain."
+    },
+    "functions": {
+      "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+      "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+      "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+      "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+      "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+      "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+    }
+  },
+  "evidence_sources": {
+    "T001": {
+      "role": "SUPPORT",
+      "kind": "target",
+      "value": {
+        "target_id": "T02",
+        "domain": "organizational / process",
+        "title": "Delayed access to a shared workshop",
+        "problem": "A community workshop has a growing queue of people waiting for permission to use its equipment. Coordinators need to decide how to change intake and training arrangements next month while retaining the existing safety requirements.",
+        "known_context": [
+          "Applicants submit a form, attend an orientation and complete an equipment-specific supervised session before independent access.",
+          "Different volunteers arrange the three steps; attendance and completion dates are stored in separate spreadsheets.",
+          "Some applicants wait several weeks, while others finish within days. The board has only monthly totals for applications and completed permissions.",
+          "Sessions are sometimes cancelled when instructors are unavailable. Some applicants stop replying, and the records do not distinguish withdrawal from a missed message.",
+          "Two evening slots may be added next month, but the same volunteers also maintain equipment."
+        ],
+        "uncertainty": "The coordinators do not know how much waiting comes from scheduling, communication, unmet prerequisites or applicants own availability, nor whether adding sessions would address the largest delays.",
+        "decision_need": "Determine what to learn from current and prospective cases and how that should guide the allocation of the two possible evening slots.",
+        "constraints": [
+          "Do not waive required instruction or equipment safety checks.",
+          "Applicants may decline further contact; only information needed to arrange access should be collected."
+        ]
+      }
+    },
+    "S001": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "A reproducible failure occurs for a configuration or input composed of multiple removable parts, and candidate reductions can be repeatedly tested."
+    },
+    "S002": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Partition the failure-inducing configuration, remove subsets or test their complements, and iteratively retain reductions that continue to reproduce the defined failure."
+    },
+    "S003": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Some reduced configurations preserve the failure while others do not, revealing which removals are compatible with continued reproduction."
+    },
+    "S004": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "The procedure narrows the configuration to a test-relative minimal or near-minimal failure-inducing subset or difference whose retained parts are sufficient to reproduce the observed failure under the test."
+    },
+    "S005": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Interactions among parts, nondeterministic failures, unresolved test outcomes, environmental dependence, and the reduction strategy can prevent strong minimization."
+    },
+    "S006": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "A retained minimal configuration demonstrates reproducibility under the test, not necessarily the unique underlying causal mechanism."
+    },
+    "P001": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Treat a reconstructed applicant scheduling case as the configuration: a fixed application, required orientation and supervised session, applicant availability, instructor and equipment availability, and observed administrative or scheduling conditions that might be changed."
+    },
+    "P002": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "These conditions are candidate removable parts; required instruction, safety checks and necessary maintenance remain fixed."
+    },
+    "P003": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "First link existing step dates using the minimum identifying information needed, and prospectively record handoffs, contact attempts, prerequisites, offered slots and cancellations."
+    },
+    "P004": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Ask only access-arrangement questions, respect declined contact, and leave unexplained nonresponse unresolved."
+    },
+    "P005": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Before testing, choose a waiting-time threshold and decision horizon."
+    },
+    "P006": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Define failure as permission remaining unavailable beyond that threshold for a fixed applicant; do not improve the result by excluding the applicant or resetting the clock."
+    },
+    "P007": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Whether sufficiently reproducible cases and feasible removable conditions exist is initially unknown."
+    },
+    "P008": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Construct a scheduling replay for selected delayed cases, explicitly documenting assumptions about missing dates, availability and volunteer capacity."
+    },
+    "P009": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Require the unreduced replay to reproduce the documented delay; if it cannot, investigate missing information before reduction."
+    },
+    "P010": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Partition verified, changeable conditions, such as a measured handoff lag or a documented batching rule if one exists."
+    },
+    "P011": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Remove subsets or test their complements by substituting a specified feasible arrangement, while holding the applicant, required steps and other conditions fixed."
+    },
+    "P012": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Retain a reduced configuration only when repeated tests still reproduce the defined failure."
+    },
+    "P013": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Continue partitioning and testing until no single remaining condition can be removed while preserving failure, or until the decision deadline, unresolved outcomes or lack of feasible substitutions stops reduction."
+    },
+    "P014": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Record those stopping reasons."
+    },
+    "P015": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "A deletion that lacks an operationally feasible counterpart is exploratory only and cannot justify changing arrangements."
+    },
+    "P016": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "For each candidate reduction, record failure reproduced, failure absent, or unresolved, alongside predicted permission date, waiting between steps and the remaining blocking conditions."
+    },
+    "P017": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Unknown applicant availability, ambiguous nonresponse or an unsupported scheduling assumption makes the relevant outcome unresolved, not successful or unsuccessful."
+    },
+    "P018": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Repeat tests across plausible uncertain inputs; retain a reduction as robust only if its failure classification remains stable."
+    },
+    "P019": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Where applicants consent and volunteers can support it, test promising arrangements prospectively and compare observed handoff and completion times with replay predictions."
+    },
+    "P020": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "No such observations are presumed to have occurred."
+    },
+    "P021": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "A retained subset identifies conditions jointly sufficient to reproduce excessive waiting for that applicant under the specified replay and assumptions."
+    },
+    "P022": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "If every single deletion has been tested and eliminates failure, it is minimal against those deletions, not necessarily the smallest possible subset."
+    },
+    "P023": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Compare reductions across current and prospective cases to identify recurring delays and how many applicants they affect."
+    },
+    "P024": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Then separately test feasible allocations of the two evening slots to orientation, equipment-specific supervision, or intake coordination where evidence indicates coordination is blocking progress."
+    },
+    "P025": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Test both slots together as well as individually, preserving instructor, equipment and maintenance capacity."
+    },
+    "P026": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Use predicted reductions in excessive waits, confirmed where possible by prospective results, to choose next month's allocation."
+    },
+    "P027": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "A retained condition alone does not establish that adding a session will help."
+    },
+    "P028": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "If evidence remains weak, make any allocation a limited monitored trial with a specified review date."
+    },
+    "P029": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Replaying the same assumptions repeatedly establishes computational repeatability, not real-world reproducibility."
+    },
+    "P030": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Historical reconstruction alone cannot establish the effects of changed arrangements."
+    },
+    "P031": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Interactions, cancellations, changing demand, applicant availability, missing records and the order of reductions can produce different retained subsets."
+    },
+    "P032": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Separate spreadsheets and monthly totals may support only partial reconstruction; do not force a minimal result from unresolved tests."
+    },
+    "P033": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Reductions from selected cases do not establish the largest source of delay across the queue, a unique cause, or guaranteed benefits from extra sessions."
+    },
+    "P034": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "If prospective outcomes contradict predictions, revise the reconstruction and retest."
+    },
+    "P035": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Stop any trial that would compromise required instruction, safety checks or necessary maintenance; stop contacting an applicant who declines, and retain their unexplained delay as unknown rather than treating it as resolved."
+    }
+  },
+  "classifications": {
+    "packet_id": "H7-T02-1",
+    "classifications": [
+      {
+        "claim_id": "C001",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The listed components specify one proposed configuration representation.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies the applicant-case configuration correspondence.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes a representational transformation for reconstruction and reduction.",
+        "assertion_mode": null,
+        "assertion_rationale": "Generated claims have no supplied-material assertion mode.",
+        "evidence_used": [
+          {
+            "source_id": "P001"
+          },
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "S001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C002",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Verification and changeability qualify the conditions in one partitioning operation.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The inputs do not supply this eligibility specification for scheduling conditions.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes partitioning eligible administrative or scheduling conditions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The target-specific partitioning proposal is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          },
+          {
+            "source_id": "P010"
+          },
+          {
+            "source_id": "S002"
+          }
+        ]
+      },
+      {
+        "claim_id": "C003",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Stopping a compromising trial directly enforces the single preservation requirement.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target supplies instruction and safety constraints, but not the full maintenance invariant and trial-stopping prescription.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes fixed constraints and their safety stopping action.",
+        "assertion_mode": null,
+        "assertion_rationale": "The complete frozen requirement extends the supplied constraints.",
+        "evidence_used": [
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "P002"
+          },
+          {
+            "source_id": "P035"
+          }
+        ]
+      },
+      {
+        "claim_id": "C004",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The question restriction and identifying-information bound implement one collection constraint.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target supplies access-related data minimization, but the specific identifying-information bound for linking dates is introduced by the mapping.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Restricts permissible information collection.",
+        "assertion_mode": null,
+        "assertion_rationale": "The complete collection specification is generated.",
+        "evidence_used": [
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "P003"
+          },
+          {
+            "source_id": "P004"
+          }
+        ]
+      },
+      {
+        "claim_id": "C005",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one contact rule for applicants who decline.",
+        "content_origin": "TARGET_SUPPLIED",
+        "origin_rationale": "The target expressly permits applicants to decline further contact; stopping contact faithfully states that constraint.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes cessation of contact after refusal.",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "assertion_rationale": "The mapping applies the supplied constraint to its proposed process.",
+        "evidence_used": [
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "P004"
+          },
+          {
+            "source_id": "P035"
+          }
+        ]
+      },
+      {
+        "claim_id": "C006",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The listed gaps and declined-contact case instantiate one unresolved-evidence restriction.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The inputs mention uncertainty but do not supply these outcome-classification consequences.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits determinate conclusions when relevant information remains unknown.",
+        "assertion_mode": null,
+        "assertion_rationale": "The uncertainty restriction at this scope is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          },
+          {
+            "source_id": "P017"
+          },
+          {
+            "source_id": "P035"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C007",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Both parameters belong to one pretest specification requirement.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input requires choosing these two parameters before testing.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes advance selection of a threshold and decision horizon.",
+        "assertion_mode": null,
+        "assertion_rationale": "The parameter-selection requirement is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P005"
+          }
+        ]
+      },
+      {
+        "claim_id": "C008",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Defines a single failure criterion.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input defines failure using threshold-exceeding permission delay for a fixed applicant.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Sets the criterion governing failure classification.",
+        "assertion_mode": null,
+        "assertion_rationale": "The failure definition is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          },
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "S002"
+          }
+        ]
+      },
+      {
+        "claim_id": "C009",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The two prohibited changes enforce one comparison-integrity rule.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies the applicant-exclusion or clock-reset prohibition.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prohibits specified ways of obtaining apparent improvement.",
+        "assertion_mode": null,
+        "assertion_rationale": "The prohibition is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ]
+      },
+      {
+        "claim_id": "C010",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Identifies one unresolved applicability prerequisite.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source assumes reproducibility; neither input supplies its unknown availability for applicant cases.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits initial applicability through an unestablished reproducibility prerequisite.",
+        "assertion_mode": null,
+        "assertion_rationale": "The applicability limitation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          },
+          {
+            "source_id": "S001"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C011",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Identifies one unresolved feasibility prerequisite.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies the existence or initial uncertainty of feasible operational deletions.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits applicability through unknown feasibility of removable conditions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The feasibility limitation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          },
+          {
+            "source_id": "S001"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C012",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Explicit assumptions are subordinate specifications of the proposed replay test.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input proposes scheduling replays with these documented assumptions.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes constructing and testing scheduling replays.",
+        "assertion_mode": null,
+        "assertion_rationale": "The replay operation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P008"
+          }
+        ]
+      },
+      {
+        "claim_id": "C013",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Investigation after baseline failure is subordinate to the reduction prerequisite.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source assumes a reproducible failure but does not supply this replay gate and corrective requirement.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Governs when reduction may begin and what must happen if its prerequisite fails.",
+        "assertion_mode": null,
+        "assertion_rationale": "The baseline gate is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P009"
+          },
+          {
+            "source_id": "S001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C014",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one implementation of candidate deletion.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source supplies subset removal, but not its implementation through feasible scheduling substitutions.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes substituting arrangements to implement deletions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The substitution operation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P011"
+          },
+          {
+            "source_id": "S002"
+          }
+        ]
+      },
+      {
+        "claim_id": "C015",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The fixed elements jointly specify one comparison-control requirement.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies these applicant-specific invariants for substitutions.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes constraints that candidate substitutions must satisfy.",
+        "assertion_mode": null,
+        "assertion_rationale": "The comparison requirement is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P011"
+          }
+        ]
+      },
+      {
+        "claim_id": "C016",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one reduction-retention criterion.",
+        "content_origin": "SOURCE_SUPPLIED",
+        "origin_rationale": "The source supplies repeatedly testable reductions and retention of reductions that continue reproducing the defined failure.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Governs acceptance of a reduced configuration.",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "assertion_rationale": "The mapping adopts the source retention criterion as a requirement of its procedure.",
+        "evidence_used": [
+          {
+            "source_id": "S001"
+          },
+          {
+            "source_id": "S002"
+          },
+          {
+            "source_id": "P012"
+          }
+        ]
+      },
+      {
+        "claim_id": "C017",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Continued testing serves one specified termination endpoint.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source mentions minimal or near-minimal results but does not prescribe this explicit single-deletion endpoint.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes how long reduction must continue absent earlier termination.",
+        "assertion_mode": null,
+        "assertion_rationale": "The precise endpoint requirement is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          },
+          {
+            "source_id": "S002"
+          },
+          {
+            "source_id": "S004"
+          }
+        ]
+      },
+      {
+        "claim_id": "C018",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The alternatives form one early-termination rule.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies this combination of operational stopping conditions.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Permits stopping reduction before its intended endpoint.",
+        "assertion_mode": null,
+        "assertion_rationale": "The stopping rule is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          },
+          {
+            "source_id": "S005"
+          }
+        ]
+      },
+      {
+        "claim_id": "C019",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Exploratory status expresses the same practical evidential restriction as the justification limit.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies a practical-inference restriction for infeasible deletions.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits what an operationally infeasible deletion can justify.",
+        "assertion_mode": null,
+        "assertion_rationale": "The inferential restriction is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P015"
+          }
+        ]
+      },
+      {
+        "claim_id": "C020",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The three alternatives form one outcome-classification specification.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source mentions preserved, absent and unresolved outcomes but does not supply this explicit three-category recording scheme.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Specifies the distinctions to record when observing candidate reduction outcomes.",
+        "assertion_mode": null,
+        "assertion_rationale": "The proposed outcome-recording scheme is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          },
+          {
+            "source_id": "S003"
+          },
+          {
+            "source_id": "S005"
+          }
+        ]
+      },
+      {
+        "claim_id": "C021",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Input variation specifies the testing basis for one robustness-retention criterion.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies classification stability across plausible uncertain inputs as a robustness criterion.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Governs when a reduction may be retained as robust.",
+        "assertion_mode": null,
+        "assertion_rationale": "The robustness criterion is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          }
+        ]
+      },
+      {
+        "claim_id": "C022",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Consent and volunteer support qualify one prospective comparison operation.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies prospective comparison of observed timings with replay predictions.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes prospective testing and comparison with predictions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The prospective comparison is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P019"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C023",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one boundary on the mapping's evidential commitments.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input addresses the occurrence status of these mapping-proposed observations.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Prevents proposed observations from being treated as already available evidence.",
+        "assertion_mode": null,
+        "assertion_rationale": "The evidential boundary is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P020"
+          }
+        ]
+      },
+      {
+        "claim_id": "C024",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Replay and assumptions delimit one sufficiency conclusion.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source supplies test-relative sufficiency, but not sufficiency of scheduling conditions for this applicant under a replay.",
+        "epistemic_function": "INFERENCE",
+        "function_rationale": "States what the retained subset establishes within the replay.",
+        "assertion_mode": null,
+        "assertion_rationale": "The applicant-specific sufficiency conclusion is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P021"
+          },
+          {
+            "source_id": "S004"
+          }
+        ]
+      },
+      {
+        "claim_id": "C025",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The deletion-test antecedent supports one minimality consequence.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source does not explicitly supply this exhaustive single-deletion condition and its precise conclusion.",
+        "epistemic_function": "CONDITIONAL_RELATION",
+        "function_rationale": "States what the specified future deletion-test results would establish.",
+        "assertion_mode": null,
+        "assertion_rationale": "The conditional minimality relation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          },
+          {
+            "source_id": "S004"
+          }
+        ]
+      },
+      {
+        "claim_id": "C026",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one boundary on the minimality conclusion.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source does not explicitly distinguish single-deletion minimality from the smallest possible subset.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits the strength of the conclusion supported by single-deletion tests.",
+        "assertion_mode": null,
+        "assertion_rationale": "The explicit minimality boundary is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          },
+          {
+            "source_id": "S004"
+          },
+          {
+            "source_id": "S005"
+          }
+        ]
+      },
+      {
+        "claim_id": "C027",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Identifying recurrence is the direct purpose of one comparison operation.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input proposes cross-case reduction comparisons to identify recurring delays.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes comparing cases for recurrence without asserting that recurrence has been found.",
+        "assertion_mode": null,
+        "assertion_rationale": "The comparison proposal is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C028",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Counting affected applicants is the direct purpose of one comparison operation.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies reduction comparisons as a method for counting affected applicants.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes a comparison to identify counts within the represented cases.",
+        "assertion_mode": null,
+        "assertion_rationale": "The counting-oriented comparison is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C029",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The allocation alternatives and sequence qualify one testing proposal.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target supplies the allocation decision need, but neither input supplies these separate allocation tests.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes testing feasible evening-slot allocations.",
+        "assertion_mode": null,
+        "assertion_rationale": "The allocation-testing proposal is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C030",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one evidence-dependent eligibility condition for an allocation option.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies coordination-blocking evidence as the condition for testing this allocation.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Governs when intake coordination enters allocation testing.",
+        "assertion_mode": null,
+        "assertion_rationale": "The eligibility condition is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ]
+      },
+      {
+        "claim_id": "C031",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Joint and individual tests constitute one comparative test design.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input prescribes testing the two slots jointly and individually.",
+        "epistemic_function": "OPERATION",
+        "function_rationale": "Proposes individual and combined allocation tests.",
+        "assertion_mode": null,
+        "assertion_rationale": "The test design is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C032",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The three capacities jointly specify one feasibility constraint.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target mentions shared volunteers and maintenance, but does not supply the full capacity-preservation requirement.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes capacity constraints on allocation tests.",
+        "assertion_mode": null,
+        "assertion_rationale": "The capacity-preservation rule is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C033",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Prospective confirmation qualifies the evidence used in one allocation decision rule.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target requests an allocation decision but does not supply this selection criterion.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes the evidential basis for choosing next month's allocation.",
+        "assertion_mode": null,
+        "assertion_rationale": "The decision rule is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C034",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one restriction on inferring intervention benefit.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies this specific limit from retained scheduling conditions to added-session benefits.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits the intervention conclusion supported by a retained condition.",
+        "assertion_mode": null,
+        "assertion_rationale": "The intervention-inference boundary is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P027"
+          },
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "S006"
+          }
+        ]
+      },
+      {
+        "claim_id": "C035",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Monitoring, limits and review date specify one conditional trial policy.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input prescribes a monitored allocation trial under weak evidence.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes what to do when evidence remains weak.",
+        "assertion_mode": null,
+        "assertion_rationale": "The conditional trial policy is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P028"
+          }
+        ]
+      },
+      {
+        "claim_id": "C036",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one evidential consequence of repeated replay.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies the computational-repeatability conclusion for repeated replay assumptions.",
+        "epistemic_function": "INFERENCE",
+        "function_rationale": "Claims repeated replay establishes computational repeatability.",
+        "assertion_mode": null,
+        "assertion_rationale": "The replay-specific conclusion is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ]
+      },
+      {
+        "claim_id": "C037",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one boundary between computational and real-world evidence.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source's test-relative caution does not explicitly supply this replay-versus-world distinction.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits what repeated computation establishes about real-world reproducibility.",
+        "assertion_mode": null,
+        "assertion_rationale": "The real-world evidential boundary is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          },
+          {
+            "source_id": "S006"
+          }
+        ]
+      },
+      {
+        "claim_id": "C038",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one restriction on historical evidence.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies this historical-reconstruction limitation on intervention effects.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits causal conclusions about changed arrangements from reconstruction alone.",
+        "assertion_mode": null,
+        "assertion_rationale": "The historical-evidence restriction is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P030"
+          }
+        ]
+      },
+      {
+        "claim_id": "C039",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "The listed factors jointly qualify one result-sensitivity claim.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source supplies general minimization hazards, but not this complete scheduling-specific claim about different retained subsets.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Identifies confounds and dependencies limiting stability of reduction results.",
+        "assertion_mode": null,
+        "assertion_rationale": "The scheduling-specific sensitivity claim is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          },
+          {
+            "source_id": "S005"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C040",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one limitation on reconstructive adequacy.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The target supplies the record formats, but not the conclusion that they may permit only partial reconstruction.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits the reconstruction supported by available records.",
+        "assertion_mode": null,
+        "assertion_rationale": "The adequacy limitation is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C041",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one evidential restriction on minimality conclusions.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source says unresolved outcomes can prevent strong minimization; the mapping adds this categorical justification restriction.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits minimality conclusions when relevant tests remain unresolved.",
+        "assertion_mode": null,
+        "assertion_rationale": "The explicit justification restriction is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          },
+          {
+            "source_id": "S005"
+          }
+        ]
+      },
+      {
+        "claim_id": "C042",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one restriction on queue-wide ranking.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies this selected-case limitation on identifying the queue's largest delay source.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits extrapolation from selected reductions to queue-wide importance.",
+        "assertion_mode": null,
+        "assertion_rationale": "The extrapolation limit is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          },
+          {
+            "source_id": "T001"
+          }
+        ]
+      },
+      {
+        "claim_id": "C043",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one causal-uniqueness restriction despite its unresolved population referent.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "The source limits causal uniqueness for a retained minimal configuration; the mapping extends that caution to reductions from selected applicant cases.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits causal uniqueness conclusions from selected-case reductions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The restriction at the frozen selected-case scope is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          },
+          {
+            "source_id": "S006"
+          }
+        ]
+      },
+      {
+        "claim_id": "C044",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "States one restriction on benefit guarantees.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input supplies this specific limit on guarantees from selected-case reductions.",
+        "epistemic_function": "LIMIT",
+        "function_rationale": "Limits claims of guaranteed benefit from extra sessions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The benefit-guarantee restriction is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          },
+          {
+            "source_id": "T001"
+          },
+          {
+            "source_id": "S006"
+          }
+        ]
+      },
+      {
+        "claim_id": "C045",
+        "atomicity": "ATOMIC",
+        "atomicity_rationale": "Revision and retesting form one corrective response to predictive contradiction.",
+        "content_origin": "MAPPING_GENERATED",
+        "origin_rationale": "Neither input prescribes this response to contradictory prospective outcomes.",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "function_rationale": "Prescribes corrective action if prospective results contradict predictions.",
+        "assertion_mode": null,
+        "assertion_rationale": "The corrective rule is generated.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ]
+      }
+    ]
+  }
+}
