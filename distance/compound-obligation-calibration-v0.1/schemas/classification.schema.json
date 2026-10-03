@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "atomicity": {
+      "type": "string",
+      "enum": [
+        "ATOMIC",
+        "SPLIT_REQUIRED"
+      ]
+    },
+    "content_origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assignment_status": {
+          "type": "string",
+          "enum": [
+            "ASSIGNED",
+            "ORIGIN_UNCERTAIN"
+          ]
+        },
+        "kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "TARGET_SUPPLIED",
+            "SOURCE_SUPPLIED",
+            "BOTH_SUPPLIED",
+            "MAPPING_GENERATED",
+            null
+          ]
+        },
+        "origin_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_type": {
+                "type": "string",
+                "enum": [
+                  "TARGET",
+                  "SOURCE_INSTRUMENT"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source_type",
+              "source_id"
+            ]
+          }
+        },
+        "competing_origins": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "TARGET_SUPPLIED",
+              "SOURCE_SUPPLIED",
+              "BOTH_SUPPLIED",
+              "MAPPING_GENERATED"
+            ]
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "assignment_status",
+        "kind",
+        "origin_refs",
+        "competing_origins",
+        "rationale"
+      ]
+    },
+    "epistemic_function": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assignment_status": {
+          "type": "string",
+          "enum": [
+            "ASSIGNED",
+            "FUNCTION_UNCERTAIN"
+          ]
+        },
+        "kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "FACT",
+            "INFERENCE",
+            "CONDITIONAL_RELATION",
+            "OPERATION",
+            "GOVERNANCE_RULE",
+            "LIMIT",
+            null
+          ]
+        },
+        "competing_functions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "FACT",
+              "INFERENCE",
+              "CONDITIONAL_RELATION",
+              "OPERATION",
+              "GOVERNANCE_RULE",
+              "LIMIT"
+            ]
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "assignment_status",
+        "kind",
+        "competing_functions",
+        "rationale"
+      ]
+    }
+  },
+  "required": [
+    "claim_id",
+    "atomicity",
+    "content_origin",
+    "epistemic_function"
+  ]
+}

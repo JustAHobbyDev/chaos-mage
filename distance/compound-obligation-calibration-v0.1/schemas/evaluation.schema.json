@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "obligation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract": {
+      "type": "string",
+      "enum": [
+        "TARGET_FIDELITY",
+        "SOURCE_FIDELITY",
+        "DERIVED_WARRANT",
+        "CONDITIONAL_LICENSE",
+        "OPERATION_LICENSE",
+        "GOVERNANCE_COHERENCE",
+        "LIMIT_WARRANT",
+        "FACT_WARRANT"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "SATISFIED",
+        "CONDITIONAL",
+        "VIOLATED",
+        "UNCERTAIN"
+      ]
+    },
+    "provenance_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "SUPPORT",
+              "CONTEXT"
+            ]
+          }
+        },
+        "required": [
+          "source_id",
+          "role"
+        ]
+      }
+    },
+    "unresolved_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "claim_id",
+    "obligation_id",
+    "contract",
+    "subject",
+    "verdict",
+    "provenance_refs",
+    "unresolved_conditions",
+    "rationale"
+  ]
+}

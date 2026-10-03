@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_obligation_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "classification": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "content_origin": {
+              "type": "string",
+              "enum": [
+                "TARGET_SUPPLIED",
+                "SOURCE_SUPPLIED",
+                "BOTH_SUPPLIED",
+                "MAPPING_GENERATED"
+              ]
+            },
+            "epistemic_function": {
+              "type": "string",
+              "enum": [
+                "FACT",
+                "INFERENCE",
+                "CONDITIONAL_RELATION",
+                "OPERATION",
+                "GOVERNANCE_RULE",
+                "LIMIT"
+              ]
+            }
+          },
+          "required": [
+            "content_origin",
+            "epistemic_function"
+          ]
+        },
+        "base_obligations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "obligation_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "contract": {
+                "type": "string",
+                "enum": [
+                  "TARGET_FIDELITY",
+                  "SOURCE_FIDELITY",
+                  "DERIVED_WARRANT",
+                  "CONDITIONAL_LICENSE",
+                  "OPERATION_LICENSE",
+                  "GOVERNANCE_COHERENCE",
+                  "LIMIT_WARRANT",
+                  "FACT_WARRANT"
+                ]
+              },
+              "subject": {
+                "type": "string",
+                "enum": [
+                  "WHOLE_CLAIM"
+                ]
+              }
+            },
+            "required": [
+              "obligation_id",
+              "contract",
+              "subject"
+            ]
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "dependency_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "trigger": {
+                "type": "string",
+                "enum": [
+                  "EMBEDDED_FACT",
+                  "EMBEDDED_INFERENCE",
+                  "EMBEDDED_CONDITIONAL_RELATION",
+                  "EMBEDDED_OPERATION",
+                  "EMBEDDED_GOVERNANCE_RULE",
+                  "EMBEDDED_LIMIT"
+                ]
+              },
+              "resolution": {
+                "type": "string",
+                "enum": [
+                  "CLAIM_REF",
+                  "INLINE_OBLIGATION"
+                ]
+              },
+              "claim_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "inline_obligation": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "contract": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "TARGET_FIDELITY",
+                      "SOURCE_FIDELITY",
+                      "DERIVED_WARRANT",
+                      "CONDITIONAL_LICENSE",
+                      "OPERATION_LICENSE",
+                      "GOVERNANCE_COHERENCE",
+                      "LIMIT_WARRANT",
+                      "FACT_WARRANT",
+                      null
+                    ]
+                  },
+                  "subject": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "provenance_refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "source_id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "SUPPORT",
+                            "CONTEXT"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "role"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "contract",
+                  "subject",
+                  "provenance_refs"
+                ]
+              },
+              "materiality": {
+                "type": "string",
+                "enum": [
+                  "REQUIRED"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "dependency_id",
+              "trigger",
+              "resolution",
+              "claim_ref",
+              "inline_obligation",
+              "materiality",
+              "rationale"
+            ]
+          }
+        },
+        "closure_status": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "DEPENDENCY_UNCERTAIN",
+            "SPLIT_REQUIRED"
+          ]
+        },
+        "unresolved_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "claim_id",
+        "classification",
+        "base_obligations",
+        "dependencies",
+        "closure_status",
+        "unresolved_dependencies"
+      ]
+    },
+    "embedded_classifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dependency_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "epistemic_function": {
+            "type": "string",
+            "enum": [
+              "FACT",
+              "INFERENCE",
+              "CONDITIONAL_RELATION",
+              "OPERATION",
+              "GOVERNANCE_RULE",
+              "LIMIT"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "dependency_id",
+          "subject",
+          "epistemic_function",
+          "rationale"
+        ]
+      }
+    }
+  },
+  "required": [
+    "claim_obligation_set",
+    "embedded_classifications"
+  ]
+}
