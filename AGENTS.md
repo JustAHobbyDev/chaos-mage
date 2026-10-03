@@ -45,3 +45,16 @@ does not waive the separate budget gate.
   adapter that includes this gate and retains the original scientific checks.
 
 Offline preparation, forecasts, tests and reviews do not require spending approval.
+
+# Evaluator-work stop rule
+
+Follow [the evaluator-work stop rule](docs/EVALUATOR-STOP-RULE.md) before any new
+evaluator, warrant, provenance, citation, classification, or admission calibration.
+Every future evaluator-related experimental protocol must include the policy's
+`## Evaluator-work gate` section, with concrete **Observed decision failure**,
+**Admission consequence**, **Minimum intervention**, **Scientific success evidence**,
+and **Stop condition** answers. If these cannot be filled concretely, do not start
+the evaluator experiment. Apply the policy's natural-output return gate once the
+specific defect is adequately resolved; representation/interface cleanup alone
+does not justify further calibration. This policy does not authorize model calls,
+waive budget/usage gates, or reopen frozen experiments.
