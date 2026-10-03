@@ -1,0 +1,25 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "source_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "role": {
+        "type": "string",
+        "enum": [
+          "SUPPORT",
+          "CONTEXT"
+        ]
+      }
+    },
+    "required": [
+      "source_id",
+      "role"
+    ]
+  },
+  "description": "Reference order is semantically irrelevant. Each source_id occurs once. Roles are scientifically material and may never be ignored."
+}

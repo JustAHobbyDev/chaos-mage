@@ -1,0 +1,7 @@
+# Frozen operator audit guidance
+
+Audit every original judgment without altering its verdict or reasoning. For GOVERNANCE_STRUCTURE quote evidence of prohibited scientific/empirical reasoning and flag GOVERNANCE_BOUNDARY_LEAK even if its verdict happens to match the hypothesis. Structural indeterminacy and a nonterminating policy are legitimate structure grounds. Do not reinterpret a leaking VIOLATED as SATISFIED.
+
+For each dependency inspect origin evidence, function, assertion mode, materiality, resolution, unchanged scope/strength for GROUNDING_REF, existing-claim reuse, and exact obligation provenance. Audit supplied-premise overtrigger and grounding misclassification separately. Match expected dependencies semantically with explicit evidence; permit N5/N6 FACT or INFERENCE where justified and N4/N6 extra material operation evaluations. Preserve uncertain/excluded cases. Report all original diagnostics plus the four corrections. Counts mean affected claims and additionally retain event counts.
+
+Confirm all planned obligations have one observation; N8 must have both secondaries even if the first fails. Confirm failure propagation, P3 C1 once, P2 grounding and only governance, U1 unresolved. Verify manifest hashes and full historical preservation. Report exact N1–N6 decompositions as the primary outcome. Review all 14 research questions from the handoff, including SOURCE_SUPPLIED + LIMIT representability. No recommendation execution.
