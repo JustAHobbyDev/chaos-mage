@@ -1,0 +1,186 @@
+Discover direct evaluation obligations using only this frozen packet and rules.
+Return only the supplied JSON schema. No tools, external evidence, expected answers,
+validity judgments or edits to frozen classifications. Do not assume that supplied
+mapping assertions are established observations.
+
+Enumerate base obligations from the origin/function routing. Examine distinct,
+material embedded content and existing frozen claims. Record each embedded subject's
+function and rationale in embedded_classifications before selecting its contract.
+Never select a contract because it is easier to satisfy. The primary function remains
+unchanged. dependency IDs and obligation IDs must be unique within the claim and
+match [A-Za-z0-9_-]+; do not use path separators. Use short local IDs B1, D1, etc.
+For CLAIM_REF, put null contract/subject and empty provenance_refs in inline_obligation.
+For inline obligations, claim_ref is null. Use existing claim IDs exactly.
+For unresolved material content, explain it in unresolved_dependencies and set
+DEPENDENCY_UNCERTAIN rather than inventing a subject or silently dropping it.
+Do not create nested obligations. If a secondary itself requires another materially
+distinct obligation, set SPLIT_REQUIRED. Direct peer obligations are not nesting.
+Supply no expected verdict. Keep the same claim_id and frozen classification.
+
+# Compound obligations v0.1
+
+Each claim retains exactly one primary function. A direct secondary obligation is
+required when DISTINCT substantive embedded content is MATERIAL to accepting that
+claim and UNEVALUATED as a separate frozen claim. If any condition is absent, do not
+add an inline secondary judgment. Existing claims take precedence through CLAIM_REF.
+
+Materiality test: if the embedded content were false, unjustified or removed while
+everything else remained, could the primary claim still be accepted at essentially
+the same meaning and scope? If yes, no secondary obligation; if no, required.
+
+Discovery records embedded subject function/rationale in embedded_classifications,
+keyed by dependency_id, before routing. This companion artifact leaves the supplied
+claim_obligation_set schema intact. The trigger must match that frozen function;
+FACT routes to FACT_WARRANT, INFERENCE to DERIVED_WARRANT, and so forth. Existing
+claim references reuse the separately frozen claim classification and overall result.
+Unresolvable referents/contracts go in unresolved_dependencies, closure
+DEPENDENCY_UNCERTAIN, never guessed subjects or silent omission.
+
+Governance prescribing substantive diagnosis, observation, comparison, experiment,
+intervention, transformation or target modification requires OPERATION_LICENSE
+unless separately evaluated. Ordinary stop, pause, continue and rollback to the
+prior safe state do not alone trigger it. An embedded empirical bridge also needs
+its own warrant; governance cannot shield it. Pure prospective normative thresholds
+have no empirical obligation merely because they contain numbers. An empirical harm
+onset assertion does. Operation discrimination logic requires CONDITIONAL_LICENSE.
+Generated limits can require factual, inferential or scope-premise obligations.
+
+One level only: primary claim -> base and direct obligations -> stop. A secondary
+requiring another materially distinct obligation sets SPLIT_REQUIRED. Claim refs
+form a DAG: reject DEPENDENCY_CYCLE, without inferring a resolution order. Acyclic
+references reuse frozen claim results; no recursive model discovery is launched.
+
+All required obligations are evaluated despite scientific failures. Aggregate
+VIOLATED > UNCERTAIN > CONDITIONAL > SATISFIED. DEPENDENCY_UNCERTAIN adds a mechanical
+UNCERTAIN closure constraint (not a provider judgment), dominated by VIOLATED.
+SPLIT_REQUIRED is excluded, with no scientific overall verdict. Referenced excluded
+or unmeasured claims prevent complete acceptance. Missing provider observations
+keep measurement incomplete; do not manufacture UNCERTAIN provider responses.
+
+{
+  "functions": {
+    "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+    "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+    "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+    "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+    "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+    "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+  },
+  "supplied_routing": {
+    "TARGET_SUPPLIED": [
+      "TARGET_FIDELITY"
+    ],
+    "SOURCE_SUPPLIED": [
+      "SOURCE_FIDELITY"
+    ],
+    "BOTH_SUPPLIED": [
+      "TARGET_FIDELITY",
+      "SOURCE_FIDELITY"
+    ]
+  },
+  "generated_routing": {
+    "FACT": "FACT_WARRANT",
+    "INFERENCE": "DERIVED_WARRANT",
+    "CONDITIONAL_RELATION": "CONDITIONAL_LICENSE",
+    "OPERATION": "OPERATION_LICENSE",
+    "GOVERNANCE_RULE": "GOVERNANCE_COHERENCE",
+    "LIMIT": "LIMIT_WARRANT"
+  },
+  "contracts": {
+    "TARGET_FIDELITY": "Is this proposition explicitly supplied by the frozen target/problem material, or a faithful non-expansive restatement of it at the same scope and certainty?",
+    "SOURCE_FIDELITY": "Is this proposition explicitly contained in, or a faithful non-expansive restatement of, the frozen source instrument and its stated mechanism, conditions, or limits?",
+    "DERIVED_WARRANT": "Given the cited premises, observations, and transferred mechanism, does the claimed target conclusion follow at the strength and scope stated?",
+    "CONDITIONAL_LICENSE": "Under the stated conditions, does the transferred mechanism license the claimed relation between each hypothetical outcome and its stated evidential or operational consequence, without assuming that the outcome has actually occurred?",
+    "OPERATION_LICENSE": "Does this proposed observation, intervention, comparison, or transformation faithfully instantiate the transferred mechanism at the target, under the stated applicability conditions, and does it produce information or action relevant to the target problem?",
+    "GOVERNANCE_COHERENCE": "Is this proposition genuinely presented as a prospective decision, safety, stopping, rollback, threshold, or policy rule; are its trigger and prescribed action coherent; and does it avoid falsely presenting an authored normative choice as an empirically established fact?",
+    "LIMIT_WARRANT": "Does the cited mechanism, evidence, or target structure justify the stated limitation, ambiguity, confound, scope restriction, or failure condition at the strength stated?",
+    "FACT_WARRANT": "Is this mapping-generated descriptive assertion supported by the cited observations or premises at the scope and certainty stated, without importing an unstated substantive inference?"
+  }
+}
+FROZEN PACKET
+{
+  "claim": {
+    "claim_id": "K04-C1",
+    "value": "If attachment loss persists, repair the scanner because persistent loss indicates scanner failure.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K04-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K04-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K04-T",
+    "text": "Attachments continue to disappear after ingestion. Observed loss is equally compatible with scanner omission, transfer truncation and downstream storage deletion. Current records do not distinguish these causes. Scanner repair is an available authorized component intervention, with a documented restoration procedure."
+  },
+  "source_instrument": {
+    "source_id": "K04-S",
+    "text": "Use component-local evidence to attribute an end-to-end loss. Persistence alone cannot distinguish components. The documented scanner restoration faithfully repairs a confirmed scanner failure; its physical procedure is applicable here, but choosing that component requires localization."
+  },
+  "mapping": {
+    "source_id": "K04-M",
+    "text": "The proposed prospective rule relies on the embedded causal inference that persistent loss indicates scanner failure. No scanner-local failure observation is available."
+  },
+  "classification": {
+    "claim_id": "K04-C1",
+    "atomicity": "ATOMIC",
+    "content_origin": {
+      "assignment_status": "ASSIGNED",
+      "kind": "MAPPING_GENERATED",
+      "origin_refs": [],
+      "competing_origins": [],
+      "rationale": "Neither input supplies the rule to repair the scanner upon persistent loss or its stated attribution. The mapping introduces this proposition."
+    },
+    "epistemic_function": {
+      "assignment_status": "ASSIGNED",
+      "kind": "GOVERNANCE_RULE",
+      "competing_functions": [],
+      "rationale": "The primary assertion prescribes a prospective action if loss persists. The scanner-failure attribution is its subordinate reason, not an independent co-primary assertion."
+    }
+  },
+  "frozen_claim_inventory": [
+    {
+      "claim": {
+        "claim_id": "K04-C1",
+        "value": "If attachment loss persists, repair the scanner because persistent loss indicates scanner failure.",
+        "scope": "Frozen case conditions",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "K04-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K04-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "K04-C1",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "Neither input supplies the rule to repair the scanner upon persistent loss or its stated attribution. The mapping introduces this proposition."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "GOVERNANCE_RULE",
+          "competing_functions": [],
+          "rationale": "The primary assertion prescribes a prospective action if loss persists. The scanner-failure attribution is its subordinate reason, not an independent co-primary assertion."
+        }
+      }
+    }
+  ]
+}

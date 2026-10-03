@@ -1,0 +1,122 @@
+{
+  "claim": {
+    "claim_id": "K09-C2",
+    "value": "Stop the trial when T is exceeded.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K09-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K09-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K09-T",
+    "text": "The trial uses a reliable workload meter. T is fixed at 100 requests per minute. Controlled paired runs, holding software and traffic mix fixed, recorded 1 error per 1000 requests below T and 120 errors per 1000 above T across each of ten replications. Stopping is safe."
+  },
+  "source_instrument": {
+    "source_id": "K09-S",
+    "text": "Comparable repeated error counts can support a bounded conclusion of sharply increased error incidence across the tested threshold. A prospective policy can use that supported conclusion as its explicit reason for a stop trigger."
+  },
+  "mapping": {
+    "source_id": "K09-M",
+    "text": "C1 interprets the supplied controlled observations. C2 is authored specifically because of C1: the threshold choice materially relies on its error-incidence conclusion. If that conclusion were removed, this mapping supplies no independent normative reason for selecting T. C2 must retain its explicit reference to C1; neither claim has been evaluated yet."
+  },
+  "classification": {
+    "claim_id": "K09-C2",
+    "atomicity": "ATOMIC",
+    "content_origin": {
+      "assignment_status": "ASSIGNED",
+      "kind": "MAPPING_GENERATED",
+      "origin_refs": [],
+      "competing_origins": [],
+      "rationale": "The mapping introduces the specific stop trigger at T. The target supplies observations and stopping safety; the source supplies a general policy possibility. Neither supplies this specific prescription."
+    },
+    "epistemic_function": {
+      "assignment_status": "ASSIGNED",
+      "kind": "GOVERNANCE_RULE",
+      "competing_functions": [],
+      "rationale": "The claim prescribes a prospective stopping action when T is exceeded. Its reliance on C1 supplies a reason without changing its primary function."
+    }
+  },
+  "frozen_claim_inventory": [
+    {
+      "claim": {
+        "claim_id": "K09-C1",
+        "value": "Above T, error incidence rises sharply.",
+        "scope": "Controlled trial conditions and tested workload range",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "K09-T",
+              "role": "SUPPORT"
+            },
+            {
+              "source_id": "K09-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "K09-C1",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "The target supplies observed counts and the source supplies a general interpretive relation. The mapping introduces the sharply increased incidence conclusion by combining them; neither input explicitly supplies that conclusion at the claim's scope."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "INFERENCE",
+          "competing_functions": [],
+          "rationale": "The mapping explicitly frames C1 as interpreting the controlled observations to establish an error-incidence conclusion. It asserts that conclusion, rather than describing what a hypothetical outcome would imply."
+        }
+      }
+    },
+    {
+      "claim": {
+        "claim_id": "K09-C2",
+        "value": "Stop the trial when T is exceeded.",
+        "scope": "Frozen case conditions",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "K09-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K09-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "K09-C2",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "The mapping introduces the specific stop trigger at T. The target supplies observations and stopping safety; the source supplies a general policy possibility. Neither supplies this specific prescription."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "GOVERNANCE_RULE",
+          "competing_functions": [],
+          "rationale": "The claim prescribes a prospective stopping action when T is exceeded. Its reliance on C1 supplies a reason without changing its primary function."
+        }
+      }
+    }
+  ]
+}

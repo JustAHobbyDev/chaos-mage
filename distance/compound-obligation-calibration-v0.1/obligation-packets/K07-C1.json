@@ -1,0 +1,86 @@
+{
+  "claim": {
+    "claim_id": "K07-C1",
+    "value": "If H1 and H2 remain unresolved, measure R next; R1 favors H1 and R2 favors H2.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K07-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K07-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K07-T",
+    "text": "The unresolved export fault is either encoder omission (H1) or transport loss (H2), with equal prior odds. R is a calibrated per-request encoder-output trace compared with the final received inventory under fixed workload. R1 means the missing item never appears in that trace; R2 means it appears there but not in the final inventory. Trace completeness has been independently verified."
+  },
+  "source_instrument": {
+    "source_id": "K07-S",
+    "text": "For this calibrated trace under fixed workload, P(R1|H1)=0.9 and P(R1|H2)=0.1; P(R2|H1)=0.1 and P(R2|H2)=0.9. Record one next trace using the verified logger without altering either path. These likelihoods license directional updating, not certainty."
+  },
+  "mapping": {
+    "source_id": "K07-M",
+    "text": "The team proposes a single next measurement and gives its subordinate anticipated discrimination logic. No R outcome has yet been observed."
+  },
+  "classification": {
+    "claim_id": "K07-C1",
+    "atomicity": "ATOMIC",
+    "content_origin": {
+      "assignment_status": "ASSIGNED",
+      "kind": "MAPPING_GENERATED",
+      "origin_refs": [],
+      "competing_origins": [],
+      "rationale": "The mapping combines the target's unresolved hypotheses with the source's measurement instruction and likelihoods into a conditional next-step rule with anticipated discrimination logic. Neither input independently supplies that proposition."
+    },
+    "epistemic_function": {
+      "assignment_status": "ASSIGNED",
+      "kind": "GOVERNANCE_RULE",
+      "competing_functions": [],
+      "rationale": "The primary assertion prescribes what to do if the hypotheses remain unresolved: measure R next. The anticipated R1/R2 implications are subordinate discrimination logic; no outcome is asserted to have occurred."
+    }
+  },
+  "frozen_claim_inventory": [
+    {
+      "claim": {
+        "claim_id": "K07-C1",
+        "value": "If H1 and H2 remain unresolved, measure R next; R1 favors H1 and R2 favors H2.",
+        "scope": "Frozen case conditions",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "K07-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K07-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "K07-C1",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "The mapping combines the target's unresolved hypotheses with the source's measurement instruction and likelihoods into a conditional next-step rule with anticipated discrimination logic. Neither input independently supplies that proposition."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "GOVERNANCE_RULE",
+          "competing_functions": [],
+          "rationale": "The primary assertion prescribes what to do if the hypotheses remain unresolved: measure R next. The anticipated R1/R2 implications are subordinate discrimination logic; no outcome is asserted to have occurred."
+        }
+      }
+    }
+  ]
+}
