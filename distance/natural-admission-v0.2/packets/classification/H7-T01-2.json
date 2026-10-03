@@ -1,0 +1,1559 @@
+{
+  "packet_id": "H7-T01-2",
+  "target_frame": {
+    "target_id": "T01",
+    "domain": "technical / operational",
+    "title": "Intermittent cold-room delivery gaps",
+    "problem": "A regional food distributor finds that some refrigerated deliveries arrive above its internal receiving temperature range, although the loading records show acceptable temperatures. The operations manager must decide what to investigate next and which temporary handling changes are justified before the next fortnight of deliveries.",
+    "known_context": [
+      "There are three loading bays, two contracted carriers and routes lasting between forty minutes and four hours.",
+      "Drivers record departure and arrival times; receiving staff take a single temperature reading from one package per delivery.",
+      "Loading-bay logs record room temperature every fifteen minutes, but packages are not individually tracked between staging and loading.",
+      "The recent exceptions occur on both short and long routes. Receiving methods differ between customer sites.",
+      "A small pool of reusable temperature loggers is available, but the team cannot instrument every package or cancel routine deliveries."
+    ],
+    "uncertainty": "The manager does not know whether the exceptions mainly arise before loading, in transit, during receiving, or from differences in measurement. Multiple contributors may be present.",
+    "decision_need": "Identify a feasible investigation and defensible interim action without claiming that the existing endpoint records locate the cause.",
+    "constraints": [
+      "Normal food-handling requirements remain in force.",
+      "Staff can add limited observations for two weeks; there is no budget for fleet replacement."
+    ]
+  },
+  "source_instrument": {
+    "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+    "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+    "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+    "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+    "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+  },
+  "mapping": {
+    "state": "Act on the next fortnight of deliveries, their handling histories and temperature measurements. Retain competing explanations: warming during staging or loading, warming in transit, warming while awaiting receipt, differences or errors in receiving measurement, and combinations of these. Acceptable loading-room records do not establish individual package temperatures at departure, and one receiving reading does not locate when warming occurred. Assume staff can identify a small sample of packages and record additional handling times; confirm logger suitability and permitted placement before using them.",
+    "operation": "Before sampling, write down what evidence would support or weaken each explanation. Rotate the limited loggers through selected deliveries spanning all three bays, both carriers, shorter and longer routes, and different receiving methods; include deliveries without reported exceptions. Do not claim complete coverage or independently separable comparisons. Identify sampled packages and link each to its bay, carrier, route and receiving site. Check logger and receiving-device agreement under the same stable conditions, synchronize clocks, and choose a logging interval short enough to distinguish relevant handling stages within device capacity. Follow the same sampled package from refrigerated staging through loading, transit and receipt, recording staging exit, loading completion, departure, arrival and receiving-measurement times. Record logger placement, measurement method, relevant delays and accessible handling observations. Where feasible, pair the site's usual receiving reading with a promptly taken standardized reading on the same package using a suitable checked device and an approved method; record any difference in timing or measurement location. Review traces and paired readings as they become available, comparing similar deliveries and revising the competing explanations. During the investigation, reinforce required refrigeration, minimize avoidable unrefrigerated staging and receiving delays, and standardize approved receiving measurements. Record when these changes begin. Follow existing food-handling and disposition requirements immediately for any suspected breach; do not wait for the investigation. Add more targeted temporary changes only when observations support the relevant stage, and track their effect without deliberately exposing food to unsafe conditions.",
+    "signal": "Look for proposed discriminating patterns: a rise before departure supports staging/loading exposure; a rise after departure and before arrival supports transit exposure; a rise between arrival and the receiving reading supports receiving delay. These patterns require reliable stage times and a logger placement that meaningfully represents the sampled package's thermal conditions. Repeated disagreement between usual and standardized readings, especially when associated with method or device, supports measurement differences. Agreement between readings weakens that explanation for those observations. Multiple rises or a rise combined with measurement disagreement support multiple contributors. Bay room-temperature records, route duration alone, missing stage boundaries, or a logger measuring air while staff measure product may fail to distinguish explanations. Compare both exception and non-exception deliveries and actively seek observations inconsistent with the current leading explanation.",
+    "inference": "Use the emerging patterns to prioritize the next investigation and proportionate handling changes, rather than declare a single cause. Repeated predeparture warming would justify concentrating observations on staging dwell and loading practices; transit warming would justify checking the implicated carrier's refrigeration operation and handling events; receiving-stage warming would justify prompt refrigerated receipt; reproducible measurement disagreement would justify device checks and method harmonization. Treat these as conditional follow-ups, not established findings. Lower an explanation's priority only when the observations could reasonably have detected its predicted pattern. At the fortnight's end, summarize supported, weakened and unresolved explanations, sampling gaps and interim actions. End the added two-week observation effort unless further work is authorized; if evidence remains inconclusive, propose a focused follow-up aimed at the unresolved distinction and retain required protective handling.",
+    "limit": "This procedure can narrow plausible contributors but cannot guarantee a unique cause or demonstrate that every delivery meets requirements. A small, nonrandom sample may miss intermittent events and cannot establish their prevalence. Multiple readings from one package or trip are correlated, and bay, carrier, route and customer differences may be confounded. Logger placement, response lag, calibration uncertainty, clock error and single-package sampling limit detection and attribution; environmental temperature is not automatically product temperature. Paired methods may disagree because they measure different locations or at different times. Interim handling changes also alter the conditions being investigated, so improved outcomes alone do not prove causation. Retain alternatives absent a sensitive, relevant test, consider how frequently each condition occurs among sampled deliveries, and reopen the hypothesis set when observations fit none of the candidates. Stop or modify any added measurement procedure that compromises food handling or routine operations."
+  },
+  "allowed_source_ids": [
+    "T001",
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035",
+    "P036",
+    "P037",
+    "P038"
+  ],
+  "claims": {
+    "packet_id": "H7-T01-2",
+    "claims": [
+      {
+        "claim_id": "C001",
+        "fields": [
+          "state"
+        ],
+        "proposition": "The investigation should retain competing explanations involving staging or loading warming, transit warming, warming while awaiting receipt, receiving-measurement differences or errors, and combinations of these.",
+        "scope": "Candidate explanations for the delivery exceptions; none is asserted to be established.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          }
+        ],
+        "ambiguity": "The candidates are not stated to be exhaustive; staging and loading are grouped."
+      },
+      {
+        "claim_id": "C002",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Acceptable loading-room temperature records do not establish individual package temperatures at departure.",
+        "scope": "The evidential reach of room-temperature records.",
+        "evidence_used": [
+          {
+            "source_id": "P003"
+          }
+        ],
+        "ambiguity": ""
+      },
+      {
+        "claim_id": "C003",
+        "fields": [
+          "state"
+        ],
+        "proposition": "A single receiving temperature reading does not locate when warming occurred.",
+        "scope": "Temporal attribution from the receiving endpoint measurement.",
+        "evidence_used": [
+          {
+            "source_id": "P003"
+          }
+        ],
+        "ambiguity": "The proposition does not establish that warming actually occurred."
+      },
+      {
+        "claim_id": "C004",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Staff are assumed able to identify a small sample of packages.",
+        "scope": "A feasibility assumption of the proposed investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "Sample size and the means of identification are unspecified."
+      },
+      {
+        "claim_id": "C005",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Staff are assumed able to record additional handling times.",
+        "scope": "A feasibility assumption of the proposed investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "The achievable completeness and accuracy of those records are unspecified."
+      },
+      {
+        "claim_id": "C006",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Logger suitability must be confirmed before the loggers are used.",
+        "scope": "A prerequisite for the proposed instrumentation.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "Suitability criteria are not specified."
+      },
+      {
+        "claim_id": "C007",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Permitted logger placement must be confirmed before use.",
+        "scope": "A placement constraint on the proposed instrumentation.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "The applicable placement permissions are not specified."
+      },
+      {
+        "claim_id": "C008",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Evidence that would support or weaken each competing explanation should be specified before sampling.",
+        "scope": "The proposed prospective comparison of explanations.",
+        "evidence_used": [
+          {
+            "source_id": "P005"
+          }
+        ],
+        "ambiguity": "The actual support and weakening criteria remain unspecified."
+      },
+      {
+        "claim_id": "C009",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The limited loggers should be rotated through selected deliveries spanning all three bays, both carriers, shorter and longer routes, and different receiving methods.",
+        "scope": "The proposed allocation of limited instrumentation across delivery conditions.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "Allocation, sample size, route-length thresholds and coverage of combinations are unspecified."
+      },
+      {
+        "claim_id": "C010",
+        "fields": [
+          "operation",
+          "signal"
+        ],
+        "proposition": "The investigation should include and compare deliveries with and without reported exceptions.",
+        "scope": "Sampling and comparison of delivery observations.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          },
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how exception status is verified."
+      },
+      {
+        "claim_id": "C011",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The proposed sampling does not warrant a claim of complete coverage.",
+        "scope": "The coverage bound on selected logger-instrumented deliveries.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "Complete coverage could refer to deliveries, conditions or their combinations."
+      },
+      {
+        "claim_id": "C012",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The proposed comparisons must not be claimed to be independently separable.",
+        "scope": "Interpretation of comparisons within the sampling design.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "The particular comparisons and the precise meaning of independent separability are not specified."
+      },
+      {
+        "claim_id": "C013",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The proposed stage investigation should follow the same identified sampled package from refrigerated staging through loading, transit and receipt, linking it to its bay, carrier, route and receiving site.",
+        "scope": "Continuity and linkage of the observational unit across handling stages.",
+        "evidence_used": [
+          {
+            "source_id": "P008"
+          },
+          {
+            "source_id": "P010"
+          }
+        ],
+        "ambiguity": "The mechanism for maintaining package identity is unspecified."
+      },
+      {
+        "claim_id": "C014",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Logger and receiving-device agreement should be checked under the same stable conditions.",
+        "scope": "The proposed device-comparison procedure.",
+        "evidence_used": [
+          {
+            "source_id": "P009"
+          }
+        ],
+        "ambiguity": "Stable conditions and acceptable agreement are not quantified."
+      },
+      {
+        "claim_id": "C015",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The logging interval should be short enough to distinguish relevant handling stages while remaining within device capacity.",
+        "scope": "Temporal resolution of the proposed logger observations.",
+        "evidence_used": [
+          {
+            "source_id": "P009"
+          }
+        ],
+        "ambiguity": "The required interval, relevant stage durations and device capacity are unspecified."
+      },
+      {
+        "claim_id": "C016",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Where feasible, the site's usual receiving reading should be paired with a promptly taken standardized reading on the same package, using a suitable checked device and an approved method.",
+        "scope": "The proposed comparison of receiving measurements.",
+        "evidence_used": [
+          {
+            "source_id": "P012"
+          }
+        ],
+        "ambiguity": "Feasibility, promptness, the standardized method and device-check criteria are unspecified."
+      },
+      {
+        "claim_id": "C017",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Traces and paired readings should be reviewed as they become available, comparing similar deliveries and revising the competing explanations.",
+        "scope": "Iterative interpretation during the investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          }
+        ],
+        "ambiguity": "Similarity criteria and the rules for revision are unspecified."
+      },
+      {
+        "claim_id": "C018",
+        "fields": [
+          "operation",
+          "inference"
+        ],
+        "proposition": "Required refrigeration and protective handling should be maintained during the investigation and retained if evidence remains inconclusive.",
+        "scope": "Protective handling during the investigation and after an inconclusive outcome.",
+        "evidence_used": [
+          {
+            "source_id": "P014"
+          },
+          {
+            "source_id": "P030"
+          }
+        ],
+        "ambiguity": "The existing protective requirements are not enumerated."
+      },
+      {
+        "claim_id": "C019",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Avoidable unrefrigerated staging and receiving delays should be minimized during the investigation.",
+        "scope": "An interim handling action proposed before attribution is resolved.",
+        "evidence_used": [
+          {
+            "source_id": "P014"
+          }
+        ],
+        "ambiguity": "Avoidability and acceptable delay durations are unspecified."
+      },
+      {
+        "claim_id": "C020",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Approved receiving measurements should be standardized during the investigation.",
+        "scope": "An interim measurement action.",
+        "evidence_used": [
+          {
+            "source_id": "P014"
+          }
+        ],
+        "ambiguity": "The standardization procedure is unspecified."
+      },
+      {
+        "claim_id": "C021",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Any suspected breach requires immediate application of existing food-handling and disposition requirements without waiting for the investigation.",
+        "scope": "The response to a suspected breach.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          }
+        ],
+        "ambiguity": "The threshold for suspicion and the applicable disposition requirements are not specified."
+      },
+      {
+        "claim_id": "C022",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Additional targeted temporary changes should be introduced only when observations support the relevant handling stage.",
+        "scope": "An evidential condition on adding stage-targeted interim interventions.",
+        "evidence_used": [
+          {
+            "source_id": "P017"
+          }
+        ],
+        "ambiguity": "The required strength of stage support is unspecified."
+      },
+      {
+        "claim_id": "C023",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The effects of additional targeted temporary changes should be tracked.",
+        "scope": "Observation of interventions introduced during the investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P017"
+          }
+        ],
+        "ambiguity": "Effect measures and comparison procedures are unspecified."
+      },
+      {
+        "claim_id": "C024",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Tracking targeted temporary changes must not deliberately expose food to unsafe conditions.",
+        "scope": "A safety bound on intervention and effect tracking.",
+        "evidence_used": [
+          {
+            "source_id": "P017"
+          }
+        ],
+        "ambiguity": ""
+      },
+      {
+        "claim_id": "C025",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A temperature rise before departure supports staging or loading exposure, provided stage times are reliable and logger placement meaningfully represents the sampled package's thermal conditions.",
+        "scope": "A proposed conditional discriminating pattern, not an observed finding.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          },
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "The rise threshold is unspecified; the relation does not separate staging from loading."
+      },
+      {
+        "claim_id": "C026",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A temperature rise after departure and before arrival supports transit exposure, provided stage times are reliable and logger placement meaningfully represents the sampled package's thermal conditions.",
+        "scope": "A proposed conditional discriminating pattern, not an observed finding.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          },
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "The magnitude or duration constituting a rise is unspecified."
+      },
+      {
+        "claim_id": "C027",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A temperature rise between arrival and the receiving reading supports receiving delay, provided stage times are reliable and logger placement meaningfully represents the sampled package's thermal conditions.",
+        "scope": "A proposed conditional discriminating pattern, not an observed finding.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          },
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "The rise threshold and the distinction between delay and other receiving-stage exposure are not specified."
+      },
+      {
+        "claim_id": "C028",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Repeated disagreement between usual and standardized receiving readings supports measurement differences, especially when disagreement is associated with method or device.",
+        "scope": "Conditional interpretation of paired readings.",
+        "evidence_used": [
+          {
+            "source_id": "P020"
+          }
+        ],
+        "ambiguity": "Repetition and disagreement thresholds are unspecified; measurement differences are not explicitly equated with measurement error."
+      },
+      {
+        "claim_id": "C029",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Agreement between usual and standardized readings weakens the measurement-difference explanation for those observations.",
+        "scope": "Only the observations for which the readings agree.",
+        "evidence_used": [
+          {
+            "source_id": "P021"
+          }
+        ],
+        "ambiguity": "The tolerance defining agreement is unspecified."
+      },
+      {
+        "claim_id": "C030",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Multiple temperature rises support multiple contributors.",
+        "scope": "A proposed pattern in the stage-trace investigation; stage interpretation remains subject to reliable timing and representative placement.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          },
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "The mapping does not specify whether the rises must occur in distinct stages or how separate contributors are distinguished."
+      },
+      {
+        "claim_id": "C031",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A temperature rise combined with measurement disagreement supports multiple contributors.",
+        "scope": "A proposed combined thermal and measurement pattern; stage interpretation remains subject to reliable timing and representative placement.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          },
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "Rise and disagreement thresholds are unspecified; the reach of 'these patterns' in P019 beyond P018 is implicit."
+      },
+      {
+        "claim_id": "C032",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Bay room-temperature records may fail to distinguish the competing explanations.",
+        "scope": "Potential non-discrimination by the room-temperature evidence.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "This is a possibility, not a claim that such records are always uninformative."
+      },
+      {
+        "claim_id": "C033",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Route duration alone may fail to distinguish the competing explanations.",
+        "scope": "Potential non-discrimination when duration is considered alone.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": ""
+      },
+      {
+        "claim_id": "C034",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Missing stage boundaries may prevent observations from distinguishing the competing explanations.",
+        "scope": "Interpretation of observations with incomplete stage timing.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "Which missing boundaries defeat a particular distinction is unspecified."
+      },
+      {
+        "claim_id": "C035",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "A logger measuring air while staff measure product may fail to distinguish the competing explanations.",
+        "scope": "Interpretation of observations measuring different thermal quantities.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "The mapping does not state that every air/product comparison is uninformative."
+      },
+      {
+        "claim_id": "C036",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "The investigation should actively seek observations inconsistent with the current leading explanation.",
+        "scope": "The proposed search for evidence against the leading candidate.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "No specific inconsistency criterion is supplied."
+      },
+      {
+        "claim_id": "C037",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Emerging patterns should be used to prioritize the next investigation.",
+        "scope": "The proposed investigatory use of accumulating evidence.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          }
+        ],
+        "ambiguity": "The prioritization rule is unspecified."
+      },
+      {
+        "claim_id": "C038",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Emerging patterns should be used to prioritize proportionate handling changes.",
+        "scope": "The proposed operational use of accumulating evidence.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          }
+        ],
+        "ambiguity": "Proportionality and prioritization criteria are unspecified."
+      },
+      {
+        "claim_id": "C039",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If repeated predeparture warming is observed, it would justify concentrating observations on staging dwell and loading practices.",
+        "scope": "A conditional follow-up, not an established finding.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          },
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "The required repetition and warming thresholds are unspecified."
+      },
+      {
+        "claim_id": "C040",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If transit warming is observed, it would justify checking the implicated carrier's refrigeration operation and handling events.",
+        "scope": "A conditional follow-up, not an established finding.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          },
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "The threshold for implicating a carrier is unspecified."
+      },
+      {
+        "claim_id": "C041",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If receiving-stage warming is observed, it would justify prompt refrigerated receipt.",
+        "scope": "A conditional handling follow-up, not an established finding.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          },
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "Promptness and the operational form of refrigerated receipt are unspecified."
+      },
+      {
+        "claim_id": "C042",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If measurement disagreement is reproducible, it would justify device checks and method harmonization.",
+        "scope": "A conditional measurement follow-up, not an established finding.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          },
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "Reproducibility and disagreement thresholds are unspecified."
+      },
+      {
+        "claim_id": "C043",
+        "fields": [
+          "inference",
+          "limit"
+        ],
+        "proposition": "An explanation's priority should be lowered only when observations could reasonably have detected its predicted pattern; alternatives should be retained absent a sensitive, relevant test.",
+        "scope": "The evidential prerequisite for adverse updating or exclusion of an explanation.",
+        "evidence_used": [
+          {
+            "source_id": "P028"
+          },
+          {
+            "source_id": "P037"
+          }
+        ],
+        "ambiguity": "The mapping leaves reasonable detectability, sensitivity and relevance unquantified; it does not make detectability alone sufficient to lower priority."
+      },
+      {
+        "claim_id": "C044",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "The added observation effort should end after two weeks unless further work is authorized.",
+        "scope": "The duration and authorization bound on added observations.",
+        "evidence_used": [
+          {
+            "source_id": "P030"
+          }
+        ],
+        "ambiguity": "The authorization process is unspecified."
+      },
+      {
+        "claim_id": "C045",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If evidence remains inconclusive, a focused follow-up aimed at the unresolved distinction should be proposed.",
+        "scope": "A conditional proposal after the fortnight; continuation still requires authorization.",
+        "evidence_used": [
+          {
+            "source_id": "P030"
+          }
+        ],
+        "ambiguity": "The unresolved distinction and follow-up design depend on the evidence obtained."
+      },
+      {
+        "claim_id": "C046",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "The procedure can narrow the set of plausible contributors.",
+        "scope": "A possible inferential benefit, not a guaranteed investigation outcome.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": ""
+      },
+      {
+        "claim_id": "C047",
+        "fields": [
+          "inference",
+          "limit"
+        ],
+        "proposition": "The procedure does not guarantee a unique cause, and emerging patterns should not be treated as establishing a single cause.",
+        "scope": "The bound on causal uniqueness claimed from the investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          },
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "This does not assert that a unique cause is impossible."
+      },
+      {
+        "claim_id": "C048",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "The procedure cannot demonstrate that every delivery meets requirements.",
+        "scope": "The bound on universal compliance conclusions.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": ""
+      },
+      {
+        "claim_id": "C049",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "A small, nonrandom sample may miss intermittent events.",
+        "scope": "Event detection under the proposed sampling limitation.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "The probability of missing events is unspecified."
+      },
+      {
+        "claim_id": "C050",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "A small, nonrandom sample cannot establish the prevalence of intermittent events.",
+        "scope": "Prevalence conclusions beyond the sampled observations.",
+        "evidence_used": [
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "The population and prevalence period are not explicitly defined."
+      },
+      {
+        "claim_id": "C051",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Multiple readings from one package or trip are correlated.",
+        "scope": "Dependence among repeated observations within a package or trip.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          }
+        ],
+        "ambiguity": "The strength and structure of the correlation are unspecified."
+      },
+      {
+        "claim_id": "C052",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Bay, carrier, route and customer differences may be confounded.",
+        "scope": "Attribution of differences observed across deliveries.",
+        "evidence_used": [
+          {
+            "source_id": "P033"
+          }
+        ],
+        "ambiguity": "No particular confounding relationship is established."
+      },
+      {
+        "claim_id": "C053",
+        "fields": [
+          "signal",
+          "limit"
+        ],
+        "proposition": "Logger placement limits detection and attribution; stage-pattern interpretation requires placement that meaningfully represents the sampled package's thermal conditions.",
+        "scope": "The representativeness constraint on logger evidence.",
+        "evidence_used": [
+          {
+            "source_id": "P019"
+          },
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "Meaningful thermal representation and suitable placement are not operationally defined."
+      },
+      {
+        "claim_id": "C054",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Logger response lag limits detection and attribution.",
+        "scope": "Interpretation of recorded thermal changes.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "Response lag and its effects are not quantified."
+      },
+      {
+        "claim_id": "C055",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Calibration uncertainty limits detection and attribution.",
+        "scope": "Interpretation of temperature measurements.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "The magnitude of calibration uncertainty is unspecified."
+      },
+      {
+        "claim_id": "C056",
+        "fields": [
+          "signal",
+          "limit"
+        ],
+        "proposition": "Clock error limits detection and attribution because stage-pattern interpretation requires reliable stage times.",
+        "scope": "Temporal alignment of thermal observations with handling stages.",
+        "evidence_used": [
+          {
+            "source_id": "P019"
+          },
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "Acceptable timing error is unspecified; reliable stage times may require more than accurate clocks."
+      },
+      {
+        "claim_id": "C057",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Single-package sampling limits detection and attribution.",
+        "scope": "Conclusions drawn from observations of an individual sampled package.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "The mapping does not quantify variation among packages or the resulting limitation."
+      },
+      {
+        "claim_id": "C058",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Environmental temperature is not automatically product temperature.",
+        "scope": "The distinction between environmental and product measurements.",
+        "evidence_used": [
+          {
+            "source_id": "P034"
+          }
+        ],
+        "ambiguity": "The proposition does not rule out correspondence under particular conditions."
+      },
+      {
+        "claim_id": "C059",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Paired methods may disagree because they measure different locations.",
+        "scope": "An alternative explanation for disagreement between paired readings.",
+        "evidence_used": [
+          {
+            "source_id": "P035"
+          }
+        ],
+        "ambiguity": "The relevant locations and the magnitude of resulting differences are unspecified."
+      },
+      {
+        "claim_id": "C060",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Paired methods may disagree because they measure at different times.",
+        "scope": "An alternative explanation for disagreement between paired readings.",
+        "evidence_used": [
+          {
+            "source_id": "P035"
+          }
+        ],
+        "ambiguity": "The relevant time differences and their effects are unspecified."
+      },
+      {
+        "claim_id": "C061",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Interim handling changes alter the conditions being investigated.",
+        "scope": "The investigation conducted while handling interventions are introduced.",
+        "evidence_used": [
+          {
+            "source_id": "P036"
+          }
+        ],
+        "ambiguity": "The extent of the alteration depends on the changes introduced."
+      },
+      {
+        "claim_id": "C062",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Improved outcomes alone do not prove causation when interim handling changes alter the conditions being investigated.",
+        "scope": "Causal interpretation of improvement during the investigation.",
+        "evidence_used": [
+          {
+            "source_id": "P036"
+          }
+        ],
+        "ambiguity": "The mapping does not specify whether causation refers to the original contributor, the intervention's effect, or both."
+      },
+      {
+        "claim_id": "C063",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Interpretation should consider how frequently each condition occurs among sampled deliveries.",
+        "scope": "Condition frequency within the sample, without establishing population prevalence.",
+        "evidence_used": [
+          {
+            "source_id": "P037"
+          }
+        ],
+        "ambiguity": "The relevant conditions and the method for incorporating their frequencies are unspecified."
+      },
+      {
+        "claim_id": "C064",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "The hypothesis set should be reopened when observations fit none of the candidates.",
+        "scope": "A conditional requirement to reconsider the generated explanations.",
+        "evidence_used": [
+          {
+            "source_id": "P037"
+          }
+        ],
+        "ambiguity": "The criterion for fitting a candidate is unspecified."
+      },
+      {
+        "claim_id": "C065",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Any added measurement procedure should be stopped or modified if it compromises food handling.",
+        "scope": "A conditional food-handling bound on added observations.",
+        "evidence_used": [
+          {
+            "source_id": "P038"
+          }
+        ],
+        "ambiguity": "The threshold for compromise and the choice between stopping and modifying are unspecified."
+      },
+      {
+        "claim_id": "C066",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Any added measurement procedure should be stopped or modified if it compromises routine operations.",
+        "scope": "A conditional operational bound on added observations.",
+        "evidence_used": [
+          {
+            "source_id": "P038"
+          }
+        ],
+        "ambiguity": "The threshold for compromise and the choice between stopping and modifying are unspecified."
+      }
+    ],
+    "coverage": [
+      {
+        "field": "state",
+        "claim_ids": [
+          "C001",
+          "C002",
+          "C003",
+          "C004",
+          "C005",
+          "C006",
+          "C007"
+        ],
+        "unrepresented_material": [],
+        "rationale": "The claims cover the candidate set, endpoint-evidence distinctions, feasibility assumptions and logger prerequisites in P002\u2013P004. P001 supplies the fortnight, deliveries, histories and measurements as task setup; it adds no separate explanatory or evidential proposition."
+      },
+      {
+        "field": "operation",
+        "claim_ids": [
+          "C008",
+          "C009",
+          "C010",
+          "C011",
+          "C012",
+          "C013",
+          "C014",
+          "C015",
+          "C016",
+          "C017",
+          "C018",
+          "C019",
+          "C020",
+          "C021",
+          "C022",
+          "C023",
+          "C024"
+        ],
+        "unrepresented_material": [],
+        "rationale": "The claims cover prospective evidence criteria, sampling and comparison design, coverage bounds, package continuity, device comparison, temporal resolution, paired measurements, iterative revision, interim actions and their evidential and safety constraints. Package labels and links in P008, clock synchronization in P009, the individual timestamp entries in P010, descriptive records in P011, timing and location records in P012, and change-start records in P015 are implementation and recording instructions. Their underlying continuity, timing, measurement-comparability and intervention limits are represented without turning each routine record into an independent claim."
+      },
+      {
+        "field": "signal",
+        "claim_ids": [
+          "C010",
+          "C025",
+          "C026",
+          "C027",
+          "C028",
+          "C029",
+          "C030",
+          "C031",
+          "C032",
+          "C033",
+          "C034",
+          "C035",
+          "C036",
+          "C053",
+          "C056"
+        ],
+        "unrepresented_material": [],
+        "rationale": "All proposed support, weakening, multiple-contributor and non-discrimination relations in P018\u2013P023 are represented. Timing and placement requirements remain attached to the stage relations and are also represented as measurement constraints. P024's comparison requirement is consolidated with P006; its search for inconsistent observations is separate. The introductory instruction to look for patterns adds no further proposition."
+      },
+      {
+        "field": "inference",
+        "claim_ids": [
+          "C018",
+          "C037",
+          "C038",
+          "C039",
+          "C040",
+          "C041",
+          "C042",
+          "C043",
+          "C044",
+          "C045",
+          "C047"
+        ],
+        "unrepresented_material": [],
+        "rationale": "The claims cover investigatory and handling priorities, each conditional follow-up, the detection prerequisite for lowering priority, the authorization and duration bound, the inconclusive-evidence response, continuing protection and the restriction on single-cause conclusions. P027's conditional qualification is preserved in every P026 follow-up. P029 specifies the end-of-fortnight report and its contents; it does not assert that any explanation has actually been supported, weakened or resolved."
+      },
+      {
+        "field": "limit",
+        "claim_ids": [
+          "C043",
+          "C046",
+          "C047",
+          "C048",
+          "C049",
+          "C050",
+          "C051",
+          "C052",
+          "C053",
+          "C054",
+          "C055",
+          "C056",
+          "C057",
+          "C058",
+          "C059",
+          "C060",
+          "C061",
+          "C062",
+          "C063",
+          "C064",
+          "C065",
+          "C066"
+        ],
+        "unrepresented_material": [],
+        "rationale": "All material inferential bounds, sampling limits, dependence and confounding distinctions, measurement limitations, alternative explanations for paired disagreement, intervention effects, causal restraint, hypothesis-revision conditions and stopping conditions in P031\u2013P038 are represented. Repeated formulations concerning sensitive tests, unique causes, placement and timing are consolidated with their other field occurrences. No additional setup remains beyond the wording of these limits."
+      }
+    ]
+  },
+  "classification_definitions": {
+    "origins": {
+      "TARGET_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by frozen target/problem material. Faithful non-expansive restatements qualify. Do not add causation, precision, scope, certainty or explanation. Requires positive target provenance.",
+      "SOURCE_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by the frozen source instrument. Requires positive source-instrument provenance.",
+      "BOTH_SUPPLIED": "The same proposition is independently supplied at materially the same scope and strength by BOTH target and source instrument. Target premise A and source mechanism B jointly supporting generated C does not qualify.",
+      "MAPPING_GENERATED": "The proposition itself was introduced by the mapping; neither input supplied it as such. It may be warranted. Default absent positive supply evidence, unless genuinely uncertain."
+    },
+    "functions": {
+      "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+      "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+      "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+      "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+      "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+      "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+    }
+  },
+  "evidence_sources": {
+    "T001": {
+      "role": "SUPPORT",
+      "kind": "target",
+      "value": {
+        "target_id": "T01",
+        "domain": "technical / operational",
+        "title": "Intermittent cold-room delivery gaps",
+        "problem": "A regional food distributor finds that some refrigerated deliveries arrive above its internal receiving temperature range, although the loading records show acceptable temperatures. The operations manager must decide what to investigate next and which temporary handling changes are justified before the next fortnight of deliveries.",
+        "known_context": [
+          "There are three loading bays, two contracted carriers and routes lasting between forty minutes and four hours.",
+          "Drivers record departure and arrival times; receiving staff take a single temperature reading from one package per delivery.",
+          "Loading-bay logs record room temperature every fifteen minutes, but packages are not individually tracked between staging and loading.",
+          "The recent exceptions occur on both short and long routes. Receiving methods differ between customer sites.",
+          "A small pool of reusable temperature loggers is available, but the team cannot instrument every package or cancel routine deliveries."
+        ],
+        "uncertainty": "The manager does not know whether the exceptions mainly arise before loading, in transit, during receiving, or from differences in measurement. Multiple contributors may be present.",
+        "decision_need": "Identify a feasible investigation and defensible interim action without claiming that the existing endpoint records locate the cause.",
+        "constraints": [
+          "Normal food-handling requirements remain in force.",
+          "Staff can add limited observations for two weeks; there is no budget for fleet replacement."
+        ]
+      }
+    },
+    "S001": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "A set of observations can plausibly be explained by more than one underlying mechanism or condition."
+    },
+    "S002": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates."
+    },
+    "S003": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations."
+    },
+    "S004": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause."
+    },
+    "S005": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias."
+    },
+    "P001": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Act on the next fortnight of deliveries, their handling histories and temperature measurements."
+    },
+    "P002": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Retain competing explanations: warming during staging or loading, warming in transit, warming while awaiting receipt, differences or errors in receiving measurement, and combinations of these."
+    },
+    "P003": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Acceptable loading-room records do not establish individual package temperatures at departure, and one receiving reading does not locate when warming occurred."
+    },
+    "P004": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Assume staff can identify a small sample of packages and record additional handling times; confirm logger suitability and permitted placement before using them."
+    },
+    "P005": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Before sampling, write down what evidence would support or weaken each explanation."
+    },
+    "P006": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Rotate the limited loggers through selected deliveries spanning all three bays, both carriers, shorter and longer routes, and different receiving methods; include deliveries without reported exceptions."
+    },
+    "P007": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Do not claim complete coverage or independently separable comparisons."
+    },
+    "P008": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Identify sampled packages and link each to its bay, carrier, route and receiving site."
+    },
+    "P009": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Check logger and receiving-device agreement under the same stable conditions, synchronize clocks, and choose a logging interval short enough to distinguish relevant handling stages within device capacity."
+    },
+    "P010": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Follow the same sampled package from refrigerated staging through loading, transit and receipt, recording staging exit, loading completion, departure, arrival and receiving-measurement times."
+    },
+    "P011": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Record logger placement, measurement method, relevant delays and accessible handling observations."
+    },
+    "P012": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "Where feasible, pair the site's usual receiving reading with a promptly taken standardized reading on the same package using a suitable checked device and an approved method; record any difference in timing or measurement location."
+    },
+    "P013": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 8,
+      "text": "Review traces and paired readings as they become available, comparing similar deliveries and revising the competing explanations."
+    },
+    "P014": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 9,
+      "text": "During the investigation, reinforce required refrigeration, minimize avoidable unrefrigerated staging and receiving delays, and standardize approved receiving measurements."
+    },
+    "P015": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 10,
+      "text": "Record when these changes begin."
+    },
+    "P016": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 11,
+      "text": "Follow existing food-handling and disposition requirements immediately for any suspected breach; do not wait for the investigation."
+    },
+    "P017": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 12,
+      "text": "Add more targeted temporary changes only when observations support the relevant stage, and track their effect without deliberately exposing food to unsafe conditions."
+    },
+    "P018": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Look for proposed discriminating patterns: a rise before departure supports staging/loading exposure; a rise after departure and before arrival supports transit exposure; a rise between arrival and the receiving reading supports receiving delay."
+    },
+    "P019": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "These patterns require reliable stage times and a logger placement that meaningfully represents the sampled package's thermal conditions."
+    },
+    "P020": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Repeated disagreement between usual and standardized readings, especially when associated with method or device, supports measurement differences."
+    },
+    "P021": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Agreement between readings weakens that explanation for those observations."
+    },
+    "P022": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Multiple rises or a rise combined with measurement disagreement support multiple contributors."
+    },
+    "P023": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Bay room-temperature records, route duration alone, missing stage boundaries, or a logger measuring air while staff measure product may fail to distinguish explanations."
+    },
+    "P024": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Compare both exception and non-exception deliveries and actively seek observations inconsistent with the current leading explanation."
+    },
+    "P025": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Use the emerging patterns to prioritize the next investigation and proportionate handling changes, rather than declare a single cause."
+    },
+    "P026": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Repeated predeparture warming would justify concentrating observations on staging dwell and loading practices; transit warming would justify checking the implicated carrier's refrigeration operation and handling events; receiving-stage warming would justify prompt refrigerated receipt; reproducible measurement disagreement would justify device checks and method harmonization."
+    },
+    "P027": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Treat these as conditional follow-ups, not established findings."
+    },
+    "P028": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Lower an explanation's priority only when the observations could reasonably have detected its predicted pattern."
+    },
+    "P029": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "At the fortnight's end, summarize supported, weakened and unresolved explanations, sampling gaps and interim actions."
+    },
+    "P030": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "End the added two-week observation effort unless further work is authorized; if evidence remains inconclusive, propose a focused follow-up aimed at the unresolved distinction and retain required protective handling."
+    },
+    "P031": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "This procedure can narrow plausible contributors but cannot guarantee a unique cause or demonstrate that every delivery meets requirements."
+    },
+    "P032": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "A small, nonrandom sample may miss intermittent events and cannot establish their prevalence."
+    },
+    "P033": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Multiple readings from one package or trip are correlated, and bay, carrier, route and customer differences may be confounded."
+    },
+    "P034": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Logger placement, response lag, calibration uncertainty, clock error and single-package sampling limit detection and attribution; environmental temperature is not automatically product temperature."
+    },
+    "P035": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Paired methods may disagree because they measure different locations or at different times."
+    },
+    "P036": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Interim handling changes also alter the conditions being investigated, so improved outcomes alone do not prove causation."
+    },
+    "P037": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "Retain alternatives absent a sensitive, relevant test, consider how frequently each condition occurs among sampled deliveries, and reopen the hypothesis set when observations fit none of the candidates."
+    },
+    "P038": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "Stop or modify any added measurement procedure that compromises food handling or routine operations."
+    }
+  }
+}

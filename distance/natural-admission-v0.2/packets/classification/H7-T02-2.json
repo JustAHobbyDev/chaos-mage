@@ -1,0 +1,1215 @@
+{
+  "packet_id": "H7-T02-2",
+  "target_frame": {
+    "target_id": "T02",
+    "domain": "organizational / process",
+    "title": "Delayed access to a shared workshop",
+    "problem": "A community workshop has a growing queue of people waiting for permission to use its equipment. Coordinators need to decide how to change intake and training arrangements next month while retaining the existing safety requirements.",
+    "known_context": [
+      "Applicants submit a form, attend an orientation and complete an equipment-specific supervised session before independent access.",
+      "Different volunteers arrange the three steps; attendance and completion dates are stored in separate spreadsheets.",
+      "Some applicants wait several weeks, while others finish within days. The board has only monthly totals for applications and completed permissions.",
+      "Sessions are sometimes cancelled when instructors are unavailable. Some applicants stop replying, and the records do not distinguish withdrawal from a missed message.",
+      "Two evening slots may be added next month, but the same volunteers also maintain equipment."
+    ],
+    "uncertainty": "The coordinators do not know how much waiting comes from scheduling, communication, unmet prerequisites or applicants own availability, nor whether adding sessions would address the largest delays.",
+    "decision_need": "Determine what to learn from current and prospective cases and how that should guide the allocation of the two possible evening slots.",
+    "constraints": [
+      "Do not waive required instruction or equipment safety checks.",
+      "Applicants may decline further contact; only information needed to arrange access should be collected."
+    ]
+  },
+  "source_instrument": {
+    "state": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed.\n",
+    "operation": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior.\n",
+    "signal": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change.\n",
+    "inference": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation.\n",
+    "limit": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation.\n"
+  },
+  "mapping": {
+    "state": "Treat the intake-to-permission process as a dynamic system. Its candidate input is usable training capacity at a specified stage; its outputs are stage completions, permissions granted and waiting queues over time. Before intervention, reconcile current cases across the spreadsheets using minimal identifiers and necessary dates. Establish each applicant\u2019s last completed prerequisite, next required step, waiting duration and known availability. Mark missing information as unknown. Offer clarification through existing contact arrangements, respect declined contact and do not classify silence as withdrawal. Record the initial queues, scheduled capacity, cancellations and maintenance commitments; monthly totals alone cannot establish these initial conditions.",
+    "operation": "First observe the existing process at a fixed daily or weekly cadence, including prospective arrivals and transitions, to identify where eligible, available applicants accumulate. If training capacity appears limiting, propose a known step increase at that stage, beginning on a recorded date while keeping safety requirements and other arrangements unchanged where feasible. A sustained step requires an explicit assumption that an evening slot can recur at a fixed frequency; confirm this and instructor and maintenance feasibility before proceeding. Allocate the first evening slot to the stage with the largest documented capacity-related waiting burden that the slot can serve. Hold the second unallocated during a predefined observation period spanning several normal scheduling cycles, if feasible. Record planned and actually delivered capacity separately. If the two evenings are one-off opportunities, treat them as finite pulses and observe their aftermath rather than claiming a sustained-step experiment. If communication or unmet prerequisites dominate, address the documented obstacle first and establish a new baseline before testing capacity.",
+    "signal": "Track trajectories from before the change through the initial response and later behavior: eligible queue size and age at each stage, completions per interval, permissions per interval, cancellations and time to the next required step. Keep unfinished cases visible. Look for delay before additional completions appear, the rate of queue reduction, temporary completion peaks, repeated backlog growth and reduction, downstream queue buildup, and any sustained change or settling. Separate waits associated with unavailable sessions, missing prerequisites, known applicant availability and unresolved communication; allow overlapping or unknown causes. Record concurrent changes in applications, instructor availability, equipment readiness and maintenance so apparent responses can be checked against disturbances.",
+    "inference": "A sustained reduction in eligible waiting after delivered capacity increases, followed by increased permissions, would support capacity limitation at the tested stage under the observed conditions. Faster stage completion followed by downstream accumulation would support a bottleneck shift. Additional places remaining unused while waiting persists would motivate checking availability, communication and prerequisites; it would not establish a single cause. Compare these candidate explanations against the full trajectory, including response delays. Allocate the second evening to the same stage only if eligible demand remains and downstream training and maintenance can absorb it; allocate it downstream if the observed queue transfer and instructor availability support that choice. If no capacity-related benefit is distinguishable, retain the slot pending targeted clarification or a separately observed intervention. A one-off pulse can inform immediate slot usefulness but cannot establish a sustained capacity effect.",
+    "limit": "This is a proposed procedure, not an observed result. Missing dates, uncertain initial queues, small numbers, selective participation, changing demand, cancellations and interacting process changes weaken attribution. Equipment limits, instructor fatigue and maintenance displacement can saturate capacity or make responses nonlinear. Results depend on the equipment, applicants, season and capacity level tested. Define the observation horizon and safety and maintenance guardrails before starting; stop or reduce added capacity if required instruction, equipment checks or necessary maintenance cannot be maintained. Never grant access to accelerate an output measure. If observation ends before the transient resolves, report the trajectory as incomplete and continue monitoring where feasible rather than declaring equilibrium or no effect. Collect only information needed to arrange access and cease further contact when an applicant declines."
+  },
+  "allowed_source_ids": [
+    "T001",
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032"
+  ],
+  "claims": {
+    "packet_id": "H7-T02-2",
+    "claims": [
+      {
+        "claim_id": "C001",
+        "fields": [
+          "state"
+        ],
+        "proposition": "The intake-to-permission process is to be treated as a dynamic system.",
+        "scope": "The proposed analytical framing of the workshop access process.",
+        "evidence_used": [
+          {
+            "source_id": "P001"
+          }
+        ],
+        "ambiguity": "This is a proposed framing; the span does not establish the adequacy of a particular dynamic model."
+      },
+      {
+        "claim_id": "C002",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Usable training capacity at a specified stage is the candidate input.",
+        "scope": "The proposed intervention at a particular process stage.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          }
+        ],
+        "ambiguity": "The stage and operational measure of usable capacity are unspecified."
+      },
+      {
+        "claim_id": "C003",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Stage completions, permissions granted and waiting queues over time are the proposed system outputs.",
+        "scope": "Observation of the intake-to-permission process.",
+        "evidence_used": [
+          {
+            "source_id": "P002"
+          }
+        ],
+        "ambiguity": "The span does not specify aggregation or measurement conventions."
+      },
+      {
+        "claim_id": "C004",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Missing case information must remain represented as unknown.",
+        "scope": "Reconstruction of applicants' current process states before intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C005",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Applicant silence must not be classified as withdrawal.",
+        "scope": "Interpretation of nonresponse during case reconciliation and clarification.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how withdrawal is otherwise established."
+      },
+      {
+        "claim_id": "C006",
+        "fields": [
+          "state"
+        ],
+        "proposition": "Monthly totals alone cannot establish the initial queues, scheduled capacity, cancellations and maintenance commitments.",
+        "scope": "Establishing initial conditions before intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C007",
+        "fields": [
+          "state",
+          "limit"
+        ],
+        "proposition": "Information collection and case reconciliation must be limited to what is needed to arrange access, using minimal identifiers and necessary dates.",
+        "scope": "Current-case reconciliation and subsequent information collection.",
+        "evidence_used": [
+          {
+            "source_id": "P003"
+          },
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "Which identifiers and dates are necessary is not specified."
+      },
+      {
+        "claim_id": "C008",
+        "fields": [
+          "state",
+          "limit"
+        ],
+        "proposition": "An applicant's decision to decline further contact must be respected by ceasing further contact.",
+        "scope": "Clarification and follow-up with applicants.",
+        "evidence_used": [
+          {
+            "source_id": "P004"
+          },
+          {
+            "source_id": "P032"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C009",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Observing the existing process at a fixed daily or weekly cadence, including prospective arrivals and transitions, is proposed to identify where eligible, available applicants accumulate.",
+        "scope": "Baseline observation before choosing a capacity intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P005"
+          }
+        ],
+        "ambiguity": "The cadence choice and criteria for identifying accumulation are unspecified."
+      },
+      {
+        "claim_id": "C010",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "If training capacity appears limiting at a stage, propose a known step increase at that stage beginning on a recorded date.",
+        "scope": "Conditional selection of a capacity intervention after baseline observation.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "The evidential threshold for capacity to appear limiting and the increase's magnitude are unspecified."
+      },
+      {
+        "claim_id": "C011",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The proposed capacity intervention is to retain the existing safety requirements.",
+        "scope": "Implementation of the proposed increase in training capacity.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "The placement of 'where feasible' could grammatically reach safety requirements; the mapping's later stopping rule does not authorize relaxing them."
+      },
+      {
+        "claim_id": "C012",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Other process arrangements should remain unchanged during the capacity intervention where feasible.",
+        "scope": "Implementation of the proposed capacity test.",
+        "evidence_used": [
+          {
+            "source_id": "P006"
+          }
+        ],
+        "ambiguity": "The arrangements covered and the feasibility standard are unspecified."
+      },
+      {
+        "claim_id": "C013",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Treating an added evening slot as a sustained step requires an explicit, confirmed assumption that the slot can recur at a fixed frequency.",
+        "scope": "Use of the sustained-step interpretation for added training capacity.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "The frequency and required duration of recurrence are unspecified."
+      },
+      {
+        "claim_id": "C014",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Instructor and maintenance feasibility must be confirmed before proceeding with the sustained capacity increase.",
+        "scope": "Feasibility of the recurring evening-slot intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P007"
+          }
+        ],
+        "ambiguity": "The criteria for confirming feasibility are unspecified."
+      },
+      {
+        "claim_id": "C015",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "The first evening slot should go to the stage with the largest documented capacity-related waiting burden that the slot can serve.",
+        "scope": "Initial allocation among stages serviceable by the evening slot.",
+        "evidence_used": [
+          {
+            "source_id": "P008"
+          }
+        ],
+        "ambiguity": "The measure of waiting burden and treatment of ties are unspecified."
+      },
+      {
+        "claim_id": "C016",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "If feasible, the second evening slot should remain unallocated during a predefined observation period spanning several normal scheduling cycles.",
+        "scope": "Deferral of the second allocation while observing the first intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P009"
+          }
+        ],
+        "ambiguity": "Neither the number of cycles nor the feasibility criteria are specified."
+      },
+      {
+        "claim_id": "C017",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "Planned capacity and actually delivered capacity must be represented separately.",
+        "scope": "Recording the capacity intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P010"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C018",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "If the two evenings are one-off opportunities, they constitute finite pulses whose aftermath should be observed, rather than a sustained-step experiment.",
+        "scope": "Classification and observation of nonrecurring evening opportunities.",
+        "evidence_used": [
+          {
+            "source_id": "P011"
+          }
+        ],
+        "ambiguity": "The duration and separation of the pulses are unspecified."
+      },
+      {
+        "claim_id": "C019",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "If communication or unmet prerequisites dominate the delays, the documented obstacle should be addressed before testing capacity.",
+        "scope": "Conditional prioritization of an intervention other than added capacity.",
+        "evidence_used": [
+          {
+            "source_id": "P012"
+          }
+        ],
+        "ambiguity": "The criterion for an obstacle to dominate is unspecified."
+      },
+      {
+        "claim_id": "C020",
+        "fields": [
+          "operation"
+        ],
+        "proposition": "If a dominant communication or prerequisite obstacle is addressed, a new baseline should be established before testing capacity.",
+        "scope": "Sequencing the capacity test after addressing the documented obstacle.",
+        "evidence_used": [
+          {
+            "source_id": "P012"
+          }
+        ],
+        "ambiguity": "The duration and adequacy criteria for the new baseline are unspecified."
+      },
+      {
+        "claim_id": "C021",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "The proposed response record comprises trajectories of eligible queue size and age at each stage, completions and permissions per interval, cancellations and time to the next required step, covering before the change, the initial response and later behavior.",
+        "scope": "Selection and temporal coverage of process measurements.",
+        "evidence_used": [
+          {
+            "source_id": "P013"
+          }
+        ],
+        "ambiguity": "Measurement intervals and definitions of queue age and later behavior are unspecified."
+      },
+      {
+        "claim_id": "C022",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Unfinished cases must remain visible in process monitoring.",
+        "scope": "The population represented in the response record.",
+        "evidence_used": [
+          {
+            "source_id": "P014"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how unfinished cases enter particular measures."
+      },
+      {
+        "claim_id": "C023",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Candidate temporal response features include delay before additional completions, queue-reduction rate, temporary completion peaks, repeated backlog growth and reduction, downstream queue buildup, and sustained change or settling.",
+        "scope": "Features to seek in the observed trajectories.",
+        "evidence_used": [
+          {
+            "source_id": "P015"
+          }
+        ],
+        "ambiguity": "These are proposed features to inspect, not assertions that they will occur; detection thresholds are unspecified."
+      },
+      {
+        "claim_id": "C024",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Waits should be distinguished by their association with unavailable sessions, missing prerequisites, known applicant availability and unresolved communication.",
+        "scope": "Characterization of waiting within the monitored process.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          }
+        ],
+        "ambiguity": "Association is not specified as an established causal attribution, and classification criteria are absent."
+      },
+      {
+        "claim_id": "C025",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "The representation of waiting causes must allow overlap.",
+        "scope": "Classification of explanations for an applicant's waiting.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          }
+        ],
+        "ambiguity": "The mapping does not assert that overlap occurs in any particular case."
+      },
+      {
+        "claim_id": "C026",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "The representation of waiting causes must allow causes to remain unknown.",
+        "scope": "Classification of waits for which an explanation is unresolved.",
+        "evidence_used": [
+          {
+            "source_id": "P016"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C027",
+        "fields": [
+          "signal"
+        ],
+        "proposition": "Concurrent changes in applications, instructor availability, equipment readiness and maintenance should be recorded so apparent responses can be checked against disturbances.",
+        "scope": "Interpretation of trajectories during the capacity intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P017"
+          }
+        ],
+        "ambiguity": "The mapping does not specify how the disturbance checks would separate competing effects."
+      },
+      {
+        "claim_id": "C028",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "A sustained reduction in eligible waiting after delivered capacity increases, followed by increased permissions, would support capacity limitation at the tested stage under the observed conditions.",
+        "scope": "Conditional interpretation of the specified temporal response at the tested stage.",
+        "evidence_used": [
+          {
+            "source_id": "P018"
+          }
+        ],
+        "ambiguity": "The required duration, magnitude and strength of support are unspecified; the relation does not assert an observed result."
+      },
+      {
+        "claim_id": "C029",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Faster stage completion followed by downstream accumulation would support a bottleneck shift.",
+        "scope": "Conditional interpretation of a response that transfers accumulation downstream.",
+        "evidence_used": [
+          {
+            "source_id": "P019"
+          }
+        ],
+        "ambiguity": "The comparison baseline and threshold for downstream accumulation are unspecified."
+      },
+      {
+        "claim_id": "C030",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If additional places remain unused while waiting persists, availability, communication and prerequisites should be checked.",
+        "scope": "Targeted investigation prompted by unused added capacity alongside continuing waits.",
+        "evidence_used": [
+          {
+            "source_id": "P020"
+          }
+        ],
+        "ambiguity": "The observation motivates checks without identifying which explanation applies."
+      },
+      {
+        "claim_id": "C031",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Additional places remaining unused while waiting persists would not establish a single cause.",
+        "scope": "The inferential limit of that combined observation.",
+        "evidence_used": [
+          {
+            "source_id": "P020"
+          }
+        ],
+        "ambiguity": "'A single cause' could mean a uniquely identified explanation or an exclusively single-cause account; the mapping does not resolve this."
+      },
+      {
+        "claim_id": "C032",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "Candidate explanations should be compared against the full trajectory, including response delays.",
+        "scope": "Assessment of the proposed explanations for the intervention response.",
+        "evidence_used": [
+          {
+            "source_id": "P021"
+          }
+        ],
+        "ambiguity": "The comparison method and criteria for favoring an explanation are unspecified."
+      },
+      {
+        "claim_id": "C033",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "The second evening should be allocated to the same stage only if eligible demand remains and downstream training and maintenance can absorb it.",
+        "scope": "Necessary conditions for assigning the second slot to the initially tested stage.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          }
+        ],
+        "ambiguity": "These are necessary conditions, not a statement that satisfying them alone requires that allocation."
+      },
+      {
+        "claim_id": "C034",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "The second evening should be allocated downstream if observed queue transfer and instructor availability support that choice.",
+        "scope": "Conditional downstream allocation of the second slot.",
+        "evidence_used": [
+          {
+            "source_id": "P022"
+          }
+        ],
+        "ambiguity": "The support threshold and priority if multiple allocation conditions hold are unspecified."
+      },
+      {
+        "claim_id": "C035",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "If no capacity-related benefit is distinguishable, the second slot should be retained pending targeted clarification or a separately observed intervention.",
+        "scope": "Allocation when the observed response does not distinguish a capacity benefit.",
+        "evidence_used": [
+          {
+            "source_id": "P023"
+          }
+        ],
+        "ambiguity": "The criterion for distinguishability and the duration of retention are unspecified."
+      },
+      {
+        "claim_id": "C036",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "A one-off pulse can inform the immediate usefulness of a slot.",
+        "scope": "What may be learned from a nonrecurring capacity opportunity.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "'Immediate' and the measure of usefulness are unspecified."
+      },
+      {
+        "claim_id": "C037",
+        "fields": [
+          "inference"
+        ],
+        "proposition": "A one-off pulse cannot establish a sustained capacity effect.",
+        "scope": "The inferential reach of observing a nonrecurring capacity opportunity.",
+        "evidence_used": [
+          {
+            "source_id": "P024"
+          }
+        ],
+        "ambiguity": "The duration that would qualify an effect as sustained is unspecified."
+      },
+      {
+        "claim_id": "C038",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "The mapping describes a proposed procedure and does not report an observed result.",
+        "scope": "All intervention and response descriptions in the mapping.",
+        "evidence_used": [
+          {
+            "source_id": "P025"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C039",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Missing dates, uncertain initial queues, small numbers, selective participation, changing demand, cancellations and interacting process changes weaken attribution.",
+        "scope": "Attribution of observed changes within the proposed procedure.",
+        "evidence_used": [
+          {
+            "source_id": "P026"
+          }
+        ],
+        "ambiguity": "The mapping lists attribution limitations without specifying their relative strength, actual presence or joint versus separate effects."
+      },
+      {
+        "claim_id": "C040",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Capacity saturation is a possible consequence associated with equipment limits, instructor fatigue and maintenance displacement.",
+        "scope": "Limits on the response to added training capacity.",
+        "evidence_used": [
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "The mapping does not specify which listed factor produces saturation or whether factors act jointly."
+      },
+      {
+        "claim_id": "C041",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Nonlinear responses are a possible consequence associated with equipment limits, instructor fatigue and maintenance displacement.",
+        "scope": "The relationship between added capacity and the process response.",
+        "evidence_used": [
+          {
+            "source_id": "P027"
+          }
+        ],
+        "ambiguity": "The mapping does not specify which listed factor produces nonlinearity or whether factors act jointly."
+      },
+      {
+        "claim_id": "C042",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Results depend on the equipment, applicants, season and capacity level tested.",
+        "scope": "Applicability of findings beyond the observed operating conditions.",
+        "evidence_used": [
+          {
+            "source_id": "P028"
+          }
+        ],
+        "ambiguity": "The form and degree of dependence on each listed condition are unspecified."
+      },
+      {
+        "claim_id": "C043",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "The observation horizon must be defined before starting.",
+        "scope": "Advance specification of the proposed observation period.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ],
+        "ambiguity": "The required horizon is unspecified."
+      },
+      {
+        "claim_id": "C044",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Safety and maintenance guardrails must be defined before starting.",
+        "scope": "Advance constraints on the proposed intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ],
+        "ambiguity": "The mapping does not fully specify the guardrails or their operational thresholds."
+      },
+      {
+        "claim_id": "C045",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Added capacity must be stopped or reduced if required instruction, equipment checks or necessary maintenance cannot be maintained.",
+        "scope": "Conditional continuation of the capacity intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P029"
+          }
+        ],
+        "ambiguity": "The choice between stopping and reducing capacity is unspecified."
+      },
+      {
+        "claim_id": "C046",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "Access must never be granted for the purpose of accelerating an output measure.",
+        "scope": "Permission decisions during process measurement and intervention.",
+        "evidence_used": [
+          {
+            "source_id": "P030"
+          }
+        ],
+        "ambiguity": "None stated."
+      },
+      {
+        "claim_id": "C047",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "If observation ends before the transient resolves, the trajectory must be reported as incomplete.",
+        "scope": "Reporting a response observed for insufficient time to resolve its transient.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "The criterion for transient resolution is unspecified."
+      },
+      {
+        "claim_id": "C048",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "If observation ends before the transient resolves, monitoring should continue where feasible.",
+        "scope": "Follow-up after an observation period ends with an unresolved transient.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "The feasibility standard and additional monitoring duration are unspecified."
+      },
+      {
+        "claim_id": "C049",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "An observation period ending before the transient resolves does not justify declaring equilibrium.",
+        "scope": "Interpretation of an incompletely observed trajectory.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "The mapping provides no operational definition of equilibrium."
+      },
+      {
+        "claim_id": "C050",
+        "fields": [
+          "limit"
+        ],
+        "proposition": "An observation period ending before the transient resolves does not justify declaring no effect.",
+        "scope": "Interpretation of an incompletely observed trajectory.",
+        "evidence_used": [
+          {
+            "source_id": "P031"
+          }
+        ],
+        "ambiguity": "The mapping does not specify an effect-detection threshold."
+      }
+    ],
+    "coverage": [
+      {
+        "field": "state",
+        "claim_ids": [
+          "C001",
+          "C002",
+          "C003",
+          "C004",
+          "C005",
+          "C006",
+          "C007",
+          "C008"
+        ],
+        "unrepresented_material": [],
+        "rationale": "Claims cover the system framing, input/output distinction, information and contact boundaries, treatment of unknowns and silence, and insufficiency of monthly totals. Reconciling spreadsheets, establishing each applicant's last prerequisite, next step, wait and known availability, offering clarification through existing arrangements, and recording initial conditions are procedural setup. No separate proposition is added for each data item or routine action."
+      },
+      {
+        "field": "operation",
+        "claim_ids": [
+          "C009",
+          "C010",
+          "C011",
+          "C012",
+          "C013",
+          "C014",
+          "C015",
+          "C016",
+          "C017",
+          "C018",
+          "C019",
+          "C020"
+        ],
+        "unrepresented_material": [],
+        "rationale": "Claims cover the baseline-observation rationale, conditional capacity test, safety and stability constraints, recurrence assumption, feasibility conditions, slot-allocation rules, planned/delivered distinction, pulse classification, obstacle prioritization and baseline reset. Cadence, recorded onset and observation of pulse aftermath remain attached to their proposed operations rather than becoming separate routine-instruction claims."
+      },
+      {
+        "field": "signal",
+        "claim_ids": [
+          "C021",
+          "C022",
+          "C023",
+          "C024",
+          "C025",
+          "C026",
+          "C027"
+        ],
+        "unrepresented_material": [],
+        "rationale": "Claims cover the proposed measurement trajectories and temporal features, inclusion of unfinished cases, distinctions among waiting associations, overlapping and unknown causes, and the disturbance-checking rationale. The measurement and feature lists are retained as selections for observation, without asserting that any listed response has occurred or creating a claim for every named measure."
+      },
+      {
+        "field": "inference",
+        "claim_ids": [
+          "C028",
+          "C029",
+          "C030",
+          "C031",
+          "C032",
+          "C033",
+          "C034",
+          "C035",
+          "C036",
+          "C037"
+        ],
+        "unrepresented_material": [],
+        "rationale": "Claims separately capture conditional evidential relations, the rationale for investigating unused capacity, its causal-identification limit, full-trajectory comparison, each second-slot allocation branch, and the immediate-usefulness versus sustained-effect distinction. Conditions remain attached to their conclusions; the same-stage allocation rule retains its only-if form."
+      },
+      {
+        "field": "limit",
+        "claim_ids": [
+          "C007",
+          "C008",
+          "C038",
+          "C039",
+          "C040",
+          "C041",
+          "C042",
+          "C043",
+          "C044",
+          "C045",
+          "C046",
+          "C047",
+          "C048",
+          "C049",
+          "C050"
+        ],
+        "unrepresented_material": [],
+        "rationale": "Claims cover the explicit absence of observed results, attribution limitations, saturation and nonlinearity possibilities, dependence on tested conditions, advance horizon and guardrails, stopping conditions, the prohibition on granting access to accelerate a measure, and separate reporting, monitoring and inference limits for an unresolved transient. Data minimization and declined-contact boundaries are consolidated with their state-field formulations. Lists sharing a single limiting function remain intact; materially distinct consequences and bounds are separated."
+      }
+    ]
+  },
+  "classification_definitions": {
+    "origins": {
+      "TARGET_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by frozen target/problem material. Faithful non-expansive restatements qualify. Do not add causation, precision, scope, certainty or explanation. Requires positive target provenance.",
+      "SOURCE_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by the frozen source instrument. Requires positive source-instrument provenance.",
+      "BOTH_SUPPLIED": "The same proposition is independently supplied at materially the same scope and strength by BOTH target and source instrument. Target premise A and source mechanism B jointly supporting generated C does not qualify.",
+      "MAPPING_GENERATED": "The proposition itself was introduced by the mapping; neither input supplied it as such. It may be warranted. Default absent positive supply evidence, unless genuinely uncertain."
+    },
+    "functions": {
+      "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+      "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+      "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+      "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+      "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+      "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+    }
+  },
+  "evidence_sources": {
+    "T001": {
+      "role": "SUPPORT",
+      "kind": "target",
+      "value": {
+        "target_id": "T02",
+        "domain": "organizational / process",
+        "title": "Delayed access to a shared workshop",
+        "problem": "A community workshop has a growing queue of people waiting for permission to use its equipment. Coordinators need to decide how to change intake and training arrangements next month while retaining the existing safety requirements.",
+        "known_context": [
+          "Applicants submit a form, attend an orientation and complete an equipment-specific supervised session before independent access.",
+          "Different volunteers arrange the three steps; attendance and completion dates are stored in separate spreadsheets.",
+          "Some applicants wait several weeks, while others finish within days. The board has only monthly totals for applications and completed permissions.",
+          "Sessions are sometimes cancelled when instructors are unavailable. Some applicants stop replying, and the records do not distinguish withdrawal from a missed message.",
+          "Two evening slots may be added next month, but the same volunteers also maintain equipment."
+        ],
+        "uncertainty": "The coordinators do not know how much waiting comes from scheduling, communication, unmet prerequisites or applicants own availability, nor whether adding sessions would address the largest delays.",
+        "decision_need": "Determine what to learn from current and prospective cases and how that should guide the allocation of the two possible evening slots.",
+        "constraints": [
+          "Do not waive required instruction or equipment safety checks.",
+          "Applicants may decline further contact; only information needed to arrange access should be collected."
+        ]
+      }
+    },
+    "S001": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "A dynamic system accepts a controlled change in an input and exposes an output whose evolution through time can be observed."
+    },
+    "S002": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Apply a known step change to the input and record the output trajectory from its initial state through the transient response toward its later behavior."
+    },
+    "S003": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "The output trajectory exhibits measurable temporal features such as delay, rise, overshoot, oscillation, peak, settling, and steady-state change."
+    },
+    "S004": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Those response features constrain empirical properties of the system's dynamics and can distinguish candidate models or characterize how the system reacts to perturbation."
+    },
+    "S005": {
+      "role": "SUPPORT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Noise, unknown initial state, saturation, nonlinear behavior, disturbances, interacting inputs, insufficient observation time, and dependence on the chosen operating point can distort the response or make conclusions fail to generalize beyond the tested perturbation."
+    },
+    "P001": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Treat the intake-to-permission process as a dynamic system."
+    },
+    "P002": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Its candidate input is usable training capacity at a specified stage; its outputs are stage completions, permissions granted and waiting queues over time."
+    },
+    "P003": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Before intervention, reconcile current cases across the spreadsheets using minimal identifiers and necessary dates."
+    },
+    "P004": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Establish each applicant\u2019s last completed prerequisite, next required step, waiting duration and known availability. Mark missing information as unknown. Offer clarification through existing contact arrangements, respect declined contact and do not classify silence as withdrawal. Record the initial queues, scheduled capacity, cancellations and maintenance commitments; monthly totals alone cannot establish these initial conditions."
+    },
+    "P005": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "First observe the existing process at a fixed daily or weekly cadence, including prospective arrivals and transitions, to identify where eligible, available applicants accumulate."
+    },
+    "P006": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "If training capacity appears limiting, propose a known step increase at that stage, beginning on a recorded date while keeping safety requirements and other arrangements unchanged where feasible."
+    },
+    "P007": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "A sustained step requires an explicit assumption that an evening slot can recur at a fixed frequency; confirm this and instructor and maintenance feasibility before proceeding."
+    },
+    "P008": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Allocate the first evening slot to the stage with the largest documented capacity-related waiting burden that the slot can serve."
+    },
+    "P009": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Hold the second unallocated during a predefined observation period spanning several normal scheduling cycles, if feasible."
+    },
+    "P010": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Record planned and actually delivered capacity separately."
+    },
+    "P011": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "If the two evenings are one-off opportunities, treat them as finite pulses and observe their aftermath rather than claiming a sustained-step experiment."
+    },
+    "P012": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "If communication or unmet prerequisites dominate, address the documented obstacle first and establish a new baseline before testing capacity."
+    },
+    "P013": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "Track trajectories from before the change through the initial response and later behavior: eligible queue size and age at each stage, completions per interval, permissions per interval, cancellations and time to the next required step."
+    },
+    "P014": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Keep unfinished cases visible."
+    },
+    "P015": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Look for delay before additional completions appear, the rate of queue reduction, temporary completion peaks, repeated backlog growth and reduction, downstream queue buildup, and any sustained change or settling."
+    },
+    "P016": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Separate waits associated with unavailable sessions, missing prerequisites, known applicant availability and unresolved communication; allow overlapping or unknown causes."
+    },
+    "P017": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Record concurrent changes in applications, instructor availability, equipment readiness and maintenance so apparent responses can be checked against disturbances."
+    },
+    "P018": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "A sustained reduction in eligible waiting after delivered capacity increases, followed by increased permissions, would support capacity limitation at the tested stage under the observed conditions."
+    },
+    "P019": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Faster stage completion followed by downstream accumulation would support a bottleneck shift."
+    },
+    "P020": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Additional places remaining unused while waiting persists would motivate checking availability, communication and prerequisites; it would not establish a single cause."
+    },
+    "P021": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Compare these candidate explanations against the full trajectory, including response delays."
+    },
+    "P022": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Allocate the second evening to the same stage only if eligible demand remains and downstream training and maintenance can absorb it; allocate it downstream if the observed queue transfer and instructor availability support that choice."
+    },
+    "P023": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "If no capacity-related benefit is distinguishable, retain the slot pending targeted clarification or a separately observed intervention."
+    },
+    "P024": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "A one-off pulse can inform immediate slot usefulness but cannot establish a sustained capacity effect."
+    },
+    "P025": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "text": "This is a proposed procedure, not an observed result."
+    },
+    "P026": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "text": "Missing dates, uncertain initial queues, small numbers, selective participation, changing demand, cancellations and interacting process changes weaken attribution."
+    },
+    "P027": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "text": "Equipment limits, instructor fatigue and maintenance displacement can saturate capacity or make responses nonlinear."
+    },
+    "P028": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "text": "Results depend on the equipment, applicants, season and capacity level tested."
+    },
+    "P029": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "text": "Define the observation horizon and safety and maintenance guardrails before starting; stop or reduce added capacity if required instruction, equipment checks or necessary maintenance cannot be maintained."
+    },
+    "P030": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "text": "Never grant access to accelerate an output measure."
+    },
+    "P031": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "text": "If observation ends before the transient resolves, report the trajectory as incomplete and continue monitoring where feasible rather than declaring equilibrium or no effect."
+    },
+    "P032": {
+      "role": "CONTEXT",
+      "kind": "paragraph",
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 7,
+      "text": "Collect only information needed to arrange access and cease further contact when an applicant declines."
+    }
+  }
+}
