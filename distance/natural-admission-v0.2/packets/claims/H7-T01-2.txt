@@ -1,0 +1,369 @@
+# Freeze atomic warrant-bearing claims
+
+Enumerate the mapping's warrant-bearing semantic claims across all five fields.
+Use C001 onward. Split independently contestable conclusions, distinctions, bounds,
+conditional outcome relations and proposed-operation rationales into atomic claims.
+Keep each claim's conditions and limits; an if/then relation is not an unconditional
+assertion. Do not explode every noun or routine instruction into an independent claim.
+Do not assign warrant status or artifact status. Do not improve or complete the mapping.
+No fixed claim count, pruning by importance, centrality, novelty or expected validity.
+
+A claim is a frozen semantic annotation with H.5 provenance, not a new source span.
+Several claims may cite the same coarse span. Capture every material proposition used
+by the transfer, including stated assumptions and limitations; coverage records explain
+non-warrant-bearing setup in each of the five fields. Duplicate formulations of one
+proposition are one claim with all relevant support. Each claim's fields list gives
+source locations, not ownership rights over cited spans. Record ambiguity explicitly.
+
+One primary epistemic function per proposition. Do not silently combine materially
+separable functions. Preserve ambiguity; do not increase granularity to maximize
+claim count. Cite only source IDs in evidence_used, using the allowed mapping spans.
+Do not emit SUPPORT or CONTEXT roles, offsets or exact quotation requirements.
+Record each field's coverage and any unrepresented material proposition.
+Use only this packet and general knowledge. Return the schema JSON.
+
+FROZEN PACKET
+{
+  "packet_id": "H7-T01-2",
+  "target_frame": {
+    "target_id": "T01",
+    "domain": "technical / operational",
+    "title": "Intermittent cold-room delivery gaps",
+    "problem": "A regional food distributor finds that some refrigerated deliveries arrive above its internal receiving temperature range, although the loading records show acceptable temperatures. The operations manager must decide what to investigate next and which temporary handling changes are justified before the next fortnight of deliveries.",
+    "known_context": [
+      "There are three loading bays, two contracted carriers and routes lasting between forty minutes and four hours.",
+      "Drivers record departure and arrival times; receiving staff take a single temperature reading from one package per delivery.",
+      "Loading-bay logs record room temperature every fifteen minutes, but packages are not individually tracked between staging and loading.",
+      "The recent exceptions occur on both short and long routes. Receiving methods differ between customer sites.",
+      "A small pool of reusable temperature loggers is available, but the team cannot instrument every package or cancel routine deliveries."
+    ],
+    "uncertainty": "The manager does not know whether the exceptions mainly arise before loading, in transit, during receiving, or from differences in measurement. Multiple contributors may be present.",
+    "decision_need": "Identify a feasible investigation and defensible interim action without claiming that the existing endpoint records locate the cause.",
+    "constraints": [
+      "Normal food-handling requirements remain in force.",
+      "Staff can add limited observations for two weeks; there is no budget for fleet replacement."
+    ]
+  },
+  "source_instrument": {
+    "state": "A set of observations can plausibly be explained by more than one underlying mechanism or condition.\n",
+    "operation": "Generate multiple candidate explanations, gather or inspect evidence that bears differently on them, and repeatedly revise their relative plausibility as evidence accumulates.\n",
+    "signal": "New observations create a pattern of support, contradiction, or non-discrimination across the competing explanations.\n",
+    "inference": "Explanations can be reprioritized, eliminated, or retained, narrowing the plausible set without requiring an early commitment to a single cause.\n",
+    "limit": "The result is constrained by which hypotheses were generated, the quality and independence of the evidence, test sensitivity and specificity, and susceptibility to anchoring, premature closure, base-rate neglect, or confirmation bias.\n"
+  },
+  "mapping": {
+    "state": "Act on the next fortnight of deliveries, their handling histories and temperature measurements. Retain competing explanations: warming during staging or loading, warming in transit, warming while awaiting receipt, differences or errors in receiving measurement, and combinations of these. Acceptable loading-room records do not establish individual package temperatures at departure, and one receiving reading does not locate when warming occurred. Assume staff can identify a small sample of packages and record additional handling times; confirm logger suitability and permitted placement before using them.",
+    "operation": "Before sampling, write down what evidence would support or weaken each explanation. Rotate the limited loggers through selected deliveries spanning all three bays, both carriers, shorter and longer routes, and different receiving methods; include deliveries without reported exceptions. Do not claim complete coverage or independently separable comparisons. Identify sampled packages and link each to its bay, carrier, route and receiving site. Check logger and receiving-device agreement under the same stable conditions, synchronize clocks, and choose a logging interval short enough to distinguish relevant handling stages within device capacity. Follow the same sampled package from refrigerated staging through loading, transit and receipt, recording staging exit, loading completion, departure, arrival and receiving-measurement times. Record logger placement, measurement method, relevant delays and accessible handling observations. Where feasible, pair the site's usual receiving reading with a promptly taken standardized reading on the same package using a suitable checked device and an approved method; record any difference in timing or measurement location. Review traces and paired readings as they become available, comparing similar deliveries and revising the competing explanations. During the investigation, reinforce required refrigeration, minimize avoidable unrefrigerated staging and receiving delays, and standardize approved receiving measurements. Record when these changes begin. Follow existing food-handling and disposition requirements immediately for any suspected breach; do not wait for the investigation. Add more targeted temporary changes only when observations support the relevant stage, and track their effect without deliberately exposing food to unsafe conditions.",
+    "signal": "Look for proposed discriminating patterns: a rise before departure supports staging/loading exposure; a rise after departure and before arrival supports transit exposure; a rise between arrival and the receiving reading supports receiving delay. These patterns require reliable stage times and a logger placement that meaningfully represents the sampled package's thermal conditions. Repeated disagreement between usual and standardized readings, especially when associated with method or device, supports measurement differences. Agreement between readings weakens that explanation for those observations. Multiple rises or a rise combined with measurement disagreement support multiple contributors. Bay room-temperature records, route duration alone, missing stage boundaries, or a logger measuring air while staff measure product may fail to distinguish explanations. Compare both exception and non-exception deliveries and actively seek observations inconsistent with the current leading explanation.",
+    "inference": "Use the emerging patterns to prioritize the next investigation and proportionate handling changes, rather than declare a single cause. Repeated predeparture warming would justify concentrating observations on staging dwell and loading practices; transit warming would justify checking the implicated carrier's refrigeration operation and handling events; receiving-stage warming would justify prompt refrigerated receipt; reproducible measurement disagreement would justify device checks and method harmonization. Treat these as conditional follow-ups, not established findings. Lower an explanation's priority only when the observations could reasonably have detected its predicted pattern. At the fortnight's end, summarize supported, weakened and unresolved explanations, sampling gaps and interim actions. End the added two-week observation effort unless further work is authorized; if evidence remains inconclusive, propose a focused follow-up aimed at the unresolved distinction and retain required protective handling.",
+    "limit": "This procedure can narrow plausible contributors but cannot guarantee a unique cause or demonstrate that every delivery meets requirements. A small, nonrandom sample may miss intermittent events and cannot establish their prevalence. Multiple readings from one package or trip are correlated, and bay, carrier, route and customer differences may be confounded. Logger placement, response lag, calibration uncertainty, clock error and single-package sampling limit detection and attribution; environmental temperature is not automatically product temperature. Paired methods may disagree because they measure different locations or at different times. Interim handling changes also alter the conditions being investigated, so improved outcomes alone do not prove causation. Retain alternatives absent a sensitive, relevant test, consider how frequently each condition occurs among sampled deliveries, and reopen the hypothesis set when observations fit none of the candidates. Stop or modify any added measurement procedure that compromises food handling or routine operations."
+  },
+  "allowed_source_ids": [
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035",
+    "P036",
+    "P037",
+    "P038"
+  ],
+  "spans": {
+    "P001": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Act on the next fortnight of deliveries, their handling histories and temperature measurements."
+    },
+    "P002": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Retain competing explanations: warming during staging or loading, warming in transit, warming while awaiting receipt, differences or errors in receiving measurement, and combinations of these."
+    },
+    "P003": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Acceptable loading-room records do not establish individual package temperatures at departure, and one receiving reading does not locate when warming occurred."
+    },
+    "P004": {
+      "field": "state",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Assume staff can identify a small sample of packages and record additional handling times; confirm logger suitability and permitted placement before using them."
+    },
+    "P005": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Before sampling, write down what evidence would support or weaken each explanation."
+    },
+    "P006": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Rotate the limited loggers through selected deliveries spanning all three bays, both carriers, shorter and longer routes, and different receiving methods; include deliveries without reported exceptions."
+    },
+    "P007": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Do not claim complete coverage or independently separable comparisons."
+    },
+    "P008": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Identify sampled packages and link each to its bay, carrier, route and receiving site."
+    },
+    "P009": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Check logger and receiving-device agreement under the same stable conditions, synchronize clocks, and choose a logging interval short enough to distinguish relevant handling stages within device capacity."
+    },
+    "P010": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Follow the same sampled package from refrigerated staging through loading, transit and receipt, recording staging exit, loading completion, departure, arrival and receiving-measurement times."
+    },
+    "P011": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Record logger placement, measurement method, relevant delays and accessible handling observations."
+    },
+    "P012": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "Where feasible, pair the site's usual receiving reading with a promptly taken standardized reading on the same package using a suitable checked device and an approved method; record any difference in timing or measurement location."
+    },
+    "P013": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 8,
+      "kind": "paragraph",
+      "text": "Review traces and paired readings as they become available, comparing similar deliveries and revising the competing explanations."
+    },
+    "P014": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 9,
+      "kind": "paragraph",
+      "text": "During the investigation, reinforce required refrigeration, minimize avoidable unrefrigerated staging and receiving delays, and standardize approved receiving measurements."
+    },
+    "P015": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 10,
+      "kind": "paragraph",
+      "text": "Record when these changes begin."
+    },
+    "P016": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 11,
+      "kind": "paragraph",
+      "text": "Follow existing food-handling and disposition requirements immediately for any suspected breach; do not wait for the investigation."
+    },
+    "P017": {
+      "field": "operation",
+      "block_index": 0,
+      "sentence_index": 12,
+      "kind": "paragraph",
+      "text": "Add more targeted temporary changes only when observations support the relevant stage, and track their effect without deliberately exposing food to unsafe conditions."
+    },
+    "P018": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Look for proposed discriminating patterns: a rise before departure supports staging/loading exposure; a rise after departure and before arrival supports transit exposure; a rise between arrival and the receiving reading supports receiving delay."
+    },
+    "P019": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "These patterns require reliable stage times and a logger placement that meaningfully represents the sampled package's thermal conditions."
+    },
+    "P020": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Repeated disagreement between usual and standardized readings, especially when associated with method or device, supports measurement differences."
+    },
+    "P021": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Agreement between readings weakens that explanation for those observations."
+    },
+    "P022": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Multiple rises or a rise combined with measurement disagreement support multiple contributors."
+    },
+    "P023": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Bay room-temperature records, route duration alone, missing stage boundaries, or a logger measuring air while staff measure product may fail to distinguish explanations."
+    },
+    "P024": {
+      "field": "signal",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Compare both exception and non-exception deliveries and actively seek observations inconsistent with the current leading explanation."
+    },
+    "P025": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "Use the emerging patterns to prioritize the next investigation and proportionate handling changes, rather than declare a single cause."
+    },
+    "P026": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "Repeated predeparture warming would justify concentrating observations on staging dwell and loading practices; transit warming would justify checking the implicated carrier's refrigeration operation and handling events; receiving-stage warming would justify prompt refrigerated receipt; reproducible measurement disagreement would justify device checks and method harmonization."
+    },
+    "P027": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Treat these as conditional follow-ups, not established findings."
+    },
+    "P028": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Lower an explanation's priority only when the observations could reasonably have detected its predicted pattern."
+    },
+    "P029": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "At the fortnight's end, summarize supported, weakened and unresolved explanations, sampling gaps and interim actions."
+    },
+    "P030": {
+      "field": "inference",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "End the added two-week observation effort unless further work is authorized; if evidence remains inconclusive, propose a focused follow-up aimed at the unresolved distinction and retain required protective handling."
+    },
+    "P031": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 0,
+      "kind": "paragraph",
+      "text": "This procedure can narrow plausible contributors but cannot guarantee a unique cause or demonstrate that every delivery meets requirements."
+    },
+    "P032": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 1,
+      "kind": "paragraph",
+      "text": "A small, nonrandom sample may miss intermittent events and cannot establish their prevalence."
+    },
+    "P033": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 2,
+      "kind": "paragraph",
+      "text": "Multiple readings from one package or trip are correlated, and bay, carrier, route and customer differences may be confounded."
+    },
+    "P034": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 3,
+      "kind": "paragraph",
+      "text": "Logger placement, response lag, calibration uncertainty, clock error and single-package sampling limit detection and attribution; environmental temperature is not automatically product temperature."
+    },
+    "P035": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 4,
+      "kind": "paragraph",
+      "text": "Paired methods may disagree because they measure different locations or at different times."
+    },
+    "P036": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 5,
+      "kind": "paragraph",
+      "text": "Interim handling changes also alter the conditions being investigated, so improved outcomes alone do not prove causation."
+    },
+    "P037": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 6,
+      "kind": "paragraph",
+      "text": "Retain alternatives absent a sensitive, relevant test, consider how frequently each condition occurs among sampled deliveries, and reopen the hypothesis set when observations fit none of the candidates."
+    },
+    "P038": {
+      "field": "limit",
+      "block_index": 0,
+      "sentence_index": 7,
+      "kind": "paragraph",
+      "text": "Stop or modify any added measurement procedure that compromises food handling or routine operations."
+    }
+  }
+}
