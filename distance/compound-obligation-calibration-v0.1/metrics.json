@@ -1,0 +1,2485 @@
+{
+  "cases": [
+    {
+      "control_id": "N1",
+      "case_id": "K01",
+      "claims": [
+        {
+          "claim_id": "K01-C1",
+          "hypothesis": {
+            "claim_id": "K01-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "inspect employee badge colors",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K01-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies the specific badge-color inspection gate; the mapping introduces it as a proposed next step."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The assertion prescribes what to do before proceeding if readiness remains unresolved. The inspection is subordinate to this prospective gate."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K01-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Inspect employee badge colors when readiness remains unresolved, before proceeding.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K01-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K01-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The gate prescribes a substantive observation. Removing or leaving this inspection unjustified would change the gate's meaning and scope. No separate frozen claim evaluates the operation."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K01-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If readiness remains unresolved, inspect employee badge colors before proceeding.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K01-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K01-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K01-M",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is a prospective gate and does not present an authored choice as an empirical fact. However, its prescribed check is incoherent with its readiness trigger: badge colors are independent of export delivery, while the source instrument requires readiness checks to inspect delivery evidence. Permission to require a prospective check does not establish coherence for this unrelated check."
+            },
+            {
+              "claim_id": "K01-C1",
+              "obligation_id": "D1",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Inspect employee badge colors when readiness remains unresolved, before proceeding.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K01-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K01-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K01-M",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The source mechanism requires inspecting evidence connected to export or attachment delivery. Under the frozen target conditions, badge colors indicate only access zones and are assigned independently of export systems, delivery quality and responsibilities. Inspecting them therefore neither instantiates the mechanism nor provides relevant readiness information. Permission to require a check before proceeding does not license this substantively irrelevant check. No check or resulting outcome has been observed."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K01-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K01-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "Badge-color inspection is a distinct substantive observation, material to the authored gate, not separately frozen."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; Badge-color inspection is a distinct substantive observation, material to the authored gate, not separately frozen."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; Badge-color inspection is a distinct substantive observation, material to the authored gate, not separately frozen."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "Badge-color inspection is a distinct substantive observation, material to the authored gate, not separately frozen."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N2",
+      "case_id": "K02",
+      "claims": [
+        {
+          "claim_id": "K02-C1",
+          "hypothesis": {
+            "claim_id": "K02-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "sort requests alphabetically and compare whether latency improves",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K02-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies the proposed fallback rule. The mapping introduces the prescription to sort alphabetically and compare latency when the cause remains unresolved."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The claim prescribes what to do if the cause remains unresolved. Sorting and comparison are subordinate actions within one prospective rule; no improvement or evidential implication is asserted."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K02-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Sort requests alphabetically and compare whether latency improves.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K02-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K02-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The substantive diagnostic procedure is material to the rule's prescribed action and has no separate frozen claim. Removing it would change the rule's meaning and scope."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K02-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If export-delay cause remains unresolved, sort requests alphabetically and compare whether latency improves.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K02-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K02-S",
+                  "role": "SUPPORT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is prospective and does not assert an observed improvement or present a normative choice as empirical fact. However, its prescribed diagnostic action is incoherent under the frozen conditions: alphabetical sorting changes only the display of completed records. K02-S explicitly excludes such rearrangement from causal perturbation, so comparing latency after sorting cannot serve the proposed diagnostic purpose."
+            },
+            {
+              "claim_id": "K02-C1",
+              "obligation_id": "D1",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Sort requests alphabetically and compare whether latency improves.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K02-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K02-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K02-M",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The source mechanism requires controlled variation of a suspected causal variable and explicitly excludes display rearrangement. Under the frozen target conditions, alphabetical sorting changes only completed-record display, leaving execution and suspected causal variables unchanged. Comparing latency afterward therefore does not instantiate the transferred diagnostic mechanism. The unresolved cause does not license this operation, and the proposal establishes no observed improvement."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K02-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K02-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "Alphabetical sorting plus latency comparison is the substantive diagnostic operation actually prescribed."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; Alphabetical sorting plus latency comparison is the substantive diagnostic operation actually prescribed."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; Alphabetical sorting plus latency comparison is the substantive diagnostic operation actually prescribed."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "Alphabetical sorting plus latency comparison is the substantive diagnostic operation actually prescribed."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N3",
+      "case_id": "K03",
+      "claims": [
+        {
+          "claim_id": "K03-C1",
+          "hypothesis": {
+            "claim_id": "K03-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "rerun the comparison under a different workload",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K03-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The target describes a proposed repeat at a different workload, but does not explicitly supply the conditional next-step rule. The mapping introduces that rule."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "It prescribes what to do if hypotheses remain tied. The rerun is subordinate to this prospective decision rule."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K03-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K03-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K03-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The prescribed comparison is substantive operational content essential to the rule's meaning and scope. No separate frozen claim evaluates it."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K03-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If hypotheses remain tied, rerun the comparison under a different workload.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K03-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K03-S",
+                  "role": "SUPPORT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is a prospective rule with a clear trigger, but its prescribed action is incoherent for the frozen comparison. Comparing the proposed W2 run against the prior W run violates the requirement to hold workload fixed and cannot isolate the suspected causal variable. The rule does not falsely assert an empirical outcome; the failure concerns its prescribed diagnostic comparison, not an observed repeat result."
+            },
+            {
+              "claim_id": "K03-C1",
+              "obligation_id": "D1",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K03-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K03-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The transferred diagnostic mechanism requires fixed workload across compared runs and variation only in the suspected causal variable. The proposed W2-versus-W comparison breaches that requirement; workload independently affects latency, so this comparison cannot isolate the suspected variable. The violation concerns the proposed operation, not an observed repeat outcome."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K03-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K03-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "The changed-workload repeat is the material comparison action."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; The changed-workload repeat is the material comparison action."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; The changed-workload repeat is the material comparison action."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "The changed-workload repeat is the material comparison action."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N4",
+      "case_id": "K04",
+      "claims": [
+        {
+          "claim_id": "K04-C1",
+          "hypothesis": {
+            "claim_id": "K04-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "persistent loss indicates scanner failure",
+                "epistemic_function": "INFERENCE",
+                "contract": "DERIVED_WARRANT",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "INFERENCE"
+                ]
+              },
+              {
+                "subject": "repair the scanner",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": null,
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K04-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies the rule to repair the scanner upon persistent loss or its stated attribution. The mapping introduces this proposition."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The primary assertion prescribes a prospective action if loss persists. The scanner-failure attribution is its subordinate reason, not an independent co-primary assertion."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K04-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_INFERENCE",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "DERIVED_WARRANT",
+                  "subject": "Persistent attachment loss indicates scanner failure.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K04-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K04-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The scanner-failure attribution supplies the rule's stated reason for selecting scanner repair. Removing it changes the claim's meaning and justification. No separate frozen claim evaluates this inference."
+              },
+              {
+                "dependency_id": "D2",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Perform scanner repair as the prescribed component intervention.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K04-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K04-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "Scanner repair is a substantive intervention essential to the prescribed action. Governance coherence alone does not evaluate its operational license, and no separate frozen claim evaluates it. The component-selection inference is captured directly by D1."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K04-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If attachment loss persists, repair the scanner because persistent loss indicates scanner failure.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K04-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K04-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is a prospective intervention rule, but its trigger does not justify selecting the scanner. K04-S explicitly requires component-local evidence and states that persistence alone cannot distinguish components. The rule presents scanner failure as established by persistence, embedding an unsupported causal attribution in its policy rationale. Authorization and an applicable restoration procedure do not supply the missing localization."
+            },
+            {
+              "claim_id": "K04-C1",
+              "obligation_id": "D1",
+              "contract": "DERIVED_WARRANT",
+              "subject": "Persistent attachment loss indicates scanner failure.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K04-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K04-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The cited support explicitly states that persistence alone cannot distinguish components and that selecting the scanner requires component-local evidence. The claimed scanner-failure attribution therefore does not follow at its stated strength. Authorization and applicability of the restoration procedure do not establish that the scanner caused the loss."
+            },
+            {
+              "claim_id": "K04-C1",
+              "obligation_id": "D2",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Perform scanner repair as the prescribed component intervention.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K04-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K04-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The transferred mechanism requires component-local evidence before selecting scanner repair. Persistence alone cannot distinguish scanner omission from transfer truncation or storage deletion, and current records do not localize the failure. Authorization and an applicable restoration procedure do not license this component selection. The proposed rule therefore fails the operation contract; no repair outcome is established."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K04-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "DERIVED_WARRANT",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D2",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K04-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is the persistent-loss to scanner-failure bridge; D2 is the material scanner intervention. Both remain direct peers."
+              },
+              {
+                "expected_index": 1,
+                "dependency_ids": [
+                  "D2"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is the persistent-loss to scanner-failure bridge; D2 is the material scanner intervention. Both remain direct peers."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D1 is the persistent-loss to scanner-failure bridge; D2 is the material scanner intervention. Both remain direct peers."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D1 is the persistent-loss to scanner-failure bridge; D2 is the material scanner intervention. Both remain direct peers."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D1 is the persistent-loss to scanner-failure bridge; D2 is the material scanner intervention. Both remain direct peers."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N5",
+      "case_id": "K05",
+      "claims": [
+        {
+          "claim_id": "K05-C1",
+          "hypothesis": {
+            "claim_id": "K05-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "user harm begins at 70%",
+                "epistemic_function": "FACT",
+                "contract": "FACT_WARRANT",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "FACT",
+                  "INFERENCE"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K05-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The mapping introduces the specific 70% stopping rule and its harm-onset rationale; neither input supplies those propositions."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The primary assertion prescribes a prospective stopping action above a threshold. The harm-onset assertion is its subordinate reason."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K05-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_FACT",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "FACT_WARRANT",
+                  "subject": "User harm begins at 70% utilization under the frozen case conditions.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K05-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K05-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The empirical onset assertion is distinct from the prospective stopping rule and supplies its stated justification. Removing it would change the claim's meaning from an empirically justified threshold to a threshold choice. No separate frozen claim evaluates this assertion."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K05-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "Stop the trial above 70% utilization because user harm begins at 70%.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K05-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K05-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition presents a prospective stopping rule with a coherent trigger and action. However, it asserts empirical harm onset at 70% without supporting observations or a validated causal model. The frozen conditions explicitly state that 70% has not been empirically calibrated. Authoring that threshold does not establish harm onset, so the stated empirical justification violates the contract."
+            },
+            {
+              "claim_id": "K05-C1",
+              "obligation_id": "D1",
+              "contract": "FACT_WARRANT",
+              "subject": "User harm begins at 70% utilization under the frozen case conditions.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K05-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K05-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "K05-S permits a prospective stopping threshold but requires observations or a validated causal model to support empirical harm onset at the asserted precision. No such support is supplied; K05-T explicitly states that 70% is uncalibrated. Choosing that threshold does not warrant the descriptive assertion that harm begins there."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K05-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "FACT_WARRANT",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K05-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "The harm-onset statement is descriptive FACT, preserved as FACT_WARRANT without changing its embedded form."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; The harm-onset statement is descriptive FACT, preserved as FACT_WARRANT without changing its embedded form."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; The harm-onset statement is descriptive FACT, preserved as FACT_WARRANT without changing its embedded form."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "The harm-onset statement is descriptive FACT, preserved as FACT_WARRANT without changing its embedded form."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N6",
+      "case_id": "K06",
+      "claims": [
+        {
+          "claim_id": "K06-C1",
+          "hypothesis": {
+            "claim_id": "K06-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "B is safer to reverse",
+                "epistemic_function": "FACT",
+                "contract": "FACT_WARRANT",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "FACT",
+                  "INFERENCE"
+                ]
+              },
+              {
+                "subject": "deploy B first",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "SATISFIED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K06-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies the proposed B-first policy or its comparative reversal-safety rationale. The mapping introduces that proposition."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The claim prescribes deploying B under an inconclusive-evidence condition. The reversal-safety assertion is a subordinate reason for that rule."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K06-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Deploy B first by performing the documented configuration switch under the frozen applicability conditions.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K06-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K06-S",
+                      "role": "SUPPORT"
+                    },
+                    {
+                      "source_id": "K06-M",
+                      "role": "CONTEXT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The prescribed deployment performs a substantive intervention. Removing it changes the rule's action and meaning, and no separate frozen claim evaluates it."
+              },
+              {
+                "dependency_id": "D2",
+                "trigger": "EMBEDDED_FACT",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "FACT_WARRANT",
+                  "subject": "B is safer to reverse than A under the frozen case conditions.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K06-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K06-S",
+                      "role": "SUPPORT"
+                    },
+                    {
+                      "source_id": "K06-M",
+                      "role": "CONTEXT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "Comparative reversal safety is the stated substantive reason for selecting B. Removing that assertion changes the rule's justification; no separate frozen claim evaluates it. Its presence in the mapping does not establish it as an observation."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K06-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If neither option is conclusive, deploy B first because B is safer to reverse.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K06-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K06-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition presents a prospective deployment rule with a coherent trigger and action. However, it justifies choosing B by asserting greater reversal safety as fact. K06-S requires comparative evidence for that assertion; the frozen case supplies none. An authored tie-breaking policy is permitted, but this wording presents its unsupported comparative rationale as empirically established."
+            },
+            {
+              "claim_id": "K06-C1",
+              "obligation_id": "D1",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Deploy B first by performing the documented configuration switch under the frozen applicability conditions.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K06-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K06-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "K06-S supports the documented configuration switch and rollback path as applicable to B. Under the frozen target conditions, performing that switch faithfully implements the reversible rollout and produces a deployment action relevant to the target problem. This operational license does not establish that B is safer to reverse or that deployment yields conclusive diagnostic evidence."
+            },
+            {
+              "claim_id": "K06-C1",
+              "obligation_id": "D2",
+              "contract": "FACT_WARRANT",
+              "subject": "B is safer to reverse than A under the frozen case conditions.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K06-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K06-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "K06-S establishes a rollback path applicable to both options and requires comparative evidence for comparative safety claims. It does not establish that B is safer to reverse. K06-T explicitly states that no comparative evidence exists. The assertion therefore imports an unsupported substantive inference; permission to author a tie-breaking policy does not warrant its factual rationale."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K06-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "VIOLATED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "SATISFIED"
+              },
+              {
+                "obligation_id": "D2",
+                "contract": "FACT_WARRANT",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K06-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D2"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D2 is the comparative reversal-safety FACT; D1 is the configuration-switch operation. The matching preserves the returned IDs and order."
+              },
+              {
+                "expected_index": 1,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D2 is the comparative reversal-safety FACT; D1 is the configuration-switch operation. The matching preserves the returned IDs and order."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D2 is the comparative reversal-safety FACT; D1 is the configuration-switch operation. The matching preserves the returned IDs and order."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D2 is the comparative reversal-safety FACT; D1 is the configuration-switch operation. The matching preserves the returned IDs and order."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D2 is the comparative reversal-safety FACT; D1 is the configuration-switch operation. The matching preserves the returned IDs and order."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "P1",
+      "case_id": "K07",
+      "claims": [
+        {
+          "claim_id": "K07-C1",
+          "hypothesis": {
+            "claim_id": "K07-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "measure R next",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "SATISFIED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              },
+              {
+                "subject": "R1 favors H1 and R2 favors H2",
+                "epistemic_function": "CONDITIONAL_RELATION",
+                "contract": "CONDITIONAL_LICENSE",
+                "verdict": "SATISFIED",
+                "allowed_functions": [
+                  "CONDITIONAL_RELATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "SATISFIED"
+          },
+          "classification": {
+            "claim_id": "K07-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The mapping combines the target's unresolved hypotheses with the source's measurement instruction and likelihoods into a conditional next-step rule with anticipated discrimination logic. Neither input independently supplies that proposition."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The primary assertion prescribes what to do if the hypotheses remain unresolved: measure R next. The anticipated R1/R2 implications are subordinate discrimination logic; no outcome is asserted to have occurred."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K07-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Measure R next if H1 and H2 remain unresolved.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K07-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K07-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The substantive measurement is the prescribed action; removing it changes the rule's meaning. No separate frozen claim evaluates this operation."
+              },
+              {
+                "dependency_id": "D2",
+                "trigger": "EMBEDDED_CONDITIONAL_RELATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "CONDITIONAL_LICENSE",
+                  "subject": "If R1 occurs, it favors H1; if R2 occurs, it favors H2.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K07-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K07-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The anticipated outcome implications are explicit substantive content; removing or reversing them changes the claim's meaning and scope. No separate frozen claim evaluates them. This is a direct peer dependency alongside the operation."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K07-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "If H1 and H2 remain unresolved, measure R next; R1 favors H1 and R2 favors H2.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K07-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K07-S",
+                  "role": "SUPPORT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition presents a prospective decision with a coherent trigger and prescribed next measurement. K07-S explicitly recommends recording the next trace and supplies likelihoods supporting the stated directional updates under the frozen conditions. The recommendation is presented as a choice, not an empirically established requirement; neither an observed R outcome nor diagnostic certainty is asserted."
+            },
+            {
+              "claim_id": "K07-C1",
+              "obligation_id": "D1",
+              "contract": "OPERATION_LICENSE",
+              "subject": "Measure R next if H1 and H2 remain unresolved.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K07-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K07-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The instrument explicitly licenses one next trace using the verified logger under fixed workload without altering either path, matching the proposed measurement and stated target conditions. Its likelihoods make R1 favor H1 and R2 favor H2, providing relevant discrimination between the unresolved hypotheses. This licenses directional updating, not certainty; no measurement outcome is asserted."
+            },
+            {
+              "claim_id": "K07-C1",
+              "obligation_id": "D2",
+              "contract": "CONDITIONAL_LICENSE",
+              "subject": "If R1 occurs, it favors H1; if R2 occurs, it favors H2.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K07-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K07-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "Under the stated calibrated-trace conditions, R1 has a likelihood ratio of 9 favoring H1, and R2 has a likelihood ratio of 9 favoring H2. These likelihoods license the claimed directional updates without certainty. The target supplies the applicable case conditions; neither hypothetical outcome is treated as observed."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K07-C1",
+            "status": "MEASURED",
+            "overall": "SATISFIED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "SATISFIED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "SATISFIED"
+              },
+              {
+                "obligation_id": "D2",
+                "contract": "CONDITIONAL_LICENSE",
+                "verdict": "SATISFIED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K07-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is measurement R; D2 combines the paired hypothetical R1/H1 and R2/H2 consequences in one conditional relation."
+              },
+              {
+                "expected_index": 1,
+                "dependency_ids": [
+                  "D2"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is measurement R; D2 combines the paired hypothetical R1/H1 and R2/H2 consequences in one conditional relation."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D1 is measurement R; D2 combines the paired hypothetical R1/H1 and R2/H2 consequences in one conditional relation."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D1 is measurement R; D2 combines the paired hypothetical R1/H1 and R2/H2 consequences in one conditional relation."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D1 is measurement R; D2 combines the paired hypothetical R1/H1 and R2/H2 consequences in one conditional relation."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "P2",
+      "case_id": "K08",
+      "claims": [
+        {
+          "claim_id": "K08-C1",
+          "hypothesis": {
+            "claim_id": "K08-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "SATISFIED"
+          },
+          "classification": {
+            "claim_id": "K08-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The target supplies the workload ceiling but leaves the response unspecified. The source describes possible stopping rules without supplying this instruction. The mapping authors the conditional stop instruction."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The claim prescribes a prospective stopping action if the agreed threshold is exceeded."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K08-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_FACT",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "FACT_WARRANT",
+                  "subject": "Before the trial, the team agreed a workload allocation ceiling of 100 requests per minute.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K08-T",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The instruction identifies its trigger as a prospectively agreed threshold. Removing or falsifying that agreement changes the rule's stated basis and scope. No separate frozen claim evaluates the agreement."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K08-C1",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "Stop the trial if the prospectively agreed workload threshold is exceeded.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K08-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K08-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K08-M",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is a prospective stopping rule with a coherent trigger and action: exceeding the agreed workload ceiling prompts stopping. The frozen conditions specify reliable measurement and safe stopping, and K08-S supports this use of a policy threshold. The stop instruction is authored; only the workload ceiling was previously agreed. The proposition does not claim empirical harm onset, diagnostic significance, or an observed outcome."
+            },
+            {
+              "claim_id": "K08-C1",
+              "obligation_id": "D1",
+              "contract": "FACT_WARRANT",
+              "subject": "Before the trial, the team agreed a workload allocation ceiling of 100 requests per minute.",
+              "verdict": "VIOLATED",
+              "provenance_refs": [
+                {
+                  "source_id": "K08-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K08-T",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "K08-S supports only the general use of agreed policy thresholds; it does not establish this team's pretrial agreement or the specific ceiling of 100 requests per minute. K08-T states those details but is cited only as CONTEXT, which cannot establish substantive support. The exact descriptive assertion therefore lacks role-appropriate warrant; this does not establish that it is false."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K08-C1",
+            "status": "MEASURED",
+            "overall": "VIOLATED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "SATISFIED"
+              },
+              {
+                "obligation_id": "D1",
+                "contract": "FACT_WARRANT",
+                "verdict": "VIOLATED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K08-C1",
+            "expected_dependency_matches": [],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; The source/target already supply the policy agreement. The stop rule contains no empirical harm or diagnostic bridge. Discovery adds a factual warrant contrary to the pure-normative control."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "PRESENT",
+                "rationale": "The source/target already supply the policy agreement. The stop rule contains no empirical harm or diagnostic bridge. Discovery adds a factual warrant contrary to the pure-normative control."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "The source/target already supply the policy agreement. The stop rule contains no empirical harm or diagnostic bridge. Discovery adds a factual warrant contrary to the pure-normative control."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "P3",
+      "case_id": "K09",
+      "claims": [
+        {
+          "claim_id": "K09-C1",
+          "hypothesis": {
+            "claim_id": "K09-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "FACT",
+            "base_contract": "FACT_WARRANT",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "SATISFIED"
+          },
+          "classification": {
+            "claim_id": "K09-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The target supplies observed counts and the source supplies a general interpretive relation. The mapping introduces the sharply increased incidence conclusion by combining them; neither input explicitly supplies that conclusion at the claim's scope."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "INFERENCE",
+              "competing_functions": [],
+              "rationale": "The mapping explicitly frames C1 as interpreting the controlled observations to establish an error-incidence conclusion. It asserts that conclusion, rather than describing what a hypothetical outcome would imply."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K09-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "INFERENCE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "DERIVED_WARRANT",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K09-C1",
+              "obligation_id": "B1",
+              "contract": "DERIVED_WARRANT",
+              "subject": "Above T, error incidence rises sharply.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K09-T",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K09-S",
+                  "role": "SUPPORT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "Within the stated controlled conditions and tested workload range, all ten paired replications recorded an increase from 1 to 120 errors per 1000 requests above T. These comparable observations warrant the bounded conclusion of sharply increased error incidence under K09-S. They do not establish an exact harm-onset point or generalization beyond the tested scope."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K09-C1",
+            "status": "MEASURED",
+            "overall": "SATISFIED",
+            "results": [
+              {
+                "obligation_id": "B1",
+                "contract": "DERIVED_WARRANT",
+                "verdict": "SATISFIED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K09-C1",
+            "expected_dependency_matches": [],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; The bounded error-incidence inference is the whole claim, with no distinct embedded scientific assertion requiring another obligation."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; The bounded error-incidence inference is the whole claim, with no distinct embedded scientific assertion requiring another obligation."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "The bounded error-incidence inference is the whole claim, with no distinct embedded scientific assertion requiring another obligation."
+          }
+        },
+        {
+          "claim_id": "K09-C2",
+          "hypothesis": {
+            "claim_id": "K09-C2",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [],
+            "claim_refs": [
+              "K09-C1"
+            ],
+            "closure_status": "COMPLETE",
+            "expected_overall": "SATISFIED"
+          },
+          "classification": {
+            "claim_id": "K09-C2",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The mapping introduces the specific stop trigger at T. The target supplies observations and stopping safety; the source supplies a general policy possibility. Neither supplies this specific prescription."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The claim prescribes a prospective stopping action when T is exceeded. Its reliance on C1 supplies a reason without changing its primary function."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K09-C2",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_INFERENCE",
+                "resolution": "CLAIM_REF",
+                "claim_ref": "K09-C1",
+                "inline_obligation": {
+                  "contract": null,
+                  "subject": null,
+                  "provenance_refs": []
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The mapping explicitly makes C1's error-incidence conclusion the material reason for selecting T and supplies no independent normative reason if that conclusion is removed. The existing frozen claim takes precedence; its conclusion is not assumed established."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [
+            {
+              "claim_id": "K09-C2",
+              "obligation_id": "B1",
+              "contract": "GOVERNANCE_COHERENCE",
+              "subject": "Stop the trial when T is exceeded.",
+              "verdict": "SATISFIED",
+              "provenance_refs": [
+                {
+                  "source_id": "K09-S",
+                  "role": "SUPPORT"
+                },
+                {
+                  "source_id": "K09-T",
+                  "role": "CONTEXT"
+                },
+                {
+                  "source_id": "K09-M",
+                  "role": "CONTEXT"
+                }
+              ],
+              "unresolved_conditions": [],
+              "rationale": "The proposition is a prospective stopping rule with a coherent trigger and action: stop when workload exceeds the defined T. It presents an authored policy, without claiming that T is an empirically established harm-onset boundary. K09-S supports this form of prospective policy. The mapping describes reliance on C1 but does not establish C1's validity; this judgment does not assume that separate claim passes or treat contextual observations as substantive support."
+            }
+          ],
+          "aggregation": {
+            "claim_id": "K09-C2",
+            "status": "MEASURED",
+            "overall": "SATISFIED",
+            "results": [
+              {
+                "dependency_id": "D1",
+                "claim_ref": "K09-C1",
+                "verdict": "SATISFIED",
+                "referenced_status": "MEASURED"
+              },
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "verdict": "SATISFIED"
+              }
+            ],
+            "missing_obligations": [],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K09-C2",
+            "expected_dependency_matches": [],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; Explicit mapping reliance is represented by CLAIM_REF K09-C1; no duplicate inline scientific judgment is requested."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; Explicit mapping reliance is represented by CLAIM_REF K09-C1; no duplicate inline scientific judgment is requested."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "Explicit mapping reliance is represented by CLAIM_REF K09-C1; no duplicate inline scientific judgment is requested."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N7",
+      "case_id": "K10",
+      "claims": [
+        {
+          "claim_id": "K10-C1",
+          "hypothesis": {
+            "claim_id": "K10-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "VIOLATED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "run diagnostic X",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "SATISFIED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K10-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "The mapping introduces the indefinite-execution rule; neither the target nor the source instrument supplies that proposition at the same scope and certainty."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The single primary assertion prescribes a prospective scheduling action: run X indefinitely whenever either hypothesis remains possible."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K10-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Perform diagnostic X once: record a complete encoder-output trace against a matched received inventory under fixed workload to inform the relative support for H1 versus H2.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K10-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K10-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The rule prescribes a substantive diagnostic measurement whose justification is material to accepting the prescribed action. No separate frozen claim evaluates X. Indefinite repetition remains the primary governance scheduling choice."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [],
+          "aggregation": {
+            "claim_id": "K10-C1",
+            "status": "INCOMPLETE",
+            "overall": null,
+            "results": [],
+            "missing_obligations": [
+              "B1",
+              "D1"
+            ],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K10-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is one performance of valid diagnostic X, separated from indefinite scheduling in primary governance. Its evaluation was not launched."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D1 is one performance of valid diagnostic X, separated from indefinite scheduling in primary governance. Its evaluation was not launched."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D1 is one performance of valid diagnostic X, separated from indefinite scheduling in primary governance. Its evaluation was not launched."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D1 is one performance of valid diagnostic X, separated from indefinite scheduling in primary governance. Its evaluation was not launched."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "N8",
+      "case_id": "K11",
+      "claims": [
+        {
+          "claim_id": "K11-C1",
+          "hypothesis": {
+            "claim_id": "K11-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [
+              {
+                "subject": "run test X",
+                "epistemic_function": "OPERATION",
+                "contract": "OPERATION_LICENSE",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "OPERATION"
+                ]
+              },
+              {
+                "subject": "outcome Y proves H1",
+                "epistemic_function": "CONDITIONAL_RELATION",
+                "contract": "CONDITIONAL_LICENSE",
+                "verdict": "VIOLATED",
+                "allowed_functions": [
+                  "CONDITIONAL_RELATION"
+                ]
+              }
+            ],
+            "claim_refs": [],
+            "closure_status": "COMPLETE",
+            "expected_overall": "VIOLATED"
+          },
+          "classification": {
+            "claim_id": "K11-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies this specific prospective rule with its stated rationale; the mapping introduces that proposition."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The primary assertion prescribes running X if uncertainty remains. The proposed test and hypothetical implication of Y are subordinate content; no outcome is asserted to have occurred."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K11-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [
+              {
+                "dependency_id": "D1",
+                "trigger": "EMBEDDED_OPERATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "OPERATION_LICENSE",
+                  "subject": "Run test X, inspecting employee badge colors, to address the unresolved export fault.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K11-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K11-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The prescribed substantive test is material to the rule's action and is not separately evaluated by another frozen claim."
+              },
+              {
+                "dependency_id": "D2",
+                "trigger": "EMBEDDED_CONDITIONAL_RELATION",
+                "resolution": "INLINE_OBLIGATION",
+                "claim_ref": null,
+                "inline_obligation": {
+                  "contract": "CONDITIONAL_LICENSE",
+                  "subject": "If test X produces outcome Y, finding at least one blue badge, that outcome proves H1.",
+                  "provenance_refs": [
+                    {
+                      "source_id": "K11-T",
+                      "role": "CONTEXT"
+                    },
+                    {
+                      "source_id": "K11-S",
+                      "role": "SUPPORT"
+                    }
+                  ]
+                },
+                "materiality": "REQUIRED",
+                "rationale": "The hypothetical evidential consequence supplies the rule's substantive rationale; removing it changes the claim's meaning. No separate frozen claim evaluates it."
+              }
+            ],
+            "closure_status": "COMPLETE",
+            "unresolved_dependencies": []
+          },
+          "judgments": [],
+          "aggregation": {
+            "claim_id": "K11-C1",
+            "status": "INCOMPLETE",
+            "overall": null,
+            "results": [],
+            "missing_obligations": [
+              "B1",
+              "D1",
+              "D2"
+            ],
+            "closure_status": "COMPLETE",
+            "closure_constraints": []
+          },
+          "semantic_review": {
+            "claim_id": "K11-C1",
+            "expected_dependency_matches": [
+              {
+                "expected_index": 0,
+                "dependency_ids": [
+                  "D1"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is test X; D2 is hypothetical Y proving H1. Both direct obligations exist. Their evaluations were not launched."
+              },
+              {
+                "expected_index": 1,
+                "dependency_ids": [
+                  "D2"
+                ],
+                "finding": "PRESENT",
+                "rationale": "D1 is test X; D2 is hypothetical Y proving H1. Both direct obligations exist. Their evaluations were not launched."
+              }
+            ],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D1 is test X; D2 is hypothetical Y proving H1. Both direct obligations exist. Their evaluations were not launched."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D1 is test X; D2 is hypothetical Y proving H1. Both direct obligations exist. Their evaluations were not launched."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D1 is test X; D2 is hypothetical Y proving H1. Both direct obligations exist. Their evaluations were not launched."
+          }
+        }
+      ]
+    },
+    {
+      "control_id": "U1",
+      "case_id": "K12",
+      "claims": [
+        {
+          "claim_id": "K12-C1",
+          "hypothesis": {
+            "claim_id": "K12-C1",
+            "content_origin": "MAPPING_GENERATED",
+            "epistemic_function": "GOVERNANCE_RULE",
+            "base_contract": "GOVERNANCE_COHERENCE",
+            "base_verdict": "SATISFIED",
+            "expected_secondary_obligations": [],
+            "claim_refs": [],
+            "closure_status": "DEPENDENCY_UNCERTAIN",
+            "expected_overall": "UNCERTAIN"
+          },
+          "classification": {
+            "claim_id": "K12-C1",
+            "atomicity": "ATOMIC",
+            "content_origin": {
+              "assignment_status": "ASSIGNED",
+              "kind": "MAPPING_GENERATED",
+              "origin_refs": [],
+              "competing_origins": [],
+              "rationale": "Neither input supplies the rule to apply a corrective procedure if the pattern continues. The unresolved procedure referent does not create independent co-primary assertions."
+            },
+            "epistemic_function": {
+              "assignment_status": "ASSIGNED",
+              "kind": "GOVERNANCE_RULE",
+              "competing_functions": [],
+              "rationale": "The assertion prescribes a prospective action if a condition holds. The substantive intervention is embedded in that rule; uncertainty about which procedure is intended does not change its function."
+            }
+          },
+          "obligation_set": {
+            "claim_id": "K12-C1",
+            "classification": {
+              "content_origin": "MAPPING_GENERATED",
+              "epistemic_function": "GOVERNANCE_RULE"
+            },
+            "base_obligations": [
+              {
+                "obligation_id": "B1",
+                "contract": "GOVERNANCE_COHERENCE",
+                "subject": "WHOLE_CLAIM"
+              }
+            ],
+            "dependencies": [],
+            "closure_status": "DEPENDENCY_UNCERTAIN",
+            "unresolved_dependencies": [
+              "D1 requires OPERATION_LICENSE, but 'the corrective procedure' is unresolved between scanner acquisition-path recalibration and downstream storage retry-policy rewriting. These operations have distinct applicability conditions, and no separate frozen claim resolves the referent. A concrete operation obligation cannot be specified without choosing an unsupported referent."
+            ]
+          },
+          "judgments": [],
+          "aggregation": {
+            "claim_id": "K12-C1",
+            "status": "INCOMPLETE",
+            "overall": null,
+            "results": [],
+            "missing_obligations": [
+              "B1"
+            ],
+            "closure_status": "DEPENDENCY_UNCERTAIN",
+            "closure_constraints": [
+              "UNCERTAIN"
+            ]
+          },
+          "semantic_review": {
+            "claim_id": "K12-C1",
+            "expected_dependency_matches": [],
+            "semantic_checks": [
+              {
+                "code": "OBLIGATION_OMISSION",
+                "finding": "ABSENT",
+                "rationale": "All material direct content in the frozen claim is represented; D1 is explicitly identified as an unresolved operation in unresolved_dependencies and companion metadata. No concrete referent/contract subject is invented. Evaluation was not launched."
+              },
+              {
+                "code": "OVERTRIGGER",
+                "finding": "ABSENT",
+                "rationale": "Resolved dependencies are substantive, material content rather than mere stop/pause/control actions; D1 is explicitly identified as an unresolved operation in unresolved_dependencies and companion metadata. No concrete referent/contract subject is invented. Evaluation was not launched."
+              },
+              {
+                "code": "WRONG_SECONDARY_CONTRACT",
+                "finding": "ABSENT",
+                "rationale": "No mismatch between frozen embedded function and its selected contract. P2 is separately counted as an unnecessary obligation; Stage C citation corruption is a separate input-lineage diagnostic."
+              },
+              {
+                "code": "DEPENDENCY_DUPLICATION",
+                "finding": "ABSENT",
+                "rationale": "No separately frozen scientific proposition is rejudged inline. P3 C2 uses CLAIM_REF and the C1 ledger contains exactly one evaluation."
+              },
+              {
+                "code": "RECURSIVE_EXPLOSION",
+                "finding": "ABSENT",
+                "rationale": "No nested discovery or obligation tree. All dependencies are direct; unresolved U1 is retained without expansion."
+              }
+            ],
+            "notes": "D1 is explicitly identified as an unresolved operation in unresolved_dependencies and companion metadata. No concrete referent/contract subject is invented. Evaluation was not launched."
+          }
+        }
+      ]
+    }
+  ],
+  "case_count": 12,
+  "claim_count": 13,
+  "provider_judgments": 21,
+  "origin_counts": {
+    "MAPPING_GENERATED": 13
+  },
+  "function_counts": {
+    "GOVERNANCE_RULE": 12,
+    "INFERENCE": 1
+  },
+  "origin_function_combinations": {
+    "MAPPING_GENERATED + GOVERNANCE_RULE": 12,
+    "MAPPING_GENERATED + INFERENCE": 1
+  },
+  "atomicity_counts": {
+    "ATOMIC": 13
+  },
+  "obligation_counts_by_contract": {
+    "GOVERNANCE_COHERENCE": 9,
+    "OPERATION_LICENSE": 6,
+    "DERIVED_WARRANT": 2,
+    "FACT_WARRANT": 3,
+    "CONDITIONAL_LICENSE": 1
+  },
+  "secondary_obligations_discovered": 15,
+  "claim_ref_count": 1,
+  "diagnostic_count_unit": "affected claims; event counts and evidence also retained",
+  "diagnostic_counts": {
+    "OBLIGATION_OMISSION": 0,
+    "GOVERNANCE_LAUNDERING": 0,
+    "OVERTRIGGER": 1,
+    "WRONG_SECONDARY_CONTRACT": 0,
+    "DEPENDENCY_DUPLICATION": 0,
+    "FAILURE_NONPROPAGATION": 0,
+    "SHORT_CIRCUIT": 0,
+    "RECURSIVE_EXPLOSION": 0,
+    "DEPENDENCY_CYCLE": 0,
+    "DEPENDENCY_UNCERTAIN": 1,
+    "CLASSIFICATION_CONTRACT_FAILURE": 0
+  },
+  "diagnostic_event_counts": {
+    "OBLIGATION_OMISSION": 0,
+    "GOVERNANCE_LAUNDERING": 0,
+    "OVERTRIGGER": 1,
+    "WRONG_SECONDARY_CONTRACT": 0,
+    "DEPENDENCY_DUPLICATION": 0,
+    "FAILURE_NONPROPAGATION": 0,
+    "SHORT_CIRCUIT": 0,
+    "RECURSIVE_EXPLOSION": 0,
+    "DEPENDENCY_CYCLE": 0,
+    "DEPENDENCY_UNCERTAIN": 1,
+    "CLASSIFICATION_CONTRACT_FAILURE": 0
+  },
+  "diagnostic_events": [
+    {
+      "code": "DEPENDENCY_UNCERTAIN",
+      "claim_id": "K12-C1",
+      "detail": [
+        "D1 requires OPERATION_LICENSE, but 'the corrective procedure' is unresolved between scanner acquisition-path recalibration and downstream storage retry-policy rewriting. These operations have distinct applicability conditions, and no separate frozen claim resolves the referent. A concrete operation obligation cannot be specified without choosing an unsupported referent."
+      ]
+    },
+    {
+      "code": "OVERTRIGGER",
+      "claim_id": "K08-C1",
+      "detail": "The source/target already supply the policy agreement. The stop rule contains no empirical harm or diagnostic bridge. Discovery adds a factual warrant contrary to the pure-normative control."
+    }
+  ],
+  "overall_counts": {
+    "VIOLATED": 7,
+    "SATISFIED": 3,
+    "INCOMPLETE": 3
+  },
+  "scientific_success_not_inferred_from_completion": true,
+  "status": "TERMINATED_LINEAGE",
+  "calibration_complete": false,
+  "evaluation_stage_valid": false,
+  "evaluation_completed": 21,
+  "evaluation_planned": 27,
+  "provider_sessions_total": 47,
+  "all_diagnostic_counts_scope": "Observed discovery plus preserved as-run partial evaluation; zeros are not full-suite success claims.",
+  "lineage_diagnostic": {
+    "code": "PROVENANCE_PROJECTION_FAILURE",
+    "differing_executed_packets": 3,
+    "affected_claims": 2,
+    "demonstrated_material_verdict_effect": "K08-C1--D1"
+  },
+  "as_run_aggregation_only": true,
+  "formal_stage_d_completed": false,
+  "fully_evaluated_as_run_claims": 10,
+  "fully_evaluated_as_run_cases": 9,
+  "secondary_counts": {
+    "inline_resolved": 14,
+    "claim_ref": 1,
+    "unresolved_material_operation": 1
+  },
+  "primary_satisfied_secondary_violated_strict_negative_controls": 0,
+  "next_step_executed": false
+}
