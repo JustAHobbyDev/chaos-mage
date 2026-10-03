@@ -1,6 +1,23 @@
 # H6.R3 corrected compound-obligation calibration v0.2 — progress report
 
-## Current checkpoint — first authorized Stage A batch complete
+## Current checkpoint — Stage A complete; Stage B prepared
+
+All 13 Stage A classifications across 12 cases completed and froze successfully in fresh isolated Astra/high contexts. All are ATOMIC and MAPPING_GENERATED. Twelve primary claims are GOVERNANCE_RULE. R3K09-C1 (P3's separately evaluated empirical claim) is INFERENCE; deterministic routing will select DERIVED_WARRANT. The original hidden FACT hypothesis is preserved as a classification difference, with no post-hoc reclassification. All thirteen claims remain eligible for Stage B.
+
+Stage A judgment freeze: `7b532b4010e4433600e31960c4b5413e7ef3e732`.
+Stage B packet freeze: `c0032a8ff9e968325574d4a12a8f250c55f821f4`.
+Cumulative budget revision: `c8da6d985da14ed8a3d212ad815ba1eb1bc0a2f6`.
+
+Provider sessions: 13 total, 13 unique contexts. No provider failure, retry, substitution, validation diagnostic or scientific lineage incident. No Stage B or Stage C session has run. H.6/R1/R2 evidence and terminal states remain unchanged. All twelve controls have primary classifications; none has a scientific overall verdict yet. Governance/secondary separation, P2 grounding, P3 reuse, N7/N8 decomposition and U1 dependency closure remain unmeasured. Projection manifest is pending fresh Stage B obligations; no Stage C packet has been executed.
+
+Five bounded batches have recorded before/after allowance snapshots, session counts, usage profiles and available provider token totals. All observations are excluded from clean calibration because account isolation and telemetry settling were not established. Reported Stage A totals: 144,496 input tokens; 31,232 cached input tokens; 3,309 output tokens; 1,000 separately reported reasoning output tokens. These are not billed-dollar or quota estimates.
+
+All thirteen Stage B packets are now frozen. Plan-002 retains 13 completed Stage A sessions, adds 13 planned Stage B sessions and leaves Stage C count unknown until new dependency discovery. All costs remain unknown. Its exact plan hash is `22c454db492cf609afaa90ce38a97d321019d9e3db8da913ff2af68fc8b7602a`. Financial and fresh included-usage preflights require new authorization; the remaining-work usage forecast is UNKNOWN. Account details stay under ignored .runtime. No reset credits consumed.
+
+Recommended next step: approve the thirteen Stage B sessions under that exact plan and UNKNOWN usage risk, in batches of at most three with refreshed preflights. This recommendation has not been executed. Exact obligation projection and P2 no-overtrigger preflight still must pass before Stage C. Natural-claim negative-control readiness remains undetermined.
+
+
+## Preserved first-batch checkpoint
 
 Three fresh isolated Astra/high sessions completed successfully: R3K01-C1 (N1), R3K02-C1 (N2), and R3K03-C1 (N3). All three classify ATOMIC + MAPPING_GENERATED + GOVERNANCE_RULE, with no validation diagnostics. These are classification observations, not governance or secondary-contract validity results. Execution commit: a85836496ec47f967499beb84b77d59a63369ab3. Original responses, events, reservations and execution lineage are preserved at checkpoint aa9d5a6c31c3bbf54409fe5c6622f0fbd7f16ce5.
 
