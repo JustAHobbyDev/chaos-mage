@@ -1,0 +1,19 @@
+{
+  "claim_id": "K03-C1",
+  "obligation_id": "D1",
+  "contract": "OPERATION_LICENSE",
+  "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+  "verdict": "VIOLATED",
+  "provenance_refs": [
+    {
+      "source_id": "K03-S",
+      "role": "SUPPORT"
+    },
+    {
+      "source_id": "K03-T",
+      "role": "CONTEXT"
+    }
+  ],
+  "unresolved_conditions": [],
+  "rationale": "The transferred diagnostic mechanism requires fixed workload across compared runs and variation only in the suspected causal variable. The proposed W2-versus-W comparison breaches that requirement; workload independently affects latency, so this comparison cannot isolate the suspected variable. The violation concerns the proposed operation, not an observed repeat outcome."
+}
