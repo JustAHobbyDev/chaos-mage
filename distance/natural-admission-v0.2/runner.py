@@ -87,6 +87,11 @@ def effective_freeze_files():
             require(files.get(name) == change['original_sha256'], 'Amendment baseline mismatch: ' + name)
             files[name] = change['updated_sha256']
     files.update(read(H / 'role-stage-static-freeze.json')['files'])
+    amendment = read(H / 'continuation-amendment.json')
+    for name, change in amendment['changes'].items():
+        require(files.get(name) == change['original_sha256'], 'Continuation baseline mismatch: ' + name)
+        files[name] = change['updated_sha256']
+    files.update(amendment['added_files'])
     return files
 
 
@@ -95,7 +100,7 @@ def verify():
     require(len(order()) == 6 and len(set(order())) == 6, 'Exactly six distinct slots')
     files = effective_freeze_files()
     for p in sorted(H.glob('*-freeze.json')):
-        if p.name != 'initial-freeze.json':
+        if p.name not in ('initial-freeze.json', 'role-stage-static-freeze.json'):
             files.update(read(p)['files'])
     for name, digest in files.items():
         require(sha(R / name) == digest, 'INTEGRITY: ' + name)
@@ -203,6 +208,8 @@ def execute(stage, cid, plan):
     verify()
     require(not git('status', '--porcelain'), 'Unclean checkpoint')
     require(state() == 'RUNNING', 'Scheduling paused')
+    import continuation
+    continuation.guard(sys.modules[__name__], cid, stage)
     d = RT / 'attempts' / stage / cid
     d.mkdir(parents=True, exist_ok=False)
     request = (H / 'packets' / stage / f'{cid}.txt').read_bytes()
@@ -274,7 +281,7 @@ def run_batch(path):
     verify()
     if stage != 'generation':
         require((H / f'{stage}-packets-freeze.json').exists(), 'Stage packets not frozen')
-    plan = read(H / 'budgets/plan-004.json')
+    plan = read(H / 'budgets/plan-005.json')
     require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')
@@ -380,6 +387,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='action', required=True)
     sub.add_parser('verify')
+    sub.add_parser('resume-continuation')
     p = sub.add_parser('run-batch'); p.add_argument('--review', type=Path, required=True)
     p = sub.add_parser('freeze'); p.add_argument('stage', choices=['generation', 'claims', 'classification', 'discovery'])
     sub.add_parser('prepare-claims')
@@ -387,6 +395,9 @@ def main():
     p = sub.add_parser('prepare-role'); p.add_argument('stage', choices=['classification', 'discovery'])
     args = parser.parse_args()
     if args.action == 'verify': print(json.dumps(verify(), indent=2))
+    elif args.action == 'resume-continuation':
+        import continuation
+        continuation.resume(sys.modules[__name__])
     elif args.action == 'run-batch': run_batch(args.review)
     elif args.action == 'freeze': freeze(args.stage)
     elif args.action == 'freeze-obligations':
