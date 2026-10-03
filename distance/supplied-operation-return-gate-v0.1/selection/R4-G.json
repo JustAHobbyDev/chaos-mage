@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "status": "SCREENED_CANDIDATE",
+  "selection": {
+    "case_id": "R4-G",
+    "slot": "referenced_premise",
+    "source_experiment": "H.6 natural-admission-v0.1",
+    "original_claim_id": "H6-T02-2/C009",
+    "claim_path": "distance/natural-admission-v0.1/claims/H6-T02-2.json",
+    "claim_file_sha256": "e1689c32fe5211b143d6ab62e8f2bee6d219fd64b9f2fd6147fda356ce611886",
+    "claim_pointer": "/claims/8/component",
+    "frozen_text": "Trace coverage differs across worker versions.",
+    "frozen_scope": "Coverage variation is stated without identifying particular versions or its magnitude.",
+    "content_origin": "TARGET_SUPPLIED",
+    "epistemic_function": "FACT",
+    "assertion_mode": "REFERENCED_PREMISE",
+    "source_refs": [
+      {
+        "source_id": "TARGET",
+        "role": "SUPPORT",
+        "path": "distance/natural-admission-v0.1/generation-inputs/H6-T02-2.json",
+        "file_sha256": "7f69806cc7df399e25f0df7a2a48c5704f4ce780f2640907cebe72b10d253ca8",
+        "pointer": "/target/frame",
+        "text": "A hosted document service exports customer workspaces overnight. Median export time is stable, but roughly one in twenty exports now takes more than an hour instead of ten minutes. Export traces include queue entry, worker start, object reads and archive upload; trace coverage differs across worker versions. Customers cannot be asked to rerun large exports during business hours. The engineering team must plan a safe investigation and choose the next deployment action.",
+        "text_sha256": "5fb356e1e5de5b6a635314fcc6c1f17a30df01040e15c29f4a19186eea10b050"
+      },
+      {
+        "source_id": "P004",
+        "role": "SUPPORT",
+        "path": "distance/natural-admission-v0.1/span-tables/H6-T02-2.json",
+        "file_sha256": "689b5ec7f4abc8338254383ad9bdc3b021e6db06269257986efe7e75ac3aadda",
+        "pointer": "/spans/P004/text",
+        "text": "Trace coverage varies by worker version; availability of comparable timestamps, workload metadata and resource metrics remains uncertain.",
+        "text_sha256": "abe38c1387ef7b2f66b27058930753dbe69fe53c06bd4b088858265a0343fe85"
+      },
+      {
+        "source_id": "P007",
+        "role": "CONTEXT",
+        "path": "distance/natural-admission-v0.1/span-tables/H6-T02-2.json",
+        "file_sha256": "689b5ec7f4abc8338254383ad9bdc3b021e6db06269257986efe7e75ac3aadda",
+        "pointer": "/spans/P007/text",
+        "text": "Separate queue wait, worker execution, object-read and upload durations only where trace semantics permit.",
+        "text_sha256": "0b61973a80f4f6a713d6c6fd73d6e1ecea66e23abeb6a0e4c0f3adc224c6074c"
+      },
+      {
+        "source_id": "P011",
+        "role": "CONTEXT",
+        "path": "distance/natural-admission-v0.1/span-tables/H6-T02-2.json",
+        "file_sha256": "689b5ec7f4abc8338254383ad9bdc3b021e6db06269257986efe7e75ac3aadda",
+        "pointer": "/spans/P011/text",
+        "text": "Repeat the comparison excluding incomplete traces, varying uncertain phase boundaries, stratifying by version and workload, and considering combined causes.",
+        "text_sha256": "7f7b66dbeaf6c166a8e7c68998c74234f0f1f58877921488c31b2ff71e58de39"
+      }
+    ],
+    "why_selected": "Shortlisted only; not admitted to a complete selection. The target explicitly supplies version-dependent trace coverage. The mapping invokes the same limitation as context for qualified timing comparisons and sensitivity checks (P007/P011); it adds no version, magnitude, causal effect or stronger empirical assertion to this component. That unchanged premise alone creates no functional obligation.",
+    "expected_contracts": [],
+    "hidden_operator_hypothesis": {
+      "fidelity_verdict": null,
+      "operation_verdict": null,
+      "overall": null
+    }
+  },
+  "routing": {
+    "resolution": "GROUNDING_REF",
+    "contracts": [],
+    "rationale": "The target explicitly supplies version-dependent trace coverage. The mapping invokes the same limitation as context for qualified timing comparisons and sensitivity checks (P007/P011); it adds no version, magnitude, causal effect or stronger empirical assertion to this component. That unchanged premise alone creates no functional obligation."
+  },
+  "measurements": [],
+  "overall": null
+}
