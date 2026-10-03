@@ -1,0 +1,60 @@
+Evaluate exactly the frozen contract for the exact subject in this isolated packet.
+Return only the supplied JSON schema. No tools, external evidence, reclassification,
+additional contract questions, or invented observations. Preserve claim_id,
+obligation_id, contract and subject exactly. No expected answers are supplied.
+
+Use only role-appropriate frozen evidence. Mapping assertions and proposals are not
+observed facts merely because they are present. Citation CONTEXT does not establish
+substantive support. Test scope, certainty and applicability against the stated
+contract. A hypothetical consequence must not be treated as an observed outcome.
+A normative threshold choice does not establish empirical harm onset. Ordinary
+control actions and substantive diagnostic/interventional operations are distinct.
+Return SATISFIED, CONDITIONAL, VIOLATED, or UNCERTAIN; CONDITIONAL must state its
+unresolved conditions. Cite source IDs with SUPPORT or CONTEXT roles. Retain honest
+uncertainty and explain the judgment, without assuming other obligations pass/fail.
+
+{
+  "verdict_meanings": {
+    "SATISFIED": "claim satisfies its own role-specific contract",
+    "CONDITIONAL": "claim satisfies its contract only under an explicit unresolved condition",
+    "VIOLATED": "claim fails its own role-specific contract",
+    "UNCERTAIN": "available material does not permit reliable determination"
+  }
+}
+FROZEN PACKET
+{
+  "claim_id": "K03-C1",
+  "obligation_id": "D1",
+  "contract": "OPERATION_LICENSE",
+  "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+  "contract_question": "Does this proposed observation, intervention, comparison, or transformation faithfully instantiate the transferred mechanism at the target, under the stated applicability conditions, and does it produce information or action relevant to the target problem?",
+  "claim": {
+    "claim_id": "K03-C1",
+    "value": "If hypotheses remain tied, rerun the comparison under a different workload.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K03-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K03-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K03-T",
+    "text": "Two export-delay hypotheses remain tied after a comparison at workload W. Workload independently affects latency. A repeat can hold W fixed or use W2; the proposed repeat uses W2 while comparing against the prior W run."
+  },
+  "source_instrument": {
+    "source_id": "K03-S",
+    "text": "Paired diagnostic comparison requires workload to remain fixed across the compared runs. Vary only the suspected causal variable. Comparing different workloads cannot isolate that variable."
+  },
+  "mapping": {
+    "source_id": "K03-M",
+    "text": "The team proposes a next-step rule if the hypotheses remain tied; it has not run the repeat."
+  }
+}

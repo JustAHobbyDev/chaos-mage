@@ -1,0 +1,60 @@
+Evaluate exactly the frozen contract for the exact subject in this isolated packet.
+Return only the supplied JSON schema. No tools, external evidence, reclassification,
+additional contract questions, or invented observations. Preserve claim_id,
+obligation_id, contract and subject exactly. No expected answers are supplied.
+
+Use only role-appropriate frozen evidence. Mapping assertions and proposals are not
+observed facts merely because they are present. Citation CONTEXT does not establish
+substantive support. Test scope, certainty and applicability against the stated
+contract. A hypothetical consequence must not be treated as an observed outcome.
+A normative threshold choice does not establish empirical harm onset. Ordinary
+control actions and substantive diagnostic/interventional operations are distinct.
+Return SATISFIED, CONDITIONAL, VIOLATED, or UNCERTAIN; CONDITIONAL must state its
+unresolved conditions. Cite source IDs with SUPPORT or CONTEXT roles. Retain honest
+uncertainty and explain the judgment, without assuming other obligations pass/fail.
+
+{
+  "verdict_meanings": {
+    "SATISFIED": "claim satisfies its own role-specific contract",
+    "CONDITIONAL": "claim satisfies its contract only under an explicit unresolved condition",
+    "VIOLATED": "claim fails its own role-specific contract",
+    "UNCERTAIN": "available material does not permit reliable determination"
+  }
+}
+FROZEN PACKET
+{
+  "claim_id": "K10-C1",
+  "obligation_id": "D1",
+  "contract": "OPERATION_LICENSE",
+  "subject": "Perform diagnostic X once: record a complete encoder-output trace against a matched received inventory under fixed workload to inform the relative support for H1 versus H2.",
+  "contract_question": "Does this proposed observation, intervention, comparison, or transformation faithfully instantiate the transferred mechanism at the target, under the stated applicability conditions, and does it produce information or action relevant to the target problem?",
+  "claim": {
+    "claim_id": "K10-C1",
+    "value": "If either hypothesis remains possible, always run diagnostic X indefinitely.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K10-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K10-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K10-T",
+    "text": "H1 and H2 remain possible. X is a safe, applicable one-step calibrated trace test that can update their relative support. Even after X, measurement noise leaves both hypotheses possible. Each run consumes a scarce trial slot; the diagnostic task requires a finite decision and forbids unbounded occupation of those slots."
+  },
+  "source_instrument": {
+    "source_id": "K10-S",
+    "text": "One performance of X records a complete encoder-output trace against a matched received inventory under fixed workload and is informative about H1 versus H2. No test eliminates both possibilities with certainty. Repetition requires a bounded information or decision objective."
+  },
+  "mapping": {
+    "source_id": "K10-M",
+    "text": "The proposed prospective rule prescribes unending diagnostic execution whenever either hypothesis remains possible. X itself denotes one well-defined valid measurement; indefinite repetition is the governance scheduling choice."
+  }
+}

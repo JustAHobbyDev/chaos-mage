@@ -1,0 +1,60 @@
+Evaluate exactly the frozen contract for the exact subject in this isolated packet.
+Return only the supplied JSON schema. No tools, external evidence, reclassification,
+additional contract questions, or invented observations. Preserve claim_id,
+obligation_id, contract and subject exactly. No expected answers are supplied.
+
+Use only role-appropriate frozen evidence. Mapping assertions and proposals are not
+observed facts merely because they are present. Citation CONTEXT does not establish
+substantive support. Test scope, certainty and applicability against the stated
+contract. A hypothetical consequence must not be treated as an observed outcome.
+A normative threshold choice does not establish empirical harm onset. Ordinary
+control actions and substantive diagnostic/interventional operations are distinct.
+Return SATISFIED, CONDITIONAL, VIOLATED, or UNCERTAIN; CONDITIONAL must state its
+unresolved conditions. Cite source IDs with SUPPORT or CONTEXT roles. Retain honest
+uncertainty and explain the judgment, without assuming other obligations pass/fail.
+
+{
+  "verdict_meanings": {
+    "SATISFIED": "claim satisfies its own role-specific contract",
+    "CONDITIONAL": "claim satisfies its contract only under an explicit unresolved condition",
+    "VIOLATED": "claim fails its own role-specific contract",
+    "UNCERTAIN": "available material does not permit reliable determination"
+  }
+}
+FROZEN PACKET
+{
+  "claim_id": "K09-C2",
+  "obligation_id": "B1",
+  "contract": "GOVERNANCE_COHERENCE",
+  "subject": "Stop the trial when T is exceeded.",
+  "contract_question": "Is this proposition genuinely presented as a prospective decision, safety, stopping, rollback, threshold, or policy rule; are its trigger and prescribed action coherent; and does it avoid falsely presenting an authored normative choice as an empirically established fact?",
+  "claim": {
+    "claim_id": "K09-C2",
+    "value": "Stop the trial when T is exceeded.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K09-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K09-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K09-T",
+    "text": "The trial uses a reliable workload meter. T is fixed at 100 requests per minute. Controlled paired runs, holding software and traffic mix fixed, recorded 1 error per 1000 requests below T and 120 errors per 1000 above T across each of ten replications. Stopping is safe."
+  },
+  "source_instrument": {
+    "source_id": "K09-S",
+    "text": "Comparable repeated error counts can support a bounded conclusion of sharply increased error incidence across the tested threshold. A prospective policy can use that supported conclusion as its explicit reason for a stop trigger."
+  },
+  "mapping": {
+    "source_id": "K09-M",
+    "text": "C1 interprets the supplied controlled observations. C2 is authored specifically because of C1: the threshold choice materially relies on its error-incidence conclusion. If that conclusion were removed, this mapping supplies no independent normative reason for selecting T. C2 must retain its explicit reference to C1; neither claim has been evaluated yet."
+  }
+}

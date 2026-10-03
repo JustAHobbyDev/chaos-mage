@@ -1,0 +1,36 @@
+{
+  "claim_id": "K09-C1",
+  "obligation_id": "B1",
+  "contract": "DERIVED_WARRANT",
+  "subject": "Above T, error incidence rises sharply.",
+  "contract_question": "Given the cited premises, observations, and transferred mechanism, does the claimed target conclusion follow at the strength and scope stated?",
+  "claim": {
+    "claim_id": "K09-C1",
+    "value": "Above T, error incidence rises sharply.",
+    "scope": "Controlled trial conditions and tested workload range",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K09-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "K09-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K09-T",
+    "text": "The trial uses a reliable workload meter. T is fixed at 100 requests per minute. Controlled paired runs, holding software and traffic mix fixed, recorded 1 error per 1000 requests below T and 120 errors per 1000 above T across each of ten replications. Stopping is safe."
+  },
+  "source_instrument": {
+    "source_id": "K09-S",
+    "text": "Comparable repeated error counts can support a bounded conclusion of sharply increased error incidence across the tested threshold. A prospective policy can use that supported conclusion as its explicit reason for a stop trigger."
+  },
+  "mapping": {
+    "source_id": "K09-M",
+    "text": "C1 interprets the supplied controlled observations. C2 is authored specifically because of C1: the threshold choice materially relies on its error-incidence conclusion. If that conclusion were removed, this mapping supplies no independent normative reason for selecting T. C2 must retain its explicit reference to C1; neither claim has been evaluated yet."
+  }
+}
