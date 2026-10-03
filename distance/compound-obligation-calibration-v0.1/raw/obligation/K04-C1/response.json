@@ -1,0 +1,78 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K04-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_INFERENCE",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "DERIVED_WARRANT",
+          "subject": "Persistent attachment loss indicates scanner failure.",
+          "provenance_refs": [
+            {
+              "source_id": "K04-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K04-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The scanner-failure attribution supplies the rule's stated reason for selecting scanner repair. Removing it changes the claim's meaning and justification. No separate frozen claim evaluates this inference."
+      },
+      {
+        "dependency_id": "D2",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Perform scanner repair as the prescribed component intervention.",
+          "provenance_refs": [
+            {
+              "source_id": "K04-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K04-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "Scanner repair is a substantive intervention essential to the prescribed action. Governance coherence alone does not evaluate its operational license, and no separate frozen claim evaluates it. The component-selection inference is captured directly by D1."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Persistent attachment loss indicates scanner failure.",
+      "epistemic_function": "INFERENCE",
+      "rationale": "This content attributes observed end-to-end loss to a particular component by claiming that persistence supports scanner failure."
+    },
+    {
+      "dependency_id": "D2",
+      "subject": "Perform scanner repair as the prescribed component intervention.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This content proposes a substantive repair intervention on the scanner, distinct from the prospective decision rule and its causal justification."
+    }
+  ]
+}

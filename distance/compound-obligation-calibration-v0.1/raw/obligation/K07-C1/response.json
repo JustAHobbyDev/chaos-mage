@@ -1,0 +1,78 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K07-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Measure R next if H1 and H2 remain unresolved.",
+          "provenance_refs": [
+            {
+              "source_id": "K07-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K07-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The substantive measurement is the prescribed action; removing it changes the rule's meaning. No separate frozen claim evaluates this operation."
+      },
+      {
+        "dependency_id": "D2",
+        "trigger": "EMBEDDED_CONDITIONAL_RELATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "CONDITIONAL_LICENSE",
+          "subject": "If R1 occurs, it favors H1; if R2 occurs, it favors H2.",
+          "provenance_refs": [
+            {
+              "source_id": "K07-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K07-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The anticipated outcome implications are explicit substantive content; removing or reversing them changes the claim's meaning and scope. No separate frozen claim evaluates them. This is a direct peer dependency alongside the operation."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Measure R next if H1 and H2 remain unresolved.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This embedded content proposes a substantive trace measurement, distinct from the primary rule governing when to perform it."
+    },
+    {
+      "dependency_id": "D2",
+      "subject": "If R1 occurs, it favors H1; if R2 occurs, it favors H2.",
+      "epistemic_function": "CONDITIONAL_RELATION",
+      "rationale": "This embedded content specifies the evidential implications of hypothetical measurement outcomes. It does not assert an observed outcome or an already-derived conclusion."
+    }
+  ]
+}

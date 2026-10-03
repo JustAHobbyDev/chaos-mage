@@ -1,0 +1,50 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K05-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_FACT",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "FACT_WARRANT",
+          "subject": "User harm begins at 70% utilization under the frozen case conditions.",
+          "provenance_refs": [
+            {
+              "source_id": "K05-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K05-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The empirical onset assertion is distinct from the prospective stopping rule and supplies its stated justification. Removing it would change the claim's meaning from an empirically justified threshold to a threshold choice. No separate frozen claim evaluates this assertion."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "User harm begins at 70% utilization under the frozen case conditions.",
+      "epistemic_function": "FACT",
+      "rationale": "This asserts an empirical state of affairs at a specific utilization level without framing that assertion as a derivation from evidence. Its role as a reason for the rule does not itself make it an inference."
+    }
+  ]
+}

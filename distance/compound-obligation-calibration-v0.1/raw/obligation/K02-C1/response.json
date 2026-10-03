@@ -1,0 +1,50 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K02-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Sort requests alphabetically and compare whether latency improves.",
+          "provenance_refs": [
+            {
+              "source_id": "K02-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K02-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The substantive diagnostic procedure is material to the rule's prescribed action and has no separate frozen claim. Removing it would change the rule's meaning and scope."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Sort requests alphabetically and compare whether latency improves.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This proposes a transformation and latency comparison to perform. It asserts neither an observed improvement nor an implication from a hypothetical result."
+    }
+  ]
+}

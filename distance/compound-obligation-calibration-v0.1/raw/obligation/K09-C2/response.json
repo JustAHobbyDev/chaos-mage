@@ -1,0 +1,41 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K09-C2",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_INFERENCE",
+        "resolution": "CLAIM_REF",
+        "claim_ref": "K09-C1",
+        "inline_obligation": {
+          "contract": null,
+          "subject": null,
+          "provenance_refs": []
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The mapping explicitly makes C1's error-incidence conclusion the material reason for selecting T and supplies no independent normative reason if that conclusion is removed. The existing frozen claim takes precedence; its conclusion is not assumed established."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Above T, error incidence rises sharply, within the controlled trial conditions and tested workload range.",
+      "epistemic_function": "INFERENCE",
+      "rationale": "K09-C1's frozen classification identifies this as an interpretation of controlled observations establishing an error-incidence conclusion. C2 explicitly relies on that conclusion as its reason for the stop trigger."
+    }
+  ]
+}

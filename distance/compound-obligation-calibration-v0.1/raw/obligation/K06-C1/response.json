@@ -1,0 +1,86 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K06-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Deploy B first by performing the documented configuration switch under the frozen applicability conditions.",
+          "provenance_refs": [
+            {
+              "source_id": "K06-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K06-S",
+              "role": "SUPPORT"
+            },
+            {
+              "source_id": "K06-M",
+              "role": "CONTEXT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The prescribed deployment performs a substantive intervention. Removing it changes the rule's action and meaning, and no separate frozen claim evaluates it."
+      },
+      {
+        "dependency_id": "D2",
+        "trigger": "EMBEDDED_FACT",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "FACT_WARRANT",
+          "subject": "B is safer to reverse than A under the frozen case conditions.",
+          "provenance_refs": [
+            {
+              "source_id": "K06-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K06-S",
+              "role": "SUPPORT"
+            },
+            {
+              "source_id": "K06-M",
+              "role": "CONTEXT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "Comparative reversal safety is the stated substantive reason for selecting B. Removing that assertion changes the rule's justification; no separate frozen claim evaluates it. Its presence in the mapping does not establish it as an observation."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Deploy B first by performing the documented configuration switch under the frozen applicability conditions.",
+      "epistemic_function": "OPERATION",
+      "rationale": "Deployment denotes an actual configuration intervention, making it a substantive operation embedded in the prospective policy."
+    },
+    {
+      "dependency_id": "D2",
+      "subject": "B is safer to reverse than A under the frozen case conditions.",
+      "epistemic_function": "FACT",
+      "rationale": "This is a descriptive comparative assertion, with no stated derivation from evidence. Its use as a reason for the policy does not itself make the assertion an inference."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K03-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+          "provenance_refs": [
+            {
+              "source_id": "K03-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K03-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The prescribed comparison is substantive operational content essential to the rule's meaning and scope. No separate frozen claim evaluates it."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Rerun the comparison at workload W2, comparing against the prior workload W run.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This proposes a substantive diagnostic comparison under a changed workload. The conditional trigger prescribes when to perform it without asserting that the repeat occurred or specifying what a hypothetical result would imply."
+    }
+  ]
+}
