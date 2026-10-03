@@ -1,0 +1,261 @@
+{
+  "claim_id": "R3K07-C1",
+  "base_provenance_refs": [
+    {
+      "source_id": "R3K07-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K07-S",
+      "role": "SUPPORT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "R3K07-C1-D1",
+      "subject": "The unresolved export fault is either encoder omission (H1) or transport loss (H2), with equal prior odds.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies the hypotheses and prior odds. This describes the case state. The claim invokes that setup as a premise."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "The hypothesis identities and prior setup establish the case to which the next-step rule and anticipated discrimination apply.",
+      "resolution_rationale": "The supplied case setup is invoked at its original scope and strength, without asserting an expanded hypothesis space or altered prior odds."
+    },
+    {
+      "dependency_id": "R3K07-C1-D2",
+      "subject": "R is a calibrated per-request encoder-output trace compared with the final received inventory under fixed workload.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly defines R at this scope. The proposition describes the measurement and its conditions. The claim invokes this definition when prescribing measurement of R."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "Removing the definition would change or leave unspecified the substantive observation and comparison prescribed by the primary rule.",
+      "resolution_rationale": "The definition is referenced without changing the trace, comparison, calibration, or workload conditions. Performing the measurement is separately recorded as an asserted operation."
+    },
+    {
+      "dependency_id": "R3K07-C1-D3",
+      "subject": "R1 means the missing item never appears in that trace; R2 means it appears there but not in the final inventory.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies both outcome definitions. These define descriptive outcome categories. The claim invokes them without asserting either outcome occurred."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "The anticipated discrimination depends on the meanings of R1 and R2; changing those meanings changes the claim.",
+      "resolution_rationale": "Both definitions are invoked at their supplied scope and strength, with no observed outcome added."
+    },
+    {
+      "dependency_id": "R3K07-C1-D4",
+      "subject": "Trace completeness has been independently verified.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies independent verification of trace completeness. This is a descriptive assurance about the trace. The claim relies on it as an existing premise."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "Trace completeness is material to interpreting absence from the trace and to using the specified verified measurement setup.",
+      "resolution_rationale": "The existing verification is invoked without claiming a new verification, a verification method, or broader reliability."
+    },
+    {
+      "dependency_id": "R3K07-C1-D5",
+      "subject": "For this calibrated trace under fixed workload, P(R1|H1)=0.9 and P(R1|H2)=0.1; P(R2|H1)=0.1 and P(R2|H2)=0.9.",
+      "dependency_classification": {
+        "content_origin": "SOURCE_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-S",
+            "source_type": "SOURCE_INSTRUMENT"
+          }
+        ],
+        "rationale": "The source explicitly supplies all four likelihoods and their conditions. They are numerical premises, rather than an assertion that observed evidence establishes a conclusion. The claim invokes them to motivate anticipated discrimination."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "These likelihoods provide the supplied basis for the two anticipated directions of discrimination.",
+      "resolution_rationale": "The likelihoods are invoked unchanged for the same calibrated trace under fixed workload, without extension to other measurements or conditions."
+    },
+    {
+      "dependency_id": "R3K07-C1-D6",
+      "subject": "Record one next trace using the verified logger without altering either path.",
+      "dependency_classification": {
+        "content_origin": "SOURCE_SUPPLIED",
+        "epistemic_function": "OPERATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-S",
+            "source_type": "SOURCE_INSTRUMENT"
+          }
+        ],
+        "rationale": "The source explicitly supplies this measurement instruction. It proposes a substantive observation. The primary claim adopts that observation as the action to perform when the hypotheses remain unresolved."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K07-T",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "The prescribed substantive measurement is essential to the next-step rule; removing it removes the rule's action.",
+      "resolution_rationale": "Although supplied by the source, the operation is adopted as an asserted component. No separate frozen evaluated claim is available for reuse."
+    },
+    {
+      "dependency_id": "R3K07-C1-D7",
+      "subject": "R1 favors H1.",
+      "dependency_classification": {
+        "content_origin": "MAPPING_GENERATED",
+        "epistemic_function": "CONDITIONAL_RELATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [],
+        "rationale": "The mapping expresses this specific discrimination relation by combining the target setup with the source likelihoods; neither input explicitly supplies that relation as such. It concerns what a future R1 outcome would support. The claim asserts the relation as subordinate justification."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K07-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "Removing or reversing this relation changes the claim's stated anticipated discrimination and its justification for measuring R.",
+      "resolution_rationale": "This generated, asserted relation requires its own inline resolution. No distinct frozen evaluated claim is supplied, and the primary claim cannot reference itself."
+    },
+    {
+      "dependency_id": "R3K07-C1-D8",
+      "subject": "R2 favors H2.",
+      "dependency_classification": {
+        "content_origin": "MAPPING_GENERATED",
+        "epistemic_function": "CONDITIONAL_RELATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [],
+        "rationale": "The mapping expresses this specific discrimination relation by combining the target setup with the source likelihoods; neither input explicitly supplies that relation as such. It concerns what a future R2 outcome would support. The claim asserts the relation as subordinate justification."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K07-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "Removing or reversing this relation changes the claim's stated anticipated discrimination and its justification for measuring R.",
+      "resolution_rationale": "This generated, asserted relation requires its own inline resolution. No distinct frozen evaluated claim is supplied, and the primary claim cannot reference itself."
+    },
+    {
+      "dependency_id": "R3K07-C1-D9",
+      "subject": "These likelihoods license directional updating, not certainty.",
+      "dependency_classification": {
+        "content_origin": "SOURCE_SUPPLIED",
+        "epistemic_function": "LIMIT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K07-S",
+            "source_type": "SOURCE_INSTRUMENT"
+          }
+        ],
+        "rationale": "The source explicitly supplies this restriction. It constrains the strength of conclusions available from the likelihoods. The claim invokes that restriction through its directional wording, 'favors.'"
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "The restriction fixes the strength of the anticipated discrimination; certainty would materially expand the claim.",
+      "resolution_rationale": "The supplied restriction is invoked at the same strength and scope, without adding a new limitation or asserting an observed update."
+    }
+  ],
+  "closure_status": "COMPLETE",
+  "unresolved_dependencies": []
+}

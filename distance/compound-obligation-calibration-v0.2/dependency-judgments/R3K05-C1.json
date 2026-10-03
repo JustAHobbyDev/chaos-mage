@@ -1,0 +1,98 @@
+{
+  "claim_id": "R3K05-C1",
+  "base_provenance_refs": [
+    {
+      "source_id": "R3K05-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K05-S",
+      "role": "SUPPORT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "R3K05-C1-D1",
+      "subject": "The trial has a reliable utilization meter.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K05-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies meter reliability. This is a descriptive premise invoked by the utilization-based stopping rule."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K05-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "Applying the prescribed utilization threshold depends on reliable utilization measurement.",
+      "resolution_rationale": "The supplied premise is invoked for this trial without adding measurement precision, validation claims, or broader applicability."
+    },
+    {
+      "dependency_id": "R3K05-C1-D2",
+      "subject": "The trial can be stopped safely at any chosen utilization threshold.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K05-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies safe stopping capability. This describes an existing capability invoked by the rule, rather than proposing a substantive operation."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K05-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "The prescribed stopping action depends on the trial's supplied ability to stop safely at the chosen threshold.",
+      "resolution_rationale": "The rule invokes the supplied capability within the same trial and threshold scope, without extending its safety assurance."
+    },
+    {
+      "dependency_id": "R3K05-C1-D3",
+      "subject": "User harm begins at 70%.",
+      "dependency_classification": {
+        "content_origin": "MAPPING_GENERATED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [],
+        "rationale": "Neither input supplies this harm-onset proposition. The compound claim introduces it as a descriptive empirical assertion with a specific onset threshold and asserts it as the stopping rule's reason."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K05-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K05-S",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K05-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "Removing or changing the asserted harm onset changes the claim's stated empirical justification for its stopping threshold.",
+      "resolution_rationale": "This is separately unevaluated substantive content asserted by the claim. No distinct frozen claim supplies a reusable result, and neither input supplies the proposition for grounding."
+    }
+  ],
+  "closure_status": "COMPLETE",
+  "unresolved_dependencies": []
+}

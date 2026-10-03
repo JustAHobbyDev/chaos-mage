@@ -1,0 +1,125 @@
+{
+  "claim_id": "R3K08-C1",
+  "base_provenance_refs": [
+    {
+      "source_id": "R3K08-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K08-S",
+      "role": "SUPPORT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "R3K08-C1-D1",
+      "subject": "Before the trial, the team agreed a workload allocation ceiling of 100 requests per minute.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K08-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies the prior agreement and its value. This describes an agreement about a policy ceiling, without asserting empirical harm or diagnostic significance. The primary instruction invokes that agreement."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K08-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "The agreement identifies the threshold governing the stop instruction; removing it would leave the trigger unspecified.",
+      "resolution_rationale": "The supplied agreement is invoked at its original workload-allocation scope and strength. The generated response to exceeding it remains the primary governance assertion."
+    },
+    {
+      "dependency_id": "R3K08-C1-D2",
+      "subject": "Workload is measured reliably.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K08-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies reliable workload measurement as a case condition. The source requires reliable observation but does not independently establish this case-specific fact. The instruction invokes the condition without adding a measurement procedure."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K08-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K08-S",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "Reliable workload measurement is material to applying the threshold-triggered instruction under the supplied stopping-rule guidance.",
+      "resolution_rationale": "The case condition is invoked at the target's stated scope and certainty, without asserting additional measurement capabilities or operations."
+    },
+    {
+      "dependency_id": "R3K08-C1-D3",
+      "subject": "Stopping is safe.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "FACT",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K08-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies stopping safety as a frozen case condition. The primary instruction relies on this condition without asserting a new safety finding."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K08-T",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "If stopping were unsafe, the prescribed response could not retain essentially the same acceptance under the frozen case conditions.",
+      "resolution_rationale": "Safety is invoked only for stopping in this case, preserving the supplied scope and strength. Ordinary stopping introduces no separate substantive operation."
+    },
+    {
+      "dependency_id": "R3K08-C1-D4",
+      "subject": "Prospective stopping rules can use a reliably observed workload and an explicitly agreed policy threshold.",
+      "dependency_classification": {
+        "content_origin": "SOURCE_SUPPLIED",
+        "epistemic_function": "GOVERNANCE_RULE",
+        "assertion_mode": "REFERENCED_PREMISE",
+        "origin_refs": [
+          {
+            "source_id": "R3K08-S",
+            "source_type": "SOURCE_INSTRUMENT"
+          }
+        ],
+        "rationale": "The source explicitly supplies general permission to use these conditions in prospective stopping rules. Its function concerns decision-rule design, and the primary instruction invokes it as general guidance."
+      },
+      "resolution": "GROUNDING_REF",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K08-S",
+          "role": "SUPPORT"
+        }
+      ],
+      "materiality_rationale": "This is the supplied general premise connecting reliable workload observation and an agreed policy threshold to a prospective stopping rule.",
+      "resolution_rationale": "The general permission is invoked without strengthening it into a supplied case-specific stopping command. The primary assertion remains MAPPING_GENERATED and GOVERNANCE_RULE."
+    }
+  ],
+  "closure_status": "COMPLETE",
+  "unresolved_dependencies": []
+}

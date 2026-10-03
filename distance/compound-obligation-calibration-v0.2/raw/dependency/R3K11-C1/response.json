@@ -1,0 +1,80 @@
+{
+  "claim_id": "R3K11-C1",
+  "base_provenance_refs": [
+    {
+      "source_id": "R3K11-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K11-S",
+      "role": "SUPPORT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "R3K11-C1-D1",
+      "subject": "Test X: inspect employee badge colors.",
+      "dependency_classification": {
+        "content_origin": "TARGET_SUPPLIED",
+        "epistemic_function": "OPERATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [
+          {
+            "source_id": "R3K11-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "The target explicitly supplies X's inspection procedure. Its function is a substantive observation to perform. The claim incorporates that procedure as its prescribed action; the uncertainty-triggered prescription remains the frozen primary governance assertion."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K11-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K11-S",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K11-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "Removing or changing X's substantive inspection would change the action prescribed by the primary rule.",
+      "resolution_rationale": "The supplied operation is asserted as a component, rather than merely invoked as a premise. No separate frozen evaluated claim represents it. Target provenance supplies the procedure; source and mapping references provide contextual constraints and identify its embedding."
+    },
+    {
+      "dependency_id": "R3K11-C1-D2",
+      "subject": "If outcome Y occurs—finding at least one blue badge—it proves H1.",
+      "dependency_classification": {
+        "content_origin": "MAPPING_GENERATED",
+        "epistemic_function": "CONDITIONAL_RELATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [],
+        "rationale": "Neither input supplies this proof relation. It specifies what a hypothetical outcome would establish, rather than reporting an observed outcome. The claim asserts the relation as its justification for running X."
+      },
+      "resolution": "INLINE_OBLIGATION",
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K11-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K11-S",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K11-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "The stated proof consequence supplies the rule's explicit justification. Removing it would materially change the claim's meaning.",
+      "resolution_rationale": "This generated, separately unevaluated relation requires its own inline record. No separate frozen evaluated claim represents it. The target supplies outcome and hypothesis conditions, the source supplies the discrimination criterion, and the mapping clarifies the hypothetical framing. These roles identify evidence for assessment without deciding validity."
+    }
+  ],
+  "closure_status": "COMPLETE",
+  "unresolved_dependencies": []
+}

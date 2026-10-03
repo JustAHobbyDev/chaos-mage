@@ -1,0 +1,53 @@
+{
+  "claim_id": "R3K12-C1",
+  "base_provenance_refs": [
+    {
+      "source_id": "R3K12-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K12-S",
+      "role": "SUPPORT"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency_id": "R3K12-C1-D1",
+      "subject": "the corrective procedure",
+      "dependency_classification": {
+        "content_origin": "ORIGIN_UNCERTAIN",
+        "epistemic_function": "OPERATION",
+        "assertion_mode": "ASSERTED_COMPONENT",
+        "origin_refs": [
+          {
+            "source_id": "R3K12-T",
+            "source_type": "TARGET"
+          }
+        ],
+        "rationale": "Origin: the target supplies two materially different candidate procedures under this phrase, but does not identify the intended operation; its origin cannot be fixed at the level of a determinate proposition. Function: the phrase denotes a substantive intervention, so OPERATION is identifiable despite referential uncertainty. Assertion mode: the intervention is prescribed as a component of the rule, rather than merely referenced as a premise."
+      },
+      "resolution": null,
+      "claim_ref": null,
+      "provenance_refs": [
+        {
+          "source_id": "R3K12-T",
+          "role": "SUPPORT"
+        },
+        {
+          "source_id": "R3K12-S",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K12-M",
+          "role": "CONTEXT"
+        }
+      ],
+      "materiality_rationale": "The prescribed action depends on which procedure is intended. The candidates affect different components and have distinct applicability conditions, so removing or substituting the intervention would materially change the rule.",
+      "resolution_rationale": "The intended referent remains unresolved between scanner acquisition recalibration and downstream storage retry rewriting. No routing decision can be frozen for the unidentified operation. The inventory supplies no separate claim resolving it."
+    }
+  ],
+  "closure_status": "DEPENDENCY_UNCERTAIN",
+  "unresolved_dependencies": [
+    "R3K12-C1-D1: 'the corrective procedure' does not identify which of the two supplied interventions is intended. The operation's referent and content origin remain uncertain, and resolution is null. The frozen primary classification remains ATOMIC, MAPPING_GENERATED, and GOVERNANCE_RULE."
+  ]
+}

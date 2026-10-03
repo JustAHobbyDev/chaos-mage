@@ -1,0 +1,126 @@
+Discover all direct material dependencies of this frozen claim. Use only this packet; no tools, external evidence, judgments, or expected answers. Preserve frozen primary classification. Return the supplied schema.
+For each dependency, first classify origin, then function, then assertion mode; only then select its resolution. Do not select contracts or evaluate validity. Contract derivation occurs mechanically after this entire response is frozen.
+Record each dependency's own provenance_refs with explicit SUPPORT/CONTEXT roles. Do not inherit parent claim roles. Record base_provenance_refs explicitly for the primary assertion. Source IDs must resolve to supplied input text. Mapping text is context, not observational support.
+For unresolved content use a null resolution, preserve its subject as written and the uncertainty, set DEPENDENCY_UNCERTAIN, and explain unresolved_dependencies. Null resolution is absence of a routing decision, not a fourth resolution type. Do not invent an operation or force uncertain axes.
+
+# Origin-sensitive direct dependencies
+
+Every direct material dependency receives content_origin, epistemic_function, assertion_mode, origin_refs and rationale. Use the same independent origin/function definitions as Stage A, with ORIGIN_UNCERTAIN and FUNCTION_UNCERTAIN retained explicitly. Citation roles are an independent third concept.
+
+Order: classify origin; classify function; classify REFERENCED_PREMISE versus ASSERTED_COMPONENT; select resolution; freeze the complete classification/discovery response; only then mechanically derive contracts. EMBEDDED_FACT -> FACT_WARRANT without origin classification is forbidden.
+
+GROUNDING_REF is only a supplied proposition merely invoked at the same scope and strength, without reassertion, transformation or extension. Record positive target/source origin references and a scope-preservation rationale. It creates no scientific obligation. A generated or expanded assertion cannot use this path. Referencing an agreed policy threshold alone creates no factual warrant; asserting that harm begins there is generated substantive content.
+
+CLAIM_REF points to another frozen evaluated claim and reuses its overall result without a duplicate scientific call. Prefer an existing claim over an inline duplicate. Reject cycles. Excluded/unmeasured references prevent clean acceptance.
+
+INLINE_OBLIGATION is material, separately unevaluated substantive content asserted by this compound claim. Supplied asserted components route to TARGET_FIDELITY, SOURCE_FIDELITY, or both. Generated components route FACT -> FACT_WARRANT; INFERENCE -> DERIVED_WARRANT; CONDITIONAL_RELATION -> CONDITIONAL_LICENSE; OPERATION -> OPERATION_LICENSE; GOVERNANCE_RULE -> GOVERNANCE_STRUCTURE; LIMIT -> LIMIT_WARRANT.
+
+Materiality: could the primary claim still be accepted at essentially the same meaning/scope if this content were false, unjustified or removed? If no, it is material. Ordinary stop/pause/continue/rollback to the prior safe state alone does not require an operation judgment. Substantive diagnostics, comparisons, interventions, target modifications, empirical reasons, and discrimination relations require their own material dependency records. A normative number is not alone an empirical claim.
+
+One level only. Direct peers are allowed. A secondary requiring a further distinct substantive level makes SPLIT_REQUIRED. Preserve ambiguous referents explicitly, without guessed contracts. Uncertain closure constrains aggregation to at least UNCERTAIN unless VIOLATED; missing provider observations remain incomplete, not manufactured verdicts.
+
+Every base and inline obligation freezes its own obligation_id, contract, subject and provenance_refs before Stage C. References have semantically irrelevant array order, unique source IDs and material SUPPORT/CONTEXT roles. No parent-role inheritance, fallback, inferred role, or citation reconstruction is allowed during projection.
+
+{
+  "origins": {
+    "TARGET_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by frozen target/problem material. Faithful non-expansive restatements qualify. Do not add causation, precision, scope, certainty or explanation. Requires positive target provenance.",
+    "SOURCE_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by the frozen source instrument. Requires positive source-instrument provenance.",
+    "BOTH_SUPPLIED": "The same proposition is independently supplied at materially the same scope and strength by BOTH target and source instrument. Target premise A and source mechanism B jointly supporting generated C does not qualify.",
+    "MAPPING_GENERATED": "The proposition itself was introduced by the mapping; neither input supplied it as such. It may be warranted. Default absent positive supply evidence, unless genuinely uncertain."
+  },
+  "functions": {
+    "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+    "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+    "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+    "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+    "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+    "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+  }
+}
+FROZEN PACKET
+{
+  "claim": {
+    "claim_id": "R3K07-C1",
+    "value": "If H1 and H2 remain unresolved, measure R next; R1 favors H1 and R2 favors H2.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "R3K07-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K07-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "R3K07-T",
+    "text": "The unresolved export fault is either encoder omission (H1) or transport loss (H2), with equal prior odds. R is a calibrated per-request encoder-output trace compared with the final received inventory under fixed workload. R1 means the missing item never appears in that trace; R2 means it appears there but not in the final inventory. Trace completeness has been independently verified."
+  },
+  "source_instrument": {
+    "source_id": "R3K07-S",
+    "text": "For this calibrated trace under fixed workload, P(R1|H1)=0.9 and P(R1|H2)=0.1; P(R2|H1)=0.1 and P(R2|H2)=0.9. Record one next trace using the verified logger without altering either path. These likelihoods license directional updating, not certainty."
+  },
+  "mapping": {
+    "source_id": "R3K07-M",
+    "text": "The team proposes a single next measurement and gives its subordinate anticipated discrimination logic. No R outcome has yet been observed."
+  },
+  "classification": {
+    "claim_id": "R3K07-C1",
+    "atomicity": "ATOMIC",
+    "content_origin": {
+      "assignment_status": "ASSIGNED",
+      "kind": "MAPPING_GENERATED",
+      "origin_refs": [],
+      "competing_origins": [],
+      "rationale": "The mapping combines the target hypotheses and trace definitions with the source measurement instruction and likelihoods into a conditional next-step rule with anticipated discrimination logic. Neither input supplies that proposition as such."
+    },
+    "epistemic_function": {
+      "assignment_status": "ASSIGNED",
+      "kind": "GOVERNANCE_RULE",
+      "competing_functions": [],
+      "rationale": "The primary assertion prescribes what to do if the hypotheses remain unresolved: measure R next. The anticipated R1/R2 discrimination is subordinate justification, and no outcome is asserted to have occurred."
+    }
+  },
+  "frozen_claim_inventory": [
+    {
+      "claim": {
+        "claim_id": "R3K07-C1",
+        "value": "If H1 and H2 remain unresolved, measure R next; R1 favors H1 and R2 favors H2.",
+        "scope": "Frozen case conditions",
+        "provenance": {
+          "refs": [
+            {
+              "source_id": "R3K07-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "R3K07-S",
+              "role": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "classification": {
+        "claim_id": "R3K07-C1",
+        "atomicity": "ATOMIC",
+        "content_origin": {
+          "assignment_status": "ASSIGNED",
+          "kind": "MAPPING_GENERATED",
+          "origin_refs": [],
+          "competing_origins": [],
+          "rationale": "The mapping combines the target hypotheses and trace definitions with the source measurement instruction and likelihoods into a conditional next-step rule with anticipated discrimination logic. Neither input supplies that proposition as such."
+        },
+        "epistemic_function": {
+          "assignment_status": "ASSIGNED",
+          "kind": "GOVERNANCE_RULE",
+          "competing_functions": [],
+          "rationale": "The primary assertion prescribes what to do if the hypotheses remain unresolved: measure R next. The anticipated R1/R2 discrimination is subordinate justification, and no outcome is asserted to have occurred."
+        }
+      }
+    }
+  ]
+}
