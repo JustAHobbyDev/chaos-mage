@@ -1,0 +1,50 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K01-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Inspect employee badge colors when readiness remains unresolved, before proceeding.",
+          "provenance_refs": [
+            {
+              "source_id": "K01-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K01-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The gate prescribes a substantive observation. Removing or leaving this inspection unjustified would change the gate's meaning and scope. No separate frozen claim evaluates the operation."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Inspect employee badge colors when readiness remains unresolved, before proceeding.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This proposes an observation to perform, subordinate to the prospective governance gate. It asserts neither an observed result nor a relation between hypothetical inspection outcomes and readiness conclusions."
+    }
+  ]
+}

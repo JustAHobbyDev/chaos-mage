@@ -1,0 +1,78 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K11-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_OPERATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "OPERATION_LICENSE",
+          "subject": "Run test X, inspecting employee badge colors, to address the unresolved export fault.",
+          "provenance_refs": [
+            {
+              "source_id": "K11-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K11-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The prescribed substantive test is material to the rule's action and is not separately evaluated by another frozen claim."
+      },
+      {
+        "dependency_id": "D2",
+        "trigger": "EMBEDDED_CONDITIONAL_RELATION",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "CONDITIONAL_LICENSE",
+          "subject": "If test X produces outcome Y, finding at least one blue badge, that outcome proves H1.",
+          "provenance_refs": [
+            {
+              "source_id": "K11-T",
+              "role": "CONTEXT"
+            },
+            {
+              "source_id": "K11-S",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The hypothetical evidential consequence supplies the rule's substantive rationale; removing it changes the claim's meaning. No separate frozen claim evaluates it."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Run test X, inspecting employee badge colors, to address the unresolved export fault.",
+      "epistemic_function": "OPERATION",
+      "rationale": "This proposes a substantive observation to perform, distinct from the prospective uncertainty gate."
+    },
+    {
+      "dependency_id": "D2",
+      "subject": "If test X produces outcome Y, finding at least one blue badge, that outcome proves H1.",
+      "epistemic_function": "CONDITIONAL_RELATION",
+      "rationale": "This specifies what a hypothetical test outcome would establish; it does not assert that the outcome occurred. It is a direct peer of the proposed operation."
+    }
+  ]
+}

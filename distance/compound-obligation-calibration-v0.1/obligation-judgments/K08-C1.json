@@ -1,0 +1,46 @@
+{
+  "claim_obligation_set": {
+    "claim_id": "K08-C1",
+    "classification": {
+      "content_origin": "MAPPING_GENERATED",
+      "epistemic_function": "GOVERNANCE_RULE"
+    },
+    "base_obligations": [
+      {
+        "obligation_id": "B1",
+        "contract": "GOVERNANCE_COHERENCE",
+        "subject": "WHOLE_CLAIM"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependency_id": "D1",
+        "trigger": "EMBEDDED_FACT",
+        "resolution": "INLINE_OBLIGATION",
+        "claim_ref": null,
+        "inline_obligation": {
+          "contract": "FACT_WARRANT",
+          "subject": "Before the trial, the team agreed a workload allocation ceiling of 100 requests per minute.",
+          "provenance_refs": [
+            {
+              "source_id": "K08-T",
+              "role": "SUPPORT"
+            }
+          ]
+        },
+        "materiality": "REQUIRED",
+        "rationale": "The instruction identifies its trigger as a prospectively agreed threshold. Removing or falsifying that agreement changes the rule's stated basis and scope. No separate frozen claim evaluates the agreement."
+      }
+    ],
+    "closure_status": "COMPLETE",
+    "unresolved_dependencies": []
+  },
+  "embedded_classifications": [
+    {
+      "dependency_id": "D1",
+      "subject": "Before the trial, the team agreed a workload allocation ceiling of 100 requests per minute.",
+      "epistemic_function": "FACT",
+      "rationale": "The occurrence and content of the prior agreement are descriptive facts, distinct from the authored stopping instruction. The numerical ceiling is a prospective policy choice without an embedded harm-onset assertion. Ordinary stopping introduces no substantive operation, and the conditional prescribes action rather than an evidential implication."
+    }
+  ]
+}
