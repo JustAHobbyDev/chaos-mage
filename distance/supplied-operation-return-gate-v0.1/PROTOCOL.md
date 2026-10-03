@@ -402,21 +402,37 @@ final_decision:
 ```
 
 This record summarizes the already-frozen three-observation criterion. It adds no
-evaluation layer, provider calls, scoring system or calibration. IN_PROGRESS
-indicates incomplete scientific evidence; it is not an instruction to resume a
-stopped experiment. Expected patterns are never observations.
+evaluation layer, provider calls, scoring system or calibration. Top-level status
+describes completion of the run record: COMPLETE includes a completed selection
+stop, even when the return decision is INCOMPLETE. Selection failure is a recorded
+experimental outcome; it is not a tested return-gate result. Neither status
+authorizes resumption. Expected patterns are never observations.
 
 Preselection availability: the schema above describes selected cases. When the
-experiment stops before a complete selection, use null for an unavailable case
-identity, source experiment, frozen classification or exact contract list. This
-is a record-availability exception, not a new origin/function category. Existing
-shortlist IDs may be cited as screening references, but their provisional
-classifications must not be presented as frozen. Keep pass criteria null and
-operation observations UNMEASURED/INCOMPLETE. The referenced-premise observation
-is UNRESOLVED/INCOMPLETE until its classification/routing is frozen; an empty
-contract list alone does not establish a pass. The current selection stop remains
-in effect. The original scan's BLOCKED wording is retained as checkpoint evidence
-and superseded for the current return decision by this clarification.
+experiment stops before a complete selection, use null for unavailable case
+identity, source experiment, frozen classification, exact contract list and the
+entire observed-verdicts/observed object. Populate identity/classification only
+for selected cases; keep shortlisted candidates in their existing screening
+records. Retain the protocol's expected patterns and explain each null case in
+its blocker. **null = not measured / not instantiated; false = measured and
+failed.** Never use `passed: false` for a case that did not exist.
+
+For this completed selection stop, record:
+
+```yaml
+premeasurement_exception:
+  stage: CASE_SELECTION
+  code: NATURAL_CASE_UNAVAILABLE
+  affected_gate: negative_supplied_operation
+  provider_calls: 0
+```
+
+This field records the reason for unavailable evidence, not a new evaluator
+diagnostic taxonomy. Keep top-level status COMPLETE, final status INCOMPLETE,
+all five final criteria null and next scientific work NONE_YET. The current
+selection stop remains in effect. The original scan's BLOCKED wording is retained
+as checkpoint evidence and superseded for the current return decision by this
+clarification.
 
 ## Final report
 

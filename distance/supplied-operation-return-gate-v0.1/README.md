@@ -2,6 +2,10 @@
 
 **INCOMPLETE; stopped at offline selection (step 5). Provider sessions: 0.**
 
+The run record is COMPLETE: it records the selection failure and explicit
+NATURAL_CASE_UNAVAILABLE exception. The return gate was never tested; unavailable
+case fields are null, with reasons, rather than measured failures.
+
 The bounded natural-material scan did not establish a clean negative supplied
 operation with expected fidelity SATISFIED and operation license VIOLATED.
 Two candidates are shortlisted, not a frozen three-case scientific selection.

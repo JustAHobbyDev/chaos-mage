@@ -12,6 +12,14 @@ admission defect. The original report is preserved at
 See [the compact record](../supplied-operation-return-gate-v0.1/return-gate-evidence.yaml)
 and the decision rule immediately before Final report in the protocol.
 
+The populated run record is now COMPLETE: premeasurement selection failed before
+the required observations could be instantiated, and that outcome is recorded.
+Its exception is CASE_SELECTION / NATURAL_CASE_UNAVAILABLE, affecting the negative
+supplied-operation gate, with zero provider calls. All three cases were unselected;
+their unavailable record fields and observations are null, with explicit reasons.
+The positive and referenced-premise shortlist evidence remains unchanged. Null
+means not measured/not instantiated; false would mean measured and failed.
+
 ## Provenance and checkpoints
 
 - Base branch: `policy-evaluator-stop-rule`.
@@ -115,7 +123,8 @@ false-retained transfer or corrupted surviving remainder. No measured result
 establishes that this path has been resolved. Gates A/B/C have not all passed.
 All three pass criteria and scientific interpretability remain null; the presence
 of a remaining admission blocker is undetermined, not asserted false.
-`next_scientific_work` is NONE_YET. No permission to resume follows from IN_PROGRESS.
+`next_scientific_work` is NONE_YET. A COMPLETE run record does not authorize resumption
+or imply that the return gate was tested.
 
 **Minimum missing evidence:** one existing natural negative component with
 positive supply evidence, unchanged qualifications and an inspectable functional

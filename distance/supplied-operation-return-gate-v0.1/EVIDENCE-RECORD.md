@@ -8,6 +8,14 @@ and uses INCOMPLETE for unfinished measurement; BLOCKED requires a concrete
 admission-relevant defect. The per-case schema below supplies lineage and does
 not replace that compact summary.
 
+The populated run record is COMPLETE because the selection stop is fully recorded;
+its return decision remains INCOMPLETE because the gate was never tested.
+`premeasurement_exception` identifies CASE_SELECTION / NATURAL_CASE_UNAVAILABLE
+and zero provider calls. Unselected cases have null identities, classifications,
+exact contracts and observed objects, with explicit reasons. Expected patterns
+remain available. Null means not measured/not instantiated; false means measured
+and failed. The two shortlist records remain screening evidence only.
+
 [evidence-record.schema.json](evidence-record.schema.json) describes one offline
 candidate/selected case with source lineage and separately recorded measurements.
 It is specific to the three H6.R4 observations, not a new evaluator taxonomy.
