@@ -1,0 +1,69 @@
+You are making a prospective claim classification, not evaluating validity.
+Use only this isolated frozen packet. Do not call tools, fetch evidence, or infer
+operator expectations. Return only the supplied JSON schema.
+
+Check atomicity first. ATOMIC allows one primary assertion with subordinate content
+(e.g. its reason, proposed action, or hypothetical discrimination logic). Independent
+co-primary assertions require SPLIT_REQUIRED. Do not split or rewrite the claim.
+Assign content origin independently, then hold it fixed. Assign epistemic function
+independently, then hold it fixed. Derive no evaluation obligations or verdicts here.
+No content origin implies a function and no function implies an origin. Citation
+SUPPORT/CONTEXT roles are separate from both. Supplied origin requires positive
+provenance for the same proposition at materially the same scope and certainty;
+composition of target and source into a new conclusion is MAPPING_GENERATED.
+Absent positive supply evidence use MAPPING_GENERATED unless genuinely uncertain.
+An uncertain axis has null kind and an explanation; preserve plausible alternatives.
+For SPLIT_REQUIRED preserve uncertainty instead of forcing a primary assignment.
+Classify the assertion's function, not its grammatical shape alone. In a hypothetical
+relation no outcome is asserted to have happened. A prospective if-X-do-Y rule is
+governance, while if-outcome-X-infer-Y is a conditional relation. Embedded content
+does not give a claim multiple primary functions.
+
+{
+  "origins": {
+    "TARGET_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by frozen target/problem material. Faithful non-expansive restatements qualify. Do not add causation, precision, scope, certainty or explanation. Requires positive target provenance.",
+    "SOURCE_SUPPLIED": "The same proposition at materially the same scope and certainty is explicitly supplied by the frozen source instrument. Requires positive source-instrument provenance.",
+    "BOTH_SUPPLIED": "The same proposition is independently supplied at materially the same scope and strength by BOTH target and source instrument. Target premise A and source mechanism B jointly supporting generated C does not qualify.",
+    "MAPPING_GENERATED": "The proposition itself was introduced by the mapping; neither input supplied it as such. It may be warranted. Default absent positive supply evidence, unless genuinely uncertain."
+  },
+  "functions": {
+    "FACT": "Descriptive state-of-affairs proposition not itself framed as an evidential derivation.",
+    "INFERENCE": "Claims evidence or observations support, weaken, exclude, bound, rank, attribute, explain, establish or indicate a target conclusion.",
+    "CONDITIONAL_RELATION": "Claims what a hypothetical or future result would imply: if outcome X occurs, consequence Y becomes more or less supported. Not every grammatical conditional qualifies.",
+    "OPERATION": "Proposes a substantive observation, test, comparison, intervention, perturbation or transformation to perform.",
+    "GOVERNANCE_RULE": "Prescribes a prospective decision, threshold, stopping rule, rollback, safety action or policy action. If X infer Y is CONDITIONAL_RELATION; if X do Y is GOVERNANCE_RULE.",
+    "LIMIT": "Constrains what can be inferred, scope, identifiability, applicability, confounds or failure conditions."
+  }
+}
+FROZEN PACKET
+{
+  "claim": {
+    "claim_id": "K04-C1",
+    "value": "If attachment loss persists, repair the scanner because persistent loss indicates scanner failure.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "K04-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "K04-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "K04-T",
+    "text": "Attachments continue to disappear after ingestion. Observed loss is equally compatible with scanner omission, transfer truncation and downstream storage deletion. Current records do not distinguish these causes. Scanner repair is an available authorized component intervention, with a documented restoration procedure."
+  },
+  "source_instrument": {
+    "source_id": "K04-S",
+    "text": "Use component-local evidence to attribute an end-to-end loss. Persistence alone cannot distinguish components. The documented scanner restoration faithfully repairs a confirmed scanner failure; its physical procedure is applicable here, but choosing that component requires localization."
+  },
+  "mapping": {
+    "source_id": "K04-M",
+    "text": "The proposed prospective rule relies on the embedded causal inference that persistent loss indicates scanner failure. No scanner-local failure observation is available."
+  }
+}
