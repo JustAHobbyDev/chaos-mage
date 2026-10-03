@@ -1,0 +1,31 @@
+{
+  "claim": {
+    "claim_id": "R3K09-C2",
+    "value": "Stop the trial when T is exceeded.",
+    "scope": "Frozen case conditions",
+    "provenance": {
+      "refs": [
+        {
+          "source_id": "R3K09-T",
+          "role": "CONTEXT"
+        },
+        {
+          "source_id": "R3K09-S",
+          "role": "SUPPORT"
+        }
+      ]
+    }
+  },
+  "target": {
+    "source_id": "R3K09-T",
+    "text": "The trial uses a reliable workload meter. T is fixed at 100 requests per minute. Controlled paired runs, holding software and traffic mix fixed, recorded 1 error per 1000 requests below T and 120 errors per 1000 above T across each of ten replications. Stopping is safe."
+  },
+  "source_instrument": {
+    "source_id": "R3K09-S",
+    "text": "Comparable repeated error counts can support a bounded conclusion of sharply increased error incidence across the tested threshold. A prospective policy can use that supported conclusion as its explicit reason for a stop trigger."
+  },
+  "mapping": {
+    "source_id": "R3K09-M",
+    "text": "C1 interprets the supplied controlled observations. C2 is authored specifically because of C1: the threshold choice materially relies on its error-incidence conclusion. If that conclusion were removed, this mapping supplies no independent normative reason for selecting T. C2 must retain its explicit reference to C1; neither claim has been evaluated yet."
+  }
+}
