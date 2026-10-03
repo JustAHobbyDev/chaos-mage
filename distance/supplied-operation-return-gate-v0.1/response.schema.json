@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "H6.R4 isolated contract response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["obligation_id", "verdict", "reasoning", "evidence_used"],
+  "properties": {
+    "obligation_id": {"type": "string", "minLength": 1},
+    "verdict": {"enum": ["SATISFIED", "CONDITIONAL", "VIOLATED", "UNCERTAIN"]},
+    "reasoning": {"type": "string", "minLength": 1},
+    "evidence_used": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id"],
+        "properties": {"source_id": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}
