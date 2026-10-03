@@ -23,6 +23,8 @@ Branch: `experiment-h7-natural-admission`. No merge to main.
 | Six generation outputs and raw provenance | `138d54c` |
 | H.5 spans and atomization packets | `a62dc8a` |
 | Six claim inventories and raw provenance | `8805063` |
+| Offline classification/discovery adapter | `566bcac` |
+| Six frozen classification packets | `6de67a3` |
 
 The target files were authored before the selection rule, but a sandbox Git failure
 postponed their commit until after the rule commit. Both committed before pairing
@@ -109,3 +111,8 @@ measurements. The next scientific step is the frozen classification/discovery st
 subject to required spending approval, followed by a revised exact-fan-out forecast.
 No evaluation, sample expansion, synthetic calibration or production integration has
 been started. H7 stops after its fixed sample and eventual report.
+
+The final role-stage preflight passed 18 offline runner/routing tests, schema checks,
+claim-preservation checks and all frozen input/observation hash checks. The budget
+gate denies plan 003 pending consent; fresh usage forecast exits 0 under the revised
+threshold. Exact private quota details remain under `.runtime/`.
