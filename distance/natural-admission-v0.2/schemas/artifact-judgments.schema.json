@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "scientific_status": {
+      "type": "string",
+      "enum": [
+        "KEEP_WITH_WARRANT_FLAGS",
+        "KEEP_WITH_REDUCED_SCOPE",
+        "CORE_INVALID",
+        "UNCERTAIN_LOAD_BEARING"
+      ]
+    },
+    "definite_viable_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_decisive_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_lost": {
+      "type": "string",
+      "enum": [
+        "YES",
+        "NO",
+        "UNCERTAIN"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "core_failure_explanation": {
+      "type": "string"
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "component_id": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "correct_support_representable": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCERTAIN",
+              "NOT_APPLICABLE"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "component_id",
+          "detail",
+          "correct_support_representable"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "packet_id",
+    "scientific_status",
+    "definite_viable_candidate_ids",
+    "unresolved_decisive_candidate_ids",
+    "scope_lost",
+    "rationale",
+    "core_failure_explanation",
+    "anomalies"
+  ],
+  "additionalProperties": false
+}

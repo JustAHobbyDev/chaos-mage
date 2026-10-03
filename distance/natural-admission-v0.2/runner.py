@@ -92,6 +92,11 @@ def effective_freeze_files():
         require(files.get(name) == change['original_sha256'], 'Continuation baseline mismatch: ' + name)
         files[name] = change['updated_sha256']
     files.update(amendment['added_files'])
+    admission_amendment = read(H / 'admission-amendment.json')
+    for name, change in admission_amendment['changes'].items():
+        require(files.get(name) == change['original_sha256'], 'Admission baseline mismatch: ' + name)
+        files[name] = change['updated_sha256']
+    files.update(admission_amendment['added_files'])
     return files
 
 
@@ -110,7 +115,7 @@ def verify():
     require(sha(Path(c['native_executable']['path'])) == c['native_executable']['sha256'], 'Native drift')
     require(subprocess.check_output([c['cli'], '--version'], text=True).strip() == c['cli_version'], 'CLI version drift')
     return {'historical_files_checked': len(read(H / 'preservation.json')['files']),
-            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json'], 'slots': 6}
+            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json', 'continuation-amendment.json', 'admission-amendment.json'], 'slots': 6}
 
 
 def state():
@@ -208,8 +213,8 @@ def execute(stage, cid, plan):
     verify()
     require(not git('status', '--porcelain'), 'Unclean checkpoint')
     require(state() == 'RUNNING', 'Scheduling paused')
-    import continuation
-    continuation.guard(sys.modules[__name__], cid, stage)
+    import admission
+    admission.guard(sys.modules[__name__], cid, stage)
     d = RT / 'attempts' / stage / cid
     d.mkdir(parents=True, exist_ok=False)
     request = (H / 'packets' / stage / f'{cid}.txt').read_bytes()
@@ -223,7 +228,7 @@ def execute(stage, cid, plan):
               'stage': stage, 'packet_id': cid, 'command': cmd, 'initially_empty': True,
               'request_sha256': sha(d / 'request.txt'),
               'schema_sha256': sha(H / 'schemas' / f'{stage}.schema.json'),
-              'configuration': config(), 'allowed_mapping_packets': [cid],
+              'configuration': config(), 'allowed_mapping_packets': [cid.split('--')[0]],
               'collision_exposure': 0, 'harness_attempt': 1})
 
         def launch():
@@ -248,7 +253,9 @@ def execute(stage, cid, plan):
     events = [json.loads(line, object_pairs_hook=unique)
               for line in (d / 'events.jsonl').read_text().splitlines() if line.strip()]
     metadata = audit(events, response)
-    prior = [read(p)['metadata']['session_id'] for p in (RT / 'attempts').glob('*/*/validation.json')]
+    prior = [e['thread_id'] for p in (RT / 'attempts').glob('*/*/events.jsonl')
+             if p.parent != d for e in (json.loads(line) for line in p.read_text().splitlines())
+             if e.get('type') == 'thread.started']
     require(metadata['session_id'] not in prior, 'Session reuse')
     value = json.loads(response, object_pairs_hook=unique)
     Draft202012Validator(read(H / 'schemas' / f'{stage}.schema.json')).validate(value)
@@ -257,6 +264,8 @@ def execute(stage, cid, plan):
     elif stage in ('classification', 'discovery'):
         import stages
         stages.validate(stage, value, read(H / 'packets' / stage / f'{cid}.json'))
+    elif stage in admission.LATER:
+        admission.validate(sys.modules[__name__], stage, value, read(H / 'packets' / stage / f'{cid}.json'))
     write(d / 'validation.json', {'metadata': metadata, 'response_sha256': sha(d / 'response.json'),
                                  'schema_valid': True})
 
@@ -273,15 +282,16 @@ def run_batch(path):
     review = read(path)
     require(review['authorization_reference'].strip(), 'Scientific task authorization reference required')
     stage, ids = review['stage'], review['packet_ids']
-    require(stage in ('generation', 'claims', 'classification', 'discovery'), 'Evaluation remains gated')
+    require(stage in ('generation', 'claims', 'classification', 'discovery', 'evaluation', 'remainder-inventory', 'artifact-judgments'), 'Unfrozen stage')
     require(1 <= len(ids) <= 2 and len(set(ids)) == len(ids), 'Batch limit is two')
-    remaining = [cid for cid in order() if not (RT / 'attempts' / stage / cid).exists()]
+    import admission
+    remaining = [cid for cid in admission.stage_ids(sys.modules[__name__], stage) if not (RT / 'attempts' / stage / cid).exists()]
     require(ids == remaining[:len(ids)], 'Frozen order or already attempted slot')
     require(state() in (None, 'COMPLETE'), 'Pause/terminal states need committed recovery evidence')
     verify()
     if stage != 'generation':
         require((H / f'{stage}-packets-freeze.json').exists(), 'Stage packets not frozen')
-    plan = read(H / 'budgets/plan-005.json')
+    plan = read(H / 'budgets/plan-006.json')
     require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')
@@ -402,7 +412,8 @@ def main():
     elif args.action == 'freeze': freeze(args.stage)
     elif args.action == 'freeze-obligations':
         import stages
-        stages.freeze_obligations(sys.modules[__name__])
+        import admission
+        admission.freeze_obligations(sys.modules[__name__])
     elif args.action == 'prepare-role':
         import stages
         stages.prepare(args.stage, sys.modules[__name__])

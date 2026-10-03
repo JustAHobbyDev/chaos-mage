@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "obligation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract": {
+      "type": "string",
+      "enum": [
+        "TARGET_FIDELITY",
+        "SOURCE_FIDELITY",
+        "DERIVED_WARRANT",
+        "CONDITIONAL_LICENSE",
+        "OPERATION_LICENSE",
+        "GOVERNANCE_STRUCTURE",
+        "LIMIT_WARRANT",
+        "FACT_WARRANT"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "SATISFIED",
+        "CONDITIONAL",
+        "VIOLATED",
+        "UNCERTAIN"
+      ]
+    },
+    "unresolved_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "evidence_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "source_id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "claim_id",
+    "obligation_id",
+    "contract",
+    "subject",
+    "verdict",
+    "evidence_used",
+    "unresolved_conditions",
+    "rationale",
+    "packet_id"
+  ]
+}

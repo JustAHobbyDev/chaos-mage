@@ -62,14 +62,14 @@ def inspect_attempt(r, stage, cid):
     response_present = (d / 'response.json').exists()
     completed = any(e.get('type') == 'turn.completed' for e in events)
     observation = True if completed or response_present else False if clean_empty else None
-    e = {'mapping_id': cid, 'stage': stage, 'attempt_id': stage + '/' + cid,
+    e = {'mapping_id': cid.split('--')[0], 'stage': stage, 'attempt_id': stage + '/' + cid,
          'session_id': starts[0] if len(starts) == 1 else None,
          'request_launched': (d / 'process.json').exists() and clean_empty,
          'launch_identity_certain': len(starts) == 1 and (d / 'process.json').exists(),
          'frozen_request_sha256': frozen, 'executed_request_sha256': executed,
          'request_match': frozen == executed == a['request_sha256'],
          'configuration_match': a['configuration'] == r.config() and a['command'] == expected_cmd and a['schema_sha256'] == r.sha(r.H / 'schemas' / (stage + '.schema.json')),
-         'context_intact': a['initially_empty'] is True and a['allowed_mapping_packets'] == [cid] and a['collision_exposure'] == 0,
+         'context_intact': a['initially_empty'] is True and a['allowed_mapping_packets'] == [cid.split('--')[0]] and a['collision_exposure'] == 0,
          'unique_attempt': len(starts) == 1 and all_starts.count(starts[0]) == 1 and len(rows) == 1 and json.loads(rows[0]['command_json']) == a['command'] and a['harness_attempt'] == 1,
          'response_present': response_present, 'scientific_observation_present': observation,
          'completion_event_present': completed, 'retry_count': 0 if a['harness_attempt'] == 1 and len(rows) == 1 else None,
@@ -110,7 +110,7 @@ def baseline_review(r):
         r.require(a['configuration'] == historical_config, 'Execution-time configuration mismatch')
         scientific_keys = set(r.config()) - {'allowed_stages', 'measurements'}
         r.require(cmd == r.command(cwd, ds, stage) and all(a['configuration'][k] == r.config()[k] for k in scientific_keys), 'Scientific configuration mismatch')
-        r.require(a['initially_empty'] and a['allowed_mapping_packets'] == [cid] and a['collision_exposure'] == 0 and a['harness_attempt'] == 1, 'Context isolation mismatch')
+        r.require(a['initially_empty'] and a['allowed_mapping_packets'] == [cid.split('--')[0]] and a['collision_exposure'] == 0 and a['harness_attempt'] == 1, 'Context isolation mismatch')
         row = [x for x in rows if x['session'] == stage + '/' + cid]
         r.require(len(row) == 1 and json.loads(row[0]['command_json']) == cmd and row[0]['state'] == 'FINISHED', 'Ledger mismatch')
         r.require(r.sha(ds / 'request.txt') == r.sha(r.H / 'packets' / stage / (cid+'.txt')) == a['request_sha256'], 'Executed packet mismatch')
