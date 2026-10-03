@@ -1,0 +1,66 @@
+Evaluate exactly the frozen contract for the exact subject in this isolated packet.
+Return only the supplied JSON schema. No tools, external evidence, reclassification,
+additional contract questions, or invented observations. Preserve claim_id,
+obligation_id, contract and subject exactly. No expected answers are supplied.
+
+Use only role-appropriate frozen evidence. Mapping assertions and proposals are not
+observed facts merely because they are present. Citation CONTEXT does not establish
+substantive support. Test scope, certainty and applicability against the stated
+contract. A hypothetical consequence must not be treated as an observed outcome.
+A normative threshold choice does not establish empirical harm onset. Ordinary
+control actions and substantive diagnostic/interventional operations are distinct.
+Return SATISFIED, CONDITIONAL, VIOLATED, or UNCERTAIN; CONDITIONAL must state its
+unresolved conditions. Cite source IDs with SUPPORT or CONTEXT roles. Retain honest
+uncertainty and explain the judgment, without assuming other obligations pass/fail.
+
+{
+  "verdict_meanings": {
+    "SATISFIED": "claim satisfies its own role-specific contract",
+    "CONDITIONAL": "claim satisfies its contract only under an explicit unresolved condition",
+    "VIOLATED": "claim fails its own role-specific contract",
+    "UNCERTAIN": "available material does not permit reliable determination"
+  }
+}
+FROZEN PACKET
+{
+  "claim_id": "R3K11-C1",
+  "obligation_id": "R3K11-C1-D2-O1",
+  "contract": "CONDITIONAL_LICENSE",
+  "subject": "If outcome Y occurs—finding at least one blue badge—it proves H1.",
+  "provenance_refs": [
+    {
+      "source_id": "R3K11-T",
+      "role": "SUPPORT"
+    },
+    {
+      "source_id": "R3K11-S",
+      "role": "SUPPORT"
+    },
+    {
+      "source_id": "R3K11-M",
+      "role": "CONTEXT"
+    }
+  ],
+  "contract_question": "Under the stated conditions, does the transferred mechanism license the claimed relation between each hypothetical outcome and its stated evidential or operational consequence, without assuming that the outcome has actually occurred?",
+  "claim_context": {
+    "value": "If uncertainty remains, run test X because outcome Y proves H1.",
+    "scope": "Frozen case conditions"
+  },
+  "evidence_bundle": [
+    {
+      "source_id": "R3K11-T",
+      "role": "SUPPORT",
+      "text": "The unresolved export fault is H1 or H2. X inspects employee badge colors and Y is finding at least one blue badge. Colors are office-access codes assigned independently of both faults; Y is equally likely under H1 and H2. Inspecting badges is feasible and authorized."
+    },
+    {
+      "source_id": "R3K11-S",
+      "role": "SUPPORT",
+      "text": "Diagnostic operations must observe a mechanism-linked difference between hypotheses. An outcome equally likely under both cannot discriminate them and certainly cannot prove one. A prospective next-step gate may be authored while uncertainty remains."
+    },
+    {
+      "source_id": "R3K11-M",
+      "role": "CONTEXT",
+      "text": "The proposed governance rule embeds both test X and the hypothetical consequence that its outcome Y proves H1. Y has not been observed."
+    }
+  ]
+}

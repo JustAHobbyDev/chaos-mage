@@ -1,0 +1,295 @@
+{
+  "status": "STAGE_B_COMPLETE_OBLIGATIONS_FROZEN",
+  "stage_b_provider_sessions": 13,
+  "total_provider_sessions": 26,
+  "unique_stage_b_contexts": 13,
+  "planned_stage_c_sessions": 28,
+  "contract_counts": {
+    "GOVERNANCE_STRUCTURE": 12,
+    "OPERATION_LICENSE": 2,
+    "TARGET_FIDELITY": 3,
+    "DERIVED_WARRANT": 2,
+    "SOURCE_FIDELITY": 4,
+    "FACT_WARRANT": 2,
+    "CONDITIONAL_LICENSE": 3
+  },
+  "resolution_counts": {
+    "INLINE_OBLIGATION": 14,
+    "GROUNDING_REF": 23,
+    "CLAIM_REF": 1,
+    "UNRESOLVED": 1
+  },
+  "cases": [
+    {
+      "control_id": "N1",
+      "claim_id": "R3K01-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "OPERATION_LICENSE"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "N2",
+      "claim_id": "R3K02-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "OPERATION_LICENSE"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 1,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "N3",
+      "claim_id": "R3K03-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "TARGET_FIDELITY"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K03-C1-D1",
+          "subject": "Rerun the comparison using W2 while comparing against the prior W run.",
+          "content_origin": "TARGET_SUPPLIED",
+          "derived_contracts": [
+            "TARGET_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "N4",
+      "claim_id": "R3K04-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "DERIVED_WARRANT",
+        "TARGET_FIDELITY",
+        "SOURCE_FIDELITY"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K04-C1-D2",
+          "subject": "Repair the scanner.",
+          "content_origin": "BOTH_SUPPLIED",
+          "derived_contracts": [
+            "TARGET_FIDELITY",
+            "SOURCE_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "N5",
+      "claim_id": "R3K05-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "FACT_WARRANT"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 2,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "N6",
+      "claim_id": "R3K06-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "SOURCE_FIDELITY",
+        "FACT_WARRANT"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 3,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K06-C1-D4",
+          "subject": "Perform the documented configuration switch to deploy B.",
+          "content_origin": "SOURCE_SUPPLIED",
+          "derived_contracts": [
+            "SOURCE_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "P1",
+      "claim_id": "R3K07-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "SOURCE_FIDELITY",
+        "CONDITIONAL_LICENSE",
+        "CONDITIONAL_LICENSE"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 6,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K07-C1-D6",
+          "subject": "Record one next trace using the verified logger without altering either path.",
+          "content_origin": "SOURCE_SUPPLIED",
+          "derived_contracts": [
+            "SOURCE_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "P2",
+      "claim_id": "R3K08-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 4,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "P3",
+      "claim_id": "R3K09-C1",
+      "base_contracts": [
+        "DERIVED_WARRANT"
+      ],
+      "secondary_contracts": [],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 4,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "P3",
+      "claim_id": "R3K09-C2",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 3,
+      "claim_refs": [
+        "R3K09-C1"
+      ],
+      "supplied_operation_routing": []
+    },
+    {
+      "control_id": "N7",
+      "claim_id": "R3K10-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "SOURCE_FIDELITY"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K10-C1-D1",
+          "subject": "Perform diagnostic X: record a complete encoder-output trace against a matched received inventory under fixed workload.",
+          "content_origin": "SOURCE_SUPPLIED",
+          "derived_contracts": [
+            "SOURCE_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "N8",
+      "claim_id": "R3K11-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [
+        "TARGET_FIDELITY",
+        "CONDITIONAL_LICENSE"
+      ],
+      "closure_status": "COMPLETE",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": [
+        {
+          "dependency_id": "R3K11-C1-D1",
+          "subject": "Test X: inspect employee badge colors.",
+          "content_origin": "TARGET_SUPPLIED",
+          "derived_contracts": [
+            "TARGET_FIDELITY"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "U1",
+      "claim_id": "R3K12-C1",
+      "base_contracts": [
+        "GOVERNANCE_STRUCTURE"
+      ],
+      "secondary_contracts": [],
+      "closure_status": "DEPENDENCY_UNCERTAIN",
+      "grounding_refs": 0,
+      "claim_refs": [],
+      "supplied_operation_routing": []
+    }
+  ],
+  "validation_diagnostics": [
+    {
+      "code": "DEPENDENCY_UNCERTAIN",
+      "claim_id": "R3K12-C1",
+      "detail": [
+        "R3K12-C1-D1: 'the corrective procedure' does not identify which of the two supplied interventions is intended. The operation's referent and content origin remain uncertain, and resolution is null. The frozen primary classification remains ATOMIC, MAPPING_GENERATED, and GOVERNANCE_RULE."
+      ]
+    }
+  ],
+  "reported_stage_b_token_totals": {
+    "input_tokens": 158457,
+    "cached_input_tokens": 15872,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 20351,
+    "reasoning_output_tokens": 7756
+  },
+  "provider_incidents": [],
+  "scientific_findings": [
+    {
+      "finding": "Supplied operation fidelity replaces expected operation licensing",
+      "affected_controls": [
+        "N3",
+        "N4",
+        "N6",
+        "P1",
+        "N7",
+        "N8"
+      ],
+      "evidence": "See per-claim supplied_operation_routing, original classification rationales, and frozen source text. Mechanical routing follows the prospective origin-sensitive rule.",
+      "implication": "N3 and N8 lack a judgment of their operation-validity defect; N7 lacks the specified valid OPERATION_LICENSE contrast. The exact requested decomposition cannot all be measured from this frozen obligation set. No provider observation or contract has been manually repaired."
+    }
+  ],
+  "calibration": "Five Stage B samples preserved under .runtime, excluded because account isolation/telemetry settling not established.",
+  "stage_c_evaluation_results": null
+}

@@ -1,0 +1,66 @@
+Evaluate exactly the frozen contract for the exact subject in this isolated packet.
+Return only the supplied JSON schema. No tools, external evidence, reclassification,
+additional contract questions, or invented observations. Preserve claim_id,
+obligation_id, contract and subject exactly. No expected answers are supplied.
+
+Use only role-appropriate frozen evidence. Mapping assertions and proposals are not
+observed facts merely because they are present. Citation CONTEXT does not establish
+substantive support. Test scope, certainty and applicability against the stated
+contract. A hypothetical consequence must not be treated as an observed outcome.
+A normative threshold choice does not establish empirical harm onset. Ordinary
+control actions and substantive diagnostic/interventional operations are distinct.
+Return SATISFIED, CONDITIONAL, VIOLATED, or UNCERTAIN; CONDITIONAL must state its
+unresolved conditions. Cite source IDs with SUPPORT or CONTEXT roles. Retain honest
+uncertainty and explain the judgment, without assuming other obligations pass/fail.
+
+{
+  "verdict_meanings": {
+    "SATISFIED": "claim satisfies its own role-specific contract",
+    "CONDITIONAL": "claim satisfies its contract only under an explicit unresolved condition",
+    "VIOLATED": "claim fails its own role-specific contract",
+    "UNCERTAIN": "available material does not permit reliable determination"
+  }
+}
+FROZEN PACKET
+{
+  "claim_id": "R3K06-C1",
+  "obligation_id": "R3K06-C1-D5-O1",
+  "contract": "FACT_WARRANT",
+  "subject": "B is safer to reverse.",
+  "provenance_refs": [
+    {
+      "source_id": "R3K06-T",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K06-S",
+      "role": "CONTEXT"
+    },
+    {
+      "source_id": "R3K06-M",
+      "role": "CONTEXT"
+    }
+  ],
+  "contract_question": "Is this mapping-generated descriptive assertion supported by the cited observations or premises at the scope and certainty stated, without importing an unstated substantive inference?",
+  "claim_context": {
+    "value": "If neither option is conclusive, deploy B first because B is safer to reverse.",
+    "scope": "Frozen case conditions"
+  },
+  "evidence_bundle": [
+    {
+      "source_id": "R3K06-T",
+      "role": "CONTEXT",
+      "text": "Options A and B are both authorized deployment choices. Their reversible configuration-switch procedures satisfy the same supplied applicability and safety requirements. Neither option has conclusive diagnostic evidence. There is no comparative evidence about reversal safety for A versus B."
+    },
+    {
+      "source_id": "R3K06-S",
+      "role": "CONTEXT",
+      "text": "A reversible rollout uses the documented configuration switch and rollback path, both applicable to A and B. Comparative claims about reversal safety require comparative evidence. A team can author a tie-breaking policy without claiming such evidence."
+    },
+    {
+      "source_id": "R3K06-M",
+      "role": "CONTEXT",
+      "text": "The proposed tie-breaker relies on the assertion that B is safer to reverse. Deploy means performing the documented configuration switch, not merely recording a decision."
+    }
+  ]
+}
