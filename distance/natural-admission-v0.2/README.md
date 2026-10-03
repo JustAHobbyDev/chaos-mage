@@ -1,6 +1,6 @@
 # H7 — Natural-transfer admission pilot v0.2
 
-Status: **PREPARED_AWAITING_BUDGET_AND_USAGE_APPROVAL**. Zero scientific provider
+Status: **PREPARED_AWAITING_FINANCIAL_APPROVAL**. Zero scientific provider
 sessions. The six-mapping stop rule and UNMEASURED recovery boundary are frozen in
 [PROTOCOL.md](PROTOCOL.md). H6.R4 remains return-gate INCOMPLETE.
 
@@ -19,7 +19,7 @@ Offline verification:
 ```sh
 python -B distance/natural-admission-v0.2/runner.py verify
 python -B -m unittest discover -s distance/natural-admission-v0.2/tests -v
-python -B scripts/experiment_budget.py check --plan distance/natural-admission-v0.2/budgets/plan-001.json
+python -B scripts/experiment_budget.py check --plan distance/natural-admission-v0.2/budgets/plan-002.json
 ```
 
 The last command is expected to exit 2 until actual user approval is recorded.
@@ -31,13 +31,18 @@ unknown evaluation dispatch.
 After actual consent, record the exact plan approval through the repository gate.
 Before each stage/batch, capture fresh allowance and construct the usage-only batch
 plan from the corresponding cumulative stage with its session count set to one or
-two. Run the usage forecast with reserve 10. Obtain required usage review, then
+two. Run the usage forecast with reserve 10. Usage consent is required only below
+30% current remaining allowance in any quota window. Refresh invalid readings.
+The 2026-10-03 user-directed amendment supersedes the initial protocol's broader
+usage trigger; `usage-gate-amendment.json` preserves old/new hashes. Then
 save an operator review under `.runtime/natural-admission-v0.2/` containing:
-`consent_reference`, `financial_and_usage_approved`, `stage`, `packet_ids`,
+`consent_reference`, `financial_approved`, `stage`, `packet_ids`,
 `plan_sha256`, `snapshot_path`, `snapshot_sha256`, `calibration_path`,
 `calibration_sha256`, `usage_plan_path`. References must identify actual consent,
 never an agent-created authorization. Use the forecast's canonical snapshot and
-calibration hashes. The runner checks freshness, stage order, plan and scope.
+calibration hashes. Only below 30%, also include `usage_approved: true` and an
+actual `usage_consent_reference`. The runner checks freshness, stage order, plan
+and scope. Plan 001 and its preflight remain historical evidence; use plan 002.
 
 Only then use `runner.py run-batch --review <review-path>`. It preserves raw attempts,
 before/after snapshots and available usage, excluding unattested concurrent-account

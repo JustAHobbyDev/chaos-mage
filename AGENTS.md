@@ -10,8 +10,11 @@ does not waive the separate budget gate.
 - Also run the [included-usage preflight](docs/USAGE-FORECAST.md) using fresh account
   percentages/reset times and matched before/after calibration. Present predicted
   percentage points, share of remaining allowance, reserve and LOW/BORDERLINE/HIGH/
-  UNKNOWN scenarios. A nonzero usage-forecast exit requires explicit user review
-  and approval before work proceeds; financial approval alone does not waive it.
+  UNKNOWN scenarios. Usage approval is required only when a fresh quota window
+  has less than 30% remaining (exit 2); exactly 30% does not require approval.
+  Forecast risk and missing calibration are advisory. Invalid, missing or stale
+  account readings require refresh (exit 1), not an approval override.
+  Financial approval remains separate.
   Refresh before each stage and at bounded batch checkpoints. Never turn dollars
   into quota percentages without evidence, invent exhaustion probabilities, launch
   calibration probes without authorization, or consume reset credits automatically.

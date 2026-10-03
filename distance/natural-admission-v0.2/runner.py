@@ -76,21 +76,34 @@ def inventory(paths):
     return {str(p.relative_to(R)): sha(p) for p in sorted(paths) if p.is_file()}
 
 
+def effective_freeze_files():
+    """Keep original freezes; apply only the user's hash-bound policy amendment."""
+    files = {}
+    for name in ('preservation.json', 'initial-freeze.json'):
+        files.update(read(H / name)['files'])
+    amendment = read(H / 'usage-gate-amendment.json')
+    for name, change in amendment['changes'].items():
+        require(files.get(name) == change['original_sha256'], 'Amendment baseline mismatch: ' + name)
+        files[name] = change['updated_sha256']
+    return files
+
+
 def verify():
     require(git('branch', '--show-current') == 'experiment-h7-natural-admission', 'Wrong branch')
     require(len(order()) == 6 and len(set(order())) == 6, 'Exactly six distinct slots')
-    manifests = [H / 'preservation.json', H / 'initial-freeze.json']
-    manifests += sorted(H.glob('*-freeze.json'))
-    for p in set(manifests):
-        require(p.exists(), 'Missing freeze: ' + str(p))
-        for name, digest in read(p)['files'].items():
-            require(sha(R / name) == digest, 'INTEGRITY: ' + name)
+    files = effective_freeze_files()
+    for p in sorted(H.glob('*-freeze.json')):
+        if p.name != 'initial-freeze.json':
+            files.update(read(p)['files'])
+    for name, digest in files.items():
+        require(sha(R / name) == digest, 'INTEGRITY: ' + name)
     c = config()
     require(c['model'] == 'gpt-6-astra' and c['reasoning_effort'] == 'high', 'Model drift')
     require(sha(Path(c['cli'])) == c['cli_sha256'], 'CLI drift')
     require(sha(Path(c['native_executable']['path'])) == c['native_executable']['sha256'], 'Native drift')
     require(subprocess.check_output([c['cli'], '--version'], text=True).strip() == c['cli_version'], 'CLI version drift')
-    return {'historical_files': len(read(H / 'preservation.json')['files']), 'slots': 6}
+    return {'historical_files_checked': len(read(H / 'preservation.json')['files']),
+            'authorized_policy_amendment': 'usage-gate-amendment.json', 'slots': 6}
 
 
 def state():
@@ -236,11 +249,18 @@ def execute(stage, cid, plan):
                                  'schema_valid': True})
 
 
+def check_usage_review(report, review):
+    require(not report['refresh_required'], 'Refresh account reading; approval cannot replace it')
+    if report['approval_required']:
+        require(review.get('usage_approved') is True and review.get('usage_consent_reference', '').strip(),
+                'Usage approval required below 30% remaining')
+
+
 def run_batch(path):
     """Read an operator-reviewed, fresh preflight; never create approval here."""
     review = read(path)
     require(review['consent_reference'].strip(), 'Actual user consent reference required')
-    require(review['financial_and_usage_approved'] is True, 'Approval missing')
+    require(review['financial_approved'] is True, 'Financial approval missing')
     stage, ids = review['stage'], review['packet_ids']
     require(stage in ('generation', 'claims'), 'Later stages require a separately frozen adapter')
     require(1 <= len(ids) <= 2 and len(set(ids)) == len(ids), 'Batch limit is two')
@@ -250,8 +270,8 @@ def run_batch(path):
     verify()
     if stage == 'claims':
         require((H / 'claims-packets-freeze.json').exists(), 'Claim packets not frozen')
-    plan = read(H / 'budgets/plan-001.json')
-    require(plan['execution_fingerprint'] == budget.digest(read(H / 'initial-freeze.json')['files']),
+    plan = read(H / 'budgets/plan-002.json')
+    require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')
     before, calibration, usage_plan = (read(Path(review[key])) for key in
@@ -259,6 +279,7 @@ def run_batch(path):
     declared = next(s for s in plan['stages'] if s['id'] == stage)
     require(usage_plan == {'stages': [{**declared, 'sessions': len(ids)}]}, 'Usage batch mismatch')
     report = usage.predict(usage_plan, before, calibration, reserve_points=10)
+    check_usage_review(report, review)
     require(0 <= datetime.now(timezone.utc).timestamp() - usage.epoch(before['captured_at']) <= 300,
             'Fresh snapshot required')
     require(all(w['resets_at'] > datetime.now(timezone.utc).timestamp() for w in before['windows']),

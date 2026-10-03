@@ -13,6 +13,16 @@ spec.loader.exec_module(r)
 
 
 class BoundaryTests(unittest.TestCase):
+    def test_usage_review_only_below_threshold(self):
+        r.check_usage_review({'refresh_required': False, 'approval_required': False}, {})
+        low = {'refresh_required': False, 'approval_required': True}
+        with self.assertRaisesRegex(ValueError, 'below 30%'):
+            r.check_usage_review(low, {})
+        r.check_usage_review(low, {'usage_approved': True, 'usage_consent_reference': 'test fixture'})
+        with self.assertRaisesRegex(ValueError, 'Refresh'):
+            r.check_usage_review({'refresh_required': True, 'approval_required': False},
+                                 {'usage_approved': True})
+
     def test_budget_denial_never_launches(self):
         gate, launch = Mock(), Mock()
         gate.reserve.side_effect = r.budget.BudgetError('denied')

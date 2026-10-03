@@ -14,6 +14,8 @@ import sys
 import tempfile
 import time
 
+APPROVAL_BELOW_REMAINING_PERCENT = 30
+
 
 class UsageError(ValueError):
     pass
@@ -229,7 +231,11 @@ def predict(plan, snapshot, calibration, reserve_points=10, as_of=None,
             'may_cross_scheduled_reset': None if reasons else as_of + seconds >= window['resets_at'],
             'stages': stages, 'reasons': reasons,
         })
-    approval_required = bool(global_reasons) or any(r['risk_to_reserve'] != 'LOW' for r in results)
+    # Forecast uncertainty is advisory. Approval depends on observed remaining
+    # allowance, not predicted consumption or the separate planning reserve.
+    refresh_required = bool(global_reasons) or any(w['resets_at'] <= as_of for w in results)
+    approval_required = not refresh_required and any(
+        w['remaining_percent'] < APPROVAL_BELOW_REMAINING_PERCENT for w in results)
     report = {
         'version': 1, 'forecast_at': datetime.fromtimestamp(as_of, timezone.utc).isoformat(),
         'plan_sha256': canonical_hash(plan), 'snapshot_sha256': canonical_hash(snapshot),
@@ -237,6 +243,8 @@ def predict(plan, snapshot, calibration, reserve_points=10, as_of=None,
         'rate_headroom_multiplier': headroom, 'available_reset_credits': snapshot['available_reset_credits'],
         'reset_credit_expirations': snapshot['reset_credit_expirations'],
         'windows': results, 'approval_required': approval_required,
+        'approval_below_remaining_percent': APPROVAL_BELOW_REMAINING_PERCENT,
+        'refresh_required': refresh_required,
         'global_reasons': global_reasons, 'excluded_samples': excluded,
         'exhaustion_probability': None,
         'interpretation': 'Observed-rate scenarios, not a calibrated probability or guaranteed bound. '
@@ -279,10 +287,17 @@ def main(argv=None):
                             json.loads(args.calibration.read_text()), reserve)
         save(args.out, value)
         print(json.dumps(value, indent=2))
-        return 2 if value.get('approval_required') else 0
+        return forecast_exit_code(value)
     except (UsageError, KeyError, TypeError, OSError, ValueError) as exc:
         print('USAGE FORECAST STOP: ' + str(exc), file=sys.stderr)
-        return 2
+        return 1
+
+
+def forecast_exit_code(report):
+    """Bad/missing readings need refresh, not an approval override."""
+    if report.get('refresh_required'):
+        return 1
+    return 2 if report.get('approval_required') else 0
 
 
 if __name__ == '__main__':

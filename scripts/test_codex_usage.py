@@ -2,7 +2,7 @@ import copy
 from datetime import datetime, timezone
 import unittest
 
-from codex_usage import UsageError, normalize, predict, sample_rate
+from codex_usage import UsageError, normalize, predict, sample_rate, forecast_exit_code
 
 
 NOW = 1800000000
@@ -41,17 +41,19 @@ class UsageTests(unittest.TestCase):
         self.assertFalse(report['approval_required'])
         self.assertIsNone(report['exhaustion_probability'])
 
-    def test_unknown_calibration_requires_approval(self):
+    def test_unknown_calibration_is_advisory(self):
         self.calibration['samples'] = []
         report = self.predict()
-        self.assertTrue(report['approval_required'])
+        self.assertFalse(report['approval_required'])
         self.assertIsNone(report['windows'][0]['predicted_percentage_points'])
 
     def test_high_and_borderline_risk(self):
         self.plan['stages'][0]['sessions'] = 120
         self.assertEqual(self.predict()['windows'][0]['risk_to_reserve'], 'BORDERLINE')
+        self.assertFalse(self.predict()['approval_required'])
         self.plan['stages'][0]['sessions'] = 180
         self.assertEqual(self.predict()['windows'][0]['risk_to_reserve'], 'HIGH')
+        self.assertFalse(self.predict()['approval_required'])
 
     def test_sample_crossing_reset_is_excluded(self):
         self.sample['after']['windows'][0]['resets_at'] += 10080 * 60
@@ -72,29 +74,33 @@ class UsageTests(unittest.TestCase):
     def test_profile_or_account_or_plan_mismatch_is_unknown(self):
         original = copy.deepcopy(self.sample)
         self.sample['usage_profile'] = 'different-model-and-context'
-        self.assertTrue(self.predict()['approval_required'])
+        self.assertFalse(self.predict()['approval_required'])
         self.calibration['samples'][0] = copy.deepcopy(original)
         self.calibration['samples'][0]['after']['account_scope'] = 'different-account'
-        self.assertTrue(self.predict()['approval_required'])
+        self.assertFalse(self.predict()['approval_required'])
         self.calibration['samples'][0] = copy.deepcopy(original)
         self.calibration['samples'][0]['after']['windows'][0]['plan_type'] = 'different-plan'
-        self.assertTrue(self.predict()['approval_required'])
+        self.assertFalse(self.predict()['approval_required'])
 
     def test_stale_or_future_snapshot_stops_prediction(self):
         for offset in (-301, 1):
             self.current = snapshot(18, NOW + offset)
-            self.assertTrue(self.predict()['approval_required'])
+            self.assertFalse(self.predict()['approval_required'])
+            self.assertTrue(self.predict()['refresh_required'])
+            self.assertEqual(forecast_exit_code(self.predict()), 1)
 
     def test_passed_reset_requires_refresh_and_is_not_assumed_full(self):
         self.current = snapshot(18, NOW, reset=NOW)
         report = self.predict()
         self.assertEqual(report['windows'][0]['remaining_percent'], 82)
-        self.assertTrue(report['approval_required'])
+        self.assertFalse(report['approval_required'])
+        self.assertTrue(report['refresh_required'])
 
     def test_available_resets_do_not_increase_allowance(self):
         self.current['available_reset_credits'] = 99
         self.plan['stages'][0]['sessions'] = 180
         self.assertEqual(self.predict()['windows'][0]['risk_to_reserve'], 'HIGH')
+        self.assertFalse(self.predict()['approval_required'])
 
     def test_zero_remaining_does_not_divide_by_zero(self):
         self.current = snapshot(100, NOW)
@@ -110,7 +116,8 @@ class UsageTests(unittest.TestCase):
 
     def test_no_windows_is_unknown_not_unlimited(self):
         self.current['windows'] = []
-        self.assertTrue(self.predict()['approval_required'])
+        self.assertFalse(self.predict()['approval_required'])
+        self.assertEqual(forecast_exit_code(self.predict()), 1)
 
     def test_multiple_buckets_and_windows_are_all_preserved(self):
         raw = {'rateLimitsByLimitId': {key: {'planType': 'test', 'primary': {
@@ -125,14 +132,43 @@ class UsageTests(unittest.TestCase):
         self.assertNotIn('DO-NOT-STORE', str(self.current))
         self.assertEqual(self.current['reset_credit_expirations'], [NOW + 20000])
 
-    def test_unknown_fanout_requires_approval(self):
+    def test_unknown_fanout_is_advisory(self):
         self.plan['stages'][0]['sessions'] = None
-        self.assertTrue(self.predict()['approval_required'])
+        self.assertFalse(self.predict()['approval_required'])
 
     def test_historical_different_reset_epoch_can_calibrate_same_window_type(self):
         # The pair must share an epoch; the current snapshot may be a later epoch.
         self.current['windows'][0]['resets_at'] += 10080 * 60
         self.assertFalse(self.predict()['approval_required'])
+
+    def test_strict_thirty_percent_boundary(self):
+        for remaining, required in [(0, True), (29.99, True), (30, False), (30.01, False), (100, False)]:
+            with self.subTest(remaining=remaining):
+                self.current = snapshot(100 - remaining, NOW)
+                report = self.predict()
+                self.assertEqual(report['approval_required'], required)
+                self.assertEqual(forecast_exit_code(report), 2 if required else 0)
+
+    def test_any_window_below_threshold_requires_approval(self):
+        self.current = snapshot(10, NOW, secondary={'usedPercent': 71,
+            'windowDurationMins': 300, 'resetsAt': NOW + 1000})
+        self.assertTrue(self.predict()['approval_required'])
+        self.current['windows'][1]['used_percent'] = 70
+        self.assertFalse(self.predict()['approval_required'])
+
+    def test_low_risk_below_threshold_still_requires_approval(self):
+        self.current = snapshot(71, NOW)
+        self.plan['stages'][0]['sessions'] = 1
+        report = self.predict()
+        self.assertEqual(report['windows'][0]['risk_to_reserve'], 'LOW')
+        self.assertTrue(report['approval_required'])
+
+    def test_unknown_calibration_below_threshold_requires_approval(self):
+        self.current = snapshot(71, NOW)
+        self.calibration['samples'] = []
+        report = self.predict()
+        self.assertEqual(report['windows'][0]['risk_to_reserve'], 'UNKNOWN')
+        self.assertTrue(report['approval_required'])
 
     def test_bad_values_fail_closed(self):
         for reserve in (-1, 101, float('nan')):

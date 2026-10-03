@@ -1,4 +1,4 @@
-# Forecast included Codex usage — 2026-10-02
+# Forecast included Codex usage — updated 2026-10-03
 
 Before a run, compare its expected **percentage points of allowance** with the
 remaining allowance in **every returned quota window**. Keep dollar costs and
@@ -28,8 +28,13 @@ python -B scripts/codex_usage.py forecast \
 ```
 
 Output files are exclusive-create; choose a new filename for each observation.
-`forecast` exits 2 if any window has unknown, borderline or high risk to the
-reserve; exit 0 means the observed-rate scenarios fit. This is a required
+Per the user's 2026-10-03 direction, `forecast` exits 2 **only when any fresh quota
+window has less than 30% remaining**. Exactly 30% does not require usage approval.
+This uses current observed allowance, not predicted post-run allowance. UNKNOWN,
+BORDERLINE and HIGH forecasts are advisory above the threshold. Exit 0 means no
+usage approval is required, not that the run is predicted to fit. Invalid, missing,
+stale or reset-crossed readings exit 1 and must be refreshed; user approval cannot
+substitute for a valid account reading. This is a required
 **pre-run review**, alongside the financial gate, not a live quota interceptor.
 The financial gate still enforces per-session reservations. Future runners must
 obtain/read a fresh allowance forecast before each stage and at bounded batch
@@ -117,10 +122,14 @@ user direction; agents must not lower it to get a run through.
 
 | Result | Meaning | Pre-run action |
 |---|---|---|
-| LOW | All upper scenarios fit after the reserve | May proceed if all other gates pass |
-| BORDERLINE | Some scenarios consume the reserve | Ask approval; consider a smaller authorized batch |
-| HIGH | All lower scenarios exceed usable allowance | Ask approval; expect to split work or consider a reset |
-| UNKNOWN | Missing/stale/unusable evidence | Ask approval with the uncertainty explicit |
+| LOW | All upper scenarios fit after the reserve | Report; approval only below 30% remaining |
+| BORDERLINE | Some scenarios consume the reserve | Report; approval only below 30% remaining |
+| HIGH | All lower scenarios exceed usable allowance | Report; approval only below 30% remaining |
+| UNKNOWN | Missing/stale/unusable evidence | Report uncertainty; refresh invalid readings; approval only below 30% remaining |
+
+The 10-point reserve remains a planning reference. It is not a second approval
+trigger. Missing calibration or unknown fan-out does not itself trigger usage
+approval; the separate financial budget gate still governs unknown cost/workload.
 
 The report separately identifies scenarios that exhaust allowance itself, reports
 remaining percentages and per-profile sessions fitting after reserve, and shows
@@ -132,8 +141,8 @@ an earned reset automatically. Other account activity can invalidate a forecast.
 
 Current snapshots expire for forecasting after five minutes. A scheduled reset
 already in the past also forces refresh. These freshness checks do not pretend to
-monitor a run after its preflight. At each batch boundary, refresh and stop further
-scheduling if the remaining forecast no longer fits the reviewed allowance.
+monitor a run after its preflight. At each batch boundary, refresh and request
+usage approval if any current window has less than 30% remaining.
 
 ## H.6 limitation
 
