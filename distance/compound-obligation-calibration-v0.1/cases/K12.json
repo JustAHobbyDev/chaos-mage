@@ -1,0 +1,34 @@
+{
+  "case_id": "K12",
+  "target": {
+    "source_id": "K12-T",
+    "text": "An intermittent attachment-loss pattern is being monitored. Two materially different procedures are available: recalibrate the scanner acquisition path, or rewrite the downstream storage retry policy. Both are informally called the corrective procedure. Nothing in the mapping chooses one."
+  },
+  "source_instrument": {
+    "source_id": "K12-S",
+    "text": "Scanner recalibration and storage retry rewriting act on different components and have distinct applicability conditions. Selecting an intervention requires identifying the intended operation and matching the implicated component."
+  },
+  "mapping": {
+    "source_id": "K12-M",
+    "text": "The phrase corrective procedure denotes a substantive target intervention, not merely stop/pause/rollback. Its intended referent is unresolved between the two procedures."
+  },
+  "claims": [
+    {
+      "claim_id": "K12-C1",
+      "value": "If the pattern continues, apply the corrective procedure.",
+      "scope": "Frozen case conditions",
+      "provenance": {
+        "refs": [
+          {
+            "source_id": "K12-T",
+            "role": "CONTEXT"
+          },
+          {
+            "source_id": "K12-S",
+            "role": "SUPPORT"
+          }
+        ]
+      }
+    }
+  ]
+}
