@@ -35,8 +35,10 @@ BORDERLINE and HIGH forecasts are advisory above the threshold. Exit 0 means no
 usage approval is required, not that the run is predicted to fit. Invalid, missing,
 stale or reset-crossed readings exit 1 and must be refreshed; user approval cannot
 substitute for a valid account reading. This is a required
-**pre-run review**, alongside the financial gate, not a live quota interceptor.
-The financial gate still enforces per-session reservations. Future runners must
+**pre-run review**. The same rule now governs the shared budget gate and every
+experiment stage; no separate financial approval is required. The budget gate
+reads fresh allowance before each session reservation and still enforces unique
+reservations and resolved stage counts. Future runners must
 obtain/read a fresh allowance forecast before each stage and at bounded batch
 checkpoints, present warnings and obtain explicit user consent when needed.
 The allowance tool itself does not launch experiments or record approval.
@@ -128,8 +130,10 @@ user direction; agents must not lower it to get a run through.
 | UNKNOWN | Missing/stale/unusable evidence | Report uncertainty; refresh invalid readings; approval only below 30% remaining |
 
 The 10-point reserve remains a planning reference. It is not a second approval
-trigger. Missing calibration or unknown fan-out does not itself trigger usage
-approval; the separate financial budget gate still governs unknown cost/workload.
+trigger. Missing calibration, unknown cost/fan-out, high dollar/session forecasts,
+observed overruns and revised plan hashes do not themselves trigger approval.
+Resolve a stage's actual session count before dispatch and retain all prior
+reservations; these are bookkeeping requirements within the authorized task.
 
 The report separately identifies scenarios that exhaust allowance itself, reports
 remaining percentages and per-profile sessions fitting after reserve, and shows

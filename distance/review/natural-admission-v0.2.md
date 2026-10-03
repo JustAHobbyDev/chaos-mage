@@ -99,20 +99,16 @@ are unchanged. Classification packets freeze before classification. All classifi
 must freeze before discovery packets are made. The exact evaluation workload is only
 computed from frozen classifications and direct obligations, not from 326 claims alone.
 
-Next requested scope: **6 classification + 6 discovery sessions**, dollars UNKNOWN.
-Budget plan 003 retains the completed 6 generation + 6 atomization reservations,
-the next 12 sessions, unknown evaluation fan-out and 6 inventory + 6 artifact sessions:
-36 known sessions plus an unknown evaluation count. No additional approval is recorded.
-The user-directed usage gate requires consent only below 30% current remaining;
-forecast uncertainty is advisory and the 10-point planning reserve remains.
+Next authorized scope: **6 classification + 6 discovery sessions**, dollars UNKNOWN.
+Cumulative plan 004 retains 12 completed reservations, the next 12 sessions, unknown
+evaluation fan-out and 6 inventory + 6 artifact sessions: 36 known sessions plus
+unknown evaluation count. The user directed the below-30%-remaining approval rule
+to apply to all experiment approval checks. Cost, unknown fan-out and changed hashes
+are advisory. Fresh current allowance below 30% alone requires consent. The 10-point
+planning reserve remains. Earlier denied plan-003 preflight records are historical.
 
 Scientific limitations and all fourteen research-question answers require later
-measurements. The next scientific step is the frozen classification/discovery stage,
-subject to required spending approval, followed by a revised exact-fan-out forecast.
-No evaluation, sample expansion, synthetic calibration or production integration has
-been started. H7 stops after its fixed sample and eventual report.
-
-The final role-stage preflight passed 18 offline runner/routing tests, schema checks,
-claim-preservation checks and all frozen input/observation hash checks. The budget
-gate denies plan 003 pending consent; fresh usage forecast exits 0 under the revised
-threshold. Exact private quota details remain under `.runtime/`.
+measurements. Continue classification/discovery and revise the cumulative forecast
+when exact evaluation fan-out freezes. No sample expansion, synthetic calibration
+or production integration is authorized. H7 stops after its fixed sample and report.
+Private quota readings stay under `.runtime/`.

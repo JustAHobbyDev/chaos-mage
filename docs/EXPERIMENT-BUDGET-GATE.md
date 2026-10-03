@@ -1,113 +1,63 @@
-# Experiment budget approval — 2026-10-02
+# Experiment approval and accounting — updated 2026-10-03
 
-The gate warns and refuses new sessions when the **whole experiment** forecast
-exceeds $10 or 100 sessions, or any stage has unknown cost or session count.
-These are provisional defaults in `experiment-budget-policy.json`; thresholds
-must not be raised by an agent to get a run through. Equality is allowed.
+The user directed that the recent allowance rule apply to **everything** in the
+experiment approval workflow. Within an already-authorized scientific task, approval
+is required only when **any fresh quota window has less than 30% remaining**.
+Exactly 30% passes. This supersedes the former independent $10, 100-session,
+unknown-cost/fan-out, overrun and changed-plan-hash approval triggers.
 
-The separate [included-usage forecast](USAGE-FORECAST.md) compares expected
-percentage-point consumption with current remaining quota and reset timing. Run
-both preflights; neither dollars nor automatic reloads establish usage percentage.
+Costs and workload remain visible forecasts. Unknown values remain `null`, not zero.
+The former dollar/session thresholds in `experiment-budget-policy.json` are now
+advisory thresholds. The 10-percentage-point reserve remains a planning reference,
+not another approval trigger. Do not translate dollars or tokens into quota points.
 
-This controls prospective experiments. Historical H.6 inputs, runner, outputs,
-freezes and terminal status are unchanged. Installing the gate launches no model.
+This policy does not authorize new scientific scope, expand fixed samples, reopen
+H.6 or other terminal experiments, permit retries/substitution, bypass recovery,
+redeem reset credits, or clear evaluator-work stops. Those constraints remain
+independent of spending consent.
 
-## What the warning means
+## Forecast and preflight
 
-Reports display each stage, known total sessions, known estimated dollars,
-whether either total is incomplete, the plan/policy hashes, reserved sessions,
-approval reference, and blocking reasons. Unknown amounts are never priced at
-zero. Forecasts must include generation, claim extraction, **every claim judge**,
-downstream stages, and any protocol-authorized probes or retries. A Codex session
-may itself make multiple provider requests; session counts are not invoice counts.
+Retain one cumulative plan and experiment identity across all stages/revisions.
+Include completed, failed and uncertain reservations; never reset the ledger or
+rename stages to erase consumption. Record the execution fingerprint and update it
+when scientific inputs, prompts, schemas, model configuration or runner change.
+Refresh the forecast after atomization/discovery and before evaluation fan-out.
+A revised plan within the existing task needs no new approval at 30% or above.
 
-This is **not a guaranteed dollar cap or a top-up monitor**. The gate has no
-provider billing/credit-card feed and cannot see concurrent usage outside this
-ledger, provider-internal retries, or actual final token consumption. Cost estimates
-must state their basis: current applicable prices or observed charges for comparable
-work, input/output size assumptions, cache treatment and a conservative margin.
-If those are not established, use `null` and get explicit approval of bounded
-sessions with unknown cost. Do not infer a credit price from API token prices.
-Provider account spending/top-up settings remain a separate control.
-
-## Initial empirical calibration
-
-The user reported nine deduplicated automatic reloads totaling **$45.88** between
-11:57:24 PM CDT October 1 and 12:24:15 AM CDT October 2, 2026 (1,611 seconds).
-The later failed reload is excluded. Local H.6 records show 276 claim sessions
-starting and 276 exiting in that window. All nine reloads imply $1.71/minute;
-excluding the first boundary reload gives $1.52/minute. Dividing by 276 yields a
-rough **$0.15–$0.17 per claim session** cash-reload proxy, not itemized billing.
-
-Use **$0.20 per comparable claim session** as an initial conservative planning
-allowance. Thus 50 such sessions forecast $10 and 100 forecast $20, before other
-stages. Explicitly cite [the calibration record](experiment-budget-calibration.json)
-in `estimate_basis`. Generation, atomization, different models/prompts and much
-larger/smaller contexts still need their own estimate or explicit unknown-cost
-approval. This allowance is not a guaranteed maximum. Update it when new
-observations demonstrate underestimation; do not silently lower it to evade review.
-
-The H.6 retrospective forecast now illustrates 1,042 × $0.20 = **$208.40 for the
-claim stage alone**, with other stages unknown. This is a prospective scenario
-at the expensive window's allowance, **not an estimate of the actual H.6 bill**.
-The reported $45.88 purchased credits, and account balance/usage outside the
-window has not been reconciled. A forecast can still trigger useful approval
-without pretending those uncertainties are resolved.
-
-## Prepare and check
-
-Create an experiment-owned JSON plan. Example shape:
-
-```json
-{
-  "version": 1,
-  "experiment_id": "example-new-study",
-  "description": "Describe the complete study and stages",
-  "execution_fingerprint": "Hash of runner, prompts, schemas, model/reasoning config and frozen inputs",
-  "execution_allowed": false,
-  "stages": [
-    {"id": "generation", "sessions": 6, "estimated_cost_usd": null},
-    {"id": "claim-judgments", "sessions": null, "estimated_cost_usd": null}
-  ]
-}
-```
-
-Set `execution_allowed` to true only for an otherwise authorized experiment.
-That flag is not budget approval. The execution fingerprint must be updated for
-changed scientific inputs/configuration; the runner retains responsibility for
-verifying those files. For known costs, add a nonempty `estimate_basis` to each
-stage. Use decimal dollar strings. Session counts must be nonnegative integers
-or null. Approving an unknown future count does not allow dispatch of that stage:
-resolve the count, revise the plan and pass the gate again first.
+A plan contains version, experiment_id, description, execution_fingerprint,
+execution_allowed and stages with id, sessions, estimated_cost_usd, estimate_basis
+(for known costs) and usage_profile. Session counts may be null for future stages;
+resolve the dispatched stage's count before launching it. Keep execution_allowed
+false for retrospective/forecast-only examples. Approval cannot make those executable.
 
 ```sh
 python -B scripts/experiment_budget.py check --plan path/to/budget-plan.json
 ```
 
-Exit 2 means stop and ask the user. Exit 0 means the budget gate currently allows
-the forecast; it does not override scientific authorization or stage quotas.
-After claim extraction, reforecast all stages before any evaluation launch.
-Approvals bind the entire plan and policy hashes. Changed approved forecasts
-above threshold need fresh approval; changes falling within the automatic
-thresholds follow normal under-threshold policy. Do not omit completed stages.
+`check` reads live account allowance without launching a model. Exit 0 means the
+accounting/allowance checks pass. Exit 2 means fresh allowance is below 30% and
+applicable consent is absent. Exit 1 means a data, freshness, bookkeeping or scientific
+block needs resolution; it is not a request to approve away an integrity problem.
+A fresh normalized snapshot may be supplied with the global `--usage-snapshot`
+option for offline/read-only checks. Never manufacture account readings.
 
-## Approve and launch
+The [usage forecast](USAGE-FORECAST.md) still reports LOW/BORDERLINE/HIGH/UNKNOWN
+scenarios, predicted percentage points, share of remaining allowance and reset timing.
+Missing calibration and predicted reserve/exhaustion risk are advisory when current
+remaining usage is at least 30%. Missing/stale/reset-crossed readings need refresh;
+approval cannot substitute for current account data.
 
-The researcher can approve from an interactive terminal after reviewing the
-report. They must type `approve <full-plan-sha256>`; no piped approval or `--yes`
-flag exists. Record a meaningful authorization reference:
+Account data, quota-bearing gate reports and calibration stay under ignored
+`.runtime/`. The shared reservation ledger remains `.runtime/experiment-budget.sqlite3`.
+The gate's fresh account reads are read-only; they start no model turn and redeem
+no credits. Concurrent account activity can change allowance between observations.
 
-```sh
-python -B scripts/experiment_budget.py approve \
-  --plan path/to/budget-plan.json --reference 'Researcher reviewed displayed plan'
-```
+## Each provider session
 
-An agent must first ask for explicit user consent to the concrete forecast.
-Consent given in chat can be recorded by `Gate.approve(plan, policy, reference)`
-with the actual conversation reference. This is an operator workflow, not a
-security boundary against someone who controls the repository and ledger.
-
-For **one session only**:
+Every worker must reserve immediately before provider launch, using `Gate.reserve`
+or the one-session CLI wrapper. The gate reads fresh allowance for each reservation;
+there is no separate financial-approval flag in the H7 runner.
 
 ```sh
 python -B scripts/experiment_budget.py launch \
@@ -115,64 +65,52 @@ python -B scripts/experiment_budget.py launch \
   -- codex exec --sandbox read-only - < request.txt
 ```
 
-Alternatively a runner imports `Gate`, calls `reserve(plan, policy, stage,
-session_id, command_argv)` immediately before each provider launch, then calls
-`finish(experiment_id, session_id, returncode)` afterwards. For direct API calls,
-use a descriptive non-secret argv-style transport identifier in the reservation.
-Never include credentials in argv or this ledger. Existing protocol, isolation,
-commit, hash, and terminal-state checks still run. Do not treat budget denial as
-a provider observation: it occurs before dispatch and is a scheduling pause.
+Never wrap a multi-session runner as one reservation. The gate still rejects unknown
+or exhausted stage counts, omitted/shrunk consumed stages, duplicate session identities,
+forecast-only plans and scientific terminal blocks. Reconcile plans within existing
+scope when needed; no permission request is implied merely by bookkeeping work.
+A failed, crashed, cancelled or uncertain launch retains its reservation. Preserve
+raw observations; use the repository recovery policy for any continuation.
 
-The shared SQLite ledger at `.runtime/experiment-budget.sqlite3` serializes
-concurrent reservations. Keep this same ledger and experiment ID across stages,
-process restarts and plan revisions. Archive it with experimental evidence.
-`--ledger` exists for offline tests/isolated projects, not for resetting a budget.
-There is no reservation refund, automatic retry or unblock command. Failed,
-crashed, canceled and uncertain launches conservatively retain their slots.
+After launch, call `finish(experiment_id, session_id, returncode)`. Reliable observed
+costs should be recorded with `observe-cost`. An observed overrun is a warning to
+reforecast; it does not independently stop for approval above the usage threshold.
+Lower observed costs do not refund sessions or erase history. Never guess that a
+whole credit top-up or token count is the cost of one session.
 
-## During execution
+## Consent below 30%
 
-The reservation quota is enforced at every launch. In-flight work can finish
-when the gate stops new scheduling. Keep concurrency modest because those calls
-cannot be retroactively prevented. Check observed token usage after each batch;
-revise an underestimated forecast before scheduling more work. Runners with
-reliable per-session dollar observations should report them immediately:
+Only when this threshold is crossed, present the current plan hash, cumulative
+workload, known/unknown cost and current allowance, and request explicit consent.
+Actual consent can be recorded using the interactive `approve` command or
+`Gate.approve(plan, policy, reference)` with the real conversation reference.
+No piped approval, invented consent or autonomous approval is allowed.
+Below-threshold approvals remain bound to the exact plan/policy hashes. Above the
+threshold, no approval record is needed and changed hashes do not block continuation.
 
-```sh
-python -B scripts/experiment_budget.py observe-cost \
-  --experiment example-new-study --session target-01 --usd 1.25
-```
+Scientific authorization is still established by the user's assignment and scope.
+The H7 handoff plus subsequent approval and this policy direction authorize continuation
+of the fixed H7 task under this rule. They do not authorize a different experiment.
 
-Known stage estimates are divided evenly across their declared sessions. For
-heterogeneous costs, define separate stages/cost bands. An observed per-session
-cost above its allowance causes the projected stage cost to exceed its forecast
-and blocks the next launch, even with an existing approval. Missing observations
-retain the allowance, and lower actual costs do not refund it. Reforecast with
-adequate headroom and seek renewed approval when required. Do not assign a
-whole top-up charge to a single session without supporting billing evidence.
+## Cost evidence and limitations
 
-A scientific terminal stop can additionally be mirrored as a permanent ledger
-block, which budget approval cannot remove:
+The existing [calibration record](experiment-budget-calibration.json) documents the
+historical H.6 cash-reload proxy and $0.20 planning allowance for comparable claim
+sessions. It is not itemized billing or a quota conversion. Generation, atomization
+and materially different contexts remain unknown without matching evidence. Keep
+those unknowns explicit; do not invent a cheap estimate to make a forecast look better.
 
-```sh
-python -B scripts/experiment_budget.py block \
-  --experiment example-new-study --reason 'Terminal scientific stop; see incident record'
-```
-
-This new gate is mandatory for future runners through root `AGENTS.md`; it is not
-retroactively inserted into frozen legacy runners. Directly invoking a legacy
-runner bypasses the code and is prohibited by the workflow. New runners must test
-that every launch path, including retry paths if authorized, reserves first.
+The gate cannot observe every provider-internal request, automatic reload or concurrent
+account activity. Session counts are not invoice counts. This is not a guaranteed
+monetary spending cap. The user's chosen approval boundary is current usage remaining.
 
 ## Offline verification
 
 ```sh
 python -B -m unittest discover -s scripts -p test_experiment_budget.py
-python -B scripts/experiment_budget.py check \
-  --plan docs/experiment-budget-h6-retrospective.json
+python -B -m unittest discover -s scripts -p test_codex_usage.py
 ```
 
-The second command intentionally exits 2: 1,114 forecast sessions, $208.40 for the
-claim-stage scenario and other stage costs unknown; approval required. This
-illustrative plan is explicitly non-executable, including
-after approval. It neither changes nor reopens H.6.
+Tests inject synthetic account snapshots and launch only offline fixture commands;
+no provider observations or calibration probes are involved. Frozen historical
+scientific records and their old forecasts are not retroactively relabeled.

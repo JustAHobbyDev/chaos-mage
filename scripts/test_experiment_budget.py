@@ -1,5 +1,7 @@
 import copy
 from contextlib import redirect_stderr
+from datetime import datetime, timezone
+import time
 from concurrent.futures import ThreadPoolExecutor
 import json
 import io
@@ -13,12 +15,21 @@ from unittest.mock import patch
 from experiment_budget import BudgetError, Gate, forecast, launch, main
 
 
+def snapshot(remaining):
+    return {'version': 1, 'captured_at': datetime.now(timezone.utc).isoformat(),
+            'account_scope': 'offline-test', 'available_reset_credits': 0,
+            'reset_credit_expirations': [], 'windows': [{'bucket': 'codex', 'slot': 'primary',
+            'plan_type': 'test', 'duration_minutes': 10080, 'used_percent': 100 - remaining,
+            'resets_at': time.time() + 10000}]}
+
+
 class BudgetTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.path = Path(self.tmp.name)
-        self.gate = Gate(self.path / 'ledger.sqlite3')
+        self.allowance = snapshot(80)
+        self.gate = Gate(self.path / 'ledger.sqlite3', usage_reader=lambda: self.allowance)
         self.policy = {'version': 1, 'approval_above_usd': '10', 'approval_above_sessions': 100}
         self.plan = {
             'version': 1, 'experiment_id': 'test-study', 'description': 'Offline test',
@@ -36,32 +47,49 @@ class BudgetTests(unittest.TestCase):
                                    'estimated_cost_usd': '4', 'estimate_basis': 'test'})
         self.assertFalse(forecast(self.plan, self.policy)['approval_required'])
         self.plan['stages'][1]['estimated_cost_usd'] = '4.01'
-        self.assertTrue(forecast(self.plan, self.policy)['approval_required'])
+        self.assertFalse(forecast(self.plan, self.policy)['approval_required'])
+        self.assertTrue(forecast(self.plan, self.policy)['advisories'])
         self.plan['stages'][1]['estimated_cost_usd'] = '4'
         self.plan['stages'][1]['sessions'] = 99
-        self.assertTrue(forecast(self.plan, self.policy)['approval_required'])
+        self.assertFalse(forecast(self.plan, self.policy)['approval_required'])
+        self.assertTrue(forecast(self.plan, self.policy)['advisories'])
 
-    def test_unknown_cost_denies_without_launch(self):
+    def test_unknown_cost_does_not_require_approval_above_usage_threshold(self):
         self.plan['stages'][0]['estimated_cost_usd'] = None
         with patch('experiment_budget.subprocess.run') as run:
-            with self.assertRaisesRegex(BudgetError, 'Unknown cost'):
-                launch(self.gate, self.plan, self.policy, 'generation', '1', ['test'])
-            run.assert_not_called()
+            run.return_value.returncode = 0
+            self.assertEqual(launch(self.gate, self.plan, self.policy, 'generation', '1', ['test']), 0)
+            run.assert_called_once()
+
+    def test_each_reservation_checks_current_allowance(self):
+        self.reserve('1')
+        self.allowance = snapshot(29)
+        with self.assertRaisesRegex(BudgetError, 'remaining usage is below 30%'):
+            self.reserve('2')
+        self.allowance = snapshot(30)
+        self.reserve('2')
+        with self.gate.connect() as db:
+            rows = db.execute("SELECT details FROM audit WHERE event='RESERVED' ORDER BY sequence").fetchall()
+        self.assertEqual([json.loads(row['details'])['usage_gate']['windows'][0]['remaining_percent']
+                          for row in rows], [80, 30])
 
     def test_real_denied_process_has_no_side_effects(self):
         sentinel = self.path / 'SHOULD_NOT_EXIST'
         self.plan['stages'][0]['estimated_cost_usd'] = '11'
+        quota_path = self.path / 'usage.json'
+        quota_path.write_text(json.dumps(snapshot(29)))
         plan_path, policy_path = self.path / 'plan.json', self.path / 'policy.json'
         plan_path.write_text(json.dumps(self.plan))
         policy_path.write_text(json.dumps(self.policy))
         result = subprocess.run([
             sys.executable, '-B', str(Path(__file__).with_name('experiment_budget.py')),
-            '--ledger', str(self.gate.path), '--policy', str(policy_path), 'launch',
+            '--ledger', str(self.gate.path), '--policy', str(policy_path),
+            '--usage-snapshot', str(quota_path), 'launch',
             '--plan', str(plan_path), '--stage', 'generation', '--session', 'sentinel', '--',
             sys.executable, '-c', 'from pathlib import Path; Path(' + repr(str(sentinel)) + ').touch()',
         ], capture_output=True, text=True)
         self.assertEqual(result.returncode, 2)
-        self.assertIn('Forecast exceeds $10', result.stderr)
+        self.assertIn('remaining usage is below 30%', result.stderr)
         self.assertFalse(sentinel.exists())
 
     def test_unknown_workload_approval_cannot_dispatch_unknown_stage(self):
@@ -70,7 +98,8 @@ class BudgetTests(unittest.TestCase):
         with self.assertRaisesRegex(BudgetError, 'Resolve this stage'):
             self.reserve('1')
 
-    def test_approval_is_bound_to_full_plan_and_policy(self):
+    def test_below_threshold_approval_is_bound_to_full_plan_and_policy(self):
+        self.allowance = snapshot(29)
         self.plan['stages'][0]['estimated_cost_usd'] = '20'
         self.gate.approve(self.plan, self.policy, 'test-only authorization')
         self.reserve('1')
@@ -82,11 +111,13 @@ class BudgetTests(unittest.TestCase):
         self.policy['approval_above_usd'] = '5'
         with self.assertRaises(BudgetError):
             self.reserve('2')
+        self.allowance = snapshot(30)
+        self.reserve('2')
 
     def test_failed_launches_and_restart_do_not_refund_slots(self):
         self.reserve('1')
         self.gate.finish('test-study', '1', 1)
-        restarted = Gate(self.gate.path)
+        restarted = Gate(self.gate.path, usage_reader=lambda: self.allowance)
         self.reserve('2', gate=restarted)  # crash leaves RESERVED indefinitely
         with self.assertRaisesRegex(BudgetError, 'session limit'):
             self.reserve('3', gate=restarted)
@@ -101,24 +132,43 @@ class BudgetTests(unittest.TestCase):
         self.plan['stages'][0]['sessions'] = 1
         def worker(i):
             try:
-                self.reserve(str(i), gate=Gate(self.gate.path))
+                self.reserve(str(i), gate=Gate(self.gate.path, usage_reader=lambda: self.allowance))
                 return True
             except BudgetError:
                 return False
         with ThreadPoolExecutor(max_workers=8) as pool:
             self.assertEqual(sum(pool.map(worker, range(12))), 1)
 
-    def test_observed_overrun_stops_next_launch_even_after_approval(self):
-        self.gate.approve(self.plan, self.policy, 'test-only authorization')
+    def test_observed_overrun_is_advisory_above_usage_threshold(self):
         self.reserve('1')
         self.gate.observe_cost('test-study', '1', '3')
-        with self.assertRaisesRegex(BudgetError, 'Observed cost exceeds'):
-            self.reserve('2')
+        report = self.gate.status(self.plan, self.policy)
+        self.assertTrue(report['allowed'])
+        self.assertTrue(any('Observed cost exceeds' in x for x in report['advisories']))
         self.plan['stages'][0]['estimated_cost_usd'] = '12'
-        with self.assertRaisesRegex(BudgetError, 'Forecast exceeds'):
-            self.reserve('2')
-        self.gate.approve(self.plan, self.policy, 'test-only revised authorization')
         self.reserve('2')
+
+    def test_only_strict_below_thirty_requires_approval(self):
+        self.plan['stages'][0]['estimated_cost_usd'] = None
+        for remaining, required in [(29.99, True), (30, False), (30.01, False)]:
+            self.allowance = snapshot(remaining)
+            report = self.gate.status(self.plan, self.policy)
+            self.assertEqual(report['approval_required'], required)
+            self.assertEqual(report['allowed'], not required)
+
+    def test_unknown_future_fanout_does_not_block_known_stage(self):
+        self.plan['stages'].append({'id': 'future', 'sessions': None, 'estimated_cost_usd': None})
+        self.reserve('1')
+        with self.assertRaisesRegex(BudgetError, 'Resolve this stage'):
+            self.reserve('2', stage='future')
+
+    def test_stale_account_cannot_be_approved_away(self):
+        self.allowance['captured_at'] = '2000-01-01T00:00:00+00:00'
+        self.gate.approve(self.plan, self.policy, 'test-only authorization')
+        report = self.gate.status(self.plan, self.policy)
+        self.assertTrue(report['refresh_required'])
+        self.assertFalse(report['approval_required'])
+        self.assertFalse(report['allowed'])
 
     def test_no_cost_refund_or_missing_observation(self):
         self.reserve('1')
@@ -159,9 +209,12 @@ class BudgetTests(unittest.TestCase):
         plan, policy = self.path / 'plan.json', self.path / 'policy.json'
         plan.write_text(json.dumps(self.plan))
         policy.write_text(json.dumps(self.policy))
+        quota_path = self.path / 'quota.json'
+        quota_path.write_text(json.dumps(self.allowance))
         with patch('sys.stdin.isatty', return_value=False), redirect_stderr(io.StringIO()):
             self.assertEqual(main(['--ledger', str(self.gate.path), '--policy', str(policy),
-                                   'approve', '--plan', str(plan), '--reference', 'test']), 2)
+                                   '--usage-snapshot', str(quota_path),
+                                   'approve', '--plan', str(plan), '--reference', 'test']), 1)
         self.assertIsNone(self.gate.status(self.plan, self.policy)['approval_reference'])
 
     def test_forecast_only_example_never_launches(self):

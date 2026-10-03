@@ -81,7 +81,7 @@ def effective_freeze_files():
     files = {}
     for name in ('preservation.json', 'initial-freeze.json'):
         files.update(read(H / name)['files'])
-    for amendment_name in ('usage-gate-amendment.json', 'role-stage-amendment.json'):
+    for amendment_name in ('usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json'):
         amendment = read(H / amendment_name)
         for name, change in amendment['changes'].items():
             require(files.get(name) == change['original_sha256'], 'Amendment baseline mismatch: ' + name)
@@ -105,7 +105,7 @@ def verify():
     require(sha(Path(c['native_executable']['path'])) == c['native_executable']['sha256'], 'Native drift')
     require(subprocess.check_output([c['cli'], '--version'], text=True).strip() == c['cli_version'], 'CLI version drift')
     return {'historical_files_checked': len(read(H / 'preservation.json')['files']),
-            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json'], 'slots': 6}
+            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json'], 'slots': 6}
 
 
 def state():
@@ -264,8 +264,7 @@ def check_usage_review(report, review):
 def run_batch(path):
     """Read an operator-reviewed, fresh preflight; never create approval here."""
     review = read(path)
-    require(review['consent_reference'].strip(), 'Actual user consent reference required')
-    require(review['financial_approved'] is True, 'Financial approval missing')
+    require(review['authorization_reference'].strip(), 'Scientific task authorization reference required')
     stage, ids = review['stage'], review['packet_ids']
     require(stage in ('generation', 'claims', 'classification', 'discovery'), 'Evaluation remains gated')
     require(1 <= len(ids) <= 2 and len(set(ids)) == len(ids), 'Batch limit is two')
@@ -275,7 +274,7 @@ def run_batch(path):
     verify()
     if stage != 'generation':
         require((H / f'{stage}-packets-freeze.json').exists(), 'Stage packets not frozen')
-    plan = read(H / 'budgets/plan-003.json')
+    plan = read(H / 'budgets/plan-004.json')
     require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')

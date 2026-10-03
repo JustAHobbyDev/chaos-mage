@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline forecasts and a durable, per-session approval gate. No provider SDKs."""
+"""Cumulative forecasts and reservations; approval only below 30% allowance."""
 import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -17,6 +17,10 @@ DEFAULT_LEDGER = ROOT / '.runtime/experiment-budget.sqlite3'
 
 
 class BudgetError(ValueError):
+    pass
+
+
+class ApprovalRequired(BudgetError):
     pass
 
 
@@ -54,15 +58,15 @@ def name(value):
 
 
 def forecast(plan, policy):
-    """Missing prices or unknown downstream fan-out require review, never mean zero."""
+    """Costs and workload remain visible advisories, never zero estimates."""
     name(plan['experiment_id'])
     name(plan['description'])
     name(plan['execution_fingerprint'])
     require(plan['version'] == 1 and policy['version'] == 1, 'Unsupported format version')
     require(type(plan.get('execution_allowed', False)) is bool, 'execution_allowed must be boolean')
     require(isinstance(plan['stages'], list) and bool(plan['stages']), 'Stages are required')
-    threshold = dollars(policy['approval_above_usd'])
-    session_threshold = count(policy['approval_above_sessions'])
+    threshold = dollars(policy.get('cost_advisory_above_usd', policy.get('approval_above_usd', '10')))
+    session_threshold = count(policy.get('session_advisory_above', policy.get('approval_above_sessions', 100)))
     seen, sessions, costs, unknown_counts, unknown_costs = set(), 0, Decimal(0), [], []
     rows = []
     for stage in plan['stages']:
@@ -94,15 +98,37 @@ def forecast(plan, policy):
         'policy_sha256': digest(policy), 'stages': rows,
         'known_sessions': sessions, 'session_count_complete': not unknown_counts,
         'known_estimated_cost_usd': str(costs), 'cost_estimate_complete': not unknown_costs,
-        'approval_required': bool(reasons), 'reasons': reasons,
+        'approval_required': False, 'reasons': [], 'advisories': reasons,
         'billing_limitation': 'Forecast only. Codex sessions are not billable API request counts. '
             'This gate cannot observe subscription credits, top-ups, internal retries, or actual charges.',
     }
 
 
+def current_allowance():
+    import codex_usage as usage
+    return usage.normalize(usage.read_limits(), 'local-codex-account')
+
+
+def allowance_status(snapshot):
+    # Reuse the same freshness and strict <30% predicate as the usage CLI.
+    # Zero work here is only a way to isolate the allowance predicate; no
+    # cost or consumption prediction from this call is exposed as a forecast.
+    import codex_usage as usage
+    report = usage.predict({'stages': [{'id': 'allowance-check', 'sessions': 0}]},
+                           snapshot, {'version': 1, 'samples': []})
+    return {'approval_required': report['approval_required'],
+            'refresh_required': report['refresh_required'],
+            'approval_below_remaining_percent': report['approval_below_remaining_percent'],
+            'snapshot_sha256': report['snapshot_sha256'],
+            'captured_at': snapshot['captured_at'],
+            'windows': [{k: w[k] for k in ('bucket', 'slot', 'remaining_percent', 'resets_at')}
+                        for w in report['windows']]}
+
+
 class Gate:
     """Every worker reserves before launching. SQLite serializes concurrent workers."""
-    def __init__(self, ledger=DEFAULT_LEDGER):
+    def __init__(self, ledger=DEFAULT_LEDGER, usage_reader=None):
+        self.usage_reader = usage_reader or current_allowance
         self.path = Path(ledger)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.connect() as db:
@@ -158,7 +184,7 @@ class Gate:
             self.audit(db, 'APPROVAL', plan['experiment_id'], {**report, 'reference': reference})
         return report
 
-    def status_in(self, db, plan, policy):
+    def status_in(self, db, plan, policy, allowance):
         report = forecast(plan, policy)
         experiment = plan['experiment_id']
         rows = db.execute('SELECT * FROM reservations WHERE experiment=?', (experiment,)).fetchall()
@@ -169,14 +195,18 @@ class Gate:
         for row in rows:
             consumed[row['stage']] = consumed.get(row['stage'], 0) + 1
         stages = {s['id']: s for s in plan['stages']}
-        reasons = [] if approval else list(report['reasons'])
+        reasons = []
+        if allowance['refresh_required']:
+            reasons.append('Refresh account allowance; missing/stale/reset-crossed readings cannot be approved away')
+        elif allowance['approval_required'] and not approval:
+            reasons.append('Approval required: remaining usage is below 30%')
+        advisories = list(report['advisories'])
         if block:
             reasons.append('Experiment blocked: ' + block['reason'])
         for sid, used in consumed.items():
             if sid not in stages or stages[sid]['sessions'] is None or used > stages[sid]['sessions']:
                 reasons.append('Plan omits or shrinks previously reserved work: ' + sid)
-        # Measured overruns invalidate even an existing approval for the forecast.
-        # Unknown observations retain the original forecast; they are never treated as free.
+        # Observed overruns require reforecasting, not a separate approval trigger.
         for sid, stage in stages.items():
             cost = stage['estimated_cost_usd']
             if cost is None or not stage['sessions']:
@@ -184,21 +214,25 @@ class Gate:
             expected = dollars(cost) / stage['sessions']
             if any(r['observed_cost'] is not None and dollars(r['observed_cost']) > expected
                    for r in rows if r['stage'] == sid):
-                reasons.append('Observed cost exceeds stage forecast; revise plan: ' + sid)
-        return {**report, 'reserved_sessions': len(rows), 'reserved_by_stage': consumed,
+                advisories.append('Observed cost exceeds stage forecast; revise plan: ' + sid)
+        return {**report, 'approval_required': allowance['approval_required'],
+                'refresh_required': allowance['refresh_required'], 'usage_gate': allowance,
+                'advisories': advisories, 'reserved_sessions': len(rows), 'reserved_by_stage': consumed,
                 'approval_reference': approval['reference'] if approval else None,
                 'allowed': not reasons, 'blocking_reasons': reasons}
 
     def status(self, plan, policy):
+        allowance = allowance_status(self.usage_reader())
         with self.transaction() as db:
-            return self.status_in(db, plan, policy)
+            return self.status_in(db, plan, policy, allowance)
 
     def reserve(self, plan, policy, stage, session, command):
         name(session)
         require(bool(command) and all(isinstance(s, str) for s in command), 'Command argv is required')
         error = None
+        allowance = allowance_status(self.usage_reader())
         with self.transaction() as db:
-            status = self.status_in(db, plan, policy)
+            status = self.status_in(db, plan, policy, allowance)
             experiment = plan['experiment_id']
             stages = {s['id']: s for s in plan['stages']}
             if not plan.get('execution_allowed', False):
@@ -208,7 +242,7 @@ class Gate:
             elif stage not in stages:
                 error = 'Undeclared stage'
             elif stages[stage]['sessions'] is None:
-                error = 'Resolve this stage session count and obtain any new approval before dispatch'
+                error = 'Resolve this stage session count in the cumulative plan before dispatch'
             elif status['reserved_by_stage'].get(stage, 0) >= stages[stage]['sessions']:
                 error = 'Stage session limit reached; revise the cumulative plan before more work'
             elif db.execute('SELECT 1 FROM reservations WHERE experiment=? AND session=?',
@@ -221,9 +255,12 @@ class Gate:
                            (experiment, session, stage, status['plan_sha256'], now(),
                             json.dumps(command), 'RESERVED', None, None))
                 self.audit(db, 'RESERVED', experiment, {'stage': stage, 'session': session,
-                                                      'plan_sha256': status['plan_sha256']})
+                                                      'plan_sha256': status['plan_sha256'],
+                                                      'usage_gate': allowance})
         if error:
-            raise BudgetError('APPROVAL GATE: ' + error)
+            if error == 'Approval required: remaining usage is below 30%':
+                raise ApprovalRequired(error)
+            raise BudgetError('EXECUTION GATE: ' + error)
 
     def finish(self, experiment, session, returncode):
         with self.transaction() as db:
@@ -265,6 +302,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--policy', type=Path, default=DEFAULT_POLICY)
     parser.add_argument('--ledger', type=Path, default=DEFAULT_LEDGER)
+    parser.add_argument('--usage-snapshot', type=Path, help='Fresh normalized account snapshot; otherwise read live allowance')
     sub = parser.add_subparsers(dest='action', required=True)
     for action in ('check', 'approve', 'launch'):
         p = sub.add_parser(action)
@@ -284,7 +322,8 @@ def main(argv=None):
     p.add_argument('--reason', required=True)
     args = parser.parse_args(argv)
     try:
-        gate = Gate(args.ledger)
+        reader = (lambda: json.loads(args.usage_snapshot.read_text())) if args.usage_snapshot else None
+        gate = Gate(args.ledger, usage_reader=reader)
         if args.action == 'block':
             gate.block(args.experiment, args.reason)
             return 0
@@ -296,7 +335,10 @@ def main(argv=None):
         report = gate.status(plan, policy)
         print(json.dumps(report, indent=2), file=sys.stderr, flush=True)
         if args.action == 'check':
-            return 0 if report['allowed'] else 2
+            return 0 if report['allowed'] else (2 if report['blocking_reasons'] ==
+                ['Approval required: remaining usage is below 30%'] else 1)
+        if report['refresh_required']:
+            return 1
         if args.action == 'approve':
             require(sys.stdin.isatty(), 'Approval requires an interactive operator terminal; no piped auto-approval')
             phrase = 'approve ' + report['plan_sha256']
@@ -306,9 +348,12 @@ def main(argv=None):
             return 0
         command = args.command[1:] if args.command[:1] == ['--'] else args.command
         return launch(gate, plan, policy, args.stage, args.session, command)
-    except (BudgetError, KeyError, TypeError, OSError, sqlite3.Error, json.JSONDecodeError) as exc:
-        print('BUDGET GATE STOP: ' + str(exc), file=sys.stderr)
+    except ApprovalRequired as exc:
+        print('APPROVAL REQUIRED: ' + str(exc), file=sys.stderr)
         return 2
+    except (BudgetError, KeyError, TypeError, OSError, sqlite3.Error, ValueError) as exc:
+        print('BUDGET GATE STOP: ' + str(exc), file=sys.stderr)
+        return 1
 
 
 if __name__ == '__main__':

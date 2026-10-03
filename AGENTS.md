@@ -2,11 +2,14 @@
 
 Before any future paid or subscription-backed model experiment, follow
 [the budget gate workflow](docs/EXPERIMENT-BUDGET-GATE.md). This also applies to
-headless Codex and automatic credit top-ups. A request to conduct an experiment
-does not waive the separate budget gate.
+headless Codex and automatic credit top-ups. The user-directed rule of 2026-10-03
+applies to **all experiment approval gates**: request approval only below 30%
+current remaining allowance in any fresh quota window. Exactly 30% passes.
 
 - Present a cumulative forecast of all stages, sessions and estimated cost before
-  the first launch. Unknown cost or fan-out requires approval, not a zero estimate.
+  the first launch. Unknown cost or fan-out remains unknown, never zero, but does
+  not independently require approval. Dollars, session totals, observed overruns
+  and new plan hashes are advisory when allowance is at least 30%.
 - Also run the [included-usage preflight](docs/USAGE-FORECAST.md) using fresh account
   percentages/reset times and matched before/after calibration. Present predicted
   percentage points, share of remaining allowance, reserve and LOW/BORDERLINE/HIGH/
@@ -14,7 +17,7 @@ does not waive the separate budget gate.
   has less than 30% remaining (exit 2); exactly 30% does not require approval.
   Forecast risk and missing calibration are advisory. Invalid, missing or stale
   account readings require refresh (exit 1), not an approval override.
-  Financial approval remains separate.
+  There is no separate financial/stage/plan-revision approval trigger.
   Refresh before each stage and at bounded batch checkpoints. Never turn dollars
   into quota percentages without evidence, invent exhaustion probabilities, launch
   calibration probes without authorization, or consume reset credits automatically.
@@ -30,15 +33,20 @@ does not waive the separate budget gate.
 - Use `scripts/experiment_budget.py` before **every model session**, either its
   `launch` command or the `Gate.reserve` API inside each runner worker immediately
   before provider launch. Never wrap a whole multi-session runner as one session.
-- Stop and request user approval when `check`/`reserve` denies. Never approve your
-  own plan, raise thresholds, delete/reset the ledger, invent a cheaper estimate,
+- Stop and request user approval when the fresh allowance is below 30% and no
+  applicable consent exists. Repair missing/stale readings and incomplete plans
+  within existing task authority; those are not permission requests. Scientific
+  stops, fixed sample limits and duplicate-session guards still apply. Never approve
+  your own below-threshold plan, delete/reset the ledger, invent a cheaper estimate,
   rename an experiment/stage to reset consumption, or pipe an approval response.
-- Approval must reference the exact displayed plan hash, known/unknown cost and
+- When below-threshold approval is needed, it must reference the displayed plan hash, known/unknown cost and
   session limits. Record consent only after the user actually grants it. A chat
   approval can be recorded through `Gate.approve` with the conversation reference;
   autonomous calls to that method without such consent are forbidden.
 - Reforecast after generation/atomization and before evaluation fan-out. Include
   all earlier stages and reservations, even failures and uncertain launches.
+  Within the authorized scientific task, revise plans and continue without renewed
+  spending consent when current allowance remains at least 30%.
 - Update forecasts when token usage or observed costs indicate underestimation.
   Record reliable per-session costs with `observe-cost`; do not guess that token
   counts equal billed dollars or that subscription allowance means free usage.

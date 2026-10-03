@@ -32,7 +32,9 @@ class BoundaryTests(unittest.TestCase):
 
     def test_actual_gate_preserves_slot_on_failed_transport(self):
         with tempfile.TemporaryDirectory() as tmp:
-            gate = r.budget.Gate(Path(tmp) / 'ledger.db')
+            gate = r.budget.Gate(Path(tmp) / 'ledger.db', usage_reader=lambda: r.usage.normalize(
+                {'rateLimits': {'primary': {'usedPercent': 10, 'windowDurationMins': 10080,
+                 'resetsAt': 4102444800}}}, 'offline-test'))
             plan = {'version': 1, 'experiment_id': 'offline-test', 'description': 'fixture',
                     'execution_fingerprint': 'fixture', 'execution_allowed': True,
                     'stages': [{'id': 'generation', 'sessions': 1,
