@@ -1,0 +1,136 @@
+{
+  "impact_judgment": {
+    "pair_id": "PAIR-02",
+    "semantic_equivalence": "NO",
+    "differences": [
+      {
+        "difference_id": "D1",
+        "introduced_in": "B_ONLY",
+        "categories": [
+          "PROBLEM_REPRESENTATION_CHANGE",
+          "INQUIRY_CHANGE",
+          "CONSTRAINT_CHANGE"
+        ],
+        "response_a": {
+          "content": "A assesses replenishment readiness and attempted reorders but does not specify reconstructing event chronology, corroborating dates, or comparing alternative event sequences.",
+          "response_locations": [
+            "next_inquiries[1]",
+            "important_distinctions[0]"
+          ],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "B distinguishes recorded dates, recalled events, date ranges and unknown intervals; seeks corroboration; and compares calendar time, time since first order and sufficiently dated depletion. Ambiguous or uncorroborated sequences must remain unresolved.",
+          "response_locations": [
+            "next_inquiries[2]",
+            "decision_rules[2]",
+            "important_distinctions[1]"
+          ],
+          "downstream_consequence": "The team would gather timing and corroboration evidence to determine whether refill need preceded an obstacle, withholding a sequence-based explanation when multiple orderings remain plausible."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "B adds a specific temporal evidence structure with additional inquiry and explicit limits on conclusions drawn from recalled chronology."
+      },
+      {
+        "difference_id": "D2",
+        "introduced_in": "A_ONLY",
+        "categories": [
+          "INQUIRY_CHANGE"
+        ],
+        "response_a": {
+          "content": "A asks willing participants to describe a recent collection or demonstrate how they would arrange a refill, reviewing relevant support messages alongside these accounts.",
+          "response_locations": [
+            "next_inquiries[2]"
+          ],
+          "downstream_consequence": "The team could observe how a customer attempts the refill task and use concrete task difficulties to select a process change."
+        },
+        "response_b": {
+          "content": "B asks about refill understanding, attempted collection and obstacles, but does not request a demonstration of arranging a refill.",
+          "response_locations": [
+            "next_inquiries[1]",
+            "next_inquiries[2]"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "A introduces a behavioral demonstration that can supply different evidence from reported understanding or corroborated event timing."
+      },
+      {
+        "difference_id": "D3",
+        "introduced_in": "B_ONLY",
+        "categories": [
+          "INQUIRY_CHANGE"
+        ],
+        "response_a": {
+          "content": "A compares cohorts by product, quantity, discount and fulfillment option, with starter versus refill purchases separated if possible. It does not explicitly compare individual collection points.",
+          "response_locations": [
+            "next_inquiries[0]"
+          ],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "B additionally compares individual collection points if they are identifiable in the records.",
+          "response_locations": [
+            "next_inquiries[0].operation_or_observation",
+            "next_inquiries[0].decision_relevance"
+          ],
+          "downstream_consequence": "Where records permit, the team would investigate differences between collection locations and use them to focus customer follow-up."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "Comparing individual locations adds a discriminating comparison beyond separating delivery from collection."
+      },
+      {
+        "difference_id": "D4",
+        "introduced_in": "A_ONLY",
+        "categories": [
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "If follow-up indicates substantial remaining stock and later expected replenishment, A directs the team to plan purchasing around a range of replenishment intervals.",
+          "response_locations": [
+            "decision_rules[0]"
+          ],
+          "downstream_consequence": "Evidence of slower consumption would explicitly change the timing assumptions used for the purchasing commitment."
+        },
+        "response_b": {
+          "content": "B investigates remaining stock and expected refill timing and carries unresolved demand uncertainty into purchasing, but supplies no corresponding purchasing rule for supported evidence of later replenishment.",
+          "response_locations": [
+            "next_inquiries[1]",
+            "decision_rules[1]",
+            "important_distinctions[0]"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "A connects a particular inquiry result to a concrete change in purchasing assumptions, beyond recognizing that nonpurchase may reflect lack of need."
+      },
+      {
+        "difference_id": "D5",
+        "introduced_in": "A_ONLY",
+        "categories": [
+          "DECISION_RULE_CHANGE",
+          "CONSTRAINT_CHANGE"
+        ],
+        "response_a": {
+          "content": "A permits provisional continuation when the trial meets its predefined criterion, has supporting comparison evidence where feasible, and causes no material service deterioration; later repeat orders should then be monitored.",
+          "response_locations": [
+            "decision_rules[2]"
+          ],
+          "downstream_consequence": "The team has an explicit post-trial continuation rule, including a service-deterioration condition that can prevent continuation despite meeting the success measure."
+        },
+        "response_b": {
+          "content": "B requires a prespecified success measure and stop condition and assessment before purchasing, but does not state a post-trial continuation rule or an explicit service-deterioration condition.",
+          "response_locations": [
+            "immediate_actions[1]",
+            "decision_rules[0]"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "A specifies what evidence supports continuing the change and an additional condition that can withhold continuation."
+      }
+    ],
+    "overall_material_difference": "YES",
+    "rationale": "The responses share the core inquiry into comparable cohorts, refill need and actionable barriers. They differ materially in temporal corroboration, task demonstration, location-level comparison, and explicit rules for purchasing assumptions and post-trial continuation."
+  }
+}

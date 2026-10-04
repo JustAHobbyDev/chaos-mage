@@ -1,0 +1,174 @@
+{
+  "impact_judgment": {
+    "pair_id": "PAIR-01",
+    "semantic_equivalence": "NO",
+    "differences": [
+      {
+        "difference_id": "D01",
+        "introduced_in": "A_ONLY",
+        "categories": [
+          "INQUIRY_CHANGE",
+          "PRIORITY_CHANGE",
+          "CONSTRAINT_CHANGE",
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "Requires verification of package linkage, sensor meaning and response, clock alignment and handoffs before deployment. Paired measurements require checks on reference reliability and shared errors. Uncertain records trigger exclusion and sensitivity comparisons; inadequate comparisons remain indeterminate, and missing traces cannot establish satisfactory handling.",
+          "response_locations": [
+            "response_a.next_inquiries[0].operation_or_observation",
+            "response_a.next_inquiries[2].operation_or_observation",
+            "response_a.priorities[0]",
+            "response_a.decision_rules[2]",
+            "response_a.do_not_conclude[0]"
+          ],
+          "downstream_consequence": "Staff must resolve specified measurement-validity questions before using observations for attribution, and must test whether apparent stage patterns survive plausible timing and sensor assumptions."
+        },
+        "response_b": {
+          "content": "Prioritizes comparable, package-linked readings and records placement and handling times, but does not specify these predeployment verification checks, sensitivity comparisons or missing-trace rules.",
+          "response_locations": [
+            "response_b.priorities[0]",
+            "response_b.next_inquiries[0].operation_or_observation",
+            "response_b.next_inquiries[1].operation_or_observation"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "A adds concrete evidence requests and prerequisites that can postpone attribution or render an apparent interval-specific result indeterminate; these go beyond B's general comparability requirement."
+      },
+      {
+        "difference_id": "D02",
+        "introduced_in": "A_ONLY",
+        "categories": [
+          "PROBLEM_REPRESENTATION_CHANGE",
+          "ACTION_CHANGE",
+          "PRIORITY_CHANGE",
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "Requires expected observations for each explanation, including combinations, before reviewing results. It then classifies explanations as consistent, inconsistent or indeterminate, prioritizes reliable contradictions and discriminating observations, and treats repeated records within a delivery as dependent.",
+          "response_locations": [
+            "response_a.immediate_actions[0]",
+            "response_a.priorities[1]",
+            "response_a.decision_rules[1]"
+          ],
+          "downstream_consequence": "The team must prepare explicit predictions and evaluate evidence by its ability to distinguish explanations, rather than allowing numerous correlated supporting readings to dominate follow-up choices."
+        },
+        "response_b": {
+          "content": "Compares operating contributors, repeats informative comparisons and uses emerging evidence to focus observations, without prescribing advance predictions, explicit explanation classifications or a dependence-aware contradiction assessment.",
+          "response_locations": [
+            "response_b.next_inquiries[2]",
+            "response_b.priorities[2]"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "A introduces an actionable evidentiary structure and an immediate preparation task that can change which explanations remain live and which observations receive priority."
+      },
+      {
+        "difference_id": "D03",
+        "introduced_in": "B_ONLY",
+        "categories": [
+          "PROBLEM_REPRESENTATION_CHANGE",
+          "INQUIRY_CHANGE",
+          "CONSTRAINT_CHANGE"
+        ],
+        "response_a": {
+          "content": "Tracks selected packages and pairs usual and standardized readings on a verified tracked package. It mentions package variation as a possible source of apparent contradictions but does not explicitly request additional packages within sampled deliveries or impose a delivery-wide representativeness rule.",
+          "response_locations": [
+            "response_a.next_inquiries[1].operation_or_observation",
+            "response_a.next_inquiries[2].operation_or_observation",
+            "response_a.decision_rules[2].rationale"
+          ],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "Documents receiving package selection, adds readings from additional packages where feasible, and explicitly distinguishes one package reading from a delivery-wide assessment.",
+          "response_locations": [
+            "response_b.top_uncertainties[1]",
+            "response_b.next_inquiries[1]",
+            "response_b.important_distinctions[1]"
+          ],
+          "downstream_consequence": "Some limited observation capacity goes to within-delivery package comparisons, and a single reading cannot be used to characterize every package in the delivery."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "B makes within-delivery variation a direct sampling question and establishes a corresponding inference boundary, rather than merely acknowledging package variation as measurement uncertainty."
+      },
+      {
+        "difference_id": "D04",
+        "introduced_in": "BOTH_DIFFERENT",
+        "categories": [
+          "DECISION_RULE_CHANGE",
+          "ACTION_CHANGE"
+        ],
+        "response_a": {
+          "content": "Reliable package-linked observations distinguishing temperatures before and after a stage support investigating the stage involved, without establishing a unique cause.",
+          "response_locations": [
+            "response_a.decision_rules[0]"
+          ],
+          "downstream_consequence": "An interpretable observed rise can redirect investigation to an interval, but this rule does not itself authorize a targeted corrective intervention."
+        },
+        "response_b": {
+          "content": "Repeated, comparable observations locating increases within an interval trigger corrective action and further monitoring at that interval.",
+          "response_locations": [
+            "response_b.decision_rules[0]"
+          ],
+          "downstream_consequence": "Once an interval-specific pattern is repeated, the team proceeds to a targeted handling correction as well as additional monitoring."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "The rules differ both in their stated evidentiary trigger and in what that trigger authorizes: investigation in A versus corrective action plus monitoring in B."
+      },
+      {
+        "difference_id": "D05",
+        "introduced_in": "B_ONLY",
+        "categories": [
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "Says unstable rankings or inadequate coverage block a causal declaration at the end of the fortnight, but does not give an explicit end-of-period rule for retaining precautions and continuing focused sampling.",
+          "response_locations": [
+            "response_a.do_not_conclude[1]",
+            "response_a.immediate_actions[1]",
+            "response_a.priorities[1]"
+          ],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "If the two-week sample remains mixed or inconclusive, retain proportionate precautions and focus further sampling on unresolved intervals or conditions.",
+          "response_locations": [
+            "response_b.decision_rules[2]"
+          ],
+          "downstream_consequence": "Inconclusive results trigger continued precautions and a focused follow-up sampling effort rather than only an uncertain conclusion."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "Both responses resist unsupported diagnosis, but B additionally specifies the operational response to unresolved uncertainty at the two-week decision point."
+      },
+      {
+        "difference_id": "D06",
+        "introduced_in": "BOTH_DIFFERENT",
+        "categories": [
+          "ACTION_CHANGE",
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "Immediately recommends a common approved receiving method wherever it can provide reliable, comparable readings within staff capacity.",
+          "response_locations": [
+            "response_a.immediate_actions[2]"
+          ],
+          "downstream_consequence": "Receiving-method standardization can begin before new evidence shows that procedure or delay contributes to exceptions."
+        },
+        "response_b": {
+          "content": "Adds a common measurement procedure on sampled deliveries, then explicitly calls for standardizing the relevant receiving practice and reassessing exceptions if reported exceptions vary with procedure or measurement delay.",
+          "response_locations": [
+            "response_b.next_inquiries[1].operation_or_observation",
+            "response_b.decision_rules[1]"
+          ],
+          "downstream_consequence": "The explicit rule for changing relevant receiving practice is tied to observed procedure or delay effects, while common measurements already begin within the investigation."
+        },
+        "materially_changes_target_reasoning": "UNCERTAIN",
+        "rationale": "The responses may differ in the timing or scope of operational standardization, but A does not specify its breadth and B already introduces a common procedure during sampling. The practical difference is therefore unresolved."
+      }
+    ],
+    "overall_material_difference": "YES",
+    "rationale": "The responses share the unresolved-cause assessment, selective tracing strategy and proportionate interim precautions. Material differences remain in measurement-validation prerequisites, hypothesis evaluation, within-delivery sampling, the trigger for targeted correction and the response to an inconclusive fortnight."
+  }
+}
