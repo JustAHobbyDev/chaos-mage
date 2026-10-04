@@ -1,0 +1,12 @@
+Compare Response A and Response B for substantive differences in reasoning about the supplied target. Do not choose a winner, infer hidden experimental conditions, or reward length, terminology, elaboration or formatting. No extra observations or tests have been performed.
+A difference is material only if it could change what evidence is gathered, what uncertainty is resolved first, what action is taken or withheld, what future condition triggers action, what conclusion/action is ruled out, or the decision-relevant representation used to choose among these. Material does not mean proven beneficial.
+Categories:
+PROBLEM_REPRESENTATION_CHANGE: a different decision-relevant distinction, state decomposition, causal partition, temporal representation, evidentiary structure or boundary. It counts as material only with a documented downstream inquiry, priority, action, decision-rule or constraint consequence.
+INQUIRY_CHANGE: a substantively different observation, comparison, test, evidence request or discriminating question.
+PRIORITY_CHANGE: a changed justified ordering of live questions, explanations, evidence needs or work.
+ACTION_CHANGE: a different immediate concrete action or withholding of an action the other would take.
+DECISION_RULE_CHANGE: a different condition determining future action.
+CONSTRAINT_CHANGE: a different bound, prohibition, prerequisite, stopping condition or do-not-conclude/do-not-act rule.
+NO_MATERIAL_CHANGE: semantically equivalent recommendations or merely wording, elaboration, formatting or generic detail. Represent this by overall_material_difference NO and differences [] when no material or plausibly material differences exist. Do not manufacture differences.
+For each difference, introduced_in is A_ONLY when B lacks that substantive contribution, B_ONLY when A lacks it, or BOTH_DIFFERENT when the responses take different substantive approaches. An absent side should be described explicitly, referencing the closest relevant field if helpful. Include exact zero-based response locations, content faithful to each response, and a concrete consequence in each present side's downstream_consequence; use an empty string if no consequence is established. A difference may have multiple categories. Avoid counting the same substantive change twice. Include plausible uncertain differences as UNCERTAIN. semantic_equivalence YES means equivalent target reasoning, NO means established substantive difference, UNCERTAIN means unresolved.
+Return only JSON matching the schema. Do not identify a preferred response.

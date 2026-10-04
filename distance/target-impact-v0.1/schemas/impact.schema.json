@@ -1,0 +1,144 @@
+{
+  "type": "object",
+  "properties": {
+    "impact_judgment": {
+      "type": "object",
+      "properties": {
+        "pair_id": {
+          "type": "string"
+        },
+        "semantic_equivalence": {
+          "type": "string",
+          "enum": [
+            "YES",
+            "NO",
+            "UNCERTAIN"
+          ]
+        },
+        "differences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "difference_id": {
+                "type": "string"
+              },
+              "introduced_in": {
+                "type": "string",
+                "enum": [
+                  "A_ONLY",
+                  "B_ONLY",
+                  "BOTH_DIFFERENT"
+                ]
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "PROBLEM_REPRESENTATION_CHANGE",
+                    "INQUIRY_CHANGE",
+                    "PRIORITY_CHANGE",
+                    "ACTION_CHANGE",
+                    "DECISION_RULE_CHANGE",
+                    "CONSTRAINT_CHANGE"
+                  ]
+                }
+              },
+              "response_a": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "response_locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "downstream_consequence": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content",
+                  "response_locations",
+                  "downstream_consequence"
+                ],
+                "additionalProperties": false
+              },
+              "response_b": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "response_locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "downstream_consequence": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content",
+                  "response_locations",
+                  "downstream_consequence"
+                ],
+                "additionalProperties": false
+              },
+              "materially_changes_target_reasoning": {
+                "type": "string",
+                "enum": [
+                  "YES",
+                  "NO",
+                  "UNCERTAIN"
+                ]
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "difference_id",
+              "introduced_in",
+              "categories",
+              "response_a",
+              "response_b",
+              "materially_changes_target_reasoning",
+              "rationale"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "overall_material_difference": {
+          "type": "string",
+          "enum": [
+            "YES",
+            "NO",
+            "UNCERTAIN"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pair_id",
+        "semantic_equivalence",
+        "differences",
+        "overall_material_difference",
+        "rationale"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "impact_judgment"
+  ],
+  "additionalProperties": false
+}

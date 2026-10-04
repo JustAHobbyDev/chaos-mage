@@ -1,0 +1,51 @@
+{
+  "base_sha": "c62b622b69ed900b9debcc9e41e133536287be59",
+  "branch": "experiment-h8-target-impact",
+  "survivors": [
+    "H7-T01-1",
+    "H7-T03-1",
+    "H7-T03-2"
+  ],
+  "pairs": [
+    {
+      "pair_id": "PAIR-01",
+      "target_id": "T01",
+      "survivor_id": "H7-T01-1",
+      "native_slot": "T01",
+      "augmented_slot": "H7-T01-1"
+    },
+    {
+      "pair_id": "PAIR-02",
+      "target_id": "T03",
+      "survivor_id": "H7-T03-1",
+      "native_slot": "T03",
+      "augmented_slot": "H7-T03-1"
+    },
+    {
+      "pair_id": "PAIR-03",
+      "target_id": "T03",
+      "survivor_id": "H7-T03-2",
+      "native_slot": "T03",
+      "augmented_slot": "H7-T03-2"
+    }
+  ],
+  "stage_order": {
+    "native": [
+      "T01",
+      "T03"
+    ],
+    "augmented": [
+      "H7-T01-1",
+      "H7-T03-1",
+      "H7-T03-2"
+    ],
+    "impact": [
+      "PAIR-01",
+      "PAIR-02",
+      "PAIR-03"
+    ]
+  },
+  "ordering_rule": "SHA256 UTF-8 H8|<base SHA>|<pair_id>; even first byte => native A; odd => native B",
+  "scientific_calls": 8,
+  "shared_baseline": "The same T03 native response is used in PAIR-02 and PAIR-03; pairs are correlated."
+}
