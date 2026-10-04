@@ -1,0 +1,136 @@
+{
+  "pair_id": "PAIR-02",
+  "survivor_id": "H7-T03-1",
+  "method": "Offline operator inspection after all judgment freezes; no additional provider call.",
+  "judgment_sha256": "44680977f53a7871c0361fe65fcb740c3938b34933773cd3fa9a5340b2f1507b",
+  "augmented_response_sha256": "d1284b046cee8e5caa50f7b73f3677756b907204154f91abc2d9135a5f4b1ca6",
+  "differences": [
+    {
+      "difference_id": "D1",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "ATTRIBUTABLE_TO_SURVIVOR",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[2]",
+        "decision_rules[2]",
+        "important_distinctions[1]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "next_inquiries",
+          "item_index": 2,
+          "consideration_ids": [
+            "V01",
+            "V02",
+            "V05",
+            "V08",
+            "V09"
+          ]
+        },
+        {
+          "response_field": "decision_rules",
+          "item_index": 2,
+          "consideration_ids": [
+            "V03",
+            "V06",
+            "V09"
+          ]
+        },
+        {
+          "response_field": "important_distinctions",
+          "item_index": 1,
+          "consideration_ids": [
+            "V08"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V01",
+          "candidate_id": "K01",
+          "value": "Recorded order dates provide calendar anchors. During alignment, keep known dates fixed, preserve event order, and shift only uncertain recalled segments within their reported date ranges.",
+          "scope": "Prospective restrictions on permissible adjustments; neither uncertain recollections nor informative alignment are asserted to exist. Individual anchor reliability remains unestablished."
+        },
+        {
+          "consideration_id": "V02",
+          "candidate_id": "K03",
+          "value": "Preserve unknown intervals as unknown and distinguish reported events from recorded orders.",
+          "scope": "Construction and comparison of histories; no actual unknown interval or general reliability ranking is asserted."
+        },
+        {
+          "consideration_id": "V03",
+          "candidate_id": "K04",
+          "value": "Compare permissible alternative alignments and record competing fits. A distinctive, independently corroborated calendar alignment can narrow event timing, check histories and connect supported overlaps; equally plausible alternatives require stopping alignment.",
+          "scope": "Conditional chronology inquiry. Shared calendar correspondence, reliable independent anchors, informative overlap and corroboration are prerequisites for the positive branch; none is established to occur."
+        },
+        {
+          "consideration_id": "V05",
+          "candidate_id": "K06",
+          "value": "Supplement calendar comparisons with time since first order and time since reported depletion, without replacing calendar dates.",
+          "scope": "Auxiliary comparison only; depletion must be sufficiently dated, and elapsed-time similarity cannot independently assign calendar positions."
+        },
+        {
+          "consideration_id": "V06",
+          "candidate_id": "K07",
+          "value": "Treat apparent missing or anomalous episodes as questions for corroboration. Seek clarification of an omission-suggesting mismatch through already agreed follow-up, and never insert an event merely to improve alignment.",
+          "scope": "Conditional response to an observed mismatch; no omission, follow-up success or recovered event is asserted."
+        },
+        {
+          "consideration_id": "V08",
+          "candidate_id": "K13",
+          "value": "A qualifying alignment can help distinguish some households without refill need from households whose need preceded a documented obstacle.",
+          "scope": "Only households with independently corroborated need or absence of need and sufficiently resolved event ordering. No actual classification, causation or population explanation follows."
+        },
+        {
+          "consideration_id": "V09",
+          "candidate_id": "K17",
+          "value": "Household differences and local events can disrupt shared patterns; short or repetitive sequences, recall or measurement errors, incorrect anchors, insufficient overlap and many searched shifts can create false matches. Claim no date precision beyond the supported range and extend no chronology beyond supported overlaps.",
+          "scope": "Reliability and explicit conclusion bounds for alignment. No listed error, disturbance or false match is asserted to have occurred; thresholds and magnitudes remain unspecified."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": true,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": false,
+        "unresolved_candidate_promoted_in_credited_change": false,
+        "credited_change_within_frozen_scope": true
+      },
+      "rationale": "Fixed recorded anchors, explicit unknown intervals, corroborated need-before-obstacle ordering, supplementary elapsed-time comparisons, and leaving competing sequences unresolved directly trace to cited definite chronology candidates. The frozen material consequence is additional temporal evidence gathering and withholding unsupported sequence conclusions.",
+      "scope_caveat": "This establishes no observed household classification, cause, population explanation or intervention priority. Unresolved K14 is absent and unnecessary; the response explicitly denies that documented sequence determines the best intervention."
+    },
+    {
+      "difference_id": "D3",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "TARGET_ONLY_OR_GENERIC",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[0]"
+      ],
+      "frozen_model_basis": [],
+      "support": [],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": false,
+        "support_candidates_definite": null,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": null
+      },
+      "rationale": "Comparing identifiable individual collection points is a target-derived refinement. The model supplied no survivor_basis for this inquiry; no chronology candidate selects a collection-point subgroup comparison.",
+      "scope_caveat": "Do not infer attribution merely because this useful-looking inquiry occurs in the augmented response."
+    }
+  ],
+  "nonmaterial_augmented_additions": false,
+  "native_overlap": [
+    "Both examine complete cohort windows, replenishment readiness, voluntary follow-up, actionable barriers and a bounded process trial.",
+    "Native already distinguishes no refill need from blocked replenishment and warns against interpreting complaints as population prevalence.",
+    "Native uniquely specifies a refill-task demonstration, purchasing-interval response and post-trial continuation rule in the frozen comparison."
+  ],
+  "native_only_material_differences": [
+    "D2",
+    "D4",
+    "D5"
+  ],
+  "source_identity_absent_from_packet_and_response": true
+}

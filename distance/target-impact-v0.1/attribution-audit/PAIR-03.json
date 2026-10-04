@@ -1,0 +1,238 @@
+{
+  "pair_id": "PAIR-03",
+  "survivor_id": "H7-T03-2",
+  "method": "Offline operator inspection after all judgment freezes; no additional provider call.",
+  "judgment_sha256": "75e00fc146a02688ca9fbc0e4355d4e692c2fec97c59204030b3d458a5652ee6",
+  "augmented_response_sha256": "f09b8bcd104ef8002668f4fbac70654006cb66a3b58441ccec18ce983e421451",
+  "differences": [
+    {
+      "difference_id": "D1",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "TARGET_ONLY_OR_GENERIC",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[0]"
+      ],
+      "frozen_model_basis": [],
+      "support": [],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": false,
+        "support_candidates_definite": null,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": null
+      },
+      "rationale": "The target identifies collection points, and the model adds a conditional location comparison without a survivor_basis entry. None of the continuity candidates selects this comparison.",
+      "scope_caveat": "Material in the frozen comparison, but not established as an effect traceable to the survivor."
+    },
+    {
+      "difference_id": "D2",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "TARGET_ONLY_OR_GENERIC",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[1]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "next_inquiries",
+          "item_index": 1,
+          "consideration_ids": [
+            "V01"
+          ]
+        }
+      ],
+      "support": [],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": false,
+        "support_candidates_definite": null,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": null
+      },
+      "rationale": "The inquiry cites V01, which supports stock, refill timing, difficulties, attempts and household-specific explanation. The distinct addition identified by the judge is a direct satisfaction question; that content is not in V01. It is a generic inquiry into an explicitly live target explanation.",
+      "scope_caveat": "The field-level citation is broader than its support for this particular addition. Record the attribution limit; no provenance calibration is needed."
+    },
+    {
+      "difference_id": "D4",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "ATTRIBUTABLE_TO_SURVIVOR",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[2]",
+        "decision_rules[0]",
+        "important_distinctions[0]",
+        "important_distinctions[1]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "next_inquiries",
+          "item_index": 2,
+          "consideration_ids": [
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05",
+            "V08"
+          ]
+        },
+        {
+          "response_field": "decision_rules",
+          "item_index": 0,
+          "consideration_ids": [
+            "V01"
+          ]
+        },
+        {
+          "response_field": "important_distinctions",
+          "item_index": 0,
+          "consideration_ids": [
+            "V06"
+          ]
+        },
+        {
+          "response_field": "important_distinctions",
+          "item_index": 1,
+          "consideration_ids": [
+            "V01",
+            "V02",
+            "V05",
+            "V08"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V01",
+          "candidate_id": "K01",
+          "value": "Reconstruct consenting participants' particular order histories and separately record reported stock, anticipated refill timing, difficulties and attempts with provenance and uncertainty. Reliably linked remaining stock can support delayed need for that household; a documented unsuccessful collection or refill attempt can support a particular inconvenience.",
+          "scope": "Conditional household-specific inquiry, not established findings, exclusive explanations or an explanation of the aggregate decline. Reconstruction does not presume achievable linkage."
+        },
+        {
+          "consideration_id": "V02",
+          "candidate_id": "K02",
+          "value": "Inspect reconstructed histories for continuity, corroboration and contradictions. Reliable continuity can support attribution to the intended order and account for documented handling; missing required links weaken attribution and call for clarification or exclusion. Cases lacking required exposure, identity or outcome linkage cannot support dependent effect inferences.",
+          "scope": "Order-specific provenance and conclusions requiring particular links. Continuity does not prove truthful records, actual exposure or completeness of actual events. Clarification remains within agreed follow-up."
+        },
+        {
+          "consideration_id": "V03",
+          "candidate_id": "K05",
+          "value": "Establish starter-container status only where records or customers support it.",
+          "scope": "Classification of sampled orders, conditional on reliable order-specific evidence. Ambiguous or conflicting evidence does not automatically establish status; support thresholds remain unspecified."
+        },
+        {
+          "consideration_id": "V04",
+          "candidate_id": "K07",
+          "value": "Document each reconstructed event with actor or reporting source, time or explicitly uncertain interval, purpose, order/product/container linkage and supporting evidence.",
+          "scope": "Documentation requirements; actor and reporting source are alternatives, and uncertain intervals do not establish precise timing."
+        },
+        {
+          "consideration_id": "V05",
+          "candidate_id": "K08",
+          "value": "Keep records, recollections and unresolved discrepancies distinguishable; preserve source traceability and corrections.",
+          "scope": "Evidence provenance and revision history, without an invented hierarchy for resolving disagreement or an access-control rule."
+        },
+        {
+          "consideration_id": "V06",
+          "candidate_id": "K09",
+          "value": "Keep unresolved links, including missing use histories, classified as documentation gaps; do not classify a documentation gap as dissatisfaction.",
+          "scope": "Classification of missing evidence, without asserting an observed gap or a threshold for consequential missingness."
+        },
+        {
+          "consideration_id": "V08",
+          "candidate_id": "K15",
+          "value": "The reliability of documented histories depends on identifier quality, recording practices, preservation of sources and safeguards against mistaken linkage.",
+          "scope": "A qualitative dependency bounding reliance on histories; no factor weights, acceptance thresholds or findings of reliability are supplied."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": true,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": false,
+        "unresolved_candidate_promoted_in_credited_change": false,
+        "credited_change_within_frozen_scope": true
+      },
+      "rationale": "The response preserves source/time/order links, distinguishes records from recollections and corrections, treats unresolved links as evidence gaps, and requires clarification or exclusion only for conclusions needing those links. The cited definite candidates support the additional linkage inquiry and household-versus-aggregate inference boundary.",
+      "scope_caveat": "Credit covers documentation and conditional household attribution, not complete historical truth, aggregate causal inference, successful linkage, intervention selection or purchasing commitment."
+    },
+    {
+      "difference_id": "D5",
+      "introduced_by": "BOTH_DIFFERENT",
+      "frozen_materiality": "YES",
+      "classification": "ATTRIBUTABLE_TO_SURVIVOR",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "decision_rules[1]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "decision_rules",
+          "item_index": 1,
+          "consideration_ids": [
+            "V02",
+            "V07"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V02",
+          "candidate_id": "K02",
+          "value": "Inspect reconstructed histories for continuity, corroboration and contradictions. Reliable continuity can support attribution to the intended order and account for documented handling; missing required links weaken attribution and call for clarification or exclusion. Cases lacking required exposure, identity or outcome linkage cannot support dependent effect inferences.",
+          "scope": "Order-specific provenance and conclusions requiring particular links. Continuity does not prove truthful records, actual exposure or completeness of actual events. Clarification remains within agreed follow-up."
+        },
+        {
+          "consideration_id": "V07",
+          "candidate_id": "K10",
+          "value": "Where trial observations occur, distinguish assignment, actual receipt by the intended customer, completion of the identified step and subsequent ordering.",
+          "scope": "Conditional documentation practice, with assignment recorded where used. It selects neither a trial nor randomization; the affected step and observation windows remain unspecified."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": true,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": false,
+        "unresolved_candidate_promoted_in_credited_change": false,
+        "credited_change_within_frozen_scope": true
+      },
+      "rationale": "The augmented side of the frozen BOTH_DIFFERENT record requires separate assignment, actual receipt, step completion and subsequent-order documentation, with necessary exposure/outcome linkage for dependent explanations. V07/K10 supplies those event distinctions and V02/K02 supplies the linkage prerequisite.",
+      "scope_caveat": "Credit only the conditional documentation requirements if a trial occurs. The target-facing model also selects a trial in this field, but that common target-derived proposal is not the material contribution credited here. No randomization, causal-comparison, retention or purchasing rule is licensed."
+    },
+    {
+      "difference_id": "D6",
+      "introduced_by": "BOTH_DIFFERENT",
+      "frozen_materiality": "YES",
+      "classification": "UNSUPPORTED_BY_FROZEN_SURVIVOR",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "decision_rules[2]",
+        "do_not_conclude[1]"
+      ],
+      "frozen_model_basis": [],
+      "support": [],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": false,
+        "support_candidates_definite": null,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": false
+      },
+      "rationale": "The stricter requirement for a supporting comparison before provisional retention, with reversion or inconclusiveness otherwise, has no cited survivor basis. The frozen packet explicitly excludes causal-comparison and retain/revert branches. Necessary exposure linkage does not supply this intervention continuation rule.",
+      "scope_caveat": "This is an apparent material effect in an explicitly excluded branch, not primary evidence. It may overconstrain continuation when comparison is infeasible; no evidence establishes that the stricter rule improves the target decision. The model was not exposed to deleted H7 text, so this does not establish literal leakage or dependence on unseen claims."
+    }
+  ],
+  "nonmaterial_augmented_additions": false,
+  "native_overlap": [
+    "Both examine cohort windows, remaining stock, expected timing, customer barriers and limited trials.",
+    "Native already separates nonpurchase from satisfaction and warns about incomplete follow-up and confounding.",
+    "Native has a refill demonstration and explicit remaining-stock trial tracking; the continuity packet does not replace all native contributions."
+  ],
+  "native_only_material_differences": [
+    "D3"
+  ],
+  "source_identity_absent_from_packet_and_response": true
+}

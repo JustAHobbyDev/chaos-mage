@@ -1,0 +1,289 @@
+{
+  "pair_id": "PAIR-01",
+  "survivor_id": "H7-T01-1",
+  "method": "Offline operator inspection after all judgment freezes; no additional provider call.",
+  "judgment_sha256": "084472ba9a3d484304d5b200b73a632a88550e5d103ffba63ff022e269ebc2f0",
+  "augmented_response_sha256": "a4cc95594b1720e97d537eb170865be6289560b1ec68b4ca7ead01150b85cb17",
+  "differences": [
+    {
+      "difference_id": "D01",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "UNCERTAIN_ATTRIBUTION",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "next_inquiries[0]",
+        "next_inquiries[2]",
+        "priorities[0]",
+        "decision_rules[2]",
+        "do_not_conclude[0]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "next_inquiries",
+          "item_index": 0,
+          "consideration_ids": [
+            "V02",
+            "V03",
+            "V08",
+            "V09"
+          ]
+        },
+        {
+          "response_field": "next_inquiries",
+          "item_index": 2,
+          "consideration_ids": [
+            "V04"
+          ]
+        },
+        {
+          "response_field": "priorities",
+          "item_index": 0,
+          "consideration_ids": [
+            "V02",
+            "V09"
+          ]
+        },
+        {
+          "response_field": "decision_rules",
+          "item_index": 2,
+          "consideration_ids": [
+            "V08",
+            "V09"
+          ]
+        },
+        {
+          "response_field": "do_not_conclude",
+          "item_index": 0,
+          "consideration_ids": [
+            "V09"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V02",
+          "candidate_id": "K03",
+          "value": "Treat logger-to-package linkage as provisional and require verification before starting.",
+          "scope": "Package attribution only. A feasible linkage check and acceptance criteria remain unspecified; successful linkage is not established."
+        },
+        {
+          "consideration_id": "V03",
+          "candidate_id": "K04",
+          "value": "Keep surrounding-air and package-temperature measurements distinct in comparisons and sensitivity assessments.",
+          "scope": "Direct equivalence is prohibited; indirect evidential use of air measurements is not ruled out."
+        },
+        {
+          "consideration_id": "V04",
+          "candidate_id": "K05",
+          "value": "Conditionally select paired usual and standardized receipt measurements: disagreement supports investigating measurement differences; reliable agreement on elevation weakens measurement differences as the sole explanation.",
+          "scope": "Where feasible and without compromising handling, on the tracked package, documenting method, location and delay. Package linkage, reference reliability, timing/location tolerances, shared-error assessment and distinguishable agreement/elevation remain conditions, not established facts."
+        },
+        {
+          "consideration_id": "V08",
+          "candidate_id": "K09",
+          "value": "Repeat the comparison excluding unreliable readings and varying uncertain handoff times and sensor-response assumptions; recognize that air traces, lag, clock/device errors, package variability and measurement locations can create apparent contradictions.",
+          "scope": "Sensitivity analysis of possible measurement distortions; no distortion is asserted to have occurred. Exclusion criteria and variation ranges remain unspecified."
+        },
+        {
+          "consideration_id": "V09",
+          "candidate_id": "K11",
+          "value": "Treat failed or missing traces as inconclusive, and mark signal comparisons indeterminate when temporal resolution, placement or comparability is inadequate.",
+          "scope": "Affected records or comparisons only; partially usable traces and operational adequacy thresholds are unspecified."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": null,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": null
+      },
+      "rationale": "Package-link verification, paired reference/shared-error conditions, sensitivity analysis and indeterminate/missing-trace treatment have direct frozen support. The frozen difference also bundles before-deployment clock alignment and handoff-recording requirements, extending from interpretability conditions into acquisition design. The record cannot be credited in full without separating that extension; the frozen judgment is not split or rewritten.",
+      "scope_caveat": "V02 leaves the linkage check and criteria unspecified. V06 expressly supplies no timestamp-collection protocol; V08 is sensitivity analysis, not a new acquisition design. Supported subparts are visible but this bundled difference receives no primary credit."
+    },
+    {
+      "difference_id": "D02",
+      "introduced_by": "SURVIVOR_AUGMENTED",
+      "frozen_materiality": "YES",
+      "classification": "ATTRIBUTABLE_TO_SURVIVOR",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "immediate_actions[0]",
+        "priorities[1]",
+        "decision_rules[1]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "priorities",
+          "item_index": 1,
+          "consideration_ids": [
+            "V07",
+            "V11"
+          ]
+        },
+        {
+          "response_field": "immediate_actions",
+          "item_index": 0,
+          "consideration_ids": [
+            "V01",
+            "V05"
+          ]
+        },
+        {
+          "response_field": "decision_rules",
+          "item_index": 1,
+          "consideration_ids": [
+            "V06",
+            "V07",
+            "V14"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V01",
+          "candidate_id": "K01",
+          "value": "Investigate staging/loading, transit, receiving, and measurement explanations, including combinations.",
+          "scope": "A nonexhaustive comparison agenda; no mechanism or combination is established."
+        },
+        {
+          "consideration_id": "V05",
+          "candidate_id": "K06",
+          "value": "Write predictions for each explanation before reviewing results.",
+          "scope": "Sequencing of prediction formation and evidence review; no effectiveness guarantee."
+        },
+        {
+          "consideration_id": "V06",
+          "candidate_id": "K07",
+          "value": "Select an evidence-by-explanation comparison of staging/loading, transit and receiving explanations, recording consistency, inconsistency or indeterminacy with reasons and confidence. Apply the surviving conditional stage-pattern consequences.",
+          "scope": "An analytical comparison of available interpretable observations, including combinations. It does not supply or authorize a logger rotation, timestamp-collection protocol, or completed monitoring. Consequences remain confined to monitored cases."
+        },
+        {
+          "consideration_id": "V07",
+          "candidate_id": "K08",
+          "value": "Prioritize reliable contradictions over supporting counts and weaken explanations according to contradiction importance and reliability.",
+          "scope": "Qualitative evidential weighting; no numerical proportionality, reliability threshold or observed contradiction is supplied."
+        },
+        {
+          "consideration_id": "V11",
+          "candidate_id": "K15",
+          "value": "Focus follow-up investigation on surviving alternatives and observations that would distinguish them.",
+          "scope": "A selection principle after comparison; no particular survivor or distinguishing observation has been selected."
+        },
+        {
+          "consideration_id": "V14",
+          "candidate_id": "K21",
+          "value": "Treat repeated readings and records from one delivery as dependent in the comparison.",
+          "scope": "Within-delivery evidence; neither perfect dependence nor independence between deliveries is asserted."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": true,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": false,
+        "unresolved_candidate_promoted_in_credited_change": false,
+        "credited_change_within_frozen_scope": true
+      },
+      "rationale": "The augmented response explicitly requires predictions before review, consistent/inconsistent/indeterminate comparison, qualitative weighting of reliable contradictions, attention to discriminating observations and within-delivery dependence. These are the cited definite candidates, and the native response lacks this combined prescribed assessment. The downstream preparation task and evidence-priority rule are stated in the frozen judgment.",
+      "scope_caveat": "Credit is limited to analytical procedure on available interpretable observations. It adds no logger rotation, timestamp protocol, numerical weight, established cause or cross-delivery independence assumption."
+    },
+    {
+      "difference_id": "D04",
+      "introduced_by": "BOTH_DIFFERENT",
+      "frozen_materiality": "YES",
+      "classification": "UNCERTAIN_ATTRIBUTION",
+      "augmented_consequence_established": true,
+      "response_locations": [
+        "decision_rules[0]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "decision_rules",
+          "item_index": 0,
+          "consideration_ids": [
+            "V01",
+            "V06",
+            "V10"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V01",
+          "candidate_id": "K01",
+          "value": "Investigate staging/loading, transit, receiving, and measurement explanations, including combinations.",
+          "scope": "A nonexhaustive comparison agenda; no mechanism or combination is established."
+        },
+        {
+          "consideration_id": "V06",
+          "candidate_id": "K07",
+          "value": "Select an evidence-by-explanation comparison of staging/loading, transit and receiving explanations, recording consistency, inconsistency or indeterminacy with reasons and confidence. Apply the surviving conditional stage-pattern consequences.",
+          "scope": "An analytical comparison of available interpretable observations, including combinations. It does not supply or authorize a logger rotation, timestamp-collection protocol, or completed monitoring. Consequences remain confined to monitored cases."
+        },
+        {
+          "consideration_id": "V10",
+          "candidate_id": "K14",
+          "value": "Eliminate an explanation only within the scope actually tested.",
+          "scope": "The reach of eliminative conclusions; testing alone is not sufficient for elimination."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": null,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": null,
+        "unresolved_candidate_promoted_in_credited_change": null,
+        "credited_change_within_frozen_scope": null
+      },
+      "rationale": "The cited survivors plausibly support conditional, monitored-case stage inquiry. However, the judged contrast is also a changed evidentiary trigger and the absence of a corrective-action authorization present in the native response. These candidates do not directly prescribe withholding corrective action or the native-versus-augmented trigger difference. Attribution of that full contrast is unresolved.",
+      "scope_caveat": "Do not convert a limit on eliminative conclusions into a new intervention rule, or count an omitted native action as a demonstrated survivor prohibition."
+    },
+    {
+      "difference_id": "D06",
+      "introduced_by": "BOTH_DIFFERENT",
+      "frozen_materiality": "UNCERTAIN",
+      "classification": "ATTRIBUTABLE_TO_SURVIVOR",
+      "augmented_consequence_established": false,
+      "response_locations": [
+        "immediate_actions[2]"
+      ],
+      "frozen_model_basis": [
+        {
+          "response_field": "immediate_actions",
+          "item_index": 2,
+          "consideration_ids": [
+            "V12"
+          ]
+        }
+      ],
+      "support": [
+        {
+          "consideration_id": "V12",
+          "candidate_id": "K16",
+          "value": "Standardize approved receiving measurements where feasible during the fortnight.",
+          "scope": "Conditional on a protocol providing reliable, comparable readings within staff capacity and food-handling requirements. Approval or uniformity alone does not establish diagnostic value."
+        }
+      ],
+      "checks": {
+        "cited_consideration_supports_full_credited_change": true,
+        "support_candidates_definite": true,
+        "deleted_claim_needed_for_credited_change": false,
+        "unresolved_candidate_promoted_in_credited_change": false,
+        "credited_change_within_frozen_scope": true
+      },
+      "rationale": "The conditional standardized receiving action is directly supported by V12/K16, but the frozen judge marks its practical timing/scope difference UNCERTAIN because the native investigation already introduces a common procedure. Attribution does not upgrade materiality.",
+      "scope_caveat": "Reliable comparable readings, capacity and handling conditions remain required. This uncertain materiality record is excluded from primary counts."
+    }
+  ],
+  "nonmaterial_augmented_additions": false,
+  "native_overlap": [
+    "Both propose package-linked selective temperature tracing, comparisons across operating conditions, receiving-method checks, proportionate handling precautions and uncertainty about causes.",
+    "Native already distinguishes loading-air readings from package history and changes follow-up according to observed intervals.",
+    "Native has additional within-delivery package sampling and an explicit end-of-fortnight continuation rule; these native-only material contributions are preserved."
+  ],
+  "native_only_material_differences": [
+    "D03",
+    "D05"
+  ],
+  "source_identity_absent_from_packet_and_response": true
+}
