@@ -37,3 +37,13 @@ class AblationTests(unittest.TestCase):
   with self.assertRaisesRegex(ValueError,'RESPONSE_SOURCE_UNKNOWN'):a.validate(r,'evaluation',value,packet)
   value['evidence_used']=[];value['verdict']='CONDITIONAL'
   with self.assertRaisesRegex(ValueError,'Conditional without'):a.validate(r,'evaluation',value,packet)
+
+ def test_conditional_and_uncertain_context_preserved_exactly(self):
+  claims,inv,js=self.inputs()
+  js[1].update(unresolved_conditions=['Retain only within this stated condition.'],
+               rationale='Frozen scientific rationale.', evidence_used=[{'source_id':'S001'}])
+  result=a.ablate_objects(claims,inv,js)
+  self.assertEqual(result['lineage'][2]['obligation_verdicts'],[js[1]])
+  js[1]['verdict']='UNCERTAIN'
+  result=a.ablate_objects(claims,inv,js)
+  self.assertEqual(result['lineage'][2]['obligation_verdicts'],[js[1]])

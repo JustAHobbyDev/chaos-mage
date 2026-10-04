@@ -97,6 +97,11 @@ def effective_freeze_files():
         require(files.get(name) == change['original_sha256'], 'Admission baseline mismatch: ' + name)
         files[name] = change['updated_sha256']
     files.update(admission_amendment['added_files'])
+    context_amendment = read(H / 'remainder-context-amendment.json')
+    for name, change in context_amendment['changes'].items():
+        require(files.get(name) == change['original_sha256'], 'Remainder context baseline mismatch: ' + name)
+        files[name] = change['updated_sha256']
+    files.update(context_amendment['added_files'])
     return files
 
 
@@ -115,7 +120,7 @@ def verify():
     require(sha(Path(c['native_executable']['path'])) == c['native_executable']['sha256'], 'Native drift')
     require(subprocess.check_output([c['cli'], '--version'], text=True).strip() == c['cli_version'], 'CLI version drift')
     return {'historical_files_checked': len(read(H / 'preservation.json')['files']),
-            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json', 'continuation-amendment.json', 'admission-amendment.json'], 'slots': 6}
+            'authorized_amendments': ['usage-gate-amendment.json', 'role-stage-amendment.json', 'unified-gate-amendment.json', 'continuation-amendment.json', 'admission-amendment.json', 'remainder-context-amendment.json'], 'slots': 6}
 
 
 def state():
@@ -291,7 +296,7 @@ def run_batch(path):
     verify()
     if stage != 'generation':
         require((H / f'{stage}-packets-freeze.json').exists(), 'Stage packets not frozen')
-    plan = read(H / 'budgets/plan-006.json')
+    plan = read(H / 'budgets/plan-007.json')
     require(plan['execution_fingerprint'] == budget.digest(effective_freeze_files()),
             'Execution fingerprint changed')
     require(review['plan_sha256'] == budget.digest(plan), 'Budget plan changed')

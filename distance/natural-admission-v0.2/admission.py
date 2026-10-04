@@ -122,7 +122,7 @@ def ablate_objects(claims, inventory, judgments):
         'deleted_claims':deleted,'surviving_claims':surviving,
         'lineage':[{'claim_id':cid,'verdict':done[cid],'action':'DELETE_MAPPING_ASSERTION_OR_USE' if done[cid]=='VIOLATED' else 'RETAIN',
             'verdict_origin':'MODEL_CONTRACT_AGGREGATE' if own[cid] or edges[cid] else 'SUPPLIED_PREMISE_GROUNDING_EXEMPTION_NO_MODEL_VERDICT',
-            'obligation_verdicts':[{k:j[k] for k in ('obligation_id','contract','verdict')} for j in own[cid]],'claim_refs':edges[cid]} for cid in own],
+            'obligation_verdicts':[dict(j) for j in own[cid]],'claim_refs':edges[cid]} for cid in own],
         'policy':'Simultaneous deletion of frozen semantic claim objects under H7. Source/target facts unchanged. CONTEXT spans are attribution only; no deleted premise may be reused. Conditional/uncertain claims retained with flags.'}
 
 
