@@ -1,0 +1,108 @@
+Analyze the target problem as a decision-support task. Produce a concise, operational response using only information supplied in this packet. Do not invent observations or claim that proposed tests have already been run. Distinguish present facts from proposed inquiries. Focus on what should currently be believed, investigated, prioritized, done, constrained, and used as a future decision rule.
+If the packet contains additional vetted considerations, use them only where they materially bear on the target. Do not mention that they came from another framework or source domain. Express the reasoning entirely in the target's own language. You may ignore considerations that do not materially bear on the target.
+Return only JSON matching the supplied schema. Keep each item concise; list limits are maxima, not quotas. For survivor_basis, provide hidden traceability only for response items actually supported by additional considerations; use their V IDs. It is not part of visible reasoning. Use zero-based item_index, or 0 for current_position. An item based only on target material needs no entry. With no additional considerations, return survivor_basis as an empty list.
+
+INPUT
+{
+  "target_frame": {
+    "target_id": "T01",
+    "domain": "technical / operational",
+    "title": "Intermittent cold-room delivery gaps",
+    "problem": "A regional food distributor finds that some refrigerated deliveries arrive above its internal receiving temperature range, although the loading records show acceptable temperatures. The operations manager must decide what to investigate next and which temporary handling changes are justified before the next fortnight of deliveries.",
+    "known_context": [
+      "There are three loading bays, two contracted carriers and routes lasting between forty minutes and four hours.",
+      "Drivers record departure and arrival times; receiving staff take a single temperature reading from one package per delivery.",
+      "Loading-bay logs record room temperature every fifteen minutes, but packages are not individually tracked between staging and loading.",
+      "The recent exceptions occur on both short and long routes. Receiving methods differ between customer sites.",
+      "A small pool of reusable temperature loggers is available, but the team cannot instrument every package or cancel routine deliveries."
+    ],
+    "uncertainty": "The manager does not know whether the exceptions mainly arise before loading, in transit, during receiving, or from differences in measurement. Multiple contributors may be present.",
+    "decision_need": "Identify a feasible investigation and defensible interim action without claiming that the existing endpoint records locate the cause.",
+    "constraints": [
+      "Normal food-handling requirements remain in force.",
+      "Staff can add limited observations for two weeks; there is no budget for fleet replacement."
+    ]
+  },
+  "additional_vetted_considerations": {
+    "considerations": [
+      {
+        "id": "V01",
+        "value": "Investigate staging/loading, transit, receiving, and measurement explanations, including combinations.",
+        "scope": "A nonexhaustive comparison agenda; no mechanism or combination is established."
+      },
+      {
+        "id": "V02",
+        "value": "Treat logger-to-package linkage as provisional and require verification before starting.",
+        "scope": "Package attribution only. A feasible linkage check and acceptance criteria remain unspecified; successful linkage is not established."
+      },
+      {
+        "id": "V03",
+        "value": "Keep surrounding-air and package-temperature measurements distinct in comparisons and sensitivity assessments.",
+        "scope": "Direct equivalence is prohibited; indirect evidential use of air measurements is not ruled out."
+      },
+      {
+        "id": "V04",
+        "value": "Conditionally select paired usual and standardized receipt measurements: disagreement supports investigating measurement differences; reliable agreement on elevation weakens measurement differences as the sole explanation.",
+        "scope": "Where feasible and without compromising handling, on the tracked package, documenting method, location and delay. Package linkage, reference reliability, timing/location tolerances, shared-error assessment and distinguishable agreement/elevation remain conditions, not established facts."
+      },
+      {
+        "id": "V05",
+        "value": "Write predictions for each explanation before reviewing results.",
+        "scope": "Sequencing of prediction formation and evidence review; no effectiveness guarantee."
+      },
+      {
+        "id": "V06",
+        "value": "Select an evidence-by-explanation comparison of staging/loading, transit and receiving explanations, recording consistency, inconsistency or indeterminacy with reasons and confidence. Apply the surviving conditional stage-pattern consequences.",
+        "scope": "An analytical comparison of available interpretable observations, including combinations. It does not supply or authorize a logger rotation, timestamp-collection protocol, or completed monitoring. Consequences remain confined to monitored cases."
+      },
+      {
+        "id": "V07",
+        "value": "Prioritize reliable contradictions over supporting counts and weaken explanations according to contradiction importance and reliability.",
+        "scope": "Qualitative evidential weighting; no numerical proportionality, reliability threshold or observed contradiction is supplied."
+      },
+      {
+        "id": "V08",
+        "value": "Repeat the comparison excluding unreliable readings and varying uncertain handoff times and sensor-response assumptions; recognize that air traces, lag, clock/device errors, package variability and measurement locations can create apparent contradictions.",
+        "scope": "Sensitivity analysis of possible measurement distortions; no distortion is asserted to have occurred. Exclusion criteria and variation ranges remain unspecified."
+      },
+      {
+        "id": "V09",
+        "value": "Treat failed or missing traces as inconclusive, and mark signal comparisons indeterminate when temporal resolution, placement or comparability is inadequate.",
+        "scope": "Affected records or comparisons only; partially usable traces and operational adequacy thresholds are unspecified."
+      },
+      {
+        "id": "V10",
+        "value": "Eliminate an explanation only within the scope actually tested.",
+        "scope": "The reach of eliminative conclusions; testing alone is not sufficient for elimination."
+      },
+      {
+        "id": "V11",
+        "value": "Focus follow-up investigation on surviving alternatives and observations that would distinguish them.",
+        "scope": "A selection principle after comparison; no particular survivor or distinguishing observation has been selected."
+      },
+      {
+        "id": "V12",
+        "value": "Standardize approved receiving measurements where feasible during the fortnight.",
+        "scope": "Conditional on a protocol providing reliable, comparable readings within staff capacity and food-handling requirements. Approval or uniformity alone does not establish diagnostic value."
+      },
+      {
+        "id": "V13",
+        "value": "Do not declare a cause at fortnight's end if rankings remain unstable or coverage is inadequate.",
+        "scope": "Either condition blocks a causal declaration; the converse does not establish causation."
+      },
+      {
+        "id": "V14",
+        "value": "Treat repeated readings and records from one delivery as dependent in the comparison.",
+        "scope": "Within-delivery evidence; neither perfect dependence nor independence between deliveries is asserted."
+      },
+      {
+        "id": "V15",
+        "value": "Missing mechanisms, subjective consistency judgments, mistaken diagnosticity and shared assumptions may distort comparisons; sensitivity to them requires an explicitly uncertain conclusion.",
+        "scope": "A conditional reporting requirement. Neither actual distortion nor sensitivity is asserted; no hypothesis or measurement revision is prescribed."
+      }
+    ],
+    "cautions": [
+      "These considerations support analysis of available interpretable observations and conditional paired receiving measurements. They do not provide a cross-delivery logger rotation or field-sampling design, establish successful measurement, or remove implementation and reliability conditions. Failed or inadequate traces remain inconclusive."
+    ]
+  }
+}
