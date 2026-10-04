@@ -1,3 +1,7 @@
+> **Current additive status: H7 COMPLETE — 3/6 end-to-end admissions, 3 UNMEASURED.**
+> See the [final continuation report](#final-continuation-report--2026-10-03-local-date).
+> The original pause report below is preserved unchanged as historical evidence.
+
 # H7 — Paused on provider timeout; natural admission incomplete
 
 The unified approval rule is implemented: within authorized experiment scope,
@@ -286,3 +290,332 @@ direction and positive independent-lineage evidence under the recovery policy; i
 must preserve the failed observation and the fixed six-mapping sample. No retry,
 replacement, new calibration, expanded sample, merge or production integration has
 been performed. H7 remains paused, not complete.
+
+
+## Final continuation report — 2026-10-03 (local date)
+
+This section is additive. The preceding pause report describes the actual earlier
+checkpoint and has not been corrected or erased. The user's continuation handoff
+separately authorized resolving the missing provider policy and completing only
+independent members of the same six-slot H7 sample.
+
+### Policy and preserved event
+
+The prospective [recovery policy](../../docs/EXPERIMENT-RECOVERY-POLICY.md)
+distinguishes PROVIDER_NO_OBSERVATION, PROVIDER_OBSERVATION_FAILURE and
+PROVIDER_OBSERVATION_AMBIGUOUS. A definitely launched, identity-matched request
+with positive intact-lineage evidence and no scientific response consumes its
+attempt permanently. Its mapping is FAILURE / UNMEASURED; unrelated mappings
+may continue only after positive isolation proof. Existing observation-failure
+rules remain; uncertain launch, response or lineage remains paused. Historical
+stopped experiments are not reopened by this policy. H7 has separate user authority.
+
+H7-T01-2 qualifies as PROVIDER_NO_OBSERVATION. Frozen and executed request SHA-256
+both equal `71f1a3419dddc70338c7bdc354c6f2a57f185711c25afb95d73ffbb276a989dc`.
+Its unique session `01a1039a-6ea9-7683-ba43-19337b2ca114` records thread.started
+and turn.started, then the 900-second timeout: no response payload and no
+turn.completed. Request, schema, configuration and process/ledger identities
+match. The original 20 launches reconcile 20 unique contexts and reservations;
+no second attempt, retry, substitution or downstream use exists. Its attempt is
+CONSUMED_NO_OBSERVATION, retry count **0**, replacement forbidden. Generation,
+spans, claims and classification remain historical measurements, not admission.
+The **policy ambiguity** was resolved; the old PAUSED_AMBIGUOUS was valid and remains.
+
+[Continuation evidence](../natural-admission-v0.2/review/continuation-evidence.json)
+contains each mapping's exact hashes and executed envelopes. All 258 original
+scientific, packet, raw and freeze files matched the handoff baseline. Explicit
+mapping-only packet allowlists, dependency closure, fresh empty ephemeral contexts,
+unique session IDs and unchanged scientific configuration establish isolation.
+The failed response did not exist; no partial event, failure message or derived
+judgment entered another scientific packet. No post-timeout launch preceded the
+committed policy, proof and resume state. Different IDs alone were not the proof.
+
+| Mapping | Independence at authorized resume | Subsequent disposition |
+| --- | --- | --- |
+| H7-T01-1 | VERIFIED | Original discovery retained; eligible for admission stages |
+| H7-T02-1 | VERIFIED | Valid discovery returned; unresolved C036 routing quarantined |
+| H7-T02-2 | VERIFIED | Its sole discovery timed out; locally quarantined |
+| H7-T03-1 | VERIFIED | Discovery and required contract judgments completed |
+| H7-T03-2 | VERIFIED | Discovery and required contract judgments completed |
+
+The exact first resumed execution checkpoint is `41c2ebf`; authorization is
+`f9d7b49`, timeout/independence adjudication `1307070`, policy `41ffb15`.
+Full SHAs and all later checkpoints are in
+[the continuation checkpoint index](../natural-admission-v0.2/review/continuation-checkpoints.json).
+Every launch reverified frozen inputs, committed lineage, fresh allowance and its
+own reservation. The sample, requested model family/reasoning, source/target inputs,
+scientific schemas and evaluator contracts were not changed.
+
+### Later discovery events and exact fan-out
+
+H7-T02-2 is the one additional PROVIDER_NO_OBSERVATION during discovery. Its
+session `01a103df-60d6-7731-8611-85c4232178c1`, exact matching request hash
+`497fc269f55aea67583300f4681d9f2a790156e2307fd324187810984028a671`, start-only
+events and absence of response/completion were preserved after the same 900-second
+limit. The attempt is consumed, no retry or replacement. Incident and renewed
+independence evidence were committed before the next unrelated launch.
+
+H7-T02-1 is a different kind of event: a valid discovery observation returned,
+but C036's dependency closure remained UNCERTAIN. “Replaying the same assumptions
+repeatedly establishes computational repeatability” did not resolve whether
+agreement of replay outputs was an assumption, premise or checked result. The
+frozen routing rule stops that lineage as FAILURE / UNMEASURED. This is not a
+no-observation event and not a scientific VIOLATED verdict. No claim was split,
+repaired, reclassified or resampled to obtain admission.
+
+All six discovery attempts are consumed. Four returned observations, of which
+three supported complete routing. Exact evaluation fan-out was **181**:
+H7-T01-1 50, H7-T03-1 71, H7-T03-2 60. Each quarantined mapping has fan-out
+**unavailable due to quarantine**, not zero scientific claims. Each unique required
+obligation received one isolated attempt; CLAIM_REF reused its original judgment.
+
+### Contracts and deletion
+
+| Mapping | SATISFIED | CONDITIONAL | VIOLATED | UNCERTAIN | Directly violated claims | Additional dependency deletions | Surviving claims |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| H7-T01-1 | 31 | 9 | 6 | 4 | 5 | 3 | 36 |
+| H7-T03-1 | 51 | 7 | 13 | 0 | 13 | 0 | 52 |
+| H7-T03-2 | 39 | 6 | 14 | 1 | 12 | 4 | 40 |
+| Total | 121 | 22 | 33 | 5 | 30 | 7 | 128 |
+
+The 33 VIOLATED contract observations concern 30 distinct claims; the frozen
+CLAIM_REF aggregation additionally removes seven dependent claims. Thus 37 of
+165 claims in the three measured mappings were ablated, leaving 128. The other
+161 claims in the quarantined mappings remain historical, without admission.
+Every individual violation, rationale, subject and supporting source IDs is
+preserved in [the violated-contract ledger](../natural-admission-v0.2/review/violated-contracts-final.json).
+[The deletion ledger](../natural-admission-v0.2/review/deleted-claims-final.json)
+records exact frozen objects, contract judgments and dependency edges. It also
+makes clear that an independently SATISFIED claim may be removed through a frozen
+dependency; this is not relabeled as a direct negative model observation.
+
+Ablation uses simultaneous semantic-object deletion, with original source facts
+unchanged. Conditional and uncertain claims retain their full frozen judgment,
+including exact conditions, rationale and source IDs. Before any ablation or
+remainder packet, an additive adapter amendment corrected a three-field reporting
+projection that would have omitted this context. No executed scientific input,
+verdict, prompt, schema or criterion changed; no calibration call was made.
+
+The supplied-operation watch is H7-T01-1 C001, selecting the target-supplied
+competing-explanation set. TARGET_FIDELITY and OPERATION_LICENSE both SATISFIED;
+routing is clean and the mapping-prescribed use survives. The other measured
+mappings yielded no supplied asserted-operation watch. Missing discoveries leave
+secondary-watch coverage unknown for quarantined mappings. No natural negative
+watch was observed, so H6.R4 remains run COMPLETE / return gate INCOMPLETE.
+
+Governance and operational scrutiny remained separate: H7-T03-1 C023–C025 and
+H7-T03-2 C018/C020 have SATISFIED GOVERNANCE_STRUCTURE with VIOLATED secondary
+OPERATION_LICENSE, and their affected assertions were removed. A prospective
+rule did not shelter an unsupported operation. All required supplied-origin
+fidelity judgments were SATISFIED; referenced supplied premises retained the
+GROUNDING_REF exemption rather than receiving invented generated-warrant verdicts.
+
+### Final admission, instrumentation and surviving machinery
+
+**run_status = COMPLETE; end_to_end_mappings_complete = 3/6; UNMEASURED = 3.**
+Every fixed slot has either a completed admission or a final local quarantine.
+There are no pending scientific actions. No seventh mapping, regeneration, retry,
+replacement or substitution occurred. No recommendation below has been executed.
+
+| Mapping | Scientific admission | Instrumentation | Definite viable candidates | Complete inquiry units |
+| --- | --- | --- | ---: | ---: |
+| H7-T01-1 | KEEP_WITH_REDUCED_SCOPE | CLEAN | 15 | 2 |
+| H7-T01-2 | UNMEASURED | FAILURE | UNMEASURED | UNMEASURED |
+| H7-T02-1 | UNMEASURED | FAILURE | UNMEASURED | UNMEASURED |
+| H7-T02-2 | UNMEASURED | FAILURE | UNMEASURED | UNMEASURED |
+| H7-T03-1 | KEEP_WITH_WARRANT_FLAGS | WARNING | 9 | 1 |
+| H7-T03-2 | KEEP_WITH_REDUCED_SCOPE | CLEAN | 8 | 2 |
+
+Admission totals: **KEEP_WITH_WARRANT_FLAGS 1; KEEP_WITH_REDUCED_SCOPE 2;
+CORE_INVALID 0; UNCERTAIN_LOAD_BEARING 0; UNMEASURED 3.** Instrumentation totals:
+**CLEAN 2; WARNING 1; FAILURE 3.** Warning and scientific warrant flags are distinct.
+H7-T03-1's WARNING preserves its explicitly uncertain chronology-to-intervention
+bridge; it is not a failed measurement or scientific core invalidity. The three
+FAILURE assignments each remain UNMEASURED.
+
+- **H7-T01-1, analysis of competing hypotheses → delivery-temperature inquiry:**
+  K05 and K07 preserve two complete conditional inquiry units: paired receiving
+  measurements and stage-pattern comparison. Contradiction weighting, sensitivity,
+  dependent-record treatment and limits on causal declarations survive. The deleted
+  cross-delivery logger rotation is a meaningful lost acquisition branch, so the
+  artifact is KEEP_WITH_REDUCED_SCOPE. Reliability, timing and implementation
+  conditions remain unresolved; no actual delivery cause is established.
+- **H7-T03-1, dendrochronology → refill-service histories:** anchored dates,
+  constrained alignment, alternative fits, mismatch corroboration and one complete
+  inquiry unit survive. K13 is a conditional household-level positive inference;
+  K14's practical prioritization bridge remains uncertain. The artifact judge
+  finds that deleted trial procedures narrow the surrounding proposal without
+  materially removing its distinctive source-derived chronology contribution:
+  scope_lost NO, KEEP_WITH_WARRANT_FLAGS. No useful shared pattern or successful
+  alignment is asserted to have occurred.
+- **H7-T03-2, forensic chain of custody → refill-service histories:** order-specific
+  reconstruction and continuity inspection form two complete inquiry units.
+  Identity linkage, source traceability, documentation gaps and conditional event
+  documentation constrain attribution. Intervention selection, causal comparison,
+  retain/revert and purchasing-rule branches are lost, so this is
+  KEEP_WITH_REDUCED_SCOPE. Documentation is not silently converted into a trial,
+  causal effect or aggregate explanation; uncertain initial linkage stays uncertain.
+
+These are judgments about frozen natural transfers, not field demonstrations.
+The distinct candidates within a mapping are not additional independent samples.
+
+### Remainder, productivity and inquiry coverage
+
+The three inventories contain **71 candidates**, including **32 definite viable
+candidates**, and **15 inquiry units: 5 complete, 10 incomplete**. Every complete
+unit has exactly one matching inquiry-constraint candidate. Five-field coverage is
+retained; completeness and viability are not inferred from wording polarity.
+
+| Candidate kind | Total | Definite viable |
+| --- | ---: | ---: |
+| POSITIVE_INFERENCE | 4 | 1 |
+| TARGET_CONSTRAINT | 27 | 16 |
+| INQUIRY_CONSTRAINT | 15 | 15 |
+| INSUFFICIENCY_ONLY | 20 | 0 |
+| UNCERTAIN | 5 | 0 |
+
+Productivity judgments are YES 45, NO 22, UNCERTAIN 4. All **20 INSUFFICIENCY_ONLY**
+candidates are nonproductive and none rescues an artifact. Generic useful safeguards
+with source_derived NO likewise do not count as definite foreign contributions.
+Examples of actual productive restrictions include fixing supported calendar anchors,
+refusing unsupported causal declarations, preserving unknown intervals, recording
+competing fits, distinguishing custody gaps from dissatisfaction, and selecting
+conditional comparisons with differential consequences. No CORE_INVALID or
+UNCERTAIN_LOAD_BEARING artifact was observed; their absence is not evidence that
+the evaluator would always distinguish those outcomes correctly.
+
+All candidate claim references are within the exact surviving set. Every
+`deleted_claims_used` array is empty. Operator inspection also checks semantic
+qualifications: H7-T01-1 K07 excludes the lost logger design; H7-T03-1 K14 does not
+restore deleted intervention-selection text from a shared span; H7-T03-2 K10
+preserves conditional documentation without inventing a trial. Uncertain candidates
+remain nondefinite even where other viable contributions support admission.
+
+### H.5, operator audit and warrant poisoning
+
+[The frozen operator audit](../natural-admission-v0.2/review/operator-audit-final.json)
+was produced after all measurements and instrumentation froze. It preserves every
+scientific judgment and distinguishes GENERATOR_DEFECT as recorded by the frozen
+contracts, CASE_AMBIGUITY, and PLAUSIBLE_ALTERNATIVE interpretations. No new
+scientific anomaly taxonomy, evaluator control, warrant rule or provenance rule
+was introduced.
+
+The audit flags possible overly strict readings of routine safety/control actions
+under OPERATION_LICENSE and cautiously stated recall possibilities under
+FACT_WARRANT. The actual questions require source-mechanism fidelity and cited
+warrant; potential independent practical usefulness does not itself settle those
+contracts. The records do not demonstrate a wrong artifact admission. These are
+interpretation limits, not established judge errors or authority to recalibrate.
+
+H.5 sufficed for the **three completed end-to-end lineages**. All 209 returned
+responses passed their frozen identity/source-membership checks; there was no
+RESPONSE_SOURCE_UNKNOWN failure or observed unrepresentable supported component.
+H7-T03-1's shared-span bridge warning says correct_support_representable YES and
+is carried as uncertainty. No citation/interface expansion was needed. Multiple-
+packet context exposure stayed zero; this does not constitute a collision stress
+test or prove universal representational sufficiency. Timeouts and unresolved
+routing do not establish an H.5 failure.
+
+**Artifact-level warrant poisoning was avoided in these three measured cases:**
+local violations and seven dependent deletions did not automatically destroy the
+source-derived remainder. Distinctive foreign machinery survived with material
+constraints on target reasoning. This conclusion does not certify every local
+judgment, practical safety, or real-world usefulness, and it excludes the three
+unmeasured mappings. The supplied-operation watch was scrutinized with both
+required contracts; no negative supplied-operation case was observed.
+
+### Answers to the frozen scientific questions
+
+| Question | Final evidence |
+| --- | --- |
+| End-to-end natural admission? | Yes, 3/6; three other fixed slots are final UNMEASURED. |
+| Local violations coexist with viable transfer? | Yes in all three measured mappings; 30 directly affected claims, 32 viable remainder candidates. |
+| Distinctive foreign machinery survives ablation? | Yes: contradiction-sensitive comparison, anchored crossdating, and continuity-based attribution. |
+| Material relevance beyond terminology? | The frozen inventory judges identify specific target/inquiry changes; actual field effectiveness is untested. |
+| Insufficiency-only non-rescue? | All 20 such candidates productive NO; none used as definite viable rescue. |
+| Productive target constraints? | 16 definite viable candidates. |
+| Productive inquiry constraints? | 15 definite viable candidates; 5 complete inquiry units. |
+| Governance separate from operation validity? | Yes; SATISFIED governance coexists with secondary VIOLATED operations and local deletion. |
+| Natural supplied-operation watch? | One measured target-supplied primary operation, H7-T01-1 C001. |
+| Watch measured cleanly? | Both fidelity and operation license SATISFIED; use retained. No negative watch. |
+| Supplied premises avoid generated burdens? | Frozen grounding exemptions retained; all six required fidelity judgments SATISFIED. |
+| H.5 sufficient? | Yes for completed cases, with one representable uncertainty warning; global sufficiency untested. |
+| Instrumentation separate from CORE_INVALID? | Yes; all three failures are UNMEASURED, never scientific rejection. |
+| Fault localization preserves unusual viability? | Yes in measured cases, with two reduced-scope admissions and one admission with flags. |
+
+### Workload, calibration and final verification
+
+There were **211 provider attempts, 211 unique sessions and 209 validated responses**:
+6 generation, 6 claim atomization, 6 classification, 6 discovery, 181 evaluation,
+3 remainder inventory and 3 artifact judgment. Two discovery attempts have no
+observation. The valid but unresolved H7-T02-1 discovery is among the 209 responses.
+No observation was retried. Model/reasoning remained requested gpt-6-astra/high,
+with fresh isolated contexts, one scientific packet and no tools or shared history.
+Provider-internal behavior and served snapshot metadata remain unavailable.
+
+All 326 original claims and their classifications remain frozen: 305 generated,
+13 target-supplied, 8 source-supplied; 65 operations, 98 limits, 104 governance rules,
+31 conditional relations, 20 facts and 8 inferences. Supplied modes comprise
+12 ASSERTED_COMPONENT and 9 REFERENCED_PREMISE; generated claims have no supplied
+assertion mode. No quarantined mapping's missing admission is represented as zero claims.
+
+| Contract | SATISFIED | CONDITIONAL | VIOLATED | UNCERTAIN |
+| --- | ---: | ---: | ---: | ---: |
+| CONDITIONAL_LICENSE | 11 | 7 | 1 | 0 |
+| DERIVED_WARRANT | 2 | 1 | 0 | 0 |
+| FACT_WARRANT | 3 | 2 | 6 | 2 |
+| GOVERNANCE_STRUCTURE | 39 | 0 | 7 | 0 |
+| LIMIT_WARRANT | 43 | 0 | 0 | 0 |
+| OPERATION_LICENSE | 17 | 12 | 19 | 3 |
+| SOURCE_FIDELITY | 3 | 0 | 0 | 0 |
+| TARGET_FIDELITY | 3 | 0 | 0 | 0 |
+
+The final cumulative plan is `budgets/plan-007.json`, hash
+`3e54192366e402adcfb618d6002606f5d71da9abf7c8ba98973739003ca4878a`, retaining
+all prior consumption and a 211-session ceiling. Costs remain unknown. Every
+session had its own reservation and fresh usage check. Throughout this continuation,
+launch checks passed the at-least-30% policy without new spending consent. The
+10-point planning reserve was retained. Forecast percentage points, share of
+remaining allowance and exhaustion/reserve scenarios remain UNKNOWN without clean
+matched calibration; no probabilities or dollar-to-quota conversion were invented.
+
+Two hundred matched bookkeeping batch records cover all 211 attempts. All 200 are
+excluded from clean calibration because concurrent account activity/telemetry
+isolation is not established. Before/after account data remain private under
+`.runtime/`. Available fields from completed observations are 4,593,923 input,
+967,680 cached input, 292,074 output and 66,530 reasoning-output tokens; fields
+may overlap and are not added into a billing estimate. Failed-response usage and
+billed dollars are unknown. No calibration probe, credit reset or automatic top-up
+was launched.
+
+[Final lineage verification](../natural-admission-v0.2/review/final-lineage-verification.json)
+reconciles all attempts/reservations, exact executed request/schema/configuration
+identities, unique contexts and the append-only state chain. It confirms H7-T01-2
+has exactly one consumed discovery and no downstream stage. The original pause
+is unchanged. [Scientific verification](../natural-admission-v0.2/review/final-scientific-verification.json)
+recomputes exact ablations with complete judgment context and rechecks source/target
+identity and inventory/artifact validation. All **16,020 historical files** pass
+preservation; **78 offline tests** pass (34 H7, 22 budget, 22 usage). No historical
+H.3–H.6 or H6.R1–R4 scientific observation changed. The final closure appends run
+COMPLETE, preserves all earlier pauses, and records zero pending scientific actions.
+
+### Limits and recommended next scientific step — not executed
+
+H7 finally provides interpretable end-to-end **natural-transfer admission evidence**
+for three mappings: local defects can coexist with meaningful source-derived
+survivors. It does not establish operational benefit for the generator's users.
+The fixed sample is small, half the slots lack admission, missingness is not known
+to be random, and only two targets reach admission. All judgments use one requested
+model family with one sample per obligation; no independent agreement or field
+validation was performed. Source-mechanism and factual-warrant interpretation
+caveats remain. No rejected-core example or negative supplied-operation watch was
+obtained. A high retention fraction among survivors is not itself scientific success.
+
+The recommended next step is a **separately authorized target-facing assessment of
+these frozen surviving contributions**: determine whether their scoped distinctions
+or selected inquiries change a real target decision, while recording practical
+applicability conditions. Keep H7 closed. Do not retry its quarantines, expand its
+sample, or begin another evaluator calibration from these caveats. Any future
+calibration needs its own concrete admission-relevant defect under the evaluator
+stop rule. This recommendation has not been executed; no merge to main or
+production integration occurred.
