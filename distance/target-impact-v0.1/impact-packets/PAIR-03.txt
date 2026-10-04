@@ -1,0 +1,262 @@
+Compare Response A and Response B for substantive differences in reasoning about the supplied target. Do not choose a winner, infer hidden experimental conditions, or reward length, terminology, elaboration or formatting. No extra observations or tests have been performed.
+A difference is material only if it could change what evidence is gathered, what uncertainty is resolved first, what action is taken or withheld, what future condition triggers action, what conclusion/action is ruled out, or the decision-relevant representation used to choose among these. Material does not mean proven beneficial.
+Categories:
+PROBLEM_REPRESENTATION_CHANGE: a different decision-relevant distinction, state decomposition, causal partition, temporal representation, evidentiary structure or boundary. It counts as material only with a documented downstream inquiry, priority, action, decision-rule or constraint consequence.
+INQUIRY_CHANGE: a substantively different observation, comparison, test, evidence request or discriminating question.
+PRIORITY_CHANGE: a changed justified ordering of live questions, explanations, evidence needs or work.
+ACTION_CHANGE: a different immediate concrete action or withholding of an action the other would take.
+DECISION_RULE_CHANGE: a different condition determining future action.
+CONSTRAINT_CHANGE: a different bound, prohibition, prerequisite, stopping condition or do-not-conclude/do-not-act rule.
+NO_MATERIAL_CHANGE: semantically equivalent recommendations or merely wording, elaboration, formatting or generic detail. Represent this by overall_material_difference NO and differences [] when no material or plausibly material differences exist. Do not manufacture differences.
+For each difference, introduced_in is A_ONLY when B lacks that substantive contribution, B_ONLY when A lacks it, or BOTH_DIFFERENT when the responses take different substantive approaches. An absent side should be described explicitly, referencing the closest relevant field if helpful. Include exact zero-based response locations, content faithful to each response, and a concrete consequence in each present side's downstream_consequence; use an empty string if no consequence is established. A difference may have multiple categories. Avoid counting the same substantive change twice. Include plausible uncertain differences as UNCERTAIN. semantic_equivalence YES means equivalent target reasoning, NO means established substantive difference, UNCERTAIN means unresolved.
+Return only JSON matching the schema. Do not identify a preferred response.
+
+Pair identifier: PAIR-03
+
+INPUT
+{
+  "target_frame": {
+    "target_id": "T03",
+    "domain": "product / customer",
+    "title": "Repeat purchase decline for a refill service",
+    "problem": "A small household-cleaning refill service has acquired more first-time customers but fewer of them place a second order within eight weeks. The product team must choose what to investigate and which limited change to try before its next purchasing commitment.",
+    "known_context": [
+      "Customers choose home delivery or a neighborhood collection point and can buy a starter container or refill an existing one.",
+      "Order records contain product, quantity, fulfillment option, discount and date. They do not establish how quickly a household uses the product.",
+      "First-order promotions and two new collection points were introduced during the same quarter.",
+      "Customer-support messages mention leaks, collection hours and confusion about refilling, but most customers send no message.",
+      "The team can invite a limited set of customers to voluntary follow-up and can change one fulfillment or communication process for a month."
+    ],
+    "uncertainty": "A missing second order may indicate dissatisfaction, unused stock, a different expected purchase interval, inconvenience or another cause. The team does not know which explanations account for the change.",
+    "decision_need": "Develop a discriminating inquiry and a bounded product or service decision without treating nonpurchase or complaint frequency as a direct measure of satisfaction.",
+    "constraints": [
+      "No mandatory subscription or unsolicited repeated contact.",
+      "The purchasing decision is due in five weeks; major packaging redesign is unavailable in that period."
+    ]
+  },
+  "response_a": {
+    "current_position": {
+      "statement": "The decline in second orders within eight weeks is established; its cause and implications for satisfaction remain unresolved.",
+      "rationale": "Consumption timing is unknown, promotions and collection-point expansion coincided, and support messages capture only customers who contacted the service."
+    },
+    "top_uncertainties": [
+      {
+        "uncertainty": "Do recent customers need a refill within eight weeks?",
+        "why_it_matters": "Unused stock or longer purchase intervals could explain nonpurchase without dissatisfaction."
+      },
+      {
+        "uncertainty": "Did customer composition change, or did comparable customers become less likely to reorder?",
+        "why_it_matters": "Promotions and new collection points may have attracted customers with different needs or introduced different experiences."
+      },
+      {
+        "uncertainty": "Which barriers actually prevent a needed second purchase?",
+        "why_it_matters": "Leaks, collection hours and refill confusion suggest different interventions; complaint counts cannot establish their prevalence."
+      }
+    ],
+    "next_inquiries": [
+      {
+        "inquiry": "Verify the decline using comparable observation periods and order characteristics.",
+        "operation_or_observation": "Compare first-order cohorts with eight complete weeks of follow-up. Examine product, quantity, discount and fulfillment option; separate starter and refill purchases if product records permit.",
+        "decision_relevance": "Distinguishes incomplete follow-up and changes in purchase mix from declines within comparable groups; does not establish causality."
+      },
+      {
+        "inquiry": "Determine whether customers are ready to replenish and what happens when they are.",
+        "operation_or_observation": "During week one, invite a limited, varied set of repeat and nonrepeat customers to voluntary follow-up. Ask about remaining stock, actual use, expected refill timing, attempted reorders, leaks, collection access and refill understanding.",
+        "decision_relevance": "Separates lack of current need from barriers that a fulfillment or communication change could address."
+      },
+      {
+        "inquiry": "Check whether reported friction blocks the customer task.",
+        "operation_or_observation": "Ask willing participants to describe a recent collection or demonstrate how they would arrange a refill. Review relevant support messages alongside these accounts.",
+        "decision_relevance": "Provides concrete evidence for selecting one process change without treating support-message frequency as representative."
+      }
+    ],
+    "priorities": [
+      {
+        "rank": 1,
+        "item": "Establish comparable cohorts and replenishment readiness.",
+        "rationale": "These checks determine whether the eight-week measure reflects a service problem or a timing mismatch."
+      },
+      {
+        "rank": 2,
+        "item": "Identify one actionable barrier among customers who need more product.",
+        "rationale": "Only one fulfillment or communication process can change for a month."
+      },
+      {
+        "rank": 3,
+        "item": "Use the bounded trial to inform the purchasing commitment.",
+        "rationale": "The five-week deadline requires a decision with explicit residual uncertainty."
+      }
+    ],
+    "immediate_actions": [
+      {
+        "action": "Use week one for the cohort review and limited voluntary follow-up.",
+        "rationale": "Leaves approximately one month to try a selected change before the purchasing deadline."
+      },
+      {
+        "action": "Select one supported process change and define its eligible customers, intended effect, success criterion and stop condition before launch.",
+        "rationale": "Keeps the trial interpretable and bounded. Where feasible, compare with similar customers receiving the existing process."
+      },
+      {
+        "action": "Track the targeted barrier, successful refill or collection attempts, observed orders and remaining stock reported by participants.",
+        "rationale": "These observations can inform the commitment, while a one-month trial cannot establish an eight-week repeat-purchase effect for newly enrolled customers."
+      }
+    ],
+    "decision_rules": [
+      {
+        "condition": "Follow-up indicates substantial remaining stock and later expected replenishment.",
+        "consequence": "Interpret eight-week nonpurchase cautiously and plan purchasing around a range of replenishment intervals.",
+        "rationale": "An order is not yet due for those households."
+      },
+      {
+        "condition": "Customers needing a refill encounter a recurring, demonstrable communication or fulfillment barrier.",
+        "consequence": "Trial one change addressing that barrier: clearer refill instructions for confusion, or a collection-process adjustment for access problems.",
+        "rationale": "The intervention should match the observed obstacle."
+      },
+      {
+        "condition": "The trial meets its predefined criterion, with supporting comparison evidence where feasible and no material service deterioration.",
+        "consequence": "Continue the change provisionally and monitor later repeat orders.",
+        "rationale": "Near-term improvement supports continuation but does not yet prove durable retention."
+      }
+    ],
+    "important_distinctions": [
+      {
+        "distinction": "No second order versus no need for more product.",
+        "consequence": "Assess replenishment readiness before interpreting nonpurchase."
+      },
+      {
+        "distinction": "A reported problem versus its prevalence across customers.",
+        "consequence": "Use support messages and voluntary follow-up to identify mechanisms; account for selective participation."
+      }
+    ],
+    "constraints": [
+      {
+        "constraint": "No mandatory subscription or unsolicited repeated contact.",
+        "implication": "Keep follow-up voluntary and do not use forced recurrence to improve the metric."
+      },
+      {
+        "constraint": "One process change for one month; purchasing due in five weeks; major packaging redesign unavailable.",
+        "implication": "Choose a feasible intervention and base the commitment on observed demand plus explicit uncertainty, without assuming trial benefits will persist."
+      }
+    ],
+    "do_not_conclude": [
+      {
+        "statement": "Promotions or new collection points caused the decline.",
+        "reason": "Their simultaneous introduction and possible customer differences prevent that conclusion from timing alone."
+      },
+      {
+        "statement": "Silent customers are satisfied, or nonrepeat customers are dissatisfied.",
+        "reason": "Neither support contact nor nonpurchase directly measures satisfaction."
+      }
+    ]
+  },
+  "response_b": {
+    "current_position": {
+      "statement": "The eight-week repeat-purchase decline is a signal requiring explanation, not an established decline in satisfaction.",
+      "rationale": "Order records do not show household consumption, promotions and collection-point openings overlapped, and support messages cover only customers who contacted the service."
+    },
+    "top_uncertainties": [
+      {
+        "uncertainty": "How much nonpurchase reflects remaining stock or an expected refill interval longer than eight weeks?",
+        "why_it_matters": "Customers without current need require a different response from customers prevented or discouraged from refilling."
+      },
+      {
+        "uncertainty": "Does the decline concentrate in particular promotion, product, quantity or fulfillment groups?",
+        "why_it_matters": "Customer mix and service difficulties suggest different changes; coincident introductions prevent simple causal attribution."
+      },
+      {
+        "uncertainty": "Which difficulties prevent customers with refill needs from completing an order?",
+        "why_it_matters": "Leaks, collection hours and refill confusion are candidate explanations, but complaint frequency does not establish their prevalence or effect."
+      }
+    ],
+    "next_inquiries": [
+      {
+        "inquiry": "Locate the decline using comparable observation periods.",
+        "operation_or_observation": "Compare first-order cohorts with a complete eight-week follow-up, grouped by recorded product, quantity, discount and fulfillment option. Examine collection-point differences only if records identify the points.",
+        "decision_relevance": "Identifies where to focus follow-up without treating group differences as causal effects."
+      },
+      {
+        "inquiry": "Distinguish delayed need from barriers and dissatisfaction.",
+        "operation_or_observation": "Invite a limited, varied set of repeat and nonrepeat customers, including customers without support messages. Ask consenting participants about remaining stock, use, expected refill timing, satisfaction, difficulties and attempted refills or collections.",
+        "decision_relevance": "Tests competing household-level explanations; voluntary responses cannot establish population prevalence."
+      },
+      {
+        "inquiry": "Check whether each account supports an order-specific conclusion.",
+        "operation_or_observation": "Link accounts to orders where possible. Record source, time or uncertain interval, purpose and order/product/container links. Establish starter status only with support; retain records, recollections, discrepancies and corrections separately.",
+        "decision_relevance": "Corroborated stock or failed-attempt evidence can support a household-specific explanation. Missing links require clarification within agreed follow-up or exclusion from conclusions requiring those links."
+      }
+    ],
+    "priorities": [
+      {
+        "rank": 1,
+        "item": "Separate refill need from inability or reluctance to refill.",
+        "rationale": "This distinction most directly determines whether a process change could help."
+      },
+      {
+        "rank": 2,
+        "item": "Select one supported, feasible fulfillment or communication difficulty.",
+        "rationale": "The team can change only one process for a month before the purchasing deadline."
+      }
+    ],
+    "immediate_actions": [
+      {
+        "action": "Use the first week for cohort analysis and voluntary follow-up; select the trial at the end of that week.",
+        "rationale": "Reserves four weeks for a bounded change and review before the five-week purchasing deadline."
+      },
+      {
+        "action": "Prepare a one-month trial specifying the affected customer group, changed step, comparison where feasible, success measure and rollback condition before launch.",
+        "rationale": "For example, supported refill confusion could justify clearer refill instructions. Selection should depend on inquiry findings rather than complaint counts."
+      }
+    ],
+    "decision_rules": [
+      {
+        "condition": "Reliable household evidence indicates remaining stock and a later expected refill date.",
+        "consequence": "Treat delayed need as supported for that household and assess subsequent ordering against that timing.",
+        "rationale": "An eight-week absence alone does not establish dissatisfaction or explain the aggregate decline."
+      },
+      {
+        "condition": "Follow-up supports a recurring, actionable difficulty that one permitted process change can address.",
+        "consequence": "Trial that change for one month. Record assignment if used, actual receipt, completion of the affected step and subsequent ordering separately.",
+        "rationale": "A change cannot explain outcomes through a customer step unless relevant exposure and outcome links are supported."
+      },
+      {
+        "condition": "The trial meets its predefined improvement criterion without unacceptable worsening, and the comparison supports the conclusion.",
+        "consequence": "Retain the change provisionally; otherwise revert or treat the result as inconclusive. Make the purchasing commitment using explicit demand scenarios, without assuming an unobserved repeat-purchase recovery.",
+        "rationale": "A month can reveal process improvement but cannot supply complete eight-week repeat outcomes for newly enrolled customers."
+      }
+    ],
+    "important_distinctions": [
+      {
+        "distinction": "Missing documentation versus customer dissatisfaction.",
+        "consequence": "Keep absent use histories and unresolved links classified as evidence gaps."
+      },
+      {
+        "distinction": "A supported household explanation versus an explanation of the overall decline.",
+        "consequence": "Preserve source traceability and check linkage quality; even reliable individual histories do not establish aggregate effects."
+      }
+    ],
+    "constraints": [
+      {
+        "constraint": "Follow-up must be voluntary, with no mandatory subscription or unsolicited repeated contact.",
+        "implication": "Keep contact and clarification within participants' agreement."
+      },
+      {
+        "constraint": "Only one fulfillment or communication process can change for a month; purchasing is due in five weeks.",
+        "implication": "Keep the trial narrow and report incomplete outcome windows explicitly."
+      },
+      {
+        "constraint": "Major packaging redesign is unavailable within the decision period.",
+        "implication": "Investigate leaks if relevant, but do not make the current plan depend on redesign."
+      }
+    ],
+    "do_not_conclude": [
+      {
+        "statement": "Nonpurchase or complaint frequency directly measures satisfaction.",
+        "reason": "Refill need is unknown, and most customers send no support message."
+      },
+      {
+        "statement": "Promotions, new collection points or a selected process change caused the observed repeat-purchase pattern.",
+        "reason": "Concurrent changes, customer selection and incomplete follow-up require a credible comparison before causal attribution."
+      }
+    ]
+  }
+}
