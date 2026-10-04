@@ -1,0 +1,136 @@
+{
+  "impact_judgment": {
+    "pair_id": "PAIR-03",
+    "semantic_equivalence": "NO",
+    "differences": [
+      {
+        "difference_id": "D1",
+        "introduced_in": "B_ONLY",
+        "categories": ["INQUIRY_CHANGE"],
+        "response_a": {
+          "content": "Groups cohort comparisons by recorded order characteristics, including fulfillment option, but does not explicitly compare individual collection points.",
+          "response_locations": ["response_a.next_inquiries[0].operation_or_observation"],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "Adds collection-point comparisons when records identify the points.",
+          "response_locations": ["response_b.next_inquiries[0].operation_or_observation"],
+          "downstream_consequence": "Could focus follow-up on particular collection points rather than treating collection fulfillment as one group."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "This adds a conditional comparison capable of distinguishing local collection difficulties from a broader fulfillment pattern."
+      },
+      {
+        "difference_id": "D2",
+        "introduced_in": "B_ONLY",
+        "categories": ["INQUIRY_CHANGE"],
+        "response_a": {
+          "content": "Asks about stock, use, timing, attempted reorders and specific difficulties, without explicitly asking about satisfaction.",
+          "response_locations": ["response_a.next_inquiries[1].operation_or_observation"],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "Explicitly asks consenting participants about satisfaction alongside stock, use, timing and difficulties.",
+          "response_locations": ["response_b.next_inquiries[1].operation_or_observation"],
+          "downstream_consequence": "Collects direct self-reports relevant to dissatisfaction or reluctance even when no specific fulfillment obstacle is reported."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "The additional question gathers evidence about a live explanation that stock and task-barrier questions alone do not directly assess."
+      },
+      {
+        "difference_id": "D3",
+        "introduced_in": "A_ONLY",
+        "categories": ["INQUIRY_CHANGE"],
+        "response_a": {
+          "content": "Asks willing participants to describe a recent collection or demonstrate arranging a refill, and reviews relevant support messages alongside their accounts.",
+          "response_locations": ["response_a.next_inquiries[2].operation_or_observation"],
+          "downstream_consequence": "A refill demonstration can reveal where understanding or execution fails, providing concrete evidence for selecting the process change."
+        },
+        "response_b": {
+          "content": "Asks about difficulties and attempted refills or collections, but does not propose a refill demonstration or reviewing support messages alongside those accounts.",
+          "response_locations": [
+            "response_b.next_inquiries[1].operation_or_observation",
+            "response_b.next_inquiries[2].operation_or_observation"
+          ],
+          "downstream_consequence": ""
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "Demonstrating the refill task is a distinct evidence-gathering operation from reporting difficulties or validating account links."
+      },
+      {
+        "difference_id": "D4",
+        "introduced_in": "B_ONLY",
+        "categories": [
+          "PROBLEM_REPRESENTATION_CHANGE",
+          "INQUIRY_CHANGE",
+          "CONSTRAINT_CHANGE",
+          "DECISION_RULE_CHANGE"
+        ],
+        "response_a": {
+          "content": "Uses voluntary accounts to distinguish replenishment readiness and barriers, acknowledges selective participation, and uses later replenishment evidence to inform purchasing ranges. It does not require account-to-order linkage or prescribe handling unresolved links.",
+          "response_locations": [
+            "response_a.next_inquiries[1]",
+            "response_a.decision_rules[0]",
+            "response_a.important_distinctions[1]"
+          ],
+          "downstream_consequence": ""
+        },
+        "response_b": {
+          "content": "Records sources, times and order/product/container links; separates records, recollections, discrepancies and corrections; requires clarification or exclusion when necessary links are missing. It distinguishes supported household explanations from explanations of the aggregate decline and assesses later ordering against supported household timing.",
+          "response_locations": [
+            "response_b.next_inquiries[2]",
+            "response_b.decision_rules[0]",
+            "response_b.important_distinctions[0]",
+            "response_b.important_distinctions[1]"
+          ],
+          "downstream_consequence": "Adds linkage and clarification work, withholds conclusions requiring unresolved links, and restricts reliable individual histories to household-level explanations unless aggregate support is established."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "The evidentiary structure changes which accounts can support particular conclusions and what follow-up is needed before using them."
+      },
+      {
+        "difference_id": "D5",
+        "introduced_in": "BOTH_DIFFERENT",
+        "categories": [
+          "INQUIRY_CHANGE",
+          "ACTION_CHANGE",
+          "CONSTRAINT_CHANGE"
+        ],
+        "response_a": {
+          "content": "Tracks the targeted barrier, successful refill or collection attempts, observed orders and participants' remaining stock.",
+          "response_locations": ["response_a.immediate_actions[2]"],
+          "downstream_consequence": "The trial explicitly gathers continuing stock information to interpret observed demand alongside process outcomes."
+        },
+        "response_b": {
+          "content": "Separately records assignment if used, actual receipt of the change, completion of the affected step and subsequent ordering, and requires supported exposure and outcome links for explaining outcomes through that step.",
+          "response_locations": ["response_b.decision_rules[1]"],
+          "downstream_consequence": "The trial distinguishes assignment from actual exposure and step completion, withholding a process-based explanation when the necessary links are unsupported."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "These are different trial measurement requirements: A explicitly follows remaining stock, while B explicitly follows intervention exposure and its connection to outcomes."
+      },
+      {
+        "difference_id": "D6",
+        "introduced_in": "BOTH_DIFFERENT",
+        "categories": ["DECISION_RULE_CHANGE", "CONSTRAINT_CHANGE"],
+        "response_a": {
+          "content": "Continues the change provisionally when its predefined criterion is met without material service deterioration, using supporting comparison evidence where feasible.",
+          "response_locations": ["response_a.decision_rules[2]"],
+          "downstream_consequence": "Allows provisional continuation without a supporting comparison when such a comparison is infeasible."
+        },
+        "response_b": {
+          "content": "Requires the improvement criterion, acceptable worsening and a supporting comparison for provisional retention; otherwise it directs reversion or an inconclusive judgment.",
+          "response_locations": [
+            "response_b.decision_rules[2]",
+            "response_b.do_not_conclude[1]"
+          ],
+          "downstream_consequence": "A trial meeting its process criterion without a supporting comparison does not qualify for provisional retention under the stated rule."
+        },
+        "materially_changes_target_reasoning": "YES",
+        "rationale": "Although both prepare comparisons where feasible, their final continuation rules impose different requirements when comparison evidence is unavailable or unsupportive."
+      }
+    ],
+    "overall_material_difference": "YES",
+    "rationale": "The responses share the central distinction between nonpurchase and dissatisfaction and propose similarly bounded trials. They nevertheless differ in specific inquiries, evidence-linkage requirements, trial measurements and the evidence required to retain a change. These differences can alter what is gathered, which conclusions are withheld and what happens after the trial."
+  }
+}
