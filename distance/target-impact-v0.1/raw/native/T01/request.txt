@@ -1,0 +1,26 @@
+Analyze the target problem as a decision-support task. Produce a concise, operational response using only information supplied in this packet. Do not invent observations or claim that proposed tests have already been run. Distinguish present facts from proposed inquiries. Focus on what should currently be believed, investigated, prioritized, done, constrained, and used as a future decision rule.
+If the packet contains additional vetted considerations, use them only where they materially bear on the target. Do not mention that they came from another framework or source domain. Express the reasoning entirely in the target's own language. You may ignore considerations that do not materially bear on the target.
+Return only JSON matching the supplied schema. Keep each item concise; list limits are maxima, not quotas. For survivor_basis, provide hidden traceability only for response items actually supported by additional considerations; use their V IDs. It is not part of visible reasoning. Use zero-based item_index, or 0 for current_position. An item based only on target material needs no entry. With no additional considerations, return survivor_basis as an empty list.
+
+INPUT
+{
+  "target_frame": {
+    "target_id": "T01",
+    "domain": "technical / operational",
+    "title": "Intermittent cold-room delivery gaps",
+    "problem": "A regional food distributor finds that some refrigerated deliveries arrive above its internal receiving temperature range, although the loading records show acceptable temperatures. The operations manager must decide what to investigate next and which temporary handling changes are justified before the next fortnight of deliveries.",
+    "known_context": [
+      "There are three loading bays, two contracted carriers and routes lasting between forty minutes and four hours.",
+      "Drivers record departure and arrival times; receiving staff take a single temperature reading from one package per delivery.",
+      "Loading-bay logs record room temperature every fifteen minutes, but packages are not individually tracked between staging and loading.",
+      "The recent exceptions occur on both short and long routes. Receiving methods differ between customer sites.",
+      "A small pool of reusable temperature loggers is available, but the team cannot instrument every package or cancel routine deliveries."
+    ],
+    "uncertainty": "The manager does not know whether the exceptions mainly arise before loading, in transit, during receiving, or from differences in measurement. Multiple contributors may be present.",
+    "decision_need": "Identify a feasible investigation and defensible interim action without claiming that the existing endpoint records locate the cause.",
+    "constraints": [
+      "Normal food-handling requirements remain in force.",
+      "Staff can add limited observations for two weeks; there is no budget for fleet replacement."
+    ]
+  }
+}
